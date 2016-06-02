@@ -33,6 +33,7 @@ import type { ThunkAction } from './types';
 const Maps = Parse.Object.extend('Maps');
 const Notification = Parse.Object.extend('Notification');
 const FAQ = Parse.Object.extend('FAQ');
+const Page = Parse.Object.extend('Page');
 
 function loadParseQuery(type: string, query: Parse.Query): ThunkAction {
   return (dispatch) => {
@@ -66,4 +67,7 @@ module.exports = {
 
   loadFaqs: (): ThunkAction =>
     loadParseQuery('LOADED_FAQS', new Parse.Query(FAQ)),
+
+  loadPages: (): ThunkAction =>
+    loadParseQuery('LOADED_PAGES', new Parse.Query(Page)),
 };

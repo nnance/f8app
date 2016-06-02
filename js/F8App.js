@@ -41,7 +41,8 @@ var {
   loadSessions,
   loadFriendsSchedules,
   loadSurveys,
-  loadFaqs
+  loadFaqs,
+  loadPages
 } = require('./actions');
 var { updateInstallation } = require('./actions/installation');
 var { connect } = require('react-redux');
@@ -55,6 +56,7 @@ var F8App = React.createClass({
     // TODO: Make this list smaller, we basically download the whole internet
     this.props.dispatch(loadNotifications());
     this.props.dispatch(loadFaqs());
+    this.props.dispatch(loadPages());
     this.props.dispatch(loadMaps());
     this.props.dispatch(loadConfig());
     this.props.dispatch(loadSessions());
