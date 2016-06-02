@@ -24,19 +24,20 @@
 
 'use strict';
 
-var { combineReducers } = require('redux');
+const createParseReducer = require('./createParseReducer');
 
-module.exports = combineReducers({
-  config: require('./config'),
-  notifications: require('./notifications'),
-  maps: require('./maps'),
-  faqs: require('./faqs'),
-  sessions: require('./sessions'),
-  user: require('./user'),
-  schedule: require('./schedule'),
-  topics: require('./topics'),
-  filter: require('./filter'),
-  navigation: require('./navigation'),
-  friendsSchedules: require('./friendsSchedules'),
-  surveys: require('./surveys'),
-});
+export type Faq = {
+  id: string;
+  answer: string;
+  question: string;
+};
+
+function fromParseObject(map: Object): Faq {
+  return {
+    id: map.id,
+    answer: map.get('answer'),
+    question: map.get('question'),
+  };
+}
+
+module.exports = createParseReducer('LOADED_FAQS', fromParseObject);

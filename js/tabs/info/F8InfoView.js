@@ -34,6 +34,7 @@ var WiFiDetails = require('./WiFiDetails');
 
 const {connect} = require('react-redux');
 import type {Config} from '../../reducers/config';
+import type {Faq} from '../../reducers/faq';
 
 const POLICIES_LINKS = [{
   title: 'Terms of Service',
@@ -49,6 +50,7 @@ const POLICIES_LINKS = [{
 class F8InfoView extends React.Component {
   props: {
     config: Config;
+    faq: Faq
   };
 
   render() {
@@ -64,6 +66,7 @@ class F8InfoView extends React.Component {
                 network={this.props.config.wifiNetwork}
                 password={this.props.config.wifiPassword}
               />
+              <CommonQuestions faqs={this.props.faqs} />
               <LinksList title="Facebook policies" links={POLICIES_LINKS} />
             </View>
           )}/>
@@ -115,8 +118,10 @@ InfoList = Relay.createContainer(InfoList, {
 */
 
 function select(store) {
+  console.log(store.faqs);
   return {
     config: store.config,
+    faqs: store.faqs
   };
 }
 
