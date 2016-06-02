@@ -29,10 +29,11 @@ var LinksList = require('./LinksList');
 var ListContainer = require('ListContainer');
 var PureListView = require('../../common/PureListView');
 var React = require('React');
-var Relay = require('react-relay');
 var View = require('View');
 var WiFiDetails = require('./WiFiDetails');
 
+const {connect} = require('react-redux');
+import type {Config} from '../../reducers/config';
 
 const POLICIES_LINKS = [{
   title: 'Terms of Service',
@@ -45,17 +46,32 @@ const POLICIES_LINKS = [{
   url: 'https://www.fbf8.com/code-of-conduct',
 }];
 
-function F8InfoView() {
-  return (
-    <ListContainer
-      title="Information"
-      backgroundImage={require('./img/info-background.png')}
-      backgroundColor={'#47BFBF'}>
-      <InfoList />
-    </ListContainer>
-  );
-}
+class F8InfoView extends React.Component {
+  props: {
+    config: Config;
+  };
 
+  render() {
+    return (
+      <ListContainer
+        title="Information"
+        backgroundImage={require('./img/info-background.png')}
+        backgroundColor={'#47BFBF'}>
+        <PureListView
+          renderEmptyList={() => (
+            <View>
+              <WiFiDetails
+                network={this.props.config.wifiNetwork}
+                password={this.props.config.wifiPassword}
+              />
+              <LinksList title="Facebook policies" links={POLICIES_LINKS} />
+            </View>
+          )}/>
+      </ListContainer>
+    );
+  }
+}
+/*
 function InfoList({viewer: {config, faqs, pages}, ...props}) {
   return (
     <PureListView
@@ -96,5 +112,12 @@ InfoList = Relay.createContainer(InfoList, {
     `,
   },
 });
+*/
 
-module.exports = F8InfoView;
+function select(store) {
+  return {
+    config: store.config,
+  };
+}
+
+module.exports = connect(select)(F8InfoView);
