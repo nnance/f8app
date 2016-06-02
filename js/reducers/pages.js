@@ -28,15 +28,17 @@ const createParseReducer = require('./createParseReducer');
 
 export type Page = {
   id: string;
-  alias: string;
   title: string;
+  url: string;
+  logo: string;
 };
 
 function fromParseObject(map: Object): Page {
   return {
     id: map.id,
-    alias: map.get('alias'),
     title: map.get('title'),
+    logo: map.get('logo') ? map.get('logo').url() : `https://graph.facebook.com/${map.get('alias')}/picture?type=large`,
+    url: `https://www.facebook.com/${map.get('alias')}`,
   };
 }
 

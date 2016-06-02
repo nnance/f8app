@@ -77,48 +77,6 @@ class F8InfoView extends React.Component {
     );
   }
 }
-/*
-function InfoList({viewer: {config, faqs, pages}, ...props}) {
-  return (
-    <PureListView
-      renderEmptyList={() => (
-        <View>
-          <WiFiDetails
-            network={config.wifiNetwork}
-            password={config.wifiPassword}
-          />
-          <CommonQuestions faqs={faqs} />
-          <LinksList title="Facebook pages" links={pages} />
-          <LinksList title="Facebook policies" links={POLICIES_LINKS} />
-        </View>
-      )}
-      {...props}
-    />
-  );
-}
-
-InfoList = Relay.createContainer(InfoList, {
-  fragments: {
-    viewer: () => Relay.QL`
-      fragment on User {
-        config {
-          wifiNetwork
-          wifiPassword
-        }
-        faqs {
-          question
-          answer
-        }
-        pages {
-          title
-          url
-          logo
-        }
-      }
-    `,
-  },
-});
-*/
 
 function select(store) {
   return {
