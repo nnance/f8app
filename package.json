@@ -5,18 +5,15 @@
   "scripts": {
     "start": "babel-node ./server/server.js",
     "import-data": "babel-node ./scripts/import-data-from-parse.js",
-    "update-schema": "babel-node ./server/schema/updateSchema.js",
     "test": "jest",
     "lint": "eslint ."
   },
   "dependencies": {
     "art": "~0.10.1",
     "babel-cli": "~6.6.5",
-    "babel-relay-plugin": "~0.7.3",
     "crc32": "~0.2.2",
     "express": "~4.13.4",
     "express-graphql": "~0.4.13",
-    "graphql-relay": "~0.3.6",
     "immutable": "~3.7.6",
     "moment": "~2.11.2",
     "parse": "~1.8.2",

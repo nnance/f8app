@@ -27,18 +27,10 @@ import {
   GraphQLID,
   GraphQLInt,
   GraphQLList,
-  GraphQLNonNull,
   GraphQLObjectType,
   GraphQLSchema,
   GraphQLString,
 } from 'graphql';
-
-import {
-  fromGlobalId,
-  globalIdField,
-  mutationWithClientMutationId,
-  nodeDefinitions,
-} from 'graphql-relay';
 
 import Parse from 'parse/node';
 
@@ -48,29 +40,6 @@ const Session = Parse.Object.extend('Agenda');
 const Speaker = Parse.Object.extend('Speakers');
 const Notification = Parse.Object.extend('Notification');
 const Map = Parse.Object.extend('Maps');
-
-var {nodeInterface, nodeField} = nodeDefinitions(
-  findObjectByGlobalId,
-  objectToGraphQLType
-);
-
-function findObjectByGlobalId(globalId) {
-  const {type, id} = fromGlobalId(globalId);
-  const Ent = ({Page, FAQ, Session, Speaker})[type];
-  return new Parse.Query(Ent).get(id);
-}
-
-function objectToGraphQLType(obj) {
-  switch (obj.className) {
-    case 'Page':
-      return F8PageType;
-    case 'Session':
-      return F8SessionType;
-    case 'Speaker':
-      return F8SpeakerType;
-  }
-  return null;
-}
 
 var USERS_SCHEDULE = {};
 
@@ -112,7 +81,9 @@ var F8UserType = new GraphQLObjectType({
   name: 'User',
   description: 'A person who uses our app',
   fields: () => ({
-    id: globalIdField('User'),
+    id: {
+      type: GraphQLID
+    },
     name: {
       type: GraphQLString,
     },
@@ -137,15 +108,16 @@ var F8UserType = new GraphQLObjectType({
       type: F8ConfigType,
       resolve: () => Parse.Config.get(),
     }
-  }),
-  interfaces: [nodeInterface],
+  })
 });
 
 var F8MapType = new GraphQLObjectType({
   name: 'Map',
   description: 'A place at F8 venue',
   fields: () => ({
-    id: globalIdField('Map'),
+    id: {
+      type: GraphQLID
+    },
     name: {
       type: GraphQLString,
       resolve: (map) => map.get('name'),
@@ -161,7 +133,9 @@ var F8SessionType = new GraphQLObjectType({
   name: 'Session',
   description: 'Represents F8 agenda item',
   fields: () => ({
-    id: globalIdField('Session'),
+    id: {
+      type: GraphQLID
+    },
     title: {
       type: GraphQLString,
       resolve: (session) => session.get('sessionTitle'),
@@ -207,15 +181,16 @@ var F8SessionType = new GraphQLObjectType({
       description: 'User\'s friends who attend this session',
       resolve: (session, args, {rootValue}) => loadFriendsAttending(rootValue, session),
     },
-  }),
-  interfaces: [nodeInterface],
+  })
 });
 
 var F8PageType = new GraphQLObjectType({
   name: 'Page',
   description: 'Facebook pages',
   fields: () => ({
-    id: globalIdField('Page'),
+    id: {
+      type: GraphQLID
+    },
     title: {
       type: GraphQLString,
       resolve: (page) => page.get('title'),
@@ -235,15 +210,16 @@ var F8PageType = new GraphQLObjectType({
         }
       }
     }
-  }),
-  interfaces: [nodeInterface],
+  })
 });
 
 var F8FAQType = new GraphQLObjectType({
   name: 'FAQ',
   description: 'Frequently asked questions',
   fields: () => ({
-    id: globalIdField('FAQ'),
+    id: {
+      type: GraphQLID
+    },
     question: {
       type: GraphQLString,
       resolve: (faq) => faq.get('question'),
@@ -252,14 +228,15 @@ var F8FAQType = new GraphQLObjectType({
       type: GraphQLString,
       resolve: (faq) => faq.get('answer'),
     }
-  }),
-  interfaces: [nodeInterface],
+  })
 });
 
 var F8SpeakerType = new GraphQLObjectType({
   name: 'Speaker',
   fields: () => ({
-    id: globalIdField('Speaker'),
+    id: {
+      type: GraphQLID
+    },
     name: {
       type: GraphQLString,
       resolve: (speaker) => speaker.get('speakerName'),
@@ -272,14 +249,15 @@ var F8SpeakerType = new GraphQLObjectType({
       type: GraphQLString,
       resolve: (speaker) => speaker.get('speakerPic') && speaker.get('speakerPic').url(),
     }
-  }),
-  interfaces: [nodeInterface],
+  })
 });
 
 var F8NotificationType = new GraphQLObjectType({
   name: 'Notification',
   fields: () => ({
-    id: globalIdField('Notification'),
+    id: {
+      type: GraphQLID
+    },
     text: {
       type: GraphQLString,
       resolve: (notification) => notification.get('text'),
@@ -313,7 +291,6 @@ var F8ConfigType = new GraphQLObjectType({
 var F8QueryType = new GraphQLObjectType({
   name: 'Query',
   fields: () => ({
-    node: nodeField,
     viewer: {
       type: F8UserType,
       resolve: (rootValue) => rootValue, // TODO: Authenticate user
@@ -328,39 +305,6 @@ var F8QueryType = new GraphQLObjectType({
   }),
 });
 
-var addToScheduleMutation = mutationWithClientMutationId({
-  name: 'AddToSchedule',
-  inputFields: {
-    sessionId: {
-      type: new GraphQLNonNull(GraphQLID),
-    },
-  },
-  outputFields: {
-    session: {
-      type: F8SessionType,
-      resolve: (payload) => new Parse.Query(Session).get(payload.id),
-    },
-  },
-  mutateAndGetPayload: ({sessionId}, {rootValue}) => {
-    const {type, id} = fromGlobalId(sessionId);
-    if (type !== 'Session') {
-      throw new Error(`Invalid type ${type}`);
-    }
-    USERS_SCHEDULE[id] = true;
-    console.log(`Mutate ${id}`, rootValue);
-    return {id};
-  },
-});
-
-var F8MutationType = new GraphQLObjectType({
-  name: 'Mutation',
-  fields: () => ({
-    // Add your own mutations here
-    addToSchedule: addToScheduleMutation,
-  })
-});
-
 export var Schema = new GraphQLSchema({
   query: F8QueryType,
-  mutation: F8MutationType,
 });
