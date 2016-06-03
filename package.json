@@ -31,7 +31,6 @@
     "react-native-send-intent": "~1.0.7",
     "react-native-share": "frantic/react-native-share#674df947b3",
     "react-redux": "~4.3.0",
-    "react-relay": "~0.7.3",
     "react-timer-mixin": "~0.13.3",
     "redux": "~3.2.1",
     "redux-logger": "~2.5.0",

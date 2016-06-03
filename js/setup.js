@@ -28,7 +28,6 @@ var F8App = require('F8App');
 var FacebookSDK = require('FacebookSDK');
 var Parse = require('parse/react-native');
 var React = require('React');
-var Relay = require('react-relay');
 
 var { Provider } = require('react-redux');
 var configureStore = require('./store/configureStore');
@@ -42,12 +41,6 @@ function setup(): React.Component {
 
   FacebookSDK.init();
   Parse.FacebookUtils.init();
-  Relay.injectNetworkLayer(
-    new Relay.DefaultNetworkLayer(`${serverURL}/graphql`, {
-      fetchTimeout: 30000,
-      retryDelays: [5000, 10000],
-    })
-  );
 
   class Root extends React.Component {
     constructor() {
