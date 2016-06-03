@@ -9,11 +9,12 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "apollo-server": "^0.1.2",
     "art": "~0.10.1",
     "babel-cli": "~6.6.5",
     "crc32": "~0.2.2",
     "express": "~4.13.4",
-    "express-graphql": "~0.4.13",
+    "graphql": "^0.6.0",
     "immutable": "~3.7.6",
     "moment": "~2.11.2",
     "parse": "~1.8.2",

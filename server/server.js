@@ -22,7 +22,7 @@
 
 import path from 'path';
 import express from 'express';
-import graphQLHTTP from 'express-graphql';
+import {apolloServer} from 'apollo-server';
 import {Schema} from './schema/schema';
 import Parse from 'parse/node';
 import {ParseServer} from 'parse-server';
@@ -87,13 +87,11 @@ if (IS_DEVELOPMENT) {
 
 server.use(
   '/graphql',
-  graphQLHTTP((request) => {
-    return {
-      graphiql: IS_DEVELOPMENT,
-      pretty: IS_DEVELOPMENT,
-      schema: getSchema(),
-      rootValue: Math.random(), // TODO: Check credentials, assign user
-    };
+  apolloServer({
+    graphiql: IS_DEVELOPMENT,
+    pretty: IS_DEVELOPMENT,
+    schema: getSchema(),
+    rootValue: Math.random(), // TODO: Check credentials, assign user
   })
 );
 
