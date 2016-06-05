@@ -40,4 +40,5 @@ module.exports = combineReducers({
   navigation: require('./navigation'),
   friendsSchedules: require('./friendsSchedules'),
   surveys: require('./surveys'),
+  apollo: require('../store/apollo').reducer(),
 });
