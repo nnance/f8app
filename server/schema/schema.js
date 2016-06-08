@@ -104,6 +104,10 @@ var F8UserType = new GraphQLObjectType({
       type: new GraphQLList(F8PageType),
       resolve: () => new Parse.Query(Page).find(),
     },
+    maps: {
+      type: new GraphQLList(F8MapType),
+      resolve: () => new Parse.Query(Map).find(),
+    },
     config: {
       type: F8ConfigType,
       resolve: () => Parse.Config.get(),
@@ -125,6 +129,18 @@ var F8MapType = new GraphQLObjectType({
     map: {
       type: GraphQLString,
       resolve: (map) => map.get('x1') && map.get('x1').url(),
+    },
+    x1url: {
+      type: GraphQLString,
+      resolve: (map) => map.get('x1') && map.get('x1').url(),
+    },
+    x2url: {
+      type: GraphQLString,
+      resolve: (map) => map.get('x2') && map.get('x2').url(),
+    },
+    x3url: {
+      type: GraphQLString,
+      resolve: (map) => map.get('x3') && map.get('x3').url(),
     },
   }),
 });
