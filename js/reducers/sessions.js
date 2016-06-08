@@ -81,4 +81,34 @@ function fromParseSessions(session: Object): Session {
   };
 }
 
+function fromGraphQL(data): Session[] {
+  console.log(data)
+  return data.schedule.map(session => {
+    return {
+      id: session.id,
+      day: session.day,
+      allDay: false,
+      title: session.title,
+      description: session.description,
+      hasDetails: false,
+      slug: session.slug,
+      onMySchedule: false,
+      tags: session.tags,
+      startTime: session.startTime, // start time
+      endTime: session.endTime, // end time
+      map: session.location.x1url,
+      location: session.location,
+      speakers: session.speakers.map(speaker => {
+        return {
+          id: speaker.id,
+          bio: '',
+          name: speaker.name,
+          pic: speaker.picture,
+          title: speaker.title,
+        }
+      }),
+    }
+  });
+}
+
 module.exports = createParseReducer('LOADED_SESSIONS', fromParseSessions);

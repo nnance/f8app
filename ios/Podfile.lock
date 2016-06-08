@@ -7,11 +7,11 @@ PODS:
   - Bolts/Tasks (1.7.0)
   - CodePush (1.7.3-beta):
     - React
-  - FBSDKCoreKit (4.10.1):
-    - Bolts (~> 1.5)
-  - FBSDKLoginKit (4.10.1):
+  - FBSDKCoreKit (4.12.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.12.0):
     - FBSDKCoreKit
-  - FBSDKShareKit (4.10.1):
+  - FBSDKShareKit (4.12.0):
     - FBSDKCoreKit
   - React (0.23.1):
     - React/Core (= 0.23.1)
@@ -75,14 +75,12 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
   CodePush: b079624335d06b6b309e6b70167f398c709cfcc6
-  FBSDKCoreKit: d2aaed5e9ab7d8d6301c533376a1fbff1cf3deb5
-  FBSDKLoginKit: 699ff169080e3072de4b9b0faca90bf23dc36deb
-  FBSDKShareKit: 2fd887cce0056bdda91f99b2021d724a4fed8e88
+  FBSDKCoreKit: 6e56d5a2a64a755ad4efb5dbeee8f82fb1b99775
+  FBSDKLoginKit: 03f68a8d48c2c8bb81d7eb8097973d483543e1f6
+  FBSDKShareKit: df1491f064cffc8ebcc3fc8b71be94cc190c728e
   React: 0bc1e9a6369dc610ff0b29415ed0cab5229614f5
   react-native-fbsdkcore: f406a8e13011fd39b9c1db5f6bc517b84cfe97d9
   react-native-fbsdklogin: 7b371812b110ef24f3877ab52350df9e321faf6b
   react-native-fbsdkshare: f61448537392187b4d43c2e6b40260e3a1e7c658
 
-PODFILE CHECKSUM: 45bef4538671c3205d919c48d17fd46190328f35
-
-COCOAPODS: 1.0.0
+COCOAPODS: 0.39.0

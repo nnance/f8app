@@ -24,22 +24,21 @@
 
 'use strict';
 
-const createParseReducer = require('./createParseReducer');
-
-export type Page = {
-  id: string;
-  title: string;
-  url: string;
-  logo: string;
-};
-
-function fromParseObject(map: Object): Page {
-  return {
-    id: map.id,
-    title: map.get('title'),
-    logo: map.get('logo') ? map.get('logo').url() : `https://graph.facebook.com/${map.get('alias')}/picture?type=large`,
-    url: `https://www.facebook.com/${map.get('alias')}`,
-  };
+function createReducer(property, subName) {
+  return function(state, action) {
+    if (action.type === 'LOADED_VIEWER') {
+      if (subName) {
+        const obj = {}
+        obj[subName] = action.data.viewer[property];
+       }
+      return action.data.viewer[property];
+    }
+    return state || [];
+  }
 }
 
-module.exports = createParseReducer('LOADED_PAGES', fromParseObject);
+module.exports = {
+  faqs: createReducer('faqs'),
+  pages: createReducer('pages'),
+  maps: createReducer('maps'),
+};

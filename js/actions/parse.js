@@ -58,16 +58,4 @@ module.exports = {
         .include('speakers')
         .ascending('startTime')
     ),
-
-  loadMaps: (): ThunkAction =>
-    loadParseQuery('LOADED_MAPS', new Parse.Query(Maps)),
-
-  loadNotifications: (): ThunkAction =>
-    loadParseQuery('LOADED_NOTIFICATIONS', new Parse.Query(Notification)),
-
-  loadFaqs: (): ThunkAction =>
-    loadParseQuery('LOADED_FAQS', new Parse.Query(FAQ)),
-
-  loadPages: (): ThunkAction =>
-    loadParseQuery('LOADED_PAGES', new Parse.Query(Page)),
 };

@@ -25,6 +25,7 @@
 'use strict';
 
 const parseActions = require('./parse');
+const apolloActions = require('./apollo');
 const navigationActions = require('./navigation');
 const loginActions = require('./login');
 const scheduleActions = require('./schedule');
@@ -44,6 +45,7 @@ module.exports = {
   ...surveyActions,
   ...testActions,
   ...parseActions,
+  ...apolloActions,
   ...navigationActions,
   ...installationActions,
 };
