@@ -73,7 +73,16 @@ class F8InfoView extends React.Component {
   }
 }
 
+function select(store) {
+  return {
+    config: store.config,
+    faqs: store.faqs,
+    pages: store.pages
+  };
+}
+
 const InfoWithData = connect({
+  select,
   mapQueriesToProps: ({ ownProps }) => ({
     data: {
       query: gql`

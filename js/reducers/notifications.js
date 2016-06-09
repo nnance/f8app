@@ -64,10 +64,6 @@ import type {Action} from '../actions/types';
 
 function notifications(state: State = initialState, action: Action): State {
   switch (action.type) {
-    case 'LOADED_NOTIFICATIONS':
-      let list = action.list.map(fromParseObject);
-      return {...state, server: list};
-
     case 'RECEIVED_PUSH_NOTIFICATION':
       return {...state, push: append(action.notification, state.push)};
 

@@ -37,7 +37,6 @@ var RateSessionsCell = require('./RateSessionsCell');
 var allNotifications = require('./allNotifications');
 var View = require('View');
 var findSessionByURI = require('findSessionByURI');
-var { connect } = require('react-redux');
 var {
   turnOnPushNotifications,
   skipPushNotifications,
@@ -46,6 +45,10 @@ var {
 var {testMenuEnabled, version} = require('../../env');
 
 var { createSelector } = require('reselect');
+
+import gql from 'apollo-client/gql';
+import { connect } from 'react-apollo';
+
 
 const data = createSelector(
   allNotifications,
@@ -82,6 +85,10 @@ class F8NotificationsView extends React.Component {
       );
     }
 
+    if (this.props.data.loading) {
+      return null;
+    }
+
     return (
       <View style={{flex: 1}}>
         <ListContainer
@@ -90,7 +97,7 @@ class F8NotificationsView extends React.Component {
           backgroundColor={'#E78196'}
           {...this.renderTestItems()}>
           <PureListView
-            data={this.props.notifications}
+            data={this.props.data.viewer.notifications}
             renderEmptyList={this.renderEmptyList}
             renderRow={this.renderRow}
           />
@@ -204,4 +211,28 @@ function actions(dispatch) {
   };
 }
 
-module.exports = connect(select, actions)(F8NotificationsView);
+const F8NotificationsWithData = connect({
+  select,
+  actions,
+  mapQueriesToProps: ({ ownProps }) => ({
+    data: {
+      query: gql`
+        query viewer {
+          viewer {
+            notifications {
+              id
+              text
+              url
+              time
+            }
+          }
+        }
+      `,
+      forceFetch: false
+    }
+  })
+})(F8NotificationsView);
+
+module.exports = F8NotificationsWithData;
+
+// module.exports = connect(select, actions)(F8NotificationsView);
