@@ -48,9 +48,12 @@ const POLICIES_LINKS = [{
 
 class F8InfoView extends React.Component {
   render() {
-    if (this.props.data.loading) {
+
+    if (this.props.infoView.loading) {
       return null;
     }
+
+    const {config, faqs, pages} = this.props.infoView.viewer;
     return (
       <ListContainer
         title="Information"
@@ -60,11 +63,11 @@ class F8InfoView extends React.Component {
           renderEmptyList={() => (
             <View>
               <WiFiDetails
-                network={this.props.data.viewer.config.wifiNetwork}
-                password={this.props.data.viewer.config.wifiPassword}
+                network={config.wifiNetwork}
+                password={config.wifiPassword}
               />
-              <CommonQuestions faqs={this.props.data.viewer.faqs} />
-              <LinksList title="Facebook pages" links={this.props.data.viewer.pages} />
+              <CommonQuestions faqs={faqs} />
+              <LinksList title="Facebook pages" links={pages} />
               <LinksList title="Facebook policies" links={POLICIES_LINKS} />
             </View>
           )}/>
@@ -73,18 +76,9 @@ class F8InfoView extends React.Component {
   }
 }
 
-function select(store) {
-  return {
-    config: store.config,
-    faqs: store.faqs,
-    pages: store.pages
-  };
-}
-
 const InfoWithData = connect({
-  select,
   mapQueriesToProps: ({ ownProps }) => ({
-    data: {
+    infoView: {
       query: gql`
         query viewer {
           viewer {
@@ -105,12 +99,9 @@ const InfoWithData = connect({
             }
           }
         }
-      `,
-      forceFetch: false
+      `
     }
   })
 })(F8InfoView);
 
 module.exports = InfoWithData;
-
-// module.exports = connect(select)(F8InfoView);

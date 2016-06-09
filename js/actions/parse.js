@@ -30,8 +30,6 @@ const InteractionManager = require('InteractionManager');
 
 import type { ThunkAction } from './types';
 
-const Maps = Parse.Object.extend('Maps');
-
 function loadParseQuery(type: string, query: Parse.Query): ThunkAction {
   return (dispatch) => {
     return query.find({
@@ -55,7 +53,4 @@ module.exports = {
         .include('speakers')
         .ascending('startTime')
     ),
-
-  loadMaps: (): ThunkAction =>
-    loadParseQuery('LOADED_MAPS', new Parse.Query(Maps)),
 };

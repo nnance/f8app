@@ -54,7 +54,6 @@ var F8App = React.createClass({
     AppState.addEventListener('change', this.handleAppStateChange);
 
     // TODO: Make this list smaller, we basically download the whole internet
-    this.props.dispatch(loadMaps());
     this.props.dispatch(loadConfig());
     this.props.dispatch(loadSessions());
     this.props.dispatch(loadFriendsSchedules());
