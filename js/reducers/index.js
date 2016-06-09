@@ -30,8 +30,6 @@ module.exports = combineReducers({
   config: require('./config'),
   notifications: require('./notifications'),
   maps: require('./maps'),
-  faqs: require('./faqs'),
-  pages: require('./pages'),
   sessions: require('./sessions'),
   user: require('./user'),
   schedule: require('./schedule'),

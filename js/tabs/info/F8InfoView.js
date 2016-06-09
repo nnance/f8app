@@ -47,11 +47,6 @@ const POLICIES_LINKS = [{
 }];
 
 class F8InfoView extends React.Component {
-  props: {
-    data: {
-      loading: true
-    }
-  };
   render() {
     if (this.props.data.loading) {
       return null;
