@@ -110,13 +110,4 @@ function fetchAllIds(notifs: Array<Notification>): SeenNotifications {
   return seen;
 }
 
-function fromParseObject(object: Object): Notification {
-  return {
-    id: object.id,
-    text: object.get('text'),
-    url: object.get('url'),
-    time: object.createdAt.getTime(),
-  };
-}
-
 module.exports = notifications;
