@@ -89,6 +89,9 @@ class F8NotificationsView extends React.Component {
       return null;
     }
 
+    this.props.notifications.server = this.props.data.viewer.notifications;
+    var notifications = data(this.props);
+
     return (
       <View style={{flex: 1}}>
         <ListContainer
@@ -97,7 +100,7 @@ class F8NotificationsView extends React.Component {
           backgroundColor={'#E78196'}
           {...this.renderTestItems()}>
           <PureListView
-            data={this.props.data.viewer.notifications}
+            data={notifications}
             renderEmptyList={this.renderEmptyList}
             renderRow={this.renderRow}
           />
@@ -197,7 +200,7 @@ class F8NotificationsView extends React.Component {
 function select(state) {
   return {
     nux: state.notifications.enabled === null,
-    notifications: data(state),
+    notifications: state.notifications,
     sessions: state.sessions,
     surveys: state.surveys,
   };
@@ -212,8 +215,8 @@ function actions(dispatch) {
 }
 
 const F8NotificationsWithData = connect({
-  select,
-  actions,
+  mapStateToProps: select,
+  mapDispatchToProps: actions,
   mapQueriesToProps: ({ ownProps }) => ({
     data: {
       query: gql`
@@ -234,5 +237,3 @@ const F8NotificationsWithData = connect({
 })(F8NotificationsView);
 
 module.exports = F8NotificationsWithData;
-
-// module.exports = connect(select, actions)(F8NotificationsView);
