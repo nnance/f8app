@@ -24,7 +24,7 @@
 
 'use strict';
 
-const createParseReducer = require('./createParseReducer');
+const createApolloReducer = require('./createApolloReducer');
 
 export type Page = {
   id: string;
@@ -33,13 +33,8 @@ export type Page = {
   logo: string;
 };
 
-function fromParseObject(map: Object): Page {
-  return {
-    id: map.id,
-    title: map.get('title'),
-    logo: map.get('logo') ? map.get('logo').url() : `https://graph.facebook.com/${map.get('alias')}/picture?type=large`,
-    url: `https://www.facebook.com/${map.get('alias')}`,
-  };
+function reducer(action: Object): Map[] {
+  return action.data.viewer.pages;
 }
 
-module.exports = createParseReducer('LOADED_PAGES', fromParseObject);
+module.exports = createApolloReducer('LOADED_PAGES', reducer);

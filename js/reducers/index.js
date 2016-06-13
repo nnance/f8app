@@ -29,9 +29,9 @@ var { combineReducers } = require('redux');
 module.exports = combineReducers({
   config: require('./config'),
   notifications: require('./notifications'),
-  faqs: require('./viewer').faqs,
-  pages: require('./viewer').pages,
-  maps: require('./viewer').maps,
+  faqs: require('./faqs'),
+  pages: require('./pages'),
+  maps: require('./maps'),
   sessions: require('./sessions'),
   user: require('./user'),
   schedule: require('./schedule'),

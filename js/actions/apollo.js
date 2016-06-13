@@ -1,7 +1,6 @@
 'use strict';
 
 const logError = require('logError');
-const InteractionManager = require('InteractionManager');
 import gql from 'apollo-client/gql';
 import apollo from '../store/apollo';
 
@@ -14,7 +13,7 @@ function loadApolloQuery(type, query): ThunkAction {
 
       if (data) {
         if (Array.isArray(type)) {
-          type.forEach(eachType => dispatch({type: eachType, data}))
+          type.forEach(eachType => dispatch({type: eachType, data}));
         } else {
           dispatch({type, data});
         }
@@ -24,7 +23,7 @@ function loadApolloQuery(type, query): ThunkAction {
         console.log('got some GraphQL execution errors', errors);
       }
     }).catch(logError);
-  }
+  };
 }
 
 function loadViewer() : ThunkAction {
@@ -62,10 +61,10 @@ function loadViewer() : ThunkAction {
     forceFetch: false
   });
 
-  const actions = ['LOADED_VIEWER', 'LOADED_NOTIFICATIONS'];
+  const actions = ['LOADED_PAGES', 'LOADED_MAPS', 'LOADED_FAQS', 'LOADED_NOTIFICATIONS'];
   return loadApolloQuery(actions, query);
 }
-
+/*
 function loadSessions() : ThunkAction {
   const query = apollo.query({
     query: gql`
@@ -100,7 +99,7 @@ function loadSessions() : ThunkAction {
 
   return loadApolloQuery('LOADED_SESSIONS', query);
 }
-
+*/
 module.exports = {
   loadViewer,
   // loadSessions,
