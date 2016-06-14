@@ -199,6 +199,7 @@
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				789BB91E5A251077BA8A4EE8 /* 📦 Embed Pods Frameworks */,
 				F391BEA07F3C4EAAEE2D8F23 /* 📦 Copy Pods Resources */,
+				346A372B5B580B9013DAC947 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -303,6 +304,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "../node_modules/react-native/packager/react-native-xcode.sh\n../scripts/store-ip.sh";
+		};
+		346A372B5B580B9013DAC947 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-F8v2/Pods-F8v2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		789BB91E5A251077BA8A4EE8 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

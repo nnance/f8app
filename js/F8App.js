@@ -36,13 +36,11 @@ var View = require('View');
 var StatusBar = require('StatusBar');
 var {
   loadConfig,
-  loadMaps,
+  loadViewer,
   loadNotifications,
   loadSessions,
   loadFriendsSchedules,
   loadSurveys,
-  loadFaqs,
-  loadPages
 } = require('./actions');
 var { updateInstallation } = require('./actions/installation');
 var { connect } = require('react-redux');
@@ -54,6 +52,8 @@ var F8App = React.createClass({
     AppState.addEventListener('change', this.handleAppStateChange);
 
     // TODO: Make this list smaller, we basically download the whole internet
+    this.props.dispatch(loadViewer());
+    this.props.dispatch(loadNotifications());
     this.props.dispatch(loadConfig());
     this.props.dispatch(loadSessions());
     this.props.dispatch(loadFriendsSchedules());

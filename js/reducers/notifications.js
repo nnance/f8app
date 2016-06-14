@@ -64,6 +64,10 @@ import type {Action} from '../actions/types';
 
 function notifications(state: State = initialState, action: Action): State {
   switch (action.type) {
+    case 'LOADED_NOTIFICATIONS':
+      let list = action.data.viewer.notifications;
+      return {...state, server: list};
+
     case 'RECEIVED_PUSH_NOTIFICATION':
       return {...state, push: append(action.notification, state.push)};
 
@@ -104,15 +108,6 @@ function fetchAllIds(notifs: Array<Notification>): SeenNotifications {
     seen[notification.id] = true;
   });
   return seen;
-}
-
-function fromParseObject(object: Object): Notification {
-  return {
-    id: object.id,
-    text: object.get('text'),
-    url: object.get('url'),
-    time: object.createdAt.getTime(),
-  };
 }
 
 module.exports = notifications;

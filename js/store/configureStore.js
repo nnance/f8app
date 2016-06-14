@@ -33,7 +33,6 @@ var reducers = require('../reducers');
 var createLogger = require('redux-logger');
 var {persistStore, autoRehydrate} = require('redux-persist');
 var {AsyncStorage} = require('react-native');
-var apollo = require('./apollo');
 
 var isDebuggingInChrome = __DEV__ && !!window.navigator.userAgent;
 
@@ -43,7 +42,7 @@ var logger = createLogger({
   duration: true,
 });
 
-var createF8Store = applyMiddleware(thunk, promise, array, analytics, logger, apollo.middleware())(createStore);
+var createF8Store = applyMiddleware(thunk, promise, array, analytics, logger)(createStore);
 
 function configureStore(onComplete: ?() => void) {
   // TODO(frantic): reconsider usage of redux-persist, maybe add cache breaker

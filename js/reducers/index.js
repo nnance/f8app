@@ -29,6 +29,8 @@ var { combineReducers } = require('redux');
 module.exports = combineReducers({
   config: require('./config'),
   notifications: require('./notifications'),
+  faqs: require('./faqs'),
+  pages: require('./pages'),
   maps: require('./maps'),
   sessions: require('./sessions'),
   user: require('./user'),
@@ -38,5 +40,4 @@ module.exports = combineReducers({
   navigation: require('./navigation'),
   friendsSchedules: require('./friendsSchedules'),
   surveys: require('./surveys'),
-  apollo: require('../store/apollo').reducer(),
 });

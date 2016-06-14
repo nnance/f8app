@@ -24,28 +24,17 @@
 
 'use strict';
 
-const viewerActions = require('./viewer');
-const sessionActions = require('./session');
-const navigationActions = require('./navigation');
-const loginActions = require('./login');
-const scheduleActions = require('./schedule');
-const filterActions = require('./filter');
-const notificationActions = require('./notifications');
-const configActions = require('./config');
-const surveyActions = require('./surveys');
-const testActions = require('./test');
-const installationActions = require('./installation');
+const createApolloReducer = require('./createApolloReducer');
 
-module.exports = {
-  ...loginActions,
-  ...scheduleActions,
-  ...filterActions,
-  ...notificationActions,
-  ...configActions,
-  ...surveyActions,
-  ...testActions,
-  ...viewerActions,
-  ...sessionActions,
-  ...navigationActions,
-  ...installationActions,
+export type Page = {
+  id: string;
+  title: string;
+  url: string;
+  logo: string;
 };
+
+function reducer(action: Object): Map[] {
+  return action.data.viewer.pages;
+}
+
+module.exports = createApolloReducer('LOADED_PAGES', reducer);

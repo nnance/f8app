@@ -34,11 +34,9 @@ var MapView = require('../../common/MapView');
 var React = require('React');
 var StyleSheet = require('F8StyleSheet');
 var View = require('View');
+var { connect } = require('react-redux');
 
 var VENUE_ADDRESS = '2 Marina Blvd, San Francisco, CA 94123';
-
-import gql from 'apollo-client/gql';
-import { connect } from 'react-apollo';
 
 class F8MapView extends React.Component {
   constructor() {
@@ -49,12 +47,8 @@ class F8MapView extends React.Component {
   }
 
   render() {
-    if (this.props.mapView.loading) {
-      return null;
-    }
+    const {map1, map2} = this.props;
 
-    const map1 = this.props.mapView.viewer.maps.find((map) => map.name === 'Overview');
-    const map2 = this.props.mapView.viewer.maps.find((map) => map.name === 'Developer Garage');
 
     return (
       <View style={styles.container}>
@@ -67,7 +61,7 @@ class F8MapView extends React.Component {
             renderEmptyList={() => <MapView map={map1} />}
           />
           <PureListView
-            title="Developer Garage:"
+            title="Developer Garage"
             renderEmptyList={() => <MapView map={map2} />}
           />
         </ListContainer>
@@ -138,24 +132,11 @@ var styles = StyleSheet.create({
   },
 });
 
-const F8MapWithData = connect({
-  mapQueriesToProps: ({ ownProps }) => ({
-    mapView: {
-      query: gql`
-        query viewer {
-          viewer {
-            maps{
-              id
-              name
-              x1url
-              x2url
-              x3url
-            }
-          }
-        }
-      `
-    }
-  })
-})(F8MapView);
+function select(store) {
+  return {
+    map1: store.maps.find((map) => map.name === 'Overview'),
+    map2: store.maps.find((map) => map.name === 'Developer Garage'),
+  };
+}
 
-module.exports = F8MapWithData;
+module.exports = connect(select)(F8MapView);

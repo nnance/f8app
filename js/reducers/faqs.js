@@ -24,22 +24,16 @@
 
 'use strict';
 
-import type { Action } from '../actions/types';
+const createApolloReducer = require('./createApolloReducer');
 
-type Convert<T> = (object: Object) => T;
-type Reducer<T> = (state: ?Array<T>, action: any) => Array<T>;
+export type Faq = {
+  id: string;
+  question: string;
+  answer: string;
+};
 
-function createParseReducer<T>(
-  type: string,
-  convert: Convert<T>
-): Reducer<T> {
-  return function(state: ?Array<T>, action: Action): Array<T> {
-    if (action.type === type) {
-      // Flow can't guarantee {type, list} is a valid action
-      return (action: any).list.map(convert);
-    }
-    return state || [];
-  };
+function reducer(action: Object): Faq[] {
+  return action.data.viewer.faqs;
 }
 
-module.exports = createParseReducer;
+module.exports = createApolloReducer('LOADED_FAQS', reducer);

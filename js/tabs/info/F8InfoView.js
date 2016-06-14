@@ -32,8 +32,10 @@ var React = require('React');
 var View = require('View');
 var WiFiDetails = require('./WiFiDetails');
 
-import gql from 'apollo-client/gql';
-import { connect } from 'react-apollo';
+const {connect} = require('react-redux');
+import type {Config} from '../../reducers/config';
+import type {Faq} from '../../reducers/faq';
+import type {Page} from '../../reducers/pages';
 
 const POLICIES_LINKS = [{
   title: 'Terms of Service',
@@ -47,13 +49,13 @@ const POLICIES_LINKS = [{
 }];
 
 class F8InfoView extends React.Component {
+  pprops: {
+    config: Config,
+    faqs: Faq[],
+    pages: Page[]
+  };
+
   render() {
-
-    if (this.props.infoView.loading) {
-      return null;
-    }
-
-    const {config, faqs, pages} = this.props.infoView.viewer;
     return (
       <ListContainer
         title="Information"
@@ -63,11 +65,11 @@ class F8InfoView extends React.Component {
           renderEmptyList={() => (
             <View>
               <WiFiDetails
-                network={config.wifiNetwork}
-                password={config.wifiPassword}
+                network={this.props.config.wifiNetwork}
+                password={this.props.config.wifiPassword}
               />
-              <CommonQuestions faqs={faqs} />
-              <LinksList title="Facebook pages" links={pages} />
+              <CommonQuestions faqs={this.props.faqs} />
+              <LinksList title="Facebook pages" links={this.props.pages} />
               <LinksList title="Facebook policies" links={POLICIES_LINKS} />
             </View>
           )}/>
@@ -76,32 +78,11 @@ class F8InfoView extends React.Component {
   }
 }
 
-const InfoWithData = connect({
-  mapQueriesToProps: ({ ownProps }) => ({
-    infoView: {
-      query: gql`
-        query viewer {
-          viewer {
-            pages {
-              id
-              title
-              url
-              logo
-            }
-            faqs {
-              id
-              question
-              answer
-            }
-            config {
-              wifiNetwork
-              wifiPassword
-            }
-          }
-        }
-      `
-    }
-  })
-})(F8InfoView);
-
-module.exports = InfoWithData;
+function select(store) {
+  return {
+    config: store.config,
+    faqs: store.faqs,
+    pages: store.pages
+  };
+}
+module.exports = connect(select)(F8InfoView);
