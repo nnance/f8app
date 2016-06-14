@@ -24,7 +24,7 @@
 
 'use strict';
 
-const createParseReducer = require('./createParseReducer');
+const createApolloReducer = require('./createApolloReducer');
 
 export type Speaker = {
   id: string;
@@ -51,53 +51,22 @@ export type Session = {
   location: ?string;
 };
 
-function fromParseSpeaker(speaker: Object): Speaker {
-  var pic = speaker.get('speakerPic');
-  return {
-    id: speaker.id,
-    bio: speaker.get('speakerBio'),
-    name: speaker.get('speakerName'),
-    pic: pic && pic.url(),
-    title: speaker.get('speakerTitle'),
-  };
-}
-
-function fromParseSessions(session: Object): Session {
-  return {
-    id: session.id,
-    day: session.get('day'),
-    allDay: session.get('allDay'),
-    title: session.get('sessionTitle'),
-    description: session.get('sessionDescription'),
-    hasDetails: session.get('hasDetails'),
-    slug: session.get('sessionSlug'),
-    speakers: (session.get('speakers') || []).map(fromParseSpeaker),
-    onMySchedule: session.get('onMySchedule'),
-    tags: session.get('tags') || [],
-    startTime: session.get('startTime') && session.get('startTime').getTime(),
-    endTime: session.get('endTime') && session.get('endTime').getTime(),
-    map: session.get('sessionMap') && session.get('sessionMap').url(),
-    location: session.get('sessionLocation'),
-  };
-}
-
-function fromGraphQL(data): Session[] {
-  console.log(data)
-  return data.schedule.map(session => {
+function reducer(action: Object): Session[] {
+  return action.data.schedule.map(session => {
     return {
       id: session.id,
       day: session.day,
-      allDay: false,
+      allDay: session.allDay,
       title: session.title,
       description: session.description,
-      hasDetails: false,
+      hasDetails: session.hasDetails,
       slug: session.slug,
-      onMySchedule: false,
+      onMySchedule: session.isAdded,
       tags: session.tags,
       startTime: session.startTime, // start time
       endTime: session.endTime, // end time
       map: session.location.x1url,
-      location: session.location,
+      location: session.location.name,
       speakers: session.speakers.map(speaker => {
         return {
           id: speaker.id,
@@ -105,10 +74,10 @@ function fromGraphQL(data): Session[] {
           name: speaker.name,
           pic: speaker.picture,
           title: speaker.title,
-        }
+        };
       }),
-    }
+    };
   });
 }
 
-module.exports = createParseReducer('LOADED_SESSIONS', fromParseSessions);
+module.exports = createApolloReducer('LOADED_SESSIONS', reducer);

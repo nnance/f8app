@@ -24,8 +24,8 @@
 
 'use strict';
 
-const parseActions = require('./parse');
-const apolloActions = require('./apollo');
+const viewerActions = require('./viewer');
+const sessionActions = require('./session');
 const navigationActions = require('./navigation');
 const loginActions = require('./login');
 const scheduleActions = require('./schedule');
@@ -44,8 +44,8 @@ module.exports = {
   ...configActions,
   ...surveyActions,
   ...testActions,
-  ...parseActions,
-  ...apolloActions,
+  ...viewerActions,
+  ...sessionActions,
   ...navigationActions,
   ...installationActions,
 };

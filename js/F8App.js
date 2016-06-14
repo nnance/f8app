@@ -37,6 +37,7 @@ var StatusBar = require('StatusBar');
 var {
   loadConfig,
   loadViewer,
+  loadNotifications,
   loadSessions,
   loadFriendsSchedules,
   loadSurveys,
