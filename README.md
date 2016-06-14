@@ -1,12 +1,14 @@
-# F8 App 2016
+# F8 App 2016 - Apollo
 
-This is the entire source code of the official [F8](https://fbf8.com/) app of 2016, available on [Google Play](https://play.google.com/store/apps/details?id=com.facebook.f8) and the [App Store](https://itunes.apple.com/us/app/f8/id853467066).
+This is a refactor of the official [F8](https://fbf8.com/) app of 2016, to the [Apollo Stack](http://www.apollostack.com/). As part of the refactor I have made the following changes:
+
+* Removed the use of Relay on both the server and client.
+* Replaced the Parse client with the Apollo client for all the data loading on the client.
+* Fully implemented all data requirements in the GraphQL server.
+
+The implementation found in the master branch leaves the application architecture intact with the use of react-redux actions.  There is a version of the app that uses react-apollo in the react-apollo-connect branch which is a WIP.
 
 <img src=".github/screenshot-app@2x.png" width="800">
-
-## How We Build It
-
-We've created a series of tutorials at [makeitopen.com](http://makeitopen.com/) that explain how we built the app, and that dive into how we used React Native, Redux, Relay, GraphQL, and more.
 
 ## Requirements
 
@@ -21,8 +23,8 @@ We've created a series of tutorials at [makeitopen.com](http://makeitopen.com/) 
 1. **Clone the repo**
 
   ```
-  $ git clone https://github.com/fbsamples/f8app.git
-  $ cd f8app
+  $ git clone https://github.com/nnance/f8app-apollo
+  $ cd f8app-apollo
   ```
 
 2. **Install dependencies** (npm v3+):
