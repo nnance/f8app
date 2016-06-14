@@ -192,6 +192,16 @@ var F8SessionType = new GraphQLObjectType({
         return !!USERS_SCHEDULE[session.id];
       },
     },
+    allDay: {
+      type: GraphQLBoolean,
+      description: 'Is an all day session',
+      resolve: (session) => session.get('allDay'),
+    },
+    hasDetails: {
+      type: GraphQLBoolean,
+      description: 'The session has details',
+      resolve: (session) => session.get('hasDetails'),
+    },
     friends: {
       type: new GraphQLList(F8FriendType),
       description: 'User\'s friends who attend this session',
