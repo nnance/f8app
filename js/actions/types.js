@@ -28,9 +28,7 @@ type ParseObject = Object;
 
 export type Action =
     { type: 'LOADED_ABOUT', list: Array<ParseObject> }
-  | { type: 'LOADED_NOTIFICATIONS', list: Array<ParseObject> }
   | { type: 'LOADED_MAPS', list: Array<ParseObject> }
-  | { type: 'LOADED_FAQS', list: Array<ParseObject> }
   | { type: 'LOADED_FRIENDS_SCHEDULES', list: Array<{ id: string; name: string; schedule: {[key: string]: boolean}; }> }
   | { type: 'LOADED_CONFIG', config: ParseObject }
   | { type: 'LOADED_SESSIONS', list: Array<ParseObject> }
