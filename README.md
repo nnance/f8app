@@ -1,12 +1,12 @@
 # F8 App 2016 - Apollo
 
-This is a refactor of the official [F8](https://fbf8.com/) app of 2016, to the [Apollo Stack](http://www.apollostack.com/). As part of the refactor I have made the following changes:
+This is a refactored version of the official [F8](https://fbf8.com/) app of 2016, that uses the [Apollo Stack](http://www.apollostack.com/). As part of the refactor I have made the following changes:
 
 * Removed the use of Relay on both the server and client.
-* Replaced the Parse client with the Apollo client for all the data loading on the client.
+* Replaced the Parse client with the Apollo client for all the data loading.
 * Fully implemented all data requirements in the GraphQL server.
 
-The implementation found in the master branch leaves the application architecture intact with the use of react-redux actions.  There is a version of the app that uses react-apollo in the react-apollo-connect branch which is a WIP.
+The implementation found in the master branch leaves the application architecture intact with the use of react-redux.  There is a version of the app that uses react-apollo in the react-apollo-connect branch which is a WIP.
 
 <img src=".github/screenshot-app@2x.png" width="800">
 

@@ -29,7 +29,7 @@ var FacebookSDK = require('FacebookSDK');
 var Parse = require('parse/react-native');
 var React = require('React');
 
-import { ApolloProvider } from 'react-apollo';
+var { Provider } = require('react-redux');
 
 var apollo = require('./store/apollo');
 var configureStore = require('./store/configureStore');
@@ -58,9 +58,9 @@ function setup(): React.Component {
         return null;
       }
       return (
-        <ApolloProvider store={this.state.store} client={this.state.client}>
+        <Provider store={this.state.store} client={this.state.client}>
           <F8App />
-        </ApolloProvider>
+        </Provider>
       );
     }
   }

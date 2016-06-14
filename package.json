@@ -23,7 +23,6 @@
     "parse-dashboard": "~1.0.8",
     "parse-server": "~2.2.6",
     "react": "~0.14.5",
-    "react-apollo": "^0.3.7",
     "react-native": "0.23.1",
     "react-native-code-push": "~1.7.3-beta",
     "react-native-fbsdk": "github:facebook/react-native-fbsdk#0.1.0-alpha.1",
