@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/digithun/clogii-mobile.png?label=ready&title=Ready)](https://waffle.io/digithun/clogii-mobile)
 # F8 App 2016 - Apollo
 
 This is a refactored version of the official [F8](https://fbf8.com/) app of 2016, that uses the [Apollo Stack](http://www.apollostack.com/). As part of the refactor I have made the following changes:
