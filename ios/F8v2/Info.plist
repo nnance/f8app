@@ -25,7 +25,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb619048868222429</string>
+				<string>fb1169214676490767</string>
 				<string>f8</string>
 			</array>
 		</dict>
@@ -35,7 +35,7 @@
 	<key>CodePushDeploymentKey</key>
 	<string>XZu3PfXXkUa7LkYujXEQtrdN4l87EJ6b-AFoe</string>
 	<key>FacebookAppID</key>
-	<string>619048868222429</string>
+	<string>1169214676490767</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fb-messenger-api</string>
