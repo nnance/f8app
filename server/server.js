@@ -67,6 +67,7 @@ server.use(
     serverURL: `http://${SERVER_HOST}:${SERVER_PORT}/parse`,
     publicServerURL: `http://${SERVER_HOST}:${SERVER_PORT}/parse`,
     appName: APP_NAME,
+    verifyUserEmails: true,
     emailAdapter: {
       module: 'parse-server-simple-mailgun-adapter',
       options: {
