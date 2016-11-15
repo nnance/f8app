@@ -1,9 +1,8 @@
-import * as _Parse from 'parse'
 import { createAction } from 'redux-actions'
 
 import * as types from './actionTypes'
 
-let Parse = _Parse
+let Parse = null
 
 export function setParse(_Parse) {
   Parse = _Parse

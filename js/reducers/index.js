@@ -24,6 +24,8 @@
 
 'use strict';
 
+import * as auth from '../../web/features/auth';
+
 var { combineReducers } = require('redux');
 
 module.exports = combineReducers({
@@ -40,4 +42,5 @@ module.exports = combineReducers({
   navigation: require('./navigation'),
   friendsSchedules: require('./friendsSchedules'),
   surveys: require('./surveys'),
+  [auth.constants.NAME]: auth.reducer
 });

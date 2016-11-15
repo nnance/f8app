@@ -28,5 +28,8 @@ export default StyleSheet.create({
   forgotPasswordText: {
     paddingHorizontal: width * 0.1,
     alignSelf: 'flex-end'
+  },
+  errorText: {
+    color: 'red'
   }
 })

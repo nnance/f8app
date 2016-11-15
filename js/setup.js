@@ -29,12 +29,19 @@ var FacebookSDK = require('FacebookSDK');
 var Parse = require('parse/react-native');
 var React = require('React');
 
+import {setParse} from '../web/features/auth'
+
+setParse(Parse)
+
 var { Provider } = require('react-redux');
 
 var apollo = require('./store/apollo');
 var configureStore = require('./store/configureStore');
 
 var {serverURL} = require('./env');
+
+// Playground
+import Index from './login/Email/Index'
 
 function setup(): React.Component {
   console.disableYellowBox = true;
@@ -59,7 +66,7 @@ function setup(): React.Component {
       }
       return (
         <Provider store={this.state.store} client={this.state.client}>
-          <F8App />
+          <Index/>
         </Provider>
       );
     }
