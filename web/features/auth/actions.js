@@ -1,7 +1,13 @@
-import Parse from 'parse'
+import * as _Parse from 'parse'
 import { createAction } from 'redux-actions'
 
 import * as types from './actionTypes'
+
+let Parse = _Parse
+
+export function setParse(_Parse) {
+  Parse = _Parse
+}
 
 export const logingIn = createAction(types.LOGING_IN)
 export const loggedIn = createAction(types.LOGGED_IN)
