@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "babel-node ./server/server.js",
+    "dev-web": "next ./web",
     "import-data": "babel-node ./scripts/import-data-from-parse.js",
     "test": "jest",
     "lint": "eslint ."
@@ -19,6 +20,7 @@
     "graphql-tools": "^0.5.0",
     "immutable": "~3.7.6",
     "moment": "~2.11.2",
+    "next": "^1.1.1",
     "parse": "~1.8.2",
     "parse-dashboard": "~1.0.8",
     "parse-server": "~2.2.6",
@@ -33,18 +35,19 @@
     "react-redux": "~4.3.0",
     "react-timer-mixin": "~0.13.3",
     "redux": "~3.2.1",
-    "redux-logger": "~2.5.0",
+    "redux-actions": "^0.13.0",
+    "redux-logger": "https://registry.npmjs.org/redux-logger/-/redux-logger-2.5.2.tgz",
     "redux-persist": "~1.5.0",
     "redux-thunk": "~1.0.3",
     "reselect": "~2.0.3"
   },
   "devDependencies": {
     "babel-eslint": "~4.1.8",
-    "babel-jest": "~9.0.3",
+    "babel-jest": "^17.0.2",
     "babel-polyfill": "~6.7.2",
     "eslint": "~1.10.3",
     "eslint-plugin-react": "~3.16.1",
-    "jest-cli": "~0.9.2"
+    "jest": "^17.0.2"
   },
   "jest": {
     "haste": {

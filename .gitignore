@@ -31,6 +31,10 @@ ios/F8v2.xcworkspace
 local.properties
 *.iml
 
+# Next.js Build
+#
+.next
+
 # node.js
 #
 node_modules/
