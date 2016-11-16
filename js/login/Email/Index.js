@@ -4,7 +4,7 @@ import React from 'React';
 import {BackAndroid, Navigator, Text} from 'react-native';
 import {connect} from 'react-redux';
 
-import {actions, selector} from '../../../web/features/auth';
+import * as actions from '../../actions/login';
 
 import LoginScreen from './LoginScreen';
 import SignupScreen from './SignupScreen';
@@ -31,12 +31,12 @@ class Index extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.forgotPasswordState === 'ed') {
-      this.props.clearState();
+    if (nextProps.isReqedForgotPassword) {
+      this.props.clearIsReqedForgotPassword();
       this.pushPage('success', {successText: 'mail has been sent'});
     }
-    if (nextProps.signUpState === 'ed') {
-      this.props.clearState();
+    if (nextProps.isSignedUp) {
+      this.props.clearSignedUp();
       this.pushPage('success', {successText: 'signed up'});
     }
   }
@@ -87,6 +87,8 @@ class Index extends React.Component {
 
   pushPage(page, payload) {
     this.props.clearError();
+    this.props.clearIsReqedForgotPassword();
+    this.props.clearSignedUp();
     this.refs.navigator.push({page, payload});
   }
 
@@ -97,18 +99,19 @@ class Index extends React.Component {
 }
 
 const select = state => ({
-  user: selector.user(state),
-  error: selector.error(state),
-  forgotPasswordState: selector.forgotPasswordState(state),
-  signUpState: selector.signUpState(state)
-})
+  user: 'test',
+  isSignedUp: state.user.isSignedUp,
+  isReqedForgotPassword: state.user.isReqedForgotPassword,
+  error: state.user.loginError
+});
 
 const actionsMaping = {
   clearError: actions.clearError,
   logIn: actions.logIn,
   signUp: actions.signUp,
   forgotPassword: actions.forgotPassword,
-  clearState: actions.clearState
-}
+  clearSignedUp: actions.clearSignedUp,
+  clearIsReqedForgotPassword: actions.clearIsReqedForgotPassword
+};
 
 export default connect(select, actionsMaping)(Index);

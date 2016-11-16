@@ -35,6 +35,11 @@ export type Action =
   | { type: 'LOADED_SURVEYS', list: Array<Object> }
   | { type: 'SUBMITTED_SURVEY_ANSWERS', id: string; }
   | { type: 'LOGGED_IN', source: ?string; data: { id: string; name: string; sharedSchedule: ?boolean; } }
+  | { type: 'LOGIN_ERROR', message: string }
+  | { type: 'CLEAR_LOGIN_ERROR' }
+  | { type: 'SIGNED_UP' }
+  | { type: 'REQED_FORGOT_PASSWORD' }
+  | { type: 'CLEAR_IS_REQED_FORGOT_PASSWORD' }
   | { type: 'RESTORED_SCHEDULE', list: Array<ParseObject> }
   | { type: 'SKIPPED_LOGIN' }
   | { type: 'LOGGED_OUT' }

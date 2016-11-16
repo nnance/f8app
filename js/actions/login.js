@@ -83,9 +83,72 @@ async function _logInWithFacebook(source: ?string): Promise<Array<Action>> {
   ]);
 }
 
+const signUp = (email: string, password: string, confirmPassword) => dispatch => {
+  if (password !== confirmPassword) {
+    dispatch(logInError('password not match'));
+    return;
+  }
+  const user = new Parse.User();
+  user.set('username', email);
+  user.set('password', password);
+  user.set('email', email);
+  return user.save().then(() => {
+    dispatch(signedUp());
+  }, error => {
+    dispatch(logInError(!!error.message ? error.message : error));
+  });
+};
+
+function clearSignedUp(): Action {
+  return {
+    type: 'CLEAR_SIGNED_UP'
+  };
+}
+
+function signedUp(): Action {
+  return {
+    type: 'SIGNED_UP'
+  };
+}
+
+const logIn = (email: string, password: string) => dispatch => {
+  return Parse.User.logIn(email, password).then(
+    async () => {
+      const user = await Parse.User.currentAsync();
+      await updateInstallation({user});
+      const action = {
+        type: 'LOGGED_IN',
+        data: {
+          id: '1',
+          name: 'logged in with email',
+          sharedSchedule: user.get('sharedSchedule'),
+        },
+      };
+      dispatch(action);
+      dispatch(restoreSchedule());
+    }
+  ).catch(error => {
+    const errorMessage = error.message ? error.message : error;
+    dispatch(logInError(errorMessage));
+  });
+}
+
+function logInError(message: string): Action {
+  return {
+    type: 'LOGIN_ERROR',
+    message
+  };
+}
+
+function clearError(): Action {
+  return {
+    type: 'CLEAR_LOGIN_ERROR'
+  };
+}
+
 function logInWithFacebook(source: ?string): ThunkAction {
   return (dispatch) => {
-    const login = _logInWithFacebook(source);
+  const login = _logInWithFacebook(source);
 
     // Loading friends schedules shouldn't block the login process
     login.then(
@@ -102,6 +165,26 @@ function logInWithFacebook(source: ?string): ThunkAction {
 function skipLogin(): Action {
   return {
     type: 'SKIPPED_LOGIN',
+  };
+}
+
+const forgotPassword: ThunkAction = email => dispatch => {
+  return Parse.User.requestPasswordReset(email).then(() => {
+    dispatch(reqedForgotPassword())
+  }, error => {
+    dispatch(logInError(error.message))
+  });
+}
+
+function clearIsReqedForgotPassword(): Action {
+  return {
+    type: 'CLEAR_IS_REQED_FORGOT_PASSWORD'
+  };
+}
+
+function reqedForgotPassword(): Action {
+  return {
+    type: 'REQED_FORGOT_PASSWORD'
   };
 }
 
@@ -149,4 +232,14 @@ function logOutWithPrompt(): ThunkAction {
   };
 }
 
-module.exports = {logInWithFacebook, skipLogin, logOut, logOutWithPrompt};
+module.exports = {
+  clearError,
+  clearIsReqedForgotPassword,
+  logInWithFacebook,
+  skipLogin,
+  forgotPassword,
+  signUp,
+  logIn,
+  logOut,
+  logOutWithPrompt,
+  clearSignedUp};

@@ -27,22 +27,64 @@
 import type {Action} from '../actions/types';
 
 export type State = {
+  isReqedForgotPassword: boolean;
+  isSignedUp: boolean;
   isLoggedIn: boolean;
   hasSkippedLogin: boolean;
   sharedSchedule: ?boolean;
+  loginError: ?string;
   id: ?string;
   name: ?string;
 };
 
 const initialState = {
+  isReqedForgotPassword: false,
+  isSignedUp: false,
   isLoggedIn: false,
   hasSkippedLogin: false,
   sharedSchedule: null,
+  loginError: null,
   id: null,
   name: null,
 };
 
 function user(state: State = initialState, action: Action): State {
+  if (action.type === 'CLEAR_IS_REQED_FORGOT_PASSWORD') {
+    return {
+      ...state,
+      isReqedForgotPassword: false
+    };
+  }
+  if (action.type === 'REQED_FORGOT_PASSWORD') {
+    return {
+      ...state,
+      isReqedForgotPassword: true
+    };
+  }
+  if (action.type === 'SIGNED_UP') {
+    return {
+      ...state,
+      isSignedUp: true
+    };
+  }
+  if (action.type === 'CLEAR_SIGNED_UP') {
+    return {
+      ...state,
+      isSignedUp: false
+    };
+  }
+  if (action.type === 'LOGIN_ERROR') {
+    return {
+      ...state,
+      loginError: action.message
+    };
+  }
+  if (action.type === 'CLEAR_LOGIN_ERROR') {
+    return {
+      ...state,
+      loginError: null
+    };
+  }
   if (action.type === 'LOGGED_IN') {
     let {id, name, sharedSchedule} = action.data;
     if (sharedSchedule === undefined) {
