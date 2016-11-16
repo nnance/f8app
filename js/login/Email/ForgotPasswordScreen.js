@@ -3,10 +3,12 @@
 import React from 'React';
 import {Image, View, Text, TextInput} from 'react-native';
 import F8Button from 'F8Button';
+import {connect} from 'react-redux';
+import {actions, selector} from '../../../web/features/auth';
 
 import styles from './styles';
 
-export default class ForgotPasswordScreen extends React.Component {
+class ForgotPasswordScreen extends React.Component {
   constructor() {
     super()
   }
@@ -17,13 +19,25 @@ export default class ForgotPasswordScreen extends React.Component {
         style={styles.container}
         source={require('../img/login-background.png')}>
         <View style={styles.inputSession}>
-          <TextInput style={styles.input} placeholder='email'/>
+          <Text style={styles.errorText}>{this.props.error}</Text>
+          <TextInput onChangeText={(email) => this.email = email} style={styles.input} placeholder='email'/>
         </View>
         <View style={styles.buttonSession}>
-          <F8Button caption='Forgot password' onPress={() => console.log('Forgot password Click ;)')}/>
+          <F8Button caption='Forgot password' onPress={() => this.props.forgotPassword(this.email)}/>
           <Text style={styles.changePageText} onPress={() => this.props.goBack()}>or back to login</Text>
         </View>
       </Image>
     )
   }
 }
+
+const select = state => ({
+  user: selector.user(state),
+  error: selector.error(state)
+})
+
+const actionsMaping = {
+  forgotPassword: actions.forgotPassword
+}
+
+export default connect(select, actionsMaping)(ForgotPasswordScreen)
