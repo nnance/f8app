@@ -4,11 +4,13 @@ import React from 'React';
 import LoginScreen from './LoginScreen';
 import SignupScreen from './SignupScreen';
 import ForgotPasswordScreen from './ForgotPasswordScreen';
+import SuccessScreen from './SuccessScreen';
 import {BackAndroid, Navigator, Text} from 'react-native';
 
 export default class Index extends React.Component {
   constructor() {
     super();
+    this.goToLogin = this.goToLogin.bind(this);
     this.pushPage = this.pushPage.bind(this);
     this.goBack = this.goBack.bind(this);
     this.renderScene = this.renderScene.bind(this);
@@ -43,6 +45,9 @@ export default class Index extends React.Component {
     if (route.page === 'forgotPassword') {
       return <ForgotPasswordScreen pushPage={this.pushPage} goBack={this.goBack}/>;
     }
+    if (route.page === 'success') {
+      return <SuccessScreen successText={route.payload.successText} goToLogin={this.goToLogin}/>;
+    }
     return <Text>Page not found</Text>;
   }
 
@@ -55,8 +60,16 @@ export default class Index extends React.Component {
     return false;
   }
 
-  pushPage(page) {
-    this.refs.navigator.push({page});
+  goToLogin() {
+    const navigator = this.refs.navigator;
+    let N = navigator.getCurrentRoutes().length;
+    while(N-- > 1) {
+      navigator.pop();
+    }
+  }
+
+  pushPage(page, payload) {
+    this.refs.navigator.push({page, payload});
   }
 
   goBack() {

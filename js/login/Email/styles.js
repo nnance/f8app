@@ -31,5 +31,9 @@ export default StyleSheet.create({
   },
   errorText: {
     color: 'red'
+  },
+  successText: {
+    color: 'green',
+    fontSize: 20
   }
 })

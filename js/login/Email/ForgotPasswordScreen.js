@@ -9,8 +9,14 @@ import {actions, selector} from '../../../web/features/auth';
 import styles from './styles';
 
 class ForgotPasswordScreen extends React.Component {
-  constructor() {
-    super()
+  componentDidMount() {
+    this.props.clearError()
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.forgotPasswordState === 'ed') {
+      this.props.pushPage('success', {successText: 'mail has been sent'})
+    }
   }
 
   render() {
@@ -33,10 +39,12 @@ class ForgotPasswordScreen extends React.Component {
 
 const select = state => ({
   user: selector.user(state),
-  error: selector.error(state)
+  error: selector.error(state),
+  forgotPasswordState: selector.forgotPasswordState(state)
 })
 
 const actionsMaping = {
+  clearError: actions.clearError,
   forgotPassword: actions.forgotPassword
 }
 

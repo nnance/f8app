@@ -17,6 +17,16 @@ class SignupScreen extends React.Component {
     this.confirmPassword = ''
   }
 
+  componentDidMount() {
+    this.props.clearError();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.signUpState === 'ed') {
+      this.props.pushPage('success', {successText: 'signed Up'})
+    }
+  }
+
   render() {
     return (
       <Image
@@ -42,10 +52,12 @@ class SignupScreen extends React.Component {
 }
 
 const select = state => ({
-  error: selector.error(state)
+  error: selector.error(state),
+  signUpState: selector.signUpState(state)
 });
 
 const actionsMaping = {
+  clearError: actions.clearError,
   signUp: actions.signUp
 };
 

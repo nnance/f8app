@@ -16,6 +16,10 @@ class LoginScreen extends React.Component {
     this.password = ''
   }
 
+  componentDidMount() {
+    this.props.clearError()
+  }
+
   render() {
     return (
       <Image
@@ -46,6 +50,7 @@ const select = state => ({
 })
 
 const actionsMaping = {
+  clearError: actions.clearError,
   logIn: actions.logIn
 }
 
