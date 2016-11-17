@@ -23,6 +23,8 @@
  */
 'use strict';
 
+import {withState} from 'recompose';
+
 var Animated = require('Animated');
 var Dimensions = require('Dimensions');
 var F8Colors = require('F8Colors');
@@ -38,7 +40,22 @@ var TouchableOpacity = require('TouchableOpacity');
 var { skipLogin } = require('../actions');
 var { connect } = require('react-redux');
 
-class LoginScreen extends React.Component {
+import EmailScreen from './Email/Index';
+
+let enhance = withState('page', 'setPage', 'withFacebook');
+
+const LoginScreen = enhance(({page, setPage, ...props}) => {
+  if (page === 'withFacebook') {
+    return (
+      <LoginFacebookScreen {...props} withEmail={() => setPage('withEmail')}/>
+    );
+  }
+  return (
+    <EmailScreen onExit={() => setPage('withFacebook')}/>
+  );
+})
+
+class LoginFacebookScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -89,6 +106,9 @@ class LoginScreen extends React.Component {
         <Animated.View style={[styles.section, styles.last, this.fadeIn(2500, 20)]}>
           <Text style={styles.loginComment}>
             Use Facebook to find your friends at F8.
+          </Text>
+          <Text style={styles.loginComment} onPress={this.props.withEmail}>
+            or with email
           </Text>
           <LoginButton source="First screen" />
         </Animated.View>

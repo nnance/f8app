@@ -66,7 +66,7 @@ function setup(): React.Component {
       }
       return (
         <Provider store={this.state.store} client={this.state.client}>
-          <Index/>
+          <F8App/>
         </Provider>
       );
     }

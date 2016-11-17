@@ -25,6 +25,8 @@
 
 'use strict';
 
+import EmailLogin from './login/Email/Index';
+
 var React = require('React');
 var Platform = require('Platform');
 var BackAndroid = require('BackAndroid');
@@ -43,6 +45,7 @@ var { connect } = require('react-redux');
 var { switchTab } = require('./actions');
 
 var F8Navigator = React.createClass({
+  isBackbuttonPaused: false,
   _handlers: ([]: Array<() => boolean>),
 
   componentDidMount: function() {
@@ -69,6 +72,9 @@ var F8Navigator = React.createClass({
   },
 
   handleBackButton: function() {
+    if (this.isBackbuttonPaused) {
+      return;
+    }
     for (let i = this._handlers.length - 1; i >= 0; i--) {
       if (this._handlers[i]()) {
         return true;
@@ -86,6 +92,14 @@ var F8Navigator = React.createClass({
       return true;
     }
     return false;
+  },
+
+  pauseBackButtonNavigator: function() {
+    this.isBackbuttonPaused = true;
+  },
+
+  unpauseBackButtonNavigator: function() {
+    this.isBackbuttonPaused = false;
   },
 
   render: function() {
@@ -161,6 +175,9 @@ var F8Navigator = React.createClass({
     }
     if (route.notices) {
       return <ThirdPartyNotices navigator={navigator} />;
+    }
+    if (route.logInWithEmail) {
+      return <EmailLogin onEnter={this.pauseBackButtonNavigator} onExit={() => {this.unpauseBackButtonNavigator(); this.refs.navigator.pop();}}/>
     }
     return <F8TabsView navigator={navigator} />;
   },

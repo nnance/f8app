@@ -14,6 +14,7 @@ import SuccessScreen from './SuccessScreen';
 class Index extends React.Component {
   constructor() {
     super();
+    this.isExited = false;
     this.goToLogin = this.goToLogin.bind(this);
     this.pushPage = this.pushPage.bind(this);
     this.goBack = this.goBack.bind(this);
@@ -24,6 +25,9 @@ class Index extends React.Component {
   componentDidMount() {
     BackAndroid.addEventListener('hardwareBackPress', this.handleBackButton);
     this.props.clearError();
+    if (this.props.onEnter) {
+      this.props.onEnter();
+    }
   }
 
   componentWillUnmount() {
@@ -31,6 +35,13 @@ class Index extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    if (nextProps.isLoggedIn) {
+      if (this.props.onExit && !this.isExited) {
+        this.props.onExit();
+        this.isExited = true;
+      }
+      return;
+    }
     if (nextProps.isReqedForgotPassword) {
       this.props.clearIsReqedForgotPassword();
       this.pushPage('success', {successText: 'mail has been sent'});
@@ -53,7 +64,7 @@ class Index extends React.Component {
 
   renderScene(route, navigator) {
     if (route.page === 'login') {
-      return <LoginScreen user={this.props.user} error={this.props.error} logIn={this.props.logIn} pushPage={this.pushPage}/>;
+      return <LoginScreen error={this.props.error} logIn={this.props.logIn} pushPage={this.pushPage}/>;
     }
     if (route.page === 'signup') {
       return <SignupScreen error={this.props.error} signUp={this.props.signUp} pushPage={this.pushPage} goBack={this.goBack}/>;
@@ -71,6 +82,10 @@ class Index extends React.Component {
     const navigator = this.refs.navigator;
     if (navigator && navigator.getCurrentRoutes().length > 1 ) {
       navigator.pop();
+      return true;
+    }
+    if (this.props.onExit) {
+      this.props.onExit();
       return true;
     }
     return false;
@@ -99,7 +114,7 @@ class Index extends React.Component {
 }
 
 const select = state => ({
-  user: 'test',
+  isLoggedIn: state.user.isLoggedIn,
   isSignedUp: state.user.isSignedUp,
   isReqedForgotPassword: state.user.isReqedForgotPassword,
   error: state.user.loginError

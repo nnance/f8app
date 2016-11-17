@@ -131,6 +131,9 @@ class F8TabsView extends React.Component {
           <Text style={styles.loginText}>
             Log in to find your friends at F8.
           </Text>
+          <Text style={styles.loginText} onPress={() => this.props.navigator.push({logInWithEmail: 1})}>
+            or with Email
+          </Text>
           <LoginButton source="Drawer" />
         </View>
       );
