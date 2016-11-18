@@ -29,10 +29,6 @@ var FacebookSDK = require('FacebookSDK');
 var Parse = require('parse/react-native');
 var React = require('React');
 
-import {setParse} from '../web/features/auth'
-
-setParse(Parse)
-
 var { Provider } = require('react-redux');
 
 var apollo = require('./store/apollo');
