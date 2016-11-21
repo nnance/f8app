@@ -52,13 +52,11 @@ import cl.json.RNSharePackage;
 import com.burnweb.rnsendintent.RNSendIntentPackage;
 
 public class MainActivity extends ReactActivity {
-  private CodePush _codePush;
-  private ReactNativePushNotificationPackage _pushNotification;
   private CallbackManager mCallbackManager;
 
     @Override
     protected String getJSBundleFile() {
-        return this._codePush.getBundleUrl("index.android.bundle");
+        return CodePush.getBundleUrl();
     }
 
     /**
@@ -85,8 +83,6 @@ public class MainActivity extends ReactActivity {
    */
     @Override
     protected List<ReactPackage> getPackages() {
-      this._codePush = new CodePush("qwfkzzq7Y8cSrkiuU7aRCkIP7XYLEJ6b-AFoe", this, BuildConfig.DEBUG);
-      this._pushNotification = new ReactNativePushNotificationPackage(this);
       mCallbackManager = new CallbackManager.Factory().create();
 
       return Arrays.<ReactPackage>asList(
@@ -95,8 +91,8 @@ public class MainActivity extends ReactActivity {
         new LinearGradientPackage(),
         new RNSharePackage(),
         new RNSendIntentPackage(),
-        this._codePush.getReactPackage(),
-        this._pushNotification
+        new CodePush("qwfkzzq7Y8cSrkiuU7aRCkIP7XYLEJ6b-AFoe", this, BuildConfig.DEBUG),
+        new ReactNativePushNotificationPackage()
       );
     }
 
@@ -113,9 +109,8 @@ public class MainActivity extends ReactActivity {
     }
 
    @Override
-   protected void onNewIntent (Intent intent) {
+   public void onNewIntent (Intent intent) {
      super.onNewIntent(intent);
-     _pushNotification.newIntent(intent);
    }
 
   @Override
