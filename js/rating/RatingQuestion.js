@@ -23,7 +23,7 @@
  */
 'use strict';
 
-const React = require('react-native');
+const React = require('react');
 const F8Colors = require('F8Colors');
 const {
   Text,
@@ -31,7 +31,7 @@ const {
   View,
   StyleSheet,
   TouchableOpacity,
-} = React;
+} = require('react-native');
 
 export type Question = {
   text: string;

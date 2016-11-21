@@ -32,6 +32,7 @@ var F8Header = require('F8Header');
 var F8SegmentedControl = require('F8SegmentedControl');
 var ParallaxBackground = require('ParallaxBackground');
 var React = require('React');
+var ReactNative = require('react-native');
 var StyleSheet = require('F8StyleSheet');
 var View = require('View');
 var { Text } = require('F8Text');
@@ -282,17 +283,17 @@ class ListContainer extends React.Component {
       var distance = EMPTY_CELL_HEIGHT - this.state.stickyHeaderHeight;
 
       if (this._refs[prevState.idx] && this._refs[prevState.idx].getScrollResponder) {
-        const oldScrollViewTag = React.findNodeHandle(
+        const oldScrollViewTag = ReactNative.findNodeHandle(
           this._refs[prevState.idx].getScrollResponder()
         );
         NativeModules.F8Scrolling.unpin(oldScrollViewTag);
       }
 
       if (this._refs[this.state.idx] && this._refs[this.state.idx].getScrollResponder) {
-        const newScrollViewTag = React.findNodeHandle(
+        const newScrollViewTag = ReactNative.findNodeHandle(
           this._refs[this.state.idx].getScrollResponder()
         );
-        const pinnedViewTag = React.findNodeHandle(this._pinned);
+        const pinnedViewTag = ReactNative.findNodeHandle(this._pinned);
         NativeModules.F8Scrolling.pin(newScrollViewTag, pinnedViewTag, distance);
       }
     }

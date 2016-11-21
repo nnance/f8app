@@ -30,7 +30,7 @@ var Dimensions = require('Dimensions');
 var F8Colors = require('F8Colors');
 var Image = require('Image');
 var React = require('React');
-var StatusBarIOS = require('StatusBarIOS');
+var StatusBar = require('StatusBar');
 var StyleSheet = require('StyleSheet');
 var View = require('View');
 var { Text } = require('F8Text');
@@ -64,7 +64,7 @@ class LoginFacebookScreen extends React.Component {
   }
 
   componentDidMount() {
-    StatusBarIOS && StatusBarIOS.setStyle('default');
+    StatusBar && StatusBar.setBarStyle('default');
     Animated.timing(this.state.anim, {toValue: 3000, duration: 3000}).start();
   }
 

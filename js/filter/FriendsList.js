@@ -24,14 +24,14 @@
 
 'use strict';
 
-var React = require('react-native');
+var React = require('react');
 var {
   Image,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
-} = React;
+} = require('react-native');
 
 type Friend = {
   id: string;
