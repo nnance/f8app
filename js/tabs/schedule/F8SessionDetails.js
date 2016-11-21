@@ -30,7 +30,7 @@ var F8Colors = require('F8Colors');
 var F8FriendGoing = require('F8FriendGoing');
 var F8SpeakerProfile = require('F8SpeakerProfile');
 var Image = require('Image');
-var LinearGradient = require('react-native-linear-gradient');
+import LinearGradient from 'react-native-linear-gradient';
 var MapView = require('../../common/MapView');
 var PixelRatio = require('PixelRatio');
 var React = require('React');
