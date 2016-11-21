@@ -19,8 +19,9 @@ export default StyleSheet.create({
     alignItems: 'center'
   },
   input: {
-    width: 0.8 * width,
-    fontSize: 20
+    width: 0.7 * width,
+    height: 60,
+    alignSelf: 'center'
   },
   changePageText: {
     textAlign: 'center'

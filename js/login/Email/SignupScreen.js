@@ -45,16 +45,16 @@ export default class SignUpScreen extends React.Component {
             {error}
           </Text>
           <TextInput
-            onChangeText={(email) => this.email = email}
+            onChangeText={(email) => this.setState({email})}
             style={styles.input}
             placeholder='email'/>
           <TextInput
-            onChangeText={(password) => this.password = password}
+            onChangeText={(password) => this.setState({password})}
             style={styles.input}
             secureTextEntry={true}
             placeholder='password'/>
           <TextInput
-            onChangeText={(confirmPassword) => this.confirmPassword = confirmPassword}
+            onChangeText={(confirmPassword) => this.setState({confirmPassword})}
             style={styles.input}
             secureTextEntry={true}
             placeholder='confirm password'/>
@@ -62,7 +62,7 @@ export default class SignUpScreen extends React.Component {
         <View style={styles.buttonSession}>
           <F8Button
             caption='Signup'
-            onPress={() => signUp(this.email || '', this.password || '', this.confirmPassword || '')}/>
+            onPress={() => signUp(this.state.email || '', this.state.password || '', this.state.confirmPassword || '')}/>
           <Text
             style={styles.changePageText}
             onPress={() => goBack()}>
