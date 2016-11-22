@@ -44,3 +44,9 @@ npm-debug.log
 #
 /release
 /logs
+
+# BUCK
+buck-out/
+\.buckd/
+android/app/libs
+android/keystores/debug.keystore
