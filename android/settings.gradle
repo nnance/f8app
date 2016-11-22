@@ -1,5 +1,6 @@
 rootProject.name = 'F8v2'
 
+include ':app'
 include ':app', ':react-native-linear-gradient'
 include ':app', ':react-native-code-push'
 include ':react-native-push-notification'
