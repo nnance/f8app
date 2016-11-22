@@ -25,7 +25,7 @@
     "parse": "^1.9.2",
     "parse-dashboard": "~1.0.8",
     "parse-server": "~2.2.6",
-    "react": "^15.3.1",
+    "react": "15.3.1",
     "react-native": "^0.37.0",
     "react-native-code-push": "^1.16.0-beta",
     "react-native-fbsdk": "^0.4.0",
