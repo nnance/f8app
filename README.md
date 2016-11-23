@@ -84,3 +84,7 @@ The implementation found in the master branch leaves the application architectur
   ```
   $ react-native run-ios
   ```
+
+## Troubleshooting
+- Alert invalid session token
+  >  Delete the app from the simulator or your phone, then rebuild and re-run the app. Sometimes an old token gets cached.
