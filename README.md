@@ -86,5 +86,10 @@ The implementation found in the master branch leaves the application architectur
   ```
 
 ## Troubleshooting
-- Alert invalid session token
+* Could not connect to development server
+  > In a separate terminal window run:
+  ```
+  $ react-native start
+  ```
+* Alert invalid session token
   >  Delete the app from the simulator or your phone, then rebuild and re-run the app. Sometimes an old token gets cached.
