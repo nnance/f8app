@@ -25,7 +25,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb1169214676490767</string>
+				<string>fb275405849522835</string>
 				<string>f8</string>
 			</array>
 		</dict>
@@ -35,11 +35,15 @@
 	<key>CodePushDeploymentKey</key>
 	<string>XZu3PfXXkUa7LkYujXEQtrdN4l87EJ6b-AFoe</string>
 	<key>FacebookAppID</key>
-	<string>1169214676490767</string>
+	<string>275405849522835</string>
+	<key>FacebookDisplayName</key>
+	<string>clogii</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>fbapi</string>
 		<string>fb-messenger-api</string>
 		<string>fbauth2</string>
+		<string>fbshareextension</string>
 		<string>comgooglemaps-x-callback</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
@@ -49,6 +53,8 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Please allow access</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
 	<key>UIAppFonts</key>
