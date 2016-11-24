@@ -13,8 +13,8 @@ import ForgotPasswordScreen from './ForgotPasswordScreen';
 import SuccessScreen from './SuccessScreen';
 
 class LoginScreen extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor(args) {
+    super(...args);
     this.goToLogin = this.goToLogin.bind(this);
     this.pushPage = this.pushPage.bind(this);
     this.goBack = this.goBack.bind(this);
@@ -25,17 +25,23 @@ class LoginScreen extends React.Component {
   componentDidMount() {
     BackAndroid.addEventListener('hardwareBackPress', this.handleBackButton);
     this.props.clearError();
+    if (this.props.addBackButtonListener) {
+      this.props.addBackButtonListener(this.alwaysFalse);
+    }
   }
 
   componentWillUnmount() {
     BackAndroid.removeEventListener('hardwareBackPress', this.handleBackButton);
+    if (this.props.removeBackButtonListener) {
+      this.props.removeBackButtonListener(this.alwaysFalse);
+    }
   }
 
   render() {
     return (
       <Navigator
         ref="navigator"
-        initialRoute={{page: 'index'}}
+        initialRoute={{page: this.props.withEmail ? 'email-login' : 'index'}}
         renderScene={this.renderScene}
         navigationBar={
          <Navigator.NavigationBar
@@ -103,6 +109,10 @@ class LoginScreen extends React.Component {
       return <SuccessScreen successText={route.payload.successText} goToLogin={this.goToLogin}/>;
     }
     return <Text>Page not found</Text>;
+  }
+
+  alwaysFalse() {
+    return false;
   }
 
   handleBackButton() {
