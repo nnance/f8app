@@ -25,8 +25,6 @@
 
 'use strict';
 
-import EmailLogin from './login/Email/Index';
-
 var React = require('React');
 var Platform = require('Platform');
 var BackAndroid = require('BackAndroid');
@@ -175,9 +173,6 @@ var F8Navigator = React.createClass({
     }
     if (route.notices) {
       return <ThirdPartyNotices navigator={navigator} />;
-    }
-    if (route.logInWithEmail) {
-      return <EmailLogin onEnter={this.pauseBackButtonNavigator} onExit={() => {this.unpauseBackButtonNavigator(); this.refs.navigator.pop();}}/>
     }
     return <F8TabsView navigator={navigator} />;
   },

@@ -36,8 +36,7 @@ var configureStore = require('./store/configureStore');
 
 var {serverURL} = require('./env');
 
-// Playground
-import Index from './login/Email/Index'
+import LoginScreen from './login/LoginScreen';
 
 function setup(): React.Component {
   console.disableYellowBox = true;

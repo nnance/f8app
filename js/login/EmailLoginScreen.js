@@ -16,7 +16,7 @@ export default class EmailLoginScreen extends React.Component {
     return (
       <Image
         style={styles.container}
-        source={require('../img/login-background.png')}>
+        source={require('./img/login-background.png')}>
         <View style={styles.inputSession}>
           <Text style={styles.errorText}>
             {error}
@@ -27,6 +27,7 @@ export default class EmailLoginScreen extends React.Component {
             placeholder='email'
             value={this.state.email || ''}
             keyboardType='email-address'
+            autoCapitalize='none'
             returnKeyType='next'
             />
           <TextInput
@@ -45,7 +46,7 @@ export default class EmailLoginScreen extends React.Component {
         <View style={styles.buttonSession}>
           <F8Button
             caption='Login'
-            onPress={() => logIn(this.email || '', this.password || '')}/>
+            onPress={() => logIn(this.state.email || '', this.state.password || '')}/>
           <Text
             style={styles.changePageText}
             onPress={() => pushPage('signup')}>

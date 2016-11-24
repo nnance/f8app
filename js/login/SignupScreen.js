@@ -15,6 +15,13 @@ export default class SignUpScreen extends React.Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.isSignedUp) {
+      this.props.clearSignedUp();
+      this.props.pushPage('success', {successText: 'signed up'});
+    }
+  }
+
   componentDidMount() {
     InteractionManager.runAfterInteractions(() => {
       this.setState({
@@ -29,7 +36,7 @@ export default class SignUpScreen extends React.Component {
       return (
         <Image
           style={styles.container}
-          source={require('../img/login-background.png')}>
+          source={require('./img/login-background.png')}>
           <Text>
             Loading
           </Text>
@@ -39,7 +46,7 @@ export default class SignUpScreen extends React.Component {
     return (
       <Image
         style={styles.container}
-        source={require('../img/login-background.png')}>
+        source={require('./img/login-background.png')}>
         <View style={styles.inputSession}>
           <Text style={styles.errorText}>
             {error}
@@ -47,7 +54,10 @@ export default class SignUpScreen extends React.Component {
           <TextInput
             onChangeText={(email) => this.setState({email})}
             style={styles.input}
-            placeholder='email'/>
+            placeholder='email'
+            keyboardType='email-address'
+            autoCapitalize='none'
+          />
           <TextInput
             onChangeText={(password) => this.setState({password})}
             style={styles.input}

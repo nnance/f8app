@@ -1,191 +1,175 @@
-/**
- * Copyright 2016 Facebook, Inc.
- *
- * You are hereby granted a non-exclusive, worldwide, royalty-free license to
- * use, copy, modify, and distribute this software in source code or binary
- * form for use in connection with the web services and APIs provided by
- * Facebook.
- *
- * As with any software that integrates with the Facebook platform, your use
- * of this software is subject to the Facebook Developer Principles and
- * Policies [http://developers.facebook.com/policy/]. This copyright notice
- * shall be included in all copies or substantial portions of the software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
- * THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
- * DEALINGS IN THE SOFTWARE
- *
- * @flow
- */
 'use strict';
 
-import {withState} from 'recompose';
+import React from 'react';
+import {BackAndroid, Text, TouchableOpacity, Navigator, StyleSheet, Image} from 'react-native';
+import {connect} from 'react-redux';
 
-var Animated = require('Animated');
-var Dimensions = require('Dimensions');
-var F8Colors = require('F8Colors');
-var Image = require('Image');
-var React = require('React');
-var StatusBar = require('StatusBar');
-var StyleSheet = require('StyleSheet');
-var View = require('View');
-var { Text } = require('F8Text');
-var LoginButton = require('../common/LoginButton');
-var TouchableOpacity = require('TouchableOpacity');
+import * as actions from '../actions';
 
-var { skipLogin } = require('../actions');
-var { connect } = require('react-redux');
+import IndexScreen from './IndexScreen';
+import EmailLoginScreen from './EmailLoginScreen';
+import SignupScreen from './SignupScreen';
+import ForgotPasswordScreen from './ForgotPasswordScreen';
+import SuccessScreen from './SuccessScreen';
 
-import EmailScreen from './Email/Index';
-
-let enhance = withState('page', 'setPage', 'withFacebook');
-
-const LoginScreen = enhance(({page, setPage, ...props}) => {
-  if (page === 'withFacebook') {
-    return (
-      <LoginFacebookScreen {...props} withEmail={() => setPage('withEmail')}/>
-    );
-  }
-  return (
-    <EmailScreen onExit={() => setPage('withFacebook')}/>
-  );
-})
-
-class LoginFacebookScreen extends React.Component {
+class LoginScreen extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      anim: new Animated.Value(0),
-    };
+    this.goToLogin = this.goToLogin.bind(this);
+    this.pushPage = this.pushPage.bind(this);
+    this.goBack = this.goBack.bind(this);
+    this.renderScene = this.renderScene.bind(this);
+    this.handleBackButton = this.handleBackButton.bind(this);
   }
 
   componentDidMount() {
-    StatusBar && StatusBar.setBarStyle('default');
-    Animated.timing(this.state.anim, {toValue: 3000, duration: 3000}).start();
+    BackAndroid.addEventListener('hardwareBackPress', this.handleBackButton);
+    this.props.clearError();
+  }
+
+  componentWillUnmount() {
+    BackAndroid.removeEventListener('hardwareBackPress', this.handleBackButton);
   }
 
   render() {
     return (
-      <Image
-        style={styles.container}
-        source={require('./img/login-background.png')}>
-        <TouchableOpacity
-          accessibilityLabel="Skip login"
-          accessibilityTraits="button"
-          style={styles.skip}
-          onPress={() => this.props.dispatch(skipLogin())}>
-          <Animated.Image
-            style={this.fadeIn(2800)}
-            source={require('./img/x.png')}
-          />
-        </TouchableOpacity>
-        <View style={styles.section}>
-          <Animated.Image
-            style={this.fadeIn(0)}
-            source={require('./img/devconf-logo.png')}
-          />
-        </View>
-        <View style={styles.section}>
-          <Animated.Text style={[styles.h1, this.fadeIn(700, -20)]}>
-            code to
-          </Animated.Text>
-          <Animated.Text style={[styles.h1, {marginTop: -30}, this.fadeIn(700, 20)]}>
-            connect
-          </Animated.Text>
-          <Animated.Text style={[styles.h2, this.fadeIn(1000, 10)]}>
-            April 12 + 13 / Fort Mason Center
-          </Animated.Text>
-          <Animated.Text style={[styles.h3, this.fadeIn(1200, 10)]}>
-            SAN FRANCISCO, CALIFORNIA
-          </Animated.Text>
-        </View>
-        <Animated.View style={[styles.section, styles.last, this.fadeIn(2500, 20)]}>
-          <Text style={styles.loginComment}>
-            Use Facebook to find your friends at F8.
-          </Text>
-          <Text style={styles.loginComment} onPress={this.props.withEmail}>
-            or with email
-          </Text>
-          <LoginButton source="First screen" />
-        </Animated.View>
-      </Image>
+      <Navigator
+        ref="navigator"
+        initialRoute={{page: 'index'}}
+        renderScene={this.renderScene}
+        navigationBar={
+         <Navigator.NavigationBar
+           routeMapper={{
+             LeftButton: (route, navigator, index, navState) => {
+               if (route.page === 'index') return null;
+               return (
+                 <TouchableOpacity onPress={this.goBack}>
+                  <Text style={{fontSize: 30, fontWeight: 'bold'}}>
+                    {'<'}
+                  </Text>
+                 </TouchableOpacity>
+               );
+             },
+             RightButton: (route, navigator, index, navState) => {
+               if (route.page !== 'index') return null;
+               return (
+                 <TouchableOpacity
+                   accessibilityLabel="Skip login"
+                   accessibilityTraits="button"
+                   style={styles.skip}
+                   onPress={() => this.props.skipLogin()}>
+                   <Image
+                     source={require('./img/x.png')}
+                   />
+                 </TouchableOpacity>
+               );
+             },
+             Title: (route, navigator, index, navState) => null
+           }}
+         />
+        }
+      />
     );
   }
 
-  fadeIn(delay, from = 0) {
-    const {anim} = this.state;
-    return {
-      opacity: anim.interpolate({
-        inputRange: [delay, Math.min(delay + 500, 3000)],
-        outputRange: [0, 1],
-        extrapolate: 'clamp',
-      }),
-      transform: [{
-        translateY: anim.interpolate({
-          inputRange: [delay, Math.min(delay + 500, 3000)],
-          outputRange: [from, 0],
-          extrapolate: 'clamp',
-        }),
-      }],
-    };
+  renderScene(route, navigator) {
+    if (route.page === 'index') {
+      return <IndexScreen {...this.props} pushPage={this.pushPage}/>;
+    }
+    if (route.page === 'email-login') {
+      return <EmailLoginScreen error={this.props.error} logIn={this.props.logIn} pushPage={this.pushPage}/>;
+    }
+    if (route.page === 'signup') {
+      return (<SignupScreen
+        error={this.props.error}
+        signUp={this.props.signUp}
+        pushPage={this.pushPage}
+        goBack={this.goBack}
+        clearSignedUp={this.props.clearSignedUp}
+        isSignedUp={this.props.isSignedUp}
+      />);
+    }
+    if (route.page === 'forgotPassword') {
+      return (<ForgotPasswordScreen
+        error={this.props.error}
+        clearIsReqedForgotPassword={this.props.clearIsReqedForgotPassword}
+        isReqedForgotPassword={this.props.isReqedForgotPassword}
+        forgotPassword={this.props.forgotPassword}
+        pushPage={this.pushPage}
+        goBack={this.goBack}
+      />);
+    }
+    if (route.page === 'success') {
+      return <SuccessScreen successText={route.payload.successText} goToLogin={this.goToLogin}/>;
+    }
+    return <Text>Page not found</Text>;
   }
+
+  handleBackButton() {
+    const navigator = this.refs.navigator;
+    if (navigator && navigator.getCurrentRoutes().length > 1 ) {
+      navigator.pop();
+      return true;
+    }
+    if (this.props.onExit) {
+      this.props.onExit();
+      return true;
+    }
+    return false;
+  }
+
+  goToLogin() {
+    this.props.clearError();
+    const navigator = this.refs.navigator;
+    let currentRoutes = navigator.getCurrentRoutes();
+    let N = navigator.getCurrentRoutes().length;
+    while(N) {
+      if (currentRoutes[N-1].page === 'email-login') {
+        break;
+      }
+      N--;
+    }
+    if (N <= 0) {
+      throw Error('email-login route not found');
+    }
+    navigator.popN(navigator.getCurrentRoutes().length - N);
+  }
+
+  pushPage(page, payload) {
+    this.props.clearError();
+    this.props.clearIsReqedForgotPassword();
+    this.props.clearSignedUp();
+    this.refs.navigator.push({page, payload});
+  }
+
+  goBack() {
+    this.props.clearError();
+    this.refs.navigator.pop();
+  }
+
 }
 
-const scale = Dimensions.get('window').width / 375;
+const select = state => ({
+  isLoggedIn: state.user.isLoggedIn,
+  isSignedUp: state.user.isSignedUp,
+  isReqedForgotPassword: state.user.isReqedForgotPassword,
+  error: state.user.loginError
+});
+
+const actionsMaping = {
+  skipLogin: actions.skipLogin,
+  clearError: actions.clearError,
+  logIn: actions.logIn,
+  signUp: actions.signUp,
+  forgotPassword: actions.forgotPassword,
+  clearSignedUp: actions.clearSignedUp,
+  clearIsReqedForgotPassword: actions.clearIsReqedForgotPassword
+};
 
 var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'transparent',
-    padding: 26,
-    // Image's source contains explicit size, but we want
-    // it to prefer flex: 1
-    width: undefined,
-    height: undefined,
-  },
-  section: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  last: {
-    justifyContent: 'flex-end',
-  },
-  h1: {
-    fontWeight: 'bold',
-    textAlign: 'center',
-    fontSize: Math.round(74 * scale),
-    color: F8Colors.darkText,
-    backgroundColor: 'transparent',
-  },
-  h2: {
-    textAlign: 'center',
-    fontSize: 17,
-    color: F8Colors.darkText,
-    marginVertical: 20,
-  },
-  h3: {
-    fontSize: 12,
-    textAlign: 'center',
-    color: F8Colors.lightText,
-    letterSpacing: 1,
-  },
-  loginComment: {
-    marginBottom: 14,
-    fontSize: 12,
-    color: F8Colors.darkText,
-    textAlign: 'center',
-  },
   skip: {
-    position: 'absolute',
-    right: 0,
-    top: 20,
     padding: 15,
   },
 });
 
-module.exports = connect()(LoginScreen);
+module.exports = connect(select, actionsMaping)(LoginScreen);

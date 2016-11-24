@@ -4,7 +4,7 @@ import React from 'React';
 import {BackAndroid, Navigator, Text} from 'react-native';
 import {connect} from 'react-redux';
 
-import * as actions from '../../actions/login';
+import * as actions from '../actions/login';
 
 import LoginScreen from './LoginScreen';
 import SignupScreen from './SignupScreen';
