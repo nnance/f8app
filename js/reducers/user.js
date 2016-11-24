@@ -85,6 +85,14 @@ function user(state: State = initialState, action: Action): State {
       loginError: null
     };
   }
+  if (action.type === 'FACEBOOK_LINKED') {
+    let {id, name} = action.data;
+    return {
+      ...state,
+      id,
+      name
+    };
+  }
   if (action.type === 'LOGGED_IN') {
     let {id, name, sharedSchedule} = action.data;
     if (sharedSchedule === undefined) {

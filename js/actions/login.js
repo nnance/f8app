@@ -111,6 +111,44 @@ function signedUp(): Action {
   };
 }
 
+async function _linkFacebook() {
+  let user = await Parse.User.currentAsync();
+  await new Promise((resolve, reject) => {
+    Parse.FacebookUtils.link(user, null, {
+      success: () => resolve(),
+      error: error => reject(error)
+    });
+  });
+  await user.save();
+  const profile = await queryFacebookAPI('/me', {fields: 'name,email'});
+  user = await Parse.User.currentAsync();
+  user.set('facebook_id', profile.id);
+  user.set('name', profile.name);
+  await user.save();
+  await updateInstallation({user});
+  return user;
+}
+
+const linkFacebook = () => async dispatch => {
+  const user = await Parse.User.currentAsync();
+  if (!user || Parse.FacebookUtils.isLinked(user)) {
+    return;
+  }
+  return _linkFacebook().then((user) => {
+    dispatch(facebookLinked(user.get('facebook_id'), user.get('name')));
+  });
+}
+
+const facebookLinked = (id, name) => {
+  return {
+    type: 'FACEBOOK_LINKED',
+    data: {
+      id,
+      name
+    }
+  };
+}
+
 const logIn = (email: string, password: string) => dispatch => {
   return Parse.User.logIn(email, password).then(
     async () => {
@@ -119,7 +157,7 @@ const logIn = (email: string, password: string) => dispatch => {
       const action = {
         type: 'LOGGED_IN',
         data: {
-          id: '1',
+          id: null,
           name: 'logged in with email',
           sharedSchedule: user.get('sharedSchedule'),
         },
@@ -242,4 +280,6 @@ module.exports = {
   logIn,
   logOut,
   logOutWithPrompt,
-  clearSignedUp};
+  clearSignedUp,
+  linkFacebook
+};

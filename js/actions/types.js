@@ -38,6 +38,7 @@ export type Action =
   | { type: 'LOGIN_ERROR', message: string }
   | { type: 'CLEAR_LOGIN_ERROR' }
   | { type: 'SIGNED_UP' }
+  | { type: 'FACEBOOK_LINKED', data: { id: string; name: string; } }
   | { type: 'REQED_FORGOT_PASSWORD' }
   | { type: 'CLEAR_IS_REQED_FORGOT_PASSWORD' }
   | { type: 'RESTORED_SCHEDULE', list: Array<ParseObject> }
