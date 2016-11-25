@@ -44,6 +44,8 @@ var {
   loadFriendsSchedules,
 } = require('../../actions');
 
+import {Text} from 'F8Text';
+
 import type {Session} from '../../reducers/sessions';
 import type {FriendsSchedule} from '../../reducers/friendsSchedules';
 import type {State as User} from '../../reducers/user';
@@ -73,6 +75,7 @@ class MyScheduleView extends React.Component {
     this.renderEmptySessionsList = this.renderEmptySessionsList.bind(this);
     this.openSharingSettings = this.openSharingSettings.bind(this);
     this.handleSegmentChanged = this.handleSegmentChanged.bind(this);
+    this.renderNotLoggedIn = this.renderNotLoggedIn.bind(this);
   }
 
   render() {
@@ -140,6 +143,9 @@ class MyScheduleView extends React.Component {
         title="Log in to make a schedule."
         text="You’ll be able to save sessions to your schedule to view or share later.">
         <LoginButton source="My F8" />
+        <Text style={{padding: 20}} onPress={() => this.props.navigator.push({logInWithEmail: 1})}>
+          or with Email
+        </Text>
       </EmptySchedule>
     );
   }

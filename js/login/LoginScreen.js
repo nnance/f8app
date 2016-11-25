@@ -37,6 +37,12 @@ class LoginScreen extends React.Component {
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.isLoggedIn) {
+      this.props.onExit && this.props.onExit()
+    }
+  }
+
   render() {
     return (
       <Navigator
@@ -154,7 +160,14 @@ class LoginScreen extends React.Component {
 
   goBack() {
     this.props.clearError();
-    this.refs.navigator.pop();
+    if (this.refs.navigator.getCurrentRoutes().length === 1) {
+      if (this.props.onExit) {
+        this.props.onExit();
+      }
+    }
+    else {
+      this.refs.navigator.pop();
+    }
   }
 
 }
