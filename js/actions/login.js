@@ -111,8 +111,7 @@ function signedUp(): Action {
   };
 }
 
-async function _linkFacebook() {
-  let user = await Parse.User.currentAsync();
+async function _linkFacebook(user) {
   await new Promise((resolve, reject) => {
     Parse.FacebookUtils.link(user, null, {
       success: () => resolve(),
@@ -121,7 +120,6 @@ async function _linkFacebook() {
   });
   await user.save();
   const profile = await queryFacebookAPI('/me', {fields: 'name,email'});
-  user = await Parse.User.currentAsync();
   user.set('facebook_id', profile.id);
   user.set('name', profile.name);
   await user.save();
@@ -129,15 +127,41 @@ async function _linkFacebook() {
   return user;
 }
 
+async function _unlinkFacebook(user) {
+  await new Promise((resolve, reject) => {
+    Parse.FacebookUtils.unlink(user, {
+      success: resolve(),
+      error: reject(error)
+    });
+  });
+  user.set('facebook_id', null);
+  await user.save();
+  await updateInstallation({user});
+  return user;
+}
+
 const linkFacebook = () => async dispatch => {
   const user = await Parse.User.currentAsync();
-  if (!user || Parse.FacebookUtils.isLinked(user)) {
-    return;
-  }
-  return _linkFacebook().then((user) => {
+  // if (!user || Parse.FacebookUtils.isLinked(user)) {
+  //   return;
+  // }
+  return _linkFacebook(user).then((user) => {
     dispatch(facebookLinked(user.get('facebook_id'), user.get('name')));
   });
 }
+
+const unlinkFacebook = () => async dispatch => {
+  const user = await Parse.User.currentAsync();
+  return _unlinkFacebook(user).then(user => {
+    dispatch(facebookUnlinked());
+  });
+};
+
+const facebookUnlinked = () => {
+  return {
+    type: 'FACEBOOK_UNLINKED'
+  }
+};
 
 const facebookLinked = (id, name) => {
   return {
@@ -147,7 +171,7 @@ const facebookLinked = (id, name) => {
       name
     }
   };
-}
+};
 
 const logIn = (email: string, password: string) => dispatch => {
   return Parse.User.logIn(email, password).then(
@@ -158,7 +182,7 @@ const logIn = (email: string, password: string) => dispatch => {
         type: 'LOGGED_IN',
         data: {
           id: null,
-          name: 'logged in with email',
+          name: email,
           sharedSchedule: user.get('sharedSchedule'),
         },
       };
@@ -281,5 +305,6 @@ module.exports = {
   logOut,
   logOutWithPrompt,
   clearSignedUp,
-  linkFacebook
+  linkFacebook,
+  unlinkFacebook
 };

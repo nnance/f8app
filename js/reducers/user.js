@@ -93,6 +93,13 @@ function user(state: State = initialState, action: Action): State {
       name
     };
   }
+  if (action.type === 'FACEBOOK_UNLINKED') {
+    return {
+      ...state,
+      id: null
+    };
+  }
+
   if (action.type === 'LOGGED_IN') {
     let {id, name, sharedSchedule} = action.data;
     if (sharedSchedule === undefined) {

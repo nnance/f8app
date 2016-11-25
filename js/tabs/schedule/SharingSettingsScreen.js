@@ -40,6 +40,9 @@ var { connect } = require('react-redux');
 
 import type {State as User} from '../../reducers/user';
 
+import F8Button from 'F8Button';
+import {linkFacebook, unlinkFacebook} from '../../actions'
+
 class SharingSettingsScreen extends React.Component {
   props: {
     navigator: Navigator;
@@ -57,6 +60,13 @@ class SharingSettingsScreen extends React.Component {
           barStyle="default"
          />
         <SharingSettingsCommon />
+        <View>
+        {
+          this.props.user && !this.props.user.id ?
+          <F8Button caption='Link facebook' onPress={() => this.props.dispatch(linkFacebook())}/> :
+          <F8Button caption='Unlink facebook' onPress={() => this.props.dispatch(unlinkFacebook())}/>
+        }
+        </View>
         <View style={styles.switchWrapper}>
           <Text style={styles.option}>
             NO

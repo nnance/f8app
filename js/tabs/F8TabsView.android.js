@@ -44,7 +44,7 @@ var GeneralScheduleView = require('./schedule/GeneralScheduleView');
 var MyScheduleView = require('./schedule/MyScheduleView');
 var unseenNotificationsCount = require('./notifications/unseenNotificationsCount');
 
-var { switchTab, logOutWithPrompt, linkFacebook } = require('../actions');
+var { switchTab, logOutWithPrompt } = require('../actions');
 var { connect } = require('react-redux');
 
 import Parse from 'parse/react-native';
@@ -177,14 +177,6 @@ class F8TabsView extends React.Component {
           icon={require('./info/img/info-icon.png')}
           selectedIcon={require('./info/img/info-icon-active.png')}
         />
-        {
-          this.props.user && !this.props.user.id ?
-          <MenuItem
-            title="Link Facebook"
-            selected={this.props.tab === 'info'}
-            onPress={this.props.linkFacebook}
-          /> : null
-        }
         {loginItem}
       </View>
     );
@@ -251,8 +243,7 @@ function select(store) {
 function actions(dispatch) {
   return {
     onTabSelect: (tab) => dispatch(switchTab(tab)),
-    logOut: () => dispatch(logOutWithPrompt()),
-    linkFacebook: () => dispatch(linkFacebook())
+    logOut: () => dispatch(logOutWithPrompt())
   };
 }
 
