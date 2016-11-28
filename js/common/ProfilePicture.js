@@ -37,6 +37,18 @@ class ProfilePicture extends React.Component {
     const {userID, size} = this.props;
     const scaledSize = size * PixelRatio.get();
     const uri = `http://graph.facebook.com/${userID}/picture?width=${scaledSize}&height=${scaledSize}`;
+    if (!userID) {
+      return (
+        <Image
+          style={{
+            width: size,
+            height: size,
+            borderRadius: size / 2,
+            backgroundColor: 'black'
+          }}
+        />
+      )
+    }
     return (
       <Image
         source={{uri}}

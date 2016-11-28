@@ -42,6 +42,7 @@ var { switchTab } = require('../actions');
 var { connect } = require('react-redux');
 
 import type {Tab, Day} from '../reducers/navigation';
+import ProfileScreen from './profile/ProfileScreen';
 
 class F8TabsView extends React.Component {
   props: {
@@ -103,7 +104,7 @@ class F8TabsView extends React.Component {
           onPress={this.onTabSelect.bind(this, 'map')}
           icon={require('./maps/img/maps-icon.png')}
           selectedIcon={require('./maps/img/maps-icon-active.png')}>
-          <F8MapView />
+          <ProfileScreen />
         </TabBarItemIOS>
         <TabBarItemIOS
           title="Notifications"
