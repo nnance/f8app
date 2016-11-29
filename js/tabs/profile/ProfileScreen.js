@@ -1,5 +1,6 @@
 'use strict';
 
+import {connect} from 'react-redux';
 import React from 'react';
 import {
   Image,
@@ -11,6 +12,7 @@ import {
 } from 'react-native';
 import PureListView from '../../common/PureListView';
 import ProfilePicture from '../../common/ProfilePicture';
+import {toHumanNumber} from '../../common/utils';
 
 const menuList = [
   {
@@ -44,7 +46,7 @@ const NumberDetail = (props) => {
     <View style={[styles.numberDetail, {borderRightWidth: props.borderRight ? 1 : 0}]}>
       <View style={styles.headNumberDetail}>
         <Text style={styles.smallText}>
-          {props.number}
+          {toHumanNumber(props.number)}
         </Text>
       </View>
       <Text style={styles.smallText}>
@@ -74,7 +76,6 @@ const CandyCorner = (props) => (
       }}
       />
     <View style={{
-        color: 'white',
         paddingTop: 2,
         paddingBottom: 2,
         paddingLeft: 5,
@@ -84,30 +85,30 @@ const CandyCorner = (props) => (
         borderWidth: 1,
         borderColor: 'white'
       }}>
-      <Text style={{color: 'white', fontSize: 13}}>{props.candys}</Text>
+      <Text style={{color: 'white', fontSize: 13}}>{toHumanNumber(props.candys)}</Text>
     </View>
   </View>
 )
 
-export default class ProfileScreen extends React.Component {
+class ProfileScreen extends React.Component {
   constructor(...args) {
     super(...args);
   }
 
   render() {
-    const name = 'Art nattapat'
+    const name = this.props.user.name || '';
     return (
       <View style={styles.container}>
         <View style={styles.header}>
           <Image source={require('../maps/img/maps-background.png')} style={styles.header}>
-            <ProfilePicture size={100} />
+            <ProfilePicture size={100} userID={this.props.user.id} />
             <Text style={styles.name}>
               {name.toUpperCase()}
             </Text>
             <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-              <NumberDetail title='ผู้ติดตาม' number='1850' borderRight={true} />
-              <NumberDetail title='กำลังติดตาม' number='425' borderRight={true} />
-              <NumberDetail title='Candys' number='185000' />
+              <NumberDetail title='ผู้ติดตาม' number={this.props.followerCount} borderRight={true} />
+              <NumberDetail title='กำลังติดตาม' number={this.props.followingCount} borderRight={true} />
+              <NumberDetail title='Candys' number={this.props.candys} />
             </View>
           </Image>
         </View>
@@ -126,11 +127,18 @@ export default class ProfileScreen extends React.Component {
             )}
           />
         </View>
-        <CandyCorner candys={1890} />
+        <CandyCorner candys={this.props.candys} />
       </View>
     );
   }
 }
+
+const select = state => ({
+  user: state.user,
+  followingCount: 432,
+  followerCount: 1249,
+  candys: 1890
+});
 
 const styles = StyleSheet.create({
   container: {
@@ -168,7 +176,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   headNumberDetail: {
-    color: 'white',
     paddingTop: 3,
     paddingBottom: 3,
     paddingLeft: 10,
@@ -187,4 +194,6 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     borderColor: 'rgba(255, 255, 255, 0.3)'
   }
-})
+});
+
+export default connect(select)(ProfileScreen);
