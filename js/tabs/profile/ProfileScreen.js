@@ -54,6 +54,41 @@ const NumberDetail = (props) => {
   );
 }
 
+const CandyCorner = (props) => (
+  <View style={{
+    position: 'absolute',
+    left: 0,
+    top: 20,
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center'
+  }}>
+    <Image
+      source={require('./img/icons/candy.png')}
+      style={{
+        width: 15,
+        height: 15,
+        marginLeft: 5,
+        marginRight: 5
+      }}
+      />
+    <View style={{
+        color: 'white',
+        paddingTop: 2,
+        paddingBottom: 2,
+        paddingLeft: 5,
+        paddingRight: 5,
+        backgroundColor: 'rgba(255, 255, 255, 0.1)',
+        borderRadius: 5,
+        borderWidth: 1,
+        borderColor: 'white'
+      }}>
+      <Text style={{color: 'white', fontSize: 13}}>{props.candys}</Text>
+    </View>
+  </View>
+)
+
 export default class ProfileScreen extends React.Component {
   constructor(...args) {
     super(...args);
@@ -91,6 +126,7 @@ export default class ProfileScreen extends React.Component {
             )}
           />
         </View>
+        <CandyCorner candys={1890} />
       </View>
     );
   }
@@ -138,7 +174,7 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 10,
     backgroundColor: 'rgba(0, 0, 0, 0.2)',
-    borderRadius: 5,
+    borderRadius: 5
   },
   whiteLine: {
     borderRightWidth: 1,
