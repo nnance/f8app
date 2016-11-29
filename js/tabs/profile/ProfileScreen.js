@@ -102,9 +102,19 @@ class ProfileScreen extends React.Component {
         <View style={styles.header}>
           <Image source={require('../maps/img/maps-background.png')} style={styles.header}>
             <ProfilePicture size={100} userID={this.props.user.id} />
-            <Text style={styles.name}>
-              {name.toUpperCase()}
-            </Text>
+            <View style={styles.nameContainer}>
+              <Text style={styles.name}>
+                {name.toUpperCase()}
+              </Text>
+              <Image
+                style={{
+                  marginLeft: 10,
+                  height: 20,
+                  width: 20
+                }}
+                source={require('./img/icons/edit-profile.png')}
+                />
+            </View>
             <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
               <NumberDetail title='ผู้ติดตาม' number={this.props.followerCount} borderRight={true} />
               <NumberDetail title='กำลังติดตาม' number={this.props.followingCount} borderRight={true} />
@@ -165,8 +175,12 @@ const styles = StyleSheet.create({
   menuText: {
     paddingLeft: 20
   },
-  name: {
+  nameContainer: {
     padding: 10,
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  name: {
     color: 'white',
     fontWeight: 'bold',
     fontSize: 20
