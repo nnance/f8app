@@ -13,10 +13,34 @@ import NavBar from './NavBar';
 import PureListView from '../../common/PureListView';
 import ProfilePicture from '../../common/ProfilePicture';
 
-const Unfollow = (props) => (<View style={styles.unfollowButton}>
+const addIcon = require('./img/icons/myfan.png');
+const blockIcon = require('./img/icons/logout.png');
+
+const UnfollowButton = (props) => (<View style={styles.unfollowButton}>
   <Text style={styles.unfollowText}>
     เลิกติดตาม
   </Text>
+</View>);
+
+const FollowButton = (props) => (<View style={styles.followButton}>
+  <Text style={styles.followText}>
+    ติดตาม
+  </Text>
+</View>);
+
+const FollowerDetail = (props) => (<View style={styles.followerDetail}>
+  {
+    props.addButton ?
+      <Image style={styles.followerIconDetail} source={addIcon} /> :
+      <Image style={styles.followerIconDetail} source={blockIcon} />
+  }
+  <View>
+    {
+      props.followButton ?
+        <FollowButton/> :
+        <UnfollowButton/>
+    }
+  </View>
 </View>);
 
 export default class UserContainer extends React.Component {
@@ -37,7 +61,7 @@ export default class UserContainer extends React.Component {
                 {Number(ii) + 1}. {user.name}
               </Text>
               <View style={styles.detail}>
-                <Unfollow/>
+                <FollowerDetail/>
               </View>
             </View>);
           }}
@@ -55,7 +79,8 @@ const styles = StyleSheet.create({
   detail: {
     flex: 1,
     paddingRight: 20,
-    alignItems: 'flex-end'
+    alignItems: 'flex-end',
+    justifyContent: 'center'
   },
   rowContainer: {
     backgroundColor: 'rgb(250, 250, 250)',
@@ -79,5 +104,26 @@ const styles = StyleSheet.create({
   unfollowText: {
     color: 'white',
     fontSize: 13
+  },
+  followButton: {
+    padding: 4,
+    paddingLeft: 5,
+    paddingRight: 5,
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: 'rgb(141, 227, 188)'
+  },
+  followText: {
+    color: 'rgb(141, 227, 188)',
+    fontSize: 13
+  },
+  followerDetail: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  followerIconDetail: {
+    height: 20,
+    width: 20,
+    marginRight: 10
   }
 });
