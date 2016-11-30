@@ -17,17 +17,17 @@ import {toHumanNumber} from '../../common/utils';
 const addIcon = require('./img/icons/myfan.png');
 const blockIcon = require('./img/icons/logout.png');
 
-const UnfollowButton = (props) => (<View style={styles.unfollowButton}>
+const UnfollowButton = (props) => (<TouchableOpacity style={styles.unfollowButton}>
   <Text style={styles.unfollowText}>
     เลิกติดตาม
   </Text>
-</View>);
+</TouchableOpacity>);
 
-const FollowButton = (props) => (<View style={styles.followButton}>
+const FollowButton = (props) => (<TouchableOpacity style={styles.followButton}>
   <Text style={styles.followText}>
     ติดตาม
   </Text>
-</View>);
+</TouchableOpacity>);
 
 const FollowerDetail = (props) => (<View style={styles.followerDetail}>
   {
@@ -119,7 +119,7 @@ export class FollowerScreen extends React.Component {
   render() {
     return (
       <UserContainer {...this.props} title={'ผู้ติดตาม'}
-        renderDetail={(user, idx) => <FollowerDetail addButton={true} following={false}/>}
+        renderDetail={(user, idx) => <FollowerDetail addButton={true} following={true}/>}
         />
     );
   }
