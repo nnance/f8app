@@ -70,7 +70,7 @@ export default class UserContainer extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <NavBar title={this.props.title}>
+        <NavBar title={this.props.title} onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}>
         </NavBar>
         <PureListView
           data={this.props.userList}

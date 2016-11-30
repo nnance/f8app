@@ -8,34 +8,43 @@ import {
   View,
   StyleSheet,
   ListView,
-  TouchableOpacity
+  TouchableOpacity,
+  Navigator
 } from 'react-native';
 import PureListView from '../../common/PureListView';
 import ProfilePicture from '../../common/ProfilePicture';
 import {toHumanNumber} from '../../common/utils';
 
+import {FollowingScreen, FollowerScreen, MyFanScreen} from './UserContainer';
+
 const menuList = [
   {
+    name: 'bookmark',
     icon: require('./img/icons/bookmark.png'),
     title: 'Bookmark'
   },
   {
+    name: 'myclog',
     icon: require('./img/icons/myclog.png'),
     title: 'Clog ของฉัน'
   },
   {
+    name: 'myfan',
     icon: require('./img/icons/myfan.png'),
     title: 'แฟนคลับของฉัน'
   },
   {
+    name: 'candyShop',
     icon: require('./img/icons/candy-shop.png'),
     title: 'Candy Shop'
   },
   {
+    name: 'activity',
     icon: require('./img/icons/activity.png'),
     title: 'กิจกรรม'
   },
   {
+    name: 'logout',
     icon: require('./img/icons/logout.png'),
     title: 'Logout'
   }
@@ -43,7 +52,7 @@ const menuList = [
 
 const NumberDetail = (props) => {
   return (
-    <View style={[styles.numberDetail, {borderRightWidth: props.borderRight ? 1 : 0}]}>
+    <TouchableOpacity style={[styles.numberDetail, {borderRightWidth: props.borderRight ? 1 : 0}]} onPress={() => props.onPress && props.onPress()}>
       <View style={styles.headNumberDetail}>
         <Text style={styles.smallText}>
           {toHumanNumber(props.number)}
@@ -52,7 +61,7 @@ const NumberDetail = (props) => {
       <Text style={styles.smallText}>
         {props.title}
       </Text>
-    </View>
+    </TouchableOpacity>
   );
 }
 
@@ -90,11 +99,50 @@ const CandyCorner = (props) => (
   </View>
 )
 
-class ProfileScreen extends React.Component {
+class NavigatorProfile extends React.Component {
   constructor(...args) {
     super(...args);
+    this.renderScene = this.renderScene.bind(this);
+    this.onMenuPress = this.onMenuPress.bind(this);
   }
 
+  render() {
+    return (
+      <Navigator
+        ref="navigator"
+        initialRoute={{page: 'profile'}}
+        renderScene={this.renderScene}
+        />
+    );
+  }
+
+  renderScene(route, navigator) {
+    const mockUser = [{name: 'Art Nattapat'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}];
+    if (route.page === 'following') {
+      return <FollowingScreen userList={mockUser} onBackPress={() => navigator.pop()}/>
+    }
+    if (route.page === 'follower') {
+      return <FollowerScreen userList={mockUser} onBackPress={() => navigator.pop()}/>
+    }
+    if (route.page === 'myfan') {
+      return <MyFanScreen userList={mockUser} onBackPress={() => navigator.pop()}/>
+    }
+    return <ProfileScreen
+      onMenuPress={this.onMenuPress}
+      onFollowingPress={() => navigator.push({page: 'following'})}
+      onFollowerPress={() => navigator.push({page: 'follower'})}
+      />;
+  }
+
+  onMenuPress(name) {
+    const navigator = this.refs.navigator;
+    if (name === 'myfan') {
+      navigator.push({page: 'myfan'})
+    }
+  }
+}
+
+class _ProfileScreen extends React.Component {
   render() {
     const name = this.props.user.name || '';
     return (
@@ -116,9 +164,9 @@ class ProfileScreen extends React.Component {
                 />
             </View>
             <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-              <NumberDetail title='ผู้ติดตาม' number={this.props.followerCount} borderRight={true} />
-              <NumberDetail title='กำลังติดตาม' number={this.props.followingCount} borderRight={true} />
-              <NumberDetail title='Candys' number={this.props.candys} />
+              <NumberDetail title='ผู้ติดตาม' number={this.props.followerCount} borderRight={true} onPress={() => this.props.onFollowerPress && this.props.onFollowerPress()}/>
+              <NumberDetail title='กำลังติดตาม' number={this.props.followingCount} borderRight={true} onPress={() => this.props.onFollowingPress && this.props.onFollowingPress()}/>
+              <NumberDetail title='Candys' number={this.props.candys} onPress={() => this.props.onCandyPress && this.props.onCandyPress()}/>
             </View>
           </Image>
         </View>
@@ -127,11 +175,11 @@ class ProfileScreen extends React.Component {
             title="Profile"
             renderEmptyList={() => null}
             data={menuList}
-            renderRow={({title, icon}) => (
-              <TouchableOpacity>
+            renderRow={(menu) => (
+              <TouchableOpacity onPress={() => this.props.onMenuPress && this.props.onMenuPress(menu.name)}>
                 <View style={styles.row}>
-                  <Image style={styles.menuIcon} source={icon}/>
-                  <Text style={styles.menuText}>{title}</Text>
+                  <Image style={styles.menuIcon} source={menu.icon}/>
+                  <Text style={styles.menuText}>{menu.title}</Text>
                 </View>
               </TouchableOpacity>
             )}
@@ -149,6 +197,8 @@ const select = state => ({
   followerCount: 1249,
   candys: 1890
 });
+
+const ProfileScreen = connect(select)(_ProfileScreen);
 
 const styles = StyleSheet.create({
   container: {
@@ -210,4 +260,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default connect(select)(ProfileScreen);
+export default NavigatorProfile;

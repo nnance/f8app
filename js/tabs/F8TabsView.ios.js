@@ -75,6 +75,7 @@ class F8TabsView extends React.Component {
     var scheduleIconSelected = this.props.day === 1
       ? require('./schedule/img/schedule-icon-1-active.png')
       : require('./schedule/img/schedule-icon-2-active.png');
+      // <FollowerScreen userList={[{name: 'Art Nattapat'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}]}/>
     return (
       <TabBarIOS tintColor={F8Colors.darkText}>
         <TabBarItemIOS
@@ -105,7 +106,7 @@ class F8TabsView extends React.Component {
           onPress={this.onTabSelect.bind(this, 'map')}
           icon={require('./maps/img/maps-icon.png')}
           selectedIcon={require('./maps/img/maps-icon-active.png')}>
-          <FollowerScreen userList={[{name: 'Art Nattapat'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}]}/>
+          <ProfileScreen/>
         </TabBarItemIOS>
         <TabBarItemIOS
           title="Notifications"

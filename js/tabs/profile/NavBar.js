@@ -5,7 +5,8 @@ import {
   Text,
   Platform,
   View,
-  StyleSheet
+  StyleSheet,
+  TouchableOpacity
 } from 'react-native';
 
 const NAV_BAR_HEIGHT = 40;
@@ -14,9 +15,9 @@ export default class NavBar extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.leftMenu}>
+        <TouchableOpacity style={styles.leftMenu} onPress={() => this.props.onLeftPress && this.props.onLeftPress()}>
           <Text style={styles.navText}>{'<'}</Text>
-        </View>
+        </TouchableOpacity>
         <View style={styles.midMenu}>
           <Text style={styles.navText}>{this.props.title}</Text>
         </View>
