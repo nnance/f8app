@@ -37,7 +37,7 @@ const FollowerDetail = (props) => (<View style={styles.followerDetail}>
   }
   <View>
     {
-      props.followButton ?
+      !props.following ?
         <FollowButton/> :
         <UnfollowButton/>
     }
@@ -68,28 +68,59 @@ const CandyPointDetail = (props) => (<View style={styles.candyPointDetail}>
 
 export default class UserContainer extends React.Component {
   render() {
-    const title = `กำลังติดตาม`;
     return (
       <View style={styles.container}>
-        <NavBar title={title}>
+        <NavBar title={this.props.title}>
         </NavBar>
         <PureListView
           data={this.props.userList}
-          renderRow={(user, i, ii) => {
+          renderRow={(user, i, idx) => {
             return (<View style={styles.rowContainer}>
               <View style={styles.profile}>
                 <ProfilePicture size={40}/>
               </View>
               <Text style={styles.name}>
-                {Number(ii) + 1}. {user.name}
+                {Number(idx) + 1}. {user.name}
               </Text>
               <View style={styles.detail}>
-                <CandyPointDetail icon={1} candys={1250}/>
+                {
+                  this.props.renderDetail(user, idx)
+                }
               </View>
             </View>);
           }}
         />
       </View>
+    );
+  }
+}
+
+export class FollowingScreen extends React.Component {
+  render() {
+    return (
+      <UserContainer {...this.props} title={'กำลังติดตาม'}
+        renderDetail={(user, idx) => <UnfollowButton/>}
+        />
+    );
+  }
+}
+
+export class MyFanScreen extends React.Component {
+  render() {
+    return (
+      <UserContainer {...this.props} title={'แฟนคลับของฉัน'}
+        renderDetail={(user, idx) => <CandyPointDetail icon={idx < 3 ? Number(idx) + 1 : null} candys={1250} highLight={idx < 3}/>}
+        />
+    );
+  }
+}
+
+export class FollowerScreen extends React.Component {
+  render() {
+    return (
+      <UserContainer {...this.props} title={'ผู้ติดตาม'}
+        renderDetail={(user, idx) => <FollowerDetail addButton={true} following={false}/>}
+        />
     );
   }
 }
