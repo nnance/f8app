@@ -12,6 +12,7 @@ import NavBar from './NavBar';
 
 import PureListView from '../../common/PureListView';
 import ProfilePicture from '../../common/ProfilePicture';
+import {toHumanNumber} from '../../common/utils';
 
 const addIcon = require('./img/icons/myfan.png');
 const blockIcon = require('./img/icons/logout.png');
@@ -43,6 +44,28 @@ const FollowerDetail = (props) => (<View style={styles.followerDetail}>
   </View>
 </View>);
 
+const crownIconLevel = {
+  '1': require('./img/icons/crown-1.png'),
+  '2': require('./img/icons/crown-2.png'),
+  '3': require('./img/icons/crown-3.png')
+};
+
+const CandyPointDetail = (props) => (<View style={styles.candyPointDetail}>
+  {
+    props.icon !== null ?
+    <Image style={styles.candyPointIconLevel} source={crownIconLevel[props.icon]}/>
+    : null
+  }
+  <View style={styles.candyPointBox}>
+    <Text style={[styles.candyPoint, props.highLight ? styles.candyPointHighLight : null]}>
+      {toHumanNumber(props.candys)}
+    </Text>
+    <Text style={styles.candyPointText}>
+      Candys Point
+    </Text>
+  </View>
+</View>);
+
 export default class UserContainer extends React.Component {
   render() {
     const title = `กำลังติดตาม`;
@@ -61,7 +84,7 @@ export default class UserContainer extends React.Component {
                 {Number(ii) + 1}. {user.name}
               </Text>
               <View style={styles.detail}>
-                <FollowerDetail/>
+                <CandyPointDetail icon={1} candys={1250}/>
               </View>
             </View>);
           }}
@@ -125,5 +148,29 @@ const styles = StyleSheet.create({
     height: 20,
     width: 20,
     marginRight: 10
+  },
+  candyPointDetail: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  candyPointBox: {
+    alignItems: 'center'
+  },
+  candyPointText: {
+    fontSize: 10,
+    color: 'rgba(0, 0, 0, 0.3)'
+  },
+  candyPoint: {
+    fontSize: 18,
+    fontWeight: 'bold'
+  },
+  candyPointHighLight: {
+    color: 'rgb(141, 227, 188)'
+  },
+  candyPointIconLevel: {
+    height: 20,
+    width: 20,
+    marginRight: 20
   }
 });
