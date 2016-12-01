@@ -10,3 +10,7 @@ export const toHumanNumber = number => {
   }
   return result
 }
+
+export const random = to => {
+  return Math.floor(Math.random() * to);
+}
