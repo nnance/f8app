@@ -17,6 +17,7 @@ import {toHumanNumber} from '../../common/utils';
 
 import {FollowingScreen, FollowerScreen, MyFanScreen} from './UserContainer';
 import ActivityScreen from './ActivityScreen';
+import MyClogScreen from './MyClogScreen';
 
 const menuList = [
   {
@@ -131,6 +132,9 @@ class NavigatorProfile extends React.Component {
     if (route.page === 'activity') {
       return <ActivityScreen onBackPress={() => navigator.pop()}/>;
     }
+    if (route.page === 'myclog') {
+      return <MyClogScreen onBackPress={() => navigator.pop()}/>;
+    }
     return <ProfileScreen
       onMenuPress={this.onMenuPress}
       onFollowingPress={() => navigator.push({page: 'following'})}
@@ -145,6 +149,9 @@ class NavigatorProfile extends React.Component {
     }
     if (name === 'activity') {
       navigator.push({page: 'activity'});
+    }
+    if (name === 'myclog') {
+      navigator.push({page: 'myclog'});
     }
   }
 }

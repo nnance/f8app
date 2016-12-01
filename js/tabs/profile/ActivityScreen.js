@@ -64,8 +64,8 @@ class ActivityScreen extends React.Component {
         </NavBar>
         <PureListView
           data={[{type: 'like'}, {type: 'read'}, {type: 'like'}]}
-          renderRow={() => {
-            return <ActivityRow/>;
+          renderRow={({type}) => {
+            return <ActivityRow type={type}/>;
           }}
           />
       </View>);
@@ -74,8 +74,7 @@ class ActivityScreen extends React.Component {
 
 const styles = StyleSheet.create({
   rowContainer: {
-    paddingVertical: 13,
-    paddingHorizontal: 13
+    padding: 13
   }
 });
 
