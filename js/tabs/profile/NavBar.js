@@ -9,7 +9,9 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-const NAV_BAR_HEIGHT = 40;
+import {colors} from './common';
+
+const NAV_BAR_HEIGHT = 50;
 
 export default class NavBar extends React.Component {
   render() {
@@ -33,13 +35,14 @@ export default class NavBar extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 10,
-    marginBottom: 10,
+    paddingTop: 0,
     height: NAV_BAR_HEIGHT,
-    backgroundColor: 'transparent',
+    backgroundColor: 'white',
     justifyContent: 'space-between',
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    borderBottomWidth: 1,
+    borderColor: colors.greyBorder
   },
   midMenu: {
     alignItems: 'center'

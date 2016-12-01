@@ -16,6 +16,7 @@ import ProfilePicture from '../../common/ProfilePicture';
 import {toHumanNumber} from '../../common/utils';
 
 import {FollowingScreen, FollowerScreen, MyFanScreen} from './UserContainer';
+import ActivityScreen from './ActivityScreen';
 
 const menuList = [
   {
@@ -127,6 +128,9 @@ class NavigatorProfile extends React.Component {
     if (route.page === 'myfan') {
       return <MyFanScreen userList={mockUser} onBackPress={() => navigator.pop()}/>
     }
+    if (route.page === 'activity') {
+      return <ActivityScreen onBackPress={() => navigator.pop()}/>;
+    }
     return <ProfileScreen
       onMenuPress={this.onMenuPress}
       onFollowingPress={() => navigator.push({page: 'following'})}
@@ -137,7 +141,10 @@ class NavigatorProfile extends React.Component {
   onMenuPress(name) {
     const navigator = this.refs.navigator;
     if (name === 'myfan') {
-      navigator.push({page: 'myfan'})
+      navigator.push({page: 'myfan'});
+    }
+    if (name === 'activity') {
+      navigator.push({page: 'activity'});
     }
   }
 }

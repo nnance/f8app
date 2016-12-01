@@ -8,11 +8,12 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-import NavBar from './NavBar';
-
 import PureListView from '../../common/PureListView';
 import ProfilePicture from '../../common/ProfilePicture';
 import {toHumanNumber} from '../../common/utils';
+
+import NavBar from './NavBar';
+import {styles as commonStyles} from './common';
 
 const addIcon = require('./img/icons/myfan.png');
 const blockIcon = require('./img/icons/logout.png');
@@ -69,7 +70,7 @@ const CandyPointDetail = (props) => (<View style={styles.candyPointDetail}>
 export default class UserContainer extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
+      <View style={commonStyles.listViewContainer}>
         <NavBar title={this.props.title} onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}>
         </NavBar>
         <PureListView
@@ -126,10 +127,6 @@ export class FollowerScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white'
-  },
   detail: {
     flex: 1,
     paddingRight: 20,
