@@ -286,17 +286,20 @@ const select = state => ({
     activity: 'like',
     title: `แมค เดมอน ตะลุยอวกาศ`,
     outline: `The Martain กำกับโดย ริดลีย์ สก๊อต เนื้อหาเล่าถึง นักบินอวกาศที่ถูกทิ้งไว้บนดาว...`,
-    uri: 'http://3.bp.blogspot.com/-zW6wqY_1Me0/VYvJMOV4mcI/AAAAAAAAD-4/mB_AxhFoJH4/s1600/178491main_sig07-009-516.jpg'
+    uri: 'http://3.bp.blogspot.com/-zW6wqY_1Me0/VYvJMOV4mcI/AAAAAAAAD-4/mB_AxhFoJH4/s1600/178491main_sig07-009-516.jpg',
+    date: new Date(Date.now() - 5000)
+  },{
+    activity: 'like',
+    title: `แมค เดมอน ตะลุยอวกาศ`,
+    outline: `The Martain กำกับโดย ริดลีย์ สก๊อต เนื้อหาเล่าถึง นักบินอวกาศที่ถูกทิ้งไว้บนดาว...`,
+    uri: 'http://3.bp.blogspot.com/-zW6wqY_1Me0/VYvJMOV4mcI/AAAAAAAAD-4/mB_AxhFoJH4/s1600/178491main_sig07-009-516.jpg',
+    date: new Date(2016, 10, 8)
   }, {
     activity: 'read',
     title: `แมค เดมอน ตะลุยอวกาศ`,
     outline: `The Martain กำกับโดย ริดลีย์ สก๊อต เนื้อหาเล่าถึง นักบินอวกาศที่ถูกทิ้งไว้บนดาว...`,
-    uri: 'http://www.fujisan.ne.jp/fit/th/images/ohishikouen430.jpg'
-  }, {
-    activity: 'like',
-    title: `แมค เดมอน ตะลุยอวกาศ`,
-    outline: `The Martain กำกับโดย ริดลีย์ สก๊อต เนื้อหาเล่าถึง นักบินอวกาศที่ถูกทิ้งไว้บนดาว...`,
-    uri: 'http://3.bp.blogspot.com/-zW6wqY_1Me0/VYvJMOV4mcI/AAAAAAAAD-4/mB_AxhFoJH4/s1600/178491main_sig07-009-516.jpg'
+    uri: 'http://www.fujisan.ne.jp/fit/th/images/ohishikouen430.jpg',
+    date: new Date(2015, 10, 8)
   }],
   myClogs: [
     {
@@ -305,7 +308,8 @@ const select = state => ({
       cover: "http://www.fujisan.ne.jp/fit/th/images/ohishikouen430.jpg",
       categoryCover: "https://www.trivita.com/img/icons/icon-brain_400x400.png",
       views: 12300,
-      likes: 1500
+      likes: 1500,
+      date: new Date(2015, 5, 24)
     },
     {
       title: "Stranger Thinks 2",
@@ -313,7 +317,8 @@ const select = state => ({
       cover: "http://www.fujisan.ne.jp/fit/th/images/ohishikouen430.jpg",
       categoryCover: "https://www.trivita.com/img/icons/icon-brain_400x400.png",
       views: 12300,
-      likes: 1500
+      likes: 1500,
+      date: new Date(2016, 10, 8)
     }
   ],
   bookmark: [

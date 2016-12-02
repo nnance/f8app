@@ -9,6 +9,8 @@ import {
   TouchableOpacity
 } from 'react-native';
 
+import moment from 'moment';
+
 import PureListView from '../../common/PureListView';
 import {toHumanNumber, random} from '../../common/utils';
 
@@ -44,7 +46,7 @@ const ActivityRow = (props) => (<TouchableOpacity style={styles.rowContainer}>
         alignSelf: 'flex-end',
         fontSize: 10,
         color: 'rgba(0, 0, 0, 0.2)'
-      }}>12 mins ago</Text>
+      }}>{moment(props.date).fromNow()}</Text>
   </View>
   <View style={{paddingVertical: 10}}>
     <Image

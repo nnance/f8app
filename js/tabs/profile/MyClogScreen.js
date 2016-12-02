@@ -8,6 +8,7 @@ import {
   ListView,
   TouchableOpacity
 } from 'react-native';
+import moment from 'moment';
 
 import PureListView from '../../common/PureListView';
 import CircleImage from '../../common/CircleImage';
@@ -28,7 +29,7 @@ const MyClogRow = (props) => (<TouchableOpacity style={styles.rowContainer}>
     size={100}
   />
   <View style={{flex: 1, paddingLeft: 20}}>
-    <Text style={{alignSelf: 'flex-end', fontSize: 12, color: commonColors.textFadedGrey}}>October 9</Text>
+    <Text style={{alignSelf: 'flex-end', fontSize: 12, color: commonColors.textFadedGrey}}>{moment(props.date).format('MMMM D')}</Text>
     <Text style={{fontWeight: 'bold', marginTop: 7}}>{props.title}</Text>
     <Text style={{fontSize: 12, marginTop: 5, color: commonColors.textGrey}}>{props.authors}</Text>
     <View style={{flexDirection: 'row', alignItems: 'center'}}>
