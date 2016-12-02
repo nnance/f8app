@@ -20,15 +20,15 @@ import {styles as commonStyles, colors as commonColors} from './common';
 const BookmarkRow = props => (<TouchableOpacity style={styles.rowContainer}>
   <CircleImageWithCategory
     source={{
-      uri: "http://www.fujisan.ne.jp/fit/th/images/ohishikouen430.jpg"
+      uri: props.cover
     }}
     categorySource={{
-      uri: "https://www.trivita.com/img/icons/icon-brain_400x400.png"
+      uri: props.categoryCover
     }}
     size={100}
   />
   <View style={{flex: 1, paddingLeft: 10}}>
-    <Text style={{marginTop: 5, fontWeight: 'bold', fontSize: 16}}>ตลก 8 ฉาก</Text>
+    <Text style={{marginTop: 5, fontWeight: 'bold', fontSize: 16}}>{props.title}</Text>
     <View style={{paddingTop: 10, flexDirection: 'row'}}>
       {
         [1, 2, 3, 4].map(() => (
@@ -52,9 +52,9 @@ class BookmarkScreen extends React.Component {
     return (<View style={commonStyles.listViewContainer}>
         <NavBar title="Bookmark" onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}/>
         <PureListView
-          data={[{}, {}, {}]}
-          renderRow={() => {
-            return <BookmarkRow/>;
+          data={this.props.bookmark}
+          renderRow={(bookmark) => {
+            return <BookmarkRow {...bookmark}/>;
           }}
         />
       </View>);

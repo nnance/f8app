@@ -110,7 +110,7 @@ export class MyFanScreen extends React.Component {
   render() {
     return (
       <UserContainer {...this.props} title={'แฟนคลับของฉัน'}
-        renderDetail={(user, idx) => <CandyPointDetail icon={idx < 3 ? Number(idx) + 1 : null} candys={1250} highLight={idx < 3}/>}
+        renderDetail={(user, idx) => <CandyPointDetail icon={idx < 3 ? Number(idx) + 1 : null} candys={user.candys} highLight={idx < 3}/>}
         />
     );
   }
@@ -120,7 +120,7 @@ export class FollowerScreen extends React.Component {
   render() {
     return (
       <UserContainer {...this.props} title={'ผู้ติดตาม'}
-        renderDetail={(user, idx) => <FollowerDetail addButton={true} following={true}/>}
+        renderDetail={(user, idx) => <FollowerDetail addButton={user.following} following={user.following}/>}
         />
     );
   }
@@ -153,8 +153,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(190, 190, 190, 0.8)'
   },
   unfollowText: {
+    textAlign: 'center',
     color: 'white',
-    fontSize: 13
+    fontSize: 13,
+    width: 60
   },
   followButton: {
     padding: 4,
@@ -165,8 +167,10 @@ const styles = StyleSheet.create({
     borderColor: 'rgb(141, 227, 188)'
   },
   followText: {
+    textAlign: 'center',
     color: 'rgb(141, 227, 188)',
-    fontSize: 13
+    fontSize: 13,
+    width: 60
   },
   followerDetail: {
     flexDirection: 'row',

@@ -120,26 +120,26 @@ class NavigatorProfile extends React.Component {
   }
 
   renderScene(route, navigator) {
-    const mockUser = [{name: 'Art Nattapat'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}];
     if (route.page === 'following') {
-      return <FollowingScreen userList={mockUser} onBackPress={() => navigator.pop()}/>
+      return <FollowingScreen {...this.props} userList={this.props.following} onBackPress={() => navigator.pop()}/>
     }
     if (route.page === 'follower') {
-      return <FollowerScreen userList={mockUser} onBackPress={() => navigator.pop()}/>
+      return <FollowerScreen {...this.props} userList={this.props.follower} onBackPress={() => navigator.pop()}/>
     }
     if (route.page === 'myfan') {
-      return <MyFanScreen userList={mockUser} onBackPress={() => navigator.pop()}/>
+      return <MyFanScreen {...this.props} userList={this.props.myFan} onBackPress={() => navigator.pop()}/>
     }
     if (route.page === 'activity') {
-      return <ActivityScreen onBackPress={() => navigator.pop()}/>;
+      return <ActivityScreen {...this.props} onBackPress={() => navigator.pop()}/>;
     }
     if (route.page === 'myclog') {
-      return <MyClogScreen onBackPress={() => navigator.pop()}/>;
+      return <MyClogScreen {...this.props} onBackPress={() => navigator.pop()}/>;
     }
     if (route.page === 'bookmark') {
-      return <BookmarkScreen onBackPress={() => navigator.pop()}/>;
+      return <BookmarkScreen {...this.props} onBackPress={() => navigator.pop()}/>;
     }
     return <ProfileScreen
+      {...this.props}
       onMenuPress={this.onMenuPress}
       onFollowingPress={() => navigator.push({page: 'following'})}
       onFollowerPress={() => navigator.push({page: 'follower'})}
@@ -163,7 +163,7 @@ class NavigatorProfile extends React.Component {
   }
 }
 
-class _ProfileScreen extends React.Component {
+class ProfileScreen extends React.Component {
   render() {
     const name = this.props.user.name || '';
     return (
@@ -185,8 +185,8 @@ class _ProfileScreen extends React.Component {
                 />
             </View>
             <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-              <NumberDetail title='ผู้ติดตาม' number={this.props.followerCount} borderRight={true} onPress={() => this.props.onFollowerPress && this.props.onFollowerPress()}/>
-              <NumberDetail title='กำลังติดตาม' number={this.props.followingCount} borderRight={true} onPress={() => this.props.onFollowingPress && this.props.onFollowingPress()}/>
+              <NumberDetail title='ผู้ติดตาม' number={this.props.follower.length} borderRight={true} onPress={() => this.props.onFollowerPress && this.props.onFollowerPress()}/>
+              <NumberDetail title='กำลังติดตาม' number={this.props.following.length} borderRight={true} onPress={() => this.props.onFollowingPress && this.props.onFollowingPress()}/>
               <NumberDetail title='Candys' number={this.props.candys} onPress={() => this.props.onCandyPress && this.props.onCandyPress()}/>
             </View>
           </Image>
@@ -211,15 +211,6 @@ class _ProfileScreen extends React.Component {
     );
   }
 }
-
-const select = state => ({
-  user: state.user,
-  followingCount: 432,
-  followerCount: 1249,
-  candys: 1890
-});
-
-const ProfileScreen = connect(select)(_ProfileScreen);
 
 const styles = StyleSheet.create({
   container: {
@@ -281,4 +272,62 @@ const styles = StyleSheet.create({
   }
 });
 
-export default NavigatorProfile;
+const mockFollowing = [{name: 'Art Nattapat'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}];
+const mockFollower = [{name: 'Art Nattapat', following: true}, {name: 'Art Art Art', following: false}, {name: 'Art Art Art', following: false}, {name: 'Art Art Art', following: true}, {name: 'Art Art Art', following: true}, {name: 'Art Art Art', following: false}];
+const mockMyFan = [{name: 'Art Nattapat', candys: 1250}, {name: 'Art Art Art', candys: 1250}, {name: 'Art Art Art', candys: 1000}, {name: 'Art Art Art', candys: 789}, {name: 'Art Art Art', candys: 7013}, {name: 'Art Art Art', candys: 0}];
+
+const select = state => ({
+  user: state.user,
+  following: mockFollowing,
+  follower: mockFollower,
+  myFan: mockMyFan,
+  candys: 1890,
+  activity: [{
+    activity: 'like',
+    title: `แมค เดมอน ตะลุยอวกาศ`,
+    outline: `The Martain กำกับโดย ริดลีย์ สก๊อต เนื้อหาเล่าถึง นักบินอวกาศที่ถูกทิ้งไว้บนดาว...`,
+    uri: 'http://3.bp.blogspot.com/-zW6wqY_1Me0/VYvJMOV4mcI/AAAAAAAAD-4/mB_AxhFoJH4/s1600/178491main_sig07-009-516.jpg'
+  }, {
+    activity: 'read',
+    title: `แมค เดมอน ตะลุยอวกาศ`,
+    outline: `The Martain กำกับโดย ริดลีย์ สก๊อต เนื้อหาเล่าถึง นักบินอวกาศที่ถูกทิ้งไว้บนดาว...`,
+    uri: 'http://www.fujisan.ne.jp/fit/th/images/ohishikouen430.jpg'
+  }, {
+    activity: 'like',
+    title: `แมค เดมอน ตะลุยอวกาศ`,
+    outline: `The Martain กำกับโดย ริดลีย์ สก๊อต เนื้อหาเล่าถึง นักบินอวกาศที่ถูกทิ้งไว้บนดาว...`,
+    uri: 'http://3.bp.blogspot.com/-zW6wqY_1Me0/VYvJMOV4mcI/AAAAAAAAD-4/mB_AxhFoJH4/s1600/178491main_sig07-009-516.jpg'
+  }],
+  myClogs: [
+    {
+      title: "Stranger Thinks",
+      authors: "David Beckham",
+      cover: "http://www.fujisan.ne.jp/fit/th/images/ohishikouen430.jpg",
+      categoryCover: "https://www.trivita.com/img/icons/icon-brain_400x400.png",
+      views: 12300,
+      likes: 1500
+    },
+    {
+      title: "Stranger Thinks 2",
+      authors: "David Beckham",
+      cover: "http://www.fujisan.ne.jp/fit/th/images/ohishikouen430.jpg",
+      categoryCover: "https://www.trivita.com/img/icons/icon-brain_400x400.png",
+      views: 12300,
+      likes: 1500
+    }
+  ],
+  bookmark: [
+    {
+      title: "ตลก 8 ​ฉาก",
+      cover: "http://www.fujisan.ne.jp/fit/th/images/ohishikouen430.jpg",
+      categoryCover: "https://www.trivita.com/img/icons/icon-brain_400x400.png"
+    },
+    {
+      title: "ตลก 9 ​ฉาก",
+      cover: "http://www.fujisan.ne.jp/fit/th/images/ohishikouen430.jpg",
+      categoryCover: "https://www.trivita.com/img/icons/icon-brain_400x400.png"
+    }
+  ]
+});
+
+export default connect(select)(NavigatorProfile);

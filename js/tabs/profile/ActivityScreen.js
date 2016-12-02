@@ -15,20 +15,31 @@ import {toHumanNumber, random} from '../../common/utils';
 import NavBar from './NavBar';
 import {styles as commonStyles} from './common';
 
-const mockUri = [
-  "http://3.bp.blogspot.com/-zW6wqY_1Me0/VYvJMOV4mcI/AAAAAAAAD-4/mB_AxhFoJH4/s1600/178491main_sig07-009-516.jpg",
-  "http://www.fujisan.ne.jp/fit/th/images/ohishikouen430.jpg"
-];
+const likeIcon = require('./img/icons/activity.png');
+const readIcon = require('./img/icons/myclog.png');
 
 const ActivityRow = (props) => (<TouchableOpacity style={styles.rowContainer}>
   <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-    <Text style={{
+    <View style={{
         alignSelf: 'flex-start',
-        fontSize: 13,
-        color: 'rgba(0, 0, 0, 0.55)'
+        flexDirection: 'row',
+        alignItems: 'center'
       }}>
-      {props.type === 'like' ? 'liked' : 'read'} funny clog
-    </Text>
+      <Image
+        source={props.activity === 'like' ? likeIcon : readIcon}
+        style={{
+          width: 20,
+          height: 20
+        }}
+        />
+      <Text style={{
+          fontSize: 13,
+          color: 'rgba(0, 0, 0, 0.55)',
+          marginLeft: 5
+        }}>
+        {props.activity === 'like' ? 'liked' : 'read'} funny clog
+      </Text>
+    </View>
     <Text style={{
         alignSelf: 'flex-end',
         fontSize: 10,
@@ -38,7 +49,7 @@ const ActivityRow = (props) => (<TouchableOpacity style={styles.rowContainer}>
   <View style={{paddingVertical: 10}}>
     <Image
       style={{height: 150, borderRadius: 5}}
-      source={{uri: mockUri[random(mockUri.length)]}}
+      source={{uri: props.uri}}
       />
   </View>
   <View>
@@ -46,13 +57,13 @@ const ActivityRow = (props) => (<TouchableOpacity style={styles.rowContainer}>
         fontSize: 14,
         fontWeight: 'bold',
       }}>
-      แมค เดมอน ตะลุยอวกาศ
+      {props.title}
     </Text>
     <Text style={{
         fontSize: 10,
         color: 'rgba(0, 0, 0, 0.3)'
       }}>
-      The Martain กำกับโดย ริดลีย์ สก๊อต เนื้อหาเล่าถึง นักบินอวกาศที่ถูกทิ้งไว้บนดาว...
+      {props.outline}
     </Text>
   </View>
 </TouchableOpacity>);
@@ -63,9 +74,9 @@ class ActivityScreen extends React.Component {
         <NavBar title="กิจกรรม" onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}>
         </NavBar>
         <PureListView
-          data={[{type: 'like'}, {type: 'read'}, {type: 'like'}]}
-          renderRow={({type}) => {
-            return <ActivityRow type={type}/>;
+          data={this.props.activity}
+          renderRow={(props) => {
+            return <ActivityRow {...props}/>;
           }}
           />
       </View>);
