@@ -17,6 +17,44 @@ import CircleImageWithCategory from './CircleImageWithCategory';
 import NavBar from './NavBar';
 import {styles as commonStyles, colors as commonColors} from './common';
 
+const optionIcon = require('./img/icons/bookmark.png');
+const deleteIcon = require('./img/icons/candy.png');
+
+const CancelDelete = (props) => (<View style={{
+  padding: 4,
+  paddingLeft: 5,
+  paddingRight: 5,
+  borderRadius: 5,
+  backgroundColor: 'rgba(190, 190, 190, 0.8)'
+}}>
+  <Text style={{
+    textAlign: 'center',
+    color: 'white',
+    fontSize: 13,
+    width: 60
+  }}>
+    ยกเลิก
+  </Text>
+</View>);
+
+const DeleteButton = (props) => (<View style={{
+  padding: 4,
+  paddingLeft: 5,
+  paddingRight: 5,
+  borderRadius: 5,
+  borderWidth: 1,
+  borderColor: 'rgb(141, 227, 188)'
+}}>
+  <Text style={{
+    textAlign: 'center',
+    color: 'rgb(141, 227, 188)',
+    fontSize: 13,
+    width: 60
+  }}>
+    เลือก
+  </Text>
+</View>);
+
 const BookmarkRow = props => (<TouchableOpacity style={styles.rowContainer}>
   <CircleImageWithCategory
     source={{
@@ -28,7 +66,15 @@ const BookmarkRow = props => (<TouchableOpacity style={styles.rowContainer}>
     size={100}
   />
   <View style={{flex: 1, paddingLeft: 10}}>
-    <Text style={{marginTop: 5, fontWeight: 'bold', fontSize: 16}}>{props.title}</Text>
+    <View style={{marginTop: 5, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
+      <Text style={{fontWeight: 'bold', fontSize: 16}}>{props.title}</Text>
+      {
+        props.showDelete ?
+        <TouchableOpacity style={{alignItems: 'flex-end'}} onPress={() => props.onToggle && props.onToggle()}>
+          {props.willDelete ? <CancelDelete/> : <DeleteButton/>}
+        </TouchableOpacity> : props.onDelete
+      }
+    </View>
     <View style={{paddingTop: 10, flexDirection: 'row'}}>
       {
         [1, 2, 3, 4].map(() => (
@@ -48,17 +94,77 @@ const BookmarkRow = props => (<TouchableOpacity style={styles.rowContainer}>
 </TouchableOpacity>);
 
 class BookmarkScreen extends React.Component {
+  constructor(...args) {
+    super(...args);
+    this.state = {
+      onDelete: false,
+      deleteIndexs: []
+    };
+  }
+
   render() {
     return (<View style={commonStyles.listViewContainer}>
-        <NavBar title="Bookmark" onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}/>
-        <PureListView
-          data={this.props.bookmark}
-          renderRow={(bookmark) => {
-            return <BookmarkRow {...bookmark}/>;
+        <NavBar title="Bookmark"
+          onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}
+          onRightPress={() => this.onRightMenuPress()}
+          renderRightMenu={() => {
+            return (<View>
+              <Image
+                style={{
+                  width: 20,
+                  height: 20
+                }}
+                source={!this.state.onDelete ? optionIcon : deleteIcon}
+                />
+            </View>);
           }}
+          />
+        <PureListView
+          data={this.props.bookmark.map(
+              (bookmark, i) => ({
+                ...bookmark,
+                willDelete: this.state.deleteIndexs.indexOf(i) !== -1,
+                index: i
+              })
+            )}
+          renderRow={
+            this.state.onDelete ?
+              (bookmark) => {
+                return <BookmarkRow {...bookmark} showDelete={true} onToggle={() => {
+                    if (this.state.deleteIndexs.indexOf(bookmark.index) === -1) {
+                      this.setState({
+                        deleteIndexs: [...this.state.deleteIndexs, bookmark.index]
+                      });
+                    }
+                    else {
+                      this.setState({
+                        deleteIndexs: this.state.deleteIndexs.filter(i => i !== bookmark.index)
+                      });
+                    }
+                  }}/>;
+              } :
+              (bookmark) => {
+                return <BookmarkRow {...bookmark} showDelete={false}/>;
+              }
+          }
         />
       </View>);
   }
+
+  onRightMenuPress() {
+    if (this.state.onDelete) {
+      this.setState({
+        deleteIndexs: []
+      });
+    }
+    else {
+
+    }
+    this.setState({
+      onDelete: !this.state.onDelete
+    });
+  }
+
 }
 
 const styles = StyleSheet.create({

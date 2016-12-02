@@ -23,11 +23,11 @@ export default class NavBar extends React.Component {
         <View style={styles.midMenu}>
           <Text style={styles.navText}>{this.props.title}</Text>
         </View>
-        <View style={styles.rightMenu}>
-          { true ? null :
-            <Text style={styles.navText}>{'>'}</Text>
+        <TouchableOpacity style={styles.rightMenu} onPress={() => this.props.onRightPress && this.props.onRightPress()}>
+          {
+            this.props.renderRightMenu ? this.props.renderRightMenu() : null
           }
-        </View>
+        </TouchableOpacity>
       </View>
     );
   }
