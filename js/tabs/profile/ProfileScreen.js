@@ -329,12 +329,14 @@ const select = state => ({
     {
       title: "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
       cover: require('./img/A.png'),
-      categoryCover: require('./img/category/N.png')
+      categoryCover: require('./img/category/N.png'),
+      bookmarkCount: 7
     },
     {
       title: "Money Honey คุณชายหน้าตายกับยัยขี้งก",
       cover: require('./img/B.png'),
-      categoryCover: require('./img/category/M.png')
+      categoryCover: require('./img/category/M.png'),
+      bookmarkCount: 3
     }
   ]
 });
