@@ -17,8 +17,8 @@ import {toHumanNumber, random} from '../../common/utils';
 import NavBar from './NavBar';
 import {styles as commonStyles, colors} from './common';
 
-const likeIcon = require('./img/icons/activity.png');
-const readIcon = require('./img/icons/myclog.png');
+const likeIcon = require('./img/icons/heart.png');
+const readIcon = require('./img/icons/read.png');
 
 const ActivityRow = (props) => (<TouchableOpacity style={styles.rowContainer}>
   <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
@@ -30,8 +30,9 @@ const ActivityRow = (props) => (<TouchableOpacity style={styles.rowContainer}>
       <Image
         source={props.activity === 'like' ? likeIcon : readIcon}
         style={{
-          width: 20,
-          height: 20
+          width: 15,
+          height: 15,
+          resizeMode: 'contain'
         }}
         />
       <Text style={{
