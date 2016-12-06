@@ -252,12 +252,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   headNumberDetail: {
+    minWidth: 60,
     paddingTop: 3,
     paddingBottom: 3,
     paddingLeft: 10,
     paddingRight: 10,
     backgroundColor: 'rgba(0, 0, 0, 0.2)',
-    borderRadius: 5
+    borderRadius: 5,
+    alignItems: 'center'
   },
   whiteLine: {
     borderRightWidth: 1,
