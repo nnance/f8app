@@ -15,8 +15,8 @@ import {toHumanNumber} from '../../common/utils';
 import NavBar from './NavBar';
 import {styles as commonStyles} from './common';
 
-const addIcon = require('./img/icons/myfan.png');
-const blockIcon = require('./img/icons/logout.png');
+const addIcon = require('./img/icons/add.png');
+const blockIcon = require('./img/icons/block.png');
 
 const UnfollowButton = (props) => (<TouchableOpacity style={styles.unfollowButton}>
   <Text style={styles.unfollowText}>
