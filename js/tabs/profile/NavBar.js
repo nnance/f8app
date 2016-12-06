@@ -6,7 +6,8 @@ import {
   Platform,
   View,
   StyleSheet,
-  TouchableOpacity
+  TouchableOpacity,
+  Image
 } from 'react-native';
 
 import {colors} from './common';
@@ -18,7 +19,7 @@ export default class NavBar extends React.Component {
     return (
       <View style={styles.container}>
         <TouchableOpacity style={styles.leftMenu} onPress={() => this.props.onLeftPress && this.props.onLeftPress()}>
-          <Text style={styles.navText}>{'<'}</Text>
+          <Image style={styles.backButton} source={require('./img/icons/backButton.png')}/>
         </TouchableOpacity>
         <View style={styles.midMenu}>
           <Text style={styles.navText}>{this.props.title}</Text>
@@ -44,6 +45,10 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: colors.greyBorder
   },
+  backButton: {
+    height: 20,
+    resizeMode: 'contain'
+  },
   midMenu: {
     alignItems: 'center'
   },
@@ -56,7 +61,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end'
   },
   navText: {
-    fontSize: 25,
+    fontSize: 22,
     fontWeight: 'bold',
     color: 'rgb(209, 87, 92)'
   }

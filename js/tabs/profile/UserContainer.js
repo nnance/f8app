@@ -202,7 +202,8 @@ const styles = StyleSheet.create({
   },
   candyPointIconLevel: {
     height: 20,
-    width: 20,
-    marginRight: 20
+    width: 40,
+    marginRight: 20,
+    resizeMode: 'contain'
   }
 });
