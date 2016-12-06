@@ -307,21 +307,21 @@ const select = state => ({
   }],
   myClogs: [
     {
-      title: "Stranger Thinks",
+      title: "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
       authors: "David Beckham",
-      cover: "http://www.fujisan.ne.jp/fit/th/images/ohishikouen430.jpg",
-      categoryCover: "https://www.trivita.com/img/icons/icon-brain_400x400.png",
+      cover: require('./img/A.png'),
+      categoryCover: require('./img/category/M.png'),
       views: 12300,
       likes: 1500,
       date: new Date(2015, 5, 24)
     },
     {
-      title: "Stranger Thinks 2",
-      authors: "David Beckham",
-      cover: "http://www.fujisan.ne.jp/fit/th/images/ohishikouen430.jpg",
-      categoryCover: "https://www.trivita.com/img/icons/icon-brain_400x400.png",
-      views: 12300,
-      likes: 1500,
+      title: "Money Honey คุณชายหน้าตายกับยัยขี้งก",
+      authors: "สุดสาครนอย ไทรโยค",
+      cover: require('./img/B.png'),
+      categoryCover: require('./img/category/N.png'),
+      views: 100,
+      likes: 55,
       date: new Date(2016, 10, 8)
     }
   ],

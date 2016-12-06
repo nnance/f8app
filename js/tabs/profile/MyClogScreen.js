@@ -12,7 +12,7 @@ import moment from 'moment';
 
 import PureListView from '../../common/PureListView';
 import CircleImage from '../../common/CircleImage';
-import {toHumanNumber, random} from '../../common/utils';
+import {toHumanNumber, random, mapSource} from '../../common/utils';
 
 import CircleImageWithCategory from './CircleImageWithCategory';
 import NavBar from './NavBar';
@@ -20,12 +20,8 @@ import {styles as commonStyles, colors as commonColors} from './common';
 
 const MyClogRow = (props) => (<TouchableOpacity style={styles.rowContainer}>
   <CircleImageWithCategory
-    source={{
-      uri: props.cover
-    }}
-    categorySource={{
-      uri: props.categoryCover
-    }}
+    source={mapSource(props.cover)}
+    categorySource={mapSource(props.categoryCover)}
     size={100}
   />
   <View style={{flex: 1, paddingLeft: 20}}>
@@ -33,10 +29,14 @@ const MyClogRow = (props) => (<TouchableOpacity style={styles.rowContainer}>
     <Text style={{fontWeight: 'bold', marginTop: 7}}>{props.title}</Text>
     <Text style={{fontSize: 12, marginTop: 5, color: commonColors.textGrey}}>{props.authors}</Text>
     <View style={{flexDirection: 'row', alignItems: 'center'}}>
-      <Image source={{uri: "http://www.fujisan.ne.jp/fit/th/images/ohishikouen430.jpg"}} style={{width: 20, height: 20, borderRadius: 4}}/>
-      <Text style={{paddingLeft: 5, fontSize: 12, color: commonColors.textFadedGrey}}>ดู {toHumanNumber(props.views)} ครั้ง</Text>
-      <Image source={{uri: "http://www.fujisan.ne.jp/fit/th/images/ohishikouen430.jpg"}} style={{width: 20, height: 20, borderRadius: 4, marginLeft: 20}}/>
-      <Text style={{paddingLeft: 5, fontSize: 12, color: commonColors.textFadedGrey}}>{toHumanNumber(props.likes)} Like</Text>
+      <View style={styles.detailSeparate}>
+        <Image source={require('./img/icons/read.png')} style={{width: 20, height: 20, resizeMode: 'contain', borderRadius: 4}}/>
+        <Text style={{paddingLeft: 5, fontSize: 12, color: commonColors.textFadedGrey}}>ดู {toHumanNumber(props.views)} ครั้ง</Text>
+      </View>
+      <View style={styles.detailSeparate}>
+        <Image source={require('./img/icons/heart.png')} style={{width: 20, height: 20, resizeMode: 'contain', borderRadius: 4, marginLeft: 20}}/>
+        <Text style={{paddingLeft: 5, fontSize: 12, color: commonColors.textFadedGrey}}>{toHumanNumber(props.likes)} Like</Text>
+      </View>
     </View>
   </View>
 </TouchableOpacity>);
@@ -59,6 +59,11 @@ const styles = StyleSheet.create({
   rowContainer: {
     padding: 13,
     flexDirection: 'row'
+  },
+  detailSeparate: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center'
   }
 });
 

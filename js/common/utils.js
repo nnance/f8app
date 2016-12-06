@@ -14,3 +14,12 @@ export const toHumanNumber = number => {
 export const random = to => {
   return Math.floor(Math.random() * to);
 }
+
+export function mapSource(source) {
+  if (typeof(source) === 'string') {
+    return {
+      uri: source
+    };
+  }
+  return source;
+}

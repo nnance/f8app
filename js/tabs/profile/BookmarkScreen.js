@@ -11,20 +11,11 @@ import {
 
 import PureListView from '../../common/PureListView';
 import CircleImage from '../../common/CircleImage';
-import {toHumanNumber, random} from '../../common/utils';
+import {toHumanNumber, random, mapSource} from '../../common/utils';
 
 import CircleImageWithCategory from './CircleImageWithCategory';
 import NavBar from './NavBar';
 import {styles as commonStyles, colors} from './common';
-
-function mapSource(source) {
-  if (typeof(source) === 'string') {
-    return {
-      uri: source
-    };
-  }
-  return source;
-}
 
 const rightArrow = require('./img/icons/rightGreyArrow.png');
 
