@@ -15,7 +15,7 @@ import {toHumanNumber, random} from '../../common/utils';
 
 import CircleImageWithCategory from './CircleImageWithCategory';
 import NavBar from './NavBar';
-import {styles as commonStyles, colors as commonColors} from './common';
+import {styles as commonStyles, colors} from './common';
 
 const optionIcon = require('./img/icons/bookmark.png');
 const deleteIcon = require('./img/icons/candy.png');
@@ -85,7 +85,7 @@ const BookmarkRow = props => (<TouchableOpacity style={styles.rowContainer}>
               }}
               size={50}
             />
-            <Text style={{fontSize: 10}}>bookmark 1</Text>
+          <Text style={{fontSize: 10, color: colors.textGrey}}>bookmark 1</Text>
           </View>
         ))
       }

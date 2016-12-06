@@ -15,7 +15,7 @@ import PureListView from '../../common/PureListView';
 import {toHumanNumber, random} from '../../common/utils';
 
 import NavBar from './NavBar';
-import {styles as commonStyles} from './common';
+import {styles as commonStyles, colors} from './common';
 
 const likeIcon = require('./img/icons/activity.png');
 const readIcon = require('./img/icons/myclog.png');
@@ -36,7 +36,7 @@ const ActivityRow = (props) => (<TouchableOpacity style={styles.rowContainer}>
         />
       <Text style={{
           fontSize: 13,
-          color: 'rgba(0, 0, 0, 0.55)',
+          color: colors.textGrey,
           marginLeft: 5
         }}>
         {props.activity === 'like' ? 'liked' : 'read'} funny clog
@@ -45,7 +45,7 @@ const ActivityRow = (props) => (<TouchableOpacity style={styles.rowContainer}>
     <Text style={{
         alignSelf: 'flex-end',
         fontSize: 10,
-        color: 'rgba(0, 0, 0, 0.2)'
+        color: colors.textFadedGrey
       }}>{moment(props.date).fromNow()}</Text>
   </View>
   <View style={{paddingVertical: 10}}>
@@ -63,7 +63,7 @@ const ActivityRow = (props) => (<TouchableOpacity style={styles.rowContainer}>
     </Text>
     <Text style={{
         fontSize: 10,
-        color: 'rgba(0, 0, 0, 0.3)'
+        color: colors.textFadedGrey
       }}>
       {props.outline}
     </Text>
