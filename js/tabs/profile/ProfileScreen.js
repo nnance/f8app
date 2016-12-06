@@ -179,7 +179,8 @@ class ProfileScreen extends React.Component {
                 style={{
                   marginLeft: 10,
                   height: 20,
-                  width: 20
+                  width: 20,
+                  backgroundColor: 'transparent'
                 }}
                 source={require('./img/icons/edit-profile.png')}
                 />
@@ -226,13 +227,14 @@ const styles = StyleSheet.create({
     backgroundColor: 'white'
   },
   row: {
-    padding: 20,
+    padding: 15,
     flex: 1,
     flexDirection: 'row'
   },
   menuIcon: {
     width: 20,
-    height: 20
+    height: 20,
+    resizeMode: 'contain'
   },
   menuText: {
     paddingLeft: 20
