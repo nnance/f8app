@@ -65,7 +65,9 @@ const ActivityRow = (props) => (<TouchableOpacity style={styles.rowContainer}>
     <Text style={{
         fontSize: 10,
         color: colors.textFadedGrey
-      }}>
+      }}
+      numberOfLines={1}
+      >
       {props.outline}
     </Text>
   </View>
