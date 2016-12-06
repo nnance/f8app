@@ -55,14 +55,19 @@ const DeleteButton = (props) => (<View style={{
   </Text>
 </View>);
 
+function mapSource(source) {
+  if (typeof(source) === 'string') {
+    return {
+      uri: source
+    };
+  }
+  return source;
+}
+
 const BookmarkRow = props => (<TouchableOpacity style={styles.rowContainer}>
   <CircleImageWithCategory
-    source={{
-      uri: props.cover
-    }}
-    categorySource={{
-      uri: props.categoryCover
-    }}
+    source={mapSource(props.cover)}
+    categorySource={mapSource(props.categoryCover)}
     size={100}
   />
   <View style={{flex: 1, paddingLeft: 10}}>

@@ -327,14 +327,14 @@ const select = state => ({
   ],
   bookmark: [
     {
-      title: "ตลก 8 ​ฉาก",
-      cover: "http://www.fujisan.ne.jp/fit/th/images/ohishikouen430.jpg",
-      categoryCover: "https://www.trivita.com/img/icons/icon-brain_400x400.png"
+      title: "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
+      cover: require('./img/A.png'),
+      categoryCover: require('./img/category/N.png')
     },
     {
-      title: "ตลก 9 ​ฉาก",
-      cover: "http://www.fujisan.ne.jp/fit/th/images/ohishikouen430.jpg",
-      categoryCover: "https://www.trivita.com/img/icons/icon-brain_400x400.png"
+      title: "Money Honey คุณชายหน้าตายกับยัยขี้งก",
+      cover: require('./img/B.png'),
+      categoryCover: require('./img/category/M.png')
     }
   ]
 });
