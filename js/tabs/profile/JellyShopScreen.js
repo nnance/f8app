@@ -31,9 +31,17 @@ const Coin = (props) => (<TouchableOpacity style={styles.jellyCountBoxContainer}
     </View>
 </TouchableOpacity>);
 
+const covers = {
+  's1': require('./img/jelly-shop/s1.png'),
+  's2': require('./img/jelly-shop/s2.png'),
+  's3': require('./img/jelly-shop/s3.png'),
+  'b1': require('./img/jelly-shop/b1.png'),
+  'b2': require('./img/jelly-shop/b2.png')
+}
+
 const JellySeller = (props) => (<Image {...props}
   style={[{flex: 1, marginHorizontal: 3, backgroundColor: 'transparent', resizeMode: 'contain'}, props.style]}
-  source={!props.big ? require('./img/jelly-shop/10jelly.png') : require('./img/jelly-shop/100jelly.png')}>
+  source={covers[props.cover]}>
     <View style={{flex: 1, alignItems: 'flex-end', flexDirection: 'row'}}>
       <View style={{flex: 1, padding: 5, justifyContent: 'center', alignItems: 'center', flexDirection: props.big ? 'row' : 'column'}}>
         <Text style={{fontWeight: 'bold', padding: 5}}>{toHumanNumber(props.jelly)} Jelly</Text>
@@ -55,17 +63,17 @@ class JellyShopScreen extends React.Component {
       </NavBar>
       <ScrollView>
         <View style={{flexDirection: 'row', padding: 3, flex: 1}}>
-          <JellySeller style={{height: 150}} coin={30} jelly={10}/>
-          <JellySeller style={{height: 150}} coin={99} jelly={40}/>
-          <JellySeller style={{height: 150}} coin={150} jelly={60}/>
+          <JellySeller cover="s1" style={{height: 150}} coin={30} jelly={10}/>
+          <JellySeller cover="s2" style={{height: 150}} coin={99} jelly={40}/>
+          <JellySeller cover="s3" style={{height: 150}} coin={150} jelly={60}/>
         </View>
         <View style={{flexDirection: 'row', padding: 3, flex: 1}}>
-          <JellySeller big style={{height: 140}} coin={300} jelly={100}/>
-          <JellySeller big style={{height: 140}} coin={500} jelly={300}/>
+          <JellySeller cover="b1" big style={{height: 140}} coin={300} jelly={100}/>
+          <JellySeller cover="b1" big style={{height: 140}} coin={500} jelly={300}/>
         </View>
         <View style={{flexDirection: 'row', padding: 3, flex: 1}}>
-          <JellySeller big style={{height: 140}} coin={750} jelly={500}/>
-          <JellySeller big style={{height: 140}} coin={1250} jelly={1000}/>
+          <JellySeller cover="b2" big style={{height: 140}} coin={750} jelly={500}/>
+          <JellySeller cover="b2" big style={{height: 140}} coin={1250} jelly={1000}/>
         </View>
       </ScrollView>
     </View>);
