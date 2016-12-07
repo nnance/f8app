@@ -15,11 +15,13 @@ import PureListView from '../../common/PureListView';
 import ProfilePicture from '../../common/ProfilePicture';
 import {toHumanNumber} from '../../common/utils';
 
+import ProfileHeader from './ProfileHeader';
 import {FollowingScreen, FollowerScreen, MyFanScreen} from './UserContainer';
 import ActivityScreen from './ActivityScreen';
 import MyClogScreen from './MyClogScreen';
 import BookmarkScreen from './BookmarkScreen';
 import JellyShopScreen from './JellyShopScreen';
+import ProfileEditorScreen from './ProfileEditorScreen';
 
 const menuList = [
   {
@@ -142,11 +144,15 @@ class NavigatorProfile extends React.Component {
     if (route.page === 'jellyShop') {
       return <JellyShopScreen {...this.props} onBackPress={() => navigator.pop()}/>;
     }
+    if (route.page === 'edit-profile') {
+      return <ProfileEditorScreen {...this.props} onBackPress={() => navigator.pop()}/>;
+    }
     return <ProfileScreen
       {...this.props}
       onMenuPress={this.onMenuPress}
       onFollowingPress={() => navigator.push({page: 'following'})}
       onFollowerPress={() => navigator.push({page: 'follower'})}
+      onEditProfile={() => navigator.push({page: 'edit-profile'})}
       />;
   }
 
@@ -175,13 +181,12 @@ class ProfileScreen extends React.Component {
     const name = this.props.user.name || '';
     return (
       <View style={styles.container}>
-        <View style={styles.header}>
-          <Image source={require('../maps/img/maps-background.png')} style={styles.header}>
-            <ProfilePicture size={100} userID={this.props.user.id} />
-            <View style={styles.nameContainer}>
-              <Text style={styles.name}>
-                {name.toUpperCase()}
-              </Text>
+        <ProfileHeader user={this.props.user}>
+          <View style={styles.nameContainer}>
+            <Text style={styles.name}>
+              {name.toUpperCase()}
+            </Text>
+            <TouchableOpacity onPress={() => this.props.onEditProfile && this.props.onEditProfile()}>
               <Image
                 style={{
                   marginLeft: 10,
@@ -191,14 +196,14 @@ class ProfileScreen extends React.Component {
                 }}
                 source={require('./img/icons/edit-profile.png')}
                 />
-            </View>
-            <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-              <NumberDetail title='ผู้ติดตาม' number={this.props.follower.length} borderRight={true} onPress={() => this.props.onFollowerPress && this.props.onFollowerPress()}/>
-              <NumberDetail title='กำลังติดตาม' number={this.props.following.length} borderRight={true} onPress={() => this.props.onFollowingPress && this.props.onFollowingPress()}/>
-              <NumberDetail title='Candys' number={this.props.candys} onPress={() => this.props.onCandyPress && this.props.onCandyPress()}/>
-            </View>
-          </Image>
-        </View>
+            </TouchableOpacity>
+          </View>
+          <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+            <NumberDetail title='ผู้ติดตาม' number={this.props.follower.length} borderRight={true} onPress={() => this.props.onFollowerPress && this.props.onFollowerPress()}/>
+            <NumberDetail title='กำลังติดตาม' number={this.props.following.length} borderRight={true} onPress={() => this.props.onFollowingPress && this.props.onFollowingPress()}/>
+            <NumberDetail title='Candys' number={this.props.candys} onPress={() => this.props.onCandyPress && this.props.onCandyPress()}/>
+          </View>
+        </ProfileHeader>
         <View style={styles.menuList}>
           <PureListView
             title="Profile"
@@ -223,11 +228,6 @@ class ProfileScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1
-  },
-  header: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
   },
   menuList: {
     flex: 2,
