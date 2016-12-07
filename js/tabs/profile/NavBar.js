@@ -36,7 +36,7 @@ export default class NavBar extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 0,
+    paddingTop: 5,
     height: NAV_BAR_HEIGHT,
     backgroundColor: 'white',
     justifyContent: 'space-between',

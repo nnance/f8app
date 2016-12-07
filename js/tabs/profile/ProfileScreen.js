@@ -19,6 +19,7 @@ import {FollowingScreen, FollowerScreen, MyFanScreen} from './UserContainer';
 import ActivityScreen from './ActivityScreen';
 import MyClogScreen from './MyClogScreen';
 import BookmarkScreen from './BookmarkScreen';
+import JellyShopScreen from './JellyShopScreen';
 
 const menuList = [
   {
@@ -37,9 +38,9 @@ const menuList = [
     title: 'แฟนคลับของฉัน'
   },
   {
-    name: 'candyShop',
+    name: 'jellyShop',
     icon: require('./img/icons/candy-shop.png'),
-    title: 'Candy Shop'
+    title: 'Jelly Shop'
   },
   {
     name: 'activity',
@@ -138,6 +139,9 @@ class NavigatorProfile extends React.Component {
     if (route.page === 'bookmark') {
       return <BookmarkScreen {...this.props} onBackPress={() => navigator.pop()}/>;
     }
+    if (route.page === 'jellyShop') {
+      return <JellyShopScreen {...this.props} onBackPress={() => navigator.pop()}/>;
+    }
     return <ProfileScreen
       {...this.props}
       onMenuPress={this.onMenuPress}
@@ -159,6 +163,9 @@ class NavigatorProfile extends React.Component {
     }
     if (name === 'bookmark') {
       navigator.push({page: 'bookmark'});
+    }
+    if (name === 'jellyShop') {
+      navigator.push({page: 'jellyShop'});
     }
   }
 }
