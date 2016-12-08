@@ -8,7 +8,9 @@ import {
   ListView,
   TouchableOpacity,
   TextInput,
-  Switch
+  Switch,
+  Modal,
+  DatePickerIOS
 } from 'react-native';
 import moment from 'moment';
 
@@ -54,8 +56,6 @@ class ProfileEditorScreen extends React.Component {
       </ProfileHeader>
 
       <View style={{flex: 2}}>
-
-
         <View style={[styles.editorBox, {marginVertical: 15}]}>
           <View style={styles.row}>
             <View style={styles.labelContainer}>
