@@ -40,7 +40,7 @@ const covers = {
 }
 
 const JellySeller = (props) => (<Image {...props}
-  style={[{flex: 1, marginHorizontal: 3, backgroundColor: 'transparent', resizeMode: 'contain'}, props.style]}
+  style={[{flex: 1, marginHorizontal: 3, backgroundColor: 'transparent', resizeMode: 'contain', width: undefined, height: undefined}, props.style]}
   source={covers[props.cover]}>
     <View style={{flex: 1, alignItems: 'flex-end', flexDirection: 'row'}}>
       <View style={{flex: 1, padding: 5, justifyContent: 'center', alignItems: 'center', flexDirection: props.big ? 'row' : 'column'}}>

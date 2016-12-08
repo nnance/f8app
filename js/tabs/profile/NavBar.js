@@ -12,7 +12,7 @@ import {
 
 import {colors} from './common';
 
-const NAV_BAR_HEIGHT = 50;
+const NAV_BAR_HEIGHT = 60;
 
 export default class NavBar extends React.Component {
   render() {

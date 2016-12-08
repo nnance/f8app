@@ -50,6 +50,7 @@ var { connect } = require('react-redux');
 import Parse from 'parse/react-native';
 
 import type {Tab} from '../reducers/navigation';
+import ProfileScreen from './profile/ProfileScreen';
 
 class F8TabsView extends React.Component {
   props: {
@@ -200,7 +201,7 @@ class F8TabsView extends React.Component {
         );
 
       case 'map':
-        return <F8MapView />;
+        return <ProfileScreen />;
 
       case 'notifications':
         return <F8NotificationsView navigator={this.props.navigator} />;

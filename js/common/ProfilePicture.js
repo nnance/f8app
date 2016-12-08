@@ -27,6 +27,8 @@ var Image = require('Image');
 var React = require('React');
 var PixelRatio = require('PixelRatio');
 
+import {View} from 'react-native';
+
 class ProfilePicture extends React.Component {
   props: {
     userID: string;
@@ -39,7 +41,7 @@ class ProfilePicture extends React.Component {
     const uri = `http://graph.facebook.com/${userID}/picture?width=${scaledSize}&height=${scaledSize}`;
     if (!userID) {
       return (
-        <Image
+        <View
           style={{
             width: size,
             height: size,
