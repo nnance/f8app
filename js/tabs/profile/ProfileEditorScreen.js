@@ -28,9 +28,24 @@ import ProfileHeader from './ProfileHeader';
 import DatePickerDialog from './DatePickerDialog';
 
 class ProfileEditorScreen extends React.Component {
+  constructor(...args) {
+    super(...args);
+    this.state = {
+      birthDayDate: new Date()
+    };
+  }
+
+  openDatePicker() {
+    this.refs.datePicker.open().then(date => {
+      this.setState({
+        birthDayDate: date
+      })
+    });
+  }
+
   render() {
     return (<View style={commonStyles.listViewContainer}>
-      <DatePickerDialog/>
+      <DatePickerDialog ref="datePicker"/>
       <NavBar
         title="แก้ไขข้อมูล"
         onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}
@@ -85,8 +100,8 @@ class ProfileEditorScreen extends React.Component {
             <View style={styles.labelContainer}>
               <Text style={styles.label}>เกิด</Text>
             </View>
-            <TouchableOpacity style={styles.input}>
-              <Text style={styles.textGrey}>15 เมษายน 2519</Text>
+            <TouchableOpacity style={styles.input} onPress={() => this.openDatePicker()}>
+              <Text style={styles.textGrey}>{moment(this.state.birthDayDate).format('LL')}</Text>
             </TouchableOpacity>
           </View>
         </View>

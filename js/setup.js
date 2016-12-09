@@ -37,6 +37,8 @@ var configureStore = require('./store/configureStore');
 var {serverURL} = require('./env');
 
 import LoginScreen from './login/LoginScreen';
+import moment from 'moment';
+import 'moment/locale/th';
 
 function setup(): React.Component {
   console.disableYellowBox = true;
@@ -45,6 +47,8 @@ function setup(): React.Component {
 
   FacebookSDK.init();
   Parse.FacebookUtils.init();
+
+  moment.locale('th');
 
   class Root extends React.Component {
     constructor() {

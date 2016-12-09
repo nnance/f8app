@@ -17,15 +17,16 @@ class DatePickerDialog extends React.Component {
     super(...args);
     this.state = {
       currentDate: new Date(),
-      visible: true
+      visible: false
     };
     this._resolve = null;
     this._reject = null;
   }
 
   open(currentDate) {
+    currentDate = currentDate || this.state.currentDate;
     if (Platform.OS === 'android') {
-      return;
+      return DatePickerAndroid.open({date: currentDate});
     }
     if (this.state.visible) {
       return;
