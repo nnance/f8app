@@ -15,6 +15,7 @@ import {
   ScrollView
 } from 'react-native';
 import moment from 'moment';
+import Picker from 'react-native-picker';
 
 import PureListView from '../../common/PureListView';
 import CircleImage from '../../common/CircleImage';
@@ -31,7 +32,8 @@ class ProfileEditorScreen extends React.Component {
   constructor(...args) {
     super(...args);
     this.state = {
-      birthDayDate: new Date()
+      birthDayDate: new Date(),
+      sex: 'M'
     };
   }
 
@@ -41,6 +43,25 @@ class ProfileEditorScreen extends React.Component {
         birthDayDate: date
       })
     });
+  }
+
+  openSexPicker() {
+    Picker.init({
+      pickerData: [
+        'ชาย',
+        'หญิง'
+      ],
+      selectedValue: [this.state.sex === 'M' ? 'ชาย' : 'หญิง'],
+      pickerConfirmBtnText: 'ok',
+      pickerCancelBtnText: 'cancel',
+      pickerTitleText: 'เพศ',
+      onPickerConfirm: (data) => {
+        this.setState({
+          sex: data[0] === 'ชาย' ? 'M' : 'F'
+        });
+      }
+    });
+    Picker.show();
   }
 
   render() {
@@ -92,8 +113,8 @@ class ProfileEditorScreen extends React.Component {
             <View style={styles.labelContainer}>
               <Text style={styles.label}>เพศ</Text>
             </View>
-            <TouchableOpacity style={[styles.input, styles.bottomBorderGrey]}>
-              <Text style={styles.textGrey}>ชาย</Text>
+            <TouchableOpacity style={[styles.input, styles.bottomBorderGrey]} onPress={() => this.openSexPicker()}>
+              <Text style={styles.textGrey}>{this.state.sex === 'M' ? 'ชาย' : 'หญิง'}</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.row}>
