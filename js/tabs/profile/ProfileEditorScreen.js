@@ -10,7 +10,9 @@ import {
   TextInput,
   Switch,
   Modal,
-  DatePickerIOS
+  DatePickerIOS,
+  DatePickerAndroid,
+  ScrollView
 } from 'react-native';
 import moment from 'moment';
 
@@ -23,10 +25,12 @@ import NavBar from './NavBar';
 import {styles as commonStyles, colors as commonColors} from './common';
 
 import ProfileHeader from './ProfileHeader';
+import DatePickerDialog from './DatePickerDialog';
 
 class ProfileEditorScreen extends React.Component {
   render() {
     return (<View style={commonStyles.listViewContainer}>
+      <DatePickerDialog/>
       <NavBar
         title="แก้ไขข้อมูล"
         onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}
