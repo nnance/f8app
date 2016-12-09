@@ -22,6 +22,8 @@ import MyClogScreen from './MyClogScreen';
 import BookmarkScreen from './BookmarkScreen';
 import JellyShopScreen from './JellyShopScreen';
 import ProfileEditorScreen from './ProfileEditorScreen';
+import ChangeEmailScreen from './ChangeEmailScreen';
+import ChangePasswordScreen from './ChangePasswordScreen';
 
 const menuList = [
   {
@@ -145,7 +147,13 @@ class NavigatorProfile extends React.Component {
       return <JellyShopScreen {...this.props} onBackPress={() => navigator.pop()}/>;
     }
     if (route.page === 'edit-profile') {
-      return <ProfileEditorScreen {...this.props} onBackPress={() => navigator.pop()}/>;
+      return <ProfileEditorScreen navigator={this.refs.navigator} {...this.props} onBackPress={() => navigator.pop()}/>;
+    }
+    if (route.page === 'change-email') {
+      return <ChangeEmailScreen {...this.props} onBackPress={() => navigator.pop()}/>;
+    }
+    if (route.page === 'change-password') {
+      return <ChangePasswordScreen {...this.props} onBackPress={() => navigator.pop()}/>;
     }
     return <ProfileScreen
       {...this.props}

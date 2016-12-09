@@ -135,10 +135,10 @@ class ProfileEditorScreen extends React.Component {
               <Switch value={true}/>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.row2}>
+          <TouchableOpacity style={styles.row2} onPress={() => this.props.navigator.push({page: 'change-email'})}>
             <Text style={styles.label2}>เปลี่ยน Email</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.row2}>
+          <TouchableOpacity style={styles.row2} onPress={() => this.props.navigator.push({page: 'change-password'})}>
             <Text style={styles.label2}>เปลี่ยน Password</Text>
           </TouchableOpacity>
         </View>
