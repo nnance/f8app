@@ -6,16 +6,17 @@ import {
 } from 'react-native';
 
 import ProfilePicture from '../../common/ProfilePicture';
+import ProfileCover from './ProfileCover';
 
 class ProfileHeader extends React.Component {
   render() {
     return (
-      <View style={styles.header}>
-        <Image source={require('../maps/img/maps-background.png')} style={styles.headerBackground}>
-          <ProfilePicture size={100} userID={this.props.user.id} />
+      <ProfileCover customSource={this.props.customCoverSource} user={this.props.user} style={styles.headerBackground}>
+        <View style={styles.header}>
+          <ProfilePicture size={100} user={this.props.user} customSource={this.props.customSource} />
           {this.props.children}
-        </Image>
-      </View>
+        </View>
+      </ProfileCover>
     );
   }
 }
@@ -24,13 +25,15 @@ const styles = StyleSheet.create({
   header: {
     justifyContent: 'center',
     alignItems: 'center',
-    height: undefined
+    height: undefined,
+    width: undefined,
+    paddingVertical: 10
   },
   headerBackground: {
-    paddingVertical: 5,
     justifyContent: 'center',
     alignItems: 'center',
-    height: undefined
+    height: undefined,
+    width: undefined,
   }
 });
 

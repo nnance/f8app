@@ -31,15 +31,35 @@ import {View} from 'react-native';
 
 class ProfilePicture extends React.Component {
   props: {
-    userID: string;
+    user: any;
     size: number;
+    customSource: any;
   };
 
   render() {
-    const {userID, size} = this.props;
+    const {user, size} = this.props;
+    const userID = user ? user.id : null;
     const scaledSize = size * PixelRatio.get();
-    const uri = `http://graph.facebook.com/${userID}/picture?width=${scaledSize}&height=${scaledSize}`;
-    if (!userID) {
+    let uri;
+    if (userID) {
+      uri = `http://graph.facebook.com/${userID}/picture?width=${scaledSize}&height=${scaledSize}`;
+    }
+    if (user && user.profilePicture) {
+      uri = user.profilePicture;
+    }
+    if (this.props.customSource) {
+      return (
+        <Image
+          source={this.props.customSource}
+          style={{
+            width: size,
+            height: size,
+            borderRadius: size / 2,
+          }}
+        />
+      );
+    }
+    if (!uri) {
       return (
         <View
           style={{

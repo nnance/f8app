@@ -40,6 +40,9 @@ export type State = {
   savingProfile: boolean;
   birthDayDate: boolean;
   sex: ?string;
+  facebookLinked: boolean;
+  profilePicture: ?string;
+  profileCover: ?string;
 };
 
 const initialState = {
@@ -54,7 +57,9 @@ const initialState = {
   savingProfile: false,
   birthDayDate: null,
   sex: null,
-  facebookLinked: false
+  facebookLinked: false,
+  profilePicture: null,
+  profileCover: null
 };
 
 function user(state: State = initialState, action: Action): State {
@@ -88,6 +93,8 @@ function user(state: State = initialState, action: Action): State {
       birthDayDate: action.birthDayDate,
       sex: action.sex,
       savedProfile: true,
+      profilePicture: action.profilePicture,
+      profileCover: action.profileCover
     };
   }
   if (action.type === 'CLEAR_IS_REQED_FORGOT_PASSWORD') {
@@ -142,7 +149,7 @@ function user(state: State = initialState, action: Action): State {
   }
 
   if (action.type === 'LOGGED_IN') {
-    let {id, name, sex, email, birthDayDate, sharedSchedule} = action.data;
+    let {id, name, sex, email, birthDayDate, profilePicture, profileCover, sharedSchedule} = action.data;
     if (sharedSchedule === undefined) {
       sharedSchedule = null;
     }
@@ -154,7 +161,9 @@ function user(state: State = initialState, action: Action): State {
       name,
       sex,
       email,
-      birthDayDate
+      birthDayDate,
+      profilePicture,
+      profileCover
     };
   }
   if (action.type === 'SKIPPED_LOGIN') {

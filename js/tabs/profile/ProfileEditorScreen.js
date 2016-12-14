@@ -39,7 +39,9 @@ class ProfileEditorScreen extends React.Component {
     this.state = {
       name: this.props.name,
       birthDayDate: this.props.birthDayDate,
-      sex: this.props.sex
+      sex: this.props.sex,
+      changedProfilePicture: null,
+      changedProfileCover: null
     };
   }
 
@@ -65,15 +67,19 @@ class ProfileEditorScreen extends React.Component {
               />)
         }}
         onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}
-        onRightPress={() => this.props.changePublicProfile(this.state.name, this.state.birthDayDate, this.state.sex)}
+        onRightPress={() => this.props.changePublicProfile(this.state.name, this.state.birthDayDate, this.state.sex, this.state.changedProfilePicture, this.state.changedProfileCover)}
         >
       </NavBar>
-      <ProfileHeader user={{}}>
+      <ProfileHeader
+        user={this.props.user}
+        customCoverSource={this.state.changedProfileCover ? {uri: 'data:image/jpeg;base64,' + this.state.changedProfileCover.data, isStatic: true} : null }
+        customSource={this.state.changedProfilePicture ? {uri: 'data:image/jpeg;base64,' + this.state.changedProfilePicture.data, isStatic: true} : null }
+        >
         <View style={styles.rowDirection}>
           <TouchableOpacity style={styles.whiteBorder} onPress={() => this.openProfilePicker()}>
             <Text style={styles.whiteText}>เปลี่ยนรูปโปรไฟล์</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.whiteBorder}>
+          <TouchableOpacity style={styles.whiteBorder} onPress={() => this.openProfileCoverPicker()}>
             <Text style={styles.whiteText}>เปลี่ยนรูปพื้นหลัง</Text>
           </TouchableOpacity>
         </View>
@@ -133,7 +139,17 @@ class ProfileEditorScreen extends React.Component {
 
   openProfilePicker() {
     ImagePicker.showImagePicker(response => {
-      console.log('showed');
+      this.setState({
+        changedProfilePicture: response
+      });
+    });
+  }
+
+  openProfileCoverPicker() {
+    ImagePicker.showImagePicker(response => {
+      this.setState({
+        changedProfileCover: response
+      });
     });
   }
 

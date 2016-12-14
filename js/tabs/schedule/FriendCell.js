@@ -50,7 +50,7 @@ class FriendCell extends React.Component {
 
     const cell = (
       <View style={styles.cell}>
-        <ProfilePicture userID={friend.id} size={42} />
+        <ProfilePicture user={friend} size={42} />
         <Text style={styles.name}>
           {friend.name}
         </Text>

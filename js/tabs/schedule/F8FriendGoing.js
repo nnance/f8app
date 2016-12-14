@@ -44,7 +44,7 @@ class F8FriendGoing extends React.Component {
     return (
       <F8Touchable onPress={this.props.onPress}>
         <View style={styles.container}>
-          <ProfilePicture userID={this.props.friend.id} size={18} />
+          <ProfilePicture user={this.props.friend} size={18} />
           <Text style={styles.name}>
             {this.props.friend.name}
           </Text>

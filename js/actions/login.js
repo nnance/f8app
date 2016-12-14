@@ -73,7 +73,11 @@ async function _logInWithFacebook(source: ?string): Promise<Array<Action>> {
     data: {
       id: profile.id,
       name: profile.name,
+      sex: user.get('sex'),
       sharedSchedule: user.get('sharedSchedule'),
+      birthDayDate: user.get('birthDayDate'),
+      profilePicture: user.get('profilePicture') ? user.get('profilePicture').url() : null,
+      profileCover: user.get('profileCover') ? user.get('profileCover').url() : null
     },
   };
 
@@ -187,6 +191,8 @@ const logIn = (email: string, password: string) => dispatch => {
           sex: user.get('sex'),
           birthDayDate: user.get('birthDayDate'),
           sharedSchedule: user.get('sharedSchedule'),
+          profilePicture: user.get('profilePicture') ? user.get('profilePicture').url() : null,
+          profileCover: user.get('profileCover') ? user.get('profileCover').url() : null
         },
       };
       dispatch(action);

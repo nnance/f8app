@@ -44,7 +44,7 @@ class SharingSettingsCommon extends React.Component {
     const {user} = this.props;
     const title = user.name && (
       <View style={styles.title}>
-        <ProfilePicture userID={user.id} size={24} />
+        <ProfilePicture user={user} size={24} />
         <Text style={styles.name}>
           {user.name.split(' ')[0] + "'"}s Schedule
         </Text>

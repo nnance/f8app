@@ -104,7 +104,7 @@ class F8TabsView extends React.Component {
       accountItem = (
         <View>
           <TouchableOpacity onPress={this.openProfileSettings}>
-            <ProfilePicture userID={this.props.user.id} size={80} />
+            <ProfilePicture user={this.props.user} size={80} />
           </TouchableOpacity>
           <Text style={styles.name}>
             {name.toUpperCase()}

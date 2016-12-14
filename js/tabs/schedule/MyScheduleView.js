@@ -89,7 +89,7 @@ class MyScheduleView extends React.Component {
     }
 
     const profilePicture = this.props.user.isLoggedIn &&
-      <ProfilePicture userID={this.props.user.id} size={100} />;
+      <ProfilePicture user={this.props.user} size={100} />;
 
     return (
       <ListContainer

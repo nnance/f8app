@@ -11,6 +11,20 @@ async function _changeProfile(data) {
   if (!user) {
     throw new Error('not logged in');
   }
+  if (data.profilePicture) {
+    const base64 = data.profilePicture.data;
+    const file = new Parse.File(data.profilePicture.fileName, { base64: base64 });
+    await file.save();
+    user.set('profilePicture', file);
+  }
+  if (data.profileCover) {
+    const base64 = data.profileCover.data;
+    const file = new Parse.File(data.profileCover.fileName, { base64: base64 });
+    await file.save();
+    user.set('profileCover', file);
+  }
+  delete data.profileCover;
+  delete data.profilePicture;
   Object.keys(data).forEach(key => {
     user.set(key, data[key]);
   });
@@ -18,18 +32,22 @@ async function _changeProfile(data) {
   return await user.fetch();
 }
 
-export const changePublicProfile = (name, birthDayDate, sex): ThunkAction => dispatch => {
+export const changePublicProfile = (name, birthDayDate, sex, profilePicture, profileCover): ThunkAction => dispatch => {
   dispatch(savingProfile());
   return _changeProfile({
     name,
     birthDayDate,
-    sex
+    sex,
+    profilePicture,
+    profileCover
   }).then(
     (user) => {
       dispatch(changedPublicProfile({
         name: user.get('name'),
         sex: user.get('sex'),
-        birthDayDate: user.get('birthDayDate')
+        birthDayDate: user.get('birthDayDate'),
+        profilePicture: user.get('profilePicture') ? user.get('profilePicture').url() : null,
+        profileCover: user.get('profileCover') ? user.get('profileCover').url() : null
       }));
     }
   );
