@@ -67,7 +67,9 @@ class ProfileEditorScreen extends React.Component {
               />)
         }}
         onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}
-        onRightPress={() => this.props.changePublicProfile(this.state.name, this.state.birthDayDate, this.state.sex, this.state.changedProfilePicture, this.state.changedProfileCover)}
+        onRightPress={() => {
+          this.props.changePublicProfile(this.state.name, this.state.birthDayDate, this.state.sex, this.state.changedProfilePicture, this.state.changedProfileCover)
+        }}
         >
       </NavBar>
       <ProfileHeader
@@ -139,17 +141,39 @@ class ProfileEditorScreen extends React.Component {
 
   openProfilePicker() {
     ImagePicker.showImagePicker(response => {
-      this.setState({
-        changedProfilePicture: response
-      });
+      if (response.didCancel) {
+        console.log('User cancelled image picker');
+      }
+      else if (response.error) {
+        console.log('ImagePicker Error: ', response.error);
+      }
+      else if (response.customButton) {
+        console.log('User tapped custom button: ', response.customButton);
+      }
+      else {
+        this.setState({
+          changedProfilePicture: response
+        });
+      }
     });
   }
 
   openProfileCoverPicker() {
     ImagePicker.showImagePicker(response => {
-      this.setState({
-        changedProfileCover: response
-      });
+      if (response.didCancel) {
+        console.log('User cancelled image picker');
+      }
+      else if (response.error) {
+        console.log('ImagePicker Error: ', response.error);
+      }
+      else if (response.customButton) {
+        console.log('User tapped custom button: ', response.customButton);
+      }
+      else {
+        this.setState({
+          changedProfileCover: response
+        });
+      }
     });
   }
 
