@@ -92,6 +92,7 @@ const signUp = (email: string, password: string, confirmPassword) => dispatch =>
   user.set('username', email);
   user.set('password', password);
   user.set('email', email);
+  user.set('birthDayDate', null);
   return user.save().then(() => {
     dispatch(signedUp());
   }, error => {
@@ -182,7 +183,9 @@ const logIn = (email: string, password: string) => dispatch => {
         type: 'LOGGED_IN',
         data: {
           id: null,
-          name: email,
+          name: user.get('name'),
+          sex: user.get('sex'),
+          birthDayDate: user.get('birthDayDate'),
           sharedSchedule: user.get('sharedSchedule'),
         },
       };

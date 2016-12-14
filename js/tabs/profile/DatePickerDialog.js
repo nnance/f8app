@@ -69,7 +69,7 @@ class DatePickerDialog extends React.Component {
       >
         <View style={styles.container}>
           <View style={styles.dialogContainer}>
-            <DatePickerIOS mode="date" date={this.state.currentDate} style={{color: 'white'}} onDateChange={(date) => this.setState({currentDate: date})}/>
+            <DatePickerIOS mode="date" date={this.state.currentDate} onDateChange={(date) => this.setState({currentDate: date})}/>
             <View style={styles.buttonContainer}>
               <View style={styles.button}>
                 <Button title='ok' onPress={() => this.onOK()}/>

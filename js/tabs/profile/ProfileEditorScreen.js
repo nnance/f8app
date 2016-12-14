@@ -20,6 +20,7 @@ import Picker from 'react-native-picker';
 import PureListView from '../../common/PureListView';
 import CircleImage from '../../common/CircleImage';
 import {toHumanNumber, random, mapSource} from '../../common/utils';
+import {changePublicProfile, clearSaveState} from '../../actions/changeProfile';
 
 import CircleImageWithCategory from './CircleImageWithCategory';
 import NavBar from './NavBar';
@@ -28,40 +29,23 @@ import {styles as commonStyles, colors as commonColors} from './common';
 import ProfileHeader from './ProfileHeader';
 import DatePickerDialog from './DatePickerDialog';
 
+import {connect} from 'react-redux'
+
 class ProfileEditorScreen extends React.Component {
   constructor(...args) {
     super(...args);
+    this.props.clearSaveState();
     this.state = {
-      birthDayDate: new Date(),
-      sex: 'M'
+      name: this.props.name,
+      birthDayDate: this.props.birthDayDate,
+      sex: this.props.sex
     };
   }
 
-  openDatePicker() {
-    this.refs.datePicker.open().then(date => {
-      this.setState({
-        birthDayDate: date
-      })
-    });
-  }
-
-  openSexPicker() {
-    Picker.init({
-      pickerData: [
-        'ชาย',
-        'หญิง'
-      ],
-      selectedValue: [this.state.sex === 'M' ? 'ชาย' : 'หญิง'],
-      pickerConfirmBtnText: 'ok',
-      pickerCancelBtnText: 'cancel',
-      pickerTitleText: 'เพศ',
-      onPickerConfirm: (data) => {
-        this.setState({
-          sex: data[0] === 'ชาย' ? 'M' : 'F'
-        });
-      }
-    });
-    Picker.show();
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.saved === true) {
+      this.props.onBackPress && this.props.onBackPress();
+    }
   }
 
   render() {
@@ -69,19 +53,18 @@ class ProfileEditorScreen extends React.Component {
       <DatePickerDialog ref="datePicker"/>
       <NavBar
         title="แก้ไขข้อมูล"
-        onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}
         renderRightMenu={() => {
-          return (<TouchableOpacity>
-              <Image
+          return (<Image
                 source={require('./img/icons/ok.png')}
                 style={{
                   height: 25,
                   width: 25,
                   resizeMode: 'contain'
                 }}
-              />
-            </TouchableOpacity>)
+              />)
         }}
+        onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}
+        onRightPress={() => this.props.changePublicProfile(this.state.name, this.state.birthDayDate, this.state.sex)}
         >
       </NavBar>
       <ProfileHeader user={{}}>
@@ -106,6 +89,7 @@ class ProfileEditorScreen extends React.Component {
                 onChangeText={(name) => this.setState({name})}
                 style={[styles.textGrey, {flex: 1}]}
                 autoCapitalize='none'
+                value={this.state.name}
               />
             </View>
           </View>
@@ -114,7 +98,7 @@ class ProfileEditorScreen extends React.Component {
               <Text style={styles.label}>เพศ</Text>
             </View>
             <TouchableOpacity style={[styles.input, styles.bottomBorderGrey]} onPress={() => this.openSexPicker()}>
-              <Text style={styles.textGrey}>{this.state.sex === 'M' ? 'ชาย' : 'หญิง'}</Text>
+              <Text style={styles.textGrey}>{this.state.sex === 'M' ? 'ชาย' : (this.state.sex === 'F' ? 'หญิง' : 'ไม่ระบุ')}</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.row}>
@@ -122,7 +106,7 @@ class ProfileEditorScreen extends React.Component {
               <Text style={styles.label}>เกิด</Text>
             </View>
             <TouchableOpacity style={styles.input} onPress={() => this.openDatePicker()}>
-              <Text style={styles.textGrey}>{moment(this.state.birthDayDate).format('LL')}</Text>
+              <Text style={styles.textGrey}>{!this.state.birthDayDate ? 'ไม่ระบุ' : moment(this.state.birthDayDate).format('LL')}</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -144,6 +128,44 @@ class ProfileEditorScreen extends React.Component {
         </View>
       </View>
     </View>);
+  }
+
+  openDatePicker() {
+    this.refs.datePicker.open().then(date => {
+      this.setState({
+        birthDayDate: date
+      })
+    });
+  }
+
+  openSexPicker() {
+    Picker.init({
+      pickerData: [
+        'ไม่ระบุ',
+        'ชาย',
+        'หญิง'
+      ],
+      selectedValue: [this.state.sex === 'M' ? 'ชาย' : (this.state.sex === 'F' ? 'หญิง' : 'ไม่ระบุ')],
+      pickerConfirmBtnText: 'OK',
+      pickerCancelBtnText: 'CANCEL',
+      pickerTitleText: 'เพศ',
+      onPickerConfirm: (data) => {
+        let sex;
+        if (data[0] === 'ชาย') {
+          sex = 'M';
+        }
+        if (data[0] === 'หญิง') {
+          sex = 'F';
+        }
+        if (data[0] === 'ไม่ระบุ') {
+          sex = null;
+        }
+        this.setState({
+          sex
+        });
+      }
+    });
+    Picker.show();
   }
 }
 
@@ -214,4 +236,18 @@ const styles = StyleSheet.create({
   }
 });
 
-export default ProfileEditorScreen;
+const select = state => ({
+  name: state.user.name,
+  email: state.user.email,
+  sex: state.user.sex,
+  birthDayDate: state.user.birthDayDate,
+  saving: state.user.savingProfile,
+  saved: state.user.savedProfile
+});
+
+const actionsMaping = {
+  changePublicProfile,
+  clearSaveState
+};
+
+export default connect(select, actionsMaping)(ProfileEditorScreen);

@@ -25,6 +25,7 @@
 'use strict';
 
 import type {Action} from '../actions/types';
+import {REHYDRATE} from 'redux-persist/constants'
 
 export type State = {
   isReqedForgotPassword: boolean;
@@ -46,9 +47,44 @@ const initialState = {
   loginError: null,
   id: null,
   name: null,
+  savingProfile: false,
+  birthDayDate: null,
+  sex: null
 };
 
 function user(state: State = initialState, action: Action): State {
+  if (action.type === REHYDRATE) {
+    const incoming = action.payload;
+    if (incoming && incoming.birthDayDate) {
+      return {
+        ...state,
+        ...incoming,
+        birthDayDate: new Date(incoming.birthDayDate)
+      };
+    }
+  }
+  if (action.type === 'CLEAR_SAVE_STATE') {
+    return {
+      ...state,
+      savingProfile: false,
+      savedProfile: false
+    };
+  }
+  if (action.type === 'SAVING_PROFILE') {
+    return {
+      ...state,
+      savingProfile: true
+    };
+  }
+  if (action.type === 'CHANGED_PUBLIC_PROFILE') {
+    return {
+      ...state,
+      name: action.name,
+      birthDayDate: action.birthDayDate,
+      sex: action.sex,
+      savedProfile: true,
+    };
+  }
   if (action.type === 'CLEAR_IS_REQED_FORGOT_PASSWORD') {
     return {
       ...state,
@@ -101,7 +137,7 @@ function user(state: State = initialState, action: Action): State {
   }
 
   if (action.type === 'LOGGED_IN') {
-    let {id, name, sharedSchedule} = action.data;
+    let {id, name, sex, email, birthDayDate, sharedSchedule} = action.data;
     if (sharedSchedule === undefined) {
       sharedSchedule = null;
     }
@@ -111,6 +147,9 @@ function user(state: State = initialState, action: Action): State {
       sharedSchedule,
       id,
       name,
+      sex,
+      email,
+      birthDayDate
     };
   }
   if (action.type === 'SKIPPED_LOGIN') {
