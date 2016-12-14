@@ -16,6 +16,7 @@ import {
 } from 'react-native';
 import moment from 'moment';
 import Picker from 'react-native-picker';
+import ImagePicker from 'react-native-image-picker';
 
 import PureListView from '../../common/PureListView';
 import CircleImage from '../../common/CircleImage';
@@ -69,7 +70,7 @@ class ProfileEditorScreen extends React.Component {
       </NavBar>
       <ProfileHeader user={{}}>
         <View style={styles.rowDirection}>
-          <TouchableOpacity style={styles.whiteBorder}>
+          <TouchableOpacity style={styles.whiteBorder} onPress={() => this.openProfilePicker()}>
             <Text style={styles.whiteText}>เปลี่ยนรูปโปรไฟล์</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.whiteBorder}>
@@ -128,6 +129,12 @@ class ProfileEditorScreen extends React.Component {
         </View>
       </View>
     </View>);
+  }
+
+  openProfilePicker() {
+    ImagePicker.showImagePicker(response => {
+      console.log('showed');
+    });
   }
 
   openDatePicker() {

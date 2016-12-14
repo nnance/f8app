@@ -11,7 +11,7 @@ class ProfileHeader extends React.Component {
   render() {
     return (
       <View style={styles.header}>
-        <Image source={require('../maps/img/maps-background.png')} style={styles.header}>
+        <Image source={require('../maps/img/maps-background.png')} style={styles.headerBackground}>
           <ProfilePicture size={100} userID={this.props.user.id} />
           {this.props.children}
         </Image>
@@ -22,7 +22,12 @@ class ProfileHeader extends React.Component {
 
 const styles = StyleSheet.create({
   header: {
-    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: undefined
+  },
+  headerBackground: {
+    paddingVertical: 5,
     justifyContent: 'center',
     alignItems: 'center',
     height: undefined
