@@ -33,9 +33,13 @@ export type State = {
   isLoggedIn: boolean;
   hasSkippedLogin: boolean;
   sharedSchedule: ?boolean;
+  facebookLinked: ?boolean;
   loginError: ?string;
   id: ?string;
   name: ?string;
+  savingProfile: boolean;
+  birthDayDate: boolean;
+  sex: ?string;
 };
 
 const initialState = {
@@ -49,7 +53,8 @@ const initialState = {
   name: null,
   savingProfile: false,
   birthDayDate: null,
-  sex: null
+  sex: null,
+  facebookLinked: false
 };
 
 function user(state: State = initialState, action: Action): State {
