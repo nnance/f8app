@@ -22,7 +22,8 @@ class ChangePasswordScreen extends React.Component {
     super(...args);
     this.state = {
       password: '',
-      confirmPassword: ''
+      confirmPassword: '',
+      error: null
     };
     this.props.clearChangePasswordState();
   }
@@ -72,8 +73,8 @@ class ChangePasswordScreen extends React.Component {
               </View>
             </View>
           </View>
-          <View style={styles.errorContainer}>
-            <Text style={styles.errorText}>{this.state.error}</Text>
+          <View style={commonStyles.errorContainer}>
+            <Text style={commonStyles.errorText}>{this.state.error}</Text>
           </View>
           <F8Button style={styles.button} caption="เปลี่ยน Password" onPress={() => this.onChangePassword()}/>
         </View>
@@ -106,13 +107,6 @@ const styles = StyleSheet.create({
   },
   button: {
     margin: 50
-  },
-  errorContainer: {
-    alignItems: 'flex-end',
-    padding: 3
-  },
-  errorText: {
-    color: 'red'
   }
 });
 

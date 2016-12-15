@@ -20,10 +20,59 @@ async function _changePassword(newPassword) {
   await user.save();
 }
 
+async function _changeEmail(newEmail) {
+  const user = await getUser();
+  user.set("username", newEmail);
+  user.set("email", newEmail);
+  await user.save();
+}
+
+export const changeEmail = (newEmail) => dispatch => {
+  dispatch(changingEmail());
+  _changeEmail(newEmail).then(() => {
+    dispatch(changedEmail());
+  }).catch(error => {
+    dispatch(changeEmailError(error.message));
+  });
+}
+
+function changedEmail() {
+  return {
+    type: 'CHANGED_EMAIL'
+  }
+}
+
+function changingEmail() {
+  return {
+    type: 'CHANGING_EMAIl'
+  }
+}
+
+function changeEmailError(error) {
+  return {
+    type: 'CHANGE_EMAIL_ERROR',
+    payload: error
+  }
+}
+
+export function clearChangeEmailState() {
+  return {
+    type: 'CLEAR_CHANGE_EMAIL_STATE'
+  }
+}
+
+async function _changePassword(newPassword) {
+  const user = await getUser();
+  user.set("password", newPassword);
+  await user.save();
+}
+
 export const changePassword = (newPassword) => dispatch => {
   dispatch(changingPassword());
   _changePassword(newPassword).then(() => {
     dispatch(changedPassword());
+  }).catch(error => {
+    dispatch(changePasswordError(error.message));
   });
 }
 

@@ -30,5 +30,12 @@ export const styles = StyleSheet.create({
   inputContainer: {
     flex: 4,
     padding: 10
+  },
+  errorContainer: {
+    alignItems: 'flex-end',
+    padding: 3
+  },
+  errorText: {
+    color: 'red'
   }
 });

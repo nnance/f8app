@@ -8,19 +8,30 @@ import {
 } from 'react-native';
 
 import F8Button from 'F8Button';
+import {connect} from 'react-redux';
 
 import SecureContainer from './SecureContainer';
 import NavBar from './NavBar';
 
 import {styles as commonStyles, colors as commonColors} from './common';
 
+import {changeEmail, clearChangeEmailState} from '../../actions/changeProfile';
+
 class ChangeEmailScreen extends React.Component {
   constructor(...args) {
     super(...args);
     this.state = {
       email: '',
-      confirmEmail: ''
+      confirmEmail: '',
+      error: null
     };
+    this.props.clearChangeEmailState();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.changedEmail) {
+      this.props.onBackPress && this.props.onBackPress();
+    }
   }
 
   render() {
@@ -60,10 +71,29 @@ class ChangeEmailScreen extends React.Component {
               </View>
             </View>
           </View>
-          <F8Button style={styles.button} caption="เปลี่ยน Email"/>
+          <View style={commonStyles.errorContainer}>
+            <Text style={commonStyles.errorText}>{!!this.props.error ? this.props.error : this.state.error}</Text>
+          </View>
+          <F8Button style={styles.button} caption="เปลี่ยน Email" onPress={() => this.onChangeEmail()}/>
         </View>
       </SecureContainer>
     </View>);
+  }
+
+  onChangeEmail() {
+    const email = this.state.email;
+    const confirmEmail = this.state.confirmEmail;
+    this.props.clearChangeEmailState();
+    this.setState({
+      error: null
+    });
+    if (email !== confirmEmail) {
+      this.setState({
+        error: 'email not match'
+      });
+      return;
+    }
+    this.props.changeEmail(email);
   }
 }
 
@@ -81,4 +111,15 @@ const styles = StyleSheet.create({
   }
 });
 
-export default ChangeEmailScreen;
+const select = state => ({
+  changingEmail: state.user.changingEmail,
+  changedEmail: state.user.changedEmail,
+  error: state.user.changeEmailError
+});
+
+const actionsMaping = {
+  clearChangeEmailState,
+  changeEmail
+};
+
+export default connect(select, actionsMaping)(ChangeEmailScreen);
