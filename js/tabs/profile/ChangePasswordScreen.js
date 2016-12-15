@@ -6,6 +6,7 @@ import {
   Image,
   StyleSheet
 } from 'react-native';
+import {connect} from 'react-redux'
 
 import F8Button from 'F8Button';
 
@@ -14,6 +15,8 @@ import NavBar from './NavBar';
 
 import {styles as commonStyles, colors as commonColors} from './common';
 
+import {changePassword, clearChangePasswordState} from '../../actions/changeProfile';
+
 class ChangePasswordScreen extends React.Component {
   constructor(...args) {
     super(...args);
@@ -21,6 +24,13 @@ class ChangePasswordScreen extends React.Component {
       password: '',
       confirmPassword: ''
     };
+    this.props.clearChangePasswordState();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.changedPassword) {
+      this.props.onBackPress && this.props.onBackPress();
+    }
   }
 
   render() {
@@ -42,6 +52,7 @@ class ChangePasswordScreen extends React.Component {
                   placeholder="password"
                   autoCapitalize='none'
                   value={this.state.password || ''}
+                  secureTextEntry={true}
                   onChangeText={(password) => this.setState({password})}
                   />
               </View>
@@ -55,15 +66,32 @@ class ChangePasswordScreen extends React.Component {
                   placeholder="confirm password"
                   autoCapitalize='none'
                   value={this.state.confirmPassword || ''}
+                  secureTextEntry={true}
                   onChangeText={(confirmPassword) => this.setState({confirmPassword})}
                   />
               </View>
             </View>
           </View>
-          <F8Button style={styles.button} caption="เปลี่ยน Password"/>
+          <View style={styles.errorContainer}>
+            <Text style={styles.errorText}>{this.state.error}</Text>
+          </View>
+          <F8Button style={styles.button} caption="เปลี่ยน Password" onPress={() => this.onChangePassword()}/>
         </View>
       </SecureContainer>
     </View>);
+  }
+
+  onChangePassword() {
+    const password = this.state.password;
+    const confirmPassword = this.state.confirmPassword;
+    if (password !== confirmPassword) {
+      this.setState({
+        error: 'password not match'
+      });
+    }
+    else {
+      this.props.changePassword(password);
+    }
   }
 }
 
@@ -78,7 +106,25 @@ const styles = StyleSheet.create({
   },
   button: {
     margin: 50
+  },
+  errorContainer: {
+    alignItems: 'flex-end',
+    padding: 3
+  },
+  errorText: {
+    color: 'red'
   }
 });
 
-export default ChangePasswordScreen;
+const select = state => ({
+  changingPassword: state.user.changingPassword,
+  changedPassword: state.user.changedPassword,
+  changePasswordError: state.user.changePasswordError
+});
+
+const actionsMaping = {
+  changePassword,
+  clearChangePasswordState
+}
+
+export default connect(select, actionsMaping)(ChangePasswordScreen);

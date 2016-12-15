@@ -6,11 +6,54 @@ import Parse from 'parse/react-native';
 
 import type { Action, ThunkAction } from './types';
 
-async function _changeProfile(data) {
+async function getUser() {
   const user = await Parse.User.currentAsync();
   if (!user) {
     throw new Error('not logged in');
   }
+  return user;
+}
+
+async function _changePassword(newPassword) {
+  const user = await getUser();
+  user.set("password", newPassword);
+  await user.save();
+}
+
+export const changePassword = (newPassword) => dispatch => {
+  dispatch(changingPassword());
+  _changePassword(newPassword).then(() => {
+    dispatch(changedPassword());
+  });
+}
+
+function changedPassword() {
+  return {
+    type: 'CHANGED_PASSWORD'
+  }
+}
+
+function changingPassword() {
+  return {
+    type: 'CHANGING_PASSWORD'
+  }
+}
+
+function changePasswordError(error) {
+  return {
+    type: 'CHANGE_PASSWORD_ERROR',
+    payload: error
+  }
+}
+
+export function clearChangePasswordState() {
+  return {
+    type: 'CLEAR_CHANGE_PASSWORD_STATE'
+  }
+}
+
+async function _changeProfile(data) {
+  const user = await getUser();
   if (data.profilePicture) {
     const base64 = data.profilePicture.data;
     const file = new Parse.File(data.profilePicture.fileName, { base64: base64 });
@@ -76,12 +119,5 @@ function changedEmail(email): Action {
   return {
     type: 'CHANGED_EMAIL',
     email
-  };
-}
-
-function changePassword(password): Action {
-  return {
-    type: 'CHANGED_PASSWORD',
-    password
   };
 }

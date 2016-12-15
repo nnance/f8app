@@ -59,20 +59,13 @@ const initialState = {
   sex: null,
   facebookLinked: false,
   profilePicture: null,
-  profileCover: null
+  profileCover: null,
+  changingPassword: false,
+  changedPassword: false,
+  changePasswordError: null
 };
 
-function user(state: State = initialState, action: Action): State {
-  if (action.type === REHYDRATE) {
-    const incoming = action.payload;
-    if (incoming && incoming.birthDayDate) {
-      return {
-        ...state,
-        ...incoming,
-        birthDayDate: new Date(incoming.birthDayDate)
-      };
-    }
-  }
+function changeProfile(state: State = initialState, action: Action): State {
   if (action.type === 'CLEAR_SAVE_STATE') {
     return {
       ...state,
@@ -97,6 +90,42 @@ function user(state: State = initialState, action: Action): State {
       profileCover: action.profileCover
     };
   }
+  if (action.type === 'CLEAR_CHANGE_PASSWORD_STATE') {
+    return {
+      ...state,
+      changingPassword: false,
+      changedPassword: false,
+      changePasswordError: null
+    };
+  }
+  if (action.type === 'CHANGING_PASSWORD') {
+    return {
+      ...state,
+      changingPassword: true,
+      changedPassword: false,
+      changePasswordError: null
+    };
+  }
+  if (action.type === 'CHANGED_PASSWORD') {
+    return {
+      ...state,
+      changingPassword: false,
+      changedPassword: true,
+      changePasswordError: null
+    };
+  }
+  if (action.type === 'CHANGE_PASSWORD_ERROR') {
+    return {
+      ...state,
+      changingPassword: false,
+      changedPassword: false,
+      changePasswordError: action.payload
+    };
+  }
+  return state;
+}
+
+function authen(state: State = initialState, action: Action): State {
   if (action.type === 'CLEAR_IS_REQED_FORGOT_PASSWORD') {
     return {
       ...state,
@@ -147,7 +176,6 @@ function user(state: State = initialState, action: Action): State {
       id: null
     };
   }
-
   if (action.type === 'LOGGED_IN') {
     let {id, name, sex, email, birthDayDate, profilePicture, profileCover, sharedSchedule} = action.data;
     if (sharedSchedule === undefined) {
@@ -177,6 +205,22 @@ function user(state: State = initialState, action: Action): State {
   }
   if (action.type === 'LOGGED_OUT') {
     return initialState;
+  }
+  return state;
+}
+
+function user(state: State = initialState, action: Action): State {
+  state = changeProfile(state, action);
+  state = authen(state, action);
+  if (action.type === REHYDRATE) {
+    const incoming = action.payload;
+    if (incoming && incoming.birthDayDate) {
+      return {
+        ...state,
+        ...incoming,
+        birthDayDate: new Date(incoming.birthDayDate)
+      };
+    }
   }
   if (action.type === 'SET_SHARING') {
     return {
