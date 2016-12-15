@@ -77,7 +77,8 @@ async function _logInWithFacebook(source: ?string): Promise<Array<Action>> {
       sharedSchedule: user.get('sharedSchedule'),
       birthDayDate: user.get('birthDayDate'),
       profilePicture: user.get('profilePicture') ? user.get('profilePicture').url() : null,
-      profileCover: user.get('profileCover') ? user.get('profileCover').url() : null
+      profileCover: user.get('profileCover') ? user.get('profileCover').url() : null,
+      facebookLinked: true
     },
   };
 
@@ -139,6 +140,7 @@ async function _unlinkFacebook(user) {
       error: reject(error)
     });
   });
+  await user._unlinkFrom('facebook');
   user.set('facebook_id', null);
   await user.save();
   await updateInstallation({user});
@@ -192,7 +194,8 @@ const logIn = (email: string, password: string) => dispatch => {
           birthDayDate: user.get('birthDayDate'),
           sharedSchedule: user.get('sharedSchedule'),
           profilePicture: user.get('profilePicture') ? user.get('profilePicture').url() : null,
-          profileCover: user.get('profileCover') ? user.get('profileCover').url() : null
+          profileCover: user.get('profileCover') ? user.get('profileCover').url() : null,
+          facebookLinked: user.get('id') !== null && user.get('id') !== undefined
         },
       };
       dispatch(action);

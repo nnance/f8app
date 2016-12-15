@@ -202,17 +202,19 @@ function authen(state: State = initialState, action: Action): State {
     return {
       ...state,
       id,
-      name
+      name,
+      facebookLinked: true
     };
   }
   if (action.type === 'FACEBOOK_UNLINKED') {
     return {
       ...state,
-      id: null
+      id: null,
+      facebookLinked: false
     };
   }
   if (action.type === 'LOGGED_IN') {
-    let {id, name, sex, email, birthDayDate, profilePicture, profileCover, sharedSchedule} = action.data;
+    let {id, name, sex, email, birthDayDate, profilePicture, profileCover, sharedSchedule, facebookLinked} = action.data;
     if (sharedSchedule === undefined) {
       sharedSchedule = null;
     }
@@ -226,7 +228,8 @@ function authen(state: State = initialState, action: Action): State {
       email,
       birthDayDate,
       profilePicture,
-      profileCover
+      profileCover,
+      facebookLinked
     };
   }
   if (action.type === 'SKIPPED_LOGIN') {

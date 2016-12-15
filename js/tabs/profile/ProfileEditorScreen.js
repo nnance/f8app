@@ -22,6 +22,7 @@ import PureListView from '../../common/PureListView';
 import CircleImage from '../../common/CircleImage';
 import {toHumanNumber, random, mapSource} from '../../common/utils';
 import {changePublicProfile, clearSaveState} from '../../actions/changeProfile';
+import {linkFacebook, unlinkFacebook} from '../../actions/login';
 
 import CircleImageWithCategory from './CircleImageWithCategory';
 import NavBar from './NavBar';
@@ -122,10 +123,10 @@ class ProfileEditorScreen extends React.Component {
 
 
         <View style={styles.editorBox2}>
-          <TouchableOpacity style={styles.row2}>
+          <TouchableOpacity style={styles.row2} onPress={() => this.onToggleFacebookLink()}>
             <Text style={styles.label2}>เชื่อมต่อ Facebook</Text>
             <View>
-              <Switch value={true}/>
+              <Switch value={this.props.facebookLinked} onValueChange={() => this.onToggleFacebookLink()}/>
             </View>
           </TouchableOpacity>
           <TouchableOpacity style={styles.row2} onPress={() => this.props.navigator.push({page: 'change-email'})}>
@@ -137,6 +138,15 @@ class ProfileEditorScreen extends React.Component {
         </View>
       </View>
     </View>);
+  }
+
+  onToggleFacebookLink() {
+    if (this.props.facebookLinked) {
+      this.props.unlinkFacebook();
+    }
+    else {
+      this.props.linkFacebook();
+    }
   }
 
   openProfilePicker() {
@@ -289,12 +299,15 @@ const select = state => ({
   sex: state.user.sex,
   birthDayDate: state.user.birthDayDate,
   saving: state.user.savingProfile,
-  saved: state.user.savedProfile
+  saved: state.user.savedProfile,
+  facebookLinked: state.user.facebookLinked
 });
 
 const actionsMaping = {
   changePublicProfile,
-  clearSaveState
+  clearSaveState,
+  linkFacebook,
+  unlinkFacebook
 };
 
 export default connect(select, actionsMaping)(ProfileEditorScreen);
