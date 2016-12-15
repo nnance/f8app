@@ -74,7 +74,7 @@ class ChangePasswordScreen extends React.Component {
             </View>
           </View>
           <View style={commonStyles.errorContainer}>
-            <Text style={commonStyles.errorText}>{this.state.error}</Text>
+            <Text style={commonStyles.errorText}>{!!this.props.error ? this.props.error : this.state.error}</Text>
           </View>
           <F8Button style={styles.button} caption="เปลี่ยน Password" onPress={() => this.onChangePassword()}/>
         </View>
@@ -85,6 +85,10 @@ class ChangePasswordScreen extends React.Component {
   onChangePassword() {
     const password = this.state.password;
     const confirmPassword = this.state.confirmPassword;
+    this.props.clearChangePasswordState();
+    this.setState({
+      error: null
+    });
     if (password !== confirmPassword) {
       this.setState({
         error: 'password not match'
@@ -113,7 +117,7 @@ const styles = StyleSheet.create({
 const select = state => ({
   changingPassword: state.user.changingPassword,
   changedPassword: state.user.changedPassword,
-  changePasswordError: state.user.changePasswordError
+  error: state.user.changePasswordError
 });
 
 const actionsMaping = {
