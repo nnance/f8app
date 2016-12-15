@@ -65,7 +65,9 @@ const initialState = {
   changePasswordError: null,
   changingEmail: false,
   changedEmail: false,
-  changeEmailError: null
+  changeEmailError: null,
+  facebookLinkProcessing: false,
+  facebookLinkError: null
 };
 
 function changeProfile(state: State = initialState, action: Action): State {
@@ -197,20 +199,28 @@ function authen(state: State = initialState, action: Action): State {
       loginError: null
     };
   }
+  if (action.type === 'FACEBOOK_LINK_PROCESSING') {
+    return {
+      ...state,
+      facebookLinkProcessing: true
+    };
+  }
   if (action.type === 'FACEBOOK_LINKED') {
     let {id, name} = action.data;
     return {
       ...state,
       id,
       name,
-      facebookLinked: true
+      facebookLinked: true,
+      facebookLinkProcessing: false
     };
   }
   if (action.type === 'FACEBOOK_UNLINKED') {
     return {
       ...state,
       id: null,
-      facebookLinked: false
+      facebookLinked: false,
+      facebookLinkProcessing: false
     };
   }
   if (action.type === 'LOGGED_IN') {
