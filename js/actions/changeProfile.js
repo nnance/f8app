@@ -120,6 +120,9 @@ async function _changeProfile(data) {
   Object.keys(data).forEach(key => {
     user.set(key, data[key]);
   });
+  // await new Promise(resolve => {
+  //   setTimeout(() => resolve(), 2000);
+  // })
   await user.save();
   return await user.fetch();
 }
@@ -142,7 +145,14 @@ export const changePublicProfile = (name, birthDayDate, sex, profilePicture, pro
         profileCover: user.get('profileCover') ? user.get('profileCover').url() : null
       }));
     }
-  );
+  ).catch(error => dispatch(saveProfileError(error.message)));
+}
+
+function saveProfileError(error) {
+  return {
+    type: 'SAVE_PROFILE_ERROR',
+    payload: error
+  };
 }
 
 export function clearSaveState() {

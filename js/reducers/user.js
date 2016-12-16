@@ -55,6 +55,7 @@ const initialState = {
   id: null,
   name: null,
   savingProfile: false,
+  saveProfileError: null,
   birthDayDate: null,
   sex: null,
   facebookLinked: false,
@@ -75,13 +76,17 @@ function changeProfile(state: State = initialState, action: Action): State {
     return {
       ...state,
       savingProfile: false,
-      savedProfile: false
+      savedProfile: false,
+      facebookLinkProcessing: false,
+      facebookLinkError: null,
+      saveProfileError: null
     };
   }
   if (action.type === 'SAVING_PROFILE') {
     return {
       ...state,
-      savingProfile: true
+      savingProfile: true,
+      saveProfileError: null
     };
   }
   if (action.type === 'CHANGED_PUBLIC_PROFILE') {
@@ -90,9 +95,19 @@ function changeProfile(state: State = initialState, action: Action): State {
       name: action.name,
       birthDayDate: action.birthDayDate,
       sex: action.sex,
+      savingProfile: false,
       savedProfile: true,
+      saveProfileError: null,
       profilePicture: action.profilePicture,
       profileCover: action.profileCover
+    };
+  }
+  if (action.type === 'SAVE_PROFILE_ERROR') {
+    return {
+      ...state,
+      savingProfile: false,
+      savedProfile: false,
+      saveProfileError: action.payload
     };
   }
   if (action.type === 'CLEAR_CHANGE_PASSWORD_STATE') {
@@ -222,6 +237,13 @@ function authen(state: State = initialState, action: Action): State {
       facebookLinked: false,
       facebookLinkProcessing: false
     };
+  }
+  if (action.type === 'FACEBOOK_LINK_ERROR') {
+    return {
+      ...state,
+      facebookLinkProcessing: false,
+      facebookLinkError: action.payload
+    }
   }
   if (action.type === 'LOGGED_IN') {
     let {id, name, sex, email, birthDayDate, profilePicture, profileCover, sharedSchedule, facebookLinked} = action.data;

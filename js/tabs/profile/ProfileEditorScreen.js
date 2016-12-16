@@ -12,7 +12,8 @@ import {
   Modal,
   DatePickerIOS,
   DatePickerAndroid,
-  ScrollView
+  ScrollView,
+  ActivityIndicator
 } from 'react-native';
 import moment from 'moment';
 import Picker from 'react-native-picker';
@@ -54,6 +55,16 @@ class ProfileEditorScreen extends React.Component {
 
   render() {
     return (<View style={commonStyles.listViewContainer}>
+      {
+        <Modal transparent={true} visible={this.props.saving}>
+          <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(255, 255, 255, 0.6)'}}>
+            <ActivityIndicator
+              style={[{height: 80}]}
+              size="large"
+              />
+          </View>
+        </Modal>
+      }
       <DatePickerDialog ref="datePicker"/>
       <NavBar
         title="แก้ไขข้อมูล"
@@ -298,9 +309,9 @@ const select = state => ({
   email: state.user.email,
   sex: state.user.sex,
   birthDayDate: state.user.birthDayDate,
-  saving: state.user.savingProfile,
   saved: state.user.savedProfile,
-  facebookLinked: state.user.facebookLinked
+  facebookLinked: state.user.facebookLinked,
+  saving: state.user.savingProfile || state.user.facebookLinkProcessing
 });
 
 const actionsMaping = {
