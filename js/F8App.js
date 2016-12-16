@@ -46,6 +46,7 @@ var { updateInstallation } = require('./actions/installation');
 var { connect } = require('react-redux');
 
 var { version } = require('./env.js');
+import ClogiiTabView from './tabs/ClogiiTabView';
 
 var F8App = React.createClass({
   componentDidMount: function() {
@@ -80,6 +81,7 @@ var F8App = React.createClass({
     if (!this.props.isLoggedIn) {
       return <LoginScreen />;
     }
+    return <ClogiiTabView/>;
     return (
       <View style={styles.container}>
         <StatusBar
