@@ -16,6 +16,7 @@ import NavBar from './NavBar';
 import {styles as commonStyles, colors as commonColors} from './common';
 
 import {changeEmail, clearChangeEmailState} from '../../actions/changeProfile';
+import ModalSpinner from './ModalSpinner';
 
 class ChangeEmailScreen extends React.Component {
   constructor(...args) {
@@ -36,6 +37,7 @@ class ChangeEmailScreen extends React.Component {
 
   render() {
     return (<View style={styles.container}>
+      <ModalSpinner visible={this.props.saving}/>
       <NavBar
         title="เปลี่ยน Email"
         onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}
@@ -114,7 +116,8 @@ const styles = StyleSheet.create({
 const select = state => ({
   changingEmail: state.user.changingEmail,
   changedEmail: state.user.changedEmail,
-  error: state.user.changeEmailError
+  error: state.user.changeEmailError,
+  saving: state.user.changingEmail
 });
 
 const actionsMaping = {

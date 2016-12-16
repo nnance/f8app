@@ -31,6 +31,7 @@ import {styles as commonStyles, colors as commonColors} from './common';
 
 import ProfileHeader from './ProfileHeader';
 import DatePickerDialog from './DatePickerDialog';
+import ModalSpinner from './ModalSpinner';
 
 import {connect} from 'react-redux'
 
@@ -55,16 +56,7 @@ class ProfileEditorScreen extends React.Component {
 
   render() {
     return (<View style={commonStyles.listViewContainer}>
-      {
-        <Modal transparent={true} visible={this.props.saving}>
-          <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(255, 255, 255, 0.6)'}}>
-            <ActivityIndicator
-              style={[{height: 80}]}
-              size="large"
-              />
-          </View>
-        </Modal>
-      }
+      <ModalSpinner visible={this.props.saving}/>
       <DatePickerDialog ref="datePicker"/>
       <NavBar
         title="แก้ไขข้อมูล"

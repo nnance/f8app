@@ -16,6 +16,7 @@ import NavBar from './NavBar';
 import {styles as commonStyles, colors as commonColors} from './common';
 
 import {changePassword, clearChangePasswordState} from '../../actions/changeProfile';
+import ModalSpinner from './ModalSpinner';
 
 class ChangePasswordScreen extends React.Component {
   constructor(...args) {
@@ -36,6 +37,7 @@ class ChangePasswordScreen extends React.Component {
 
   render() {
     return (<View style={styles.container}>
+      <ModalSpinner visible={this.props.saving}/>
       <NavBar
         title="เปลี่ยน Password"
         onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}
@@ -117,7 +119,8 @@ const styles = StyleSheet.create({
 const select = state => ({
   changingPassword: state.user.changingPassword,
   changedPassword: state.user.changedPassword,
-  error: state.user.changePasswordError
+  error: state.user.changePasswordError,
+  saving: state.user.changingPassword
 });
 
 const actionsMaping = {
