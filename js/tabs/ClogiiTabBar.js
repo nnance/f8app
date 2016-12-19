@@ -63,7 +63,7 @@ const IconWithBadge = ({badge, tab, active}) => (
 
 const ClogiiTabBar = React.createClass({
   render() {
-    return <View style={[Platform.OS === 'ios' ? styles.tabsIOS : styles.tabsAndroid , this.props.style, ]}>
+    return <View style={[styles.tabs, this.props.style, ]}>
       {this.props.tabs.map((tab, i) => {
         return <TouchableOpacity key={tab} onPress={() => this.props.goToPage(i)} style={styles.tab}>
           <IconWithBadge active={this.props.activeTab === i} tab={tab} badge={this.props.badges[tab] || 0}/>
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  tabsIOS: {
+  tabs: {
     height: 45,
     flexDirection: 'row',
     borderWidth: 1,
@@ -87,15 +87,6 @@ const styles = StyleSheet.create({
     borderLeftWidth: 0,
     borderRightWidth: 0,
     borderTopColor: 'rgba(0, 0, 0, 0.05)'
-  },
-  tabsAndroid: {
-    height: 45,
-    flexDirection: 'row',
-    borderWidth: 1,
-    borderTopWidth: 0,
-    borderLeftWidth: 0,
-    borderRightWidth: 0,
-    borderBottomColor: 'rgba(0, 0, 0, 0.05)'
   }
 });
 

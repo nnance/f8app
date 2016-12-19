@@ -28,7 +28,7 @@ class ClogiiTabView extends React.Component {
   render() {
     return (
       <ScrollableTabView
-        tabBarPosition={Platform.OS === 'ios' ? 'bottom' : 'top'}
+        tabBarPosition={'bottom'}
         style={{}}
         renderTabBar={() => {
           return <ClogiiTabBar badges={this.props.badges}/>;
