@@ -10,16 +10,16 @@ import {
 
 const icons = {
   Clogii: {
-    active: require('./img/icons/profile-active.png'),
-    inactive: require('./img/icons/profile-inactive.png')
+    active: require('./img/icons/clogii-active.png'),
+    inactive: require('./img/icons/clogii-inactive.png')
   },
   Feed: {
-    active: require('./img/icons/profile-active.png'),
-    inactive: require('./img/icons/profile-inactive.png')
+    active: require('./img/icons/feed-active.png'),
+    inactive: require('./img/icons/feed-inactive.png')
   },
   Notifications: {
-    active: require('./img/icons/profile-active.png'),
-    inactive: require('./img/icons/profile-inactive.png')
+    active: require('./img/icons/notifications-active.png'),
+    inactive: require('./img/icons/notifications-inactive.png')
   },
   Profile: {
     active: require('./img/icons/profile-active.png'),
