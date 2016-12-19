@@ -42,5 +42,5 @@ module.exports = combineReducers({
   navigation: require('./navigation'),
   friendsSchedules: require('./friendsSchedules'),
   surveys: require('./surveys'),
-  [auth.constants.NAME]: auth.reducer
+  mockBadges: require('./mockBadges')
 });
