@@ -27,18 +27,46 @@ const icons = {
   }
 }
 
+const IconWithBadge = ({badge, tab, active}) => (
+   <View style={{padding: 2}}>
+    <Image
+    source={icons[tab][active ? 'active' : 'inactive']}
+    style={{
+      width: 25,
+      height: 25,
+      resizeMode: 'contain',
+    }}>
+    </Image>
+    {
+      !badge ? null :
+      <View style={{
+          position: 'absolute',
+          backgroundColor: 'rgba(54, 107, 245, 1)',
+          width: 14,
+          height: 14,
+          borderRadius: 7,
+          alignItems: 'center',
+          justifyContent: 'center',
+          top: 0,
+          right: -4
+        }}>
+        <Text style={{
+            fontSize: 8,
+            color: 'white'
+          }}>
+          {badge}
+        </Text>
+      </View>
+    }
+  </View>
+);
+
 const ClogiiTabBar = React.createClass({
   render() {
     return <View style={[Platform.OS === 'ios' ? styles.tabsIOS : styles.tabsAndroid , this.props.style, ]}>
       {this.props.tabs.map((tab, i) => {
         return <TouchableOpacity key={tab} onPress={() => this.props.goToPage(i)} style={styles.tab}>
-          <Image
-            source={icons[tab][this.props.activeTab === i ? 'active' : 'inactive']}
-            style={{
-              width: 20,
-              height: 20
-            }}
-          />
+          <IconWithBadge active={this.props.activeTab === i} tab={tab} badge={this.props.badges[tab] || 0}/>
         </TouchableOpacity>;
       })}
     </View>;
