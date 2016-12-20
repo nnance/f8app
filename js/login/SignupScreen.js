@@ -36,7 +36,7 @@ export default class SignUpScreen extends React.Component {
       return (
         <Image
           style={styles.container}
-          source={require('./img/login-background.png')}>
+          source={require('./img/bg.png')}>
           <Text>
             Loading
           </Text>
@@ -46,7 +46,7 @@ export default class SignUpScreen extends React.Component {
     return (
       <Image
         style={styles.container}
-        source={require('./img/login-background.png')}>
+        source={require('./img/bg.png')}>
         <View style={styles.inputSession}>
           <Text style={styles.errorText}>
             {error}

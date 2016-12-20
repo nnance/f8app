@@ -9,7 +9,7 @@ import styles from './styles';
 export default ({goToLogin, successText}) => (
   <Image
     style={styles.container}
-    source={require('./img/login-background.png')}>
+    source={require('./img/bg.png')}>
     <View style={styles.inputSession}>
       <Text style={styles.successText} onPress={() => goToLogin()}>{successText}, go back to login</Text>
     </View>

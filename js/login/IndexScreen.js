@@ -24,6 +24,7 @@
 'use strict';
 
 import {withState} from 'recompose';
+import ClogiiButton from 'ClogiiButton';
 
 var Animated = require('Animated');
 var Dimensions = require('Dimensions');
@@ -42,6 +43,8 @@ var { connect } = require('react-redux');
 
 let enhance = withState('page', 'setPage', 'withFacebook');
 
+const screenWidth = Dimensions.get('window').width;
+
 class IndexScreen extends React.Component {
   constructor(props) {
     super(props);
@@ -59,36 +62,34 @@ class IndexScreen extends React.Component {
     return (
       <Image
         style={styles.container}
-        source={require('./img/login-background.png')}>
-        <View style={styles.section}>
-          <Animated.Image
-            style={this.fadeIn(0)}
-            source={require('./img/devconf-logo.png')}
+        source={require('./img/bg.png')}>
+        <View style={{flex: 7, alignItems: 'center', justifyContent: 'center'}}>
+          <View style={{flex: 4}}/>
+          <View style={{flex: 3, flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+            <View style={{flex: 1}}>
+              <Image
+                style={{flex: 1, resizeMode: 'contain', width: undefined}}
+                source={require('./img/header.png')}
+              />
+            </View>
+          </View>
+          <Text style={{flex: 4, fontSize: 12, color: 'white'}}>ที่ที่จักวาลของคุณ จะอยู่ง่าย... แค่ปลายนิ้ว</Text>
+        </View>
+        <View style={{flex: 4, alignItems: 'center', justifyContent: 'center'}}>
+          <LoginButton source="First screen" style={styles.button}/>
+          <ClogiiButton
+            type="bordered"
+            style={styles.button}
+            onPress={() => this.props.pushPage('email-login')}
+            caption="ลงชื่อเข้าใช้ผ่านอีเมล"
           />
-        </View>
-        <View style={styles.section}>
-          <Animated.Text style={[styles.h1, this.fadeIn(700, -20)]}>
-            code to
-          </Animated.Text>
-          <Animated.Text style={[styles.h1, {marginTop: -30}, this.fadeIn(700, 20)]}>
-            connect
-          </Animated.Text>
-          <Animated.Text style={[styles.h2, this.fadeIn(1000, 10)]}>
-            April 12 + 13 / Fort Mason Center
-          </Animated.Text>
-          <Animated.Text style={[styles.h3, this.fadeIn(1200, 10)]}>
-            SAN FRANCISCO, CALIFORNIA
-          </Animated.Text>
-        </View>
-        <Animated.View style={[styles.section, styles.last, this.fadeIn(2500, 20)]}>
-          <Text style={styles.loginComment}>
-            Use Facebook to find your friends at F8.
+          <Text style={{paddingVertical: 40, color: 'white'}}>
+          ––––––––––– สร้างบัญชีใหม่ ––––––––––
           </Text>
-          <Text style={styles.loginComment} onPress={() => this.props.pushPage('email-login')}>
-            or with email
-          </Text>
-          <LoginButton source="First screen" />
-        </Animated.View>
+        </View>
+        <View style={{flex: 1, alignItems: 'center', justifyContent: 'flex-end'}}>
+            <Text style={{color: F8Colors.fadedLightText, fontSize: 10}}>By signing up you agree to our Terms & Privacy policy</Text>
+        </View>
       </Image>
     );
   }
@@ -132,24 +133,10 @@ var styles = StyleSheet.create({
   last: {
     justifyContent: 'flex-end',
   },
-  h1: {
-    fontWeight: 'bold',
-    textAlign: 'center',
-    fontSize: Math.round(74 * scale),
-    color: F8Colors.darkText,
-    backgroundColor: 'transparent',
-  },
-  h2: {
-    textAlign: 'center',
-    fontSize: 17,
-    color: F8Colors.darkText,
-    marginVertical: 20,
-  },
-  h3: {
-    fontSize: 12,
-    textAlign: 'center',
-    color: F8Colors.lightText,
-    letterSpacing: 1,
+  button: {
+    margin: 10,
+    height: 40,
+    width: 250
   },
   loginComment: {
     marginBottom: 14,

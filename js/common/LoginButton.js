@@ -26,6 +26,7 @@
 const React = require('react');
 const {StyleSheet} = require('react-native');
 const F8Button = require('F8Button');
+import ClogiiButton from 'ClogiiButton';
 
 const { logInWithFacebook } = require('../actions');
 const {connect} = require('react-redux');
@@ -58,7 +59,7 @@ class LoginButton extends React.Component {
   render() {
     if (this.state.isLoading) {
       return (
-        <F8Button
+        <ClogiiButton
           style={[styles.button, this.props.style]}
           caption="Please wait..."
         />
@@ -66,10 +67,9 @@ class LoginButton extends React.Component {
     }
 
     return (
-      <F8Button
+      <ClogiiButton
         style={[styles.button, this.props.style]}
-        icon={require('../login/img/f-logo.png')}
-        caption="Log in with Facebook"
+        caption="ลงชื่อเข้าใช้ด้วย Facebook"
         onPress={() => this.logIn()}
       />
     );
@@ -108,7 +108,7 @@ async function timeout(ms: number): Promise {
 var styles = StyleSheet.create({
   button: {
     alignSelf: 'center',
-    width: 270,
+    width: 270
   },
 });
 

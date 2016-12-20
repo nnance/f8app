@@ -59,6 +59,7 @@ module.exports = {
   inactiveText: '#9B9B9B',
   darkText: '#032250',
   lightText: '#7F91A7',
+  fadedLightText: 'rgba(255, 255, 255, 0.5)',
   cellBorder: '#EEEEEE',
   darkBackground: '#183E63',
   colorForLocation,
