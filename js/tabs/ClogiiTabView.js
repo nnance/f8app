@@ -1,7 +1,10 @@
 import React from 'react';
 import {
   Text,
-  Platform
+  Platform,
+  Image,
+  View,
+  StyleSheet
 } from 'react-native';
 
 import ScrollableTabView from 'react-native-scrollable-tab-view';
@@ -41,14 +44,21 @@ class ClogiiTabView extends React.Component {
           }
         }
       >
-        <TestBadges tabLabel='Clogii' isActive={this.state.activeTab === 0 ? true : false}>My Clogii</TestBadges>
-        <TestBadges tabLabel='Feed' isActive={this.state.activeTab === 1 ? true : false}>My Feed</TestBadges>
-        <TestBadges tabLabel='Notifications' isActive={this.state.activeTab === 2 ? true : false}>My Notifications</TestBadges>
+        <TestBadges tabLabel='Clogii' isActive={this.state.activeTab === 0 ? true : false}><Image style={styles.mockScreen} source={require('./img/mock/clog.png')}></Image></TestBadges>
+        <TestBadges tabLabel='Feed' isActive={this.state.activeTab === 1 ? true : false}><Image style={styles.mockScreen} source={require('./img/mock/feed.png')}></Image></TestBadges>
+        <TestBadges tabLabel='Notifications' isActive={this.state.activeTab === 2 ? true : false}><Image style={styles.mockScreen} source={require('./img/mock/notification.png')}></Image></TestBadges>
         <ProfileScreen tabLabel='Profile' isActive={this.state.activeTab === 3}/>
       </ScrollableTabView>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  mockScreen: {
+    flex: 1,
+    resizeMode: 'contain'
+  }
+});
 
 class _TestBadges extends React.Component {
   constructor(...args) {
@@ -69,7 +79,8 @@ class _TestBadges extends React.Component {
   }
 
   render() {
-    return <Text>{this.props.children}</Text>;
+    // {this.props.children}
+    return <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>{this.props.children}</View>;
   }
 }
 
