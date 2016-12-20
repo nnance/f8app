@@ -5,7 +5,7 @@ import {Image, View, Text, TextInput, TouchableOpacity} from 'react-native';
 import ClogiiButton from 'ClogiiButton';
 import styles from './styles';
 
-import {SignupButtonWithContainer} from './SignupButton';
+import {DashButtonWithContainer} from './DashButton';
 
 export default class EmailLoginScreen extends React.Component {
   constructor(props) {
@@ -59,7 +59,7 @@ export default class EmailLoginScreen extends React.Component {
             </Text>
           </TouchableOpacity>
         </View>
-        <SignupButtonWithContainer onPress={() => pushPage('signup')}/>
+        <DashButtonWithContainer caption="สร้างบัญชีใหม่" onPress={() => pushPage('signup')}/>
       </Image>
     )
   }

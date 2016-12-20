@@ -14,7 +14,8 @@ export default StyleSheet.create({
     height: undefined
   },
   buttonSession: {
-    padding: 30
+    padding: 30,
+    alignItems: 'center'
   },
   inputSession: {
     paddingTop: height * 0.1,
@@ -23,7 +24,7 @@ export default StyleSheet.create({
   emailButton: {
     width: 0.6 * width + 20,
     height: 40,
-    marginVertical: 10
+    marginVertical: 5
   },
   input: {
     width: 0.6 * width,
@@ -36,7 +37,7 @@ export default StyleSheet.create({
     borderWidth: 1,
     borderRadius: 20,
     paddingHorizontal: 10,
-    marginVertical: 10
+    marginVertical: 5
   },
   changePageText: {
     textAlign: 'center'

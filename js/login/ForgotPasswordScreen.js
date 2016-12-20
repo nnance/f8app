@@ -2,7 +2,7 @@
 
 import React from 'React';
 import {Image, View, Text, TextInput} from 'react-native';
-import F8Button from 'F8Button';
+import ClogiiButton from 'ClogiiButton';
 import {connect} from 'react-redux';
 
 import styles from './styles';
@@ -25,29 +25,27 @@ export default class ForgotPasswordScreen extends React.Component {
     return (
       <Image
         style={styles.container}
-        source={require('./img/bg.png')}>
+        source={require('./img/email-bg.png')}>
         <View style={styles.inputSession}>
           <Text style={styles.errorText}>
             {error}
           </Text>
-          <TextInput
-            onChangeText={(email) => this.setState({email})}
-            style={styles.input}
-            placeholder='email'
-            keyboardType='email-address'
-            autoCapitalize='none'
-            value={this.state.email || ''}
-            />
-        </View>
-        <View style={styles.buttonSession}>
-          <F8Button
-            caption='Forgot password'
+          <View style={styles.inputBox}>
+            <TextInput
+              onChangeText={(email) => this.setState({email})}
+              style={styles.input}
+              placeholder='email'
+              keyboardType='email-address'
+              autoCapitalize='none'
+              value={this.state.email || ''}
+              placeholderTextColor='rgba(255, 255, 255, 0.6)'
+              />
+          </View>
+          <ClogiiButton
+            type='white'
+            style={styles.emailButton}
+            caption='รับรหัสผ่านใหม่'
             onPress={() => forgotPassword(this.state.email || '')}/>
-          <Text
-            style={styles.changePageText}
-            onPress={() => goBack()}>
-            or back to login
-          </Text>
         </View>
       </Image>
     )

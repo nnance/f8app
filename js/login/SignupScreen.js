@@ -3,7 +3,9 @@
 import React from 'React';
 import {ScrollView, View, Text, TextInput, Image} from 'react-native';
 import InteractionManager from 'InteractionManager';
-import F8Button from 'F8Button';
+import ClogiiButton from 'ClogiiButton';
+
+import {DashButtonWithContainer} from './DashButton';
 
 import styles from './styles';
 
@@ -46,39 +48,44 @@ export default class SignUpScreen extends React.Component {
     return (
       <Image
         style={styles.container}
-        source={require('./img/bg.png')}>
+        source={require('./img/email-bg.png')}>
         <View style={styles.inputSession}>
           <Text style={styles.errorText}>
             {error}
           </Text>
-          <TextInput
-            onChangeText={(email) => this.setState({email})}
-            style={styles.input}
-            placeholder='email'
-            keyboardType='email-address'
-            autoCapitalize='none'
-          />
-          <TextInput
-            onChangeText={(password) => this.setState({password})}
-            style={styles.input}
-            secureTextEntry={true}
-            placeholder='password'/>
-          <TextInput
-            onChangeText={(confirmPassword) => this.setState({confirmPassword})}
-            style={styles.input}
-            secureTextEntry={true}
-            placeholder='confirm password'/>
-        </View>
-        <View style={styles.buttonSession}>
-          <F8Button
-            caption='Signup'
+          <View style={styles.inputBox}>
+            <TextInput
+              onChangeText={(email) => this.setState({email})}
+              style={styles.input}
+              placeholder='email'
+              keyboardType='email-address'
+              autoCapitalize='none'
+              placeholderTextColor='rgba(255, 255, 255, 0.6)'
+            />
+          </View>
+          <View style={styles.inputBox}>
+            <TextInput
+              onChangeText={(password) => this.setState({password})}
+              style={styles.input}
+              secureTextEntry={true}
+              placeholder='password'
+              placeholderTextColor='rgba(255, 255, 255, 0.6)'/>
+          </View>
+          <View style={styles.inputBox}>
+            <TextInput
+              onChangeText={(confirmPassword) => this.setState({confirmPassword})}
+              style={styles.input}
+              secureTextEntry={true}
+              placeholder='confirm password'
+              placeholderTextColor='rgba(255, 255, 255, 0.6)'/>
+          </View>
+          <ClogiiButton
+            style={styles.emailButton}
+            type='white'
+            caption='สร้างบัญชี'
             onPress={() => signUp(this.state.email || '', this.state.password || '', this.state.confirmPassword || '')}/>
-          <Text
-            style={styles.changePageText}
-            onPress={() => goBack()}>
-            or back to login
-          </Text>
         </View>
+        <DashButtonWithContainer caption="ลงชื่อเข้าใช้ด้วย Facebook"/>
       </Image>
     )
   }
