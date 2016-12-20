@@ -1,9 +1,11 @@
 'use strict';
 
 import React from 'React';
-import {Image, View, Text, TextInput} from 'react-native';
-import F8Button from 'F8Button';
+import {Image, View, Text, TextInput, TouchableOpacity} from 'react-native';
+import ClogiiButton from 'ClogiiButton';
 import styles from './styles';
+
+import {SignupButtonWithContainer} from './SignupButton';
 
 export default class EmailLoginScreen extends React.Component {
   constructor(props) {
@@ -16,43 +18,48 @@ export default class EmailLoginScreen extends React.Component {
     return (
       <Image
         style={styles.container}
-        source={require('./img/bg.png')}>
+        source={require('./img/email-bg.png')}>
         <View style={styles.inputSession}>
           <Text style={styles.errorText}>
             {error}
           </Text>
-          <TextInput
-            onChangeText={(email) => this.setState({email})}
-            style={styles.input}
-            placeholder='email'
-            value={this.state.email || ''}
-            keyboardType='email-address'
-            autoCapitalize='none'
-            returnKeyType='next'
-            />
-          <TextInput
-            onChangeText={(password) => this.setState({password})}
-            style={styles.input}
-            secureTextEntry={true}
-            value={this.state.password || ''}
-            placeholder='password'
-            />
-          <Text
-            style={styles.forgotPasswordText}
-            onPress={() => pushPage('forgotPassword')}>
-            forgot password?
-          </Text>
-        </View>
-        <View style={styles.buttonSession}>
-          <F8Button
+          <View style={styles.inputBox}>
+            <TextInput
+              onChangeText={(email) => this.setState({email})}
+              style={styles.input}
+              placeholder='email'
+              value={this.state.email || ''}
+              keyboardType='email-address'
+              autoCapitalize='none'
+              returnKeyType='next'
+              placeholderTextColor='rgba(255, 255, 255, 0.6)'
+              />
+          </View>
+          <View style={styles.inputBox}>
+            <TextInput
+              onChangeText={(password) => this.setState({password})}
+              style={styles.input}
+              secureTextEntry={true}
+              value={this.state.password || ''}
+              placeholder='password'
+              placeholderTextColor='rgba(255, 255, 255, 0.6)'
+              />
+          </View>
+          <ClogiiButton
+            style={styles.emailButton}
+            type='white'
             caption='Login'
             onPress={() => logIn(this.state.email || '', this.state.password || '')}/>
-          <Text
-            style={styles.changePageText}
-            onPress={() => pushPage('signup')}>
-            or sign up now
-          </Text>
         </View>
+        <View style={styles.buttonSession}>
+          <TouchableOpacity onPress={() => pushPage('forgotPassword')}>
+            <Text
+              style={styles.forgotPasswordText}>
+              ลืมรหัสผ่าน
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <SignupButtonWithContainer onPress={() => pushPage('signup')}/>
       </Image>
     )
   }

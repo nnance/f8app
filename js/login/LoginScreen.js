@@ -11,6 +11,7 @@ import EmailLoginScreen from './EmailLoginScreen';
 import SignupScreen from './SignupScreen';
 import ForgotPasswordScreen from './ForgotPasswordScreen';
 import SuccessScreen from './SuccessScreen';
+import styles from './styles';
 
 class LoginScreen extends React.Component {
   constructor(args) {
@@ -56,7 +57,7 @@ class LoginScreen extends React.Component {
                if (route.page === 'index') return null;
                return (
                  <TouchableOpacity onPress={this.goBack}>
-                  <Text style={{fontSize: 30, fontWeight: 'bold'}}>
+                  <Text style={styles.backButton}>
                     {'<'}
                   </Text>
                  </TouchableOpacity>
@@ -188,11 +189,5 @@ const actionsMaping = {
   clearSignedUp: actions.clearSignedUp,
   clearIsReqedForgotPassword: actions.clearIsReqedForgotPassword
 };
-
-var styles = StyleSheet.create({
-  skip: {
-    padding: 15,
-  },
-});
 
 module.exports = connect(select, actionsMaping)(LoginScreen);

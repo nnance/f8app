@@ -54,7 +54,18 @@ class ClogiiButton extends React.Component {
           </Text>
         </LinearGradient>
       );
-    } else {
+    }
+    else if (this.props.type === 'white') {
+      content = (
+        <View style={[styles.whiteButton]}>
+          {icon}
+          <Text style={[styles.caption, styles.purpleCaption]}>
+            {caption}
+          </Text>
+        </View>
+      );
+    }
+    else {
       var border = this.props.type === 'bordered' && styles.border;
       content = (
         <View style={[styles.button, border]}>
@@ -92,6 +103,15 @@ var styles = StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: 40,
   },
+  whiteButton: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 40,
+    backgroundColor: 'white',
+    borderRadius: HEIGHT / 2,
+  },
   border: {
     borderWidth: 1,
     borderColor: 'white',
@@ -113,6 +133,9 @@ var styles = StyleSheet.create({
   },
   secondaryCaption: {
     color: 'white',
+  },
+  purpleCaption: {
+    color: 'rgb(161, 40, 128)'
   }
 });
 
