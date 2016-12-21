@@ -25,6 +25,7 @@
 
 import {withState} from 'recompose';
 import ClogiiButton from 'ClogiiButton';
+import {DashButtonWithContainer} from './DashButton';
 
 var Animated = require('Animated');
 var Dimensions = require('Dimensions');
@@ -83,9 +84,7 @@ class IndexScreen extends React.Component {
             onPress={() => this.props.pushPage('email-login')}
             caption="ลงชื่อเข้าใช้ผ่านอีเมล"
           />
-          <Text style={{paddingVertical: 40, color: 'white'}}>
-          ––––––––––– สร้างบัญชีใหม่ ––––––––––
-          </Text>
+          <DashButtonWithContainer caption="สร้างบัญชีใหม่" onPress={() => this.props.pushPage('signup')}/>
         </View>
         <View style={{flex: 1, alignItems: 'center', justifyContent: 'flex-end'}}>
             <Text style={{color: F8Colors.fadedLightText, fontSize: 10}}>By signing up you agree to our Terms & Privacy policy</Text>

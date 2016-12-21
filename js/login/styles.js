@@ -62,7 +62,7 @@ export default StyleSheet.create({
     padding: 10
   },
   successText: {
-    color: 'green',
+    color: 'white',
     fontSize: 20
   },
   skip: {

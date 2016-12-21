@@ -39,7 +39,7 @@ export default class SignUpScreen extends React.Component {
       return (
         <Image
           style={styles.container}
-          source={require('./img/bg.png')}>
+          source={require('./img/email-bg.png')}>
           <Text>
             Loading
           </Text>
