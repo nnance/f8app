@@ -56,6 +56,11 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     paddingHorizontal: 10
   },
+  titleNavBar: {
+    color: 'white',
+    fontWeight: 'bold',
+    padding: 10
+  },
   successText: {
     color: 'green',
     fontSize: 20

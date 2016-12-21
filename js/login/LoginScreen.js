@@ -13,6 +13,14 @@ import ForgotPasswordScreen from './ForgotPasswordScreen';
 import SuccessScreen from './SuccessScreen';
 import styles from './styles';
 
+const titles = {
+  'index': '',
+  'email-login': 'ลงชื่อเข้าใช้ผ่านอีเมล',
+  'signup': 'สร้างบัญชีใหม่',
+  'forgotPassword': 'ขอรหัสผ่านใหม่',
+  'success': ''
+};
+
 class LoginScreen extends React.Component {
   constructor(args) {
     super(...args);
@@ -78,7 +86,11 @@ class LoginScreen extends React.Component {
                  </TouchableOpacity>
                );
              },
-             Title: (route, navigator, index, navState) => null
+             Title: (route, navigator, index, navState) => {
+               let title = '';
+               title = titles[route.page];
+               return (<Text style={styles.titleNavBar}>{title}</Text>)
+             }
            }}
          />
         }
