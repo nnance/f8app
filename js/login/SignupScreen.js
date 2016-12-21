@@ -19,8 +19,9 @@ export default class SignUpScreen extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.isSignedUp) {
+      // this.props.pushPage('success', {successText: 'signed up'});
+      this.props.logIn(this.state.email, this.state.password);
       this.props.clearSignedUp();
-      this.props.pushPage('success', {successText: 'signed up'});
     }
   }
 

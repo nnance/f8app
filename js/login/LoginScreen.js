@@ -96,6 +96,7 @@ class LoginScreen extends React.Component {
       return (<SignupScreen
         error={this.props.error}
         signUp={this.props.signUp}
+        logIn={this.props.logIn}
         pushPage={this.pushPage}
         goBack={this.goBack}
         clearSignedUp={this.props.clearSignedUp}
