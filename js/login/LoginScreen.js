@@ -21,6 +21,7 @@ class LoginScreen extends React.Component {
     this.goBack = this.goBack.bind(this);
     this.renderScene = this.renderScene.bind(this);
     this.handleBackButton = this.handleBackButton.bind(this);
+    this.logInWithFacebook = this.logInWithFacebook.bind(this);
   }
 
   componentDidMount() {
@@ -99,6 +100,7 @@ class LoginScreen extends React.Component {
         logIn={this.props.logIn}
         pushPage={this.pushPage}
         goBack={this.goBack}
+        logInWithFacebook={this.logInWithFacebook}
         clearSignedUp={this.props.clearSignedUp}
         isSignedUp={this.props.isSignedUp}
       />);
@@ -172,6 +174,25 @@ class LoginScreen extends React.Component {
     }
   }
 
+  async logInWithFacebook() {
+    const {dispatch, onLoggedIn} = this.props;
+
+    try {
+      await dispatch(actions.logInWithFacebook());
+    } catch (e) {
+      const message = e.message || e;
+      if (message !== 'Timed out' && message !== 'Canceled by user') {
+        alert(message);
+        console.warn(e);
+      }
+      return;
+    } finally {
+
+    }
+
+    onLoggedIn && onLoggedIn();
+  }
+
 }
 
 const select = state => ({
@@ -191,4 +212,4 @@ const actionsMaping = {
   clearIsReqedForgotPassword: actions.clearIsReqedForgotPassword
 };
 
-module.exports = connect(select, actionsMaping)(LoginScreen);
+module.exports = connect()(connect(select, actionsMaping)(LoginScreen));
