@@ -84,7 +84,7 @@ class _TestBadges extends React.Component {
 
   render() {
     // {this.props.children}
-    return <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', width: undefined, height: undefined, backgroundColor: (x++%2 == 0) ? 'red' : 'green'}}>
+    return <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', width: undefined, height: undefined}}>
       {this.props.children}
     </View>;
   }
