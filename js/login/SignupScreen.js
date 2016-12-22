@@ -86,7 +86,7 @@ export default class SignUpScreen extends React.Component {
             caption='สร้างบัญชี'
             onPress={() => signUp(this.state.email || '', this.state.password || '', this.state.confirmPassword || '')}/>
         </View>
-        <DashButtonWithContainer caption="ลงชื่อเข้าใช้ด้วย Facebook" onPress={this.props.logInWithFacebook}/>
+        <DashButtonWithContainer caption="ลงชื่อเข้าใช้ด้วย Facebook" onPress={this.props.logInWithFacebook} style={{margin: 20}}/>
       </Image>
     )
   }

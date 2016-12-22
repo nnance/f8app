@@ -59,7 +59,7 @@ export default class EmailLoginScreen extends React.Component {
             </Text>
           </TouchableOpacity>
         </View>
-        <DashButtonWithContainer caption="สร้างบัญชีใหม่" onPress={() => pushPage('signup')}/>
+        <DashButtonWithContainer caption="สร้างบัญชีใหม่" onPress={() => pushPage('signup')} style={{margin: 20}}/>
       </Image>
     )
   }
