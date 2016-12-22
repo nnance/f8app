@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import {BackAndroid, Text, TouchableOpacity, Navigator, StyleSheet, Image} from 'react-native';
+import {BackAndroid, Text, TouchableOpacity, Navigator, StyleSheet, Image, View} from 'react-native';
 import {connect} from 'react-redux';
 
 import * as actions from '../actions';
@@ -61,6 +61,7 @@ class LoginScreen extends React.Component {
         renderScene={this.renderScene}
         navigationBar={
          <Navigator.NavigationBar
+           navigationStyles={Navigator.NavigationBar.StylesIOS}
            routeMapper={{
              LeftButton: (route, navigator, index, navState) => {
                if (route.page === 'index') return null;
@@ -89,7 +90,7 @@ class LoginScreen extends React.Component {
              Title: (route, navigator, index, navState) => {
                let title = '';
                title = titles[route.page];
-               return (<Text style={styles.titleNavBar}>{title}</Text>)
+               return (<View style={{flex: 1, alignItems: 'center'}}><Text style={styles.titleNavBar}>{title}</Text></View>)
              }
            }}
          />

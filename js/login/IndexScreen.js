@@ -69,7 +69,7 @@ class IndexScreen extends React.Component {
           <View style={{flex: 3, flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
             <View style={{flex: 1}}>
               <Image
-                style={{flex: 1, resizeMode: 'contain', width: undefined}}
+                style={{flex: 1, resizeMode: 'contain', width: undefined, height: undefined}}
                 source={require('./img/header.png')}
               />
             </View>

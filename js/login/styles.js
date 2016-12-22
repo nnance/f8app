@@ -67,5 +67,10 @@ export default StyleSheet.create({
   },
   skip: {
     padding: 15,
+  },
+  mockScreen: {
+    flex: 1,
+    resizeMode: 'contain',
+    backgroundColor: 'red'
   }
 })

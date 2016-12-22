@@ -53,10 +53,14 @@ class ClogiiTabView extends React.Component {
   }
 }
 
+// require('Dimensions').get('window').width
+
 const styles = StyleSheet.create({
   mockScreen: {
     flex: 1,
-    resizeMode: 'contain'
+    resizeMode: 'stretch',
+    height: undefined,
+    width: require('Dimensions').get('window').width
   }
 });
 
@@ -80,9 +84,13 @@ class _TestBadges extends React.Component {
 
   render() {
     // {this.props.children}
-    return <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>{this.props.children}</View>;
+    return <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', width: undefined, height: undefined, backgroundColor: (x++%2 == 0) ? 'red' : 'green'}}>
+      {this.props.children}
+    </View>;
   }
 }
+
+let x = 0;
 
 const TestBadges = connect(null, (dispatch, ownProps) => ({
   clearBadge: () => dispatch({type: 'CLEAR_MOCK_BADGE', payload: ownProps.tabLabel})
