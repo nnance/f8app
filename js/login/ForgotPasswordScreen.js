@@ -34,7 +34,7 @@ export default class ForgotPasswordScreen extends React.Component {
             <TextInput
               onChangeText={(email) => this.setState({email})}
               style={styles.input}
-              placeholder='email'
+              placeholder='อีเมล'
               keyboardType='email-address'
               autoCapitalize='none'
               value={this.state.email || ''}

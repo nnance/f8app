@@ -27,7 +27,7 @@ export default class EmailLoginScreen extends React.Component {
             <TextInput
               onChangeText={(email) => this.setState({email})}
               style={styles.input}
-              placeholder='email'
+              placeholder='อีเมล'
               value={this.state.email || ''}
               keyboardType='email-address'
               autoCapitalize='none'
@@ -41,14 +41,14 @@ export default class EmailLoginScreen extends React.Component {
               style={styles.input}
               secureTextEntry={true}
               value={this.state.password || ''}
-              placeholder='password'
+              placeholder='รหัสผ่าน'
               placeholderTextColor='rgba(255, 255, 255, 0.6)'
               />
           </View>
           <ClogiiButton
             style={styles.emailButton}
             type='white'
-            caption='Login'
+            caption='เข้าสู่ระบบ'
             onPress={() => logIn(this.state.email || '', this.state.password || '')}/>
         </View>
         <View style={styles.buttonSession}>

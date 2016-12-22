@@ -58,7 +58,7 @@ export default class SignUpScreen extends React.Component {
             <TextInput
               onChangeText={(email) => this.setState({email})}
               style={styles.input}
-              placeholder='email'
+              placeholder='อีเมล'
               keyboardType='email-address'
               autoCapitalize='none'
               placeholderTextColor='rgba(255, 255, 255, 0.6)'
@@ -69,7 +69,7 @@ export default class SignUpScreen extends React.Component {
               onChangeText={(password) => this.setState({password})}
               style={styles.input}
               secureTextEntry={true}
-              placeholder='password'
+              placeholder='รหัสผ่าน'
               placeholderTextColor='rgba(255, 255, 255, 0.6)'/>
           </View>
           <View style={styles.inputBox}>
@@ -77,7 +77,7 @@ export default class SignUpScreen extends React.Component {
               onChangeText={(confirmPassword) => this.setState({confirmPassword})}
               style={styles.input}
               secureTextEntry={true}
-              placeholder='confirm password'
+              placeholder='ยืนยันรหัสผ่าน'
               placeholderTextColor='rgba(255, 255, 255, 0.6)'/>
           </View>
           <ClogiiButton
