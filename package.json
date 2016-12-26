@@ -57,7 +57,8 @@
     "eslint": "~1.10.3",
     "eslint-plugin-react": "~3.16.1",
     "jest": "^18.0.0",
-    "react-addons-test-utils": "^15.4.1"
+    "react-addons-test-utils": "^15.4.1",
+    "react-test-renderer": "^15.4.1"
   },
   "jest": {
     "haste": {
