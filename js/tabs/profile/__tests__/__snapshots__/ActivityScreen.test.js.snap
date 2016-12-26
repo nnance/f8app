@@ -1,0 +1,243 @@
+exports[`ActivityScreen ActivityRow render like activity 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hitSlop={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+      "padding": 13,
+    }
+  }
+  testID={undefined}>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "alignSelf": "flex-start",
+          "flexDirection": "row",
+        }
+      }>
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 15,
+            "resizeMode": "contain",
+            "width": 15,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "rgba(0, 0, 0, 0.5)",
+            "fontSize": 13,
+            "marginLeft": 5,
+          }
+        }>
+        liked
+         funny clog
+      </Text>
+    </View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "alignSelf": "flex-end",
+          "color": "rgba(0, 0, 0, 0.3)",
+          "fontSize": 10,
+        }
+      }>
+      6 months ago
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "paddingVertical": 10,
+      }
+    }>
+    <Image
+      source={
+        Object {
+          "uri": "a1.img",
+        }
+      }
+      style={
+        Object {
+          "borderRadius": 5,
+          "height": 150,
+        }
+      } />
+  </View>
+  <View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "fontSize": 14,
+          "fontWeight": "bold",
+        }
+      }>
+      act 1
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      numberOfLines={1}
+      style={
+        Object {
+          "color": "rgba(0, 0, 0, 0.3)",
+          "fontSize": 10,
+        }
+      }>
+      O1
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`ActivityScreen ActivityRow render read activity 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hitSlop={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+      "padding": 13,
+    }
+  }
+  testID={undefined}>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "alignSelf": "flex-start",
+          "flexDirection": "row",
+        }
+      }>
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 15,
+            "resizeMode": "contain",
+            "width": 15,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "rgba(0, 0, 0, 0.5)",
+            "fontSize": 13,
+            "marginLeft": 5,
+          }
+        }>
+        read
+         funny clog
+      </Text>
+    </View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "alignSelf": "flex-end",
+          "color": "rgba(0, 0, 0, 0.3)",
+          "fontSize": 10,
+        }
+      }>
+      2 years ago
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "paddingVertical": 10,
+      }
+    }>
+    <Image
+      source={
+        Object {
+          "uri": "a2.img",
+        }
+      }
+      style={
+        Object {
+          "borderRadius": 5,
+          "height": 150,
+        }
+      } />
+  </View>
+  <View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "fontSize": 14,
+          "fontWeight": "bold",
+        }
+      }>
+      act 2
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      numberOfLines={1}
+      style={
+        Object {
+          "color": "rgba(0, 0, 0, 0.3)",
+          "fontSize": 10,
+        }
+      } />
+  </View>
+</View>
+`;
