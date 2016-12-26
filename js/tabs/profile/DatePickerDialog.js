@@ -16,7 +16,7 @@ class DatePickerDialog extends React.Component {
   constructor(...args) {
     super(...args);
     this.state = {
-      currentDate: new Date(),
+      currentDate: this.props.currentDate || new Date(),
       visible: false
     };
     this._resolve = null;

@@ -34,4 +34,4 @@ describe('CircleImageWithCategory', () => {
     />);
     expect(tree.toJSON()).toMatchSnapshot();
   });
-})
+});
