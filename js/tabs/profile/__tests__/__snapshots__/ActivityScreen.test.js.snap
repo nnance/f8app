@@ -69,7 +69,7 @@ exports[`ActivityScreen ActivityRow render like activity 1`] = `
           "fontSize": 10,
         }
       }>
-      6 months ago
+      a few seconds ago
     </Text>
   </View>
   <View
@@ -81,7 +81,7 @@ exports[`ActivityScreen ActivityRow render like activity 1`] = `
     <Image
       source={
         Object {
-          "uri": "a1.img",
+          "uri": "http://3.bp.blogspot.com/-zW6wqY_1Me0/VYvJMOV4mcI/AAAAAAAAD-4/mB_AxhFoJH4/s1600/178491main_sig07-009-516.jpg",
         }
       }
       style={
@@ -102,7 +102,7 @@ exports[`ActivityScreen ActivityRow render like activity 1`] = `
           "fontWeight": "bold",
         }
       }>
-      act 1
+      แมค เดมอน ตะลุยอวกาศ
     </Text>
     <Text
       accessible={true}
@@ -115,7 +115,7 @@ exports[`ActivityScreen ActivityRow render like activity 1`] = `
           "fontSize": 10,
         }
       }>
-      O1
+      The Martain กำกับโดย ริดลีย์ สก๊อต เนื้อหาเล่าถึง นักบินอวกาศที่ถูกทิ้งไว้บนดาวอังคาร
     </Text>
   </View>
 </View>
@@ -177,7 +177,7 @@ exports[`ActivityScreen ActivityRow render read activity 1`] = `
             "marginLeft": 5,
           }
         }>
-        read
+        liked
          funny clog
       </Text>
     </View>
@@ -192,7 +192,7 @@ exports[`ActivityScreen ActivityRow render read activity 1`] = `
           "fontSize": 10,
         }
       }>
-      2 years ago
+      2 months ago
     </Text>
   </View>
   <View
@@ -204,7 +204,7 @@ exports[`ActivityScreen ActivityRow render read activity 1`] = `
     <Image
       source={
         Object {
-          "uri": "a2.img",
+          "uri": "http://3.bp.blogspot.com/-zW6wqY_1Me0/VYvJMOV4mcI/AAAAAAAAD-4/mB_AxhFoJH4/s1600/178491main_sig07-009-516.jpg",
         }
       }
       style={
@@ -225,7 +225,7 @@ exports[`ActivityScreen ActivityRow render read activity 1`] = `
           "fontWeight": "bold",
         }
       }>
-      act 2
+      แมค เดมอน ตะลุยอวกาศ
     </Text>
     <Text
       accessible={true}
@@ -237,7 +237,9 @@ exports[`ActivityScreen ActivityRow render read activity 1`] = `
           "color": "rgba(0, 0, 0, 0.3)",
           "fontSize": 10,
         }
-      } />
+      }>
+      The Martain กำกับโดย ริดลีย์ สก๊อต เนื้อหาเล่าถึง นักบินอวกาศที่ถูกทิ้งไว้บนดาวอังคาร
+    </Text>
   </View>
 </View>
 `;

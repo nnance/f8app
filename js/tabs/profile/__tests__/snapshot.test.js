@@ -1,41 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-
-const mockBookmark = [
-  {
-    title: "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
-    cover: require('./img/A.png'),
-    categoryCover: require('./img/category/N.png'),
-    bookmarkCount: 7
-  },
-  {
-    title: "Money Honey คุณชายหน้าตายกับยัยขี้งก",
-    cover: require('./img/B.png'),
-    categoryCover: require('./img/category/M.png'),
-    bookmarkCount: 3
-  }
-];
-
-const mockMyClogs = [
-  {
-    title: "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
-    authors: "David Beckham",
-    cover: require('./img/A.png'),
-    categoryCover: require('./img/category/M.png'),
-    views: 12300,
-    likes: 1500,
-    date: new Date(2015, 5, 24)
-  },
-  {
-    title: "Money Honey คุณชายหน้าตายกับยัยขี้งก",
-    authors: "สุดสาครนอย ไทรโยค",
-    cover: require('./img/B.png'),
-    categoryCover: require('./img/category/N.png'),
-    views: 100,
-    likes: 55,
-    date: new Date(2016, 10, 8)
-  }
-];
+import {bookmark as mockBookmark, myClogs as mockMyClogs} from '../mockData';
 
 describe('BookmarkScreen', () => {
   const BookmarkScreen = require('../BookmarkScreen').default;
