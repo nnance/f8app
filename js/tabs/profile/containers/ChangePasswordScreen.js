@@ -15,7 +15,7 @@ import NavBar from '../components/NavBar';
 
 import {styles as commonStyles, colors as commonColors} from '../common';
 
-import {changePassword, clearChangePasswordState} from '../../../actions/changeProfile';
+import {changePassword} from '../../../actions/changeProfile';
 import ModalSpinner from '../components/ModalSpinner';
 
 class ChangePasswordScreen extends React.Component {
@@ -24,9 +24,9 @@ class ChangePasswordScreen extends React.Component {
     this.state = {
       password: '',
       confirmPassword: '',
-      error: null
+      error: null,
+      saving: false
     };
-    this.props.clearChangePasswordState();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -37,7 +37,7 @@ class ChangePasswordScreen extends React.Component {
 
   render() {
     return (<View style={styles.container}>
-      <ModalSpinner visible={this.props.saving}/>
+      <ModalSpinner visible={this.state.saving}/>
       <NavBar
         title="เปลี่ยน Password"
         onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}
@@ -87,18 +87,28 @@ class ChangePasswordScreen extends React.Component {
   onChangePassword() {
     const password = this.state.password;
     const confirmPassword = this.state.confirmPassword;
-    this.props.clearChangePasswordState();
     this.setState({
-      error: null
+      error: null,
+      saving: true
     });
     if (password !== confirmPassword) {
       this.setState({
-        error: 'password not match'
+        error: 'password not match',
+        saving: false
       });
+      return Promise.resolve();
     }
-    else {
-      this.props.changePassword(password);
-    }
+    return this.props.changePassword(password).then(() => {
+      this.setState({
+        saving: false
+      });
+      this.props.onBackPress && this.props.onBackPress();
+    }).catch(error => {
+      this.setState({
+        saving: false,
+        error: error.message
+      });
+    });
   }
 }
 
@@ -116,16 +126,11 @@ const styles = StyleSheet.create({
   }
 });
 
-const select = state => ({
-  changingPassword: state.user.changingPassword,
-  changedPassword: state.user.changedPassword,
-  error: state.user.changePasswordError,
-  saving: state.user.changingPassword
-});
-
 const actionsMaping = {
-  changePassword,
-  clearChangePasswordState
+  changePassword
 }
 
-export default connect(select, actionsMaping)(ChangePasswordScreen);
+export default connect(null, actionsMaping)(ChangePasswordScreen);
+export {
+  ChangePasswordScreen as Component
+}

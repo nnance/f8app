@@ -29,12 +29,6 @@ class ChangeEmailScreen extends React.Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.changedEmail) {
-      this.props.onBackPress && this.props.onBackPress();
-    }
-  }
-
   render() {
     return (<View style={styles.container}>
       <ModalSpinner visible={this.state.saving}/>

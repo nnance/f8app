@@ -61,9 +61,6 @@ const initialState = {
   facebookLinked: false,
   profilePicture: null,
   profileCover: null,
-  changingPassword: false,
-  changedPassword: false,
-  changePasswordError: null,
   facebookLinkProcessing: false,
   facebookLinkError: null
 };
@@ -105,38 +102,6 @@ function changeProfile(state: State = initialState, action: Action): State {
       savingProfile: false,
       savedProfile: false,
       saveProfileError: action.payload
-    };
-  }
-  if (action.type === 'CLEAR_CHANGE_PASSWORD_STATE') {
-    return {
-      ...state,
-      changingPassword: false,
-      changedPassword: false,
-      changePasswordError: null
-    };
-  }
-  if (action.type === 'CHANGING_PASSWORD') {
-    return {
-      ...state,
-      changingPassword: true,
-      changedPassword: false,
-      changePasswordError: null
-    };
-  }
-  if (action.type === 'CHANGED_PASSWORD') {
-    return {
-      ...state,
-      changingPassword: false,
-      changedPassword: true,
-      changePasswordError: null
-    };
-  }
-  if (action.type === 'CHANGE_PASSWORD_ERROR') {
-    return {
-      ...state,
-      changingPassword: false,
-      changedPassword: false,
-      changePasswordError: action.payload
     };
   }
   return state;

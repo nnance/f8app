@@ -39,25 +39,6 @@ function changedEmail() {
   }
 }
 
-function changingEmail() {
-  return {
-    type: 'CHANGING_EMAIl'
-  }
-}
-
-function changeEmailError(error) {
-  return {
-    type: 'CHANGE_EMAIL_ERROR',
-    payload: error
-  }
-}
-
-export function clearChangeEmailState() {
-  return {
-    type: 'CLEAR_CHANGE_EMAIL_STATE'
-  }
-}
-
 async function _changePassword(newPassword) {
   const user = await getUser();
   user.set("password", newPassword);
@@ -65,36 +46,14 @@ async function _changePassword(newPassword) {
 }
 
 export const changePassword = (newPassword) => dispatch => {
-  dispatch(changingPassword());
-  _changePassword(newPassword).then(() => {
+  return _changePassword(newPassword).then(() => {
     dispatch(changedPassword());
-  }).catch(error => {
-    dispatch(changePasswordError(error.message));
   });
 }
 
 function changedPassword() {
   return {
     type: 'CHANGED_PASSWORD'
-  }
-}
-
-function changingPassword() {
-  return {
-    type: 'CHANGING_PASSWORD'
-  }
-}
-
-function changePasswordError(error) {
-  return {
-    type: 'CHANGE_PASSWORD_ERROR',
-    payload: error
-  }
-}
-
-export function clearChangePasswordState() {
-  return {
-    type: 'CLEAR_CHANGE_PASSWORD_STATE'
   }
 }
 
