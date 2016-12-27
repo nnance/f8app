@@ -1,6 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {bookmark as mockBookmark, myClogs as mockMyClogs} from '../mockData';
+import {bookmark as mockBookmark, myClogs as mockMyClogs, user as mockUser} from '../mockData';
+import * as mockData from '../mockData';
 
 describe('BookmarkScreen', () => {
   const BookmarkScreen = require('../BookmarkScreen').default;
@@ -53,6 +54,7 @@ describe('MyClogScreen', () => {
 
 describe('ProfileCover', () => {
   const ProfileCover = require('../ProfileCover').default;
+  const Text = require('react-native').Text;
   it('render default', () => {
     const tree = renderer.create(<ProfileCover />);
     expect(tree.toJSON()).toMatchSnapshot();
@@ -63,17 +65,44 @@ describe('ProfileCover', () => {
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
-  it.skip('render user cover');
+  it('render user cover with children', () => {
+    const tree = renderer.create(<ProfileCover user={mockUser}><Text>User Cover</Text></ProfileCover>)
+    expect(tree.toJSON()).toMatchSnapshot();
+  });
 });
 
 describe('ProfileHeader', () => {
   const ProfileHeader = require('../ProfileHeader').default;
-  it('render with user');
+  it('render', () => {
+    const tree = renderer.create(<ProfileHeader user={mockUser}/>)
+    expect(tree.toJSON()).toMatchSnapshot();
+  });
 });
 
-describe.skip('UserContainer', () => {
-  const UserContainer = require('../UserContainer').default;
-  describe('FollowingScreen');
-  describe('MyFanScreen');
-  describe('FollowerScreen');
+describe('UserContainer', () => {
+  const UserContainer = require('../UserContainer');
+
+  describe('FollowingScreen', () => {
+      const FollowingScreen = UserContainer.FollowingScreen;
+      it('render', () => {
+        const tree = renderer.create(<FollowingScreen userList={mockData.following}/>);
+        expect(tree.toJSON()).toMatchSnapshot();
+      });
+  });
+
+  describe('MyFanScreen', () => {
+      const MyFanScreen = UserContainer.MyFanScreen;
+      it('render', () => {
+        const tree = renderer.create(<MyFanScreen userList={mockData.myFan}/>);
+        expect(tree.toJSON()).toMatchSnapshot();
+      });
+  });
+
+  describe('FollowerScreen', () => {
+      const FollowerScreen = UserContainer.FollowerScreen;
+      it('render', () => {
+        const tree = renderer.create(<FollowerScreen userList={mockData.follower}/>);
+        expect(tree.toJSON()).toMatchSnapshot();
+      });
+  });
 });

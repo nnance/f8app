@@ -293,10 +293,6 @@ const styles = StyleSheet.create({
   }
 });
 
-const mockFollowing = [{name: 'Art Nattapat'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}];
-const mockFollower = [{name: 'Art Nattapat', following: true}, {name: 'Art Art Art', following: false}, {name: 'Art Art Art', following: false}, {name: 'Art Art Art', following: true}, {name: 'Art Art Art', following: true}, {name: 'Art Art Art', following: false}];
-const mockMyFan = [{name: 'Art Nattapat', candys: 1250}, {name: 'Art Art Art', candys: 1250}, {name: 'Art Art Art', candys: 1000}, {name: 'Art Art Art', candys: 789}, {name: 'Art Art Art', candys: 7013}, {name: 'Art Art Art', candys: 0}];
-
 const select = state => ({
   ...mockData,
   user: state.user

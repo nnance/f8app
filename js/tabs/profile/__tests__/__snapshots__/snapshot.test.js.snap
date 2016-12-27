@@ -2137,3 +2137,2429 @@ exports[`ProfileCover render default 1`] = `
     ]
   } />
 `;
+
+exports[`ProfileCover render user cover with children 1`] = `
+<Image
+  source={1}
+  style={
+    Array [
+      Object {
+        "resizeMode": "cover",
+      },
+      undefined,
+    ]
+  }
+  user={
+    Object {
+      "facebookLinked": false,
+      "id": 1,
+      "name": "test",
+      "sex": "M",
+    }
+  }>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail">
+    User Cover
+  </Text>
+</Image>
+`;
+
+exports[`ProfileHeader render 1`] = `
+<Image
+  customSource={undefined}
+  source={1}
+  style={
+    Array [
+      Object {
+        "resizeMode": "cover",
+      },
+      Object {
+        "alignItems": "center",
+        "height": undefined,
+        "justifyContent": "center",
+        "width": undefined,
+      },
+    ]
+  }
+  user={
+    Object {
+      "facebookLinked": false,
+      "id": 1,
+      "name": "test",
+      "sex": "M",
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": undefined,
+        "justifyContent": "center",
+        "paddingVertical": 10,
+        "width": undefined,
+      }
+    }>
+    <Image
+      source={
+        Object {
+          "uri": "http://graph.facebook.com/1/picture?width=200&height=200",
+        }
+      }
+      style={
+        Object {
+          "borderRadius": 50,
+          "height": 100,
+          "width": 100,
+        }
+      } />
+  </View>
+</Image>
+`;
+
+exports[`UserContainer FollowerScreen render 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgb(250, 250, 250)",
+      "flex": 1,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "white",
+        "borderBottomWidth": 1,
+        "borderColor": "rgb(240, 240, 240)",
+        "flexDirection": "row",
+        "height": 60,
+        "justifyContent": "space-between",
+        "paddingTop": 5,
+      }
+    }>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "opacity": 1,
+          "paddingLeft": 20,
+        }
+      }
+      testID={undefined}>
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 20,
+            "resizeMode": "contain",
+          }
+        } />
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "rgb(209, 87, 92)",
+            "fontSize": 22,
+            "fontWeight": "bold",
+          }
+        }>
+        ผู้ติดตาม
+      </Text>
+    </View>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "opacity": 1,
+          "paddingRight": 20,
+        }
+      }
+      testID={undefined} />
+  </View>
+  <ScrollView
+    contentInset={
+      Object {
+        "bottom": 1354,
+        "top": 0,
+      }
+    }
+    data={
+      Array [
+        Object {
+          "following": true,
+          "name": "Art Nattapat",
+        },
+        Object {
+          "following": false,
+          "name": "Art Art Art",
+        },
+        Object {
+          "following": false,
+          "name": "Art Art Art",
+        },
+        Object {
+          "following": true,
+          "name": "Art Art Art",
+        },
+        Object {
+          "following": true,
+          "name": "Art Art Art",
+        },
+        Object {
+          "following": false,
+          "name": "Art Art Art",
+        },
+      ]
+    }
+    dataSource={
+      ListViewDataSource {
+        "items": 6,
+      }
+    }
+    initialListSize={10}
+    minContentHeight={1354}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={1000}
+    onKeyboardDidHide={undefined}
+    onKeyboardDidShow={undefined}
+    onKeyboardWillHide={undefined}
+    onKeyboardWillShow={undefined}
+    onLayout={[Function]}
+    onScroll={[Function]}
+    pageSize={1}
+    removeClippedSubviews={true}
+    renderFooter={[Function]}
+    renderRow={[Function]}
+    renderSeparator={[Function]}
+    scrollEventThrottle={50}
+    scrollRenderAheadDistance={1000}
+    stickyHeaderIndices={Array []}>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(250, 250, 250)",
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "margin": 10,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "backgroundColor": "black",
+              "borderRadius": 20,
+              "height": 40,
+              "width": 40,
+            }
+          } />
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "padding": 10,
+          }
+        }>
+        1
+        . 
+        Art Nattapat
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingRight": 20,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }>
+          <Image
+            source={1}
+            style={
+              Object {
+                "height": 20,
+                "marginRight": 10,
+                "width": 20,
+              }
+            } />
+          <View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "rgba(190, 190, 190, 0.8)",
+                  "borderRadius": 5,
+                  "opacity": 1,
+                  "padding": 4,
+                  "paddingLeft": 5,
+                  "paddingRight": 5,
+                }
+              }
+              testID={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "white",
+                    "fontSize": 13,
+                    "textAlign": "center",
+                    "width": 60,
+                  }
+                }>
+                เลิกติดตาม
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "height": 1,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(250, 250, 250)",
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "margin": 10,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "backgroundColor": "black",
+              "borderRadius": 20,
+              "height": 40,
+              "width": 40,
+            }
+          } />
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "padding": 10,
+          }
+        }>
+        2
+        . 
+        Art Art Art
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingRight": 20,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }>
+          <Image
+            source={1}
+            style={
+              Object {
+                "height": 20,
+                "marginRight": 10,
+                "width": 20,
+              }
+            } />
+          <View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "borderColor": "rgb(141, 227, 188)",
+                  "borderRadius": 5,
+                  "borderWidth": 1,
+                  "opacity": 1,
+                  "padding": 4,
+                  "paddingLeft": 5,
+                  "paddingRight": 5,
+                }
+              }
+              testID={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "rgb(141, 227, 188)",
+                    "fontSize": 13,
+                    "textAlign": "center",
+                    "width": 60,
+                  }
+                }>
+                ติดตาม
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "height": 1,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(250, 250, 250)",
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "margin": 10,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "backgroundColor": "black",
+              "borderRadius": 20,
+              "height": 40,
+              "width": 40,
+            }
+          } />
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "padding": 10,
+          }
+        }>
+        3
+        . 
+        Art Art Art
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingRight": 20,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }>
+          <Image
+            source={1}
+            style={
+              Object {
+                "height": 20,
+                "marginRight": 10,
+                "width": 20,
+              }
+            } />
+          <View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "borderColor": "rgb(141, 227, 188)",
+                  "borderRadius": 5,
+                  "borderWidth": 1,
+                  "opacity": 1,
+                  "padding": 4,
+                  "paddingLeft": 5,
+                  "paddingRight": 5,
+                }
+              }
+              testID={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "rgb(141, 227, 188)",
+                    "fontSize": 13,
+                    "textAlign": "center",
+                    "width": 60,
+                  }
+                }>
+                ติดตาม
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "height": 1,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(250, 250, 250)",
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "margin": 10,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "backgroundColor": "black",
+              "borderRadius": 20,
+              "height": 40,
+              "width": 40,
+            }
+          } />
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "padding": 10,
+          }
+        }>
+        4
+        . 
+        Art Art Art
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingRight": 20,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }>
+          <Image
+            source={1}
+            style={
+              Object {
+                "height": 20,
+                "marginRight": 10,
+                "width": 20,
+              }
+            } />
+          <View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "rgba(190, 190, 190, 0.8)",
+                  "borderRadius": 5,
+                  "opacity": 1,
+                  "padding": 4,
+                  "paddingLeft": 5,
+                  "paddingRight": 5,
+                }
+              }
+              testID={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "white",
+                    "fontSize": 13,
+                    "textAlign": "center",
+                    "width": 60,
+                  }
+                }>
+                เลิกติดตาม
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "height": 1,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(250, 250, 250)",
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "margin": 10,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "backgroundColor": "black",
+              "borderRadius": 20,
+              "height": 40,
+              "width": 40,
+            }
+          } />
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "padding": 10,
+          }
+        }>
+        5
+        . 
+        Art Art Art
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingRight": 20,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }>
+          <Image
+            source={1}
+            style={
+              Object {
+                "height": 20,
+                "marginRight": 10,
+                "width": 20,
+              }
+            } />
+          <View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "rgba(190, 190, 190, 0.8)",
+                  "borderRadius": 5,
+                  "opacity": 1,
+                  "padding": 4,
+                  "paddingLeft": 5,
+                  "paddingRight": 5,
+                }
+              }
+              testID={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "white",
+                    "fontSize": 13,
+                    "textAlign": "center",
+                    "width": 60,
+                  }
+                }>
+                เลิกติดตาม
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "height": 1,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(250, 250, 250)",
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "margin": 10,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "backgroundColor": "black",
+              "borderRadius": 20,
+              "height": 40,
+              "width": 40,
+            }
+          } />
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "padding": 10,
+          }
+        }>
+        6
+        . 
+        Art Art Art
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingRight": 20,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }>
+          <Image
+            source={1}
+            style={
+              Object {
+                "height": 20,
+                "marginRight": 10,
+                "width": 20,
+              }
+            } />
+          <View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "borderColor": "rgb(141, 227, 188)",
+                  "borderRadius": 5,
+                  "borderWidth": 1,
+                  "opacity": 1,
+                  "padding": 4,
+                  "paddingLeft": 5,
+                  "paddingRight": 5,
+                }
+              }
+              testID={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "rgb(141, 227, 188)",
+                    "fontSize": 13,
+                    "textAlign": "center",
+                    "width": 60,
+                  }
+                }>
+                ติดตาม
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "height": 1,
+        }
+      } />
+  </ScrollView>
+</View>
+`;
+
+exports[`UserContainer FollowingScreen render 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgb(250, 250, 250)",
+      "flex": 1,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "white",
+        "borderBottomWidth": 1,
+        "borderColor": "rgb(240, 240, 240)",
+        "flexDirection": "row",
+        "height": 60,
+        "justifyContent": "space-between",
+        "paddingTop": 5,
+      }
+    }>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "opacity": 1,
+          "paddingLeft": 20,
+        }
+      }
+      testID={undefined}>
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 20,
+            "resizeMode": "contain",
+          }
+        } />
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "rgb(209, 87, 92)",
+            "fontSize": 22,
+            "fontWeight": "bold",
+          }
+        }>
+        กำลังติดตาม
+      </Text>
+    </View>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "opacity": 1,
+          "paddingRight": 20,
+        }
+      }
+      testID={undefined} />
+  </View>
+  <ScrollView
+    contentInset={
+      Object {
+        "bottom": 1354,
+        "top": 0,
+      }
+    }
+    data={
+      Array [
+        Object {
+          "name": "Art Nattapat",
+        },
+        Object {
+          "name": "Art Art Art",
+        },
+        Object {
+          "name": "Art Art Art",
+        },
+        Object {
+          "name": "Art Art Art",
+        },
+        Object {
+          "name": "Art Art Art",
+        },
+        Object {
+          "name": "Art Art Art",
+        },
+      ]
+    }
+    dataSource={
+      ListViewDataSource {
+        "items": 6,
+      }
+    }
+    initialListSize={10}
+    minContentHeight={1354}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={1000}
+    onKeyboardDidHide={undefined}
+    onKeyboardDidShow={undefined}
+    onKeyboardWillHide={undefined}
+    onKeyboardWillShow={undefined}
+    onLayout={[Function]}
+    onScroll={[Function]}
+    pageSize={1}
+    removeClippedSubviews={true}
+    renderFooter={[Function]}
+    renderRow={[Function]}
+    renderSeparator={[Function]}
+    scrollEventThrottle={50}
+    scrollRenderAheadDistance={1000}
+    stickyHeaderIndices={Array []}>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(250, 250, 250)",
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "margin": 10,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "backgroundColor": "black",
+              "borderRadius": 20,
+              "height": 40,
+              "width": 40,
+            }
+          } />
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "padding": 10,
+          }
+        }>
+        1
+        . 
+        Art Nattapat
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingRight": 20,
+          }
+        }>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "backgroundColor": "rgba(190, 190, 190, 0.8)",
+              "borderRadius": 5,
+              "opacity": 1,
+              "padding": 4,
+              "paddingLeft": 5,
+              "paddingRight": 5,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "white",
+                "fontSize": 13,
+                "textAlign": "center",
+                "width": 60,
+              }
+            }>
+            เลิกติดตาม
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "height": 1,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(250, 250, 250)",
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "margin": 10,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "backgroundColor": "black",
+              "borderRadius": 20,
+              "height": 40,
+              "width": 40,
+            }
+          } />
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "padding": 10,
+          }
+        }>
+        2
+        . 
+        Art Art Art
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingRight": 20,
+          }
+        }>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "backgroundColor": "rgba(190, 190, 190, 0.8)",
+              "borderRadius": 5,
+              "opacity": 1,
+              "padding": 4,
+              "paddingLeft": 5,
+              "paddingRight": 5,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "white",
+                "fontSize": 13,
+                "textAlign": "center",
+                "width": 60,
+              }
+            }>
+            เลิกติดตาม
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "height": 1,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(250, 250, 250)",
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "margin": 10,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "backgroundColor": "black",
+              "borderRadius": 20,
+              "height": 40,
+              "width": 40,
+            }
+          } />
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "padding": 10,
+          }
+        }>
+        3
+        . 
+        Art Art Art
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingRight": 20,
+          }
+        }>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "backgroundColor": "rgba(190, 190, 190, 0.8)",
+              "borderRadius": 5,
+              "opacity": 1,
+              "padding": 4,
+              "paddingLeft": 5,
+              "paddingRight": 5,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "white",
+                "fontSize": 13,
+                "textAlign": "center",
+                "width": 60,
+              }
+            }>
+            เลิกติดตาม
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "height": 1,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(250, 250, 250)",
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "margin": 10,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "backgroundColor": "black",
+              "borderRadius": 20,
+              "height": 40,
+              "width": 40,
+            }
+          } />
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "padding": 10,
+          }
+        }>
+        4
+        . 
+        Art Art Art
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingRight": 20,
+          }
+        }>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "backgroundColor": "rgba(190, 190, 190, 0.8)",
+              "borderRadius": 5,
+              "opacity": 1,
+              "padding": 4,
+              "paddingLeft": 5,
+              "paddingRight": 5,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "white",
+                "fontSize": 13,
+                "textAlign": "center",
+                "width": 60,
+              }
+            }>
+            เลิกติดตาม
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "height": 1,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(250, 250, 250)",
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "margin": 10,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "backgroundColor": "black",
+              "borderRadius": 20,
+              "height": 40,
+              "width": 40,
+            }
+          } />
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "padding": 10,
+          }
+        }>
+        5
+        . 
+        Art Art Art
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingRight": 20,
+          }
+        }>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "backgroundColor": "rgba(190, 190, 190, 0.8)",
+              "borderRadius": 5,
+              "opacity": 1,
+              "padding": 4,
+              "paddingLeft": 5,
+              "paddingRight": 5,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "white",
+                "fontSize": 13,
+                "textAlign": "center",
+                "width": 60,
+              }
+            }>
+            เลิกติดตาม
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "height": 1,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(250, 250, 250)",
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "margin": 10,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "backgroundColor": "black",
+              "borderRadius": 20,
+              "height": 40,
+              "width": 40,
+            }
+          } />
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "padding": 10,
+          }
+        }>
+        6
+        . 
+        Art Art Art
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingRight": 20,
+          }
+        }>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "backgroundColor": "rgba(190, 190, 190, 0.8)",
+              "borderRadius": 5,
+              "opacity": 1,
+              "padding": 4,
+              "paddingLeft": 5,
+              "paddingRight": 5,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "white",
+                "fontSize": 13,
+                "textAlign": "center",
+                "width": 60,
+              }
+            }>
+            เลิกติดตาม
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "height": 1,
+        }
+      } />
+  </ScrollView>
+</View>
+`;
+
+exports[`UserContainer MyFanScreen render 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgb(250, 250, 250)",
+      "flex": 1,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "white",
+        "borderBottomWidth": 1,
+        "borderColor": "rgb(240, 240, 240)",
+        "flexDirection": "row",
+        "height": 60,
+        "justifyContent": "space-between",
+        "paddingTop": 5,
+      }
+    }>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "opacity": 1,
+          "paddingLeft": 20,
+        }
+      }
+      testID={undefined}>
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 20,
+            "resizeMode": "contain",
+          }
+        } />
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "rgb(209, 87, 92)",
+            "fontSize": 22,
+            "fontWeight": "bold",
+          }
+        }>
+        แฟนคลับของฉัน
+      </Text>
+    </View>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "opacity": 1,
+          "paddingRight": 20,
+        }
+      }
+      testID={undefined} />
+  </View>
+  <ScrollView
+    contentInset={
+      Object {
+        "bottom": 1354,
+        "top": 0,
+      }
+    }
+    data={
+      Array [
+        Object {
+          "candys": 1250,
+          "name": "Art Nattapat",
+        },
+        Object {
+          "candys": 1250,
+          "name": "Art Art Art",
+        },
+        Object {
+          "candys": 1000,
+          "name": "Art Art Art",
+        },
+        Object {
+          "candys": 789,
+          "name": "Art Art Art",
+        },
+        Object {
+          "candys": 7013,
+          "name": "Art Art Art",
+        },
+        Object {
+          "candys": 0,
+          "name": "Art Art Art",
+        },
+      ]
+    }
+    dataSource={
+      ListViewDataSource {
+        "items": 6,
+      }
+    }
+    initialListSize={10}
+    minContentHeight={1354}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={1000}
+    onKeyboardDidHide={undefined}
+    onKeyboardDidShow={undefined}
+    onKeyboardWillHide={undefined}
+    onKeyboardWillShow={undefined}
+    onLayout={[Function]}
+    onScroll={[Function]}
+    pageSize={1}
+    removeClippedSubviews={true}
+    renderFooter={[Function]}
+    renderRow={[Function]}
+    renderSeparator={[Function]}
+    scrollEventThrottle={50}
+    scrollRenderAheadDistance={1000}
+    stickyHeaderIndices={Array []}>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(250, 250, 250)",
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "margin": 10,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "backgroundColor": "black",
+              "borderRadius": 20,
+              "height": 40,
+              "width": 40,
+            }
+          } />
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "padding": 10,
+          }
+        }>
+        1
+        . 
+        Art Nattapat
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingRight": 20,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "center",
+            }
+          }>
+          <Image
+            source={1}
+            style={
+              Object {
+                "height": 20,
+                "marginRight": 20,
+                "resizeMode": "contain",
+                "width": 40,
+              }
+            } />
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                  },
+                  Object {
+                    "color": "rgb(141, 227, 188)",
+                  },
+                ]
+              }>
+              1,250
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "rgba(0, 0, 0, 0.3)",
+                  "fontSize": 10,
+                }
+              }>
+              Candys Point
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "height": 1,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(250, 250, 250)",
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "margin": 10,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "backgroundColor": "black",
+              "borderRadius": 20,
+              "height": 40,
+              "width": 40,
+            }
+          } />
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "padding": 10,
+          }
+        }>
+        2
+        . 
+        Art Art Art
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingRight": 20,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "center",
+            }
+          }>
+          <Image
+            source={1}
+            style={
+              Object {
+                "height": 20,
+                "marginRight": 20,
+                "resizeMode": "contain",
+                "width": 40,
+              }
+            } />
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                  },
+                  Object {
+                    "color": "rgb(141, 227, 188)",
+                  },
+                ]
+              }>
+              1,250
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "rgba(0, 0, 0, 0.3)",
+                  "fontSize": 10,
+                }
+              }>
+              Candys Point
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "height": 1,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(250, 250, 250)",
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "margin": 10,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "backgroundColor": "black",
+              "borderRadius": 20,
+              "height": 40,
+              "width": 40,
+            }
+          } />
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "padding": 10,
+          }
+        }>
+        3
+        . 
+        Art Art Art
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingRight": 20,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "center",
+            }
+          }>
+          <Image
+            source={1}
+            style={
+              Object {
+                "height": 20,
+                "marginRight": 20,
+                "resizeMode": "contain",
+                "width": 40,
+              }
+            } />
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                  },
+                  Object {
+                    "color": "rgb(141, 227, 188)",
+                  },
+                ]
+              }>
+              1,000
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "rgba(0, 0, 0, 0.3)",
+                  "fontSize": 10,
+                }
+              }>
+              Candys Point
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "height": 1,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(250, 250, 250)",
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "margin": 10,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "backgroundColor": "black",
+              "borderRadius": 20,
+              "height": 40,
+              "width": 40,
+            }
+          } />
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "padding": 10,
+          }
+        }>
+        4
+        . 
+        Art Art Art
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingRight": 20,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "center",
+            }
+          }>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                  },
+                  null,
+                ]
+              }>
+              789
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "rgba(0, 0, 0, 0.3)",
+                  "fontSize": 10,
+                }
+              }>
+              Candys Point
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "height": 1,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(250, 250, 250)",
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "margin": 10,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "backgroundColor": "black",
+              "borderRadius": 20,
+              "height": 40,
+              "width": 40,
+            }
+          } />
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "padding": 10,
+          }
+        }>
+        5
+        . 
+        Art Art Art
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingRight": 20,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "center",
+            }
+          }>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                  },
+                  null,
+                ]
+              }>
+              7,013
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "rgba(0, 0, 0, 0.3)",
+                  "fontSize": 10,
+                }
+              }>
+              Candys Point
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "height": 1,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(250, 250, 250)",
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "margin": 10,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "backgroundColor": "black",
+              "borderRadius": 20,
+              "height": 40,
+              "width": 40,
+            }
+          } />
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "padding": 10,
+          }
+        }>
+        6
+        . 
+        Art Art Art
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingRight": 20,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "center",
+            }
+          }>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                  },
+                  null,
+                ]
+              }>
+              0
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "rgba(0, 0, 0, 0.3)",
+                  "fontSize": 10,
+                }
+              }>
+              Candys Point
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "height": 1,
+        }
+      } />
+  </ScrollView>
+</View>
+`;
