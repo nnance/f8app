@@ -48,7 +48,7 @@
     "reselect": "~2.0.3"
   },
   "devDependencies": {
-    "babel-cli": "https://registry.npmjs.org/babel-cli/-/babel-cli-6.6.5.tgz",
+    "babel-cli": "^6.18.0",
     "babel-eslint": "~4.1.8",
     "babel-jest": "^18.0.0",
     "babel-polyfill": "^6.20.0",
@@ -71,7 +71,8 @@
         "react-native"
       ]
     },
-    "preset": "react-native"
+    "preset": "react-native",
+    "transformIgnorePatterns": ["node_modules/(?!react-native|react-clone-referenced-element|parse)"]
   },
   "engines": {
     "node": ">=5.0",

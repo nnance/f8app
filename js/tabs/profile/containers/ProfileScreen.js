@@ -299,3 +299,6 @@ const select = state => ({
 });
 
 export default connect(select)(NavigatorProfile);
+export {
+  NavigatorProfile as Component
+}

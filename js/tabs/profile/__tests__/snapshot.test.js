@@ -106,3 +106,9 @@ describe('UserContainer', () => {
       });
   });
 });
+
+describe('ProfileScreen', () => {
+  require('parse/react-native');
+  it('');
+  // const ProfileScreenComponent = require('../containers/ProfileScreen').Component;
+});
