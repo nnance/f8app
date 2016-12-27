@@ -41,7 +41,7 @@ class SecureContainer extends React.Component {
         </View>
         <View style={styles.buttonBox}>
           <F8Button caption="Next" onPress={() => {
-            this.props.onCheck(this.state.password).then(() => {
+            return this.props.onCheck(this.state.password).then(() => {
               this.setState({passed: true});
             }).catch(error => {
               this.setState({
