@@ -108,7 +108,9 @@ describe('UserContainer', () => {
 });
 
 describe('ProfileScreen', () => {
-  require('parse/react-native');
-  it('');
-  // const ProfileScreenComponent = require('../containers/ProfileScreen').Component;
+  const ProfileScreenComponent = require('../containers/ProfileScreen').Component;
+  it('render', () => {
+    const tree = renderer.create(<ProfileScreenComponent {...mockData}></ProfileScreenComponent>)
+    expect(tree.toJSON()).toMatchSnapshot();
+  });
 });
