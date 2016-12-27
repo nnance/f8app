@@ -15,7 +15,7 @@ import NavBar from '../components/NavBar';
 
 import {styles as commonStyles, colors as commonColors} from '../common';
 
-import {changeEmail, clearChangeEmailState} from '../../../actions/changeProfile';
+import {changeEmail} from '../../../actions/changeProfile';
 import ModalSpinner from '../components/ModalSpinner';
 
 class ChangeEmailScreen extends React.Component {
@@ -24,9 +24,9 @@ class ChangeEmailScreen extends React.Component {
     this.state = {
       email: '',
       confirmEmail: '',
-      error: null
+      error: null,
+      saving: false
     };
-    this.props.clearChangeEmailState();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -37,7 +37,7 @@ class ChangeEmailScreen extends React.Component {
 
   render() {
     return (<View style={styles.container}>
-      <ModalSpinner visible={this.props.saving}/>
+      <ModalSpinner visible={this.state.saving}/>
       <NavBar
         title="เปลี่ยน Email"
         onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}
@@ -85,17 +85,28 @@ class ChangeEmailScreen extends React.Component {
   onChangeEmail() {
     const email = this.state.email;
     const confirmEmail = this.state.confirmEmail;
-    this.props.clearChangeEmailState();
     this.setState({
-      error: null
+      error: null,
+      saving: true
     });
     if (email !== confirmEmail) {
       this.setState({
-        error: 'email not match'
+        error: 'email not match',
+        saving: false
       });
-      return;
+      return Promise.resolve();
     }
-    this.props.changeEmail(email);
+    return this.props.changeEmail(email).then(() => {
+      this.setState({
+        svaing: false
+      });
+      this.props.onBackPress && this.props.onBackPress();
+    }).catch(error => {
+      this.setState({
+        saving: false,
+        error: error.message
+      });
+    });
   }
 }
 
@@ -113,16 +124,11 @@ const styles = StyleSheet.create({
   }
 });
 
-const select = state => ({
-  changingEmail: state.user.changingEmail,
-  changedEmail: state.user.changedEmail,
-  error: state.user.changeEmailError,
-  saving: state.user.changingEmail
-});
-
 const actionsMaping = {
-  clearChangeEmailState,
   changeEmail
 };
 
-export default connect(select, actionsMaping)(ChangeEmailScreen);
+export default connect(null, actionsMaping)(ChangeEmailScreen);
+export {
+  ChangeEmailScreen as Component
+}

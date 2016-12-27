@@ -1,0 +1,267 @@
+exports[`ChangeEmailScreen render authen 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgb(250, 250, 250)",
+      "flex": 1,
+    }
+  }>
+  <Modal
+    transparent={true}
+    visible={true}>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgba(255, 255, 255, 0.6)",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }>
+      <ActivityIndicator
+        animating={true}
+        color="#999999"
+        hidesWhenStopped={true}
+        size="large"
+        style={
+          Array [
+            Object {
+              "height": 80,
+            },
+          ]
+        } />
+    </View>
+  </Modal>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "white",
+        "borderBottomWidth": 1,
+        "borderColor": "rgb(240, 240, 240)",
+        "flexDirection": "row",
+        "height": 60,
+        "justifyContent": "space-between",
+        "paddingTop": 5,
+      }
+    }>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "opacity": 1,
+          "paddingLeft": 20,
+        }
+      }
+      testID={undefined}>
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 20,
+            "resizeMode": "contain",
+          }
+        } />
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "rgb(209, 87, 92)",
+            "fontSize": 22,
+            "fontWeight": "bold",
+          }
+        }>
+        เปลี่ยน Email
+      </Text>
+    </View>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "opacity": 1,
+          "paddingRight": 20,
+        }
+      }
+      testID={undefined} />
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(250, 250, 250)",
+          "flex": 1,
+        },
+        undefined,
+      ]
+    }>
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "flex": 8,
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "alignSelf": "center",
+            "color": "red",
+            "margin": 10,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "backgroundColor": "rgba(255, 255, 255, 0.8)",
+            "borderColor": "rgb(240, 240, 240)",
+            "borderRadius": 10,
+            "borderWidth": 0.5,
+            "height": 80,
+            "padding": 20,
+            "width": 300,
+          }
+        }>
+        <TextInput
+          onChangeText={[Function]}
+          placeholder="current password"
+          secureTextEntry={true}
+          style={
+            Object {
+              "flex": 1,
+              "height": 40,
+            }
+          }
+          value="" />
+      </View>
+      <View
+        style={
+          Object {
+            "padding": 60,
+          }
+        }>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits="button"
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "height": 50,
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <BVLinearGradient
+            colors={
+              Array [
+                4285164245,
+                4285499097,
+              ]
+            }
+            end={
+              Array [
+                1,
+                1,
+              ]
+            }
+            locations={null}
+            start={
+              Array [
+                0.5,
+                1,
+              ]
+            }
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "paddingHorizontal": 40,
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderRadius": 25,
+                },
+              ]
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontFamily": undefined,
+                  },
+                  Array [
+                    Object {
+                      "fontSize": 12,
+                      "letterSpacing": 1,
+                    },
+                    Object {
+                      "color": "white",
+                    },
+                  ],
+                ]
+              }>
+              NEXT
+            </Text>
+          </BVLinearGradient>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;

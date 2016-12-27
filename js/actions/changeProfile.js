@@ -28,11 +28,8 @@ async function _changeEmail(newEmail) {
 }
 
 export const changeEmail = (newEmail) => dispatch => {
-  dispatch(changingEmail());
-  _changeEmail(newEmail).then(() => {
+  return _changeEmail(newEmail).then(() => {
     dispatch(changedEmail());
-  }).catch(error => {
-    dispatch(changeEmailError(error.message));
   });
 }
 

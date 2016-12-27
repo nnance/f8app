@@ -64,9 +64,6 @@ const initialState = {
   changingPassword: false,
   changedPassword: false,
   changePasswordError: null,
-  changingEmail: false,
-  changedEmail: false,
-  changeEmailError: null,
   facebookLinkProcessing: false,
   facebookLinkError: null
 };
@@ -140,38 +137,6 @@ function changeProfile(state: State = initialState, action: Action): State {
       changingPassword: false,
       changedPassword: false,
       changePasswordError: action.payload
-    };
-  }
-  if (action.type === 'CLEAR_CHANGE_EMAIL_STATE') {
-    return {
-      ...state,
-      changingEmail: false,
-      changedEmail: false,
-      changeEmailError: null
-    };
-  }
-  if (action.type === 'CHANGING_EMAIL') {
-    return {
-      ...state,
-      changingEmail: true,
-      changedEmail: false,
-      changeEmailError: null
-    };
-  }
-  if (action.type === 'CHANGED_EMAIL') {
-    return {
-      ...state,
-      changingEmail: false,
-      changedEmail: true,
-      changeEmailError: null
-    };
-  }
-  if (action.type === 'CHANGE_EMAIL_ERROR') {
-    return {
-      ...state,
-      changingEmail: false,
-      changedEmail: false,
-      changeEmailError: action.payload
     };
   }
   return state;
