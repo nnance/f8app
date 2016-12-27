@@ -84,7 +84,6 @@ async function _changeProfile(data) {
 }
 
 export const changePublicProfile = (name, birthDayDate, sex, profilePicture, profileCover): ThunkAction => dispatch => {
-  dispatch(savingProfile());
   return _changeProfile({
     name,
     birthDayDate,
@@ -101,26 +100,7 @@ export const changePublicProfile = (name, birthDayDate, sex, profilePicture, pro
         profileCover: user.get('profileCover') ? user.get('profileCover').url() : null
       }));
     }
-  ).catch(error => dispatch(saveProfileError(error.message)));
-}
-
-function saveProfileError(error) {
-  return {
-    type: 'SAVE_PROFILE_ERROR',
-    payload: error
-  };
-}
-
-export function clearSaveState() {
-  return {
-    type: 'CLEAR_SAVE_STATE'
-  };
-}
-
-function savingProfile() {
-  return {
-    type: 'SAVING_PROFILE'
-  };
+  );
 }
 
 function changedPublicProfile(data) {

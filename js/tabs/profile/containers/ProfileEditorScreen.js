@@ -22,7 +22,7 @@ import ImagePicker from 'react-native-image-picker';
 import PureListView from '../../../common/PureListView';
 import CircleImage from '../../../common/CircleImage';
 import {toHumanNumber, random, mapSource} from '../../../common/utils';
-import {changePublicProfile, clearSaveState} from '../../../actions/changeProfile';
+import {changePublicProfile} from '../../../actions/changeProfile';
 import {linkFacebook, unlinkFacebook} from '../../../actions/login';
 
 import CircleImageWithCategory from '../components/CircleImageWithCategory';
@@ -38,25 +38,20 @@ import {connect} from 'react-redux'
 class ProfileEditorScreen extends React.Component {
   constructor(...args) {
     super(...args);
-    this.props.clearSaveState();
     this.state = {
       name: this.props.name,
       birthDayDate: this.props.birthDayDate,
       sex: this.props.sex,
       changedProfilePicture: null,
-      changedProfileCover: null
+      changedProfileCover: null,
+      savingProfile: false,
+      linkingFacebook: false
     };
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.saved === true) {
-      this.props.onBackPress && this.props.onBackPress();
-    }
   }
 
   render() {
     return (<View style={commonStyles.listViewContainer}>
-      <ModalSpinner visible={this.props.saving}/>
+      <ModalSpinner visible={this.state.savingProfile || this.state.linkingFacebook}/>
       <DatePickerDialog ref="datePicker"/>
       <NavBar
         title="แก้ไขข้อมูล"
@@ -72,7 +67,18 @@ class ProfileEditorScreen extends React.Component {
         }}
         onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}
         onRightPress={() => {
-          this.props.changePublicProfile(this.state.name, this.state.birthDayDate, this.state.sex, this.state.changedProfilePicture, this.state.changedProfileCover)
+          this.setState({
+            savingProfile: true
+          });
+          return this.props.changePublicProfile(this.state.name, this.state.birthDayDate, this.state.sex, this.state.changedProfilePicture, this.state.changedProfileCover)
+            .then(() => {
+              this.setState({
+                savingProfile: false
+              });
+              this.props.onBackPress && this.props.onBackPress();
+            })
+            .catch(error => {
+            });
         }}
         >
       </NavBar>
@@ -144,11 +150,22 @@ class ProfileEditorScreen extends React.Component {
   }
 
   onToggleFacebookLink() {
+    this.setState({
+      linkingFacebook: true
+    });
     if (this.props.facebookLinked) {
-      this.props.unlinkFacebook();
+      return this.props.unlinkFacebook().then(() => {
+        this.setState({
+          linkingFacebook: false
+        });
+      });
     }
     else {
-      this.props.linkFacebook();
+      return this.props.linkFacebook().then(() => {
+        this.setState({
+          linkingFacebook: false
+        });
+      });
     }
   }
 
@@ -302,15 +319,18 @@ const select = state => ({
   sex: state.user.sex,
   birthDayDate: state.user.birthDayDate,
   saved: state.user.savedProfile,
-  facebookLinked: state.user.facebookLinked,
-  saving: state.user.savingProfile || state.user.facebookLinkProcessing
+  facebookLinked: state.user.facebookLinked
 });
+
+// saving: state.user.savingProfile || state.user.facebookLinkProcessing
 
 const actionsMaping = {
   changePublicProfile,
-  clearSaveState,
   linkFacebook,
   unlinkFacebook
 };
 
 export default connect(select, actionsMaping)(ProfileEditorScreen);
+export {
+  ProfileEditorScreen as Component
+}

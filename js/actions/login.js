@@ -149,30 +149,16 @@ async function _unlinkFacebook(user) {
 
 const linkFacebook = () => async dispatch => {
   const user = await Parse.User.currentAsync();
-  dispatch(facebookLinkProcessing());
   return _linkFacebook(user).then((user) => {
     dispatch(facebookLinked(user.get('facebook_id'), user.get('name')));
-  }).catch(error => dispatch(facebookLinkError(error.message)));
+  });
 }
 
 const unlinkFacebook = () => async dispatch => {
   const user = await Parse.User.currentAsync();
   return _unlinkFacebook(user).then(user => {
     dispatch(facebookUnlinked());
-  }).catch(error => dispatch(facebookLinkError(error.message)));
-};
-
-const facebookLinkProcessing = () => {
-  return {
-    type: 'FACEBOOK_LINK_PROCESSING'
-  };
-};
-
-const facebookLinkError = error => {
-  return {
-    type: 'FACEBOOK_LINK_ERROR',
-    payload: error
-  };
+  });
 };
 
 const facebookUnlinked = () => {

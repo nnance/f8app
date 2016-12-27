@@ -60,29 +60,10 @@ const initialState = {
   sex: null,
   facebookLinked: false,
   profilePicture: null,
-  profileCover: null,
-  facebookLinkProcessing: false,
-  facebookLinkError: null
+  profileCover: null
 };
 
 function changeProfile(state: State = initialState, action: Action): State {
-  if (action.type === 'CLEAR_SAVE_STATE') {
-    return {
-      ...state,
-      savingProfile: false,
-      savedProfile: false,
-      facebookLinkProcessing: false,
-      facebookLinkError: null,
-      saveProfileError: null
-    };
-  }
-  if (action.type === 'SAVING_PROFILE') {
-    return {
-      ...state,
-      savingProfile: true,
-      saveProfileError: null
-    };
-  }
   if (action.type === 'CHANGED_PUBLIC_PROFILE') {
     return {
       ...state,
@@ -94,14 +75,6 @@ function changeProfile(state: State = initialState, action: Action): State {
       saveProfileError: null,
       profilePicture: action.profilePicture,
       profileCover: action.profileCover
-    };
-  }
-  if (action.type === 'SAVE_PROFILE_ERROR') {
-    return {
-      ...state,
-      savingProfile: false,
-      savedProfile: false,
-      saveProfileError: action.payload
     };
   }
   return state;
@@ -144,36 +117,14 @@ function authen(state: State = initialState, action: Action): State {
       loginError: null
     };
   }
-  if (action.type === 'FACEBOOK_LINK_PROCESSING') {
-    return {
-      ...state,
-      facebookLinkProcessing: true
-    };
-  }
   if (action.type === 'FACEBOOK_LINKED') {
     let {id, name} = action.data;
     return {
       ...state,
       id,
       name,
-      facebookLinked: true,
-      facebookLinkProcessing: false
+      facebookLinked: true
     };
-  }
-  if (action.type === 'FACEBOOK_UNLINKED') {
-    return {
-      ...state,
-      id: null,
-      facebookLinked: false,
-      facebookLinkProcessing: false
-    };
-  }
-  if (action.type === 'FACEBOOK_LINK_ERROR') {
-    return {
-      ...state,
-      facebookLinkProcessing: false,
-      facebookLinkError: action.payload
-    }
   }
   if (action.type === 'LOGGED_IN') {
     let {id, name, sex, email, birthDayDate, profilePicture, profileCover, sharedSchedule, facebookLinked} = action.data;
