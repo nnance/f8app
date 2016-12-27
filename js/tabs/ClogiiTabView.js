@@ -9,7 +9,7 @@ import {
 
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 
-import ProfileScreen from './profile/ProfileScreen';
+import ProfileScreen from './profile/containers/ProfileScreen';
 import MyScheduleView from './schedule/MyScheduleView';
 
 import ClogiiTabBar from './ClogiiTabBar';

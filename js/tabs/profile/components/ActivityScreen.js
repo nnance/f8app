@@ -11,14 +11,14 @@ import {
 
 import moment from 'moment';
 
-import PureListView from '../../common/PureListView';
-import {toHumanNumber, random} from '../../common/utils';
+import PureListView from '../../../common/PureListView';
+import {toHumanNumber, random} from '../../../common/utils';
 
 import NavBar from './NavBar';
-import {styles as commonStyles, colors} from './common';
+import {styles as commonStyles, colors} from '../common';
 
-const likeIcon = require('./img/icons/heart.png');
-const readIcon = require('./img/icons/read.png');
+const likeIcon = require('../img/icons/heart.png');
+const readIcon = require('../img/icons/read.png');
 
 const ActivityRow = (props) => (<TouchableOpacity style={styles.rowContainer}>
   <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>

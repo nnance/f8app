@@ -10,7 +10,7 @@ import {
   Image
 } from 'react-native';
 
-import {colors} from './common';
+import {colors} from '../common';
 
 const NAV_BAR_HEIGHT = 60;
 
@@ -19,7 +19,7 @@ export default class NavBar extends React.Component {
     return (
       <View style={styles.container}>
         <TouchableOpacity style={styles.leftMenu} onPress={() => this.props.onLeftPress && this.props.onLeftPress()}>
-          <Image style={styles.backButton} source={require('./img/icons/backButton.png')}/>
+          <Image style={styles.backButton} source={require('../img/icons/backButton.png')}/>
         </TouchableOpacity>
         <View style={styles.midMenu}>
           <Text style={styles.navText}>{this.props.title}</Text>

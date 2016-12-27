@@ -4,7 +4,7 @@ import {bookmark as mockBookmark, myClogs as mockMyClogs, user as mockUser} from
 import * as mockData from '../mockData';
 
 describe('BookmarkScreen', () => {
-  const BookmarkScreen = require('../BookmarkScreen').default;
+  const BookmarkScreen = require('../components/BookmarkScreen').default;
   it('render BookmarkScreen', () => {
     const tree = renderer.create(<BookmarkScreen bookmark={mockBookmark}/>);
     expect(tree.toJSON()).toMatchSnapshot();
@@ -12,7 +12,7 @@ describe('BookmarkScreen', () => {
 });
 
 describe('CircleImageWithCategory', () => {
-  const CircleImageWithCategory = require('../CircleImageWithCategory').default;
+  const CircleImageWithCategory = require('../components/CircleImageWithCategory').default;
   it('render CircleImageWithCategory', () => {
     const tree = renderer.create(<CircleImageWithCategory
       source={{uri: 'x.jpg'}}
@@ -24,7 +24,7 @@ describe('CircleImageWithCategory', () => {
 });
 
 describe('JellyShopScreen', () => {
-  const JellyShopScreen = require('../JellyShopScreen').default;
+  const JellyShopScreen = require('../components/JellyShopScreen').default;
   it('render JellyShopScreen', () => {
     const tree = renderer.create(<JellyShopScreen/>);
     expect(tree.toJSON()).toMatchSnapshot();
@@ -32,7 +32,7 @@ describe('JellyShopScreen', () => {
 });
 
 describe('ModalSpinner', () => {
-  const ModalSpinner = require('../ModalSpinner').default;
+  const ModalSpinner = require('../components/ModalSpinner').default;
   it('render visible', () => {
     const tree = renderer.create(<ModalSpinner visible={true}/>);
     expect(tree.toJSON()).toMatchSnapshot();
@@ -45,7 +45,7 @@ describe('ModalSpinner', () => {
 });
 
 describe('MyClogScreen', () => {
-  const MyClogScreen = require('../MyClogScreen').default;
+  const MyClogScreen = require('../components/MyClogScreen').default;
   it('render MyClogScreen', () => {
     const tree = renderer.create(<MyClogScreen myClogs={mockMyClogs}/>);
     expect(tree.toJSON()).toMatchSnapshot();
@@ -53,7 +53,7 @@ describe('MyClogScreen', () => {
 });
 
 describe('ProfileCover', () => {
-  const ProfileCover = require('../ProfileCover').default;
+  const ProfileCover = require('../components/ProfileCover').default;
   const Text = require('react-native').Text;
   it('render default', () => {
     const tree = renderer.create(<ProfileCover />);
@@ -72,7 +72,7 @@ describe('ProfileCover', () => {
 });
 
 describe('ProfileHeader', () => {
-  const ProfileHeader = require('../ProfileHeader').default;
+  const ProfileHeader = require('../components/ProfileHeader').default;
   it('render', () => {
     const tree = renderer.create(<ProfileHeader user={mockUser}/>)
     expect(tree.toJSON()).toMatchSnapshot();
@@ -80,7 +80,7 @@ describe('ProfileHeader', () => {
 });
 
 describe('UserContainer', () => {
-  const UserContainer = require('../UserContainer');
+  const UserContainer = require('../components/UserContainer');
 
   describe('FollowingScreen', () => {
       const FollowingScreen = UserContainer.FollowingScreen;

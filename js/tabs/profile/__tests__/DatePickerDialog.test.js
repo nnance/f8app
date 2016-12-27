@@ -10,7 +10,7 @@ import {
 
 jest.mock('DatePickerAndroid');
 import DatePickerAndroid from 'DatePickerAndroid';
-import DatePickerDialog from '../DatePickerDialog';
+import DatePickerDialog from '../components/DatePickerDialog';
 
 describe('DatePickerDialog', () => {
   let oldPlatform;

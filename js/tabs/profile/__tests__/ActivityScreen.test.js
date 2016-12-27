@@ -8,7 +8,7 @@ import {
 import { shallow, mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 import PureListView from '../../../common/PureListView';
-import ActivityScreen, {ActivityRow} from '../ActivityScreen';
+import ActivityScreen, {ActivityRow} from '../components/ActivityScreen';
 import {activity as mockActivity} from '../mockData';
 
 describe('ActivityScreen', () => {

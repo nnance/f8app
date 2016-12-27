@@ -11,18 +11,18 @@ import {
 } from 'react-native';
 import moment from 'moment';
 
-import PureListView from '../../common/PureListView';
-import CircleImage from '../../common/CircleImage';
-import {toHumanNumber, random, mapSource} from '../../common/utils';
+import PureListView from '../../../common/PureListView';
+import CircleImage from '../../../common/CircleImage';
+import {toHumanNumber, random, mapSource} from '../../../common/utils';
 
 import CircleImageWithCategory from './CircleImageWithCategory';
 import NavBar from './NavBar';
-import {styles as commonStyles, colors as commonColors} from './common';
+import {styles as commonStyles, colors as commonColors} from '../common';
 
 const Coin = (props) => (<TouchableOpacity style={styles.jellyCountBoxContainer}>
     <View style={styles.jellyCountBox}>
       <Image
-        source={require('./img/jelly-shop/coin.png')}
+        source={require('../img/jelly-shop/coin.png')}
         style={styles.coinIcon}
         />
       <View style={{paddingHorizontal: 5}}>
@@ -32,11 +32,11 @@ const Coin = (props) => (<TouchableOpacity style={styles.jellyCountBoxContainer}
 </TouchableOpacity>);
 
 const covers = {
-  's1': require('./img/jelly-shop/s1.png'),
-  's2': require('./img/jelly-shop/s2.png'),
-  's3': require('./img/jelly-shop/s3.png'),
-  'b1': require('./img/jelly-shop/b1.png'),
-  'b2': require('./img/jelly-shop/b2.png')
+  's1': require('../img/jelly-shop/s1.png'),
+  's2': require('../img/jelly-shop/s2.png'),
+  's3': require('../img/jelly-shop/s3.png'),
+  'b1': require('../img/jelly-shop/b1.png'),
+  'b2': require('../img/jelly-shop/b2.png')
 }
 
 const JellySeller = (props) => (<Image {...props}

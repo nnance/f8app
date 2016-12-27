@@ -5,7 +5,7 @@ import {
   StyleSheet
 } from 'react-native';
 
-import ProfilePicture from '../../common/ProfilePicture';
+import ProfilePicture from '../../../common/ProfilePicture';
 import ProfileCover from './ProfileCover';
 
 class ProfileHeader extends React.Component {

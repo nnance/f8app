@@ -42,8 +42,7 @@ var { switchTab } = require('../actions');
 var { connect } = require('react-redux');
 
 import type {Tab, Day} from '../reducers/navigation';
-import ProfileScreen from './profile/ProfileScreen';
-import UserContainer, {FollowingScreen, FollowerScreen, MyFanScreen} from './profile/UserContainer';
+import ProfileScreen from './profile/containers/ProfileScreen';
 
 class F8TabsView extends React.Component {
   props: {

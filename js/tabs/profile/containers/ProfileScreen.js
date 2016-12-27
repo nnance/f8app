@@ -11,51 +11,51 @@ import {
   TouchableOpacity,
   Navigator
 } from 'react-native';
-import PureListView from '../../common/PureListView';
-import ProfilePicture from '../../common/ProfilePicture';
-import {toHumanNumber} from '../../common/utils';
+import PureListView from '../../../common/PureListView';
+import ProfilePicture from '../../../common/ProfilePicture';
+import {toHumanNumber} from '../../../common/utils';
 
-import ProfileHeader from './ProfileHeader';
-import {FollowingScreen, FollowerScreen, MyFanScreen} from './UserContainer';
-import ActivityScreen from './ActivityScreen';
-import MyClogScreen from './MyClogScreen';
-import BookmarkScreen from './BookmarkScreen';
-import JellyShopScreen from './JellyShopScreen';
-import ProfileEditorScreen from './ProfileEditorScreen';
-import ChangeEmailScreen from './ChangeEmailScreen';
-import ChangePasswordScreen from './ChangePasswordScreen';
+import ProfileHeader from '../components/ProfileHeader';
+import {FollowingScreen, FollowerScreen, MyFanScreen} from '../components/UserContainer';
+import ActivityScreen from '../components/ActivityScreen';
+import MyClogScreen from '../components/MyClogScreen';
+import BookmarkScreen from '../components/BookmarkScreen';
+import JellyShopScreen from '../components/JellyShopScreen';
+import ProfileEditorScreen from '../containers/ProfileEditorScreen';
+import ChangeEmailScreen from '../containers/ChangeEmailScreen';
+import ChangePasswordScreen from '../containers/ChangePasswordScreen';
 
-import * as mockData from './mockData';
+import * as mockData from '../mockData';
 
 const menuList = [
   {
     name: 'bookmark',
-    icon: require('./img/icons/bookmark.png'),
+    icon: require('../img/icons/bookmark.png'),
     title: 'Bookmark'
   },
   {
     name: 'myclog',
-    icon: require('./img/icons/myclog.png'),
+    icon: require('../img/icons/myclog.png'),
     title: 'Clog ของฉัน'
   },
   {
     name: 'myfan',
-    icon: require('./img/icons/myfan.png'),
+    icon: require('../img/icons/myfan.png'),
     title: 'แฟนคลับของฉัน'
   },
   {
     name: 'jellyShop',
-    icon: require('./img/icons/candy-shop.png'),
+    icon: require('../img/icons/candy-shop.png'),
     title: 'Jelly Shop'
   },
   {
     name: 'activity',
-    icon: require('./img/icons/activity.png'),
+    icon: require('../img/icons/activity.png'),
     title: 'กิจกรรม'
   },
   {
     name: 'logout',
-    icon: require('./img/icons/logout.png'),
+    icon: require('../img/icons/logout.png'),
     title: 'Logout'
   }
 ]
@@ -86,7 +86,7 @@ const CandyCorner = (props) => (
     alignItems: 'center'
   }}>
     <Image
-      source={require('./img/icons/candy.png')}
+      source={require('../img/icons/candy.png')}
       style={{
         width: 15,
         height: 15,
@@ -204,7 +204,7 @@ class ProfileScreen extends React.Component {
                   width: 20,
                   backgroundColor: 'transparent'
                 }}
-                source={require('./img/icons/edit-profile.png')}
+                source={require('../img/icons/edit-profile.png')}
                 />
             </TouchableOpacity>
           </View>

@@ -10,13 +10,13 @@ import {
 } from 'react-native';
 import moment from 'moment';
 
-import PureListView from '../../common/PureListView';
-import CircleImage from '../../common/CircleImage';
-import {toHumanNumber, random, mapSource} from '../../common/utils';
+import PureListView from '../../../common/PureListView';
+import CircleImage from '../../../common/CircleImage';
+import {toHumanNumber, random, mapSource} from '../../../common/utils';
 
 import CircleImageWithCategory from './CircleImageWithCategory';
 import NavBar from './NavBar';
-import {styles as commonStyles, colors as commonColors} from './common';
+import {styles as commonStyles, colors as commonColors} from '../common';
 
 const MyClogRow = (props) => (<TouchableOpacity style={styles.rowContainer}>
   <CircleImageWithCategory
@@ -30,11 +30,11 @@ const MyClogRow = (props) => (<TouchableOpacity style={styles.rowContainer}>
     <Text style={{fontSize: 12, marginTop: 5, color: commonColors.textGrey}}>{props.authors}</Text>
     <View style={{flexDirection: 'row', alignItems: 'center'}}>
       <View style={styles.detailSeparate}>
-        <Image source={require('./img/icons/read.png')} style={{width: 20, height: 20, resizeMode: 'contain', borderRadius: 4}}/>
+        <Image source={require('../img/icons/read.png')} style={{width: 20, height: 20, resizeMode: 'contain', borderRadius: 4}}/>
         <Text style={{paddingLeft: 5, fontSize: 12, color: commonColors.textFadedGrey}}>ดู {toHumanNumber(props.views)} ครั้ง</Text>
       </View>
       <View style={styles.detailSeparate}>
-        <Image source={require('./img/icons/heart.png')} style={{width: 20, height: 20, resizeMode: 'contain', borderRadius: 4, marginLeft: 20}}/>
+        <Image source={require('../img/icons/heart.png')} style={{width: 20, height: 20, resizeMode: 'contain', borderRadius: 4, marginLeft: 20}}/>
         <Text style={{paddingLeft: 5, fontSize: 12, color: commonColors.textFadedGrey}}>{toHumanNumber(props.likes)} Like</Text>
       </View>
     </View>

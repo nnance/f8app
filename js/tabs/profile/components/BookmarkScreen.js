@@ -9,15 +9,15 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-import PureListView from '../../common/PureListView';
-import CircleImage from '../../common/CircleImage';
-import {toHumanNumber, random, mapSource} from '../../common/utils';
+import PureListView from '../../../common/PureListView';
+import CircleImage from '../../../common/CircleImage';
+import {toHumanNumber, random, mapSource} from '../../../common/utils';
 
 import CircleImageWithCategory from './CircleImageWithCategory';
 import NavBar from './NavBar';
-import {styles as commonStyles, colors} from './common';
+import {styles as commonStyles, colors} from '../common';
 
-const rightArrow = require('./img/icons/rightGreyArrow.png');
+const rightArrow = require('../img/icons/rightGreyArrow.png');
 
 const BookmarkRow = props => (<TouchableOpacity style={styles.rowContainer}>
   <CircleImageWithCategory

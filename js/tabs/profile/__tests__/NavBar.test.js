@@ -7,7 +7,7 @@ import {
 import { shallow } from 'enzyme';
 import renderer from 'react-test-renderer';
 
-import NavBar from '../NavBar';
+import NavBar from '../components/NavBar';
 
 describe('<NavBar/>', () => {
   it('render backButton by default', () => {

@@ -50,7 +50,7 @@ var { connect } = require('react-redux');
 import Parse from 'parse/react-native';
 
 import type {Tab} from '../reducers/navigation';
-import ProfileScreen from './profile/ProfileScreen';
+import ProfileScreen from './profile/containers/ProfileScreen';
 
 class F8TabsView extends React.Component {
   props: {

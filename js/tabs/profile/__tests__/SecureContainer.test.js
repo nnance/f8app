@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import F8Button from 'F8Button';
 
-import SecureContainer from '../SecureContainer';
+import SecureContainer from '../components/SecureContainer';
 
 describe('SecureContainer', () => {
   function onCheck(password) {

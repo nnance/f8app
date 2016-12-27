@@ -19,19 +19,19 @@ import moment from 'moment';
 import Picker from 'react-native-picker';
 import ImagePicker from 'react-native-image-picker';
 
-import PureListView from '../../common/PureListView';
-import CircleImage from '../../common/CircleImage';
-import {toHumanNumber, random, mapSource} from '../../common/utils';
-import {changePublicProfile, clearSaveState} from '../../actions/changeProfile';
-import {linkFacebook, unlinkFacebook} from '../../actions/login';
+import PureListView from '../../../common/PureListView';
+import CircleImage from '../../../common/CircleImage';
+import {toHumanNumber, random, mapSource} from '../../../common/utils';
+import {changePublicProfile, clearSaveState} from '../../../actions/changeProfile';
+import {linkFacebook, unlinkFacebook} from '../../../actions/login';
 
-import CircleImageWithCategory from './CircleImageWithCategory';
-import NavBar from './NavBar';
-import {styles as commonStyles, colors as commonColors} from './common';
+import CircleImageWithCategory from '../components/CircleImageWithCategory';
+import NavBar from '../components/NavBar';
+import {styles as commonStyles, colors as commonColors} from '../common';
 
-import ProfileHeader from './ProfileHeader';
-import DatePickerDialog from './DatePickerDialog';
-import ModalSpinner from './ModalSpinner';
+import ProfileHeader from '../components/ProfileHeader';
+import DatePickerDialog from '../components/DatePickerDialog';
+import ModalSpinner from '../components/ModalSpinner';
 
 import {connect} from 'react-redux'
 
@@ -62,7 +62,7 @@ class ProfileEditorScreen extends React.Component {
         title="แก้ไขข้อมูล"
         renderRightMenu={() => {
           return (<Image
-                source={require('./img/icons/ok.png')}
+                source={require('../img/icons/ok.png')}
                 style={{
                   height: 25,
                   width: 25,
