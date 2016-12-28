@@ -210,4 +210,7 @@ const actionsMaping = {
   forgotPassword: actions.forgotPassword
 };
 
-module.exports = connect()(connect(select, actionsMaping)(LoginScreen));
+export default connect()(connect(select, actionsMaping)(LoginScreen));
+export {
+  LoginScreen as Component
+}

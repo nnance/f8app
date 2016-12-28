@@ -5,7 +5,7 @@ import toJSON from 'enzyme-to-json';
 
 import DashButton from '../DashButton';
 import SuccessScreen from '../SuccessScreen';
-import {Component as IndexScreenComponent} from '../IndexScreen';
+import IndexScreen, {Component as IndexScreenComponent} from '../IndexScreen';
 
 describe('DashButton', () => {
   it('render', () => {
