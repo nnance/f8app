@@ -34,7 +34,6 @@ export type State = {
   hasSkippedLogin: boolean;
   sharedSchedule: ?boolean;
   facebookLinked: ?boolean;
-  loginError: ?string;
   id: ?string;
   name: ?string;
   savingProfile: boolean;
@@ -51,7 +50,6 @@ const initialState = {
   isLoggedIn: false,
   hasSkippedLogin: false,
   sharedSchedule: null,
-  loginError: null,
   id: null,
   name: null,
   savingProfile: false,
@@ -103,18 +101,6 @@ function authen(state: State = initialState, action: Action): State {
     return {
       ...state,
       isSignedUp: false
-    };
-  }
-  if (action.type === 'LOGIN_ERROR') {
-    return {
-      ...state,
-      loginError: action.message
-    };
-  }
-  if (action.type === 'CLEAR_LOGIN_ERROR') {
-    return {
-      ...state,
-      loginError: null
     };
   }
   if (action.type === 'FACEBOOK_LINKED') {

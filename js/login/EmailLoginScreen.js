@@ -10,11 +10,15 @@ import {DashButtonWithContainer} from './DashButton';
 export default class EmailLoginScreen extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      loading: false,
+      error: null
+    };
   }
 
   render() {
-    const {error, logIn, pushPage, user} = this.props;
+    const {logIn, pushPage, user} = this.props;
+    const {error} = this.state;
     return (
       <Image
         style={styles.container}
@@ -49,7 +53,14 @@ export default class EmailLoginScreen extends React.Component {
             style={styles.emailButton}
             type='white'
             caption='เข้าสู่ระบบ'
-            onPress={() => logIn(this.state.email || '', this.state.password || '')}/>
+            onPress={
+              () => {
+                this.setState({loading: true});
+                return logIn(this.state.email || '', this.state.password || '')
+                  .catch(error => this.setState({error: error.message}))
+                  .then(() => this.setState({loading: false}));
+              }
+            }/>
         </View>
         <View style={styles.buttonSession}>
           <TouchableOpacity onPress={() => pushPage('forgotPassword')}>

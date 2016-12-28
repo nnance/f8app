@@ -90,7 +90,6 @@ async function _logInWithFacebook(source: ?string): Promise<Array<Action>> {
 
 const signUp = (email: string, password: string, confirmPassword) => dispatch => {
   if (password !== confirmPassword) {
-    dispatch(logInError('password not match'));
     return;
   }
   const user = new Parse.User();
@@ -100,8 +99,6 @@ const signUp = (email: string, password: string, confirmPassword) => dispatch =>
   user.set('birthDayDate', null);
   return user.save().then(() => {
     dispatch(signedUp());
-  }, error => {
-    dispatch(logInError(!!error.message ? error.message : error));
   });
 };
 
@@ -198,23 +195,7 @@ const logIn = (email: string, password: string) => dispatch => {
       dispatch(action);
       dispatch(restoreSchedule());
     }
-  ).catch(error => {
-    const errorMessage = error.message ? error.message : error;
-    dispatch(logInError(errorMessage));
-  });
-}
-
-function logInError(message: string): Action {
-  return {
-    type: 'LOGIN_ERROR',
-    message
-  };
-}
-
-function clearError(): Action {
-  return {
-    type: 'CLEAR_LOGIN_ERROR'
-  };
+  );
 }
 
 function logInWithFacebook(source: ?string): ThunkAction {
@@ -242,8 +223,6 @@ function skipLogin(): Action {
 const forgotPassword: ThunkAction = email => dispatch => {
   return Parse.User.requestPasswordReset(email).then(() => {
     dispatch(reqedForgotPassword())
-  }, error => {
-    dispatch(logInError(error.message))
   });
 }
 
@@ -304,7 +283,6 @@ function logOutWithPrompt(): ThunkAction {
 }
 
 module.exports = {
-  clearError,
   clearIsReqedForgotPassword,
   logInWithFacebook,
   skipLogin,

@@ -34,7 +34,6 @@ class LoginScreen extends React.Component {
 
   componentDidMount() {
     BackAndroid.addEventListener('hardwareBackPress', this.handleBackButton);
-    this.props.clearError();
     if (this.props.addBackButtonListener) {
       this.props.addBackButtonListener(this.alwaysFalse);
     }
@@ -152,7 +151,6 @@ class LoginScreen extends React.Component {
   }
 
   goToLogin() {
-    this.props.clearError();
     const navigator = this.refs.navigator;
     let currentRoutes = navigator.getCurrentRoutes();
     let N = navigator.getCurrentRoutes().length;
@@ -169,14 +167,12 @@ class LoginScreen extends React.Component {
   }
 
   pushPage(page, payload) {
-    this.props.clearError();
     this.props.clearIsReqedForgotPassword();
     this.props.clearSignedUp();
     this.refs.navigator.push({page, payload});
   }
 
   goBack() {
-    this.props.clearError();
     if (this.refs.navigator.getCurrentRoutes().length === 1) {
       if (this.props.onExit) {
         this.props.onExit();
@@ -217,7 +213,6 @@ const select = state => ({
 
 const actionsMaping = {
   skipLogin: actions.skipLogin,
-  clearError: actions.clearError,
   logIn: actions.logIn,
   signUp: actions.signUp,
   forgotPassword: actions.forgotPassword,
