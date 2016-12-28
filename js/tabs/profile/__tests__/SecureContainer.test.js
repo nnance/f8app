@@ -20,7 +20,7 @@ describe('SecureContainer', () => {
 
   it('render authen screen', () => {
     const tree = renderer.create(<SecureContainer><Text>secret</Text></SecureContainer>);
-    expect(tree.toJSON).toMatchSnapshot();
+    expect(tree.toJSON()).toMatchSnapshot();
   });
 
   it('not render secret', () => {

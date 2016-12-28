@@ -18,6 +18,11 @@ describe('ProfileEditorScreen', () => {
     return Promise.resolve();
   }
 
+  it('render', () => {
+    const tree = renderer.create(<ProfileEditorScreenComponent/>);
+    expect(tree.toJSON()).toMatchSnapshot();
+  });
+
   it('call api changePublicProfile', async () => {
     let _resolve;
     let changePublicProfile = jest.fn(() => new Promise(resolve => _resolve = resolve));

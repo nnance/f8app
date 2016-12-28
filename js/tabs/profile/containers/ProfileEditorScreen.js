@@ -211,7 +211,7 @@ class ProfileEditorScreen extends React.Component {
     this.refs.datePicker.open().then(date => {
       this.setState({
         birthDayDate: date
-      })
+      });
     });
   }
 
