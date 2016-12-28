@@ -1,0 +1,55 @@
+exports[`DashButton render 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hitSlop={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "flexDirection": "row",
+      "opacity": 1,
+      "padding": 10,
+    }
+  }
+  testID={undefined}>
+  <View
+    style={
+      Object {
+        "backgroundColor": "rgba(255, 255, 255, 0.5)",
+        "flex": 1,
+        "height": 1,
+        "marginHorizontal": 15,
+        "marginVertical": 12,
+      }
+    } />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "white",
+      }
+    }>
+    test
+  </Text>
+  <View
+    style={
+      Object {
+        "backgroundColor": "rgba(255, 255, 255, 0.5)",
+        "flex": 1,
+        "height": 1,
+        "marginHorizontal": 15,
+        "marginVertical": 12,
+      }
+    } />
+</View>
+`;
