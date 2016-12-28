@@ -221,21 +221,7 @@ function skipLogin(): Action {
 }
 
 const forgotPassword: ThunkAction = email => dispatch => {
-  return Parse.User.requestPasswordReset(email).then(() => {
-    dispatch(reqedForgotPassword())
-  });
-}
-
-function clearIsReqedForgotPassword(): Action {
-  return {
-    type: 'CLEAR_IS_REQED_FORGOT_PASSWORD'
-  };
-}
-
-function reqedForgotPassword(): Action {
-  return {
-    type: 'REQED_FORGOT_PASSWORD'
-  };
+  return Parse.User.requestPasswordReset(email);
 }
 
 function logOut(): ThunkAction {
@@ -283,7 +269,6 @@ function logOutWithPrompt(): ThunkAction {
 }
 
 module.exports = {
-  clearIsReqedForgotPassword,
   logInWithFacebook,
   skipLogin,
   forgotPassword,

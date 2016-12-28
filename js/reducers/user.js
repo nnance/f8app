@@ -45,7 +45,6 @@ export type State = {
 };
 
 const initialState = {
-  isReqedForgotPassword: false,
   isSignedUp: false,
   isLoggedIn: false,
   hasSkippedLogin: false,
@@ -79,18 +78,6 @@ function changeProfile(state: State = initialState, action: Action): State {
 }
 
 function authen(state: State = initialState, action: Action): State {
-  if (action.type === 'CLEAR_IS_REQED_FORGOT_PASSWORD') {
-    return {
-      ...state,
-      isReqedForgotPassword: false
-    };
-  }
-  if (action.type === 'REQED_FORGOT_PASSWORD') {
-    return {
-      ...state,
-      isReqedForgotPassword: true
-    };
-  }
   if (action.type === 'SIGNED_UP') {
     return {
       ...state,

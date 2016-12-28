@@ -120,11 +120,9 @@ class LoginScreen extends React.Component {
     if (route.page === 'forgotPassword') {
       return (<ForgotPasswordScreen
         error={this.props.error}
-        clearIsReqedForgotPassword={this.props.clearIsReqedForgotPassword}
-        isReqedForgotPassword={this.props.isReqedForgotPassword}
         forgotPassword={this.props.forgotPassword}
-        pushPage={this.pushPage}
         goBack={this.goBack}
+        onReqed={() => this.pushPage('success', {successText: 'mail has been sent'})}
       />);
     }
     if (route.page === 'success') {
@@ -167,7 +165,6 @@ class LoginScreen extends React.Component {
   }
 
   pushPage(page, payload) {
-    this.props.clearIsReqedForgotPassword();
     this.props.clearSignedUp();
     this.refs.navigator.push({page, payload});
   }
@@ -207,7 +204,6 @@ class LoginScreen extends React.Component {
 const select = state => ({
   isLoggedIn: state.user.isLoggedIn,
   isSignedUp: state.user.isSignedUp,
-  isReqedForgotPassword: state.user.isReqedForgotPassword,
   error: state.user.loginError
 });
 
@@ -216,8 +212,7 @@ const actionsMaping = {
   logIn: actions.logIn,
   signUp: actions.signUp,
   forgotPassword: actions.forgotPassword,
-  clearSignedUp: actions.clearSignedUp,
-  clearIsReqedForgotPassword: actions.clearIsReqedForgotPassword
+  clearSignedUp: actions.clearSignedUp
 };
 
 module.exports = connect()(connect(select, actionsMaping)(LoginScreen));

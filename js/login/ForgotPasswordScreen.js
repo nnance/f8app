@@ -8,20 +8,17 @@ import {connect} from 'react-redux';
 import styles from './styles';
 
 export default class ForgotPasswordScreen extends React.Component {
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.isReqedForgotPassword) {
-      this.props.clearIsReqedForgotPassword();
-      this.props.pushPage('success', {successText: 'mail has been sent'});
-    }
-  }
-
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      loading: false,
+      error: null
+    };
   }
 
   render(){
-    const {error, forgotPassword, goBack} = this.props;
+    const {forgotPassword, goBack} = this.props;
+    const {error} = this.state;
     return (
       <Image
         style={styles.container}
@@ -45,7 +42,19 @@ export default class ForgotPasswordScreen extends React.Component {
             type='white'
             style={styles.emailButton}
             caption='รับรหัสผ่านใหม่'
-            onPress={() => forgotPassword(this.state.email || '')}/>
+            onPress={
+              () => {
+                this.setState({
+                  loading: true
+                });
+                return forgotPassword(this.state.email || '').catch(error => this.setState({error: error.message})).then(() => {
+                  this.setState({
+                    loading: false
+                  });
+                  this.props.onReqed && this.props.onReqed();
+                });
+              }
+            }/>
         </View>
       </Image>
     )
