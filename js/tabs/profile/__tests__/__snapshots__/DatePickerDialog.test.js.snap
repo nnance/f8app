@@ -32,8 +32,6 @@ exports[`DatePickerDialog ios render 1`] = `
           minuteInterval={undefined}
           mode="date"
           onChange={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
               "height": 216,
