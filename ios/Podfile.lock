@@ -19,8 +19,8 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.17.0):
     - FBSDKCoreKit
-  - React (0.37.0):
-    - React/Core (= 0.37.0)
+  - React (0.38.1):
+    - React/Core (= 0.38.1)
   - react-native-fbsdk/Core (0.4.0):
     - FBSDKCoreKit
     - React
@@ -30,23 +30,23 @@ PODS:
   - react-native-fbsdk/Share (0.4.0):
     - FBSDKShareKit
     - React
-  - React/Core (0.37.0)
-  - React/RCTActionSheet (0.37.0):
+  - React/Core (0.38.1)
+  - React/RCTActionSheet (0.38.1):
     - React/Core
-  - React/RCTImage (0.37.0):
+  - React/RCTImage (0.38.1):
     - React/Core
     - React/RCTNetwork
-  - React/RCTLinkingIOS (0.37.0):
+  - React/RCTLinkingIOS (0.38.1):
     - React/Core
-  - React/RCTNetwork (0.37.0):
+  - React/RCTNetwork (0.38.1):
     - React/Core
-  - React/RCTPushNotification (0.37.0):
+  - React/RCTPushNotification (0.38.1):
     - React/Core
-  - React/RCTText (0.37.0):
+  - React/RCTText (0.38.1):
     - React/Core
-  - React/RCTVibration (0.37.0):
+  - React/RCTVibration (0.38.1):
     - React/Core
-  - React/RCTWebSocket (0.37.0):
+  - React/RCTWebSocket (0.38.1):
     - React/Core
 
 DEPENDENCIES:
@@ -78,7 +78,7 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: 30a21d2d7b92984b3d80497113433c00824c35e9
   FBSDKLoginKit: 42b7129ac0373ca99eaf4cbebf4d07bd42371f59
   FBSDKShareKit: 9b573d03fbee36cbaf42d5bb1f2bc019e0d72347
-  React: aa8f585cbea131b6781c6ad7a1aee436e1ac5ddf
+  React: 2c6b27dcaea89b3d3398df8b598330fd18abbe46
   react-native-fbsdk: 36286e05caf242c82bf91c7dd8c1694fd5040212
 
 PODFILE CHECKSUM: cb0411936cfdb2ef6ccae2a3fc8261c741029580
