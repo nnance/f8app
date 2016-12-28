@@ -88,10 +88,10 @@ class ProfileEditorScreen extends React.Component {
         customSource={this.state.changedProfilePicture ? {uri: 'data:image/jpeg;base64,' + this.state.changedProfilePicture.data, isStatic: true} : null }
         >
         <View style={styles.rowDirection}>
-          <TouchableOpacity style={styles.whiteBorder} onPress={() => this.openProfilePicker()}>
+          <TouchableOpacity name="profileImageInput" style={styles.whiteBorder} onPress={() => this.openProfilePicker()}>
             <Text style={styles.whiteText}>เปลี่ยนรูปโปรไฟล์</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.whiteBorder} onPress={() => this.openProfileCoverPicker()}>
+          <TouchableOpacity name="coverImageInput" style={styles.whiteBorder} onPress={() => this.openProfileCoverPicker()}>
             <Text style={styles.whiteText}>เปลี่ยนรูปพื้นหลัง</Text>
           </TouchableOpacity>
         </View>
@@ -116,7 +116,7 @@ class ProfileEditorScreen extends React.Component {
             <View style={styles.labelContainer}>
               <Text style={styles.label}>เพศ</Text>
             </View>
-            <TouchableOpacity style={[styles.input, styles.bottomBorderGrey]} onPress={() => this.openSexPicker()}>
+            <TouchableOpacity name="sexInput" style={[styles.input, styles.bottomBorderGrey]} onPress={() => this.openSexPicker()}>
               <Text style={styles.textGrey}>{this.state.sex === 'M' ? 'ชาย' : (this.state.sex === 'F' ? 'หญิง' : 'ไม่ระบุ')}</Text>
             </TouchableOpacity>
           </View>
@@ -124,7 +124,7 @@ class ProfileEditorScreen extends React.Component {
             <View style={styles.labelContainer}>
               <Text style={styles.label}>เกิด</Text>
             </View>
-            <TouchableOpacity style={styles.input} onPress={() => this.openDatePicker()}>
+            <TouchableOpacity name="birthDayInput" style={styles.input} onPress={() => this.openDatePicker()}>
               <Text style={styles.textGrey}>{!this.state.birthDayDate ? 'ไม่ระบุ' : moment(this.state.birthDayDate).format('LL')}</Text>
             </TouchableOpacity>
           </View>
@@ -170,45 +170,51 @@ class ProfileEditorScreen extends React.Component {
   }
 
   openProfilePicker() {
-    ImagePicker.showImagePicker(response => {
-      if (response.didCancel) {
-        console.log('User cancelled image picker');
-      }
-      else if (response.error) {
-        console.log('ImagePicker Error: ', response.error);
-      }
-      else if (response.customButton) {
-        console.log('User tapped custom button: ', response.customButton);
-      }
-      else {
-        this.setState({
-          changedProfilePicture: response
-        });
-      }
+    return new Promise((resolve, reject) => {
+      ImagePicker.showImagePicker(response => {
+        if (response.didCancel) {
+          console.log('User cancelled image picker');
+        }
+        else if (response.error) {
+          console.log('ImagePicker Error: ', response.error);
+        }
+        else if (response.customButton) {
+          console.log('User tapped custom button: ', response.customButton);
+        }
+        else {
+          this.setState({
+            changedProfilePicture: response
+          });
+        }
+        resolve();
+      });
     });
   }
 
   openProfileCoverPicker() {
-    ImagePicker.showImagePicker(response => {
-      if (response.didCancel) {
-        console.log('User cancelled image picker');
-      }
-      else if (response.error) {
-        console.log('ImagePicker Error: ', response.error);
-      }
-      else if (response.customButton) {
-        console.log('User tapped custom button: ', response.customButton);
-      }
-      else {
-        this.setState({
-          changedProfileCover: response
-        });
-      }
+    return new Promise((resolve, reject) => {
+      ImagePicker.showImagePicker(response => {
+        if (response.didCancel) {
+          console.log('User cancelled image picker');
+        }
+        else if (response.error) {
+          console.log('ImagePicker Error: ', response.error);
+        }
+        else if (response.customButton) {
+          console.log('User tapped custom button: ', response.customButton);
+        }
+        else {
+          this.setState({
+            changedProfileCover: response
+          });
+        }
+        resolve();
+      });
     });
   }
 
   openDatePicker() {
-    this.refs.datePicker.open().then(date => {
+    return this.refs.datePicker.open().then(date => {
       this.setState({
         birthDayDate: date
       });
@@ -216,33 +222,36 @@ class ProfileEditorScreen extends React.Component {
   }
 
   openSexPicker() {
-    Picker.init({
-      pickerData: [
-        'ไม่ระบุ',
-        'ชาย',
-        'หญิง'
-      ],
-      selectedValue: [this.state.sex === 'M' ? 'ชาย' : (this.state.sex === 'F' ? 'หญิง' : 'ไม่ระบุ')],
-      pickerConfirmBtnText: 'OK',
-      pickerCancelBtnText: 'CANCEL',
-      pickerTitleText: 'เพศ',
-      onPickerConfirm: (data) => {
-        let sex;
-        if (data[0] === 'ชาย') {
-          sex = 'M';
+    return new Promise((resolve, reject) => {
+      Picker.init({
+        pickerData: [
+          'ไม่ระบุ',
+          'ชาย',
+          'หญิง'
+        ],
+        selectedValue: [this.state.sex === 'M' ? 'ชาย' : (this.state.sex === 'F' ? 'หญิง' : 'ไม่ระบุ')],
+        pickerConfirmBtnText: 'OK',
+        pickerCancelBtnText: 'CANCEL',
+        pickerTitleText: 'เพศ',
+        onPickerConfirm: (data) => {
+          let sex;
+          if (data[0] === 'ชาย') {
+            sex = 'M';
+          }
+          if (data[0] === 'หญิง') {
+            sex = 'F';
+          }
+          if (data[0] === 'ไม่ระบุ') {
+            sex = null;
+          }
+          this.setState({
+            sex
+          });
+          resolve();
         }
-        if (data[0] === 'หญิง') {
-          sex = 'F';
-        }
-        if (data[0] === 'ไม่ระบุ') {
-          sex = null;
-        }
-        this.setState({
-          sex
-        });
-      }
+      });
+      Picker.show();
     });
-    Picker.show();
   }
 }
 

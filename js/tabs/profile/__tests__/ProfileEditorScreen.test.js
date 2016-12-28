@@ -7,21 +7,23 @@ import {
   Switch
 } from 'react-native';
 
+jest.mock('react-native-picker');
+jest.mock('react-native-image-picker');
+
+import ImagePicker from 'react-native-image-picker';
+
 import NavBar from '../components/NavBar';
 import {Component as ProfileEditorScreenComponent} from '../containers/ProfileEditorScreen';
 
 describe('ProfileEditorScreen', () => {
+  const expectImage = {image: 'expect.png'};
+
   function api(name, birthDayDate, sex, changedProfilePicture, changedProfileCover) {
     if (name === 'fail') {
       return Promise.reject(new Error('something wrong'));
     }
     return Promise.resolve();
   }
-
-  it('render', () => {
-    const tree = renderer.create(<ProfileEditorScreenComponent/>);
-    expect(tree.toJSON()).toMatchSnapshot();
-  });
 
   it('call api changePublicProfile', async () => {
     let _resolve;
@@ -67,7 +69,45 @@ describe('ProfileEditorScreen', () => {
     expect(unlinkFacebook).toBeCalled();
   });
 
-  it('open DatePickerDialog');
-  it('open SexPicker');
-  it('open BirthDayPicker');
+  it('open DatePickerDialog', async () => {
+    const wrapper = shallow(<ProfileEditorScreenComponent/>);
+    const expectDate = new Date(1993, 5, 12);
+    let spy = jest.fn(() => Promise.resolve(expectDate));
+    wrapper.instance().refs = {
+      datePicker: {
+        open: spy
+      }
+    };
+    await wrapper.find('[name="birthDayInput"]').props().onPress();
+    expect(spy).toBeCalled();
+    expect(wrapper.state().birthDayDate.getTime()).toBe(expectDate.getTime());
+  });
+
+  it('open SexPicker', async () => {
+    const wrapper = shallow(<ProfileEditorScreenComponent/>);
+    const Picker = require('react-native-picker').default;
+    Picker.init.mockImplementationOnce((opts) => opts.onPickerConfirm(['หญิง']))
+    await wrapper.find('[name="sexInput"]').props().onPress();
+    expect(Picker.init).toBeCalled();
+    expect(wrapper.state().sex).toBe('F');
+    Picker.init.mockClear();
+  });
+
+  it('open openProfilePicker', async () => {
+    ImagePicker.showImagePicker.mockImplementationOnce((cb) => cb(expectImage))
+    const wrapper = shallow(<ProfileEditorScreenComponent/>);
+    await wrapper.find('[name="profileImageInput"]').props().onPress();
+    expect(ImagePicker.showImagePicker).toBeCalled();
+    expect(wrapper.state().changedProfilePicture).toBe(expectImage);
+    ImagePicker.showImagePicker.mockClear();
+  });
+
+  it('open openProfileCoverPicker', async () => {
+    ImagePicker.showImagePicker.mockImplementationOnce((cb) => cb(expectImage))
+    const wrapper = shallow(<ProfileEditorScreenComponent/>);
+    await wrapper.find('[name="coverImageInput"]').props().onPress();
+    expect(ImagePicker.showImagePicker).toBeCalled();
+    expect(wrapper.state().changedProfileCover).toBe(expectImage);
+    ImagePicker.showImagePicker.mockClear();
+  });
 });
