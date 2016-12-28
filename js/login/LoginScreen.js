@@ -110,11 +110,8 @@ class LoginScreen extends React.Component {
         error={this.props.error}
         signUp={this.props.signUp}
         logIn={this.props.logIn}
-        pushPage={this.pushPage}
         goBack={this.goBack}
         logInWithFacebook={this.logInWithFacebook}
-        clearSignedUp={this.props.clearSignedUp}
-        isSignedUp={this.props.isSignedUp}
       />);
     }
     if (route.page === 'forgotPassword') {
@@ -165,7 +162,6 @@ class LoginScreen extends React.Component {
   }
 
   pushPage(page, payload) {
-    this.props.clearSignedUp();
     this.refs.navigator.push({page, payload});
   }
 
@@ -211,8 +207,7 @@ const actionsMaping = {
   skipLogin: actions.skipLogin,
   logIn: actions.logIn,
   signUp: actions.signUp,
-  forgotPassword: actions.forgotPassword,
-  clearSignedUp: actions.clearSignedUp
+  forgotPassword: actions.forgotPassword
 };
 
 module.exports = connect()(connect(select, actionsMaping)(LoginScreen));

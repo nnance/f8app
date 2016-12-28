@@ -47,11 +47,15 @@ export default class ForgotPasswordScreen extends React.Component {
                 this.setState({
                   loading: true
                 });
-                return forgotPassword(this.state.email || '').catch(error => this.setState({error: error.message})).then(() => {
-                  this.setState({
-                    loading: false
+                return forgotPassword(this.state.email || '')
+                  .then(() => {
+                    this.props.onReqed && this.props.onReqed();
+                  })
+                  .catch(error => this.setState({error: error.message}))
+                  .then(() => {
+                    this.setState({
+                      loading: false
                   });
-                  this.props.onReqed && this.props.onReqed();
                 });
               }
             }/>

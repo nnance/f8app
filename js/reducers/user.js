@@ -28,8 +28,6 @@ import type {Action} from '../actions/types';
 import {REHYDRATE} from 'redux-persist/constants'
 
 export type State = {
-  isReqedForgotPassword: boolean;
-  isSignedUp: boolean;
   isLoggedIn: boolean;
   hasSkippedLogin: boolean;
   sharedSchedule: ?boolean;
@@ -45,7 +43,6 @@ export type State = {
 };
 
 const initialState = {
-  isSignedUp: false,
   isLoggedIn: false,
   hasSkippedLogin: false,
   sharedSchedule: null,
@@ -78,18 +75,6 @@ function changeProfile(state: State = initialState, action: Action): State {
 }
 
 function authen(state: State = initialState, action: Action): State {
-  if (action.type === 'SIGNED_UP') {
-    return {
-      ...state,
-      isSignedUp: true
-    };
-  }
-  if (action.type === 'CLEAR_SIGNED_UP') {
-    return {
-      ...state,
-      isSignedUp: false
-    };
-  }
   if (action.type === 'FACEBOOK_LINKED') {
     let {id, name} = action.data;
     return {

@@ -88,10 +88,7 @@ async function _logInWithFacebook(source: ?string): Promise<Array<Action>> {
   ]);
 }
 
-const signUp = (email: string, password: string, confirmPassword) => dispatch => {
-  if (password !== confirmPassword) {
-    return;
-  }
+const signUp = (email: string, password: string) => dispatch => {
   const user = new Parse.User();
   user.set('username', email);
   user.set('password', password);
@@ -101,12 +98,6 @@ const signUp = (email: string, password: string, confirmPassword) => dispatch =>
     dispatch(signedUp());
   });
 };
-
-function clearSignedUp(): Action {
-  return {
-    type: 'CLEAR_SIGNED_UP'
-  };
-}
 
 function signedUp(): Action {
   return {
@@ -276,7 +267,6 @@ module.exports = {
   logIn,
   logOut,
   logOutWithPrompt,
-  clearSignedUp,
   linkFacebook,
   unlinkFacebook
 };

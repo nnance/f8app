@@ -36,5 +36,12 @@ describe('ForgotPasswordScreen', () => {
     const wrapper = shallow(<ForgotPasswordScreen onReqed={spy} forgotPassword={() => Promise.resolve()}/>);
     await wrapper.find('[caption="รับรหัสผ่านใหม่"]').props().onPress();
     expect(spy).toBeCalled();
-  })
+  });
+
+  it('dont call onReqed if success', async () => {
+    const spy = jest.fn();
+    const wrapper = shallow(<ForgotPasswordScreen onReqed={spy} forgotPassword={() => Promise.reject(new Error())}/>);
+    await wrapper.find('[caption="รับรหัสผ่านใหม่"]').props().onPress();
+    expect(spy).not.toBeCalled();
+  });
 });
