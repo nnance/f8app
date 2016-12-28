@@ -27,14 +27,17 @@ import {withState} from 'recompose';
 import ClogiiButton from 'ClogiiButton';
 import {DashButtonWithContainer} from './DashButton';
 
-var Animated = require('Animated');
-var Dimensions = require('Dimensions');
+import {
+  Animated,
+  Dimensions,
+  StatusBar,
+  View,
+  Image
+} from 'react-native';
+
 var F8Colors = require('F8Colors');
-var Image = require('Image');
 var React = require('React');
-var StatusBar = require('StatusBar');
 var StyleSheet = require('StyleSheet');
-var View = require('View');
 var { Text } = require('F8Text');
 var LoginButton = require('../common/LoginButton');
 var TouchableOpacity = require('TouchableOpacity');
@@ -151,4 +154,7 @@ var styles = StyleSheet.create({
   },
 });
 
-module.exports = connect()(IndexScreen);
+export default connect()(IndexScreen);
+export {
+  IndexScreen as Component
+}
