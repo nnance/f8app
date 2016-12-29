@@ -21,7 +21,30 @@ import FacebookSDK from 'FacebookSDK';
 import configureMockStore from 'redux-mock-store';
 
 const middlewares = [thunk, promise, array];
-const mockStore = configureMockStore(middlewares)
+const mockStore = configureMockStore(middlewares);
+
+let pictureObj = {
+  url: () => 'url'
+};
+
+Parse.User.logIn.mockImplementation((username) => {
+  if (username === 'fail') {
+    return Promise.reject(new Error('something error'));
+  }
+  return Promise.resolve();
+});
+Parse.User.currentAsync.mockImplementation(() => {
+  return {
+    get: (f) => {
+      if (f === 'profilePicture' || f === 'profileCover') {
+        return pictureObj;
+      }
+      return 't';
+    },
+    set: () => Promise.resolve(),
+    save: () => Promise.resolve()
+  };
+});
 
 async function extractPromiseAndArray(action) {
   if (!action) {
@@ -53,28 +76,6 @@ async function extractPromiseAndArray(action) {
 }
 
 describe('Login Action', () => {
-  let pictureObj = {
-    url: () => 'url'
-  };
-  Parse.User.logIn.mockImplementation((username) => {
-    if (username === 'fail') {
-      return Promise.reject(new Error('something error'));
-    }
-    return Promise.resolve();
-  });
-  Parse.User.currentAsync.mockImplementation(() => {
-    return {
-      get: (f) => {
-        if (f === 'profilePicture' || f === 'profileCover') {
-          return pictureObj;
-        }
-        return 't';
-      },
-      set: () => Promise.resolve(),
-      save: () => Promise.resolve()
-    };
-  });
-
   it('logIn, dispatch loggedIn if success', async () => {
     const store = mockStore({});
     await store.dispatch(loginAction.logIn('test', 'test'));
