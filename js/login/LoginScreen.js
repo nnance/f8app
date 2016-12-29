@@ -28,7 +28,7 @@ class LoginScreen extends React.Component {
     this.pushPage = this.pushPage.bind(this);
     this.goBack = this.goBack.bind(this);
     this.renderScene = this.renderScene.bind(this);
-    this.handleBackButton = this.handleBackButton.bind(this);
+    this.handleBackButton = this.goBack.bind(this);
     this.logInWithFacebook = this.logInWithFacebook.bind(this);
   }
 
@@ -132,19 +132,6 @@ class LoginScreen extends React.Component {
     return false;
   }
 
-  handleBackButton() {
-    const navigator = this.refs.navigator;
-    if (navigator && navigator.getCurrentRoutes().length > 1 ) {
-      navigator.pop();
-      return true;
-    }
-    if (this.props.onExit) {
-      this.props.onExit();
-      return true;
-    }
-    return false;
-  }
-
   goToLogin() {
     const navigator = this.refs.navigator;
     let currentRoutes = navigator.getCurrentRoutes();
@@ -166,14 +153,17 @@ class LoginScreen extends React.Component {
   }
 
   goBack() {
-    if (this.refs.navigator.getCurrentRoutes().length === 1) {
-      if (this.props.onExit) {
-        this.props.onExit();
-      }
+    if (this.refs.navigator.getCurrentRoutes().length > 1) {
+      this.refs.navigator.pop();
+      return true;
     }
     else {
-      this.refs.navigator.pop();
+      if (this.props.onExit) {
+        this.props.onExit();
+        return true;
+      }
     }
+    return false;
   }
 
   async logInWithFacebook() {
