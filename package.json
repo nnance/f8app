@@ -59,7 +59,8 @@
     "eslint-plugin-react": "~3.16.1",
     "jest": "^18.0.0",
     "react-addons-test-utils": "^15.4.1",
-    "react-test-renderer": "^15.4.1"
+    "react-test-renderer": "^15.4.1",
+    "redux-mock-store": "^1.2.1"
   },
   "jest": {
     "haste": {
