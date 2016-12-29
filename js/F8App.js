@@ -25,9 +25,10 @@
 
 'use strict';
 
-var React = require('React');
+import React from 'react';
+import LoginScreen from './login/LoginScreen';
+
 var AppState = require('AppState');
-var LoginScreen = require('./login/LoginScreen');
 var PushNotificationsController = require('./PushNotificationsController');
 var StyleSheet = require('StyleSheet');
 var F8Navigator = require('F8Navigator');
