@@ -48,8 +48,6 @@ const initialState = {
   sharedSchedule: null,
   id: null,
   name: null,
-  savingProfile: false,
-  saveProfileError: null,
   birthDayDate: null,
   sex: null,
   facebookLinked: false,
@@ -61,14 +59,11 @@ function changeProfile(state: State = initialState, action: Action): State {
   if (action.type === 'CHANGED_PUBLIC_PROFILE') {
     return {
       ...state,
-      name: action.name,
-      birthDayDate: action.birthDayDate,
-      sex: action.sex,
-      savingProfile: false,
-      savedProfile: true,
-      saveProfileError: null,
-      profilePicture: action.profilePicture,
-      profileCover: action.profileCover
+      name: action.payload.name,
+      birthDayDate: action.payload.birthDayDate,
+      sex: action.payload.sex,
+      profilePicture: action.payload.profilePicture,
+      profileCover: action.payload.profileCover
     };
   }
   return state;
@@ -82,6 +77,13 @@ function authen(state: State = initialState, action: Action): State {
       id,
       name,
       facebookLinked: true
+    };
+  }
+  if (action.type === 'FACEBOOK_UNLINKED') {
+    return {
+      ...state,
+      id: null,
+      facebookLinked: false
     };
   }
   if (action.type === 'LOGGED_IN') {

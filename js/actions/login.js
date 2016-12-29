@@ -268,5 +268,7 @@ module.exports = {
   logOut,
   logOutWithPrompt,
   linkFacebook,
-  unlinkFacebook
+  unlinkFacebook,
+  facebookUnlinked,
+  facebookLinked
 };

@@ -29,7 +29,7 @@ async function _changeEmail(newEmail) {
 
 export const changeEmail = (newEmail) => dispatch => {
   return _changeEmail(newEmail).then(() => {
-    dispatch(changedEmail());
+    dispatch(changedEmail(newEmail));
   });
 }
 
@@ -103,16 +103,16 @@ export const changePublicProfile = (name, birthDayDate, sex, profilePicture, pro
   );
 }
 
-function changedPublicProfile(data) {
+export function changedPublicProfile(data) {
   return {
     type: 'CHANGED_PUBLIC_PROFILE',
-    ...data
+    payload: data
   }
 }
 
 function changedEmail(email): Action {
   return {
     type: 'CHANGED_EMAIL',
-    email
+    payload: email
   };
 }

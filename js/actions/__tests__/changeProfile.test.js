@@ -54,6 +54,7 @@ describe('Action changeProfile', () => {
     expect(setSpy.mock.calls.filter(call => call[0] === 'email')[0][1]).toBe('b@b.b');
     expect(setSpy.mock.calls.filter(call => call[0] === 'username')[0][1]).toBe('b@b.b');
     expect(store.getActions().filter(action => action.type === 'CHANGED_EMAIL').length).toBe(1);
+    expect(store.getActions().filter(action => action.type === 'CHANGED_EMAIL')[0].payload).toBe('b@b.b');
     setSpy.mockClear();
   });
 
