@@ -5,14 +5,12 @@ import {
   Text,
   View,
   StyleSheet,
-  ListView,
   TouchableOpacity
 } from 'react-native';
 import moment from 'moment';
 
 import PureListView from '../../../common/PureListView';
-import CircleImage from '../../../common/CircleImage';
-import {toHumanNumber, random, mapSource} from '../../../common/utils';
+import {toHumanNumber, mapSource} from '../../../common/utils';
 
 import CircleImageWithCategory from './CircleImageWithCategory';
 import NavBar from './NavBar';

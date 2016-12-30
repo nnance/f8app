@@ -17,7 +17,7 @@ export default class EmailLoginScreen extends React.Component {
   }
 
   render() {
-    const {logIn, pushPage, user} = this.props;
+    const {logIn, pushPage} = this.props;
     const {error} = this.state;
     return (
       <Image
@@ -31,12 +31,12 @@ export default class EmailLoginScreen extends React.Component {
             <TextInput
               onChangeText={(email) => this.setState({email})}
               style={styles.input}
-              placeholder='อีเมล'
+              placeholder="อีเมล"
               value={this.state.email || ''}
-              keyboardType='email-address'
-              autoCapitalize='none'
-              returnKeyType='next'
-              placeholderTextColor='rgba(255, 255, 255, 0.6)'
+              keyboardType="email-address"
+              autoCapitalize="none"
+              returnKeyType="next"
+              placeholderTextColor="rgba(255, 255, 255, 0.6)"
               />
           </View>
           <View style={styles.inputBox}>
@@ -45,19 +45,19 @@ export default class EmailLoginScreen extends React.Component {
               style={styles.input}
               secureTextEntry={true}
               value={this.state.password || ''}
-              placeholder='รหัสผ่าน'
-              placeholderTextColor='rgba(255, 255, 255, 0.6)'
+              placeholder="รหัสผ่าน"
+              placeholderTextColor="rgba(255, 255, 255, 0.6)"
               />
           </View>
           <ClogiiButton
             style={styles.emailButton}
-            type='white'
-            caption='เข้าสู่ระบบ'
+            type="white"
+            caption="เข้าสู่ระบบ"
             onPress={
               () => {
                 this.setState({loading: true});
                 return logIn(this.state.email || '', this.state.password || '')
-                  .catch(error => this.setState({error: error.message}))
+                  .catch(_error => this.setState({error: _error.message}))
                   .then(() => this.setState({loading: false}));
               }
             }/>
@@ -72,6 +72,6 @@ export default class EmailLoginScreen extends React.Component {
         </View>
         <DashButtonWithContainer caption="สร้างบัญชีใหม่" onPress={() => pushPage('signup')} style={{margin: 20}}/>
       </Image>
-    )
+    );
   }
 }

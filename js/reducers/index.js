@@ -24,8 +24,6 @@
 
 'use strict';
 
-import * as auth from '../../web/features/auth';
-
 var { combineReducers } = require('redux');
 
 module.exports = combineReducers({

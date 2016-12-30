@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import {BackAndroid, Text, TouchableOpacity, Navigator, StyleSheet, Image, View} from 'react-native';
+import {BackAndroid, Text, TouchableOpacity, Navigator, Image, View} from 'react-native';
 import {connect} from 'react-redux';
 
 import * as actions from '../actions';
@@ -48,7 +48,7 @@ class LoginScreen extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.isLoggedIn) {
-      this.props.onExit && this.props.onExit()
+      this.props.onExit && this.props.onExit();
     }
   }
 
@@ -63,7 +63,9 @@ class LoginScreen extends React.Component {
            navigationStyles={Navigator.NavigationBar.StylesIOS}
            routeMapper={{
              LeftButton: (route, navigator, index, navState) => {
-               if (route.page === 'index') return null;
+               if (route.page === 'index'){
+                 return null;
+               }
                return (
                  <TouchableOpacity onPress={this.goBack}>
                   <Text style={styles.backButton}>
@@ -73,7 +75,9 @@ class LoginScreen extends React.Component {
                );
              },
              RightButton: (route, navigator, index, navState) => {
-               if (route.page !== 'index') return null;
+               if (route.page !== 'index'){
+                 return null;
+               }
                return (
                  <TouchableOpacity
                    accessibilityLabel="Skip login"
@@ -89,7 +93,7 @@ class LoginScreen extends React.Component {
              Title: (route, navigator, index, navState) => {
                let title = '';
                title = titles[route.page];
-               return (<View style={{flex: 1, alignItems: 'center'}}><Text style={styles.titleNavBar}>{title}</Text></View>)
+               return (<View style={{flex: 1, alignItems: 'center'}}><Text style={styles.titleNavBar}>{title}</Text></View>);
              }
            }}
          />
@@ -136,8 +140,8 @@ class LoginScreen extends React.Component {
     const navigator = this.refs.navigator;
     let currentRoutes = navigator.getCurrentRoutes();
     let N = navigator.getCurrentRoutes().length;
-    while(N) {
-      if (currentRoutes[N-1].page === 'email-login') {
+    while (N){
+      if (currentRoutes[N - 1].page === 'email-login') {
         break;
       }
       N--;
@@ -203,4 +207,4 @@ const actionsMaping = {
 export default connect()(connect(select, actionsMaping)(LoginScreen));
 export {
   LoginScreen as Component
-}
+};

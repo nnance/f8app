@@ -7,12 +7,10 @@ import {
   Text,
   View,
   StyleSheet,
-  ListView,
   TouchableOpacity,
   Navigator
 } from 'react-native';
 import PureListView from '../../../common/PureListView';
-import ProfilePicture from '../../../common/ProfilePicture';
 import {toHumanNumber} from '../../../common/utils';
 
 import ProfileHeader from '../components/ProfileHeader';
@@ -58,7 +56,7 @@ const menuList = [
     icon: require('../img/icons/logout.png'),
     title: 'Logout'
   }
-]
+];
 
 const NumberDetail = (props) => {
   return (
@@ -73,7 +71,7 @@ const NumberDetail = (props) => {
       </Text>
     </TouchableOpacity>
   );
-}
+};
 
 const CandyCorner = (props) => (
   <View style={{
@@ -107,7 +105,7 @@ const CandyCorner = (props) => (
       <Text style={{color: 'white', fontSize: 13}}>{toHumanNumber(props.candys)}</Text>
     </View>
   </View>
-)
+);
 
 class NavigatorProfile extends React.Component {
   constructor(...args) {
@@ -128,13 +126,13 @@ class NavigatorProfile extends React.Component {
 
   renderScene(route, navigator) {
     if (route.page === 'following') {
-      return <FollowingScreen {...this.props} userList={this.props.following} onBackPress={() => navigator.pop()}/>
+      return <FollowingScreen {...this.props} userList={this.props.following} onBackPress={() => navigator.pop()}/>;
     }
     if (route.page === 'follower') {
-      return <FollowerScreen {...this.props} userList={this.props.follower} onBackPress={() => navigator.pop()}/>
+      return <FollowerScreen {...this.props} userList={this.props.follower} onBackPress={() => navigator.pop()}/>;
     }
     if (route.page === 'myfan') {
-      return <MyFanScreen {...this.props} userList={this.props.myFan} onBackPress={() => navigator.pop()}/>
+      return <MyFanScreen {...this.props} userList={this.props.myFan} onBackPress={() => navigator.pop()}/>;
     }
     if (route.page === 'activity') {
       return <ActivityScreen {...this.props} onBackPress={() => navigator.pop()}/>;
@@ -209,9 +207,9 @@ class ProfileScreen extends React.Component {
             </TouchableOpacity>
           </View>
           <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-            <NumberDetail title='ผู้ติดตาม' number={this.props.follower.length} borderRight={true} onPress={() => this.props.onFollowerPress && this.props.onFollowerPress()}/>
-            <NumberDetail title='กำลังติดตาม' number={this.props.following.length} borderRight={true} onPress={() => this.props.onFollowingPress && this.props.onFollowingPress()}/>
-            <NumberDetail title='Candys' number={this.props.candys} onPress={() => this.props.onCandyPress && this.props.onCandyPress()}/>
+            <NumberDetail title="ผู้ติดตาม" number={this.props.follower.length} borderRight={true} onPress={() => this.props.onFollowerPress && this.props.onFollowerPress()}/>
+            <NumberDetail title="กำลังติดตาม" number={this.props.following.length} borderRight={true} onPress={() => this.props.onFollowingPress && this.props.onFollowingPress()}/>
+            <NumberDetail title="Candys" number={this.props.candys} onPress={() => this.props.onCandyPress && this.props.onCandyPress()}/>
           </View>
         </ProfileHeader>
         <View style={styles.menuList}>
@@ -301,4 +299,4 @@ const select = state => ({
 export default connect(select)(NavigatorProfile);
 export {
   NavigatorProfile as Component
-}
+};

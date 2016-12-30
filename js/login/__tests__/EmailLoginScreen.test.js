@@ -1,5 +1,4 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 import {shallow} from 'enzyme';
 
 import EmailLoginScreen from '../EmailLoginScreen';
@@ -21,8 +20,8 @@ describe('EmailLoginScreen', () => {
 
   it('state loading', async () => {
     let _resolve;
-    const api = jest.fn(() => new Promise(resolve => _resolve = resolve));
-    const wrapper = shallow(<EmailLoginScreen logIn={api}/>);
+    const logIn = jest.fn(() => new Promise(resolve => _resolve = resolve));
+    const wrapper = shallow(<EmailLoginScreen logIn={logIn}/>);
     expect(wrapper.state().loading).toBe(false);
     const task = wrapper.find('[caption="เข้าสู่ระบบ"]').props().onPress();
     expect(wrapper.state().loading).toBe(true);

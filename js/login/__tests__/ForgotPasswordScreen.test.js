@@ -1,5 +1,4 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 import {shallow} from 'enzyme';
 
 import ForgotPasswordScreen from '../ForgotPasswordScreen';
@@ -21,8 +20,8 @@ describe('ForgotPasswordScreen', () => {
 
   it('state loading', async () => {
     let _resolve;
-    const api = jest.fn(() => new Promise(resolve => _resolve = resolve));
-    const wrapper = shallow(<ForgotPasswordScreen forgotPassword={api}/>);
+    const forgotPassword = jest.fn(() => new Promise(resolve => _resolve = resolve));
+    const wrapper = shallow(<ForgotPasswordScreen forgotPassword={forgotPassword}/>);
     expect(wrapper.state().loading).toBe(false);
     const task = wrapper.find('[caption="รับรหัสผ่านใหม่"]').props().onPress();
     expect(wrapper.state().loading).toBe(true);

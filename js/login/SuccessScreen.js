@@ -1,8 +1,7 @@
 'use strict';
 
 import React from 'React';
-import {Image, View, Text, TextInput} from 'react-native';
-import F8Button from 'F8Button';
+import {Image, View, Text} from 'react-native';
 
 import styles from './styles';
 
@@ -14,4 +13,4 @@ export default ({goToLogin, successText}) => (
       <Text style={styles.successText} onPress={() => goToLogin()}>{successText}, go back to login</Text>
     </View>
   </Image>
-)
+);

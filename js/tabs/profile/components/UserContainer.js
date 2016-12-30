@@ -4,7 +4,6 @@ import {
   Text,
   View,
   StyleSheet,
-  ListView,
   TouchableOpacity
 } from 'react-native';
 
@@ -71,8 +70,7 @@ export default class UserContainer extends React.Component {
   render() {
     return (
       <View style={commonStyles.listViewContainer}>
-        <NavBar title={this.props.title} onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}>
-        </NavBar>
+        <NavBar title={this.props.title} onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}/>
         <PureListView
           data={this.props.userList}
           renderRow={(user, i, idx) => {

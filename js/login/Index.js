@@ -95,7 +95,7 @@ class Index extends React.Component {
     this.props.clearError();
     const navigator = this.refs.navigator;
     let N = navigator.getCurrentRoutes().length;
-    while(N-- > 1) {
+    while (N-- > 1){
       navigator.pop();
     }
   }

@@ -3,10 +3,9 @@ import {
   View,
   Text,
   TextInput,
-  Image,
   StyleSheet
 } from 'react-native';
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
 
 import F8Button from 'F8Button';
 
@@ -41,8 +40,7 @@ class ChangePasswordScreen extends React.Component {
       <NavBar
         title="เปลี่ยน Password"
         onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}
-        >
-      </NavBar>
+        />
       <SecureContainer onCheck={() => Promise.resolve()}>
         <View>
           <View style={styles.editorContainer}>
@@ -53,7 +51,7 @@ class ChangePasswordScreen extends React.Component {
               <View style={commonStyles.inputContainer}>
                 <TextInput style={{flex: 1, height: 40}}
                   placeholder="password"
-                  autoCapitalize='none'
+                  autoCapitalize="none"
                   value={this.state.password || ''}
                   secureTextEntry={true}
                   onChangeText={(password) => this.setState({password})}
@@ -67,7 +65,7 @@ class ChangePasswordScreen extends React.Component {
               <View style={commonStyles.inputContainer}>
                 <TextInput style={{flex: 1, height: 40}}
                   placeholder="confirm password"
-                  autoCapitalize='none'
+                  autoCapitalize="none"
                   value={this.state.confirmPassword || ''}
                   secureTextEntry={true}
                   onChangeText={(confirmPassword) => this.setState({confirmPassword})}
@@ -76,7 +74,7 @@ class ChangePasswordScreen extends React.Component {
             </View>
           </View>
           <View style={commonStyles.errorContainer}>
-            <Text style={commonStyles.errorText}>{!!this.props.error ? this.props.error : this.state.error}</Text>
+            <Text style={commonStyles.errorText}>{this.props.error ? this.props.error : this.state.error}</Text>
           </View>
           <F8Button style={styles.button} caption="เปลี่ยน Password" onPress={() => this.onChangePassword()}/>
         </View>
@@ -128,9 +126,9 @@ const styles = StyleSheet.create({
 
 const actionsMaping = {
   changePassword
-}
+};
 
 export default connect(null, actionsMaping)(ChangePasswordScreen);
 export {
   ChangePasswordScreen as Component
-}
+};

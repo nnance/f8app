@@ -73,4 +73,4 @@ export default StyleSheet.create({
     resizeMode: 'contain',
     backgroundColor: 'red'
   }
-})
+});

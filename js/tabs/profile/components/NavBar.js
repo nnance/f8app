@@ -3,7 +3,6 @@
 import React from 'react';
 import {
   Text,
-  Platform,
   View,
   StyleSheet,
   TouchableOpacity,

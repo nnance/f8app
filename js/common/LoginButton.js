@@ -25,7 +25,6 @@
 
 const React = require('react');
 const {StyleSheet} = require('react-native');
-const F8Button = require('F8Button');
 import ClogiiButton from 'ClogiiButton';
 
 const { logInWithFacebook } = require('../actions');

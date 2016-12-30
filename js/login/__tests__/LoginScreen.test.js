@@ -1,5 +1,4 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 import {shallow} from 'enzyme';
 import toJSON from 'enzyme-to-json';
 
@@ -24,7 +23,7 @@ describe('LoginScreen', () => {
     routes.forEach(route => {
       const tree = shallow(<View>{dump.renderScene(route)}</View>);
       expect(toJSON(tree)).toMatchSnapshot();
-    })
+    });
   });
 
   it('goBack will pop navigator', () => {
@@ -65,7 +64,9 @@ describe('LoginScreen', () => {
       navigator: {
         getCurrentRoutes: jest.fn(() => pages),
         popN: (n) => {
-          while(n--) pages.pop();
+          while (n--){
+            pages.pop();
+          }
         }
       }
     };

@@ -58,8 +58,8 @@ export type Action =
   | { type: 'RECEIVED_PUSH_NOTIFICATION', notification: Object }
   | { type: 'SEEN_ALL_NOTIFICATIONS' }
   | { type: 'RESET_NUXES' }
-  | { type: 'CHANGED_PUBLIC_PROFILE', data: { name: string, birthDayDate: ?date, sex: ?string } },
-  | { type: 'CHANGED_EMAIL', email: string },
+  | { type: 'CHANGED_PUBLIC_PROFILE', data: { name: string, birthDayDate: ?Date, sex: ?string } }
+  | { type: 'CHANGED_EMAIL', email: string }
   | { type: 'CHANGED_PASSWORD', password: string }
   | { type: 'CLEAR_SAVE_STATE' }
   ;

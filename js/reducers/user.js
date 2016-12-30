@@ -25,7 +25,7 @@
 'use strict';
 
 import type {Action} from '../actions/types';
-import {REHYDRATE} from 'redux-persist/constants'
+import {REHYDRATE} from 'redux-persist/constants';
 
 export type State = {
   isLoggedIn: boolean;

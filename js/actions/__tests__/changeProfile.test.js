@@ -7,7 +7,7 @@ var promise = require('../../store/promise');
 var array = require('../../store/array');
 
 import Parse from 'parse/react-native';
-import FacebookSDK from 'FacebookSDK';
+// import FacebookSDK from 'FacebookSDK';
 import configureMockStore from 'redux-mock-store';
 
 const middlewares = [thunk, promise, array];

@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import Platform from 'Platform';
-import {shallow, mount} from 'enzyme';
+import {shallow} from 'enzyme';
 
 import {
   DatePickerIOS,
@@ -38,6 +38,7 @@ describe('DatePickerDialog', () => {
       const datePickerDialog = shallow(<DatePickerDialog/>);
       _resolve({action: undefined, year: 2016, month: 5, day: 12});
       const date = await datePickerDialog.instance().open();
+      expect(date.toString()).toBe(expectDate.toString());
     });
   });
 
@@ -62,12 +63,11 @@ describe('DatePickerDialog', () => {
         if (button.props().title === 'ok') {
           button.simulate('press');
         }
-      })
+      });
     });
 
     it('cancel pick', (done) => {
       const successFn = jest.fn();
-      const errorFn = jest.fn();
       const wrapper = shallow(<DatePickerDialog/>);
       const result = wrapper.instance().open();
       result.then(successFn).catch(error => {

@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Text,
-  View,
   TouchableOpacity
 } from 'react-native';
 import { shallow } from 'enzyme';
@@ -21,7 +20,7 @@ describe('<NavBar/>', () => {
   });
 
   it('can custom rightMenu', () => {
-    const wrapper = shallow(<NavBar renderRightMenu={() => <Text>RButton</Text>}/>)
+    const wrapper = shallow(<NavBar renderRightMenu={() => <Text>RButton</Text>}/>);
     expect(wrapper.contains(<Text>RButton</Text>)).toBe(true);
   });
 
@@ -38,5 +37,3 @@ describe('<NavBar/>', () => {
     expect(rightFn).toBeCalled();
   });
 });
-
-const A = props => (<TouchableOpacity onPress={props.onPress}></TouchableOpacity>)

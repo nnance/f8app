@@ -21,4 +21,4 @@ function mockBadges(state = {
   return state;
 }
 
-module.exports = mockBadges
+module.exports = mockBadges;

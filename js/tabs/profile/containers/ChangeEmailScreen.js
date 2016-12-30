@@ -3,7 +3,6 @@ import {
   View,
   Text,
   TextInput,
-  Image,
   StyleSheet
 } from 'react-native';
 
@@ -35,8 +34,7 @@ class ChangeEmailScreen extends React.Component {
       <NavBar
         title="เปลี่ยน Email"
         onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}
-        >
-      </NavBar>
+        />
       <SecureContainer onCheck={() => Promise.resolve()}>
         <View>
           <View style={styles.editorContainer}>
@@ -47,7 +45,7 @@ class ChangeEmailScreen extends React.Component {
               <View style={commonStyles.inputContainer}>
                 <TextInput style={{flex: 1, height: 40}}
                   placeholder="email"
-                  autoCapitalize='none'
+                  autoCapitalize="none"
                   value={this.state.email || ''}
                   onChangeText={(email) => this.setState({email})}
                   />
@@ -60,7 +58,7 @@ class ChangeEmailScreen extends React.Component {
               <View style={commonStyles.inputContainer}>
                 <TextInput style={{flex: 1, height: 40}}
                   placeholder="confirm email"
-                  autoCapitalize='none'
+                  autoCapitalize="none"
                   value={this.state.confirmEmail || ''}
                   onChangeText={(confirmEmail) => this.setState({confirmEmail})}
                   />
@@ -68,7 +66,7 @@ class ChangeEmailScreen extends React.Component {
             </View>
           </View>
           <View style={commonStyles.errorContainer}>
-            <Text style={commonStyles.errorText}>{!!this.props.error ? this.props.error : this.state.error}</Text>
+            <Text style={commonStyles.errorText}>{this.props.error ? this.props.error : this.state.error}</Text>
           </View>
           <F8Button style={styles.button} caption="เปลี่ยน Email" onPress={() => this.onChangeEmail()}/>
         </View>
@@ -125,4 +123,4 @@ const actionsMaping = {
 export default connect(null, actionsMaping)(ChangeEmailScreen);
 export {
   ChangeEmailScreen as Component
-}
+};

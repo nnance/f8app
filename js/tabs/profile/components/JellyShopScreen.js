@@ -5,19 +5,14 @@ import {
   Text,
   View,
   StyleSheet,
-  ListView,
   TouchableOpacity,
   ScrollView
 } from 'react-native';
-import moment from 'moment';
 
-import PureListView from '../../../common/PureListView';
-import CircleImage from '../../../common/CircleImage';
-import {toHumanNumber, random, mapSource} from '../../../common/utils';
+import {toHumanNumber} from '../../../common/utils';
 
-import CircleImageWithCategory from './CircleImageWithCategory';
 import NavBar from './NavBar';
-import {styles as commonStyles, colors as commonColors} from '../common';
+import {styles as commonStyles} from '../common';
 
 const Coin = (props) => (<TouchableOpacity style={styles.jellyCountBoxContainer}>
     <View style={styles.jellyCountBox}>
@@ -37,7 +32,7 @@ const covers = {
   's3': require('../img/jelly-shop/s3.png'),
   'b1': require('../img/jelly-shop/b1.png'),
   'b2': require('../img/jelly-shop/b2.png')
-}
+};
 
 const JellySeller = (props) => (<Image {...props}
   style={[{flex: 1, marginHorizontal: 3, backgroundColor: 'transparent', resizeMode: 'contain', width: undefined, height: undefined}, props.style]}
@@ -59,8 +54,7 @@ class JellyShopScreen extends React.Component {
         renderRightMenu={() => {
           return (<Coin coin={12500}/>);
         }}
-        >
-      </NavBar>
+        />
       <ScrollView>
         <View style={{flexDirection: 'row', padding: 3, flex: 1}}>
           <JellySeller cover="s1" style={{height: 150}} coin={30} jelly={10}/>

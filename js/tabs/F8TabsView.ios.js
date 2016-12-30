@@ -28,7 +28,6 @@
 var F8Colors = require('F8Colors');
 var StatusBar = require('StatusBar');
 var F8InfoView = require('F8InfoView');
-var F8MapView = require('F8MapView');
 var F8NotificationsView = require('F8NotificationsView');
 var GeneralScheduleView = require('./schedule/GeneralScheduleView');
 var MyScheduleView = require('./schedule/MyScheduleView');

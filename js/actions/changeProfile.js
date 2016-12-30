@@ -4,7 +4,7 @@
 
 import Parse from 'parse/react-native';
 
-import type { Action, ThunkAction } from './types';
+import type { Action } from './types';
 
 async function getUser() {
   const user = await Parse.User.currentAsync();
@@ -16,14 +16,14 @@ async function getUser() {
 
 async function _changePassword(newPassword) {
   const user = await getUser();
-  user.set("password", newPassword);
+  user.set('password', newPassword);
   await user.save();
 }
 
 async function _changeEmail(newEmail) {
   const user = await getUser();
-  user.set("username", newEmail);
-  user.set("email", newEmail);
+  user.set('username', newEmail);
+  user.set('email', newEmail);
   await user.save();
 }
 
@@ -31,17 +31,17 @@ export const changeEmail = (newEmail) => dispatch => {
   return _changeEmail(newEmail).then(() => {
     dispatch(changedEmail(newEmail));
   });
-}
+};
 
 function changedEmail() {
   return {
     type: 'CHANGED_EMAIL'
-  }
+  };
 }
 
 async function _changePassword(newPassword) {
   const user = await getUser();
-  user.set("password", newPassword);
+  user.set('password', newPassword);
   await user.save();
 }
 
@@ -49,12 +49,12 @@ export const changePassword = (newPassword) => dispatch => {
   return _changePassword(newPassword).then(() => {
     dispatch(changedPassword());
   });
-}
+};
 
 function changedPassword() {
   return {
     type: 'CHANGED_PASSWORD'
-  }
+  };
 }
 
 async function _changeProfile(data) {
@@ -83,7 +83,7 @@ async function _changeProfile(data) {
   return await user.fetch();
 }
 
-export const changePublicProfile = (name, birthDayDate, sex, profilePicture, profileCover): ThunkAction => dispatch => {
+export const changePublicProfile = (name, birthDayDate, sex, profilePicture, profileCover) => dispatch => {
   return _changeProfile({
     name,
     birthDayDate,
@@ -101,13 +101,13 @@ export const changePublicProfile = (name, birthDayDate, sex, profilePicture, pro
       }));
     }
   );
-}
+};
 
 export function changedPublicProfile(data) {
   return {
     type: 'CHANGED_PUBLIC_PROFILE',
     payload: data
-  }
+  };
 }
 
 function changedEmail(email): Action {

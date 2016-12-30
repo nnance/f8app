@@ -1,7 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 import {shallow} from 'enzyme';
-import F8Button from 'F8Button';
 
 import {
   Switch
@@ -63,7 +61,6 @@ describe('ProfileEditorScreen', () => {
 
   it('call api unlinkFacebook', async () => {
     let unlinkFacebook = jest.fn(() => Promise.resolve());
-    let onBackPress = jest.fn();
     const wrapper = shallow(<ProfileEditorScreenComponent unlinkFacebook={unlinkFacebook} facebookLinked={true}/>);
     await wrapper.find(Switch).props().onValueChange();
     expect(unlinkFacebook).toBeCalled();
@@ -86,7 +83,7 @@ describe('ProfileEditorScreen', () => {
   it('open SexPicker', async () => {
     const wrapper = shallow(<ProfileEditorScreenComponent/>);
     const Picker = require('react-native-picker').default;
-    Picker.init.mockImplementationOnce((opts) => opts.onPickerConfirm(['หญิง']))
+    Picker.init.mockImplementationOnce((opts) => opts.onPickerConfirm(['หญิง']));
     await wrapper.find('[name="sexInput"]').props().onPress();
     expect(Picker.init).toBeCalled();
     expect(wrapper.state().sex).toBe('F');
@@ -94,7 +91,7 @@ describe('ProfileEditorScreen', () => {
   });
 
   it('open openProfilePicker', async () => {
-    ImagePicker.showImagePicker.mockImplementationOnce((cb) => cb(expectImage))
+    ImagePicker.showImagePicker.mockImplementationOnce((cb) => cb(expectImage));
     const wrapper = shallow(<ProfileEditorScreenComponent/>);
     await wrapper.find('[name="profileImageInput"]').props().onPress();
     expect(ImagePicker.showImagePicker).toBeCalled();
@@ -103,7 +100,7 @@ describe('ProfileEditorScreen', () => {
   });
 
   it('open openProfileCoverPicker', async () => {
-    ImagePicker.showImagePicker.mockImplementationOnce((cb) => cb(expectImage))
+    ImagePicker.showImagePicker.mockImplementationOnce((cb) => cb(expectImage));
     const wrapper = shallow(<ProfileEditorScreenComponent/>);
     await wrapper.find('[name="coverImageInput"]').props().onPress();
     expect(ImagePicker.showImagePicker).toBeCalled();

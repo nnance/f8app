@@ -17,7 +17,6 @@ var promise = require('../../store/promise');
 var array = require('../../store/array');
 
 import Parse from 'parse/react-native';
-import FacebookSDK from 'FacebookSDK';
 import configureMockStore from 'redux-mock-store';
 
 const middlewares = [thunk, promise, array];
@@ -46,34 +45,34 @@ Parse.User.currentAsync.mockImplementation(() => {
   };
 });
 
-async function extractPromiseAndArray(action) {
-  if (!action) {
-    return action;
-  }
-  let result;
-  if (Array.isArray(action)) {
-    result = await Promise.all(action.map(a => extractPromiseAndArray(a)));
-  }
-  if (typeof action.then === 'function') {
-    result = await extractPromiseAndArray(await action);
-  }
-  if (result === undefined) {
-    return action;
-  }
-  if (Array.isArray(result)) {
-    let merged = [];
-    for (let i = 0; i < result.length; i++) {
-      if (Array.isArray(result[i])) {
-        merged = merged.concat(result[i]);
-      }
-      else {
-        merged = merged.concat([result[i]]);
-      }
-    }
-    return merged;
-  }
-  return result;
-}
+// async function extractPromiseAndArray(action) {
+//   if (!action) {
+//     return action;
+//   }
+//   let result;
+//   if (Array.isArray(action)) {
+//     result = await Promise.all(action.map(a => extractPromiseAndArray(a)));
+//   }
+//   if (typeof action.then === 'function') {
+//     result = await extractPromiseAndArray(await action);
+//   }
+//   if (result === undefined) {
+//     return action;
+//   }
+//   if (Array.isArray(result)) {
+//     let merged = [];
+//     for (let i = 0; i < result.length; i++) {
+//       if (Array.isArray(result[i])) {
+//         merged = merged.concat(result[i]);
+//       }
+//       else {
+//         merged = merged.concat([result[i]]);
+//       }
+//     }
+//     return merged;
+//   }
+//   return result;
+// }
 
 describe('Login Action', () => {
   it('logIn, dispatch loggedIn if success', async () => {

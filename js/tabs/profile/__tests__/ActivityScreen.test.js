@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  Text,
-  View,
-  TouchableOpacity,
-  ListView
-} from 'react-native';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import renderer from 'react-test-renderer';
 import PureListView from '../../../common/PureListView';
 import ActivityScreen, {ActivityRow} from '../components/ActivityScreen';
@@ -22,12 +16,12 @@ describe('ActivityScreen', () => {
 
   describe('ActivityRow', () => {
     it('render like activity', () => {
-      const tree = renderer.create(<ActivityRow {...mockActivity[0]}/>)
+      const tree = renderer.create(<ActivityRow {...mockActivity[0]}/>);
       expect(tree.toJSON()).toMatchSnapshot();
     });
 
     it('render read activity', () => {
-        const tree = renderer.create(<ActivityRow {...mockActivity[1]}/>)
+        const tree = renderer.create(<ActivityRow {...mockActivity[1]}/>);
         expect(tree.toJSON()).toMatchSnapshot();
     });
   });

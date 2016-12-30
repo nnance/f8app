@@ -23,13 +23,11 @@
  */
 'use strict';
 
-import {withState} from 'recompose';
 import ClogiiButton from 'ClogiiButton';
 import {DashButtonWithContainer} from './DashButton';
 
 import {
   Animated,
-  Dimensions,
   StatusBar,
   View,
   Image
@@ -40,14 +38,8 @@ var React = require('React');
 var StyleSheet = require('StyleSheet');
 var { Text } = require('F8Text');
 var LoginButton = require('../common/LoginButton');
-var TouchableOpacity = require('TouchableOpacity');
 
-var { skipLogin } = require('../actions');
 var { connect } = require('react-redux');
-
-let enhance = withState('page', 'setPage', 'withFacebook');
-
-const screenWidth = Dimensions.get('window').width;
 
 class IndexScreen extends React.Component {
   constructor(props) {
@@ -115,8 +107,6 @@ class IndexScreen extends React.Component {
   }
 }
 
-const scale = Dimensions.get('window').width / 375;
-
 var styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -157,4 +147,4 @@ var styles = StyleSheet.create({
 export default connect()(IndexScreen);
 export {
   IndexScreen as Component
-}
+};

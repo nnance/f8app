@@ -5,27 +5,17 @@ import {
   Text,
   View,
   StyleSheet,
-  ListView,
   TouchableOpacity,
   TextInput,
-  Switch,
-  Modal,
-  DatePickerIOS,
-  DatePickerAndroid,
-  ScrollView,
-  ActivityIndicator
+  Switch
 } from 'react-native';
 import moment from 'moment';
 import Picker from 'react-native-picker';
 import ImagePicker from 'react-native-image-picker';
 
-import PureListView from '../../../common/PureListView';
-import CircleImage from '../../../common/CircleImage';
-import {toHumanNumber, random, mapSource} from '../../../common/utils';
 import {changePublicProfile} from '../../../actions/changeProfile';
 import {linkFacebook, unlinkFacebook} from '../../../actions/login';
 
-import CircleImageWithCategory from '../components/CircleImageWithCategory';
 import NavBar from '../components/NavBar';
 import {styles as commonStyles, colors as commonColors} from '../common';
 
@@ -33,7 +23,7 @@ import ProfileHeader from '../components/ProfileHeader';
 import DatePickerDialog from '../components/DatePickerDialog';
 import ModalSpinner from '../components/ModalSpinner';
 
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
 
 class ProfileEditorScreen extends React.Component {
   constructor(...args) {
@@ -63,7 +53,7 @@ class ProfileEditorScreen extends React.Component {
                   width: 25,
                   resizeMode: 'contain'
                 }}
-              />)
+              />);
         }}
         onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}
         onRightPress={() => {
@@ -80,8 +70,7 @@ class ProfileEditorScreen extends React.Component {
             .catch(error => {
             });
         }}
-        >
-      </NavBar>
+        />
       <ProfileHeader
         user={this.props.user}
         customCoverSource={this.state.changedProfileCover ? {uri: 'data:image/jpeg;base64,' + this.state.changedProfileCover.data, isStatic: true} : null }
@@ -107,7 +96,7 @@ class ProfileEditorScreen extends React.Component {
               <TextInput
                 onChangeText={(name) => this.setState({name})}
                 style={[styles.textGrey, {flex: 1}]}
-                autoCapitalize='none'
+                autoCapitalize="none"
                 value={this.state.name}
               />
             </View>
@@ -342,4 +331,4 @@ const actionsMaping = {
 export default connect(select, actionsMaping)(ProfileEditorScreen);
 export {
   ProfileEditorScreen as Component
-}
+};

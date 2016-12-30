@@ -5,7 +5,6 @@ import {
   Modal,
   StyleSheet,
   View,
-  Text,
   Platform
 } from 'react-native';
 
@@ -75,10 +74,10 @@ class DatePickerDialog extends React.Component {
             <DatePickerIOS mode="date" date={this.state.currentDate} onDateChange={(date) => this.setState({currentDate: date})}/>
             <View style={styles.buttonContainer}>
               <View style={styles.button}>
-                <Button title='ok' onPress={() => this.onOK()}/>
+                <Button title="ok" onPress={() => this.onOK()}/>
               </View>
               <View style={styles.button}>
-                <Button title='cancel' onPress={() => this.onCancel()}/>
+                <Button title="cancel" onPress={() => this.onCancel()}/>
               </View>
             </View>
           </View>

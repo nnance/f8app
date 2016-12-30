@@ -3,7 +3,6 @@ import {
   View,
   Text,
   TextInput,
-  Image,
   StyleSheet
 } from 'react-native';
 import F8Button from 'F8Button';
@@ -17,7 +16,7 @@ class SecureContainer extends React.Component {
       passed: false,
       password: '',
       error: null
-    }
+    };
   }
 
   render() {
@@ -34,7 +33,7 @@ class SecureContainer extends React.Component {
           <TextInput
             onChangeText={(password) => this.setState({password})}
             style={styles.input}
-            placeholder='current password'
+            placeholder="current password"
             value={this.state.password || ''}
             secureTextEntry={true}
           />

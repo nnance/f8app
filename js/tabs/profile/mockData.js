@@ -30,8 +30,8 @@ export const activity = [{
 
 export const myClogs = [
   {
-    title: "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
-    authors: "David Beckham",
+    title: 'Richy Rich! รวยมากนะ! รู้ยังคะทุกคน',
+    authors: 'David Beckham',
     cover: require('./img/A.png'),
     categoryCover: require('./img/category/M.png'),
     views: 12300,
@@ -39,8 +39,8 @@ export const myClogs = [
     date: new Date(2015, 5, 24)
   },
   {
-    title: "Money Honey คุณชายหน้าตายกับยัยขี้งก",
-    authors: "สุดสาครนอย ไทรโยค",
+    title: 'Money Honey คุณชายหน้าตายกับยัยขี้งก',
+    authors: 'สุดสาครนอย ไทรโยค',
     cover: require('./img/B.png'),
     categoryCover: require('./img/category/N.png'),
     views: 100,
@@ -51,13 +51,13 @@ export const myClogs = [
 
 export const bookmark = [
   {
-    title: "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
+    title: 'Richy Rich! รวยมากนะ! รู้ยังคะทุกคน',
     cover: require('./img/A.png'),
     categoryCover: require('./img/category/N.png'),
     bookmarkCount: 7
   },
   {
-    title: "Money Honey คุณชายหน้าตายกับยัยขี้งก",
+    title: 'Money Honey คุณชายหน้าตายกับยัยขี้งก',
     cover: require('./img/B.png'),
     categoryCover: require('./img/category/M.png'),
     bookmarkCount: 3

@@ -27,7 +27,6 @@
 
 var F8InfoView = require('F8InfoView');
 var F8Colors = require('F8Colors');
-var F8MapView = require('F8MapView');
 var F8NotificationsView = require('F8NotificationsView');
 var React = require('React');
 var Navigator = require('Navigator');
@@ -46,8 +45,6 @@ var unseenNotificationsCount = require('./notifications/unseenNotificationsCount
 
 var { switchTab, logOutWithPrompt } = require('../actions');
 var { connect } = require('react-redux');
-
-import Parse from 'parse/react-native';
 
 import type {Tab} from '../reducers/navigation';
 import ProfileScreen from './profile/containers/ProfileScreen';

@@ -8,7 +8,6 @@ const CircleImage = props => (<Image {...props}
     width: props.size,
     height: props.size,
     borderRadius: props.size / 2
-  }, props.style]}>
-</Image>);
+  }, props.style]}/>);
 
 export default CircleImage;

@@ -124,8 +124,8 @@ async function _linkFacebook(user) {
 async function _unlinkFacebook(user) {
   await new Promise((resolve, reject) => {
     Parse.FacebookUtils.unlink(user, {
-      success: resolve(),
-      error: reject(error)
+      success: () => resolve(),
+      error: error => reject(error)
     });
   });
   await user._unlinkFrom('facebook');
@@ -137,14 +137,14 @@ async function _unlinkFacebook(user) {
 
 const linkFacebook = () => async dispatch => {
   const user = await Parse.User.currentAsync();
-  return _linkFacebook(user).then((user) => {
-    dispatch(facebookLinked(user.get('facebook_id'), user.get('name')));
+  return _linkFacebook(user).then((_user) => {
+    dispatch(facebookLinked(_user.get('facebook_id'), _user.get('name')));
   });
-}
+};
 
 const unlinkFacebook = () => async dispatch => {
   const user = await Parse.User.currentAsync();
-  return _unlinkFacebook(user).then(user => {
+  return _unlinkFacebook(user).then(_user => {
     dispatch(facebookUnlinked());
   });
 };
@@ -152,7 +152,7 @@ const unlinkFacebook = () => async dispatch => {
 const facebookUnlinked = () => {
   return {
     type: 'FACEBOOK_UNLINKED'
-  }
+  };
 };
 
 const facebookLinked = (id, name) => {
@@ -187,7 +187,7 @@ const logIn = (email: string, password: string) => dispatch => {
       dispatch(restoreSchedule());
     }
   );
-}
+};
 
 function logInWithFacebook(source: ?string): ThunkAction {
   return (dispatch) => {
@@ -213,7 +213,7 @@ function skipLogin(): Action {
 
 const forgotPassword: ThunkAction = email => dispatch => {
   return Parse.User.requestPasswordReset(email);
-}
+};
 
 function logOut(): ThunkAction {
   return (dispatch) => {

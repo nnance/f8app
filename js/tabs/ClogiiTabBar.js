@@ -4,8 +4,7 @@ import {
   Text,
   View,
   TouchableOpacity,
-  Image,
-  Platform
+  Image
 } from 'react-native';
 
 const icons = {
@@ -25,7 +24,7 @@ const icons = {
     active: require('./img/icons/profile-active.png'),
     inactive: require('./img/icons/profile-inactive.png')
   }
-}
+};
 
 const IconWithBadge = ({badge, tab, active}) => (
    <View style={{padding: 2}}>
@@ -35,8 +34,7 @@ const IconWithBadge = ({badge, tab, active}) => (
       width: 25,
       height: 25,
       resizeMode: 'contain',
-    }}>
-    </Image>
+    }}/>
     {
       !badge ? null :
       <View style={{

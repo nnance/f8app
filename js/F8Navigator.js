@@ -165,7 +165,7 @@ var F8Navigator = React.createClass({
       return <ThirdPartyNotices navigator={navigator} />;
     }
     if (route.logInWithEmail) {
-      return <LoginScreen withEmail={true} onExit={() => navigator.pop()} addBackButtonListener={this.addBackButtonListener} removeBackButtonListener={this.removeBackButtonListener}/>
+      return <LoginScreen withEmail={true} onExit={() => navigator.pop()} addBackButtonListener={this.addBackButtonListener} removeBackButtonListener={this.removeBackButtonListener}/>;
     }
     return <F8TabsView navigator={navigator} />;
   },

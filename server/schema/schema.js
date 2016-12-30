@@ -37,7 +37,7 @@ import Parse from 'parse/node';
 const Page = Parse.Object.extend('Page');
 const FAQ = Parse.Object.extend('FAQ');
 const Session = Parse.Object.extend('Agenda');
-const Speaker = Parse.Object.extend('Speakers');
+// const Speaker = Parse.Object.extend('Speakers');
 const Notification = Parse.Object.extend('Notification');
 const Map = Parse.Object.extend('Maps');
 

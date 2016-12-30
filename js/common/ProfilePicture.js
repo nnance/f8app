@@ -69,7 +69,7 @@ class ProfilePicture extends React.Component {
             backgroundColor: 'black'
           }}
         />
-      )
+      );
     }
     return (
       <Image

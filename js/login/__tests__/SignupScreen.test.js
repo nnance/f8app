@@ -29,8 +29,8 @@ describe('SignupScreen', () => {
 
   it('state loading', async () => {
     let _resolve;
-    const api = jest.fn(() => new Promise(resolve => _resolve = resolve));
-    const wrapper = shallow(<SignupScreen signUp={api}/>);
+    const signUp = jest.fn(() => new Promise(resolve => _resolve = resolve));
+    const wrapper = shallow(<SignupScreen signUp={signUp}/>);
     expect(wrapper.state().loading).toBe(false);
     const task = wrapper.find('[caption="สร้างบัญชี"]').props().onPress();
     expect(wrapper.state().loading).toBe(true);

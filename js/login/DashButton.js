@@ -1,7 +1,5 @@
 import React from 'React';
-import {Image, View, Text, TextInput, TouchableOpacity} from 'react-native';
-import ClogiiButton from 'ClogiiButton';
-import styles from './styles';
+import {View, Text, TouchableOpacity} from 'react-native';
 
 import F8Colors from 'F8Colors';
 

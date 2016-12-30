@@ -5,14 +5,12 @@ import {
   Text,
   View,
   StyleSheet,
-  ListView,
   TouchableOpacity
 } from 'react-native';
 
 import moment from 'moment';
 
 import PureListView from '../../../common/PureListView';
-import {toHumanNumber, random} from '../../../common/utils';
 
 import NavBar from './NavBar';
 import {styles as commonStyles, colors} from '../common';
@@ -76,8 +74,7 @@ const ActivityRow = (props) => (<TouchableOpacity style={styles.rowContainer}>
 class ActivityScreen extends React.Component {
   render() {
     return (<View style={commonStyles.listViewContainer}>
-        <NavBar title="กิจกรรม" onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}>
-        </NavBar>
+        <NavBar title="กิจกรรม" onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}/>
         <PureListView
           data={this.props.activity}
           renderRow={(props) => {

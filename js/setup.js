@@ -36,7 +36,6 @@ var configureStore = require('./store/configureStore');
 
 var {serverURL} = require('./env');
 
-import LoginScreen from './login/LoginScreen';
 import moment from 'moment';
 import 'moment/locale/th';
 

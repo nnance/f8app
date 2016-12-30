@@ -3,13 +3,11 @@ import React from 'react';
 import CircleImage from '../../../common/CircleImage';
 import {
   Image,
-  Text,
   View
 } from 'react-native';
 
 export default (props) => (<View style={{width: props.size, height: props.size}}>
-  <CircleImage {...props} style={[props.style, {backgroundColor: 'transparent'}]}>
-  </CircleImage>
+  <CircleImage {...props} style={[props.style, {backgroundColor: 'transparent'}]}/>
   <Image
     source={props.categorySource}
     style={{

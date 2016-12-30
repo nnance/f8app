@@ -12,13 +12,13 @@ describe('Reducer User', () => {
     expect(newState.name).toBe('new test');
   });
 
-  it.only('FACEBOOK_LINKED, linked to true', () => {
+  it('FACEBOOK_LINKED, linked to true', () => {
     const oldState = {
       name: 'test'
     };
     const newState = userReducer(oldState, actions.facebookLinked());
     expect(newState.facebookLinked).toBe(true);
-  })
+  });
 
   it('FACEBOOK_UNLINKED, linked to false', () => {
     const oldState = {
@@ -26,5 +26,5 @@ describe('Reducer User', () => {
     };
     const newState = userReducer(oldState, actions.facebookUnlinked());
     expect(newState.facebookLinked).toBe(false);
-  })
+  });
 });

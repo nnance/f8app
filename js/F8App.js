@@ -29,12 +29,12 @@ import React from 'react';
 import LoginScreen from './login/LoginScreen';
 
 var AppState = require('AppState');
-var PushNotificationsController = require('./PushNotificationsController');
-var StyleSheet = require('StyleSheet');
-var F8Navigator = require('F8Navigator');
+// var PushNotificationsController = require('./PushNotificationsController');
+// var StyleSheet = require('StyleSheet');
+// var F8Navigator = require('F8Navigator');
 var CodePush = require('react-native-code-push');
-var View = require('View');
-var StatusBar = require('StatusBar');
+// var View = require('View');
+// var StatusBar = require('StatusBar');
 var {
   loadConfig,
   loadViewer,
@@ -83,26 +83,26 @@ var F8App = React.createClass({
       return <LoginScreen />;
     }
     return <ClogiiTabView/>;
-    return (
-      <View style={styles.container}>
-        <StatusBar
-          translucent={true}
-          backgroundColor="rgba(0, 0, 0, 0.2)"
-          barStyle="light-content"
-         />
-        <F8Navigator />
-        <PushNotificationsController />
-      </View>
-    );
+    // return (
+    //   <View style={styles.container}>
+    //     <StatusBar
+    //       translucent={true}
+    //       backgroundColor="rgba(0, 0, 0, 0.2)"
+    //       barStyle="light-content"
+    //      />
+    //     <F8Navigator />
+    //     <PushNotificationsController />
+    //   </View>
+    // );
   },
 
 });
 
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+// var styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//   },
+// });
 
 function select(store) {
   return {

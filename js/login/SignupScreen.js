@@ -1,8 +1,7 @@
 'use strict';
 
 import React from 'React';
-import {ScrollView, View, Text, TextInput, Image} from 'react-native';
-import InteractionManager from 'InteractionManager';
+import {View, Text, TextInput, Image} from 'react-native';
 import ClogiiButton from 'ClogiiButton';
 
 import {DashButtonWithContainer} from './DashButton';
@@ -18,7 +17,6 @@ export default class SignUpScreen extends React.Component {
   }
 
   render() {
-    const {signUp, goBack} = this.props;
     const {error} = this.state;
     return (
       <Image
@@ -32,10 +30,10 @@ export default class SignUpScreen extends React.Component {
             <TextInput
               onChangeText={(email) => this.setState({email})}
               style={styles.input}
-              placeholder='อีเมล'
-              keyboardType='email-address'
-              autoCapitalize='none'
-              placeholderTextColor='rgba(255, 255, 255, 0.6)'
+              placeholder="อีเมล"
+              keyboardType="email-address"
+              autoCapitalize="none"
+              placeholderTextColor="rgba(255, 255, 255, 0.6)"
             />
           </View>
           <View style={styles.inputBox}>
@@ -43,26 +41,26 @@ export default class SignUpScreen extends React.Component {
               onChangeText={(password) => this.setState({password})}
               style={styles.input}
               secureTextEntry={true}
-              placeholder='รหัสผ่าน'
-              placeholderTextColor='rgba(255, 255, 255, 0.6)'/>
+              placeholder="รหัสผ่าน"
+              placeholderTextColor="rgba(255, 255, 255, 0.6)"/>
           </View>
           <View style={styles.inputBox}>
             <TextInput
               onChangeText={(confirmPassword) => this.setState({confirmPassword})}
               style={styles.input}
               secureTextEntry={true}
-              placeholder='ยืนยันรหัสผ่าน'
-              placeholderTextColor='rgba(255, 255, 255, 0.6)'/>
+              placeholder="ยืนยันรหัสผ่าน"
+              placeholderTextColor="rgba(255, 255, 255, 0.6)"/>
           </View>
           <ClogiiButton
             style={styles.emailButton}
-            type='white'
-            caption='สร้างบัญชี'
+            type="white"
+            caption="สร้างบัญชี"
             onPress={this.onSignUp.bind(this)}/>
         </View>
         <DashButtonWithContainer caption="ลงชื่อเข้าใช้ด้วย Facebook" onPress={this.props.logInWithFacebook} style={{margin: 20}}/>
       </Image>
-    )
+    );
   }
 
   onSignUp() {

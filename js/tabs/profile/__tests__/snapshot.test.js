@@ -66,7 +66,7 @@ describe('ProfileCover', () => {
   });
 
   it('render user cover with children', () => {
-    const tree = renderer.create(<ProfileCover user={mockUser}><Text>User Cover</Text></ProfileCover>)
+    const tree = renderer.create(<ProfileCover user={mockUser}><Text>User Cover</Text></ProfileCover>);
     expect(tree.toJSON()).toMatchSnapshot();
   });
 });
@@ -74,7 +74,7 @@ describe('ProfileCover', () => {
 describe('ProfileHeader', () => {
   const ProfileHeader = require('../components/ProfileHeader').default;
   it('render', () => {
-    const tree = renderer.create(<ProfileHeader user={mockUser}/>)
+    const tree = renderer.create(<ProfileHeader user={mockUser}/>);
     expect(tree.toJSON()).toMatchSnapshot();
   });
 });
@@ -110,7 +110,7 @@ describe('UserContainer', () => {
 describe('ProfileScreen', () => {
   const ProfileScreenComponent = require('../containers/ProfileScreen').Component;
   it('render', () => {
-    const tree = renderer.create(<ProfileScreenComponent {...mockData}></ProfileScreenComponent>)
+    const tree = renderer.create(<ProfileScreenComponent {...mockData}/>);
     expect(tree.toJSON()).toMatchSnapshot();
   });
 });

@@ -3,7 +3,6 @@
 import React from 'React';
 import {Image, View, Text, TextInput} from 'react-native';
 import ClogiiButton from 'ClogiiButton';
-import {connect} from 'react-redux';
 
 import styles from './styles';
 
@@ -17,7 +16,7 @@ export default class ForgotPasswordScreen extends React.Component {
   }
 
   render(){
-    const {forgotPassword, goBack} = this.props;
+    const {forgotPassword} = this.props;
     const {error} = this.state;
     return (
       <Image
@@ -31,17 +30,17 @@ export default class ForgotPasswordScreen extends React.Component {
             <TextInput
               onChangeText={(email) => this.setState({email})}
               style={styles.input}
-              placeholder='อีเมล'
-              keyboardType='email-address'
-              autoCapitalize='none'
+              placeholder="อีเมล"
+              keyboardType="email-address"
+              autoCapitalize="none"
               value={this.state.email || ''}
-              placeholderTextColor='rgba(255, 255, 255, 0.6)'
+              placeholderTextColor="rgba(255, 255, 255, 0.6)"
               />
           </View>
           <ClogiiButton
-            type='white'
+            type="white"
             style={styles.emailButton}
-            caption='รับรหัสผ่านใหม่'
+            caption="รับรหัสผ่านใหม่"
             onPress={
               () => {
                 this.setState({
@@ -51,7 +50,7 @@ export default class ForgotPasswordScreen extends React.Component {
                   .then(() => {
                     this.props.onReqed && this.props.onReqed();
                   })
-                  .catch(error => this.setState({error: error.message}))
+                  .catch(_error => this.setState({error: _error.message}))
                   .then(() => {
                     this.setState({
                       loading: false
@@ -61,6 +60,6 @@ export default class ForgotPasswordScreen extends React.Component {
             }/>
         </View>
       </Image>
-    )
+    );
   }
 }
