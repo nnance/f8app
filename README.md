@@ -50,13 +50,19 @@ The implementation found in the master branch leaves the application architectur
   $ export DATABASE_URI=mongodb://example-mongo-hosting.com:1337/my-awesome-database
   ```
 
-4. **Start Parse/GraphQL servers:**
+4. **Setup Mailgun:**
+  ```
+  $ export MAILGUN_DOMAIN=mailgun.domain
+  $ export MAILGUN_KEY=mailgunkey
+  ```
+
+5. **Start Parse/GraphQL servers:**
 
   ```
   $ npm start
   ```
 
-5. **Import sample data** (the local Parse Server should be running):
+6. **Import sample data** (the local Parse Server should be running):
 
   ```
   $ npm run import-data
