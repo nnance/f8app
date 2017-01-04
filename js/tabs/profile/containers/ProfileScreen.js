@@ -125,42 +125,43 @@ class NavigatorProfile extends React.Component {
   }
 
   renderScene(route, navigator) {
+    const onBack = this.onBack.bind(this, navigator);
     if (route.page === 'following') {
-      return <FollowingScreen {...this.props} userList={this.props.following} onBackPress={() => navigator.pop()}/>;
+      return <FollowingScreen {...this.props} userList={this.props.following} onBackPress={onBack}/>;
     }
     if (route.page === 'follower') {
-      return <FollowerScreen {...this.props} userList={this.props.follower} onBackPress={() => navigator.pop()}/>;
+      return <FollowerScreen {...this.props} userList={this.props.follower} onBackPress={onBack}/>;
     }
     if (route.page === 'myfan') {
-      return <MyFanScreen {...this.props} userList={this.props.myFan} onBackPress={() => navigator.pop()}/>;
+      return <MyFanScreen {...this.props} userList={this.props.myFan} onBackPress={onBack}/>;
     }
     if (route.page === 'activity') {
-      return <ActivityScreen {...this.props} onBackPress={() => navigator.pop()}/>;
+      return <ActivityScreen {...this.props} onBackPress={onBack}/>;
     }
     if (route.page === 'myclog') {
-      return <MyClogScreen {...this.props} onBackPress={() => navigator.pop()}/>;
+      return <MyClogScreen {...this.props} onBackPress={onBack}/>;
     }
     if (route.page === 'bookmark') {
-      return <BookmarkScreen {...this.props} onBackPress={() => navigator.pop()}/>;
+      return <BookmarkScreen {...this.props} onBackPress={onBack}/>;
     }
     if (route.page === 'jellyShop') {
-      return <JellyShopScreen {...this.props} onBackPress={() => navigator.pop()}/>;
+      return <JellyShopScreen {...this.props} onBackPress={onBack}/>;
     }
     if (route.page === 'edit-profile') {
-      return <ProfileEditorScreen navigator={this.refs.navigator} {...this.props} onBackPress={() => navigator.pop()}/>;
+      return <ProfileEditorScreen navigator={this.refs.navigator} {...this.props} onBackPress={onBack}/>;
     }
     if (route.page === 'change-email') {
-      return <ChangeEmailScreen {...this.props} onBackPress={() => navigator.pop()}/>;
+      return <ChangeEmailScreen {...this.props} onBackPress={onBack}/>;
     }
     if (route.page === 'change-password') {
-      return <ChangePasswordScreen {...this.props} onBackPress={() => navigator.pop()}/>;
+      return <ChangePasswordScreen {...this.props} onBackPress={onBack}/>;
     }
-    return <ProfileScreen
+    return <ProfileMenuScreen
       {...this.props}
       onMenuPress={this.onMenuPress}
-      onFollowingPress={() => navigator.push({page: 'following'})}
-      onFollowerPress={() => navigator.push({page: 'follower'})}
-      onEditProfile={() => navigator.push({page: 'edit-profile'})}
+      onFollowingPress={this.pushPage.bind(this, navigator, 'following')}
+      onFollowerPress={this.pushPage.bind(this, navigator, 'follower')}
+      onEditProfile={this.pushPage.bind(this, navigator, 'edit-profile')}
       />;
   }
 
@@ -182,9 +183,22 @@ class NavigatorProfile extends React.Component {
       navigator.push({page: 'jellyShop'});
     }
   }
+
+  onBack(navigator) {
+    navigator.pop();
+  }
+
+  pushPage(navigator, page) {
+    navigator.push({page})
+  }
 }
 
-class ProfileScreen extends React.Component {
+class ProfileMenuScreen extends React.Component {
+  constructor(...args) {
+    super(...args);
+    this.renderMenu = this.renderMenu.bind(this);
+  }
+
   render() {
     const name = this.props.user.name || '';
     return (
@@ -215,21 +229,22 @@ class ProfileScreen extends React.Component {
         <View style={styles.menuList}>
           <PureListView
             title="Profile"
-            renderEmptyList={() => null}
             data={menuList}
-            renderRow={(menu) => (
-              <TouchableOpacity onPress={() => this.props.onMenuPress && this.props.onMenuPress(menu.name)}>
-                <View style={styles.row}>
-                  <Image style={styles.menuIcon} source={menu.icon}/>
-                  <Text style={styles.menuText}>{menu.title}</Text>
-                </View>
-              </TouchableOpacity>
-            )}
+            renderRow={this.renderMenu}
           />
         </View>
         <CandyCorner candys={this.props.candys} />
       </View>
     );
+  }
+
+  renderMenu(menu) {
+    return (<TouchableOpacity title={menu.name} onPress={this.props.onMenuPress ? this.props.onMenuPress.bind(this, menu.name) : null}>
+      <View style={styles.row}>
+        <Image style={styles.menuIcon} source={menu.icon}/>
+        <Text style={styles.menuText}>{menu.title}</Text>
+      </View>
+    </TouchableOpacity>);
   }
 }
 
@@ -298,5 +313,6 @@ const select = state => ({
 
 export default connect(select)(NavigatorProfile);
 export {
-  NavigatorProfile as Component
+  NavigatorProfile as Component,
+  ProfileMenuScreen
 };
