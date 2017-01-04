@@ -31,6 +31,11 @@ export default class DashButton extends React.Component {
   }
 }
 
-export const DashButtonWithContainer = (props) => (<View style={[{flex: 1, justifyContent: 'flex-end', alignItems: 'center'}, props.style]}>
-  <DashButton {...props}/>
-</View>);
+export class DashButtonWithContainer extends React.Component {
+  render() {
+    const props = this.props;
+    return (<View style={[{flex: 1, justifyContent: 'flex-end', alignItems: 'center'}, props.style]}>
+      <DashButton {...props}/>
+    </View>);
+  }
+}

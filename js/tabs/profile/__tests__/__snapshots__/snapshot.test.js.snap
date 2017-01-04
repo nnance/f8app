@@ -2666,7 +2666,6 @@ exports[`ProfileScreen render 1`] = `
             onScroll={[Function]}
             pageSize={1}
             removeClippedSubviews={true}
-            renderEmptyList={[Function]}
             renderFooter={[Function]}
             renderRow={[Function]}
             renderSeparator={[Function]}
