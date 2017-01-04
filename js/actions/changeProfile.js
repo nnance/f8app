@@ -39,12 +39,6 @@ function changedEmail() {
   };
 }
 
-async function _changePassword(newPassword) {
-  const user = await getUser();
-  user.set('password', newPassword);
-  await user.save();
-}
-
 export const changePassword = (newPassword) => dispatch => {
   return _changePassword(newPassword).then(() => {
     dispatch(changedPassword());
