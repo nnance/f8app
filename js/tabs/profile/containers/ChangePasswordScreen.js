@@ -28,18 +28,12 @@ class ChangePasswordScreen extends React.Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.changedPassword) {
-      this.props.onBackPress && this.props.onBackPress();
-    }
-  }
-
   render() {
     return (<View style={styles.container}>
       <ModalSpinner visible={this.state.saving}/>
       <NavBar
         title="เปลี่ยน Password"
-        onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}
+        onLeftPress={this.props.onBackPress}
         />
       <SecureContainer onCheck={() => Promise.resolve()}>
         <View>
@@ -74,7 +68,7 @@ class ChangePasswordScreen extends React.Component {
             </View>
           </View>
           <View style={commonStyles.errorContainer}>
-            <Text style={commonStyles.errorText}>{this.props.error ? this.props.error : this.state.error}</Text>
+            <Text style={commonStyles.errorText}>{this.state.error}</Text>
           </View>
           <F8Button style={styles.button} caption="เปลี่ยน Password" onPress={() => this.onChangePassword()}/>
         </View>

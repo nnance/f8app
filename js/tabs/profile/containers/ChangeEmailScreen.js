@@ -33,7 +33,7 @@ class ChangeEmailScreen extends React.Component {
       <ModalSpinner visible={this.state.saving}/>
       <NavBar
         title="เปลี่ยน Email"
-        onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}
+        onLeftPress={this.props.onBackPress}
         />
       <SecureContainer onCheck={() => Promise.resolve()}>
         <View>
@@ -66,7 +66,7 @@ class ChangeEmailScreen extends React.Component {
             </View>
           </View>
           <View style={commonStyles.errorContainer}>
-            <Text style={commonStyles.errorText}>{this.props.error ? this.props.error : this.state.error}</Text>
+            <Text style={commonStyles.errorText}>{this.state.error}</Text>
           </View>
           <F8Button style={styles.button} caption="เปลี่ยน Email" onPress={() => this.onChangeEmail()}/>
         </View>

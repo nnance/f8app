@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1483516379673" clover="3.2.0">
-  <project timestamp="1483516379673" name="All files">
-    <metrics statements="932" coveredstatements="724" conditionals="451" coveredconditionals="269" methods="336" coveredmethods="217" elements="1719" coveredelements="1210" complexity="0" loc="932" ncloc="932" packages="10" files="59" classes="59">
+<coverage generated="1483518187052" clover="3.2.0">
+  <project timestamp="1483518187052" name="All files">
+    <metrics statements="928" coveredstatements="726" conditionals="439" coveredconditionals="271" methods="333" coveredmethods="217" elements="1700" coveredelements="1214" complexity="0" loc="928" ncloc="928" packages="10" files="59" classes="59">
       <package name="js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <file name="env.js" path="/Users/natthaphatmaleehuan/Desktop/work/clogii-mobile/js/env.js">
@@ -676,7 +676,7 @@
         </file>
       </package>
       <package name="js.reducers">
-        <metrics statements="76" coveredstatements="64" conditionals="52" coveredconditionals="30" methods="13" coveredmethods="11"/>
+        <metrics statements="76" coveredstatements="66" conditionals="52" coveredconditionals="34" methods="13" coveredmethods="11"/>
         <file name="createApolloReducer.js" path="/Users/natthaphatmaleehuan/Desktop/work/clogii-mobile/js/reducers/createApolloReducer.js">
           <metrics statements="5" coveredstatements="5" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
           <line num="36" count="2" type="stmt"/>
@@ -735,32 +735,32 @@
           <line num="58" count="1" type="stmt"/>
         </file>
         <file name="user.js" path="/Users/natthaphatmaleehuan/Desktop/work/clogii-mobile/js/reducers/user.js">
-          <metrics statements="31" coveredstatements="26" conditionals="27" coveredconditionals="12" methods="3" coveredmethods="3"/>
-          <line num="45" count="4" type="stmt"/>
-          <line num="59" count="4" type="stmt"/>
-          <line num="60" count="3" type="stmt"/>
-          <line num="69" count="5" type="stmt"/>
-          <line num="73" count="4" type="stmt"/>
-          <line num="74" count="3" type="stmt"/>
+          <metrics statements="31" coveredstatements="28" conditionals="27" coveredconditionals="16" methods="3" coveredmethods="3"/>
+          <line num="45" count="5" type="stmt"/>
+          <line num="59" count="5" type="stmt"/>
+          <line num="60" count="4" type="stmt"/>
+          <line num="69" count="7" type="stmt"/>
+          <line num="73" count="5" type="stmt"/>
+          <line num="74" count="4" type="stmt"/>
           <line num="75" count="2" type="stmt"/>
-          <line num="82" count="3" type="stmt"/>
+          <line num="82" count="5" type="stmt"/>
           <line num="83" count="1" type="stmt"/>
-          <line num="89" count="1" type="stmt"/>
+          <line num="89" count="2" type="stmt"/>
           <line num="90" count="0" type="stmt"/>
-          <line num="91" count="1" type="stmt"/>
+          <line num="91" count="2" type="stmt"/>
           <line num="92" count="0" type="stmt"/>
-          <line num="94" count="1" type="stmt"/>
-          <line num="108" count="1" type="stmt"/>
-          <line num="109" count="1" type="stmt"/>
-          <line num="117" count="4" type="stmt"/>
-          <line num="118" count="3" type="stmt"/>
-          <line num="120" count="4" type="stmt"/>
-          <line num="124" count="3" type="stmt"/>
-          <line num="125" count="3" type="stmt"/>
-          <line num="126" count="6" type="stmt"/>
-          <line num="127" count="0" type="stmt"/>
-          <line num="128" count="3" type="stmt"/>
-          <line num="129" count="0" type="stmt"/>
+          <line num="94" count="2" type="stmt"/>
+          <line num="108" count="2" type="stmt"/>
+          <line num="109" count="2" type="stmt"/>
+          <line num="117" count="6" type="stmt"/>
+          <line num="118" count="4" type="stmt"/>
+          <line num="120" count="6" type="stmt"/>
+          <line num="124" count="5" type="stmt"/>
+          <line num="125" count="5" type="stmt"/>
+          <line num="126" count="7" type="stmt"/>
+          <line num="127" count="1" type="stmt"/>
+          <line num="128" count="4" type="stmt"/>
+          <line num="129" count="1" type="stmt"/>
           <line num="136" count="6" type="stmt"/>
           <line num="137" count="1" type="stmt"/>
           <line num="142" count="3" type="stmt"/>
@@ -947,13 +947,12 @@
         </file>
       </package>
       <package name="js.tabs.profile.containers">
-        <metrics statements="144" coveredstatements="138" conditionals="108" coveredconditionals="91" methods="64" coveredmethods="56"/>
+        <metrics statements="140" coveredstatements="138" conditionals="96" coveredconditionals="89" methods="61" coveredmethods="56"/>
         <file name="ChangeEmailScreen.js" path="/Users/natthaphatmaleehuan/Desktop/work/clogii-mobile/js/tabs/profile/containers/ChangeEmailScreen.js">
-          <metrics statements="20" coveredstatements="18" conditionals="12" coveredconditionals="9" methods="10" coveredmethods="8"/>
+          <metrics statements="19" coveredstatements="18" conditionals="8" coveredconditionals="8" methods="9" coveredmethods="8"/>
           <line num="22" count="10" type="stmt"/>
           <line num="23" count="10" type="stmt"/>
           <line num="32" count="40" type="stmt"/>
-          <line num="36" count="0" type="stmt"/>
           <line num="38" count="0" type="stmt"/>
           <line num="50" count="8" type="stmt"/>
           <line num="63" count="8" type="stmt"/>
@@ -972,29 +971,26 @@
           <line num="119" count="2" type="stmt"/>
         </file>
         <file name="ChangePasswordScreen.js" path="/Users/natthaphatmaleehuan/Desktop/work/clogii-mobile/js/tabs/profile/containers/ChangePasswordScreen.js">
-          <metrics statements="22" coveredstatements="18" conditionals="16" coveredconditionals="9" methods="11" coveredmethods="8"/>
+          <metrics statements="19" coveredstatements="18" conditionals="8" coveredconditionals="8" methods="9" coveredmethods="8"/>
           <line num="22" count="10" type="stmt"/>
           <line num="23" count="10" type="stmt"/>
-          <line num="32" count="0" type="stmt"/>
-          <line num="33" count="0" type="stmt"/>
-          <line num="38" count="40" type="stmt"/>
-          <line num="42" count="0" type="stmt"/>
-          <line num="44" count="0" type="stmt"/>
-          <line num="57" count="8" type="stmt"/>
-          <line num="71" count="8" type="stmt"/>
-          <line num="79" count="8" type="stmt"/>
-          <line num="86" count="8" type="stmt"/>
-          <line num="87" count="8" type="stmt"/>
-          <line num="88" count="5" type="stmt"/>
-          <line num="92" count="5" type="stmt"/>
-          <line num="93" count="4" type="stmt"/>
-          <line num="97" count="3" type="stmt"/>
-          <line num="99" count="5" type="stmt"/>
-          <line num="100" count="3" type="stmt"/>
-          <line num="103" count="2" type="stmt"/>
-          <line num="105" count="1" type="stmt"/>
-          <line num="113" count="2" type="stmt"/>
-          <line num="127" count="2" type="stmt"/>
+          <line num="32" count="40" type="stmt"/>
+          <line num="38" count="0" type="stmt"/>
+          <line num="51" count="8" type="stmt"/>
+          <line num="65" count="8" type="stmt"/>
+          <line num="73" count="8" type="stmt"/>
+          <line num="80" count="8" type="stmt"/>
+          <line num="81" count="8" type="stmt"/>
+          <line num="82" count="5" type="stmt"/>
+          <line num="86" count="5" type="stmt"/>
+          <line num="87" count="4" type="stmt"/>
+          <line num="91" count="3" type="stmt"/>
+          <line num="93" count="5" type="stmt"/>
+          <line num="94" count="3" type="stmt"/>
+          <line num="97" count="2" type="stmt"/>
+          <line num="99" count="1" type="stmt"/>
+          <line num="107" count="2" type="stmt"/>
+          <line num="121" count="2" type="stmt"/>
         </file>
         <file name="ProfileEditorScreen.js" path="/Users/natthaphatmaleehuan/Desktop/work/clogii-mobile/js/tabs/profile/containers/ProfileEditorScreen.js">
           <metrics statements="46" coveredstatements="46" conditionals="34" coveredconditionals="30" methods="26" coveredmethods="25"/>
