@@ -41,38 +41,10 @@ Parse.User.currentAsync.mockImplementation(() => {
       return 't';
     },
     set: () => Promise.resolve(),
-    save: () => Promise.resolve()
+    save: () => Promise.resolve(),
+    _unlinkFrom: () => Promise.resolve()
   };
 });
-
-// async function extractPromiseAndArray(action) {
-//   if (!action) {
-//     return action;
-//   }
-//   let result;
-//   if (Array.isArray(action)) {
-//     result = await Promise.all(action.map(a => extractPromiseAndArray(a)));
-//   }
-//   if (typeof action.then === 'function') {
-//     result = await extractPromiseAndArray(await action);
-//   }
-//   if (result === undefined) {
-//     return action;
-//   }
-//   if (Array.isArray(result)) {
-//     let merged = [];
-//     for (let i = 0; i < result.length; i++) {
-//       if (Array.isArray(result[i])) {
-//         merged = merged.concat(result[i]);
-//       }
-//       else {
-//         merged = merged.concat([result[i]]);
-//       }
-//     }
-//     return merged;
-//   }
-//   return result;
-// }
 
 describe('Login Action', () => {
   it('logIn, dispatch loggedIn if success', async () => {
@@ -137,5 +109,49 @@ describe('Login Action', () => {
     expect(success).not.toBeCalled();
     expect(error).toBeCalled();
     expect(store.getActions().filter(action => action && action.type === 'FACEBOOK_LINKED').length).toBe(0);
+  });
+
+  it('unlinkFacebook, dispatch FACEBOOK_UNLINKED if success', async () => {
+    Parse.FacebookUtils.unlink.mockImplementationOnce((a, opts) => {
+      opts.success();
+    });
+    const store = mockStore({});
+    await store.dispatch(loginAction.unlinkFacebook());
+    expect(Parse.FacebookUtils.unlink).toBeCalled();
+    expect(store.getActions().filter(action => action && action.type === 'FACEBOOK_UNLINKED').length).toBe(1);
+  });
+
+  it('unlinkFacebook, dont dispatch FACEBOOK_UNLINKED if success', async () => {
+    Parse.FacebookUtils.unlink.mockImplementationOnce((a, opts) => {
+      opts.error(new Error('something error'));
+    });
+    const store = mockStore({});
+    const success = jest.fn();
+    const error = jest.fn();
+    await store.dispatch(loginAction.unlinkFacebook()).then(success).catch(error);
+    expect(success).not.toBeCalled();
+    expect(error).toBeCalled();
+    expect(Parse.FacebookUtils.unlink).toBeCalled();
+    expect(store.getActions().filter(action => action && action.type === 'FACEBOOK_UNLINKED').length).toBe(0);
+  });
+
+  it('signUp dispatch SIGNED_UP if success', async () => {
+    const store = mockStore({});
+    const setSpy = jest.fn();
+    const saveSpy = jest.fn(() => Promise.resolve());
+    Parse.User.prototype.save.mockImplementationOnce(() => Promise.resolve());
+    await store.dispatch(loginAction.signUp('a@a.a', '1'));
+    expect(store.getActions().filter(action => action && action.type === 'SIGNED_UP').length).toBe(1);
+  });
+
+  it('signUp dont dispatch SIGNED_UP if fail', async () => {
+    const store = mockStore({});
+    const setSpy = jest.fn();
+    const saveSpy = jest.fn(() => Promise.resolve());
+    const error = jest.fn();
+    Parse.User.prototype.save.mockImplementationOnce(() => Promise.reject(new Error('something error')));
+    await store.dispatch(loginAction.signUp('a@a.a', '1')).catch(error);
+    expect(error).toBeCalled();
+    expect(store.getActions().filter(action => action && action.type === 'SIGNED_UP').length).toBe(0);
   });
 });
