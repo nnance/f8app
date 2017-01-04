@@ -10,7 +10,7 @@ export default ({goToLogin, successText}) => (
     style={styles.container}
     source={require('./img/email-bg.png')}>
     <View style={styles.inputSession}>
-      <Text style={styles.successText} onPress={() => goToLogin()}>{successText}, go back to login</Text>
+      <Text style={styles.successText} onPress={goToLogin}>{successText}, go back to login</Text>
     </View>
   </Image>
 );

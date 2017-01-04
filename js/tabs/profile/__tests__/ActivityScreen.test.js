@@ -21,7 +21,7 @@ describe('ActivityScreen', () => {
     });
 
     it('render read activity', () => {
-        const tree = renderer.create(<ActivityRow {...mockActivity[1]}/>);
+        const tree = renderer.create(<ActivityRow {...mockActivity[2]}/>);
         expect(tree.toJSON()).toMatchSnapshot();
     });
   });

@@ -1,9 +1,13 @@
+jest.mock('BackAndroid');
+
 import React from 'react';
+import renderer from 'react-test-renderer';
 import {shallow} from 'enzyme';
 import toJSON from 'enzyme-to-json';
 
 import {
-  View
+  View,
+  BackAndroid
 } from 'react-native';
 
 jest.mock('../../actions');
@@ -17,6 +21,28 @@ describe('LoginScreen', () => {
     expect(toJSON(tree)).toMatchSnapshot();
   });
 
+  it('renderTitle', () => {
+    const dump = shallow(<LoginScreenComponent/>);
+    const tree = renderer.create(dump.instance().renderTitle({page: 'signup'}));
+    expect(tree.toJSON()).toMatchSnapshot();
+  });
+
+  it('renderLeftButton', () => {
+    const dump = shallow(<LoginScreenComponent/>);
+    let tree = renderer.create(dump.instance().renderLeftButton({page: 'signup'}));
+    expect(tree.toJSON()).toMatchSnapshot();
+    tree = renderer.create(<View>{dump.instance().renderLeftButton({page: 'index'})}</View>);
+    expect(tree.toJSON()).toMatchSnapshot();
+  });
+
+  it('renderRightButton', () => {
+    const dump = shallow(<LoginScreenComponent/>);
+    let tree = renderer.create(<View>{dump.instance().renderRightButton({page: 'signup'})}</View>);
+    expect(tree.toJSON()).toMatchSnapshot();
+    tree = renderer.create(<View>{dump.instance().renderRightButton({page: 'index'})}</View>);
+    expect(tree.toJSON()).toMatchSnapshot();
+  });
+
   it('renderScene', () => {
     const dump = shallow(<LoginScreenComponent/>).instance();
     const routes = [{page: 'index'}, {page: 'email-login'}, {page: 'signup'}, {page: 'forgotPassword'}, {page: 'success', payload: 'test'}, {}];
@@ -24,6 +50,31 @@ describe('LoginScreen', () => {
       const tree = shallow(<View>{dump.renderScene(route)}</View>);
       expect(toJSON(tree)).toMatchSnapshot();
     });
+  });
+
+  it('listen to BackAndroid for handleBackButton', () => {
+    const wrapper = shallow(<LoginScreenComponent/>);
+    wrapper.instance().componentDidMount();
+    expect(BackAndroid.addEventListener).toBeCalledWith('hardwareBackPress', wrapper.instance().goBack);
+    wrapper.instance().componentWillUnmount();
+    expect(BackAndroid.removeEventListener).toBeCalledWith('hardwareBackPress', wrapper.instance().goBack);
+  });
+
+  it('addBackButtonListener alwayFalse', () => {
+    const addSpy = jest.fn();
+    const removeSpy = jest.fn();
+    const wrapper = shallow(<LoginScreenComponent addBackButtonListener={addSpy} removeBackButtonListener={removeSpy}/>);
+    wrapper.instance().componentDidMount();
+    expect(addSpy).toBeCalledWith(wrapper.instance().alwaysFalse);
+    wrapper.instance().componentWillUnmount();
+    expect(removeSpy).toBeCalledWith(wrapper.instance().alwaysFalse);
+  });
+
+  it('auto call onExit if nextProps is loggedIn', () => {
+    const spy = jest.fn();
+    const wrapper = shallow(<LoginScreenComponent onExit={spy}/>);
+    wrapper.instance().componentWillReceiveProps({isLoggedIn: true});
+    expect(spy).toBeCalled();
   });
 
   it('goBack will pop navigator', () => {

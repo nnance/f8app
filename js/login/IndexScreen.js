@@ -44,14 +44,14 @@ var { connect } = require('react-redux');
 class IndexScreen extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      anim: new Animated.Value(0),
-    };
+    // this.state = {
+    //   anim: new Animated.Value(0),
+    // };
   }
 
   componentDidMount() {
     StatusBar && StatusBar.setBarStyle('default');
-    Animated.timing(this.state.anim, {toValue: 3000, duration: 3000}).start();
+    // Animated.timing(this.state.anim, {toValue: 3000, duration: 3000}).start();
   }
 
   render() {
@@ -76,34 +76,16 @@ class IndexScreen extends React.Component {
           <ClogiiButton
             type="bordered"
             style={styles.button}
-            onPress={() => this.props.pushPage('email-login')}
+            onPress={this.props.pushPage.bind(null, 'email-login')}
             caption="ลงชื่อเข้าใช้ผ่านอีเมล"
           />
-          <DashButtonWithContainer caption="สร้างบัญชีใหม่" onPress={() => this.props.pushPage('signup')}/>
+        <DashButtonWithContainer caption="สร้างบัญชีใหม่" onPress={this.props.pushPage.bind(null, 'signup')}/>
         </View>
         <View style={{flex: 1, alignItems: 'center', justifyContent: 'flex-end'}}>
             <Text style={{color: F8Colors.fadedLightText, fontSize: 10}}>By signing up you agree to our Terms & Privacy policy</Text>
         </View>
       </Image>
     );
-  }
-
-  fadeIn(delay, from = 0) {
-    const {anim} = this.state;
-    return {
-      opacity: anim.interpolate({
-        inputRange: [delay, Math.min(delay + 500, 3000)],
-        outputRange: [0, 1],
-        extrapolate: 'clamp',
-      }),
-      transform: [{
-        translateY: anim.interpolate({
-          inputRange: [delay, Math.min(delay + 500, 3000)],
-          outputRange: [from, 0],
-          extrapolate: 'clamp',
-        }),
-      }],
-    };
   }
 }
 

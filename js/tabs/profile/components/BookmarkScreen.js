@@ -56,7 +56,7 @@ class BookmarkScreen extends React.Component {
   render() {
     return (<View style={commonStyles.listViewContainer}>
         <NavBar title="Bookmark"
-          onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}
+          onLeftPress={this.props.onBackPress}
           />
         <PureListView
           data={this.props.bookmark.map(

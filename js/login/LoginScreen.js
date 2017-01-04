@@ -28,19 +28,18 @@ class LoginScreen extends React.Component {
     this.pushPage = this.pushPage.bind(this);
     this.goBack = this.goBack.bind(this);
     this.renderScene = this.renderScene.bind(this);
-    this.handleBackButton = this.goBack.bind(this);
     this.logInWithFacebook = this.logInWithFacebook.bind(this);
   }
 
   componentDidMount() {
-    BackAndroid.addEventListener('hardwareBackPress', this.handleBackButton);
+    BackAndroid.addEventListener('hardwareBackPress', this.goBack);
     if (this.props.addBackButtonListener) {
       this.props.addBackButtonListener(this.alwaysFalse);
     }
   }
 
   componentWillUnmount() {
-    BackAndroid.removeEventListener('hardwareBackPress', this.handleBackButton);
+    BackAndroid.removeEventListener('hardwareBackPress', this.goBack);
     if (this.props.removeBackButtonListener) {
       this.props.removeBackButtonListener(this.alwaysFalse);
     }
@@ -62,43 +61,49 @@ class LoginScreen extends React.Component {
          <Navigator.NavigationBar
            navigationStyles={Navigator.NavigationBar.StylesIOS}
            routeMapper={{
-             LeftButton: (route, navigator, index, navState) => {
-               if (route.page === 'index'){
-                 return null;
-               }
-               return (
-                 <TouchableOpacity onPress={this.goBack}>
-                  <Text style={styles.backButton}>
-                    {'<'}
-                  </Text>
-                 </TouchableOpacity>
-               );
-             },
-             RightButton: (route, navigator, index, navState) => {
-               if (route.page !== 'index'){
-                 return null;
-               }
-               return (
-                 <TouchableOpacity
-                   accessibilityLabel="Skip login"
-                   accessibilityTraits="button"
-                   style={styles.skip}
-                   onPress={() => this.props.skipLogin()}>
-                   <Image
-                     source={require('./img/x.png')}
-                   />
-                 </TouchableOpacity>
-               );
-             },
-             Title: (route, navigator, index, navState) => {
-               let title = '';
-               title = titles[route.page];
-               return (<View style={{flex: 1, alignItems: 'center'}}><Text style={styles.titleNavBar}>{title}</Text></View>);
-             }
+             LeftButton: this.renderLeftButton.bind(this),
+             RightButton: this.renderRightButton.bind(this),
+             Title: this.renderTitle.bind(this)
            }}
          />
         }
       />
+    );
+  }
+
+  renderTitle(route, navigator, index, navState) {
+    let title = '';
+    title = titles[route.page];
+    return (<View style={{flex: 1, alignItems: 'center'}}><Text style={styles.titleNavBar}>{title}</Text></View>);
+  }
+
+  renderLeftButton(route, navigator, index, navState) {
+    if (route.page === 'index'){
+      return null;
+    }
+    return (
+      <TouchableOpacity onPress={this.goBack}>
+       <Text style={styles.backButton}>
+         {'<'}
+       </Text>
+      </TouchableOpacity>
+    );
+  }
+
+  renderRightButton(route, navigator, index, navState) {
+    if (route.page !== 'index'){
+      return null;
+    }
+    return (
+      <TouchableOpacity
+        accessibilityLabel="Skip login"
+        accessibilityTraits="button"
+        style={styles.skip}
+        onPress={() => this.props.skipLogin()}>
+        <Image
+          source={require('./img/x.png')}
+        />
+      </TouchableOpacity>
     );
   }
 

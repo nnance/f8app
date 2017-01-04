@@ -177,7 +177,7 @@ exports[`ActivityScreen ActivityRow render read activity 1`] = `
             "marginLeft": 5,
           }
         }>
-        liked
+        read
          funny clog
       </Text>
     </View>
@@ -192,7 +192,7 @@ exports[`ActivityScreen ActivityRow render read activity 1`] = `
           "fontSize": 10,
         }
       }>
-      2 months ago
+      a year ago
     </Text>
   </View>
   <View
@@ -204,7 +204,7 @@ exports[`ActivityScreen ActivityRow render read activity 1`] = `
     <Image
       source={
         Object {
-          "uri": "http://3.bp.blogspot.com/-zW6wqY_1Me0/VYvJMOV4mcI/AAAAAAAAD-4/mB_AxhFoJH4/s1600/178491main_sig07-009-516.jpg",
+          "uri": "http://www.fujisan.ne.jp/fit/th/images/ohishikouen430.jpg",
         }
       }
       style={

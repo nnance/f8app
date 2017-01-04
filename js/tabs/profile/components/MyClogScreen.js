@@ -42,7 +42,7 @@ const MyClogRow = (props) => (<TouchableOpacity style={styles.rowContainer}>
 class MyClogScreen extends React.Component {
   render() {
     return (<View style={commonStyles.listViewContainer}>
-      <NavBar title="Clog ของฉัน" onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}/>
+      <NavBar title="Clog ของฉัน" onLeftPress={this.props.onBackPress}/>
       <PureListView
         data={this.props.myClogs}
         renderRow={(clog) => {
