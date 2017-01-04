@@ -214,7 +214,7 @@ exports[`IndexScreen render 1`] = `
         }
       }
       type="bordered" />
-    <Component
+    <DashButtonWithContainer
       caption="สร้างบัญชีใหม่"
       onPress={[Function]} />
   </View>
