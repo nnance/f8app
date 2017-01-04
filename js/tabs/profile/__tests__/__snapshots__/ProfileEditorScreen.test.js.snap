@@ -1,0 +1,11 @@
+exports[`ProfileEditorScreen OKButton 1`] = `
+<Image
+  source={1}
+  style={
+    Object {
+      "height": 25,
+      "resizeMode": "contain",
+      "width": 25,
+    }
+  } />
+`;

@@ -1,8 +1,10 @@
 import React from 'react';
+import renderer from 'react-test-renderer';
 import {shallow} from 'enzyme';
 
 import {
-  Switch
+  Switch,
+  TextInput
 } from 'react-native';
 
 jest.mock('react-native-picker');
@@ -11,7 +13,7 @@ jest.mock('react-native-image-picker');
 import ImagePicker from 'react-native-image-picker';
 
 import NavBar from '../components/NavBar';
-import {Component as ProfileEditorScreenComponent} from '../containers/ProfileEditorScreen';
+import {Component as ProfileEditorScreenComponent, OKButton} from '../containers/ProfileEditorScreen';
 
 describe('ProfileEditorScreen', () => {
   const expectImage = {image: 'expect.png'};
@@ -23,10 +25,25 @@ describe('ProfileEditorScreen', () => {
     return Promise.resolve();
   }
 
+  it('pushPage', () => {
+    const spy = jest.fn();
+    const wrapper = shallow(<ProfileEditorScreenComponent navigator={{
+      push: spy
+    }}/>);
+    wrapper.instance().pushPage('test');
+    expect(spy).toBeCalledWith({page: 'test'});
+  });
+
+  it('OKButton', () => {
+    const tree = renderer.create(<OKButton/>);
+    expect(tree.toJSON()).toMatchSnapshot();
+  });
+
   it('call api changePublicProfile', async () => {
     let _resolve;
     let changePublicProfile = jest.fn(() => new Promise(resolve => _resolve = resolve));
     const wrapper = shallow(<ProfileEditorScreenComponent changePublicProfile={changePublicProfile}/>);
+    wrapper.find(TextInput).simulate('changeText', 'AAA');
     expect(wrapper.state().savingProfile).toBe(false);
     const task = wrapper.find(NavBar).props().onRightPress();
     expect(wrapper.state().savingProfile).toBe(true);
@@ -34,6 +51,7 @@ describe('ProfileEditorScreen', () => {
     await task;
     expect(wrapper.state().savingProfile).toBe(false);
     expect(changePublicProfile).toBeCalled();
+    expect(changePublicProfile.mock.calls[0][0]).toBe('AAA');
   });
 
   it('call onBackPress if changed profile', async () => {
@@ -80,13 +98,33 @@ describe('ProfileEditorScreen', () => {
     expect(wrapper.state().birthDayDate.getTime()).toBe(expectDate.getTime());
   });
 
-  it('open SexPicker', async () => {
+  it('open SexPicker with male', async () => {
+    const wrapper = shallow(<ProfileEditorScreenComponent/>);
+    const Picker = require('react-native-picker').default;
+    Picker.init.mockImplementationOnce((opts) => opts.onPickerConfirm(['ชาย']));
+    await wrapper.find('[name="sexInput"]').props().onPress();
+    expect(Picker.init).toBeCalled();
+    expect(wrapper.state().sex).toBe('M');
+    Picker.init.mockClear();
+  });
+
+  it('open SexPicker with female', async () => {
     const wrapper = shallow(<ProfileEditorScreenComponent/>);
     const Picker = require('react-native-picker').default;
     Picker.init.mockImplementationOnce((opts) => opts.onPickerConfirm(['หญิง']));
     await wrapper.find('[name="sexInput"]').props().onPress();
     expect(Picker.init).toBeCalled();
     expect(wrapper.state().sex).toBe('F');
+    Picker.init.mockClear();
+  });
+
+  it('open SexPicker with unknow', async () => {
+    const wrapper = shallow(<ProfileEditorScreenComponent/>);
+    const Picker = require('react-native-picker').default;
+    Picker.init.mockImplementationOnce((opts) => opts.onPickerConfirm(['ไม่ระบุ']));
+    await wrapper.find('[name="sexInput"]').props().onPress();
+    expect(Picker.init).toBeCalled();
+    expect(wrapper.state().sex).toBe(null);
     Picker.init.mockClear();
   });
 

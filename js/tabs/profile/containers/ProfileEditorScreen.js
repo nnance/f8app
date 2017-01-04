@@ -25,6 +25,15 @@ import ModalSpinner from '../components/ModalSpinner';
 
 import {connect} from 'react-redux';
 
+export const OKButton = () => (<Image
+      source={require('../img/icons/ok.png')}
+      style={{
+        height: 25,
+        width: 25,
+        resizeMode: 'contain'
+      }}
+    />);
+
 class ProfileEditorScreen extends React.Component {
   constructor(...args) {
     super(...args);
@@ -45,17 +54,8 @@ class ProfileEditorScreen extends React.Component {
       <DatePickerDialog ref="datePicker"/>
       <NavBar
         title="แก้ไขข้อมูล"
-        renderRightMenu={() => {
-          return (<Image
-                source={require('../img/icons/ok.png')}
-                style={{
-                  height: 25,
-                  width: 25,
-                  resizeMode: 'contain'
-                }}
-              />);
-        }}
-        onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}
+        renderRightMenu={OKButton}
+        onLeftPress={this.props.onBackPress}
         onRightPress={() => {
           this.setState({
             savingProfile: true
@@ -66,8 +66,6 @@ class ProfileEditorScreen extends React.Component {
                 savingProfile: false
               });
               this.props.onBackPress && this.props.onBackPress();
-            })
-            .catch(error => {
             });
         }}
         />
@@ -121,21 +119,25 @@ class ProfileEditorScreen extends React.Component {
 
 
         <View style={styles.editorBox2}>
-          <TouchableOpacity style={styles.row2} onPress={() => this.onToggleFacebookLink()}>
+          <TouchableOpacity style={styles.row2} onPress={this.onToggleFacebookLink.bind(this)}>
             <Text style={styles.label2}>เชื่อมต่อ Facebook</Text>
             <View>
-              <Switch value={this.props.facebookLinked} onValueChange={() => this.onToggleFacebookLink()}/>
+              <Switch value={this.props.facebookLinked} onValueChange={this.onToggleFacebookLink.bind(this)}/>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.row2} onPress={() => this.props.navigator.push({page: 'change-email'})}>
+          <TouchableOpacity style={styles.row2} onPress={this.pushPage.bind(this, 'change-email')}>
             <Text style={styles.label2}>เปลี่ยน Email</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.row2} onPress={() => this.props.navigator.push({page: 'change-password'})}>
+          <TouchableOpacity style={styles.row2} onPress={this.pushPage.bind(this, 'change-password')}>
             <Text style={styles.label2}>เปลี่ยน Password</Text>
           </TouchableOpacity>
         </View>
       </View>
     </View>);
+  }
+
+  pushPage(page) {
+    this.props.navigator.push({page});
   }
 
   onToggleFacebookLink() {
@@ -161,16 +163,7 @@ class ProfileEditorScreen extends React.Component {
   openProfilePicker() {
     return new Promise((resolve, reject) => {
       ImagePicker.showImagePicker(response => {
-        if (response.didCancel) {
-          console.log('User cancelled image picker');
-        }
-        else if (response.error) {
-          console.log('ImagePicker Error: ', response.error);
-        }
-        else if (response.customButton) {
-          console.log('User tapped custom button: ', response.customButton);
-        }
-        else {
+        if(!response.error && !response.didCancel) {
           this.setState({
             changedProfilePicture: response
           });
@@ -183,16 +176,7 @@ class ProfileEditorScreen extends React.Component {
   openProfileCoverPicker() {
     return new Promise((resolve, reject) => {
       ImagePicker.showImagePicker(response => {
-        if (response.didCancel) {
-          console.log('User cancelled image picker');
-        }
-        else if (response.error) {
-          console.log('ImagePicker Error: ', response.error);
-        }
-        else if (response.customButton) {
-          console.log('User tapped custom button: ', response.customButton);
-        }
-        else {
+        if(!response.error && !response.didCancel) {
           this.setState({
             changedProfileCover: response
           });
