@@ -20,6 +20,7 @@
  * DEALINGS IN THE SOFTWARE
  */
 
+import 'dotenv/config';
 import path from 'path';
 import express from 'express';
 import {apolloServer} from 'apollo-server';
