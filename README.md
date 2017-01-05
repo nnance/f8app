@@ -1,20 +1,12 @@
 [![Stories in Ready](https://badge.waffle.io/digithun/clogii-mobile.png?label=ready&title=Ready)](https://waffle.io/digithun/clogii-mobile)
-# F8 App 2016 - Apollo
-
-This is a refactored version of the official [F8](https://fbf8.com/) app of 2016, that uses the [Apollo Stack](http://www.apollostack.com/). As part of the refactor I have made the following changes:
-
-* Removed the use of Relay on both the server and client.
-* Replaced the Parse client with the Apollo client for all the data loading.
-* Fully implemented all data requirements in the GraphQL server.
-
-The implementation found in the master branch leaves the application architecture intact with the use of react-redux.  There is a version of the app that uses react-apollo in the react-apollo-connect branch which is a WIP.
+# Clogii
 
 <img src=".github/screenshot-app@2x.png" width="800">
 
 ## Requirements
 
 1. [React Native](http://facebook.github.io/react-native/docs/getting-started.html) (follow iOS and Android guides)
-  - Xcode 7.3 +
+  - Xcode 8.1 +
 2. [CocoaPods](http://cocoapods.org) (only for iOS)
   - Version 1.0+ recommended (`gem install cocoapods --pre`)
 3. [MongoDB](https://www.mongodb.org/downloads) (needed to run Parse Server locally)
@@ -24,8 +16,8 @@ The implementation found in the master branch leaves the application architectur
 1. **Clone the repo**
 
   ```
-  $ git clone https://github.com/nnance/f8app-apollo
-  $ cd f8app-apollo
+  $ git clone https://github.com/digithun/clogii-mobile.git
+  $ cd clogii-mobile
   ```
 
 2. **Install dependencies** (npm v3+):
@@ -44,17 +36,10 @@ The implementation found in the master branch leaves the application architectur
   NOTE: if installed with [Homebrew](http://brew.sh/) run `brew info mongo` and
   check out the Caveats section.
 
-  If you prefer to use an external MongoDB server, set `DATABASE_URI`:
-
-  ```
-  $ export DATABASE_URI=mongodb://example-mongo-hosting.com:1337/my-awesome-database
-  ```
-
-4. **Setup Mailgun:**
-  ```
-  $ export MAILGUN_DOMAIN=mailgun.domain
-  $ export MAILGUN_KEY=mailgunkey
-  ```
+4. **Setup Environment:**
+  
+  1. copy file .env.exmaple to a .env
+  2. edit .env with your configuration
 
 5. **Start Parse/GraphQL servers:**
 
