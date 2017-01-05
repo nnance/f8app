@@ -1,4 +1,4 @@
-rootProject.name = 'F8v2'
+rootProject.name = 'Clogii'
 
 include ':app'
 include ':react-native-image-picker'

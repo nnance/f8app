@@ -5,19 +5,20 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		002BD47E1CA7399D00E80F7A /* F8Scrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 002BD47D1CA7399D00E80F7A /* F8Scrolling.m */; };
 		0086BC3A1C90DDE500EC8D24 /* Splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0086BC391C90DDE500EC8D24 /* Splash@2x.png */; };
-		0095423B1C175AB600433EAF /* ReferenceProxy in Frameworks */ = {isa = PBXBuildFile; fileRef = 0095423A1C175AA200433EAF /* libBVLinearGradient.a */; };
+		0095423B1C175AB600433EAF /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0095423A1C175AA200433EAF /* libBVLinearGradient.a */; };
 		00AE9D3C1C44464400514148 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AE9D3B1C44464400514148 /* Default-568h@2x.png */; };
 		00D006A71CA9D08A001C592C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00D006A61CA9D08A001C592C /* Settings.bundle */; };
-		10FCE7A9A52226D9590B3007 /* libPods-F8v2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD29199FBC152A9490D954E4 /* libPods-F8v2.a */; };
+		10FCE7A9A52226D9590B3007 /* libPods-Clogii.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD29199FBC152A9490D954E4 /* libPods-Clogii.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		28AEED49A75C4478871634FA /* libRCTBEEPickerManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 046AF6D457DA49F6B40A9412 /* libRCTBEEPickerManager.a */; };
 		1562C3DCBCA3483FBCD53FB7 /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BC4BB28AB1F4897843DBDB2 /* libRNImagePicker.a */; };
+		28AEED49A75C4478871634FA /* libRCTBEEPickerManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 046AF6D457DA49F6B40A9412 /* libRCTBEEPickerManager.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +34,21 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = F8v2;
+			remoteInfo = Clogii;
+		};
+		B09D600B1E1E6B2F00DFE92F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E6F25AB81F34B7F80B6BB39 /* RNImagePicker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 014A3B5C1C6CF33500B6D375;
+			remoteInfo = RNImagePicker;
+		};
+		B09D60101E1E6B2F00DFE92F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ACF723E9CFD9499BAE33EDCD /* RCTBEEPickerManager.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 17D41E551D7EE0CA0031415E;
+			remoteInfo = RCTBEEPickerManager;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -44,22 +59,22 @@
 		009542351C175AA200433EAF /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
 		00AE9D3B1C44464400514148 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		00D006A61CA9D08A001C592C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* F8v2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = F8v2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* ClogiiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClogiiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* F8v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = F8v2.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = F8v2/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = F8v2/AppDelegate.m; sourceTree = "<group>"; };
+		046AF6D457DA49F6B40A9412 /* libRCTBEEPickerManager.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTBEEPickerManager.a; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* Clogii.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clogii.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Clogii/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Clogii/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = F8v2/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = F8v2/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = F8v2/main.m; sourceTree = "<group>"; };
-		BD29199FBC152A9490D954E4 /* libPods-F8v2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-F8v2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D4D7F1A2D8B85D13C8DF9631 /* Pods-F8v2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-F8v2.release.xcconfig"; path = "Pods/Target Support Files/Pods-F8v2/Pods-F8v2.release.xcconfig"; sourceTree = "<group>"; };
-		DF8A618D93132F5F2173866F /* Pods-F8v2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-F8v2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-F8v2/Pods-F8v2.debug.xcconfig"; sourceTree = "<group>"; };
-		ACF723E9CFD9499BAE33EDCD /* RCTBEEPickerManager.xcodeproj */ = {isa = PBXFileReference; name = "RCTBEEPickerManager.xcodeproj"; path = "../node_modules/react-native-picker/ios/RCTBEEPickerManager.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		046AF6D457DA49F6B40A9412 /* libRCTBEEPickerManager.a */ = {isa = PBXFileReference; name = "libRCTBEEPickerManager.a"; path = "libRCTBEEPickerManager.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
-		4E6F25AB81F34B7F80B6BB39 /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; name = "RNImagePicker.xcodeproj"; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		8BC4BB28AB1F4897843DBDB2 /* libRNImagePicker.a */ = {isa = PBXFileReference; name = "libRNImagePicker.a"; path = "libRNImagePicker.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Clogii/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Clogii/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Clogii/main.m; sourceTree = "<group>"; };
+		4E6F25AB81F34B7F80B6BB39 /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNImagePicker.xcodeproj; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; };
+		8BC4BB28AB1F4897843DBDB2 /* libRNImagePicker.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNImagePicker.a; sourceTree = "<group>"; };
+		ACF723E9CFD9499BAE33EDCD /* RCTBEEPickerManager.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTBEEPickerManager.xcodeproj; path = "../node_modules/react-native-picker/ios/RCTBEEPickerManager.xcodeproj"; sourceTree = "<group>"; };
+		BD29199FBC152A9490D954E4 /* libPods-Clogii.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Clogii.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4D7F1A2D8B85D13C8DF9631 /* Pods-Clogii.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clogii.release.xcconfig"; path = "Pods/Target Support Files/Pods-Clogii/Pods-Clogii.release.xcconfig"; sourceTree = "<group>"; };
+		DF8A618D93132F5F2173866F /* Pods-Clogii.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clogii.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clogii/Pods-Clogii.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,8 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0095423B1C175AB600433EAF /* ReferenceProxy in Frameworks */,
-				10FCE7A9A52226D9590B3007 /* libPods-F8v2.a in Frameworks */,
+				0095423B1C175AB600433EAF /* libBVLinearGradient.a in Frameworks */,
+				10FCE7A9A52226D9590B3007 /* libPods-Clogii.a in Frameworks */,
 				28AEED49A75C4478871634FA /* libRCTBEEPickerManager.a in Frameworks */,
 				1562C3DCBCA3483FBCD53FB7 /* libRNImagePicker.a in Frameworks */,
 			);
@@ -92,12 +107,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		00E356EF1AD99517003FC87E /* F8v2Tests */ = {
+		00E356EF1AD99517003FC87E /* ClogiiTests */ = {
 			isa = PBXGroup;
 			children = (
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = F8v2Tests;
+			path = ClogiiTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -108,7 +123,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* F8v2 */ = {
+		13B07FAE1A68108700A75B9A /* Clogii */ = {
 			isa = PBXGroup;
 			children = (
 				0086BC391C90DDE500EC8D24 /* Splash@2x.png */,
@@ -123,14 +138,14 @@
 				002BD47D1CA7399D00E80F7A /* F8Scrolling.m */,
 				00D006A61CA9D08A001C592C /* Settings.bundle */,
 			);
-			name = F8v2;
+			name = Clogii;
 			sourceTree = "<group>";
 		};
 		2C72BEDAAAB979D39F005F07 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DF8A618D93132F5F2173866F /* Pods-F8v2.debug.xcconfig */,
-				D4D7F1A2D8B85D13C8DF9631 /* Pods-F8v2.release.xcconfig */,
+				DF8A618D93132F5F2173866F /* Pods-Clogii.debug.xcconfig */,
+				D4D7F1A2D8B85D13C8DF9631 /* Pods-Clogii.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -138,7 +153,7 @@
 		418C1C4535783F0326F159D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BD29199FBC152A9490D954E4 /* libPods-F8v2.a */,
+				BD29199FBC152A9490D954E4 /* libPods-Clogii.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -156,9 +171,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* F8v2 */,
+				13B07FAE1A68108700A75B9A /* Clogii */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* F8v2Tests */,
+				00E356EF1AD99517003FC87E /* ClogiiTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2C72BEDAAAB979D39F005F07 /* Pods */,
 				418C1C4535783F0326F159D6 /* Frameworks */,
@@ -170,8 +185,24 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* F8v2.app */,
-				00E356EE1AD99517003FC87E /* F8v2Tests.xctest */,
+				13B07F961A680F5B00A75B9A /* Clogii.app */,
+				00E356EE1AD99517003FC87E /* ClogiiTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B09D60071E1E6B2F00DFE92F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B09D600C1E1E6B2F00DFE92F /* libRNImagePicker.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B09D600D1E1E6B2F00DFE92F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B09D60111E1E6B2F00DFE92F /* libRCTBEEPickerManager.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,9 +210,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* F8v2Tests */ = {
+		00E356ED1AD99517003FC87E /* ClogiiTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "F8v2Tests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ClogiiTests" */;
 			buildPhases = (
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
@@ -192,14 +223,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = F8v2Tests;
-			productName = F8v2Tests;
-			productReference = 00E356EE1AD99517003FC87E /* F8v2Tests.xctest */;
+			name = ClogiiTests;
+			productName = ClogiiTests;
+			productReference = 00E356EE1AD99517003FC87E /* ClogiiTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* F8v2 */ = {
+		13B07F861A680F5B00A75B9A /* Clogii */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "F8v2" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Clogii" */;
 			buildPhases = (
 				EBA8239834732D9ADDC4F9B3 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
@@ -213,9 +244,9 @@
 			);
 			dependencies = (
 			);
-			name = F8v2;
+			name = Clogii;
 			productName = "Hello World";
-			productReference = 13B07F961A680F5B00A75B9A /* F8v2.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* Clogii.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -241,7 +272,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "F8v2" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Clogii" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -257,11 +288,19 @@
 					ProductGroup = 009542361C175AA200433EAF /* Products */;
 					ProjectRef = 009542351C175AA200433EAF /* BVLinearGradient.xcodeproj */;
 				},
+				{
+					ProductGroup = B09D600D1E1E6B2F00DFE92F /* Products */;
+					ProjectRef = ACF723E9CFD9499BAE33EDCD /* RCTBEEPickerManager.xcodeproj */;
+				},
+				{
+					ProductGroup = B09D60071E1E6B2F00DFE92F /* Products */;
+					ProjectRef = 4E6F25AB81F34B7F80B6BB39 /* RNImagePicker.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* F8v2 */,
-				00E356ED1AD99517003FC87E /* F8v2Tests */,
+				13B07F861A680F5B00A75B9A /* Clogii */,
+				00E356ED1AD99517003FC87E /* ClogiiTests */,
 			);
 		};
 /* End PBXProject section */
@@ -272,6 +311,20 @@
 			fileType = archive.ar;
 			path = libBVLinearGradient.a;
 			remoteRef = 009542391C175AA200433EAF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B09D600C1E1E6B2F00DFE92F /* libRNImagePicker.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNImagePicker.a;
+			remoteRef = B09D600B1E1E6B2F00DFE92F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B09D60111E1E6B2F00DFE92F /* libRCTBEEPickerManager.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTBEEPickerManager.a;
+			remoteRef = B09D60101E1E6B2F00DFE92F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -325,7 +378,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-F8v2/Pods-F8v2-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Clogii/Pods-Clogii-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D91C472E75305C11CB63090A /* [CP] Copy Pods Resources */ = {
@@ -340,7 +393,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-F8v2/Pods-F8v2-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Clogii/Pods-Clogii-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EBA8239834732D9ADDC4F9B3 /* [CP] Check Pods Manifest.lock */ = {
@@ -383,7 +436,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* F8v2 */;
+			target = 13B07F861A680F5B00A75B9A /* Clogii */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -395,7 +448,7 @@
 				13B07FB21A68108700A75B9A /* Base */,
 			);
 			name = LaunchScreen.xib;
-			path = F8v2;
+			path = Clogii;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -413,16 +466,16 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = F8v2Tests/Info.plist;
+				INFOPLIST_FILE = ClogiiTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/F8v2.app/F8v2";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Clogii.app/Clogii";
 			};
 			name = Debug;
 		};
@@ -435,22 +488,22 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = F8v2Tests/Info.plist;
+				INFOPLIST_FILE = ClogiiTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/F8v2.app/F8v2";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Clogii.app/Clogii";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF8A618D93132F5F2173866F /* Pods-F8v2.debug.xcconfig */;
+			baseConfigurationReference = DF8A618D93132F5F2173866F /* Pods-Clogii.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -463,20 +516,20 @@
 					"$(SRCROOT)/../node_modules/react-native-picker/ios/RCTBEEPickerManager",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 				);
-				INFOPLIST_FILE = F8v2/Info.plist;
+				INFOPLIST_FILE = Clogii/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"$(inherited)",
 				);
-				PRODUCT_NAME = F8v2;
+				PRODUCT_NAME = Clogii;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4D7F1A2D8B85D13C8DF9631 /* Pods-F8v2.release.xcconfig */;
+			baseConfigurationReference = D4D7F1A2D8B85D13C8DF9631 /* Pods-Clogii.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -488,13 +541,13 @@
 					"$(SRCROOT)/../node_modules/react-native-picker/ios/RCTBEEPickerManager",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 				);
-				INFOPLIST_FILE = F8v2/Info.plist;
+				INFOPLIST_FILE = Clogii/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"$(inherited)",
 				);
-				PRODUCT_NAME = F8v2;
+				PRODUCT_NAME = Clogii;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -592,7 +645,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "F8v2Tests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ClogiiTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -601,7 +654,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "F8v2" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Clogii" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -610,7 +663,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "F8v2" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Clogii" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

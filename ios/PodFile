@@ -1,6 +1,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-target 'F8v2' do
+target 'Clogii' do
   pod 'React', :subspecs => [
     'Core',
     'RCTActionSheet',
