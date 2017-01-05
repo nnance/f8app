@@ -1,10 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.facebook.f8">
+    package="com.clogii.clog">
     <permission
-        android:name="com.facebook.f8.permission.C2D_MESSAGE"
+        android:name="com.clogii.clog.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
-    <uses-permission android:name="com.facebook.f8.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.clogii.clog.permission.C2D_MESSAGE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -31,7 +31,7 @@
         android:permission="com.google.android.c2dm.permission.SEND">
         <intent-filter>
           <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-          <category android:name="com.facebook.f8" />
+          <category android:name="com.clogii.clog" />
         </intent-filter>
       </receiver>
 

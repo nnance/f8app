@@ -20,7 +20,7 @@
  * DEALINGS IN THE SOFTWARE
  */
 
-package com.facebook.f8;
+package com.clogii.clog;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactPackage;

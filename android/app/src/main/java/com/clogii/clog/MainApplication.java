@@ -1,4 +1,4 @@
-package com.facebook.f8;
+package com.clogii.clog;
 
 import android.app.Application;
 import android.util.Log;
