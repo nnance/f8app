@@ -26,7 +26,7 @@
   $ (cd ios; pod install)        # only for iOS version
   ```
 
-5. **Start Parse/GraphQL servers:**
+3. **Start Parse/GraphQL servers:**
 
   ```
   $ npm run up-local
@@ -34,13 +34,13 @@
 
   Make sure everything works by visiting:
 
-  * Parse Dashboard: [http://localhost:1337/dashboard](http://localhost:1337/dashboard)
+  * Parse Dashboard: [http://localhost:4040](http://localhost:4040) (user: foo, password: bar)
   * Graph*i*QL: [http://localhost:1337/graphql](http://localhost:1337/graphql?query=query+%7B%0A++schedule+%7B%0A++++title%0A++++speakers+%7B%0A++++++name%0A++++++title%0A++++%7D%0A++++location+%7B%0A++++++name%0A++++%7D%0A++%7D%0A%7D)
 
   <img src=".github/screenshot-server@2x.png" width="800">
 
 
-6. **Running on Android**:
+4. **Running on Android**:
 
   ```
   $ react-native run-android
@@ -49,7 +49,7 @@
   ```
 
 
-7. **Running on iOS:**
+5. **Running on iOS:**
 
   ```
   $ react-native run-ios
