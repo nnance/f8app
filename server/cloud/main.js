@@ -22,6 +22,10 @@
 
 'use strict';
 
-require('cloud/surveys.js');
-require('cloud/friends.js');
-require('cloud/tests.js');
+// require('cloud/surveys.js');
+// require('cloud/friends.js');
+// require('cloud/tests.js');
+
+require('./friends');
+require('./surveys');
+require('./tests');
