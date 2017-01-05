@@ -334,3 +334,5 @@ var F8QueryType = new GraphQLObjectType({
 export var Schema = new GraphQLSchema({
   query: F8QueryType,
 });
+
+module.exports = Schema;

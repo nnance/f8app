@@ -40,6 +40,9 @@ local.properties
 node_modules/
 npm-debug.log
 
+# Build
+build-server
+
 .env
 
 # test

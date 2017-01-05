@@ -35,7 +35,7 @@ export type Map = {
 };
 
 function reducer(action: Object): Map[] {
-  return action.data.viewer.maps;
+  return action.data.viewer ? action.data.viewer.maps : null;
 }
 
 module.exports = createApolloReducer('LOADED_MAPS', reducer);

@@ -7,7 +7,11 @@
     "dev-web": "next ./web",
     "import-data": "babel-node ./scripts/import-data-from-parse.js",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "compile:server": "babel server --out-dir build-server",
+    "up-local": "npm run compile:server && . ./scripts/up-local",
+    "down-local": ". ./scripts/down-local",
+    "restart-local": "npm run down-local && npm run up-local"
   },
   "dependencies": {
     "apollo-client": "^0.3.12",

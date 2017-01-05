@@ -33,7 +33,7 @@ export type Faq = {
 };
 
 function reducer(action: Object): Faq[] {
-  return action.data.viewer.faqs;
+  return action.data.viewer ? action.data.viewer.faqs : null;
 }
 
 module.exports = createApolloReducer('LOADED_FAQS', reducer);

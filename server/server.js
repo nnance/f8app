@@ -24,7 +24,7 @@ import 'dotenv/config';
 import path from 'path';
 import express from 'express';
 import {apolloServer} from 'apollo-server';
-import {Schema} from './schema/schema';
+import {Schema} from './cloud/graphql/schema';
 import Parse from 'parse/node';
 import {ParseServer} from 'parse-server';
 import ParseDashboard from 'parse-dashboard';
@@ -51,8 +51,8 @@ function getSchema() {
     return Schema;
   }
 
-  delete require.cache[require.resolve('./schema/schema.js')];
-  return require('./schema/schema.js').Schema;
+  delete require.cache[require.resolve('./cloud/graphql/schema.js')];
+  return require('./cloud/graphql/schema.js').Schema;
 }
 
 const server = express();

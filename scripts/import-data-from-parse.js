@@ -22,11 +22,12 @@
 
 import fetch from 'isomorphic-fetch';
 import Parse from 'parse/node';
+import env from '../js/env.js';
 
 const SERVER_PORT = process.env.PORT || 8080;
 
 Parse.initialize('oss-f8-app-2016');
-Parse.serverURL = `http://localhost:${SERVER_PORT}/parse`;
+Parse.serverURL = `${env.serverURL}/parse`;
 
 const BLACKLISTED_KEYS = new Set(['objectId', 'createdAt', 'updatedAt']);
 const ID_MAP = new Map();

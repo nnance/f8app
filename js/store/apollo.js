@@ -1,8 +1,9 @@
 'use strict';
 
 import ApolloClient, { createNetworkInterface } from 'apollo-client';
+import env from '../env';
 
-const networkInterface = createNetworkInterface('http://localhost:8080/graphql');
+const networkInterface = createNetworkInterface(`${env.serverURL}/graphql`);
 
 const client = new ApolloClient({
   networkInterface,
