@@ -25,7 +25,8 @@
 'use strict';
 
 var {applyMiddleware, createStore} = require('redux');
-var thunk = require('redux-thunk');
+import thunk from 'redux-thunk';
+// var thunk = require('redux-thunk');
 var promise = require('./promise');
 var array = require('./array');
 var analytics = require('./analytics');
@@ -42,11 +43,16 @@ var logger = createLogger({
   duration: true,
 });
 
-var createF8Store = applyMiddleware(thunk, promise, array, analytics, logger)(createStore);
+// var createF8Store = applyMiddleware(thunk, promise, array, analytics, logger)(createStore);
 
 function configureStore(onComplete: ?() => void) {
   // TODO(frantic): reconsider usage of redux-persist, maybe add cache breaker
-  const store = autoRehydrate()(createF8Store)(reducers);
+  // const store = autoRehydrate()(createF8Store)(reducers);
+  const store = autoRehydrate()(createStore)(
+    reducers,
+    undefined,
+    applyMiddleware(thunk, promise, array, analytics, logger)
+  );
   persistStore(store, {storage: AsyncStorage}, onComplete);
   if (isDebuggingInChrome) {
     window.store = store;

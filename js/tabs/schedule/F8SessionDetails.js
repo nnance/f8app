@@ -206,7 +206,7 @@ class Section extends React.Component {
             {this.props.title.toUpperCase()}
           </Text>
           <LinearGradient
-            start={[0, 0]} end={[1, 0]}
+            start={{x: 0, y: 0}} end={{x: 1, y: 0}}
             colors={['#E1E1E1', 'white']}
             style={styles.line}
           />

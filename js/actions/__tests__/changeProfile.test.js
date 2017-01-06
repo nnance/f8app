@@ -2,7 +2,7 @@ import * as actions from '../changeProfile';
 
 jest.mock('parse/react-native');
 
-var thunk = require('redux-thunk');
+import thunk from 'redux-thunk';
 var promise = require('../../store/promise');
 var array = require('../../store/array');
 

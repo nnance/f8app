@@ -12,7 +12,7 @@ jest.mock('../schedule', () => ({
   loadFriendsSchedules: () => Promise.resolve()
 }));
 
-var thunk = require('redux-thunk');
+import thunk from 'redux-thunk';
 var promise = require('../../store/promise');
 var array = require('../../store/array');
 

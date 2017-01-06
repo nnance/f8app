@@ -53,7 +53,7 @@ class F8Button extends React.Component {
     if (this.props.type === 'primary' || this.props.type === undefined) {
       content = (
         <LinearGradient
-          start={[0.5, 1]} end={[1, 1]}
+          start={{x: 0.5, y: 1}} end={{x: 1, y: 1}}
           colors={['#6A6AD5', '#6F86D9']}
           style={[styles.button, styles.primaryButton]}>
           {icon}

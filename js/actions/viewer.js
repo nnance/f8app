@@ -1,6 +1,6 @@
 'use strict';
 
-import gql from 'apollo-client/gql';
+import gql from 'graphql-tag';
 import apollo from '../store/apollo';
 
 import type { ThunkAction } from './types';

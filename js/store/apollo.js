@@ -3,7 +3,7 @@
 import ApolloClient, { createNetworkInterface } from 'apollo-client';
 import env from '../env';
 
-const networkInterface = createNetworkInterface(`${env.serverURL}/graphql`);
+const networkInterface = createNetworkInterface({uri: `${env.serverURL}/graphql`});
 
 const client = new ApolloClient({
   networkInterface,

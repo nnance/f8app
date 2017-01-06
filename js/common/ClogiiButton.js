@@ -44,7 +44,7 @@ class ClogiiButton extends React.Component {
     if (this.props.type === 'primary' || this.props.type === undefined) {
       content = (
         <LinearGradient
-          start={[0.5, 0]} end={[0.5, 1]}
+          start={{x: 0.5, y: 0}} end={{x: 0.5, y: 1}}
           colors={['#6084CF', '#304E8A']}
           style={[styles.button, styles.primaryButton]}>
           {icon}

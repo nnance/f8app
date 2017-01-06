@@ -32,7 +32,7 @@ const { switchTab } = require('./navigation');
 
 import type { Action, ThunkAction } from './types';
 
-import gql from 'apollo-client/gql';
+import gql from 'graphql-tag';
 import apollo from '../store/apollo';
 
 import loadApolloQuery from './apollo';
