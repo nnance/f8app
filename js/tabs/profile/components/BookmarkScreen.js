@@ -11,7 +11,7 @@ import {
 import PureListView from '../../../common/PureListView';
 import {mapSource} from '../../../common/utils';
 
-import CircleImageWithCategory from './CircleImageWithCategory';
+import CircleImageWithCategory from '../../../common/CircleImageWithCategory';
 import NavBar from './NavBar';
 import {styles as commonStyles, colors} from '../common';
 

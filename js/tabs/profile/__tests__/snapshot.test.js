@@ -11,18 +11,6 @@ describe('BookmarkScreen', () => {
   });
 });
 
-describe('CircleImageWithCategory', () => {
-  const CircleImageWithCategory = require('../components/CircleImageWithCategory').default;
-  it('render CircleImageWithCategory', () => {
-    const tree = renderer.create(<CircleImageWithCategory
-      source={{uri: 'x.jpg'}}
-      categorySource={{uri: 'x.jpg'}}
-      size={100}
-    />);
-    expect(tree.toJSON()).toMatchSnapshot();
-  });
-});
-
 describe('JellyShopScreen', () => {
   const JellyShopScreen = require('../components/JellyShopScreen').default;
   it('render JellyShopScreen', () => {

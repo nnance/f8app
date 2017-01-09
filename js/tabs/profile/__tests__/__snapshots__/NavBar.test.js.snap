@@ -18,10 +18,13 @@ exports[`<NavBar/> render backButton by default 1`] = `
   }>
   <View
     style={
-      Object {
-        "alignItems": "flex-start",
-        "paddingLeft": 20,
-      }
+      Array [
+        Object {
+          "alignItems": "flex-start",
+          "paddingLeft": 10,
+        },
+        undefined,
+      ]
     }>
     <View
       accessibilityComponentType={undefined}
@@ -54,9 +57,12 @@ exports[`<NavBar/> render backButton by default 1`] = `
   </View>
   <View
     style={
-      Object {
-        "alignItems": "center",
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+        },
+        undefined,
+      ]
     }>
     <View
       style={undefined}>
@@ -75,10 +81,13 @@ exports[`<NavBar/> render backButton by default 1`] = `
   </View>
   <View
     style={
-      Object {
-        "alignItems": "flex-end",
-        "paddingRight": 20,
-      }
+      Array [
+        Object {
+          "alignItems": "flex-end",
+          "paddingRight": 10,
+        },
+        undefined,
+      ]
     }>
     <View
       accessibilityComponentType={undefined}

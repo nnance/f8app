@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CircleImage from '../../../common/CircleImage';
+import CircleImage from './CircleImage';
 import {
   Image,
   View
