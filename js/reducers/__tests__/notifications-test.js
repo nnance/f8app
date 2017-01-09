@@ -32,7 +32,7 @@ const notifications = require('../notifications');
 const emptyAction: any = {};
 const empty = {server: [], push: [], enabled: null, registered: false, seen: {}};
 
-describe('notifications reducer', () => {
+describe.skip('notifications reducer', () => {
 
   it('is empty by default', () => {
     expect(notifications(undefined, emptyAction)).toEqual(empty);

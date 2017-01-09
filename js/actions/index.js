@@ -33,7 +33,7 @@ const filterActions = require('./filter');
 const notificationActions = require('./notifications');
 const configActions = require('./config');
 const surveyActions = require('./surveys');
-const testActions = require('./test');
+const testActions = require('./testActions');
 const installationActions = require('./installation');
 const changeProfile = require('./changeProfile');
 

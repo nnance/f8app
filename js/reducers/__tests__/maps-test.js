@@ -29,7 +29,7 @@ jest.autoMockOff();
 const Parse = require('parse');
 const maps = require('../maps');
 
-describe('maps reducer', () => {
+describe.skip('maps reducer', () => {
 
   it('is empty by default', () => {
     expect(maps(undefined, {})).toEqual([]);
