@@ -5,13 +5,13 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
-  - CodePush (1.16.0):
-    - CodePush/Core (= 1.16.0)
-    - CodePush/SSZipArchive (= 1.16.0)
+  - CodePush (1.16.1):
+    - CodePush/Core (= 1.16.1)
+    - CodePush/SSZipArchive (= 1.16.1)
     - React
-  - CodePush/Core (1.16.0):
+  - CodePush/Core (1.16.1):
     - React
-  - CodePush/SSZipArchive (1.16.0):
+  - CodePush/SSZipArchive (1.16.1):
     - React
   - FBSDKCoreKit (4.17.0):
     - Bolts (~> 1.7)
@@ -74,7 +74,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  CodePush: b12da3295aa9dda5370cd2e92a58bc32656a4b84
+  CodePush: f52903ecd1a17593a0c7c10aa55ecd3912d20e73
   FBSDKCoreKit: 30a21d2d7b92984b3d80497113433c00824c35e9
   FBSDKLoginKit: 42b7129ac0373ca99eaf4cbebf4d07bd42371f59
   FBSDKShareKit: 9b573d03fbee36cbaf42d5bb1f2bc019e0d72347
@@ -83,4 +83,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 2d926c5aa4187e4429ada6470f0ae03737697bf1
 
-COCOAPODS: 1.2.0.beta.1
+COCOAPODS: 1.2.0.beta.3
