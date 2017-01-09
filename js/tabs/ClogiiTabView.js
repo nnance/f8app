@@ -8,6 +8,7 @@ import {
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 
 import ProfileScreen from './profile/containers/ProfileScreen';
+import ShelfScreen from './shelf';
 
 import ClogiiTabBar from './ClogiiTabBar';
 
@@ -26,6 +27,7 @@ class ClogiiTabView extends React.Component {
   }
 
   render() {
+    // <TestBadges tabLabel="Clogii" isActive={this.state.activeTab === 0 ? true : false}><Image style={styles.mockScreen} source={require('./img/mock/clog.png')}/></TestBadges>
     return (
       <ScrollableTabView
         tabBarPosition={'bottom'}
@@ -41,7 +43,7 @@ class ClogiiTabView extends React.Component {
           }
         }
       >
-        <TestBadges tabLabel="Clogii" isActive={this.state.activeTab === 0 ? true : false}><Image style={styles.mockScreen} source={require('./img/mock/clog.png')}/></TestBadges>
+        <ShelfScreen tabLabel="Clogii"/>
         <TestBadges tabLabel="Feed" isActive={this.state.activeTab === 1 ? true : false}><Image style={styles.mockScreen} source={require('./img/mock/feed.png')}/></TestBadges>
         <TestBadges tabLabel="Notifications" isActive={this.state.activeTab === 2 ? true : false}><Image style={styles.mockScreen} source={require('./img/mock/notification.png')}/></TestBadges>
         <ProfileScreen tabLabel="Profile" isActive={this.state.activeTab === 3}/>

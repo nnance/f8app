@@ -15,17 +15,17 @@ export default class NavBar extends React.Component {
   render() {
     return (
       <View style={[styles.container, this.props.containerStyle]}>
-        <View style={styles.leftMenu}>
+        <View style={[styles.leftMenu, this.props.leftMenuStyle]}>
           {
             this.props.renderLeftMenu ? this.props.renderLeftMenu() : null
           }
         </View>
-        <View style={styles.midMenu}>
+        <View style={[styles.titleMenu, this.props.titleStyle]}>
         {
           this.props.renderTitle ? this.props.renderTitle() : null
         }
         </View>
-        <View style={styles.rightMenu}>
+        <View style={[styles.rightMenu, this.props.rightMenuStyle]}>
           {
             this.props.renderRightMenu ? this.props.renderRightMenu() : null
           }
@@ -44,15 +44,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center'
   },
-  midMenu: {
+  titleMenu: {
     alignItems: 'center'
   },
   leftMenu: {
-    paddingLeft: 20,
+    paddingLeft: 10,
     alignItems: 'flex-start'
   },
   rightMenu: {
-    paddingRight: 20,
+    paddingRight: 10,
     alignItems: 'flex-end'
   }
 });

@@ -15,26 +15,6 @@ import {colors} from '../common';
 
 const NAV_BAR_HEIGHT = 60;
 
-// export default class NavBar extends React.Component {
-//   render() {
-//     return (
-//       <View style={styles.container}>
-//         <TouchableOpacity style={styles.leftMenu} onPress={() => this.props.onLeftPress && this.props.onLeftPress()}>
-//           <Image style={styles.backButton} source={require('../img/icons/backButton.png')}/>
-//         </TouchableOpacity>
-//         <View style={styles.midMenu}>
-//           <Text style={styles.navText}>{this.props.title}</Text>
-//         </View>
-//         <TouchableOpacity style={styles.rightMenu} onPress={() => this.props.onRightPress && this.props.onRightPress()}>
-//           {
-//             this.props.renderRightMenu ? this.props.renderRightMenu() : null
-//           }
-//         </TouchableOpacity>
-//       </View>
-//     );
-//   }
-// }
-
 export default class NavBar extends React.Component {
   render() {
     return (
