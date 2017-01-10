@@ -5,7 +5,8 @@ import {
   View,
   Image,
   ScrollView,
-  TouchableOpacity
+  TouchableOpacity,
+  StyleSheet
 } from 'react-native';
 
 import NavBar from '../../../common/NavBar';
@@ -34,20 +35,27 @@ class HomeScreen extends React.Component {
           }}
           />
         <ScrollView>
-          <Image source={require('../img/home-bg-1.png')} style={{width: undefined, height: 1300, resizeMode: 'stretch', backgroundColor: 'transparent'}}>
-            <View style={{paddingButtom: 30}}>
+          <Image source={require('../img/home-bg-1.png')} style={{width: undefined, height: 700, resizeMode: 'stretch', backgroundColor: 'transparent'}}>
+            <View style={{flex: 2}}>
               <Image source={require('../img/mock-head.png')} style={{resizeMode: 'stretch', width: 350, height: 280}}/>
             </View>
-            <View style={{flex: 1}}>
-              <View style={{paddingLeft: 10, flex: 1}}>
-                <ClogListView header="TRENDING" clogs={[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]} renderButton={this.renderTrendingButton.bind(this)}/>
-              </View>
+            <View style={{flex: 1, paddingLeft: 10}}>
+              <ClogListView header="TRENDING" clogs={[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]} renderButton={this.renderTrendingButton.bind(this)}/>
             </View>
             <View style={{flex: 1.6}}>
               <TopClog/>
             </View>
-            <View style={{flex: 3}}/>
-            <View style={{flex: 0.3}}/>
+          </Image>
+          <Image source={require('../img/home-bg-1.5.png')} style={{resizeMode: 'stretch', backgroundColor: 'transparent', width: undefined, height: undefined, paddingTop: 20}}>
+            <View style={{paddingLeft: 10}}>
+              <ClogListView header="DRAMATIC SERIES" clogs={[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]} renderButton={this.renderFollowButton.bind(this)}/>
+            </View>
+            <View style={{paddingLeft: 10, paddingTop: 10}}>
+              <ClogListView header="NEW FUNNY CLOG" clogs={[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]} renderButton={this.renderFollowButton.bind(this)}/>
+            </View>
+            <View style={{paddingLeft: 10, paddingTop: 10}}>
+              <ClogListView header="FANTASY SCI-FI" clogs={[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]} renderButton={this.renderUnfollowButton.bind(this)}/>
+            </View>
           </Image>
           <Image source={require('../img/home-bg-2.png')} style={{width: undefined, height: 450, resizeMode: 'stretch', backgroundColor: 'transparent'}}>
           </Image>
@@ -56,11 +64,31 @@ class HomeScreen extends React.Component {
     );
   }
 
+  renderFollowButton() {
+    return (
+      <BorderButton caption="ติดตาม" type="fadedWhite" containerStyle={styles.clogListButton}/>
+    );
+  }
+
+  renderUnfollowButton() {
+    return (
+      <BorderButton caption="เลิกติดตาม" type="fadedGrey" containerStyle={styles.clogListButton}/>
+    );
+  }
+
   renderTrendingButton() {
     return (
-      <BorderButton caption="ทั้งหมด" type="fadedWhite"/>
+      <BorderButton caption="ทั้งหมด" type="fadedWhite" containerStyle={styles.clogListButton}/>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  clogListButton: {
+    width: 80,
+    paddingHorizontal: 0,
+    alignItems: 'center'
+  }
+});
 
 export default HomeScreen;
