@@ -220,13 +220,16 @@ exports[`BookmarkScreen render BookmarkScreen 1`] = `
         <Image
           source={1}
           style={
-            Object {
-              "bottom": 3.125,
-              "height": 25,
-              "position": "absolute",
-              "right": 3.125,
-              "width": 25,
-            }
+            Array [
+              Object {
+                "bottom": 3.125,
+                "height": 25,
+                "position": "absolute",
+                "right": 3.125,
+                "width": 25,
+              },
+              undefined,
+            ]
           } />
       </View>
       <View
@@ -370,13 +373,16 @@ exports[`BookmarkScreen render BookmarkScreen 1`] = `
         <Image
           source={1}
           style={
-            Object {
-              "bottom": 3.125,
-              "height": 25,
-              "position": "absolute",
-              "right": 3.125,
-              "width": 25,
-            }
+            Array [
+              Object {
+                "bottom": 3.125,
+                "height": 25,
+                "position": "absolute",
+                "right": 3.125,
+                "width": 25,
+              },
+              undefined,
+            ]
           } />
       </View>
       <View
@@ -1802,13 +1808,16 @@ exports[`MyClogScreen render MyClogScreen 1`] = `
         <Image
           source={1}
           style={
-            Object {
-              "bottom": 3.125,
-              "height": 25,
-              "position": "absolute",
-              "right": 3.125,
-              "width": 25,
-            }
+            Array [
+              Object {
+                "bottom": 3.125,
+                "height": 25,
+                "position": "absolute",
+                "right": 3.125,
+                "width": 25,
+              },
+              undefined,
+            ]
           } />
       </View>
       <View
@@ -1991,13 +2000,16 @@ exports[`MyClogScreen render MyClogScreen 1`] = `
         <Image
           source={1}
           style={
-            Object {
-              "bottom": 3.125,
-              "height": 25,
-              "position": "absolute",
-              "right": 3.125,
-              "width": 25,
-            }
+            Array [
+              Object {
+                "bottom": 3.125,
+                "height": 25,
+                "position": "absolute",
+                "right": 3.125,
+                "width": 25,
+              },
+              undefined,
+            ]
           } />
       </View>
       <View
