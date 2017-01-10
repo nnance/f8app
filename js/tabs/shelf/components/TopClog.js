@@ -30,15 +30,15 @@ class TopClog extends React.Component {
           <View style={{flex: 2, justifyContent: 'center', alignItems: 'flex-start'}}>
             <View style={{height: 100, paddingHorizontal: 20}}>
               <View style={{flex: 2}}>
-                <Text style={{fontSize: 14, color: 'white', fontWeight: 'bold'}}>
+                <Text style={{fontSize: 14, color: 'white', fontWeight: 'bold', lineHeight: 12}}>
                   แมค เดมอน ตะลุยอวกาศ
                 </Text>
                 <Text style={{fontSize: 11, color: colors.textFadedWhite}}>
                   Steve Jobs
                 </Text>
               </View>
-              <View style={{flex: 4}}>
-                <Text style={{fontSize: 11, color: colors.textFadedWhite}} numberOfLines={4}>
+              <View style={{flex: 4, paddingTop: 10}}>
+                <Text style={{fontSize: 11, color: colors.textFadedWhite, lineHeight: 12}} numberOfLines={4}>
                   The martin กำลัง บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ
                 </Text>
               </View>
