@@ -17,7 +17,8 @@ import {changePublicProfile} from '../../../actions/changeProfile';
 import {linkFacebook, unlinkFacebook} from '../../../actions/login';
 
 import NavBar from '../components/NavBar';
-import {styles as commonStyles, colors as commonColors} from '../common';
+import {styles as commonStyles} from '../common';
+import {colors as commonColors} from '../../../common/styles';
 
 import ProfileHeader from '../components/ProfileHeader';
 import DatePickerDialog from '../components/DatePickerDialog';

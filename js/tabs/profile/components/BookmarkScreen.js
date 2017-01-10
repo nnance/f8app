@@ -13,7 +13,8 @@ import {mapSource} from '../../../common/utils';
 
 import CircleImageWithCategory from '../../../common/CircleImageWithCategory';
 import NavBar from './NavBar';
-import {styles as commonStyles, colors} from '../common';
+import {styles as commonStyles} from '../common';
+import {colors} from '../../../common/styles';
 
 const rightArrow = require('../img/icons/rightGreyArrow.png');
 

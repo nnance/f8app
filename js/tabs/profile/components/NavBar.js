@@ -11,7 +11,7 @@ import {
 
 import CustomNavBar from '../../../common/NavBar';
 
-import {colors} from '../common';
+import {colors} from '../../../common/styles';
 
 const NAV_BAR_HEIGHT = 60;
 

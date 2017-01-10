@@ -14,7 +14,8 @@ import {toHumanNumber, mapSource} from '../../../common/utils';
 
 import CircleImageWithCategory from '../../../common/CircleImageWithCategory';
 import NavBar from './NavBar';
-import {styles as commonStyles, colors as commonColors} from '../common';
+import {styles as commonStyles} from '../common';
+import {colors as commonColors} from '../../../common/styles';
 
 const MyClogRow = (props) => (<TouchableOpacity style={styles.rowContainer}>
   <CircleImageWithCategory
