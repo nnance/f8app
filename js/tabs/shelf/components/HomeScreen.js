@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 import NavBar from '../../../common/NavBar';
+import BorderButton from '../../../common/BorderButton';
 
 import ClogListView from './ClogListView';
 import TopClog from './TopClog';
@@ -38,9 +39,11 @@ class HomeScreen extends React.Component {
               <Image source={require('../img/mock-head.png')} style={{resizeMode: 'stretch', width: 350, height: 280}}/>
             </View>
             <View style={{flex: 1}}>
-              <ClogListView header="TRENDING" clogs={[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}/>
+              <View style={{paddingLeft: 10, flex: 1}}>
+                <ClogListView header="TRENDING" clogs={[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]} renderButton={this.renderTrendingButton.bind(this)}/>
+              </View>
             </View>
-            <View style={{flex: 1.8}}>
+            <View style={{flex: 1.6}}>
               <TopClog/>
             </View>
             <View style={{flex: 3}}/>
@@ -50,6 +53,12 @@ class HomeScreen extends React.Component {
           </Image>
         </ScrollView>
       </View>
+    );
+  }
+
+  renderTrendingButton() {
+    return (
+      <BorderButton caption="ทั้งหมด" type="fadedWhite"/>
     );
   }
 }

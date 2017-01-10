@@ -14,7 +14,7 @@ import {mapSource} from '../../../common/utils';
 class TopClog extends React.Component {
   render() {
     return (
-      <View style={{flex: 1, paddingVertical: 20}}>
+      <View style={{flex: 1}}>
         <Image source={require('../img/top-clog-bg.png')} style={{flex: 1, flexDirection: 'row', resizeMode: 'stretch', width: undefined}}>
           <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', paddingLeft: 10}}>
             <CircleImageWithCategory

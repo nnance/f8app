@@ -56,9 +56,15 @@ export default class ClogListView extends React.Component {
 
   render() {
     return (
-      <View style={{flex: 1, padding: 10}}>
-        <View style={{flex: 0.3}}>
+      <View style={{flex: 1}}>
+        <View style={{flex: 0.3, flexDirection: 'row'}}>
           <Text style={{color: 'white', fontWeight: 'bold'}}>{this.props.header}</Text>
+          <View style={{flex: 1}}/>
+          <View style={{alignItems: 'flex-end', justifyContent: 'center', paddingRight: 10}}>
+            {
+              this.props.renderButton ? this.props.renderButton() : null
+            }
+          </View>
         </View>
         <View style={{flex: 3}}>
           <ListView

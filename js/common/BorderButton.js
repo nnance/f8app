@@ -8,9 +8,16 @@ import {
 
 class BorderButton extends React.Component {
   render() {
+    let textStyle, containerStyle;
+    textStyle = styles.blackText;
+    containerStyle = styles.whiteButton;
+    if (this.props.type === 'fadedWhite') {
+      textStyle = styles.whiteText;
+      containerStyle = styles.fadedWhiteButton;
+    }
     return (
-      <TouchableOpacity onPress={this.props.onPress} style={[styles.whiteButton, this.props.containerStyle]}>
-        <Text style={[styles.textContainer, this.props.textStyle]}>{this.props.caption}</Text>
+      <TouchableOpacity onPress={this.props.onPress} style={[styles.commonButton, containerStyle, this.props.containerStyle]}>
+        <Text style={[styles.textContainer, textStyle, this.props.textStyle]}>{this.props.caption}</Text>
       </TouchableOpacity>
     );
   }
@@ -18,14 +25,26 @@ class BorderButton extends React.Component {
 
 const styles = StyleSheet.create({
   textContainer: {
-    fontSize: 13
+    fontSize: 12
   },
-  whiteButton: {
-    height: 18,
+  whiteText: {
+    color: 'white'
+  },
+  blackText: {
+    color: 'black'
+  },
+  commonButton: {
+    height: 22,
     paddingHorizontal: 15,
     justifyContent: 'center',
-    borderRadius: 4,
+    borderRadius: 4
+  },
+  whiteButton: {
     backgroundColor: 'white'
+  },
+  fadedWhiteButton: {
+    borderWidth: 1,
+    borderColor: 'white'
   }
 });
 
