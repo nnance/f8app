@@ -14,6 +14,7 @@ import BorderButton from '../../../common/BorderButton';
 
 import ClogListView from './ClogListView';
 import TopClog from './TopClog';
+import ExploreCategory from './ExploreCategory';
 
 class HomeScreen extends React.Component {
   render() {
@@ -57,8 +58,7 @@ class HomeScreen extends React.Component {
               <ClogListView header="FANTASY SCI-FI" clogs={[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]} renderButton={this.renderUnfollowButton.bind(this)}/>
             </View>
           </Image>
-          <Image source={require('../img/home-bg-2.png')} style={{width: undefined, height: 450, resizeMode: 'stretch', backgroundColor: 'transparent'}}>
-          </Image>
+          <ExploreCategory/>
         </ScrollView>
       </View>
     );
