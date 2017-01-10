@@ -72,7 +72,7 @@ export default class ClogListView extends React.Component {
             horizontal={true}
             dataSource={this.state.dataSource}
             renderRow={(props) => {
-              return <ClogMeta title="Mr.Smith Goes to somewhere" author="David Beckham"/>;
+              return <ClogMeta {...props}/>;
             }}
           />
         </View>

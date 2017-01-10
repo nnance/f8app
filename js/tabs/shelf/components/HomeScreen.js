@@ -16,6 +16,8 @@ import ClogListView from './ClogListView';
 import TopClog from './TopClog';
 import ExploreCategory from './ExploreCategory';
 
+import mockData from '../mockData';
+
 class HomeScreen extends React.Component {
   render() {
     return (
@@ -41,22 +43,20 @@ class HomeScreen extends React.Component {
               <Image source={require('../img/mock-head.png')} style={{resizeMode: 'stretch', width: 350, height: 280}}/>
             </View>
             <View style={{flex: 1, paddingLeft: 10}}>
-              <ClogListView header="TRENDING" clogs={[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]} renderButton={this.renderTrendingButton.bind(this)}/>
+              <ClogListView header="TRENDING" clogs={this.props.trending} renderButton={this.renderTrendingButton.bind(this)}/>
             </View>
             <View style={{flex: 1.6}}>
-              <TopClog/>
+              <TopClog {...this.props.topClog}/>
             </View>
           </Image>
           <Image source={require('../img/home-bg-1.5.png')} style={{resizeMode: 'stretch', backgroundColor: 'transparent', width: undefined, height: undefined, paddingTop: 20}}>
-            <View style={{paddingLeft: 10}}>
-              <ClogListView header="DRAMATIC SERIES" clogs={[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]} renderButton={this.renderFollowButton.bind(this)}/>
-            </View>
-            <View style={{paddingLeft: 10, paddingTop: 10}}>
-              <ClogListView header="NEW FUNNY CLOG" clogs={[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]} renderButton={this.renderFollowButton.bind(this)}/>
-            </View>
-            <View style={{paddingLeft: 10, paddingTop: 10}}>
-              <ClogListView header="FANTASY SCI-FI" clogs={[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]} renderButton={this.renderUnfollowButton.bind(this)}/>
-            </View>
+            {
+              this.props.categoryClog.map((category, idx) => (
+                <View style={{paddingLeft: 10}}>
+                  <ClogListView header={category.title} clogs={category.clogs} renderButton={!category.following ? this.renderFollowButton.bind(this) : this.renderUnfollowButton.bind(this)}/>
+                </View>
+              ))
+            }
           </Image>
           <ExploreCategory/>
         </ScrollView>
