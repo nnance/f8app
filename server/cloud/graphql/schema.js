@@ -32,6 +32,9 @@ import {
   GraphQLString,
 } from 'graphql';
 
+import {makeExecutableSchema} from 'graphql-tools';
+import definedSchema from './definedSchema';
+
 import Parse from 'parse/node';
 
 const Page = Parse.Object.extend('Page');
@@ -331,8 +334,10 @@ var F8QueryType = new GraphQLObjectType({
   }),
 });
 
-export var Schema = new GraphQLSchema({
+export let Schema = new GraphQLSchema({
   query: F8QueryType,
 });
 
-module.exports = Schema;
+// export let Schema = makeExecutableSchema({
+//   typeDefs: definedSchema
+// });

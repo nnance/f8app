@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-APP_NAME=clogii ENABLE_ANON_USERS=1 DATABASE_URI="mongodb://mongo:27017/dev" ALLOW_CLIENT_CLASS_CREATION=1 EMAIL_FROM="from@clogii.clog" EMAIL_MODULE="parse-server-simple-mailgun-adapter" EMAIL_DOMAIN="mailgun.domain" EMAIL_API_KEY="mailgunkey" PARSE_CLOUD_DIRECTORY="${DIR}/../build-server/cloud" APP_ID="oss-f8-app-2016" MASTER_KEY=70c6093dba5a7e55968a1c7ad3dd3e5a74ef5cac GRAPHQL_SUPPORT=true DEV_BUNDLE_ID=io.rabbot.clogii PRODUCTION_BUNDLE_ID=io.rabbot.clogii PUBLIC_SERVER_URL=http://localhost:1337/parse SERVER_URL=http://localhost:1337/parse PARSE_DASHBOARD_ALLOW_INSECURE_HTTP=1 USER1=foo USER1_PASSWORD=bar docker-compose --file="${DIR}/local-docker-compose.yml" up -d

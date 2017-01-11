@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+DATABASE_URI="mongodb://localhost:27017/dev"
+MAILGUN_DOMAIN="X"
+MAILGUN_KEY="X"

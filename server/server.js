@@ -23,11 +23,12 @@
 import 'dotenv/config';
 import path from 'path';
 import express from 'express';
-import {apolloServer} from 'apollo-server';
+import graphqlHTTP from 'express-graphql';
 import {Schema} from './cloud/graphql/schema';
 import Parse from 'parse/node';
 import {ParseServer} from 'parse-server';
 import ParseDashboard from 'parse-dashboard';
+
 
 const SERVER_PORT = process.env.PORT || 8080;
 const SERVER_HOST = process.env.HOST || 'localhost';
@@ -103,7 +104,7 @@ if (IS_DEVELOPMENT) {
 
 server.use(
   '/graphql',
-  apolloServer({
+  graphqlHTTP({
     graphiql: IS_DEVELOPMENT,
     pretty: IS_DEVELOPMENT,
     schema: getSchema(),
