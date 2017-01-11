@@ -1,13 +1,13 @@
 import React from 'react';
 
-import HomeScreen from './components/HomeScreen';
+import Home from './containers/Home';
 import * as mockData from './mockData';
 
-// export default HomeScreen;
+// export default Home;
 
 class Mocked extends React.Component {
   render() {
-    return <HomeScreen
+    return <Home
       topClog={mockData.topClog}
       trending={mockData.fakeMetaClog}
       highlightCategory={mockData.highlightCategory}

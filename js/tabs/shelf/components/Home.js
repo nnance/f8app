@@ -18,7 +18,7 @@ import ExploreCategory from './ExploreCategory';
 
 import mockData from '../mockData';
 
-class HomeScreen extends React.Component {
+class Home extends React.Component {
   render() {
     return (
       <View style={{flex: 1}}>
@@ -91,4 +91,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default HomeScreen;
+export default Home;

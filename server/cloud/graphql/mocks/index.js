@@ -12,6 +12,12 @@ const mocks = {
   Clog: {
     title() {
       return casual.title;
+    },
+    cover() {
+      return `http://i99.photobucket.com/albums/l288/korewa13th/kore%20blog/noom.jpg`;
+    },
+    category() {
+      return 'D'
     }
   },
   Query: {

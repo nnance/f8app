@@ -12,6 +12,7 @@ import PureListView from '../../../common/PureListView';
 import {colors} from '../../../common/styles';
 import CircleImageWithCategory from '../../../common/CircleImageWithCategory';
 import {mapSource} from '../../../common/utils';
+import {getCategoryIcon} from '../../../category';
 
 class ClogMeta extends React.Component {
   render() {
@@ -19,8 +20,8 @@ class ClogMeta extends React.Component {
       <View style={{flex: 1, paddingHorizontal: 5, paddingVertical: 10, width: 100}}>
           <View style={{flex: 7}}>
             <CircleImageWithCategory
-              source={mapSource(require('../img/B.png'))}
-              categorySource={mapSource(require('../img/D.png'))}
+              source={mapSource(this.props.cover)}
+              categorySource={getCategoryIcon(this.props.category)}
               size={85}
               imageStyle={{
                 borderWidth: 3,
@@ -52,6 +53,14 @@ export default class ClogListView extends React.Component {
     this.state = {
       dataSource: dataSource.cloneWithRows(this.props.clogs)
     };
+  }
+
+  componentWillReceiveProps(nextProps: Props) {
+    if (this.props.clogs !== nextProps.clogs) {
+      this.setState({
+        dataSource: this.state.dataSource.cloneWithRows(nextProps.clogs)
+      });
+    }
   }
 
   render() {
