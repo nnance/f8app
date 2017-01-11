@@ -10,7 +10,7 @@ class Mocked extends React.Component {
     return <HomeScreen
       topClog={mockData.topClog}
       trending={mockData.fakeMetaClog}
-      categoryClog={mockData.categoryClog}
+      highlightCategory={mockData.highlightCategory}
     />;
   }
 }

@@ -51,7 +51,7 @@ class HomeScreen extends React.Component {
           </Image>
           <Image source={require('../img/home-bg-1.5.png')} style={{resizeMode: 'stretch', backgroundColor: 'transparent', width: undefined, height: undefined, paddingTop: 20}}>
             {
-              this.props.categoryClog.map((category, idx) => (
+              this.props.highlightCategory.map((category, idx) => (
                 <View style={{paddingLeft: 10}}>
                   <ClogListView header={category.title} clogs={category.clogs} renderButton={!category.following ? this.renderFollowButton.bind(this) : this.renderUnfollowButton.bind(this)}/>
                 </View>

@@ -31,7 +31,7 @@ export const fakeMetaClog = [
   }
 ];
 
-export const categoryClog = [
+export const highlightCategory = [
   {
     title: 'DRAMATIC SERIES',
     following: false,
