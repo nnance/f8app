@@ -29,7 +29,7 @@
 3. **Start Parse/GraphQL servers:**
 
   ```
-  $ npm run up-local
+  $ npm run dev
   ```
 
   Make sure everything works by visiting:
