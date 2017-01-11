@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+export DATABASE_URI="mongodb://localhost:27017/dev"
+export MAILGUN_DOMAIN="X"
+export MAILGUN_KEY="X"
+export MOCK_SERVER="1"
