@@ -85,6 +85,9 @@
     "preset": "react-native",
     "transformIgnorePatterns": [
       "node_modules/(?!react-native|react-clone-referenced-element|parse)"
+    ],
+    "setupFiles": [
+      "dotenv/config"
     ]
   },
   "engines": {

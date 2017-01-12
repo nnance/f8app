@@ -58,7 +58,7 @@ class ExploreCategory extends React.Component {
 
   renderCategory(category, idx) {
     return (
-      <TouchableOpacity style={{
+      <TouchableOpacity key={idx} style={{
         position: 'absolute',
         top: category.pos.y,
         left: category.pos.x,

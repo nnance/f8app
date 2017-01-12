@@ -21,12 +21,13 @@ async function getCovers() {
 
 casual.define('clog_cover', async () => {
   let clogCovers = await getCovers();
-  let idx = Math.floor(Math.random() * clogCovers.length);
+  let idx = casual.integer(from = 0, to = clogCovers.length - 1);
   return clogCovers[idx];
 });
 
 let category = ['D', 'G', 'M', 'N'];
 
 casual.define('clog_category', async () => {
-  return category[Math.floor(Math.random() * category.length)];
+  let idx = casual.integer(from = 0, to = category.length - 1);
+  return category[idx];
 });

@@ -4,7 +4,7 @@ import { graphql } from 'react-apollo';
 
 import Home from '../components/Home';
 
-const query = gql`
+export const query = gql`
   query {
     trending {
       title
@@ -44,8 +44,9 @@ const mapClogFragment = clog => {
   });
 };
 
-export default graphql(query, {
-  props: ({ ownProps, data: { loading, trending, topClog, favoriteTags }}) => ({
+export const mapQueryToProps = ({ ownProps, data }) => {
+  const { loading, trending, topClog, favoriteTags } = data;
+  return ({
     trending: loading ? [] : trending.map(mapClogFragment),
     topClog: loading ? undefined : mapClogFragment(topClog),
     favoriteTags: loading ? [] : favoriteTags.map(tag => ({
@@ -53,5 +54,9 @@ export default graphql(query, {
       trending: tag.trending.map(mapClogFragment)
     })),
     loading
-  })
+  });
+};
+
+export default graphql(query, {
+  props: mapQueryToProps
 })(Home);

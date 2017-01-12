@@ -25,10 +25,15 @@
 'use strict';
 
 import Config from 'react-native-config';
+let config = Config;
+
+if (process.env.NODE_ENV === 'test') {
+  config = process.env;
+}
 
 module.exports = {
   testMenuEnabled: true,
-  serverURL: `http://${Config.SERVER_HOST}:${Config.SERVER_PORT}`,
+  serverURL: `http://${config.SERVER_HOST}:${config.SERVER_PORT}`,
   version: 323,
   fontFamily: undefined,
 };
