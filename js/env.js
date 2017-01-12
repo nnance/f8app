@@ -24,9 +24,11 @@
 
 'use strict';
 
+import Config from 'react-native-config';
+
 module.exports = {
   testMenuEnabled: true,
-  serverURL: 'http://localhost:8080',
+  serverURL: `http://${Config.SERVER_HOST}:${Config.SERVER_PORT}`,
   version: 323,
   fontFamily: undefined,
 };

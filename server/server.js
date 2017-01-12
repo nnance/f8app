@@ -20,6 +20,7 @@
  * DEALINGS IN THE SOFTWARE
  */
 
+import 'dotenv/config';
 import path from 'path';
 import express from 'express';
 import graphqlHTTP from 'express-graphql';
@@ -29,8 +30,8 @@ import {ParseServer} from 'parse-server';
 import ParseDashboard from 'parse-dashboard';
 
 
-const SERVER_PORT = process.env.PORT || 8080;
-const SERVER_HOST = process.env.HOST || 'localhost';
+const SERVER_PORT = process.env.SERVER_PORT || 8080;
+const SERVER_HOST = process.env.SERVER_HOST || 'localhost';
 const APP_NAME = process.env.APP_NAME || 'clogii';
 const APP_ID = process.env.APP_ID || 'oss-f8-app-2016';
 const MASTER_KEY = process.env.MASTER_KEY || '70c6093dba5a7e55968a1c7ad3dd3e5a74ef5cac';

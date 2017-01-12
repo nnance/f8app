@@ -19,6 +19,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		1562C3DCBCA3483FBCD53FB7 /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BC4BB28AB1F4897843DBDB2 /* libRNImagePicker.a */; };
 		28AEED49A75C4478871634FA /* libRCTBEEPickerManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 046AF6D457DA49F6B40A9412 /* libRCTBEEPickerManager.a */; };
+		692A9BA7867847B8A04B4229 /* libReactNativeConfig.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DA2D3B46304F80B7F87885 /* libReactNativeConfig.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
 			remoteInfo = Clogii;
+		};
+		B04DD8941E27537500EE18FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E898435571C44E8A8C0394E6 /* ReactNativeConfig.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB2648DF1C7BE17A00B8F155;
+			remoteInfo = ReactNativeConfig;
 		};
 		B09D600B1E1E6B2F00DFE92F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -71,10 +79,12 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Clogii/main.m; sourceTree = "<group>"; };
 		4E6F25AB81F34B7F80B6BB39 /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNImagePicker.xcodeproj; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; };
 		8BC4BB28AB1F4897843DBDB2 /* libRNImagePicker.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNImagePicker.a; sourceTree = "<group>"; };
+		A4DA2D3B46304F80B7F87885 /* libReactNativeConfig.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libReactNativeConfig.a; sourceTree = "<group>"; };
 		ACF723E9CFD9499BAE33EDCD /* RCTBEEPickerManager.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTBEEPickerManager.xcodeproj; path = "../node_modules/react-native-picker/ios/RCTBEEPickerManager.xcodeproj"; sourceTree = "<group>"; };
 		BD29199FBC152A9490D954E4 /* libPods-Clogii.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Clogii.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4D7F1A2D8B85D13C8DF9631 /* Pods-Clogii.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clogii.release.xcconfig"; path = "Pods/Target Support Files/Pods-Clogii/Pods-Clogii.release.xcconfig"; sourceTree = "<group>"; };
 		DF8A618D93132F5F2173866F /* Pods-Clogii.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clogii.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clogii/Pods-Clogii.debug.xcconfig"; sourceTree = "<group>"; };
+		E898435571C44E8A8C0394E6 /* ReactNativeConfig.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeConfig.xcodeproj; path = "../node_modules/react-native-config/ios/ReactNativeConfig.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +103,7 @@
 				10FCE7A9A52226D9590B3007 /* libPods-Clogii.a in Frameworks */,
 				28AEED49A75C4478871634FA /* libRCTBEEPickerManager.a in Frameworks */,
 				1562C3DCBCA3483FBCD53FB7 /* libRNImagePicker.a in Frameworks */,
+				692A9BA7867847B8A04B4229 /* libReactNativeConfig.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +175,7 @@
 				009542351C175AA200433EAF /* BVLinearGradient.xcodeproj */,
 				ACF723E9CFD9499BAE33EDCD /* RCTBEEPickerManager.xcodeproj */,
 				4E6F25AB81F34B7F80B6BB39 /* RNImagePicker.xcodeproj */,
+				E898435571C44E8A8C0394E6 /* ReactNativeConfig.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -187,6 +199,14 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* Clogii.app */,
 				00E356EE1AD99517003FC87E /* ClogiiTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B04DD88F1E27537500EE18FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B04DD8951E27537500EE18FC /* libReactNativeConfig.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -293,6 +313,10 @@
 					ProjectRef = ACF723E9CFD9499BAE33EDCD /* RCTBEEPickerManager.xcodeproj */;
 				},
 				{
+					ProductGroup = B04DD88F1E27537500EE18FC /* Products */;
+					ProjectRef = E898435571C44E8A8C0394E6 /* ReactNativeConfig.xcodeproj */;
+				},
+				{
 					ProductGroup = B09D60071E1E6B2F00DFE92F /* Products */;
 					ProjectRef = 4E6F25AB81F34B7F80B6BB39 /* RNImagePicker.xcodeproj */;
 				},
@@ -311,6 +335,13 @@
 			fileType = archive.ar;
 			path = libBVLinearGradient.a;
 			remoteRef = 009542391C175AA200433EAF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B04DD8951E27537500EE18FC /* libReactNativeConfig.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libReactNativeConfig.a;
+			remoteRef = B04DD8941E27537500EE18FC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		B09D600C1E1E6B2F00DFE92F /* libRNImagePicker.a */ = {
@@ -473,6 +504,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Clogii.app/Clogii";
@@ -495,6 +527,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Clogii.app/Clogii";
@@ -515,6 +548,7 @@
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../node_modules/react-native-picker/ios/RCTBEEPickerManager",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
+					"$(SRCROOT)/../node_modules/react-native-config/ios/ReactNativeConfig",
 				);
 				INFOPLIST_FILE = Clogii/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -540,6 +574,7 @@
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../node_modules/react-native-picker/ios/RCTBEEPickerManager",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
+					"$(SRCROOT)/../node_modules/react-native-config/ios/ReactNativeConfig",
 				);
 				INFOPLIST_FILE = Clogii/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -592,6 +627,7 @@
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../node_modules/react-native-picker/ios/RCTBEEPickerManager",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
+					"$(SRCROOT)/../node_modules/react-native-config/ios/ReactNativeConfig",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -634,6 +670,7 @@
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../node_modules/react-native-picker/ios/RCTBEEPickerManager",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
+					"$(SRCROOT)/../node_modules/react-native-config/ios/ReactNativeConfig",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
