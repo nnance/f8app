@@ -15,10 +15,12 @@ const schema = `
     cover: String
     category: Category!
     author: User!
+    review: String!
   }
 
   type Query {
     trending: [Clog]!
+    topClog: Clog!
   }
 `;
 

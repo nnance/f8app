@@ -14,17 +14,30 @@ const query = gql`
         name
       }
     }
+    topClog {
+      title
+      cover
+      category
+      review
+      author {
+        name
+      }
+    }
   }
 `;
 
 export default graphql(query, {
-  props: ({ ownProps, data: { loading, trending }}) => ({
+  props: ({ ownProps, data: { loading, trending, topClog }}) => ({
     trending: loading ? [] : trending.map(clog => ({
       title: clog.title,
       author: clog.author.name,
       cover: clog.cover,
       category: clog.category
     })),
+    topClog: loading ? undefined : {
+      ...topClog,
+      author: topClog.author.name
+    },
     loading
   })
 })(Home);

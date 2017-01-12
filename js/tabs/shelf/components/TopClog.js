@@ -10,6 +10,7 @@ import {colors} from '../../../common/styles';
 import CircleImageWithCategory from '../../../common/CircleImageWithCategory';
 import BorderButton from '../../../common/BorderButton';
 import {mapSource} from '../../../common/utils';
+import {getCategoryIcon} from '../../../category';
 
 class TopClog extends React.Component {
   render() {
@@ -18,8 +19,8 @@ class TopClog extends React.Component {
         <Image source={require('../img/top-clog-bg.png')} style={{flex: 1, flexDirection: 'row', resizeMode: 'stretch', width: undefined}}>
           <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', paddingLeft: 10}}>
             <CircleImageWithCategory
-              source={mapSource(require('../img/B.png'))}
-              categorySource={mapSource(require('../img/D.png'))}
+              source={mapSource(this.props.cover)}
+              categorySource={getCategoryIcon(this.props.category)}
               size={130}
               imageStyle={{
                 borderWidth: 3,
@@ -30,7 +31,7 @@ class TopClog extends React.Component {
           <View style={{flex: 2, justifyContent: 'center', alignItems: 'flex-start'}}>
             <View style={{height: 100, paddingHorizontal: 20, width: 250}}>
               <View style={{flex: 2}}>
-                <Text style={{fontSize: 14, color: 'white', fontWeight: 'bold', lineHeight: 12}}>
+                <Text style={{fontSize: 14, color: 'white', fontWeight: 'bold', lineHeight: 14}}>
                   {this.props.title}
                 </Text>
                 <Text style={{fontSize: 11, color: colors.textFadedWhite}}>

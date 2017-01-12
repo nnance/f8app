@@ -18,6 +18,9 @@ const mocks = {
     },
     category() {
       return casual.clog_category;
+    },
+    review() {
+      return casual.sentences(n = 20)
     }
   },
   Query: {
