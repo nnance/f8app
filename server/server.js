@@ -24,7 +24,7 @@ import 'dotenv/config';
 import path from 'path';
 import express from 'express';
 import graphqlHTTP from 'express-graphql';
-import {Schema} from './cloud/graphql/schema';
+import {Schema, MockSchema} from './cloud/graphql/schema';
 import Parse from 'parse/node';
 import {ParseServer} from 'parse-server';
 import ParseDashboard from 'parse-dashboard';
@@ -41,6 +41,7 @@ const DASHBOARD_AUTH = process.env.DASHBOARD_AUTH;
 const MAILGUN_FROM_ADDRESS = process.env.MAILGUN_FROM_ADDRESS || 'admin@localhost';
 const MAILGUN_DOMAIN = process.env.MAILGUN_DOMAIN || '';
 const MAILGUN_KEY = process.env.MAILGUN_KEY || '';
+const MOCK_SERVER = !!+process.env.MOCK_SERVER;
 
 Parse.initialize(APP_ID);
 Parse.serverURL = `http://localhost:${SERVER_PORT}/parse`;
@@ -49,14 +50,16 @@ Parse.Cloud.useMasterKey();
 
 function getSchema() {
   if (!IS_DEVELOPMENT) {
-    return Schema;
+    return MOCK_SERVER ? MockSchema : Schema;
   }
 
   delete require.cache[require.resolve('./cloud/graphql/schema.js')];
-  return require('./cloud/graphql/schema.js').Schema;
+  return MOCK_SERVER ? require('./cloud/graphql/schema.js').MockSchema : require('./cloud/graphql/schema.js').Schema;
 }
 
 const server = express();
+
+server.use('/static', express.static(path.join(__dirname, 'static')));
 
 server.use(
   '/parse',
@@ -104,11 +107,16 @@ if (IS_DEVELOPMENT) {
 
 server.use(
   '/graphql',
-  graphqlHTTP({
-    graphiql: IS_DEVELOPMENT,
-    pretty: IS_DEVELOPMENT,
-    schema: getSchema(),
-    rootValue: Math.random(), // TODO: Check credentials, assign user
+  graphqlHTTP(request => {
+    return {
+      graphiql: IS_DEVELOPMENT,
+      pretty: IS_DEVELOPMENT,
+      schema: getSchema(),
+      rootValue: Math.random(), // TODO: Check credentials, assign user
+      context: {
+        request
+      }
+    };
   })
 );
 

@@ -32,8 +32,10 @@ import {
   GraphQLString,
 } from 'graphql';
 
-import {makeExecutableSchema} from 'graphql-tools';
-import definedSchema from './definedSchema';
+import {addMockFunctionsToSchema, makeExecutableSchema} from 'graphql-tools';
+import typeDefs from './typeDefs';
+import resolvers from './resolvers';
+import mocks from './mocks';
 
 import Parse from 'parse/node';
 
@@ -334,10 +336,18 @@ var F8QueryType = new GraphQLObjectType({
   }),
 });
 
-export let Schema = new GraphQLSchema({
-  query: F8QueryType,
+// export let Schema = new GraphQLSchema({
+//   query: F8QueryType,
+// });
+
+export let Schema = makeExecutableSchema({
+  typeDefs,
+  resolvers
 });
 
-// export let Schema = makeExecutableSchema({
-//   typeDefs: definedSchema
-// });
+export let MockSchema = makeExecutableSchema({
+  typeDefs,
+  resolvers: mocks
+});
+
+addMockFunctionsToSchema({schema: MockSchema, preserveResolvers: true});

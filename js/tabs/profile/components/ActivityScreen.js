@@ -13,7 +13,8 @@ import moment from 'moment';
 import PureListView from '../../../common/PureListView';
 
 import NavBar from './NavBar';
-import {styles as commonStyles, colors} from '../common';
+import {styles as commonStyles} from '../common';
+import {colors} from '../../../common/styles';
 
 const likeIcon = require('../img/icons/heart.png');
 const readIcon = require('../img/icons/read.png');

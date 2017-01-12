@@ -34,88 +34,116 @@ exports[`ChangeEmailScreen render authen 1`] = `
   </Modal>
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "white",
-        "borderBottomWidth": 1,
-        "borderColor": "rgb(240, 240, 240)",
-        "flexDirection": "row",
-        "height": 60,
-        "justifyContent": "space-between",
-        "paddingTop": 5,
-      }
-    }>
-    <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
-      accessible={true}
-      hitSlop={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "alignItems": "flex-start",
-          "opacity": 1,
-          "paddingLeft": 20,
-        }
-      }
-      testID={undefined}>
-      <Image
-        source={1}
-        style={
-          Object {
-            "height": 20,
-            "resizeMode": "contain",
-          }
-        } />
-    </View>
-    <View
-      style={
+      Array [
         Object {
           "alignItems": "center",
-        }
+          "backgroundColor": "white",
+          "flexDirection": "row",
+          "height": 60,
+          "justifyContent": "space-between",
+          "paddingTop": 5,
+        },
+        Object {
+          "borderBottomWidth": 1,
+          "borderColor": "rgb(240, 240, 240)",
+        },
+      ]
+    }>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "flex-start",
+            "paddingLeft": 10,
+          },
+          undefined,
+        ]
       }>
-      <Text
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
         accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "color": "rgb(209, 87, 92)",
-            "fontSize": 22,
-            "fontWeight": "bold",
+            "opacity": 1,
           }
-        }>
-        เปลี่ยน Email
-      </Text>
+        }
+        testID={undefined}>
+        <Image
+          source={1}
+          style={
+            Object {
+              "height": 20,
+              "resizeMode": "contain",
+            }
+          } />
+      </View>
     </View>
     <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
-      accessible={true}
-      hitSlop={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
       style={
-        Object {
-          "alignItems": "flex-end",
-          "opacity": 1,
-          "paddingRight": 20,
+        Array [
+          Object {
+            "alignItems": "center",
+          },
+          undefined,
+        ]
+      }>
+      <View
+        style={undefined}>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "rgb(209, 87, 92)",
+              "fontSize": 22,
+              "fontWeight": "bold",
+            }
+          }>
+          เปลี่ยน Email
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "flex-end",
+            "paddingRight": 10,
+          },
+          undefined,
+        ]
+      }>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
         }
-      }
-      testID={undefined} />
+        testID={undefined} />
+    </View>
   </View>
   <View
     style={

@@ -53,13 +53,12 @@ var F8App = React.createClass({
   componentDidMount: function() {
     AppState.addEventListener('change', this.handleAppStateChange);
 
-    // TODO: Make this list smaller, we basically download the whole internet
-    this.props.dispatch(loadViewer());
-    this.props.dispatch(loadNotifications());
-    this.props.dispatch(loadConfig());
-    this.props.dispatch(loadSessions());
-    this.props.dispatch(loadFriendsSchedules());
-    this.props.dispatch(loadSurveys());
+    // this.props.dispatch(loadViewer());
+    // this.props.dispatch(loadNotifications());
+    // this.props.dispatch(loadConfig());
+    // this.props.dispatch(loadSessions());
+    // this.props.dispatch(loadFriendsSchedules());
+    // this.props.dispatch(loadSurveys());
 
     updateInstallation({version});
     CodePush.sync({installMode: CodePush.InstallMode.ON_NEXT_RESUME});
@@ -71,9 +70,9 @@ var F8App = React.createClass({
 
   handleAppStateChange: function(appState) {
     if (appState === 'active') {
-      this.props.dispatch(loadSessions());
-      this.props.dispatch(loadNotifications());
-      this.props.dispatch(loadSurveys());
+      // this.props.dispatch(loadSessions());
+      // this.props.dispatch(loadNotifications());
+      // this.props.dispatch(loadSurveys());
       CodePush.sync({installMode: CodePush.InstallMode.ON_NEXT_RESUME});
     }
   },
@@ -83,26 +82,9 @@ var F8App = React.createClass({
       return <LoginScreen />;
     }
     return <ClogiiTabView/>;
-    // return (
-    //   <View style={styles.container}>
-    //     <StatusBar
-    //       translucent={true}
-    //       backgroundColor="rgba(0, 0, 0, 0.2)"
-    //       barStyle="light-content"
-    //      />
-    //     <F8Navigator />
-    //     <PushNotificationsController />
-    //   </View>
-    // );
   },
 
 });
-
-// var styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//   },
-// });
 
 function select(store) {
   return {

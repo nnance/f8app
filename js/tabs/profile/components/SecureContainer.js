@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import F8Button from 'F8Button';
 
-import {colors as commonColors} from '../common';
+import {colors as commonColors} from '../../../common/styles';
 
 class SecureContainer extends React.Component {
   constructor(...args) {

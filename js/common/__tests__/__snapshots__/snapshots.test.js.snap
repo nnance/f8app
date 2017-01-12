@@ -1,0 +1,55 @@
+exports[`CircleImageWithCategory render CircleImageWithCategory 1`] = `
+<View
+  style={
+    Object {
+      "height": 100,
+      "width": 100,
+    }
+  }>
+  <Image
+    categorySource={
+      Object {
+        "uri": "x.jpg",
+      }
+    }
+    size={100}
+    source={
+      Object {
+        "uri": "x.jpg",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "borderRadius": 50,
+          "height": 100,
+          "width": 100,
+        },
+        Array [
+          undefined,
+          Object {
+            "backgroundColor": "transparent",
+          },
+        ],
+      ]
+    } />
+  <Image
+    source={
+      Object {
+        "uri": "x.jpg",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "bottom": 3.125,
+          "height": 25,
+          "position": "absolute",
+          "right": 3.125,
+          "width": 25,
+        },
+        undefined,
+      ]
+    } />
+</View>
+`;
