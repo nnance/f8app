@@ -8,6 +8,14 @@ const mocks = {
       return casual.full_name;
     }
   },
+  Tag: {
+    name() {
+      return casual.word;
+    },
+    trending() {
+      return [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ,1];
+    }
+  },
   Clog: {
     title() {
       return casual.title;
@@ -26,6 +34,9 @@ const mocks = {
   Query: {
     trending() {
       return [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+    },
+    favoriteTags() {
+      return [1, 1, 1];
     }
   }
 };

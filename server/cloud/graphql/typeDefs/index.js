@@ -1,9 +1,14 @@
 const schema = `
   enum Category {
     D
-    G
     M
+    G
     N
+  }
+
+  type Tag {
+    name: String!
+    trending: [Clog!]!
   }
 
   type User {
@@ -16,11 +21,13 @@ const schema = `
     category: Category!
     author: User!
     review: String!
+    tags: [Tag!]!
   }
 
   type Query {
     trending: [Clog]!
     topClog: Clog!
+    favoriteTags: [Tag!]!
   }
 `;
 

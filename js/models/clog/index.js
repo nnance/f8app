@@ -7,7 +7,6 @@ const categoryImgs = {
 };
 
 export function getCategoryIcon(category) {
-  console.log(category);
   if (categoryImgs[category] === undefined) {
     return categoryImgs['default'];
   }

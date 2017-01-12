@@ -12,7 +12,7 @@ import PureListView from '../../../common/PureListView';
 import {colors} from '../../../common/styles';
 import CircleImageWithCategory from '../../../common/CircleImageWithCategory';
 import {mapSource} from '../../../common/utils';
-import {getCategoryIcon} from '../../../category';
+import {getCategoryIcon} from '../../../models/clog';
 
 class ClogMeta extends React.Component {
   render() {

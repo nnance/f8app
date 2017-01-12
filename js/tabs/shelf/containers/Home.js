@@ -23,21 +23,33 @@ const query = gql`
         name
       }
     }
+    favoriteTags {
+      name
+      trending {
+        title
+        cover
+        category
+        author {
+          name
+        }
+      }
+    }
   }
 `;
 
+const mapClogFragment = clog => ({
+  ...clog,
+  author: clog.author.name
+})
+
 export default graphql(query, {
-  props: ({ ownProps, data: { loading, trending, topClog }}) => ({
-    trending: loading ? [] : trending.map(clog => ({
-      title: clog.title,
-      author: clog.author.name,
-      cover: clog.cover,
-      category: clog.category
+  props: ({ ownProps, data: { loading, trending, topClog, favoriteTags }}) => ({
+    trending: loading ? [] : trending.map(mapClogFragment),
+    topClog: loading ? undefined : mapClogFragment(topClog),
+    favoriteTags: loading ? [] : favoriteTags.map(tag => ({
+      ...tag,
+      trending: tag.trending.map(mapClogFragment)
     })),
-    topClog: loading ? undefined : {
-      ...topClog,
-      author: topClog.author.name
-    },
     loading
   })
 })(Home);

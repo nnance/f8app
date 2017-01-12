@@ -10,7 +10,7 @@ import {colors} from '../../../common/styles';
 import CircleImageWithCategory from '../../../common/CircleImageWithCategory';
 import BorderButton from '../../../common/BorderButton';
 import {mapSource} from '../../../common/utils';
-import {getCategoryIcon} from '../../../category';
+import {getCategoryIcon} from '../../../models/clog';
 
 class TopClog extends React.Component {
   render() {
