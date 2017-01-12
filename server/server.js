@@ -20,7 +20,6 @@
  * DEALINGS IN THE SOFTWARE
  */
 
-import 'dotenv/config';
 import path from 'path';
 import express from 'express';
 import graphqlHTTP from 'express-graphql';
