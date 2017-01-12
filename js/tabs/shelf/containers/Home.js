@@ -37,10 +37,12 @@ const query = gql`
   }
 `;
 
-const mapClogFragment = clog => ({
-  ...clog,
-  author: clog.author.name
-})
+const mapClogFragment = clog => {
+  return ({
+    ...clog,
+    author: clog.author.name
+  });
+};
 
 export default graphql(query, {
   props: ({ ownProps, data: { loading, trending, topClog, favoriteTags }}) => ({

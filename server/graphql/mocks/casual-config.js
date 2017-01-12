@@ -9,7 +9,7 @@ async function getCovers() {
   if (clogCovers) {
     return clogCovers;
   }
-  let files = await new Promise((resolve, reject) => fs.readdir(path.join(__dirname, '../../../static/cover'), (err, files) => {
+  let files = await new Promise((resolve, reject) => fs.readdir(path.join(__dirname, '../../static/cover'), (err, files) => {
     if (err) {
       return reject(err);
     }

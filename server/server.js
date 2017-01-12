@@ -24,7 +24,7 @@ import 'dotenv/config';
 import path from 'path';
 import express from 'express';
 import graphqlHTTP from 'express-graphql';
-import {Schema, MockSchema} from './cloud/graphql/schema';
+import {Schema, MockSchema} from './graphql/schema';
 import Parse from 'parse/node';
 import {ParseServer} from 'parse-server';
 import ParseDashboard from 'parse-dashboard';
@@ -53,8 +53,8 @@ function getSchema() {
     return MOCK_SERVER ? MockSchema : Schema;
   }
 
-  delete require.cache[require.resolve('./cloud/graphql/schema.js')];
-  return MOCK_SERVER ? require('./cloud/graphql/schema.js').MockSchema : require('./cloud/graphql/schema.js').Schema;
+  delete require.cache[require.resolve('./graphql/schema.js')];
+  return MOCK_SERVER ? require('./graphql/schema.js').MockSchema : require('./graphql/schema.js').Schema;
 }
 
 const server = express();
