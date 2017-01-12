@@ -59,6 +59,8 @@ function getSchema() {
 
 const server = express();
 
+server.use('/static', express.static(path.join(__dirname, 'static')));
+
 server.use(
   '/parse',
   new ParseServer({
@@ -105,11 +107,16 @@ if (IS_DEVELOPMENT) {
 
 server.use(
   '/graphql',
-  graphqlHTTP({
-    graphiql: IS_DEVELOPMENT,
-    pretty: IS_DEVELOPMENT,
-    schema: getSchema(),
-    rootValue: Math.random(), // TODO: Check credentials, assign user
+  graphqlHTTP(request => {
+    return {
+      graphiql: IS_DEVELOPMENT,
+      pretty: IS_DEVELOPMENT,
+      schema: getSchema(),
+      rootValue: Math.random(), // TODO: Check credentials, assign user
+      context: {
+        request
+      }
+    };
   })
 );
 

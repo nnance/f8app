@@ -1,7 +1,6 @@
+import './casual-config';
 import casual from 'casual';
 import {MockList} from 'graphql-tools';
-
-casual.seed(1);
 
 const mocks = {
   User: {
@@ -13,11 +12,12 @@ const mocks = {
     title() {
       return casual.title;
     },
-    cover() {
-      return `http://i99.photobucket.com/albums/l288/korewa13th/kore%20blog/noom.jpg`;
+    async cover(rootValue, args, {request}) {
+      let uri = await casual.clog_cover;
+      return `http://${request.get('host')}${uri}`;
     },
     category() {
-      return 'D'
+      return casual.clog_category;
     }
   },
   Query: {
