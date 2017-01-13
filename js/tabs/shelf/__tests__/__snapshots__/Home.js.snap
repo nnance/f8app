@@ -236,12 +236,26 @@ exports[`Shelf.Home render correct 1`] = `
             showsHorizontalScrollIndicator={false}
             stickyHeaderIndices={Array []}>
             <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Object {
                   "flex": 1,
+                  "opacity": 1,
                   "padding": 20,
                 }
-              }>
+              }
+              testID={undefined}>
               <Image
                 size={250}
                 source={
@@ -335,12 +349,26 @@ exports[`Shelf.Home render correct 1`] = `
                 }
               } />
             <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Object {
                   "flex": 1,
+                  "opacity": 1,
                   "padding": 20,
                 }
-              }>
+              }
+              testID={undefined}>
               <Image
                 size={250}
                 source={
@@ -434,12 +462,26 @@ exports[`Shelf.Home render correct 1`] = `
                 }
               } />
             <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Object {
                   "flex": 1,
+                  "opacity": 1,
                   "padding": 20,
                 }
-              }>
+              }
+              testID={undefined}>
               <Image
                 size={250}
                 source={
@@ -533,12 +575,26 @@ exports[`Shelf.Home render correct 1`] = `
                 }
               } />
             <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Object {
                   "flex": 1,
+                  "opacity": 1,
                   "padding": 20,
                 }
-              }>
+              }
+              testID={undefined}>
               <Image
                 size={250}
                 source={
@@ -632,12 +688,26 @@ exports[`Shelf.Home render correct 1`] = `
                 }
               } />
             <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Object {
                   "flex": 1,
+                  "opacity": 1,
                   "padding": 20,
                 }
-              }>
+              }
+              testID={undefined}>
               <Image
                 size={250}
                 source={
@@ -731,12 +801,26 @@ exports[`Shelf.Home render correct 1`] = `
                 }
               } />
             <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Object {
                   "flex": 1,
+                  "opacity": 1,
                   "padding": 20,
                 }
-              }>
+              }
+              testID={undefined}>
               <Image
                 size={250}
                 source={
@@ -830,12 +914,26 @@ exports[`Shelf.Home render correct 1`] = `
                 }
               } />
             <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Object {
                   "flex": 1,
+                  "opacity": 1,
                   "padding": 20,
                 }
-              }>
+              }
+              testID={undefined}>
               <Image
                 size={250}
                 source={
@@ -929,12 +1027,26 @@ exports[`Shelf.Home render correct 1`] = `
                 }
               } />
             <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Object {
                   "flex": 1,
+                  "opacity": 1,
                   "padding": 20,
                 }
-              }>
+              }
+              testID={undefined}>
               <Image
                 size={250}
                 source={
@@ -1153,14 +1265,28 @@ exports[`Shelf.Home render correct 1`] = `
               showsHorizontalScrollIndicator={false}
               stickyHeaderIndices={Array []}>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -1267,14 +1393,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -1381,14 +1521,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -1495,14 +1649,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -1609,14 +1777,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -1723,14 +1905,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -1837,14 +2033,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -1951,14 +2161,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -2065,14 +2289,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -2179,14 +2417,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -2651,14 +2903,28 @@ exports[`Shelf.Home render correct 1`] = `
               showsHorizontalScrollIndicator={false}
               stickyHeaderIndices={Array []}>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -2765,14 +3031,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -2879,14 +3159,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -2993,14 +3287,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -3107,14 +3415,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -3221,14 +3543,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -3335,14 +3671,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -3449,14 +3799,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -3563,14 +3927,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -3677,14 +4055,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -3916,14 +4308,28 @@ exports[`Shelf.Home render correct 1`] = `
               showsHorizontalScrollIndicator={false}
               stickyHeaderIndices={Array []}>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -4030,14 +4436,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -4144,14 +4564,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -4258,14 +4692,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -4372,14 +4820,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -4486,14 +4948,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -4600,14 +5076,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -4714,14 +5204,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -4828,14 +5332,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -4942,14 +5460,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -5181,14 +5713,28 @@ exports[`Shelf.Home render correct 1`] = `
               showsHorizontalScrollIndicator={false}
               stickyHeaderIndices={Array []}>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -5295,14 +5841,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -5409,14 +5969,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -5523,14 +6097,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -5637,14 +6225,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -5751,14 +6353,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -5865,14 +6481,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -5979,14 +6609,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -6093,14 +6737,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
@@ -6207,14 +6865,28 @@ exports[`Shelf.Home render correct 1`] = `
                 </View>
               </View>
               <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
                     "flex": 1,
+                    "opacity": 1,
                     "paddingHorizontal": 5,
                     "paddingVertical": 10,
                     "width": 100,
                   }
-                }>
+                }
+                testID={undefined}>
                 <View
                   style={
                     Object {
