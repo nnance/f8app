@@ -31,7 +31,7 @@ import ParseDashboard from 'parse-dashboard';
 
 
 const SERVER_PORT = process.env.SERVER_PORT || 8080;
-const SERVER_HOST = process.env.SERVER_HOST || 'localhost';
+const SERVER_URL = process.env.URL;
 const JAVASCRIPT_KEY = process.env.JAVASCRIPT_KEY || '';
 const APP_NAME = process.env.APP_NAME || 'clogii';
 const APP_ID = process.env.APP_ID || 'oss-f8-app-2016';
@@ -46,7 +46,7 @@ const MOCK_SERVER = !!+process.env.MOCK_SERVER;
 const SERVER_PROTOCOL = process.env.SERVER_PROTOCOL || 'http';
 
 Parse.initialize(APP_ID);
-Parse.serverURL = `${SERVER_PROTOCOL}://localhost:${SERVER_PORT}/parse`;
+Parse.serverURL = `${SERVER_URL}/parse`;
 Parse.masterKey = MASTER_KEY;
 Parse.Cloud.useMasterKey();
 
@@ -71,8 +71,8 @@ server.use(
     appId: APP_ID,
     masterKey: MASTER_KEY,
     fileKey: 'f33fc1a9-9ba9-4589-95ca-9976c0d52cd5',
-    serverURL: `http://${SERVER_HOST}:${SERVER_PORT}/parse`,
-    publicServerURL: `http://${SERVER_HOST}:${SERVER_PORT}/parse`,
+    serverURL: `${SERVER_URL}/parse`,
+    publicServerURL: `${SERVER_URL}/parse`,
     appName: APP_NAME,
     verifyUserEmails: true,
     emailAdapter: {
