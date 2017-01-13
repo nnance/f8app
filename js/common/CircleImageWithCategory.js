@@ -7,7 +7,9 @@ import {
 } from 'react-native';
 
 export default (props) => (<View style={{width: props.size, height: props.size}}>
-  <CircleImage {...props} style={[props.imageStyle, {backgroundColor: 'transparent'}]}/>
+  <CircleImage {...props} style={[props.imageStyle, {backgroundColor: 'transparent'}]}>
+    {props.children}
+  </CircleImage>
   <Image
     source={props.categorySource}
     style={[{

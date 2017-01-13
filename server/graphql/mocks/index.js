@@ -37,6 +37,9 @@ const mocks = {
     },
     favoriteTags() {
       return [1, 1, 1];
+    },
+    heroBanners() {
+      return [1, 1, 1, 1, 1, 1, 1, 1];
     }
   }
 };

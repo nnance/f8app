@@ -17,7 +17,7 @@ import {getCategoryIcon} from '../../../models/clog';
 class ClogMeta extends React.Component {
   render() {
     return (
-      <View style={{flex: 1, paddingHorizontal: 5, paddingVertical: 10, width: 100}}>
+      <TouchableOpacity style={{flex: 1, paddingHorizontal: 5, paddingVertical: 10, width: 100}}>
           <View style={{flex: 7}}>
             <CircleImageWithCategory
               source={mapSource(this.props.cover)}
@@ -35,7 +35,7 @@ class ClogMeta extends React.Component {
           <View style={{flex: 1, alignItems: 'center'}}>
             <Text style={{fontSize: 10, color: colors.textFadedWhite}} numberOfLines={1}>{this.props.author}</Text>
           </View>
-      </View>
+      </TouchableOpacity>
     );
   }
 }

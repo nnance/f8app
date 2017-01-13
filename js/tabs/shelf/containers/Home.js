@@ -34,6 +34,15 @@ export const query = gql`
         }
       }
     }
+    heroBanners {
+      title
+      cover
+      category
+      review
+      author {
+        name
+      }
+    }
   }
 `;
 
@@ -45,10 +54,11 @@ const mapClogFragment = clog => {
 };
 
 export const mapQueryToProps = ({ ownProps, data }) => {
-  const { loading, trending, topClog, favoriteTags } = data;
+  const { loading, trending, topClog, favoriteTags, heroBanners } = data;
   return ({
     trending: loading ? [] : trending.map(mapClogFragment),
     topClog: loading ? undefined : mapClogFragment(topClog),
+    heroBanners: loading ? [] : heroBanners.map(mapClogFragment),
     favoriteTags: loading ? [] : favoriteTags.map(tag => ({
       ...tag,
       trending: tag.trending.map(mapClogFragment)
