@@ -1,5 +1,5 @@
 import {graphql} from 'graphql';
-import {MockSchema} from '../../server/graphql/schema';
+let MockSchema = require('../../server/cloud/graphql/mockSchema');
 
 export default function(query) {
   return graphql(MockSchema, query.loc.source.body, null, {
