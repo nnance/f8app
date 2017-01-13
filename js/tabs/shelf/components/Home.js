@@ -15,6 +15,7 @@ import BorderButton from '../../../common/BorderButton';
 import ClogListView from './ClogListView';
 import TopClog from './TopClog';
 import ExploreCategory from './ExploreCategory';
+import HeroBanner from './HeroBanner';
 
 import mockData from '../mockData';
 
@@ -40,7 +41,7 @@ class Home extends React.Component {
         <ScrollView>
           <Image source={require('../img/home-bg-1.png')} style={{width: undefined, height: 700, resizeMode: 'stretch', backgroundColor: 'transparent'}}>
             <View style={{flex: 2}}>
-              <Image source={require('../img/mock-head.png')} style={{resizeMode: 'stretch', width: 350, height: 280}}/>
+              <HeroBanner clogs={this.props.heroBanners}/>
             </View>
             <View style={{flex: 1, paddingLeft: 10}}>
               <ClogListView header="TRENDING" clogs={this.props.trending} renderButton={this.renderTrendingButton.bind(this)}/>

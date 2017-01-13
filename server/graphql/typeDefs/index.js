@@ -25,9 +25,10 @@ const schema = `
   }
 
   type Query {
-    trending: [Clog]!
+    trending: [Clog!]!
     topClog: Clog!
     favoriteTags: [Tag!]!
+    heroBanners: [Clog!]!
   }
 `;
 
