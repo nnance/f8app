@@ -13,7 +13,7 @@ import NavBar from '../../../common/NavBar';
 import BorderButton from '../../../common/BorderButton';
 
 import ClogListView from './ClogListView';
-import TopClog from './TopClog';
+import RecommendedClog from './RecommendedClog';
 import ExploreCategory from './ExploreCategory';
 import HeroBanner from './HeroBanner';
 
@@ -47,7 +47,7 @@ class Home extends React.Component {
               <ClogListView header="TRENDING" clogs={this.props.trending} renderButton={this.renderTrendingButton.bind(this)}/>
             </View>
             <View style={{flex: 1.6}}>
-              <TopClog {...this.props.topClog}/>
+              <RecommendedClog {...this.props.topClog}/>
             </View>
           </Image>
           <Image source={require('../img/home-bg-1.5.png')} style={{resizeMode: 'stretch', backgroundColor: 'transparent', width: undefined, height: undefined, paddingTop: 20}}>

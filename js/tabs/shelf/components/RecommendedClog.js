@@ -12,7 +12,7 @@ import BorderButton from '../../../common/BorderButton';
 import {mapSource} from '../../../common/utils';
 import {getCategoryIcon} from '../../../models/clog';
 
-class TopClog extends React.Component {
+class RecommendedClog extends React.Component {
   render() {
     return (
       <View style={{flex: 1}}>
@@ -56,4 +56,4 @@ class TopClog extends React.Component {
   }
 }
 
-export default TopClog;
+export default RecommendedClog;
