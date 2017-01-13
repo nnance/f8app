@@ -24,11 +24,9 @@ import 'dotenv/config';
 import path from 'path';
 import express from 'express';
 import graphqlHTTP from 'express-graphql';
-import {Schema, MockSchema} from './graphql/schema';
 import Parse from 'parse/node';
 import {ParseServer} from 'parse-server';
 import ParseDashboard from 'parse-dashboard';
-
 
 const SERVER_PORT = process.env.SERVER_PORT || 8080;
 const SERVER_URL = process.env.URL;
@@ -52,11 +50,16 @@ Parse.Cloud.useMasterKey();
 
 function getSchema() {
   if (!IS_DEVELOPMENT) {
-    return MOCK_SERVER ? MockSchema : Schema;
+    return MOCK_SERVER ? require('./cloud/graphql/mockSchema.js') : require('./cloud/graphql/schema.js');
   }
 
-  delete require.cache[require.resolve('./graphql/schema.js')];
-  return MOCK_SERVER ? require('./graphql/schema.js').MockSchema : require('./graphql/schema.js').Schema;
+  if (MOCK_SERVER) {
+    delete require.cache[require.resolve('./cloud/graphql/mockSchema.js')];
+  }
+  else {
+    delete require.cache[require.resolve('./cloud/graphql/schema.js')];
+  }
+  return MOCK_SERVER ? require('./cloud/graphql/mockSchema.js') : require('./cloud/graphql/schema.js');
 }
 
 const server = express();

@@ -24,16 +24,10 @@
 import {addMockFunctionsToSchema, makeExecutableSchema} from 'graphql-tools';
 import typeDefs from './typeDefs';
 import resolvers from './resolvers';
-import mocks from './mocks';
 
-export let Schema = makeExecutableSchema({
+let Schema = makeExecutableSchema({
   typeDefs,
   resolvers
 });
 
-export let MockSchema = makeExecutableSchema({
-  typeDefs,
-  resolvers: mocks
-});
-
-addMockFunctionsToSchema({schema: MockSchema, preserveResolvers: true});
+module.exports = Schema;
