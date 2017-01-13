@@ -33,7 +33,11 @@ if (process.env.NODE_ENV === 'test') {
 
 module.exports = {
   testMenuEnabled: true,
-  serverURL: `http://${config.SERVER_HOST}:${config.SERVER_PORT}`,
+  serverURL: `${config.SERVER_PROTOCOL}://${config.SERVER_HOST}:${config.SERVER_PORT}`,
+  parse: {
+    appID: config.APP_ID,
+    javascriptKey: config.JAVASCRIPT_KEY
+  },
   version: 323,
   fontFamily: undefined,
 };

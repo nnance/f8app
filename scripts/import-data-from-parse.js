@@ -26,7 +26,7 @@ import env from '../js/env.js';
 
 const SERVER_PORT = process.env.PORT || 8080;
 
-Parse.initialize('oss-f8-app-2016');
+Parse.initialize(env.parse.appID, env.parse.javascriptKey);
 Parse.serverURL = `${env.serverURL}/parse`;
 
 const BLACKLISTED_KEYS = new Set(['objectId', 'createdAt', 'updatedAt']);

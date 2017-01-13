@@ -37,14 +37,15 @@ var { Provider } = require('react-redux');
 var apollo = require('./store/apollo');
 var configureStore = require('./store/configureStore');
 
-var {serverURL} = require('./env');
+const env = require('./env');
+let {serverURL} = env;
 
 import moment from 'moment';
 import 'moment/locale/th';
 
 function setup(): React.Component {
   console.disableYellowBox = true;
-  Parse.initialize('oss-f8-app-2016');
+  Parse.initialize(env.parse.appID, env.parse.javascriptKey);
   Parse.serverURL = `${serverURL}/parse`;
 
   FacebookSDK.init();
