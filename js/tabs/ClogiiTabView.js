@@ -2,7 +2,8 @@ import React from 'react';
 import {
   Image,
   View,
-  StyleSheet
+  StyleSheet,
+  Platform
 } from 'react-native';
 
 import ScrollableTabView from 'react-native-scrollable-tab-view';
@@ -42,7 +43,7 @@ class ClogiiTabView extends React.Component {
             });
           }
         }
-        locked={true}
+        locked={Platform.os === 'android'}
       >
         <ShelfScreen tabLabel="Clogii"/>
         <TestBadges tabLabel="Feed" isActive={this.state.activeTab === 1 ? true : false}><Image style={styles.mockScreen} source={require('./img/mock/feed.png')}/></TestBadges>
