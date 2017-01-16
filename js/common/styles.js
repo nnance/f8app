@@ -1,7 +1,7 @@
 export const colors = {
   greyBackground: 'rgb(250, 250, 250)',
   fadedGreyBackground: 'rgba(0, 0, 0, 0.2)',
-  greyBorder: 'rgb(240, 240, 240)',
+  greyBorder: 'rgba(0, 0, 0, 0.6)',
   pinkBorder: 'rgba(242, 215, 234, 0.8)',
   textFadedGrey: 'rgba(0, 0, 0, 0.3)',
   textGrey: 'rgba(0, 0, 0, 0.5)',

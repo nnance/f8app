@@ -13,8 +13,6 @@ import CustomNavBar from '../../../common/NavBar';
 
 import {colors} from '../../../common/styles';
 
-const NAV_BAR_HEIGHT = 60;
-
 export default class NavBar extends React.Component {
   render() {
     return (
