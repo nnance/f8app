@@ -7,6 +7,7 @@ import {
 
 import CircleImage from '../../../common/CircleImage';
 import PureListView from '../../../common/PureListView';
+import BorderButton from '../../../common/BorderButton';
 import {colors} from '../../../common/styles';
 
 const Row = props => {
@@ -63,8 +64,14 @@ class WriterList extends React.Component {
       <View>
         {
           this.props.type === 'big' ?
-          <View style={{alignItems: 'flex-start'}}>
-            <Text style={{fontSize: 14, fontWeight: 'bold', color: colors.textWhite}} numberOfLines={1}>Editor</Text>
+          <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+            <View style={{alignItems: 'flex-start'}}>
+              <Text style={{fontSize: 14, fontWeight: 'bold', color: colors.textWhite}} numberOfLines={1}>Editor</Text>
+            </View>
+            <View style={{flex: 1}}/>
+            <View style={{alignItems: 'flex-end', justifyContent: 'center', paddingRight: 10}}>
+              <BorderButton type="fadedWhite" caption="ทั้งหมด"/>
+            </View>
           </View> : null
         }
         <PureListView
