@@ -5,8 +5,8 @@ import { graphql } from 'react-apollo';
 import ClogCategory from '../components/ClogCategory';
 
 export const query = gql`
-  query {
-    categoryDetail(category: D) {
+  query CategoryDetail($category: Category!){
+    categoryDetail(category: $category) {
       trendingClogs {
         title
         cover
@@ -51,5 +51,10 @@ export const mapQueryToProps = ({ ownProps, data }) => {
 };
 
 export default graphql(query, {
-  props: mapQueryToProps
+  props: mapQueryToProps,
+  options: ({category}) => ({
+    variables: {
+      category
+    }
+  })
 })(ClogCategory);

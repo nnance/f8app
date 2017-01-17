@@ -18,10 +18,35 @@ import NavBar from './NavBar';
 import WriterList from './WriterList';
 import ClogListView from './ClogListView';
 
-const clogTheme = {
-  color: 'rgb(244, 68, 54)',
-  borderNavBar: 'rgba(200, 40, 30, 1)',
-  bannerColor: 'rgb(230, 35, 70)'
+const clogThemes = {
+  D: {
+    logo: require('../img/diary-logo.png'),
+    title: 'Diary Clog',
+    color: 'rgb(252, 246, 67)',
+    borderNavBar: 'rgb(212, 206, 27)',
+    bannerColor: 'rgb(249, 220, 73)'
+  },
+  G: {
+    logo: require('../img/gag-logo.png'),
+    title: 'Gag Clog',
+    color: 'rgb(49, 240, 185)',
+    borderNavBar: 'rgb(9, 200, 145)',
+    bannerColor: 'rgb(49, 240, 185)'
+  },
+  M: {
+    logo: require('../img/myth-logo.png'),
+    title: 'Myth Clog',
+    color: 'rgb(30, 153, 246)',
+    borderNavBar: 'rgb(0, 113, 216)',
+    bannerColor: 'rgb(30, 153, 246)'
+  },
+  N: {
+    logo: require('../img/novel-logo.png'),
+    title: 'Novel Clog',
+    color: 'rgb(244, 68, 54)',
+    borderNavBar: 'rgba(200, 40, 30, 1)',
+    bannerColor: 'rgb(230, 35, 70)'
+  }
 };
 
 const OpacityCircle = props => {
@@ -41,6 +66,7 @@ const OpacityCircle = props => {
 
 class ClogLogo extends React.Component {
   render() {
+    const clogTheme = clogThemes[this.props.category];
     return (
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <OpacityCircle size={325} opacity={0.1}>
@@ -48,7 +74,7 @@ class ClogLogo extends React.Component {
             <OpacityCircle size={175} opacity={0.2}>
               <OpacityCircle size={100} opacity={0.25}>
                 <Image
-                  source={require('../img/gag-clog.png')}
+                  source={clogTheme.logo}
                   style={{
                     height: 80,
                     resizeMode: 'contain'
@@ -65,6 +91,7 @@ class ClogLogo extends React.Component {
 
 class ClogBanner extends React.Component {
   render() {
+    const clogTheme = clogThemes[this.props.category];
     return (
       <View style={{flex: 1, flexDirection: 'row'}}>
         <View style={{
@@ -123,6 +150,7 @@ class ClogBanner extends React.Component {
 
 class ClogCategory extends React.Component {
   render() {
+    const clogTheme = clogThemes[this.props.category];
     return (
       <View style={{flex: 1}}>
         <ScrollView style={{flex: 1, backgroundColor: 'transparent'}}>
@@ -137,7 +165,7 @@ class ClogCategory extends React.Component {
                     fontWeight: 'bold',
                     fontSize: 20
                   }}>
-                  Novel Clog
+                  {clogTheme.title}
                 </Text>
               )}
               containerStyle={{
@@ -171,7 +199,7 @@ class ClogCategory extends React.Component {
                   </View>
                 </View>
                 <View style={{height: 150, width: undefined, padding: 5, justifyContent: 'center'}}>
-                  <ClogLogo/>
+                  <ClogLogo category={this.props.category}/>
                 </View>
                 <View style={{height: 150, padding: 10, justifyContent: 'center', alignItems: 'center'}}>
                   <PureListView
@@ -203,7 +231,7 @@ class ClogCategory extends React.Component {
   }
 
   renderClogBanner() {
-    return <View style={{flex: 1, width: 320, marginHorizontal: (Dimensions.get('window').width - 320 - 20) / 2}}><ClogBanner/></View>;
+    return <View style={{flex: 1, width: 320, marginHorizontal: (Dimensions.get('window').width - 320 - 20) / 2}}><ClogBanner category={this.props.category}/></View>;
   }
 
   renderViewAllClog() {
