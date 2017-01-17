@@ -23,6 +23,45 @@ const clogTheme = {
   bannerColor: 'rgb(230, 35, 70)'
 };
 
+const OpacityCircle = props => {
+  return (
+    <View style={[
+        styles.centerItems,
+        {
+          width: props.size,
+          height: props.size,
+          borderRadius: props.size / 2,
+          backgroundColor: `rgba(255, 255, 255, ${props.opacity})`,
+        },
+        props.style
+      ]}>{props.children}</View>
+  )
+}
+
+class ClogLogo extends React.Component {
+  render() {
+    return (
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <OpacityCircle size={325} opacity={0.1}>
+          <OpacityCircle size={250} opacity={0.15}>
+            <OpacityCircle size={175} opacity={0.2}>
+              <OpacityCircle size={100} opacity={0.25}>
+                <Image
+                  source={require('../img/gag-clog.png')}
+                  style={{
+                    height: 80,
+                    resizeMode: 'contain'
+                  }}
+                />
+              </OpacityCircle>
+            </OpacityCircle>
+          </OpacityCircle>
+        </OpacityCircle>
+      </View>
+    );
+  }
+}
+
 class ClogBanner extends React.Component {
   render() {
     return (
@@ -131,13 +170,7 @@ class ClogCategory extends React.Component {
                   </View>
                 </View>
                 <View style={{height: 150, width: undefined, padding: 5, justifyContent: 'center'}}>
-                  <Image
-                    source={require('../img/gag-clog.png')}
-                    style={{
-                      height: 80,
-                      resizeMode: 'contain'
-                    }}
-                    />
+                  <ClogLogo/>
                 </View>
                 <View style={{height: 150, padding: 10, justifyContent: 'center', alignItems: 'center'}}>
                   <PureListView
@@ -178,6 +211,10 @@ class ClogCategory extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  centerItems: {
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
   followingNumber: {
     fontWeight: 'bold',
     fontSize: 12,
