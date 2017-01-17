@@ -15,7 +15,7 @@ const Row = props => {
     <View style={{padding: props.type === 'small' ? 1.5 : 5, alignItems: 'center'}}>
       { !props.data.remaining ?
         <CircleImage
-        source={require('../img/B.png')}
+        source={{uri: props.data.profilePicture}}
         size={props.type === 'small' ? 30 : 100}
         /> :
         <View style={{
@@ -32,8 +32,8 @@ const Row = props => {
       }
       {
         props.type === 'big' ?
-        <View style={{alignItems: 'center', width: 80}}>
-          <Text style={{color: 'white'}} numberOfLines={1}>Tesasdasdasdasdasdast</Text>
+        <View style={{alignItems: 'center', width: 80, paddingTop: 5}}>
+          <Text style={{color: 'white'}} numberOfLines={1}>{props.data.name}</Text>
         </View>
         : null
       }
@@ -49,7 +49,7 @@ class WriterList extends React.Component {
   render() {
     const limit = 3;
     let count = 0;
-    let data = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+    let data = this.props.editors;
     let realData;
     if (this.props.type === 'big') {
       realData = data;

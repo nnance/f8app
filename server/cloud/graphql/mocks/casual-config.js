@@ -31,3 +31,9 @@ casual.define('clog_category', async () => {
   let idx = casual.integer(from = 0, to = category.length - 1);
   return category[idx];
 });
+
+casual.define('profilePicture', async () => {
+  let clogCovers = await getCovers();
+  let idx = casual.integer(from = 0, to = clogCovers.length - 1);
+  return clogCovers[idx];
+});

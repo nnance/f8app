@@ -6,7 +6,7 @@ import {
 import Home from './containers/Home';
 import * as mockData from './mockData';
 
-import ClogCategory from './components/ClogCategory';
+import ClogCategory from './containers/ClogCategory';
 
 export default ClogCategory;
 
