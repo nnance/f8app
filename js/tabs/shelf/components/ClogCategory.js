@@ -5,22 +5,84 @@ import {
   Image,
   Text,
   ScrollView,
-  StyleSheet
+  StyleSheet,
+  Dimensions
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import {colors} from '../../../common/styles';
 import BorderButton from '../../../common/BorderButton';
+import PureListView from '../../../common/PureListView';
 import NavBar from './NavBar';
 import WriterList from './WriterList';
 import ClogListView from './ClogListView';
 
+const clogTheme = {
+  color: 'rgb(244, 68, 54)',
+  borderNavBar: 'rgba(200, 40, 30, 1)',
+  bannerColor: 'rgb(230, 35, 70)'
+};
+
+class ClogBanner extends React.Component {
+  render() {
+    return (
+      <View style={{flex: 1, flexDirection: 'row'}}>
+        <View style={{
+            flex: 4,
+            backgroundColor: clogTheme.bannerColor,
+            borderTopLeftRadius: 10,
+            borderBottomLeftRadius: 10
+        }}>
+          <Image source={{uri: 'http://scontent-fbkk5-7.us-fbcdn.net/v1/t.1-48/1426l78O9684I4108ZPH0J4S8_842023153_K1DlXQOI5DHP/dskvvc.qpjhg.xmwo/p/data/143/143382-2-6462.jpg'}}
+            style={{
+              flex: 1,
+              resizeMode: 'cover',
+              borderRadius: 10
+            }}
+            >
+            <LinearGradient
+              start={{
+                x: 0.1,
+                y: 0.5
+              }}
+              end={{
+                x: 1,
+                y: 0.5
+              }}
+              colors={['rgba(255, 255, 255, 0)', clogTheme.bannerColor]}
+              style={{
+                flex: 1,
+                top: 0,
+                height: undefined
+              }}
+              />
+          </Image>
+        </View>
+        <View style={{
+          flex: 5,
+          backgroundColor: clogTheme.bannerColor,
+          height: undefined,
+          borderTopRightRadius: 10,
+          borderBottomRightRadius: 10
+        }}>
+          <View style={{
+              flex: 1,
+              paddingHorizontal: 10,
+              justifyContent: 'center'
+            }}>
+            <View>
+              <Text style={styles.bannerTitleText}>Mon Oncle</Text>
+              <Text style={styles.bannerOwnerText}>Steve Jobs</Text>
+            </View>
+          </View>
+        </View>
+      </View>
+    );
+  }
+}
+
 class ClogCategory extends React.Component {
   render() {
-    const clogTheme = {
-      color: 'rgb(244, 68, 54)',
-      borderNavBar: 'rgba(200, 40, 30, 1)'
-    };
     return (
       <View style={{flex: 1}}>
         <ScrollView style={{flex: 1, backgroundColor: 'transparent'}}>
@@ -77,6 +139,16 @@ class ClogCategory extends React.Component {
                     }}
                     />
                 </View>
+                <View style={{height: 150, padding: 10, justifyContent: 'center', alignItems: 'center'}}>
+                  <PureListView
+                  data={[1, 1, 1, 1, 1, 1]}
+                  pagingEnabled
+                  horizontal={true}
+                  showsHorizontalScrollIndicator={false}
+                  minContentHeight={0}
+                  renderRow={this.renderClogBanner.bind(this)}
+                  />
+                </View>
                 <View style={{height: 180, padding: 5}}>
                   <ClogListView header="What's New" clogs={require('../mockData').fakeMetaClog} renderButton={this.renderViewAllClog.bind(this)}/>
                 </View>
@@ -96,6 +168,10 @@ class ClogCategory extends React.Component {
     );
   }
 
+  renderClogBanner() {
+    return <View style={{flex: 1, width: 320, marginHorizontal: (Dimensions.get('window').width - 320 - 20) / 2}}><ClogBanner/></View>;
+  }
+
   renderViewAllClog() {
     return <BorderButton type="fadedWhite" caption="ทั้งหมด"/>
   }
@@ -110,6 +186,16 @@ const styles = StyleSheet.create({
   followingWord: {
     fontSize: 10,
     color: 'white'
+  },
+  bannerTitleText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'white'
+  },
+  bannerOwnerText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: colors.textFadedWhite
   }
 });
 
