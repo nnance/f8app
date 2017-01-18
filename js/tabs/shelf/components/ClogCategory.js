@@ -157,6 +157,7 @@ class ClogCategory extends React.Component {
         <ScrollView style={{flex: 1, backgroundColor: 'transparent'}}>
           <LinearGradient style={{height: 600}} colors={[clogTheme.color, 'rgb(164, 58, 124)']}>
             <NavBar
+              onBackPress={() => this.props.navigator.pop()}
               renderRightMenu={() => (
                 <TouchableOpacity><Image style={{height: 20, resizeMode: 'contain'}} source={require('../img/white-search.png')}/></TouchableOpacity>
               )}

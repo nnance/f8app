@@ -8,6 +8,7 @@ import {
 
 const categories = [
   {
+    category: 'D',
     title: 'Diary Clog',
     img: require('../../img/category/D.png'),
     size: 90,
@@ -17,6 +18,7 @@ const categories = [
     }
   },
   {
+    category: 'M',
     title: 'Myth Clog',
     img: require('../../img/category/M.png'),
     size: 80,
@@ -26,6 +28,7 @@ const categories = [
     }
   },
   {
+    category: 'G',
     title: 'Gag Clog',
     img: require('../../img/category/G.png'),
     size: 100,
@@ -35,6 +38,7 @@ const categories = [
     }
   },
   {
+    category: 'N',
     title: 'Novel Clog',
     img: require('../../img/category/N.png'),
     size: 80,
@@ -50,28 +54,32 @@ class ExploreCategory extends React.Component {
     return (
       <Image source={require('../img/home-bg-2.png')} style={{width: undefined, height: 450, resizeMode: 'stretch', backgroundColor: 'transparent'}}>
         {
-          categories.map(this.renderCategory)
+          categories.map(this.renderCategory.bind(this))
         }
       </Image>
     );
   }
 
-  renderCategory(category, idx) {
+  renderCategory(categoryDetail, idx) {
     return (
-      <TouchableOpacity key={idx} style={{
+      <TouchableOpacity onPress={this.props.onPress.bind(null, categoryDetail.category)} key={idx} style={{
         position: 'absolute',
-        top: category.pos.y,
-        left: category.pos.x,
+        top: categoryDetail.pos.y,
+        left: categoryDetail.pos.x,
         justifyContent: 'center',
         alignItems: 'center'
       }}>
-        <Image source={category.img} style={{width: category.size, height: category.size}}/>
+        <Image source={categoryDetail.img} style={{width: categoryDetail.size, height: categoryDetail.size}}/>
         <View style={{padding: 5}}>
-          <Text style={{fontWeight: 'bold', color: 'white'}}>{category.title}</Text>
+          <Text style={{fontWeight: 'bold', color: 'white'}}>{categoryDetail.title}</Text>
         </View>
       </TouchableOpacity>
     );
   }
 }
+
+ExploreCategory.defaultProps = {
+  onPress: () => {}
+};
 
 export default ExploreCategory;

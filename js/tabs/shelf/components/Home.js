@@ -59,7 +59,7 @@ class Home extends React.Component {
               ))
             }
           </Image>
-          <ExploreCategory/>
+          <ExploreCategory onPress={(category) => this.props.navigator.push({page: 'clog-category', category})}/>
         </ScrollView>
       </View>
     );
