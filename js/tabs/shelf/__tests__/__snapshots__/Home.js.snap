@@ -3308,23 +3308,19 @@ exports[`Shelf.Home render correct 1`] = `
                   <View
                     style={
                       Object {
-                        "backgroundColor": "rgba(0, 0, 0, 0)",
-                        "borderRadius": 65,
-                        "height": 130,
-                        "left": -0,
+                        "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                        "borderRadius": 67.5,
+                        "height": 135,
+                        "left": -2.5,
                         "position": "absolute",
-                        "top": -0,
-                        "width": 130,
+                        "top": -2.5,
+                        "width": 135,
                       }
                     } />
                   <Image
                     categorySource={1}
-                    imageStyle={
-                      Object {
-                        "borderColor": "rgba(242, 215, 234, 0.8)",
-                        "borderWidth": 3,
-                      }
-                    }
+                    shadowColor="rgba(255, 255, 255, 0.3)"
+                    shadowRadius={5}
                     size={130}
                     source={
                       Object {
@@ -3339,10 +3335,7 @@ exports[`Shelf.Home render correct 1`] = `
                           "width": 130,
                         },
                         Array [
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          },
+                          undefined,
                           Object {
                             "backgroundColor": "transparent",
                           },

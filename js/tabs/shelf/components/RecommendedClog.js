@@ -22,10 +22,8 @@ class RecommendedClog extends React.Component {
               source={mapSource(this.props.cover)}
               categorySource={getCategoryIcon(this.props.category)}
               size={130}
-              imageStyle={{
-                borderWidth: 3,
-                borderColor: colors.pinkBorder
-              }}
+              shadowRadius={5}
+              shadowColor={colors.fadedWhite}
             />
           </View>
           <View style={{flex: 2, justifyContent: 'center', alignItems: 'flex-start'}}>
