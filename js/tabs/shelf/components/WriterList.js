@@ -12,15 +12,17 @@ import {colors} from '../../../common/styles';
 
 const Row = props => {
   return (
-    <View style={{padding: props.type === 'small' ? 1.5 : 5, alignItems: 'center'}}>
+    <View style={{paddingVertical: props.type === 'small' ? 1.5 : 8, paddingHorizontal: props.type === 'small' ? 1.5 : 15, alignItems: 'center'}}>
       { !props.data.remaining ?
         <CircleImage
         source={{uri: props.data.profilePicture}}
-        size={props.type === 'small' ? 30 : 100}
+        size={props.type === 'small' ? 30 : 80}
+        shadowRadius={props.type === 'small' ? 2 : 4}
+        shadowColor="white"
         /> :
         <View style={{
-          width: 30,
-          height: 30,
+          width: 30 + 2,
+          height: 30 + 2,
           borderRadius: 15,
           backgroundColor: 'red',
           justifyContent: 'center',

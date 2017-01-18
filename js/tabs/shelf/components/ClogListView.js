@@ -23,10 +23,8 @@ class ClogMeta extends React.Component {
               source={mapSource(this.props.cover)}
               categorySource={getCategoryIcon(this.props.category)}
               size={85}
-              imageStyle={{
-                borderWidth: 3,
-                borderColor: colors.pinkBorder
-              }}
+              shadowRadius={5}
+              shadowColor={colors.fadedWhite}
             />
           </View>
           <View style={{flex: 1, alignItems: 'center', paddingTop: 20}}>
