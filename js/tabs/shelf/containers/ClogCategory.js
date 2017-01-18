@@ -39,6 +39,12 @@ const mapClogFragment = clog => {
   });
 };
 
+export const mapPropsToOptions = ({category}) => ({
+  variables: {
+    category
+  }
+});
+
 export const mapQueryToProps = ({ ownProps, data }) => {
   const { loading, categoryDetail } = data;
   return ({
@@ -52,9 +58,5 @@ export const mapQueryToProps = ({ ownProps, data }) => {
 
 export default graphql(query, {
   props: mapQueryToProps,
-  options: ({category}) => ({
-    variables: {
-      category
-    }
-  })
+  options: mapPropsToOptions
 })(ClogCategory);

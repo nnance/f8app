@@ -100,11 +100,12 @@ class ClogBanner extends React.Component {
             borderTopLeftRadius: 10,
             borderBottomLeftRadius: 10
         }}>
-          <Image source={{uri: 'http://scontent-fbkk5-7.us-fbcdn.net/v1/t.1-48/1426l78O9684I4108ZPH0J4S8_842023153_K1DlXQOI5DHP/dskvvc.qpjhg.xmwo/p/data/143/143382-2-6462.jpg'}}
+          <Image source={require('../img/mock-clog-banner.png')}
             style={{
               flex: 1,
               resizeMode: 'cover',
-              borderRadius: 10
+              borderRadius: 10,
+              width: undefined
             }}
             >
             <LinearGradient
