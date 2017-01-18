@@ -43,7 +43,7 @@ class ClogiiTabView extends React.Component {
             });
           }
         }
-        locked={Platform.os === 'android'}
+        locked={Platform.OS === 'android'}
       >
         <ShelfScreen tabLabel="Clogii"/>
         <TestBadges tabLabel="Feed" isActive={this.state.activeTab === 1 ? true : false}><Image style={styles.mockScreen} source={require('./img/mock/feed.png')}/></TestBadges>
