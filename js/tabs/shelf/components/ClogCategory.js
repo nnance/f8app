@@ -14,34 +14,35 @@ import {colors} from '../../../common/styles';
 import BorderButton from '../../../common/BorderButton';
 import PureListView from '../../../common/PureListView';
 import {toHumanNumber} from '../../../common/utils';
+import {getCategoryLogo} from '../../../models/clog';
 import NavBar from './NavBar';
 import WriterList from './WriterList';
 import ClogListView from './ClogListView';
 
 const clogThemes = {
   D: {
-    logo: require('../img/diary-logo.png'),
+    logo: getCategoryLogo('D'),
     title: 'Diary Clog',
     color: 'rgb(252, 246, 67)',
     borderNavBar: 'rgb(212, 206, 27)',
     bannerColor: 'rgb(249, 220, 73)'
   },
   G: {
-    logo: require('../img/gag-logo.png'),
+    logo: getCategoryLogo('G'),
     title: 'Gag Clog',
     color: 'rgb(49, 240, 185)',
     borderNavBar: 'rgb(9, 200, 145)',
     bannerColor: 'rgb(49, 240, 185)'
   },
   M: {
-    logo: require('../img/myth-logo.png'),
+    logo: getCategoryLogo('M'),
     title: 'Myth Clog',
     color: 'rgb(30, 153, 246)',
     borderNavBar: 'rgb(0, 113, 216)',
     bannerColor: 'rgb(30, 153, 246)'
   },
   N: {
-    logo: require('../img/novel-logo.png'),
+    logo: getCategoryLogo('N'),
     title: 'Novel Clog',
     color: 'rgb(244, 68, 54)',
     borderNavBar: 'rgba(200, 40, 30, 1)',

@@ -6,11 +6,13 @@ import {
   TouchableOpacity
 } from 'react-native';
 
+import {getCategoryIcon} from '../../../models/clog';
+
 const categories = [
   {
     category: 'D',
     title: 'Diary Clog',
-    img: require('../../img/category/D.png'),
+    img: getCategoryIcon('D'),
     size: 90,
     pos: {
       x: 45,
@@ -20,7 +22,7 @@ const categories = [
   {
     category: 'M',
     title: 'Myth Clog',
-    img: require('../../img/category/M.png'),
+    img: getCategoryIcon('M'),
     size: 80,
     pos: {
       x: 220,
@@ -30,7 +32,7 @@ const categories = [
   {
     category: 'G',
     title: 'Gag Clog',
-    img: require('../../img/category/G.png'),
+    img: getCategoryIcon('G'),
     size: 100,
     pos: {
       x: 80,
@@ -40,7 +42,7 @@ const categories = [
   {
     category: 'N',
     title: 'Novel Clog',
-    img: require('../../img/category/N.png'),
+    img: getCategoryIcon('N'),
     size: 80,
     pos: {
       x: 250,
