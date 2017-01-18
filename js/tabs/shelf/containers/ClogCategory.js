@@ -23,6 +23,14 @@ export const query = gql`
           name
         }
       }
+      recommendedClogs {
+        title
+        cover
+        category
+        author {
+          name
+        }
+      }
       editors {
         name
         profilePicture
@@ -51,6 +59,7 @@ export const mapQueryToProps = ({ ownProps, data }) => {
     trendingClogs: loading ? [] : categoryDetail.trendingClogs.map(mapClogFragment),
     recentlyClogs: loading ? [] : categoryDetail.recentlyClogs.map(mapClogFragment),
     editors: loading ? [] : categoryDetail.editors,
+    recommendedClogs: loading ? [] : categoryDetail.recommendedClogs.map(mapClogFragment),
     followingCount: loading ? 0 : categoryDetail.followingCount,
     loading
   });

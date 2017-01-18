@@ -139,8 +139,8 @@ class ClogBanner extends React.Component {
               justifyContent: 'center'
             }}>
             <View>
-              <Text style={styles.bannerTitleText}>Mon Oncle</Text>
-              <Text style={styles.bannerOwnerText}>Steve Jobs</Text>
+              <Text style={styles.bannerTitleText}>{this.props.clog.title}</Text>
+              <Text style={styles.bannerAuthorText}>{this.props.clog.author}</Text>
             </View>
           </View>
         </View>
@@ -205,7 +205,7 @@ class ClogCategory extends React.Component {
                 </View>
                 <View style={{height: 150, padding: 10, justifyContent: 'center', alignItems: 'center'}}>
                   <PureListView
-                  data={[1, 1, 1, 1, 1, 1]}
+                  data={this.props.recommendedClogs}
                   pagingEnabled
                   horizontal={true}
                   showsHorizontalScrollIndicator={false}
@@ -232,8 +232,12 @@ class ClogCategory extends React.Component {
     );
   }
 
-  renderClogBanner() {
-    return <View style={{flex: 1, width: 320, marginHorizontal: (Dimensions.get('window').width - 320 - 20) / 2}}><ClogBanner category={this.props.category}/></View>;
+  renderClogBanner(data) {
+    return (
+      <View style={{flex: 1, width: 320, marginHorizontal: (Dimensions.get('window').width - 320 - 20) / 2}}>
+        <ClogBanner category={this.props.category} clog={data}/>
+      </View>
+    );
   }
 
   renderViewAllClog() {
@@ -260,7 +264,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'white'
   },
-  bannerOwnerText: {
+  bannerAuthorText: {
     fontSize: 16,
     fontWeight: 'bold',
     color: colors.textFadedWhite

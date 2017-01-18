@@ -28,6 +28,7 @@ const schema = `
 
   type CategoryDetail {
     category: Category!
+    recommendedClogs: [Clog!]!
     trendingClogs: [Clog!]!
     recentlyClogs: [Clog!]!
     editors: [User!]!
