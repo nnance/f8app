@@ -1,7 +1,26 @@
 exports[`Shelf.ClogCategory render correct 1`] = `
-<View
+<BVLinearGradient
+  colors={
+    Array [
+      4294768195,
+      4294768195,
+      4292609111,
+      4292609111,
+    ]
+  }
+  end={undefined}
+  locations={
+    Array [
+      0,
+      0.5,
+      0.5,
+      1,
+    ]
+  }
+  start={undefined}
   style={
     Object {
+      "backgroundColor": "transparent",
       "flex": 1,
     }
   }>
@@ -24,135 +43,15 @@ exports[`Shelf.ClogCategory render correct 1`] = `
       start={undefined}
       style={
         Object {
-          "height": 600,
+          "height": 570,
         }
       }>
-      <View
-        style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "white",
-              "flexDirection": "row",
-              "height": 60,
-              "justifyContent": "space-between",
-              "paddingTop": 5,
-            },
-            Object {
-              "backgroundColor": "transparent",
-              "borderBottomWidth": 0.3,
-              "borderColor": "rgb(212, 206, 27)",
-            },
-          ]
-        }>
-        <View
-          style={
-            Array [
-              Object {
-                "alignItems": "flex-start",
-                "paddingLeft": 10,
-              },
-              undefined,
-            ]
-          }>
-          <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
-            accessible={true}
-            hitSlop={undefined}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "opacity": 1,
-              }
-            }
-            testID={undefined}>
-            <Image
-              source={1}
-              style={
-                Object {
-                  "height": 20,
-                  "resizeMode": "contain",
-                }
-              } />
-          </View>
-        </View>
-        <View
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-              },
-              undefined,
-            ]
-          }>
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "rgba(255, 255, 255, 1)",
-                "fontSize": 20,
-                "fontWeight": "bold",
-              }
-            }>
-            Diary Clog
-          </Text>
-        </View>
-        <View
-          style={
-            Array [
-              Object {
-                "alignItems": "flex-end",
-                "paddingRight": 10,
-              },
-              undefined,
-            ]
-          }>
-          <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
-            accessible={true}
-            hitSlop={undefined}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "opacity": 1,
-              }
-            }
-            testID={undefined}>
-            <Image
-              source={1}
-              style={
-                Object {
-                  "height": 20,
-                  "resizeMode": "contain",
-                }
-              } />
-          </View>
-        </View>
-      </View>
       <Image
         source={1}
         style={
           Object {
             "flex": 1,
-            "resizeMode": "stretch",
+            "resizeMode": "cover",
             "width": undefined,
           }
         }>
@@ -162,6 +61,12 @@ exports[`Shelf.ClogCategory render correct 1`] = `
               "flex": 1,
             }
           }>
+          <View
+            style={
+              Object {
+                "height": 60,
+              }
+            } />
           <View
             style={
               Object {
@@ -4527,5 +4432,129 @@ exports[`Shelf.ClogCategory render correct 1`] = `
       </View>
     </BVLinearGradient>
   </ScrollView>
-</View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "flexDirection": "row",
+          "height": 60,
+          "justifyContent": "space-between",
+          "paddingTop": 5,
+          "width": 750,
+        },
+        Object {
+          "backgroundColor": "rgb(252, 246, 67)",
+          "borderBottomWidth": 0.3,
+          "borderColor": "rgb(212, 206, 27)",
+          "left": 0,
+          "position": "absolute",
+          "top": 0,
+        },
+      ]
+    }>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "flex-start",
+            "paddingLeft": 10,
+          },
+          undefined,
+        ]
+      }>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID={undefined}>
+        <Image
+          source={1}
+          style={
+            Object {
+              "height": 20,
+              "resizeMode": "contain",
+            }
+          } />
+      </View>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+          },
+          undefined,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "rgba(255, 255, 255, 1)",
+            "fontSize": 20,
+            "fontWeight": "bold",
+          }
+        }>
+        Diary Clog
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "flex-end",
+            "paddingRight": 10,
+          },
+          undefined,
+        ]
+      }>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID={undefined}>
+        <Image
+          source={1}
+          style={
+            Object {
+              "height": 20,
+              "resizeMode": "contain",
+            }
+          } />
+      </View>
+    </View>
+  </View>
+</BVLinearGradient>
 `;

@@ -9,6 +9,7 @@ exports[`<NavBar/> render backButton by default 1`] = `
         "height": 60,
         "justifyContent": "space-between",
         "paddingTop": 5,
+        "width": 750,
       },
       Object {
         "borderBottomWidth": 1,

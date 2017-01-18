@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 
 import DefaultNavBar from '../../../common/NavBar';
+export {HEIGHT} from '../../../common/NavBar';
 import {colors} from '../../../common/styles';
 
 export default class NavBar extends React.Component {

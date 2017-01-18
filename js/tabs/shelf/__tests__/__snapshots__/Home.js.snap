@@ -15,6 +15,7 @@ exports[`Shelf.Home render correct 1`] = `
           "height": 60,
           "justifyContent": "space-between",
           "paddingTop": 5,
+          "width": 750,
         },
         undefined,
       ]

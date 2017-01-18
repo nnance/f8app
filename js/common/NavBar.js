@@ -6,10 +6,11 @@ import {
   View,
   StyleSheet,
   TouchableOpacity,
-  Image
+  Image,
+  Dimensions
 } from 'react-native';
 
-const NAV_BAR_HEIGHT = 60;
+export const HEIGHT = 60;
 
 export default class NavBar extends React.Component {
   render() {
@@ -38,7 +39,8 @@ export default class NavBar extends React.Component {
 const styles = StyleSheet.create({
   container: {
     paddingTop: 5,
-    height: NAV_BAR_HEIGHT,
+    height: HEIGHT,
+    width: Dimensions.get('window').width,
     backgroundColor: 'white',
     justifyContent: 'space-between',
     flexDirection: 'row',

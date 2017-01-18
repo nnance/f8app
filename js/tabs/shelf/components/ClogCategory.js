@@ -15,7 +15,7 @@ import BorderButton from '../../../common/BorderButton';
 import PureListView from '../../../common/PureListView';
 import {toHumanNumber} from '../../../common/utils';
 import {getCategoryLogo} from '../../../models/clog';
-import NavBar from './NavBar';
+import NavBar, {HEIGHT} from './NavBar';
 import WriterList from './WriterList';
 import ClogListView from './ClogListView';
 
@@ -162,37 +162,18 @@ class ClogCategory extends React.Component {
     const clogTheme = clogThemes[this.props.category];
     const currentClogBanner = this.props.recommendedClogs[this.state.currentClogBanner];
     return (
-      <View style={{flex: 1}}>
+      <LinearGradient locations={[0, 0.5, 0.5, 1]} colors={[clogTheme.color, clogTheme.color, 'rgb(220, 4, 87)', 'rgb(220, 4, 87)']} style={{flex: 1, backgroundColor: 'transparent'}}>
         <ScrollView style={{flex: 1, backgroundColor: 'transparent'}}>
-          <LinearGradient style={{height: 600}} colors={[clogTheme.color, 'rgb(164, 58, 124)']}>
-            <NavBar
-              onBackPress={() => this.props.navigator.pop()}
-              renderRightMenu={() => (
-                <TouchableOpacity><Image style={{height: 20, resizeMode: 'contain'}} source={require('../img/white-search.png')}/></TouchableOpacity>
-              )}
-              renderTitle={() => (
-                <Text style={{
-                    color: colors.textWhite,
-                    fontWeight: 'bold',
-                    fontSize: 20
-                  }}>
-                  {clogTheme.title}
-                </Text>
-              )}
-              containerStyle={{
-                backgroundColor: 'transparent',
-                borderBottomWidth: 0.3,
-                borderColor: clogTheme.borderNavBar
-              }}
-            />
+          <LinearGradient style={{height: 570}} colors={[clogTheme.color, 'rgb(164, 58, 124)']}>
             <Image source={require('../img/star-bg.png')}
               style={{
                 flex: 1,
                 width: undefined,
-                resizeMode: 'stretch'
+                resizeMode: 'cover'
               }}
             >
               <View style={{flex: 1}}>
+                <View style={{height: HEIGHT}}/>
                 <View style={{height: 50, width: undefined, flexDirection: 'row', padding: 5, alignItems: 'center'}}>
                   <View style={{flex: 1}}>
                     <WriterList editors={currentClogBanner ? this.props.recommendedClogs[this.state.currentClogBanner].followersYouKnow : []}/>
@@ -242,7 +223,30 @@ class ClogCategory extends React.Component {
             </View>
           </LinearGradient>
         </ScrollView>
-      </View>
+        <NavBar
+          onBackPress={() => this.props.navigator.pop()}
+          renderRightMenu={() => (
+            <TouchableOpacity><Image style={{height: 20, resizeMode: 'contain'}} source={require('../img/white-search.png')}/></TouchableOpacity>
+          )}
+          renderTitle={() => (
+            <Text style={{
+                color: colors.textWhite,
+                fontWeight: 'bold',
+                fontSize: 20
+              }}>
+              {clogTheme.title}
+            </Text>
+          )}
+          containerStyle={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            backgroundColor: clogTheme.color,
+            borderBottomWidth: 0.3,
+            borderColor: clogTheme.borderNavBar
+          }}
+        />
+      </LinearGradient>
     );
   }
 
