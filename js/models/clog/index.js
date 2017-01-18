@@ -1,3 +1,5 @@
+import gql from 'graphql-tag';
+
 const categoryImgs = {
   'default': require('./img/category/G.png'),
   'D': require('./img/category/D.png'),
@@ -12,3 +14,16 @@ export function getCategoryIcon(category) {
   }
   return categoryImgs[category];
 }
+
+export const fragments = {
+  clogMetaData: gql`
+    fragment clogMetaData on Clog {
+      title
+      cover
+      category
+      author {
+        name
+      }
+    }
+  `
+};

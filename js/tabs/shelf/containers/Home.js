@@ -4,46 +4,29 @@ import { graphql } from 'react-apollo';
 
 import Home from '../components/Home';
 
+import {fragments} from '../../../models/clog';
+
 export const query = gql`
   query {
     trendingClogs {
-      title
-      cover
-      category
-      author {
-        name
-      }
+      ...clogMetaData
     }
     recommendedClog {
-      title
-      cover
-      category
+      ...clogMetaData
       review
-      author {
-        name
-      }
     }
     favoriteTags {
       name
       trendingClogs {
-        title
-        cover
-        category
-        author {
-          name
-        }
+        ...clogMetaData
       }
     }
     heroBanners {
-      title
-      cover
-      category
+      ...clogMetaData
       review
-      author {
-        name
-      }
     }
   }
+  ${fragments.clogMetaData}
 `;
 
 export const mapQueryToProps = ({ ownProps, data }) => {

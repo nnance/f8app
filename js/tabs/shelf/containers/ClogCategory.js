@@ -4,32 +4,19 @@ import { graphql } from 'react-apollo';
 
 import ClogCategory from '../components/ClogCategory';
 
+import {fragments} from '../../../models/clog';
+
 export const query = gql`
   query CategoryDetail($category: Category!){
     categoryDetail(category: $category) {
       trendingClogs {
-        title
-        cover
-        category
-        author {
-          name
-        }
+        ...clogMetaData
       }
       recentlyClogs {
-        title
-        cover
-        category
-        author {
-          name
-        }
+        ...clogMetaData
       }
       recommendedClogs {
-        title
-        cover
-        category
-        author {
-          name
-        }
+        ...clogMetaData
       }
       editors {
         name
@@ -38,6 +25,7 @@ export const query = gql`
       followingCount
     }
   }
+  ${fragments.clogMetaData}
 `;
 
 export const mapPropsToOptions = ({category}) => ({
