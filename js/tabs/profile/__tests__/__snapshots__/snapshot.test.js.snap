@@ -130,7 +130,7 @@ exports[`BookmarkScreen render BookmarkScreen 1`] = `
       Array [
         Object {
           "bookmarkCount": 7,
-          "categoryCover": 1,
+          "category": "N",
           "cover": 1,
           "index": 0,
           "title": "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
@@ -138,7 +138,7 @@ exports[`BookmarkScreen render BookmarkScreen 1`] = `
         },
         Object {
           "bookmarkCount": 3,
-          "categoryCover": 1,
+          "category": "M",
           "cover": 1,
           "index": 1,
           "title": "Money Honey คุณชายหน้าตายกับยัยขี้งก",
@@ -218,7 +218,7 @@ exports[`BookmarkScreen render BookmarkScreen 1`] = `
               }
             } />
           <Image
-            categorySource={1}
+            category="N"
             size={100}
             source={1}
             style={
@@ -401,7 +401,7 @@ exports[`BookmarkScreen render BookmarkScreen 1`] = `
               }
             } />
           <Image
-            categorySource={1}
+            category="M"
             size={100}
             source={1}
             style={
@@ -1776,22 +1776,26 @@ exports[`MyClogScreen render MyClogScreen 1`] = `
     data={
       Array [
         Object {
-          "authors": "David Beckham",
-          "categoryCover": 1,
+          "author": Object {
+            "name": "David Beckham",
+          },
+          "category": "M",
           "cover": 1,
           "date": 2015-06-23T17:00:00.000Z,
-          "likes": 1500,
+          "likeCount": 1500,
           "title": "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
-          "views": 12300,
+          "viewCount": 12300,
         },
         Object {
-          "authors": "สุดสาครนอย ไทรโยค",
-          "categoryCover": 1,
+          "author": Object {
+            "name": "สุดสาครนอย ไทรโยค",
+          },
+          "category": "N",
           "cover": 1,
           "date": 2016-11-07T17:00:00.000Z,
-          "likes": 55,
+          "likeCount": 55,
           "title": "Money Honey คุณชายหน้าตายกับยัยขี้งก",
-          "views": 100,
+          "viewCount": 100,
         },
       ]
     }
@@ -1866,7 +1870,7 @@ exports[`MyClogScreen render MyClogScreen 1`] = `
               }
             } />
           <Image
-            categorySource={1}
+            category="M"
             size={100}
             source={1}
             style={
@@ -2088,7 +2092,7 @@ exports[`MyClogScreen render MyClogScreen 1`] = `
               }
             } />
           <Image
-            categorySource={1}
+            category="N"
             size={100}
             source={1}
             style={

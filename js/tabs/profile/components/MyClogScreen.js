@@ -20,21 +20,21 @@ import {colors as commonColors} from '../../../common/styles';
 const MyClogRow = (props) => (<TouchableOpacity style={styles.rowContainer}>
   <CircleImageWithCategory
     source={mapSource(props.cover)}
-    categorySource={mapSource(props.categoryCover)}
+    category={props.category}
     size={100}
   />
   <View style={{flex: 1, paddingLeft: 20}}>
     <Text style={{alignSelf: 'flex-end', fontSize: 12, color: commonColors.textFadedGrey}}>{moment(props.date).format('MMMM D')}</Text>
     <Text style={{fontWeight: 'bold', marginTop: 7}}>{props.title}</Text>
-    <Text style={{fontSize: 12, marginTop: 5, color: commonColors.textGrey}}>{props.authors}</Text>
+    <Text style={{fontSize: 12, marginTop: 5, color: commonColors.textGrey}}>{props.author.name}</Text>
     <View style={{flexDirection: 'row', alignItems: 'center'}}>
       <View style={styles.detailSeparate}>
         <Image source={require('../img/icons/read.png')} style={{width: 20, height: 20, resizeMode: 'contain', borderRadius: 4}}/>
-        <Text style={{paddingLeft: 5, fontSize: 12, color: commonColors.textFadedGrey}}>ดู {toHumanNumber(props.views)} ครั้ง</Text>
+        <Text style={{paddingLeft: 5, fontSize: 12, color: commonColors.textFadedGrey}}>ดู {toHumanNumber(props.viewCount)} ครั้ง</Text>
       </View>
       <View style={styles.detailSeparate}>
         <Image source={require('../img/icons/heart.png')} style={{width: 20, height: 20, resizeMode: 'contain', borderRadius: 4, marginLeft: 20}}/>
-        <Text style={{paddingLeft: 5, fontSize: 12, color: commonColors.textFadedGrey}}>{toHumanNumber(props.likes)} Like</Text>
+        <Text style={{paddingLeft: 5, fontSize: 12, color: commonColors.textFadedGrey}}>{toHumanNumber(props.likeCount)} Like</Text>
       </View>
     </View>
   </View>

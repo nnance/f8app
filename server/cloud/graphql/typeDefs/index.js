@@ -24,6 +24,8 @@ const schema = `
     author: User!
     review: String!
     tags: [Tag!]!
+    likeCount: Int!
+    viewCount: Int!
   }
 
   type CategoryDetail {

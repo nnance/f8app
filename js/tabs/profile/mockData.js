@@ -1,5 +1,3 @@
-import {getCategoryIcon} from '../../models/clog';
-
 export const user = {
   id: 1,
   name: 'test',
@@ -33,20 +31,24 @@ export const activity = [{
 export const myClogs = [
   {
     title: 'Richy Rich! รวยมากนะ! รู้ยังคะทุกคน',
-    authors: 'David Beckham',
+    author: {
+      name: 'David Beckham'
+    },
     cover: require('./img/A.png'),
-    categoryCover: getCategoryIcon('M'),
-    views: 12300,
-    likes: 1500,
+    category: 'M',
+    viewCount: 12300,
+    likeCount: 1500,
     date: new Date(2015, 5, 24)
   },
   {
     title: 'Money Honey คุณชายหน้าตายกับยัยขี้งก',
-    authors: 'สุดสาครนอย ไทรโยค',
+    author: {
+      name: 'สุดสาครนอย ไทรโยค'
+    },
     cover: require('./img/B.png'),
-    categoryCover: getCategoryIcon('N'),
-    views: 100,
-    likes: 55,
+    category: 'N',
+    viewCount: 100,
+    likeCount: 55,
     date: new Date(2016, 10, 8)
   }
 ];
@@ -55,13 +57,13 @@ export const bookmark = [
   {
     title: 'Richy Rich! รวยมากนะ! รู้ยังคะทุกคน',
     cover: require('./img/A.png'),
-    categoryCover: getCategoryIcon('N'),
+    category: 'N',
     bookmarkCount: 7
   },
   {
     title: 'Money Honey คุณชายหน้าตายกับยัยขี้งก',
     cover: require('./img/B.png'),
-    categoryCover: getCategoryIcon('M'),
+    category: 'M',
     bookmarkCount: 3
   }
 ];

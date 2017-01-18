@@ -21,7 +21,7 @@ class ClogMeta extends React.Component {
           <View style={{flex: 7}}>
             <CircleImageWithCategory
               source={mapSource(this.props.cover)}
-              categorySource={getCategoryIcon(this.props.category)}
+              category={this.props.category}
               size={85}
               shadowRadius={5}
               shadowColor={colors.fadedWhite}

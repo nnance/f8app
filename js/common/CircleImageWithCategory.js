@@ -1,17 +1,18 @@
 import React from 'react';
-
-import CircleImage from './CircleImage';
 import {
   Image,
   View
 } from 'react-native';
+
+import CircleImage from './CircleImage';
+import {getCategoryIcon} from '../models/clog';
 
 export default (props) => (<View style={{width: props.size, height: props.size}}>
   <CircleImage {...props} style={[props.imageStyle, {backgroundColor: 'transparent'}]}>
     {props.children}
   </CircleImage>
   <Image
-    source={props.categorySource}
+    source={getCategoryIcon(props.category)}
     style={[{
       position: 'absolute',
       bottom: props.size / 32,

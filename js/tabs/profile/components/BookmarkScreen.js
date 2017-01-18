@@ -21,7 +21,7 @@ const rightArrow = require('../img/icons/rightGreyArrow.png');
 const BookmarkRow = props => (<TouchableOpacity style={styles.rowContainer}>
   <CircleImageWithCategory
     source={mapSource(props.cover)}
-    categorySource={mapSource(props.categoryCover)}
+    category={props.category}
     size={100}
   />
   <View style={{flex: 1, paddingLeft: 10}}>

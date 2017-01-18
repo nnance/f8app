@@ -1696,13 +1696,13 @@ exports[`ProfileScreen renderScene correct component 1`] = `
       Array [
         Object {
           "bookmarkCount": 7,
-          "categoryCover": 1,
+          "category": "N",
           "cover": 1,
           "title": "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
         },
         Object {
           "bookmarkCount": 3,
-          "categoryCover": 1,
+          "category": "M",
           "cover": 1,
           "title": "Money Honey คุณชายหน้าตายกับยัยขี้งก",
         },
@@ -1762,22 +1762,26 @@ exports[`ProfileScreen renderScene correct component 1`] = `
     myClogs={
       Array [
         Object {
-          "authors": "David Beckham",
-          "categoryCover": 1,
+          "author": Object {
+            "name": "David Beckham",
+          },
+          "category": "M",
           "cover": 1,
           "date": 2015-06-23T17:00:00.000Z,
-          "likes": 1500,
+          "likeCount": 1500,
           "title": "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
-          "views": 12300,
+          "viewCount": 12300,
         },
         Object {
-          "authors": "สุดสาครนอย ไทรโยค",
-          "categoryCover": 1,
+          "author": Object {
+            "name": "สุดสาครนอย ไทรโยค",
+          },
+          "category": "N",
           "cover": 1,
           "date": 2016-11-07T17:00:00.000Z,
-          "likes": 55,
+          "likeCount": 55,
           "title": "Money Honey คุณชายหน้าตายกับยัยขี้งก",
-          "views": 100,
+          "viewCount": 100,
         },
       ]
     }
@@ -1875,13 +1879,13 @@ exports[`ProfileScreen renderScene correct component 2`] = `
       Array [
         Object {
           "bookmarkCount": 7,
-          "categoryCover": 1,
+          "category": "N",
           "cover": 1,
           "title": "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
         },
         Object {
           "bookmarkCount": 3,
-          "categoryCover": 1,
+          "category": "M",
           "cover": 1,
           "title": "Money Honey คุณชายหน้าตายกับยัยขี้งก",
         },
@@ -1941,22 +1945,26 @@ exports[`ProfileScreen renderScene correct component 2`] = `
     myClogs={
       Array [
         Object {
-          "authors": "David Beckham",
-          "categoryCover": 1,
+          "author": Object {
+            "name": "David Beckham",
+          },
+          "category": "M",
           "cover": 1,
           "date": 2015-06-23T17:00:00.000Z,
-          "likes": 1500,
+          "likeCount": 1500,
           "title": "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
-          "views": 12300,
+          "viewCount": 12300,
         },
         Object {
-          "authors": "สุดสาครนอย ไทรโยค",
-          "categoryCover": 1,
+          "author": Object {
+            "name": "สุดสาครนอย ไทรโยค",
+          },
+          "category": "N",
           "cover": 1,
           "date": 2016-11-07T17:00:00.000Z,
-          "likes": 55,
+          "likeCount": 55,
           "title": "Money Honey คุณชายหน้าตายกับยัยขี้งก",
-          "views": 100,
+          "viewCount": 100,
         },
       ]
     }
@@ -2060,13 +2068,13 @@ exports[`ProfileScreen renderScene correct component 3`] = `
       Array [
         Object {
           "bookmarkCount": 7,
-          "categoryCover": 1,
+          "category": "N",
           "cover": 1,
           "title": "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
         },
         Object {
           "bookmarkCount": 3,
-          "categoryCover": 1,
+          "category": "M",
           "cover": 1,
           "title": "Money Honey คุณชายหน้าตายกับยัยขี้งก",
         },
@@ -2126,22 +2134,26 @@ exports[`ProfileScreen renderScene correct component 3`] = `
     myClogs={
       Array [
         Object {
-          "authors": "David Beckham",
-          "categoryCover": 1,
+          "author": Object {
+            "name": "David Beckham",
+          },
+          "category": "M",
           "cover": 1,
           "date": 2015-06-23T17:00:00.000Z,
-          "likes": 1500,
+          "likeCount": 1500,
           "title": "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
-          "views": 12300,
+          "viewCount": 12300,
         },
         Object {
-          "authors": "สุดสาครนอย ไทรโยค",
-          "categoryCover": 1,
+          "author": Object {
+            "name": "สุดสาครนอย ไทรโยค",
+          },
+          "category": "N",
           "cover": 1,
           "date": 2016-11-07T17:00:00.000Z,
-          "likes": 55,
+          "likeCount": 55,
           "title": "Money Honey คุณชายหน้าตายกับยัยขี้งก",
-          "views": 100,
+          "viewCount": 100,
         },
       ]
     }
@@ -2245,13 +2257,13 @@ exports[`ProfileScreen renderScene correct component 4`] = `
       Array [
         Object {
           "bookmarkCount": 7,
-          "categoryCover": 1,
+          "category": "N",
           "cover": 1,
           "title": "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
         },
         Object {
           "bookmarkCount": 3,
-          "categoryCover": 1,
+          "category": "M",
           "cover": 1,
           "title": "Money Honey คุณชายหน้าตายกับยัยขี้งก",
         },
@@ -2311,22 +2323,26 @@ exports[`ProfileScreen renderScene correct component 4`] = `
     myClogs={
       Array [
         Object {
-          "authors": "David Beckham",
-          "categoryCover": 1,
+          "author": Object {
+            "name": "David Beckham",
+          },
+          "category": "M",
           "cover": 1,
           "date": 2015-06-23T17:00:00.000Z,
-          "likes": 1500,
+          "likeCount": 1500,
           "title": "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
-          "views": 12300,
+          "viewCount": 12300,
         },
         Object {
-          "authors": "สุดสาครนอย ไทรโยค",
-          "categoryCover": 1,
+          "author": Object {
+            "name": "สุดสาครนอย ไทรโยค",
+          },
+          "category": "N",
           "cover": 1,
           "date": 2016-11-07T17:00:00.000Z,
-          "likes": 55,
+          "likeCount": 55,
           "title": "Money Honey คุณชายหน้าตายกับยัยขี้งก",
-          "views": 100,
+          "viewCount": 100,
         },
       ]
     }
@@ -2402,13 +2418,13 @@ exports[`ProfileScreen renderScene correct component 5`] = `
       Array [
         Object {
           "bookmarkCount": 7,
-          "categoryCover": 1,
+          "category": "N",
           "cover": 1,
           "title": "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
         },
         Object {
           "bookmarkCount": 3,
-          "categoryCover": 1,
+          "category": "M",
           "cover": 1,
           "title": "Money Honey คุณชายหน้าตายกับยัยขี้งก",
         },
@@ -2468,22 +2484,26 @@ exports[`ProfileScreen renderScene correct component 5`] = `
     myClogs={
       Array [
         Object {
-          "authors": "David Beckham",
-          "categoryCover": 1,
+          "author": Object {
+            "name": "David Beckham",
+          },
+          "category": "M",
           "cover": 1,
           "date": 2015-06-23T17:00:00.000Z,
-          "likes": 1500,
+          "likeCount": 1500,
           "title": "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
-          "views": 12300,
+          "viewCount": 12300,
         },
         Object {
-          "authors": "สุดสาครนอย ไทรโยค",
-          "categoryCover": 1,
+          "author": Object {
+            "name": "สุดสาครนอย ไทรโยค",
+          },
+          "category": "N",
           "cover": 1,
           "date": 2016-11-07T17:00:00.000Z,
-          "likes": 55,
+          "likeCount": 55,
           "title": "Money Honey คุณชายหน้าตายกับยัยขี้งก",
-          "views": 100,
+          "viewCount": 100,
         },
       ]
     }
@@ -2559,13 +2579,13 @@ exports[`ProfileScreen renderScene correct component 6`] = `
       Array [
         Object {
           "bookmarkCount": 7,
-          "categoryCover": 1,
+          "category": "N",
           "cover": 1,
           "title": "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
         },
         Object {
           "bookmarkCount": 3,
-          "categoryCover": 1,
+          "category": "M",
           "cover": 1,
           "title": "Money Honey คุณชายหน้าตายกับยัยขี้งก",
         },
@@ -2625,22 +2645,26 @@ exports[`ProfileScreen renderScene correct component 6`] = `
     myClogs={
       Array [
         Object {
-          "authors": "David Beckham",
-          "categoryCover": 1,
+          "author": Object {
+            "name": "David Beckham",
+          },
+          "category": "M",
           "cover": 1,
           "date": 2015-06-23T17:00:00.000Z,
-          "likes": 1500,
+          "likeCount": 1500,
           "title": "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
-          "views": 12300,
+          "viewCount": 12300,
         },
         Object {
-          "authors": "สุดสาครนอย ไทรโยค",
-          "categoryCover": 1,
+          "author": Object {
+            "name": "สุดสาครนอย ไทรโยค",
+          },
+          "category": "N",
           "cover": 1,
           "date": 2016-11-07T17:00:00.000Z,
-          "likes": 55,
+          "likeCount": 55,
           "title": "Money Honey คุณชายหน้าตายกับยัยขี้งก",
-          "views": 100,
+          "viewCount": 100,
         },
       ]
     }
@@ -2716,13 +2740,13 @@ exports[`ProfileScreen renderScene correct component 7`] = `
       Array [
         Object {
           "bookmarkCount": 7,
-          "categoryCover": 1,
+          "category": "N",
           "cover": 1,
           "title": "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
         },
         Object {
           "bookmarkCount": 3,
-          "categoryCover": 1,
+          "category": "M",
           "cover": 1,
           "title": "Money Honey คุณชายหน้าตายกับยัยขี้งก",
         },
@@ -2782,22 +2806,26 @@ exports[`ProfileScreen renderScene correct component 7`] = `
     myClogs={
       Array [
         Object {
-          "authors": "David Beckham",
-          "categoryCover": 1,
+          "author": Object {
+            "name": "David Beckham",
+          },
+          "category": "M",
           "cover": 1,
           "date": 2015-06-23T17:00:00.000Z,
-          "likes": 1500,
+          "likeCount": 1500,
           "title": "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
-          "views": 12300,
+          "viewCount": 12300,
         },
         Object {
-          "authors": "สุดสาครนอย ไทรโยค",
-          "categoryCover": 1,
+          "author": Object {
+            "name": "สุดสาครนอย ไทรโยค",
+          },
+          "category": "N",
           "cover": 1,
           "date": 2016-11-07T17:00:00.000Z,
-          "likes": 55,
+          "likeCount": 55,
           "title": "Money Honey คุณชายหน้าตายกับยัยขี้งก",
-          "views": 100,
+          "viewCount": 100,
         },
       ]
     }
@@ -2873,13 +2901,13 @@ exports[`ProfileScreen renderScene correct component 8`] = `
       Array [
         Object {
           "bookmarkCount": 7,
-          "categoryCover": 1,
+          "category": "N",
           "cover": 1,
           "title": "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
         },
         Object {
           "bookmarkCount": 3,
-          "categoryCover": 1,
+          "category": "M",
           "cover": 1,
           "title": "Money Honey คุณชายหน้าตายกับยัยขี้งก",
         },
@@ -2939,22 +2967,26 @@ exports[`ProfileScreen renderScene correct component 8`] = `
     myClogs={
       Array [
         Object {
-          "authors": "David Beckham",
-          "categoryCover": 1,
+          "author": Object {
+            "name": "David Beckham",
+          },
+          "category": "M",
           "cover": 1,
           "date": 2015-06-23T17:00:00.000Z,
-          "likes": 1500,
+          "likeCount": 1500,
           "title": "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
-          "views": 12300,
+          "viewCount": 12300,
         },
         Object {
-          "authors": "สุดสาครนอย ไทรโยค",
-          "categoryCover": 1,
+          "author": Object {
+            "name": "สุดสาครนอย ไทรโยค",
+          },
+          "category": "N",
           "cover": 1,
           "date": 2016-11-07T17:00:00.000Z,
-          "likes": 55,
+          "likeCount": 55,
           "title": "Money Honey คุณชายหน้าตายกับยัยขี้งก",
-          "views": 100,
+          "viewCount": 100,
         },
       ]
     }
@@ -3030,13 +3062,13 @@ exports[`ProfileScreen renderScene correct component 9`] = `
       Array [
         Object {
           "bookmarkCount": 7,
-          "categoryCover": 1,
+          "category": "N",
           "cover": 1,
           "title": "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
         },
         Object {
           "bookmarkCount": 3,
-          "categoryCover": 1,
+          "category": "M",
           "cover": 1,
           "title": "Money Honey คุณชายหน้าตายกับยัยขี้งก",
         },
@@ -3096,22 +3128,26 @@ exports[`ProfileScreen renderScene correct component 9`] = `
     myClogs={
       Array [
         Object {
-          "authors": "David Beckham",
-          "categoryCover": 1,
+          "author": Object {
+            "name": "David Beckham",
+          },
+          "category": "M",
           "cover": 1,
           "date": 2015-06-23T17:00:00.000Z,
-          "likes": 1500,
+          "likeCount": 1500,
           "title": "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
-          "views": 12300,
+          "viewCount": 12300,
         },
         Object {
-          "authors": "สุดสาครนอย ไทรโยค",
-          "categoryCover": 1,
+          "author": Object {
+            "name": "สุดสาครนอย ไทรโยค",
+          },
+          "category": "N",
           "cover": 1,
           "date": 2016-11-07T17:00:00.000Z,
-          "likes": 55,
+          "likeCount": 55,
           "title": "Money Honey คุณชายหน้าตายกับยัยขี้งก",
-          "views": 100,
+          "viewCount": 100,
         },
       ]
     }
@@ -3187,13 +3223,13 @@ exports[`ProfileScreen renderScene correct component 10`] = `
       Array [
         Object {
           "bookmarkCount": 7,
-          "categoryCover": 1,
+          "category": "N",
           "cover": 1,
           "title": "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
         },
         Object {
           "bookmarkCount": 3,
-          "categoryCover": 1,
+          "category": "M",
           "cover": 1,
           "title": "Money Honey คุณชายหน้าตายกับยัยขี้งก",
         },
@@ -3253,22 +3289,26 @@ exports[`ProfileScreen renderScene correct component 10`] = `
     myClogs={
       Array [
         Object {
-          "authors": "David Beckham",
-          "categoryCover": 1,
+          "author": Object {
+            "name": "David Beckham",
+          },
+          "category": "M",
           "cover": 1,
           "date": 2015-06-23T17:00:00.000Z,
-          "likes": 1500,
+          "likeCount": 1500,
           "title": "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
-          "views": 12300,
+          "viewCount": 12300,
         },
         Object {
-          "authors": "สุดสาครนอย ไทรโยค",
-          "categoryCover": 1,
+          "author": Object {
+            "name": "สุดสาครนอย ไทรโยค",
+          },
+          "category": "N",
           "cover": 1,
           "date": 2016-11-07T17:00:00.000Z,
-          "likes": 55,
+          "likeCount": 55,
           "title": "Money Honey คุณชายหน้าตายกับยัยขี้งก",
-          "views": 100,
+          "viewCount": 100,
         },
       ]
     }
@@ -3344,13 +3384,13 @@ exports[`ProfileScreen renderScene correct component 11`] = `
       Array [
         Object {
           "bookmarkCount": 7,
-          "categoryCover": 1,
+          "category": "N",
           "cover": 1,
           "title": "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
         },
         Object {
           "bookmarkCount": 3,
-          "categoryCover": 1,
+          "category": "M",
           "cover": 1,
           "title": "Money Honey คุณชายหน้าตายกับยัยขี้งก",
         },
@@ -3410,22 +3450,26 @@ exports[`ProfileScreen renderScene correct component 11`] = `
     myClogs={
       Array [
         Object {
-          "authors": "David Beckham",
-          "categoryCover": 1,
+          "author": Object {
+            "name": "David Beckham",
+          },
+          "category": "M",
           "cover": 1,
           "date": 2015-06-23T17:00:00.000Z,
-          "likes": 1500,
+          "likeCount": 1500,
           "title": "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
-          "views": 12300,
+          "viewCount": 12300,
         },
         Object {
-          "authors": "สุดสาครนอย ไทรโยค",
-          "categoryCover": 1,
+          "author": Object {
+            "name": "สุดสาครนอย ไทรโยค",
+          },
+          "category": "N",
           "cover": 1,
           "date": 2016-11-07T17:00:00.000Z,
-          "likes": 55,
+          "likeCount": 55,
           "title": "Money Honey คุณชายหน้าตายกับยัยขี้งก",
-          "views": 100,
+          "viewCount": 100,
         },
       ]
     }

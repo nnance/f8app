@@ -20,7 +20,7 @@ class RecommendedClog extends React.Component {
           <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', paddingLeft: 10}}>
             <CircleImageWithCategory
               source={mapSource(this.props.cover)}
-              categorySource={getCategoryIcon(this.props.category)}
+              category={this.props.category}
               size={130}
               shadowRadius={5}
               shadowColor={colors.fadedWhite}

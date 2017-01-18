@@ -1166,7 +1166,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                               }
                             } />
                           <Image
-                            categorySource={1}
+                            category="N"
                             shadowColor="rgba(255, 255, 255, 0.3)"
                             shadowRadius={5}
                             size={85}
@@ -1317,7 +1317,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                               }
                             } />
                           <Image
-                            categorySource={1}
+                            category="D"
                             shadowColor="rgba(255, 255, 255, 0.3)"
                             shadowRadius={5}
                             size={85}
@@ -1606,7 +1606,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           }
                         } />
                       <Image
-                        categorySource={1}
+                        category="G"
                         shadowColor="rgba(255, 255, 255, 0.3)"
                         shadowRadius={5}
                         size={85}
@@ -1757,7 +1757,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           }
                         } />
                       <Image
-                        categorySource={1}
+                        category="N"
                         shadowColor="rgba(255, 255, 255, 0.3)"
                         shadowRadius={5}
                         size={85}
@@ -1908,7 +1908,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           }
                         } />
                       <Image
-                        categorySource={1}
+                        category="M"
                         shadowColor="rgba(255, 255, 255, 0.3)"
                         shadowRadius={5}
                         size={85}
@@ -2059,7 +2059,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           }
                         } />
                       <Image
-                        categorySource={1}
+                        category="M"
                         shadowColor="rgba(255, 255, 255, 0.3)"
                         shadowRadius={5}
                         size={85}
@@ -2210,7 +2210,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           }
                         } />
                       <Image
-                        categorySource={1}
+                        category="N"
                         shadowColor="rgba(255, 255, 255, 0.3)"
                         shadowRadius={5}
                         size={85}
@@ -2361,7 +2361,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           }
                         } />
                       <Image
-                        categorySource={1}
+                        category="D"
                         shadowColor="rgba(255, 255, 255, 0.3)"
                         shadowRadius={5}
                         size={85}
@@ -2512,7 +2512,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           }
                         } />
                       <Image
-                        categorySource={1}
+                        category="M"
                         shadowColor="rgba(255, 255, 255, 0.3)"
                         shadowRadius={5}
                         size={85}
@@ -2663,7 +2663,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           }
                         } />
                       <Image
-                        categorySource={1}
+                        category="D"
                         shadowColor="rgba(255, 255, 255, 0.3)"
                         shadowRadius={5}
                         size={85}
@@ -2814,7 +2814,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           }
                         } />
                       <Image
-                        categorySource={1}
+                        category="G"
                         shadowColor="rgba(255, 255, 255, 0.3)"
                         shadowRadius={5}
                         size={85}
@@ -2965,7 +2965,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           }
                         } />
                       <Image
-                        categorySource={1}
+                        category="M"
                         shadowColor="rgba(255, 255, 255, 0.3)"
                         shadowRadius={5}
                         size={85}
