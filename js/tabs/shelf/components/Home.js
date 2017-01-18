@@ -9,7 +9,7 @@ import {
   StyleSheet
 } from 'react-native';
 
-import NavBar from '../../../common/NavBar';
+import NavBar from './NavBar';
 import BorderButton from '../../../common/BorderButton';
 
 import ClogListView from './ClogListView';

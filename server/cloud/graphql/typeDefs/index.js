@@ -13,9 +13,11 @@ const schema = `
 
   type User {
     name: String!
+    profilePicture: String
   }
 
   type Clog {
+    id: Int!
     title: String!
     cover: String
     category: Category!
@@ -24,11 +26,20 @@ const schema = `
     tags: [Tag!]!
   }
 
+  type CategoryDetail {
+    category: Category!
+    trendingClogs: [Clog!]!
+    recentlyClogs: [Clog!]!
+    editors: [User!]!
+    followingCount: Int!
+  }
+
   type Query {
-    trending: [Clog!]!
+    trending(category: Category): [Clog!]!
     topClog: Clog!
     favoriteTags: [Tag!]!
     heroBanners: [Clog!]!
+    categoryDetail(category: Category!): CategoryDetail!
   }
 `;
 

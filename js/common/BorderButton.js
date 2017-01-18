@@ -46,7 +46,8 @@ const styles = StyleSheet.create({
     height: 22,
     paddingHorizontal: 15,
     justifyContent: 'center',
-    borderRadius: 4
+    borderRadius: 4,
+    backgroundColor: 'transparent'
   },
   whiteButton: {
     backgroundColor: 'white'
