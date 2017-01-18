@@ -33,6 +33,9 @@ const mocks = {
     },
     review() {
       return casual.sentences(n = 20)
+    },
+    followerCount() {
+      return casual.integer(from=0, to=10000);
     }
   },
   CategoryDetail: {
@@ -44,9 +47,6 @@ const mocks = {
     },
     editors() {
       return [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
-    },
-    followingCount() {
-      return casual.integer(from=0, to=10000);
     }
   },
   Query: {

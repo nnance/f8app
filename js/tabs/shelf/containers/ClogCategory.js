@@ -17,12 +17,16 @@ export const query = gql`
       }
       recommendedClogs {
         ...clogMetaData
+        followersYouKnow {
+          name
+          profilePicture
+        }
+        followerCount
       }
       editors {
         name
         profilePicture
       }
-      followingCount
     }
   }
   ${fragments.clogMetaData}
@@ -41,7 +45,6 @@ export const mapQueryToProps = ({ ownProps, data }) => {
     recentlyClogs: loading ? [] : categoryDetail.recentlyClogs,
     editors: loading ? [] : categoryDetail.editors,
     recommendedClogs: loading ? [] : categoryDetail.recommendedClogs,
-    followingCount: loading ? 0 : categoryDetail.followingCount,
     loading
   });
 };

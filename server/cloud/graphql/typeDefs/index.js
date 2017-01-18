@@ -23,9 +23,13 @@ const schema = `
     category: Category!
     author: User!
     review: String!
-    tags: [Tag!]!
+    followers: [User!]!
+    followerCount: Int!
+    followersYouKnow: [User!]!
+    likes: [User!]!
     likeCount: Int!
     viewCount: Int!
+    tags: [Tag!]!
   }
 
   type CategoryDetail {
@@ -34,7 +38,6 @@ const schema = `
     trendingClogs: [Clog!]!
     recentlyClogs: [Clog!]!
     editors: [User!]!
-    followingCount: Int!
   }
 
   type Query {

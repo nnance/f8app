@@ -151,8 +151,16 @@ class ClogBanner extends React.Component {
 }
 
 class ClogCategory extends React.Component {
+  constructor(...args) {
+    super(...args);
+    this.state = {
+      currentClogBanner: 0
+    };
+  }
+
   render() {
     const clogTheme = clogThemes[this.props.category];
+    const currentClogBanner = this.props.recommendedClogs[this.state.currentClogBanner];
     return (
       <View style={{flex: 1}}>
         <ScrollView style={{flex: 1, backgroundColor: 'transparent'}}>
@@ -187,12 +195,16 @@ class ClogCategory extends React.Component {
               <View style={{flex: 1}}>
                 <View style={{height: 50, width: undefined, flexDirection: 'row', padding: 5, alignItems: 'center'}}>
                   <View style={{flex: 1}}>
-                    <WriterList editors={this.props.editors}/>
+                    <WriterList editors={currentClogBanner ? this.props.recommendedClogs[this.state.currentClogBanner].followersYouKnow : []}/>
                   </View>
                   <View style={{flex: 1, alignItems: 'flex-end', justifyContent: 'center'}}>
                     <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
                       <View style={[{backgroundColor: 'transparent', paddingHorizontal: 8}]}>
-                        <View style={{flexDirection: 'row'}}><Text style={styles.followingNumber}>{toHumanNumber(this.props.followingCount)}</Text><Text style={styles.followingWord}>คน</Text></View>
+                        <View style={{flexDirection: 'row'}}>
+                          <Text style={styles.followerNumber}>
+                            {toHumanNumber(currentClogBanner ? currentClogBanner.followerCount : 0)}
+                          </Text>
+                          <Text style={styles.followingWord}> คน</Text></View>
                         <View><Text style={styles.followingWord}>กำลังติดตาม</Text></View>
                       </View>
                       <View>
@@ -212,6 +224,7 @@ class ClogCategory extends React.Component {
                   showsHorizontalScrollIndicator={false}
                   minContentHeight={0}
                   renderRow={this.renderClogBanner.bind(this)}
+                  onScroll={this.onScroll.bind(this)}
                   />
                 </View>
                 <View style={{height: 160, padding: 5}}>
@@ -233,6 +246,16 @@ class ClogCategory extends React.Component {
     );
   }
 
+  onScroll(e) {
+    const offsetX = e.nativeEvent.contentOffset.x;
+    const heroBannerWidth = Dimensions.get('window').width - 20;
+    let idx = Math.floor(offsetX / heroBannerWidth);
+    idx = idx >= 0 ? idx : 0;
+    this.setState({
+      currentClogBanner: idx
+    });
+  }
+
   renderClogBanner(data) {
     return (
       <View style={{flex: 1, width: 320, marginHorizontal: (Dimensions.get('window').width - 320 - 20) / 2}}>
@@ -251,7 +274,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
-  followingNumber: {
+  followerNumber: {
     fontWeight: 'bold',
     fontSize: 11,
     color: 'white'
