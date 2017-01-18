@@ -31,7 +31,7 @@ class ClogMeta extends React.Component {
             <Text style={{fontSize: 12, color: colors.textWhite}} numberOfLines={1}>{this.props.title}</Text>
           </View>
           <View style={{flex: 1, alignItems: 'center'}}>
-            <Text style={{fontSize: 10, color: colors.textFadedWhite}} numberOfLines={1}>{this.props.author}</Text>
+            <Text style={{fontSize: 10, color: colors.textFadedWhite}} numberOfLines={1}>{this.props.author.name}</Text>
           </View>
       </TouchableOpacity>
     );

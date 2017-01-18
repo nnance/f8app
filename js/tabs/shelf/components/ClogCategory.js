@@ -140,7 +140,7 @@ class ClogBanner extends React.Component {
             }}>
             <View>
               <Text style={styles.bannerTitleText}>{this.props.clog.title}</Text>
-              <Text style={styles.bannerAuthorText}>{this.props.clog.author}</Text>
+              <Text style={styles.bannerAuthorText}>{this.props.clog.author.name}</Text>
             </View>
           </View>
         </View>

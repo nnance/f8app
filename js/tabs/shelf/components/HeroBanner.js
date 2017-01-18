@@ -19,7 +19,7 @@ const Row = (props) => (<TouchableOpacity style={{flex: 1, padding: 20}}>
           <Text numberOfLines={1} style={{color: 'white', fontWeight: 'bold'}}>{props.title}</Text>
         </View>
         <View style={{width: 100, alignItems: 'center'}}>
-          <Text numberOfLines={1} style={{color: colors.textFadedWhite, fontWeight: 'bold'}}>{props.author}</Text>
+          <Text numberOfLines={1} style={{color: colors.textFadedWhite, fontWeight: 'bold'}}>{props.author.name}</Text>
         </View>
       </View>
     </CircleImage>

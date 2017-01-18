@@ -44,17 +44,17 @@ class Home extends React.Component {
               <HeroBanner clogs={this.props.heroBanners}/>
             </View>
             <View style={{flex: 1, paddingLeft: 10}}>
-              <ClogListView header="TRENDING" clogs={this.props.trending} renderButton={this.renderTrendingButton.bind(this)}/>
+              <ClogListView header="TRENDING" clogs={this.props.trendingClogs} renderButton={this.renderTrendingButton.bind(this)}/>
             </View>
             <View style={{flex: 1.6}}>
-              <RecommendedClog {...this.props.topClog}/>
+              <RecommendedClog {...this.props.recommendedClog}/>
             </View>
           </Image>
           <Image source={require('../img/home-bg-1.5.png')} style={{resizeMode: 'stretch', backgroundColor: 'transparent', width: undefined, height: undefined, paddingTop: 20}}>
             {
               this.props.favoriteTags.map((tag, idx) => (
                 <View key={idx} style={{paddingLeft: 10}}>
-                  <ClogListView header={tag.name.toUpperCase()} clogs={tag.trending} renderButton={!tag.following ? this.renderFollowButton.bind(this) : this.renderUnfollowButton.bind(this)}/>
+                  <ClogListView header={tag.name.toUpperCase()} clogs={tag.trendingClogs} renderButton={!tag.following ? this.renderFollowButton.bind(this) : this.renderUnfollowButton.bind(this)}/>
                 </View>
               ))
             }

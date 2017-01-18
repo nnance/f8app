@@ -704,13 +704,17 @@ exports[`Shelf.ClogCategory render correct 1`] = `
               data={
                 Array [
                   Object {
-                    "author": "Nick Durgan",
+                    "author": Object {
+                      "name": "Nick Durgan",
+                    },
                     "category": "M",
                     "cover": "http://localhost/static/cover/g4642.png",
                     "title": "Laudantium et incidunt",
                   },
                   Object {
-                    "author": "Aiyana Huel",
+                    "author": Object {
+                      "name": "Aiyana Huel",
+                    },
                     "category": "D",
                     "cover": "http://localhost/static/cover/g1878.png",
                     "title": "Ab impedit occaecati",

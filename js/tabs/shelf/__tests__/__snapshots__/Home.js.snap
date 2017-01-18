@@ -153,56 +153,72 @@ exports[`Shelf.Home render correct 1`] = `
             data={
               Array [
                 Object {
-                  "author": "Vita Price",
+                  "author": Object {
+                    "name": "Vita Price",
+                  },
                   "category": "G",
                   "cover": "http://localhost/static/cover/g1878.png",
                   "review": "Itaque distinctio nobis quaerat et quas accusamus cum cumque. Id dolores minus perferendis aliquam rem animi. Vel eligendi illo perspiciatis magni. Voluptas in et optio provident quo magnam non exercitationem. Accusamus ipsam nihil placeat et occaecati saepe vitae sed ullam. Fuga aut est corrupti architecto mollitia qui non inventore. Excepturi at amet veniam maxime aut esse. Ipsam sed facilis tempora est mollitia est. Saepe dolores vel neque rem. Nulla animi eos sapiente eius ut fuga mollitia velit. Deserunt et unde veritatis ullam placeat autem. Sint sed voluptatem adipisci facilis facere distinctio aut iusto voluptas. Sint dolor officia est at voluptates. Illo qui minus debitis voluptas quia et. Dicta quisquam inventore odio. Consequuntur itaque officia ut eaque ut sed. Repellendus expedita perferendis facilis corporis at voluptatem non asperiores. Culpa illo exercitationem unde molestiae sed. At blanditiis quisquam officia non ut atque. Et quis rerum dolore sunt.",
                   "title": "Iusto non",
                 },
                 Object {
-                  "author": "Golda Braun",
+                  "author": Object {
+                    "name": "Golda Braun",
+                  },
                   "category": "N",
                   "cover": "http://localhost/static/cover/g3376.png",
                   "review": "Facere blanditiis aut magni placeat enim vitae rem deleniti. Ducimus rerum tempore exercitationem ducimus ut nihil magni. Sint optio est et quia voluptatem doloribus omnis. Dolor porro ut est. Quibusdam dolor laborum reprehenderit est. Sed vel est laborum quia. Voluptatum molestiae doloremque aut molestiae sed a autem. Adipisci non qui enim animi cum est est quos. Sunt dolorem ut ullam. Sed velit laboriosam accusantium atque qui. Est et sit unde voluptas sit molestiae cumque eos. Expedita odio culpa dolorem sed reprehenderit non molestiae. Illo nemo quos accusamus officiis et at sit autem. Quas eveniet qui beatae corrupti debitis nulla consectetur. Pariatur molestiae nam consequuntur nisi voluptatum sequi vitae. Rerum nulla illo qui quo et consequatur. Et officia consequatur velit debitis molestiae voluptatem laboriosam vero doloribus. Vel laborum doloribus nulla occaecati consequatur quia fugit architecto. Quis aut consequuntur tenetur harum voluptatum. Ut doloribus quo non rerum voluptatem.",
                   "title": "Architecto molestiae",
                 },
                 Object {
-                  "author": "Paolo Gibson",
+                  "author": Object {
+                    "name": "Paolo Gibson",
+                  },
                   "category": "G",
                   "cover": "http://localhost/static/cover/g3376.png",
                   "review": "Aut corrupti sunt quam voluptas voluptatem odit voluptates. Accusantium cum qui officia consectetur ea nobis. Ex sed aut quas quia minima consectetur dolorem necessitatibus et. Ab enim qui alias vitae tempora suscipit. Nihil sed nihil saepe. Officiis dolor cumque voluptatem. Quia dolorem reiciendis dolores et commodi. Ad veniam et voluptatibus iure. Quos aut aliquam aut aut sint eum in. Sed porro qui consectetur sed. Dolor quo libero maxime. Officia et et nisi fuga consequatur quidem aut. Omnis quasi nostrum debitis reiciendis. Nihil omnis cumque aliquam et deserunt. Molestiae velit eum aut consequuntur corrupti dolore natus vitae alias. Error quod dolores et nostrum. Reiciendis aut rerum cum earum quas inventore incidunt. Quia architecto amet ex voluptas quisquam voluptatibus. Repudiandae et ut vel. Esse unde dolorum vel rerum atque commodi officia.",
                   "title": "Aspernatur natus",
                 },
                 Object {
-                  "author": "Gerda Pfeffer",
+                  "author": Object {
+                    "name": "Gerda Pfeffer",
+                  },
                   "category": "D",
                   "cover": "http://localhost/static/cover/g3376.png",
                   "review": "Ad id sunt a magnam reprehenderit. Reprehenderit rerum temporibus hic. Aut qui et est ut ea beatae eos. Qui distinctio suscipit sunt eius. Molestiae sint est veniam animi quam maxime. Ut omnis cumque qui non impedit eos. Ipsum nobis voluptatem itaque architecto aut reiciendis commodi labore. Distinctio qui sunt assumenda non aut quas laboriosam. Et iure officia sed. Laboriosam accusantium iste sit sed harum. Tempore optio et cum laudantium nobis. Natus ab ea et. Distinctio recusandae impedit mollitia est reiciendis sunt. Fuga id non eaque nesciunt voluptas. Occaecati dolor consequatur. Minima ut sed aut voluptas impedit illo sed unde dolor. Quam est est non odit beatae possimus minima quas. Ipsam voluptas voluptates animi nihil fugiat omnis saepe et. Id repellat qui qui veniam quasi aut architecto et sit. Ut modi aspernatur eius.",
                   "title": "Et sed",
                 },
                 Object {
-                  "author": "Domenico Ernser",
+                  "author": Object {
+                    "name": "Domenico Ernser",
+                  },
                   "category": "G",
                   "cover": "http://localhost/static/cover/g4802.png",
                   "review": "Quos aliquam quasi voluptates mollitia. Quibusdam accusantium consequatur praesentium eaque veniam soluta doloremque. Aut vero assumenda quam sit dolor quibusdam quo. Doloremque nemo aut molestiae pariatur. Cumque cupiditate deleniti hic qui rerum rerum sint ducimus quis. Impedit in blanditiis ut id. Doloribus perspiciatis est qui suscipit animi sunt asperiores. Modi non est esse. Et numquam non mollitia dolor commodi vero repudiandae tenetur. A recusandae eaque et inventore exercitationem consequatur et ipsam. Inventore voluptate exercitationem ratione ex rerum. Nam voluptatum amet minima qui quas qui facilis recusandae fugit. Possimus odio pariatur et voluptas sit. Vel eum rerum dignissimos in aut et tempora aspernatur. Perspiciatis quis ducimus et est necessitatibus perspiciatis et eligendi nesciunt. Debitis quis harum ea non natus ut reiciendis. Totam dignissimos dolores dicta. Dolorem consectetur velit deserunt est assumenda sunt quam officiis vero. Quos et deleniti eaque sed. Rerum eos consequuntur voluptatibus repellendus aut quia.",
                   "title": "Corrupti nostrum ut",
                 },
                 Object {
-                  "author": "Syble Kemmer",
+                  "author": Object {
+                    "name": "Syble Kemmer",
+                  },
                   "category": "D",
                   "cover": "http://localhost/static/cover/g3578.png",
                   "review": "Quos dicta quae quaerat minima ea rerum facilis exercitationem minima. Suscipit officia quos vel enim. Corrupti dolores perspiciatis harum consequatur ex nisi quis. Dolores neque recusandae sed aut. Itaque eos amet fugiat non ex recusandae quas. Ea ad at omnis delectus. Qui dignissimos laborum amet. Rerum enim quos natus sapiente quisquam. Aut atque est delectus enim ratione quia harum. Distinctio sint iusto repudiandae. Et quos et. Fugit aut perferendis quaerat itaque reprehenderit. Et voluptatibus nobis qui maiores explicabo dolor voluptatem qui ratione. Dolorum inventore hic eos distinctio. Et rerum ut nostrum quas rerum harum pariatur qui iusto. Totam nulla et provident nesciunt quo sit aspernatur ut. Sit consectetur tempore ea omnis quia quia voluptatem. Quasi ratione ex dolore delectus nostrum consequatur velit. Sunt laboriosam accusamus sit sunt facilis nobis aut. Qui perferendis saepe iste.",
                   "title": "Ab necessitatibus",
                 },
                 Object {
-                  "author": "Mathilde West",
+                  "author": Object {
+                    "name": "Mathilde West",
+                  },
                   "category": "D",
                   "cover": "http://localhost/static/cover/g3336.png",
                   "review": "Et explicabo aut esse et voluptas. Velit aut fuga eveniet suscipit blanditiis at iste. Molestias sit eligendi voluptatum soluta non occaecati illo dolorem. Quas dolorem dolorem dolorem veniam vel dolor. Ut voluptate quod quam quaerat dolorem culpa beatae tenetur ipsam. Aperiam dicta atque dolorum. Tempora soluta voluptas quia similique rem. Necessitatibus aut consequatur dicta tempore fuga excepturi velit. Sunt sint quis rerum tempore omnis consectetur fugit saepe pariatur. Ut a hic qui sequi voluptate cum quod suscipit quis. Ipsam ut id aut mollitia facere debitis. Aliquam ut voluptas mollitia itaque est alias officiis voluptatum. Expedita dolorem voluptas quod amet voluptate at qui. Et necessitatibus ut doloremque quibusdam dicta. Reiciendis rerum est est quam qui. Esse est adipisci eaque. Enim deleniti quia officiis est quo est culpa. Architecto molestiae et distinctio rerum in porro in eum. Et sequi autem saepe illum enim aliquid unde ducimus soluta. Labore nisi ipsum assumenda molestias sunt temporibus.",
                   "title": "Non laboriosam vel",
                 },
                 Object {
-                  "author": "Demarcus Boehm",
+                  "author": Object {
+                    "name": "Demarcus Boehm",
+                  },
                   "category": "M",
                   "cover": "http://localhost/static/cover/g3618.png",
                   "review": "Quis rerum eaque omnis et dicta. Sed et at saepe nihil ullam saepe explicabo sit. Non quo est quidem deserunt qui incidunt. Molestiae repellendus magnam asperiores nulla. Maiores non quasi rerum quo ducimus sit qui fuga corrupti. Inventore est ut quis pariatur. Et voluptates est earum ut. Culpa numquam ad itaque quos placeat perferendis. Laudantium numquam provident eum dolorem et aspernatur harum. Impedit enim quod et reprehenderit ut. Nihil ut enim officia commodi sunt et magni. Odit quia quia est consequuntur voluptas omnis. Ipsa dolorum et tenetur. Sequi ut nam id ea aut at quae quia. Vel enim et quibusdam consequatur consequatur sint vero quae praesentium. Non necessitatibus quaerat. Recusandae rerum dolorum sed voluptatibus omnis. Cupiditate est quis. Provident quos at quaerat aut voluptas sapiente. Id eius maxime quibusdam dolor.",

@@ -6,7 +6,7 @@ import Home from '../components/Home';
 
 export const query = gql`
   query {
-    trending {
+    trendingClogs {
       title
       cover
       category
@@ -14,7 +14,7 @@ export const query = gql`
         name
       }
     }
-    topClog {
+    recommendedClog {
       title
       cover
       category
@@ -25,7 +25,7 @@ export const query = gql`
     }
     favoriteTags {
       name
-      trending {
+      trendingClogs {
         title
         cover
         category
@@ -46,23 +46,13 @@ export const query = gql`
   }
 `;
 
-const mapClogFragment = clog => {
-  return ({
-    ...clog,
-    author: clog.author.name
-  });
-};
-
 export const mapQueryToProps = ({ ownProps, data }) => {
-  const { loading, trending, topClog, favoriteTags, heroBanners } = data;
+  const { loading, trendingClogs, recommendedClog, favoriteTags, heroBanners } = data;
   return ({
-    trending: loading ? [] : trending.map(mapClogFragment),
-    topClog: loading ? undefined : mapClogFragment(topClog),
-    heroBanners: loading ? [] : heroBanners.map(mapClogFragment),
-    favoriteTags: loading ? [] : favoriteTags.map(tag => ({
-      ...tag,
-      trending: tag.trending.map(mapClogFragment)
-    })),
+    trendingClogs: loading ? [] : trendingClogs,
+    recommendedClog: recommendedClog,
+    heroBanners: loading ? [] : heroBanners,
+    favoriteTags: loading ? [] : favoriteTags,
     loading
   });
 };

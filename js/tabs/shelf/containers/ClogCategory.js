@@ -40,13 +40,6 @@ export const query = gql`
   }
 `;
 
-const mapClogFragment = clog => {
-  return ({
-    ...clog,
-    author: clog.author.name
-  });
-};
-
 export const mapPropsToOptions = ({category}) => ({
   variables: {
     category
@@ -56,10 +49,10 @@ export const mapPropsToOptions = ({category}) => ({
 export const mapQueryToProps = ({ ownProps, data }) => {
   const { loading, categoryDetail } = data;
   return ({
-    trendingClogs: loading ? [] : categoryDetail.trendingClogs.map(mapClogFragment),
-    recentlyClogs: loading ? [] : categoryDetail.recentlyClogs.map(mapClogFragment),
+    trendingClogs: loading ? [] : categoryDetail.trendingClogs,
+    recentlyClogs: loading ? [] : categoryDetail.recentlyClogs,
     editors: loading ? [] : categoryDetail.editors,
-    recommendedClogs: loading ? [] : categoryDetail.recommendedClogs.map(mapClogFragment),
+    recommendedClogs: loading ? [] : categoryDetail.recommendedClogs,
     followingCount: loading ? 0 : categoryDetail.followingCount,
     loading
   });

@@ -16,7 +16,7 @@ const mocks = {
     name() {
       return casual.word;
     },
-    trending() {
+    trendingClogs() {
       return [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ,1];
     }
   },
@@ -50,7 +50,7 @@ const mocks = {
     }
   },
   Query: {
-    trending() {
+    trendingClogs() {
       return [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
     },
     favoriteTags() {

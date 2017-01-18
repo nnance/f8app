@@ -8,7 +8,7 @@ const schema = `
 
   type Tag {
     name: String!
-    trending: [Clog!]!
+    trendingClogs: [Clog!]!
   }
 
   type User {
@@ -36,8 +36,8 @@ const schema = `
   }
 
   type Query {
-    trending(category: Category): [Clog!]!
-    topClog: Clog!
+    trendingClogs(category: Category): [Clog!]!
+    recommendedClog: Clog!
     favoriteTags: [Tag!]!
     heroBanners: [Clog!]!
     categoryDetail(category: Category!): CategoryDetail!

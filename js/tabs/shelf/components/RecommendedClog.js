@@ -33,7 +33,7 @@ class RecommendedClog extends React.Component {
                   {this.props.title}
                 </Text>
                 <Text style={{fontSize: 11, color: colors.textFadedWhite}}>
-                  {this.props.author}
+                  {this.props.author ? this.props.author.name : null}
                 </Text>
               </View>
               <View style={{flex: 4, paddingTop: 10}}>
