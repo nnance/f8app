@@ -37,7 +37,7 @@ exports[`SecureContainer render authen screen 1`] = `
       style={
         Object {
           "backgroundColor": "rgba(255, 255, 255, 0.8)",
-          "borderColor": "rgb(240, 240, 240)",
+          "borderColor": "rgba(0, 0, 0, 0.6)",
           "borderRadius": 10,
           "borderWidth": 0.5,
           "height": 80,

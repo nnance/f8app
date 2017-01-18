@@ -6,33 +6,63 @@ exports[`CircleImageWithCategory render CircleImageWithCategory 1`] = `
       "width": 100,
     }
   }>
-  <Image
-    categorySource={
-      Object {
-        "uri": "x.jpg",
-      }
-    }
-    size={100}
-    source={
-      Object {
-        "uri": "x.jpg",
-      }
-    }
+  <View
     style={
-      Array [
+      Object {
+        "height": 100,
+        "width": 100,
+      }
+    }>
+    <View
+      style={
         Object {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
           "borderRadius": 50,
           "height": 100,
+          "left": -0,
+          "position": "absolute",
+          "top": -0,
           "width": 100,
-        },
+        }
+      } />
+    <Image
+      categorySource={
+        Object {
+          "uri": "x.jpg",
+        }
+      }
+      size={100}
+      source={
+        Object {
+          "uri": "x.jpg",
+        }
+      }
+      style={
         Array [
-          undefined,
           Object {
-            "backgroundColor": "transparent",
+            "borderRadius": 50,
+            "height": 100,
+            "width": 100,
           },
-        ],
-      ]
-    } />
+          Array [
+            undefined,
+            Object {
+              "backgroundColor": "transparent",
+            },
+          ],
+        ]
+      } />
+    <View
+      style={
+        Object {
+          "height": 100,
+          "left": 0,
+          "position": "absolute",
+          "top": 0,
+          "width": 100,
+        }
+      } />
+  </View>
   <Image
     source={
       Object {
