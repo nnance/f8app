@@ -12,7 +12,7 @@ exports[`<NavBar/> render backButton by default 1`] = `
       },
       Object {
         "borderBottomWidth": 1,
-        "borderColor": "rgba(0, 0, 0, 0.6)",
+        "borderColor": "#eeeeee",
       },
     ]
   }>

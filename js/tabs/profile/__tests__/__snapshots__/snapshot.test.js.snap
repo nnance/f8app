@@ -19,7 +19,7 @@ exports[`BookmarkScreen render BookmarkScreen 1`] = `
         },
         Object {
           "borderBottomWidth": 1,
-          "borderColor": "rgba(0, 0, 0, 0.6)",
+          "borderColor": "#eeeeee",
         },
       ]
     }>
@@ -560,7 +560,7 @@ exports[`JellyShopScreen render JellyShopScreen 1`] = `
         },
         Object {
           "borderBottomWidth": 1,
-          "borderColor": "rgba(0, 0, 0, 0.6)",
+          "borderColor": "#eeeeee",
         },
       ]
     }>
@@ -1666,7 +1666,7 @@ exports[`MyClogScreen render MyClogScreen 1`] = `
         },
         Object {
           "borderBottomWidth": 1,
-          "borderColor": "rgba(0, 0, 0, 0.6)",
+          "borderColor": "#eeeeee",
         },
       ]
     }>
@@ -3250,7 +3250,7 @@ exports[`UserContainer FollowerScreen render 1`] = `
         },
         Object {
           "borderBottomWidth": 1,
-          "borderColor": "rgba(0, 0, 0, 0.6)",
+          "borderColor": "#eeeeee",
         },
       ]
     }>
@@ -4120,7 +4120,7 @@ exports[`UserContainer FollowingScreen render 1`] = `
         },
         Object {
           "borderBottomWidth": 1,
-          "borderColor": "rgba(0, 0, 0, 0.6)",
+          "borderColor": "#eeeeee",
         },
       ]
     }>
@@ -4867,7 +4867,7 @@ exports[`UserContainer MyFanScreen render 1`] = `
         },
         Object {
           "borderBottomWidth": 1,
-          "borderColor": "rgba(0, 0, 0, 0.6)",
+          "borderColor": "#eeeeee",
         },
       ]
     }>
