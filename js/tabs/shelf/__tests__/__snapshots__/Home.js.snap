@@ -1791,23 +1791,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -1822,10 +1818,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -1949,23 +1942,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -1980,10 +1969,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -2107,23 +2093,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -2138,10 +2120,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -2265,23 +2244,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -2296,10 +2271,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -2423,23 +2395,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -2454,10 +2422,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -2581,23 +2546,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -2612,10 +2573,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -2739,23 +2697,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -2770,10 +2724,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -2897,23 +2848,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -2928,10 +2875,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -3055,23 +2999,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -3086,10 +3026,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -3213,23 +3150,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -3244,10 +3177,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -3761,23 +3691,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -3792,10 +3718,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -3919,23 +3842,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -3950,10 +3869,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -4077,23 +3993,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -4108,10 +4020,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -4235,23 +4144,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -4266,10 +4171,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -4393,23 +4295,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -4424,10 +4322,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -4551,23 +4446,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -4582,10 +4473,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -4709,23 +4597,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -4740,10 +4624,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -4867,23 +4748,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -4898,10 +4775,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -5025,23 +4899,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -5056,10 +4926,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -5183,23 +5050,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -5214,10 +5077,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -5467,23 +5327,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -5498,10 +5354,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -5625,23 +5478,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -5656,10 +5505,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -5783,23 +5629,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -5814,10 +5656,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -5941,23 +5780,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -5972,10 +5807,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -6099,23 +5931,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -6130,10 +5958,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -6257,23 +6082,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -6288,10 +6109,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -6415,23 +6233,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -6446,10 +6260,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -6573,23 +6384,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -6604,10 +6411,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -6731,23 +6535,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -6762,10 +6562,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -6889,23 +6686,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -6920,10 +6713,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -7173,23 +6963,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -7204,10 +6990,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -7331,23 +7114,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -7362,10 +7141,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -7489,23 +7265,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -7520,10 +7292,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -7647,23 +7416,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -7678,10 +7443,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -7805,23 +7567,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -7836,10 +7594,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -7963,23 +7718,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -7994,10 +7745,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -8121,23 +7869,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -8152,10 +7896,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -8279,23 +8020,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -8310,10 +8047,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -8437,23 +8171,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -8468,10 +8198,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
@@ -8595,23 +8322,19 @@ exports[`Shelf.Home render correct 1`] = `
                       <View
                         style={
                           Object {
-                            "backgroundColor": "rgba(0, 0, 0, 0)",
-                            "borderRadius": 42.5,
-                            "height": 85,
-                            "left": -0,
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
                             "position": "absolute",
-                            "top": -0,
-                            "width": 85,
+                            "top": -2.5,
+                            "width": 90,
                           }
                         } />
                       <Image
                         categorySource={1}
-                        imageStyle={
-                          Object {
-                            "borderColor": "rgba(242, 215, 234, 0.8)",
-                            "borderWidth": 3,
-                          }
-                        }
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
                         size={85}
                         source={
                           Object {
@@ -8626,10 +8349,7 @@ exports[`Shelf.Home render correct 1`] = `
                               "width": 85,
                             },
                             Array [
-                              Object {
-                                "borderColor": "rgba(242, 215, 234, 0.8)",
-                                "borderWidth": 3,
-                              },
+                              undefined,
                               Object {
                                 "backgroundColor": "transparent",
                               },
