@@ -37,3 +37,12 @@ casual.define('profilePicture', async () => {
   let idx = casual.integer(from = 0, to = clogCovers.length - 1);
   return clogCovers[idx];
 });
+
+casual.define('arrayN', function(max) {
+  let n = casual.integer(from = 0, to = max);
+  let result = [];
+  while(n--) {
+    result.push(1);
+  }
+  return result;
+});

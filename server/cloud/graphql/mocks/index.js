@@ -36,6 +36,9 @@ const mocks = {
     },
     followerCount() {
       return casual.integer(from=0, to=10000);
+    },
+    followersYouKnow() {
+      return casual.arrayN(100);
     }
   },
   CategoryDetail: {
