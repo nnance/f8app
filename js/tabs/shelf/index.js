@@ -10,6 +10,6 @@ import ClogCategory from './containers/ClogCategory';
 
 // export default ClogCategory;
 
-// export default Home;
+export default Home;
 
-export default () => <ClogCategory category="D"/>;
+// export default () => <ClogCategory category="D"/>;
