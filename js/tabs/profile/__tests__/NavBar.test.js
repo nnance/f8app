@@ -15,12 +15,6 @@ describe('<NavBar/>', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('render title', () => {
-    const dump = shallow(<NavBar title="test title"/>);
-    const wrapper = shallow(dump.instance().renderTitle());
-    expect(wrapper.contains('test title')).toBe(true);
-  });
-
   it('can custom rightMenu', () => {
     const dump = shallow(<NavBar renderRightMenu={() => <Text>RButton</Text>}/>);
     const wrapper = shallow(<View>{dump.instance().renderRightMenu()}</View>)

@@ -38,7 +38,7 @@ export const myClogs = [
     category: 'M',
     viewCount: 12300,
     likeCount: 1500,
-    date: new Date(2015, 5, 24)
+    createdAt: new Date(2015, 5, 24)
   },
   {
     title: 'Money Honey คุณชายหน้าตายกับยัยขี้งก',
@@ -49,7 +49,7 @@ export const myClogs = [
     category: 'N',
     viewCount: 100,
     likeCount: 55,
-    date: new Date(2016, 10, 8)
+    createdAt: new Date(2016, 10, 8)
   }
 ];
 

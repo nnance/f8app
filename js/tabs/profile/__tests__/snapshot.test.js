@@ -35,7 +35,7 @@ describe('ModalSpinner', () => {
 describe('MyClogScreen', () => {
   const MyClogScreen = require('../components/MyClogScreen').default;
   it('render MyClogScreen', () => {
-    const tree = renderer.create(<MyClogScreen myClogs={mockMyClogs}/>);
+    const tree = renderer.create(<MyClogScreen clogs={mockMyClogs}/>);
     expect(tree.toJSON()).toMatchSnapshot();
   });
 });

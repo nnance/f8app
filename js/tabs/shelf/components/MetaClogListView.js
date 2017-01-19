@@ -38,7 +38,7 @@ class ClogMeta extends React.Component {
   }
 }
 
-export default class ClogListView extends React.Component {
+export default class MetaClogListView extends React.Component {
   constructor(...args) {
     super(...args);
     let dataSource = new ListView.DataSource({
