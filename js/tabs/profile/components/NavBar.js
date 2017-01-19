@@ -19,8 +19,9 @@ export default class NavBar extends React.Component {
       <CustomNavBar
         containerStyle={styles.container}
         renderLeftMenu={this.renderLeftMenu.bind(this)}
-        renderTitle={this.renderTitle.bind(this)}
         renderRightMenu={this.renderRightMenu.bind(this)}
+        title={this.props.title}
+        titleTextStyle={styles.titleText}
         />
     );
   }
@@ -30,14 +31,6 @@ export default class NavBar extends React.Component {
       <TouchableOpacity style={styles.leftMenu} onPress={this.props.onLeftPress}>
         <Image style={styles.backButton} source={require('../img/icons/backButton.png')}/>
       </TouchableOpacity>
-    );
-  }
-
-  renderTitle() {
-    return (
-      <View style={styles.midMenu}>
-        <Text style={styles.navText}>{this.props.title}</Text>
-      </View>
     );
   }
 
@@ -61,7 +54,7 @@ const styles = StyleSheet.create({
     height: 20,
     resizeMode: 'contain'
   },
-  navText: {
+  titleText: {
     fontSize: 22,
     fontWeight: 'bold',
     color: 'rgb(209, 87, 92)'

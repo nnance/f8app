@@ -17,15 +17,9 @@ export default class NavBar extends React.Component {
   render() {
     return (
       <DefaultNavBar
+        backButton
         {...this.props}
-        renderLeftMenu={this.props.renderLeftMenu ? this.props.renderLeftMenu : this.renderBackButton.bind(this)}
         />
-    );
-  }
-
-  renderBackButton() {
-    return (
-      <TouchableOpacity onPress={this.props.onBackPress}><Image style={{height: 20, resizeMode: 'contain'}} source={require('../img/backButton.png')}/></TouchableOpacity>
     );
   }
 }

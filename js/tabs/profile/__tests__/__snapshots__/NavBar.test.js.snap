@@ -65,20 +65,23 @@ exports[`<NavBar/> render backButton by default 1`] = `
         undefined,
       ]
     }>
-    <View
-      style={undefined}>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "fontSize": 22,
+            "fontWeight": "bold",
+          },
           Object {
             "color": "rgb(209, 87, 92)",
             "fontSize": 22,
             "fontWeight": "bold",
-          }
-        } />
-    </View>
+          },
+        ]
+      } />
   </View>
   <View
     style={
