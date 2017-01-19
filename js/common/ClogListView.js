@@ -1,0 +1,99 @@
+import React from 'react';
+import {
+  View,
+  TouchableOpacity,
+  Text,
+  StyleSheet,
+  Image
+} from 'react-native';
+import moment from 'moment';
+import gql from 'graphql-tag';
+import { graphql } from 'react-apollo';
+
+import {colors} from './styles';
+import PureListView from './PureListView';
+import NavBar from './NavBar';
+import CircleImageWithCategory from './CircleImageWithCategory';
+import {toHumanNumber, mapSource} from './utils';
+import {fragments} from '../models/clog';
+
+const query = gql`
+  query ClogList {
+    getClogs {
+      ...clogMetaData
+      createdAt
+    }
+  }
+  ${fragments.clogMetaData}
+`;
+
+const ClogRow = (props) => (<TouchableOpacity style={styles.rowContainer}>
+  <CircleImageWithCategory
+    source={mapSource(props.cover)}
+    category={props.category}
+    size={100}
+  />
+  <View style={{flex: 1, paddingLeft: 20}}>
+    <Text style={{alignSelf: 'flex-end', fontSize: 12, color: colors.textFadedGrey}}>{moment(props.createdAt).format('MMMM D')}</Text>
+    <Text style={{fontWeight: 'bold', marginTop: 7}}>{props.title}</Text>
+    <Text style={{fontSize: 12, marginTop: 5, color: colors.textGrey}}>{props.author.name}</Text>
+    <View style={{flexDirection: 'row', alignItems: 'center'}}>
+      <View style={styles.detailSeparate}>
+        <Image source={require('./img/icon/read.png')} style={{width: 20, height: 20, resizeMode: 'contain', borderRadius: 4}}/>
+        <Text style={{paddingLeft: 5, fontSize: 12, color: colors.textFadedGrey}}>ดู {toHumanNumber(props.viewCount)} ครั้ง</Text>
+      </View>
+      <View style={styles.detailSeparate}>
+        <Image source={require('./img/icon/heart.png')} style={{width: 20, height: 20, resizeMode: 'contain', borderRadius: 4, marginLeft: 20}}/>
+        <Text style={{paddingLeft: 5, fontSize: 12, color: colors.textFadedGrey}}>{toHumanNumber(props.likeCount)} Like</Text>
+      </View>
+    </View>
+  </View>
+</TouchableOpacity>);
+
+class ClogListView extends React.Component {
+  render() {
+    return (<View style={{
+      flex: 1,
+      backgroundColor: colors.greyBackground
+    }}>
+      <NavBar backButton title={this.props.title} containerStyle={styles.navBar} titleTextStyle={styles.titleText}/>
+      <PureListView
+        data={this.props.clogs}
+        renderRow={(clog) => {
+          return <ClogRow {...clog}/>;
+        }}
+        />
+    </View>);
+  }
+}
+
+const styles = StyleSheet.create({
+  rowContainer: {
+    padding: 13,
+    flexDirection: 'row'
+  },
+  detailSeparate: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  navBar: {
+    backgroundColor: 'rgb(0, 150, 253)'
+  },
+  titleText: {
+    color: 'white'
+  }
+});
+
+const mapQueryToProps = ({ ownProps, data }) => {
+  const {loading, getClogs} = data;
+  return {
+    clogs: loading ? [] : getClogs
+  };
+};
+
+export default graphql(query, {
+  props: mapQueryToProps
+})(ClogListView);
+
+// export default ClogListView;

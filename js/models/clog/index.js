@@ -36,6 +36,8 @@ export const fragments = {
       title
       cover
       category
+      likeCount
+      viewCount
       author {
         name
       }

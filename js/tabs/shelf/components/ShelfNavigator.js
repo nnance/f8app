@@ -6,6 +6,8 @@ import {
 
 import Home from '../containers/Home';
 import ClogCategory from '../containers/ClogCategory';
+import ClogListView from '../../../common/ClogListView';
+import * as mockData from '../mockData';
 
 const NotFound = () => <Text>not found</Text>;
 
@@ -14,7 +16,7 @@ class ShelfNavigator extends React.Component {
     return (
       <Navigator
         ref="navigator"
-        initialRoute={{page: 'home', category: 'D'}}
+        initialRoute={{page: 'clog-list-view', title: 'Whats News!'}}
         renderScene={this.renderScene.bind(this)}
       />
     );
@@ -29,6 +31,9 @@ class ShelfNavigator extends React.Component {
     }
     if (route.page === 'clog-category') {
       return <ClogCategory navigator={navigator} category={route.category}/>;
+    }
+    if (route.page === 'clog-list-view') {
+      return <ClogListView title={route.title} clogs={mockData.fakeMetaClog}/>;
     }
     return <NotFound/>;
   }
