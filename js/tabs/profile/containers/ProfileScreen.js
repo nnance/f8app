@@ -139,7 +139,7 @@ class NavigatorProfile extends React.Component {
       return <ActivityScreen {...this.props} onBackPress={onBack}/>;
     }
     if (route.page === 'myclog') {
-      return <MyClogScreen {...this.props} onBackPress={onBack}/>;
+      return <MyClogScreen title="My Clog" clogs={mockData.myClogs} {...this.props} onBackPress={onBack}/>;
     }
     if (route.page === 'bookmark') {
       return <BookmarkScreen {...this.props} onBackPress={onBack}/>;

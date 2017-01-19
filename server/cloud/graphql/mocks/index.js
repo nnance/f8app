@@ -49,7 +49,8 @@ const mocks = {
   Query: () => ({
     trendingClogs: () => new MockList(20),
     favoriteTags: () => new MockList(3),
-    heroBanners: () => new MockList(5)
+    heroBanners: () => new MockList(5),
+    getClogs: () => new MockList(50)
   })
 };
 

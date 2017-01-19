@@ -29,6 +29,7 @@ exports[`BookmarkScreen render BookmarkScreen 1`] = `
         Array [
           Object {
             "alignItems": "flex-start",
+            "flex": 1,
             "paddingLeft": 10,
           },
           undefined,
@@ -68,6 +69,7 @@ exports[`BookmarkScreen render BookmarkScreen 1`] = `
         Array [
           Object {
             "alignItems": "center",
+            "flex": 4,
           },
           undefined,
         ]
@@ -97,6 +99,7 @@ exports[`BookmarkScreen render BookmarkScreen 1`] = `
         Array [
           Object {
             "alignItems": "flex-end",
+            "flex": 1,
             "paddingRight": 10,
           },
           undefined,
@@ -574,6 +577,7 @@ exports[`JellyShopScreen render JellyShopScreen 1`] = `
         Array [
           Object {
             "alignItems": "flex-start",
+            "flex": 1,
             "paddingLeft": 10,
           },
           undefined,
@@ -613,6 +617,7 @@ exports[`JellyShopScreen render JellyShopScreen 1`] = `
         Array [
           Object {
             "alignItems": "center",
+            "flex": 4,
           },
           undefined,
         ]
@@ -642,6 +647,7 @@ exports[`JellyShopScreen render JellyShopScreen 1`] = `
         Array [
           Object {
             "alignItems": "flex-end",
+            "flex": 1,
             "paddingRight": 10,
           },
           undefined,
@@ -1684,6 +1690,7 @@ exports[`MyClogScreen render MyClogScreen 1`] = `
         Array [
           Object {
             "alignItems": "flex-start",
+            "flex": 1,
             "paddingLeft": 10,
           },
           undefined,
@@ -1723,6 +1730,7 @@ exports[`MyClogScreen render MyClogScreen 1`] = `
         Array [
           Object {
             "alignItems": "center",
+            "flex": 4,
           },
           undefined,
         ]
@@ -1752,6 +1760,7 @@ exports[`MyClogScreen render MyClogScreen 1`] = `
         Array [
           Object {
             "alignItems": "flex-end",
+            "flex": 1,
             "paddingRight": 10,
           },
           undefined,
@@ -1793,7 +1802,7 @@ exports[`MyClogScreen render MyClogScreen 1`] = `
           },
           "category": "M",
           "cover": 1,
-          "date": 2015-06-23T17:00:00.000Z,
+          "createdAt": 2015-06-23T17:00:00.000Z,
           "likeCount": 1500,
           "title": "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
           "viewCount": 12300,
@@ -1804,7 +1813,7 @@ exports[`MyClogScreen render MyClogScreen 1`] = `
           },
           "category": "N",
           "cover": 1,
-          "date": 2016-11-07T17:00:00.000Z,
+          "createdAt": 2016-11-07T17:00:00.000Z,
           "likeCount": 55,
           "title": "Money Honey คุณชายหน้าตายกับยัยขี้งก",
           "viewCount": 100,
@@ -3276,6 +3285,7 @@ exports[`UserContainer FollowerScreen render 1`] = `
         Array [
           Object {
             "alignItems": "flex-start",
+            "flex": 1,
             "paddingLeft": 10,
           },
           undefined,
@@ -3315,6 +3325,7 @@ exports[`UserContainer FollowerScreen render 1`] = `
         Array [
           Object {
             "alignItems": "center",
+            "flex": 4,
           },
           undefined,
         ]
@@ -3344,6 +3355,7 @@ exports[`UserContainer FollowerScreen render 1`] = `
         Array [
           Object {
             "alignItems": "flex-end",
+            "flex": 1,
             "paddingRight": 10,
           },
           undefined,
@@ -4150,6 +4162,7 @@ exports[`UserContainer FollowingScreen render 1`] = `
         Array [
           Object {
             "alignItems": "flex-start",
+            "flex": 1,
             "paddingLeft": 10,
           },
           undefined,
@@ -4189,6 +4202,7 @@ exports[`UserContainer FollowingScreen render 1`] = `
         Array [
           Object {
             "alignItems": "center",
+            "flex": 4,
           },
           undefined,
         ]
@@ -4218,6 +4232,7 @@ exports[`UserContainer FollowingScreen render 1`] = `
         Array [
           Object {
             "alignItems": "flex-end",
+            "flex": 1,
             "paddingRight": 10,
           },
           undefined,
@@ -4901,6 +4916,7 @@ exports[`UserContainer MyFanScreen render 1`] = `
         Array [
           Object {
             "alignItems": "flex-start",
+            "flex": 1,
             "paddingLeft": 10,
           },
           undefined,
@@ -4940,6 +4956,7 @@ exports[`UserContainer MyFanScreen render 1`] = `
         Array [
           Object {
             "alignItems": "center",
+            "flex": 4,
           },
           undefined,
         ]
@@ -4969,6 +4986,7 @@ exports[`UserContainer MyFanScreen render 1`] = `
         Array [
           Object {
             "alignItems": "flex-end",
+            "flex": 1,
             "paddingRight": 10,
           },
           undefined,

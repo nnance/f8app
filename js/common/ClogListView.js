@@ -10,7 +10,6 @@ import moment from 'moment';
 
 import {colors} from './styles';
 import PureListView from './PureListView';
-import NavBar from './NavBar';
 import CircleImageWithCategory from './CircleImageWithCategory';
 import {toHumanNumber, mapSource} from './utils';
 
@@ -39,18 +38,14 @@ const ClogRow = (props) => (<TouchableOpacity style={styles.rowContainer}>
 
 class ClogListView extends React.Component {
   render() {
-    return (<View style={{
-      flex: 1,
-      backgroundColor: colors.greyBackground
-    }}>
-      <NavBar backButton title={this.props.title} containerStyle={styles.navBar} titleTextStyle={styles.titleText}/>
+    return (
       <PureListView
         data={this.props.clogs}
         renderRow={(clog) => {
           return <ClogRow {...clog}/>;
         }}
-        />
-    </View>);
+      />
+    );
   }
 }
 
@@ -63,12 +58,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center'
-  },
-  navBar: {
-    backgroundColor: 'rgb(0, 150, 253)'
-  },
-  titleText: {
-    color: 'white'
   }
 });
 

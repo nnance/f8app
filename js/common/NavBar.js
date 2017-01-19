@@ -59,13 +59,16 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   titleMenu: {
+    flex: 4,
     alignItems: 'center'
   },
   leftMenu: {
+    flex: 1,
     paddingLeft: 10,
     alignItems: 'flex-start'
   },
   rightMenu: {
+    flex: 1,
     paddingRight: 10,
     alignItems: 'flex-end'
   },

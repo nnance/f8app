@@ -22,6 +22,7 @@ exports[`<NavBar/> render backButton by default 1`] = `
       Array [
         Object {
           "alignItems": "flex-start",
+          "flex": 1,
           "paddingLeft": 10,
         },
         undefined,
@@ -61,6 +62,7 @@ exports[`<NavBar/> render backButton by default 1`] = `
       Array [
         Object {
           "alignItems": "center",
+          "flex": 4,
         },
         undefined,
       ]
@@ -88,6 +90,7 @@ exports[`<NavBar/> render backButton by default 1`] = `
       Array [
         Object {
           "alignItems": "flex-end",
+          "flex": 1,
           "paddingRight": 10,
         },
         undefined,

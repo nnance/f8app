@@ -4175,6 +4175,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
         Array [
           Object {
             "alignItems": "flex-start",
+            "flex": 1,
             "paddingLeft": 10,
           },
           undefined,
@@ -4214,6 +4215,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
         Array [
           Object {
             "alignItems": "center",
+            "flex": 4,
           },
           undefined,
         ]
@@ -4237,6 +4239,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
         Array [
           Object {
             "alignItems": "flex-end",
+            "flex": 1,
             "paddingRight": 10,
           },
           undefined,
