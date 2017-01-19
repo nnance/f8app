@@ -18,12 +18,17 @@ const schema = `
     profilePicture: String
   }
 
+  type Editor {
+    name: String!
+    profilePicture: String
+  }
+
   type Clog {
     id: Int!
     title: String!
     cover: String
     category: Category!
-    author: User!
+    author: Editor!
     review: String!
     followers: [User!]!
     followerCount: Int!
@@ -40,7 +45,7 @@ const schema = `
     recommendedClogs: [Clog!]!
     trendingClogs: [Clog!]!
     recentlyClogs: [Clog!]!
-    editors: [User!]!
+    editors: [Editor!]!
   }
 
   type Query {

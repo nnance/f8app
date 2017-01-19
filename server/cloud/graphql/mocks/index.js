@@ -11,6 +11,13 @@ const mocks = {
       return `http://${request.get('host')}${uri}`;
     }
   }),
+  Editor: () => ({
+    name: casual.full_name,
+    async profilePicture(rootValue, args, {request}) {
+      let uri = await casual.profilePicture;
+      return `http://${request.get('host')}${uri}`;
+    }
+  }),
   Tag: () => ({
     name: casual.word,
     trendingClogs: () => new MockList(30)
@@ -25,7 +32,8 @@ const mocks = {
     review: casual.sentences(n = 20),
     followerCount: casual.integer(from=0, to=10000),
     followersYouKnow: () => new MockList(casual.integer(from=0, to=25)),
-    likeCount: casual.integer(from = 0, to = 10000)
+    likeCount: casual.integer(from = 0, to = 10000),
+    viewCount: casual.integer(from = 0, to = 10000)
   }),
   CategoryDetail: () => ({
     category() {
