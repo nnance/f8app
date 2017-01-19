@@ -16,7 +16,7 @@ class ShelfNavigator extends React.Component {
     return (
       <Navigator
         ref="navigator"
-        initialRoute={{page: 'clog-list-view', title: 'Whats News!'}}
+        initialRoute={{page: 'home', title: 'Whats News!'}}
         renderScene={this.renderScene.bind(this)}
       />
     );
