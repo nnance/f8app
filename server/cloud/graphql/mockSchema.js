@@ -3,10 +3,9 @@ import typeDefs from './typeDefs';
 import mocks from './mocks';
 
 let MockSchema = makeExecutableSchema({
-  typeDefs,
-  resolvers: mocks
+  typeDefs
 });
 
-addMockFunctionsToSchema({schema: MockSchema, preserveResolvers: true});
+addMockFunctionsToSchema({schema: MockSchema, preserveResolvers: true, mocks});
 
 module.exports = MockSchema;

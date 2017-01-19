@@ -94,19 +94,19 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   data={
                     Array [
                       Object {
-                        "name": "Barton Leffler",
-                        "profilePicture": "http://localhost/static/cover/g4762.png",
+                        "name": "Shaniya Wintheiser",
+                        "profilePicture": "http://localhost/static/cover/g3336.png",
                       },
                       Object {
-                        "name": "Valentin Price",
-                        "profilePicture": "http://localhost/static/cover/g3578.png",
+                        "name": "Malachi Kuhn",
+                        "profilePicture": "http://localhost/static/cover/g1878.png",
                       },
                       Object {
-                        "name": "Harry Lemke",
-                        "profilePicture": "http://localhost/static/cover/g3456.png",
+                        "name": "April Bruen",
+                        "profilePicture": "http://localhost/static/cover/g3658.png",
                       },
                       Object {
-                        "remaining": 49,
+                        "remaining": 16,
                       },
                     ]
                   }
@@ -168,7 +168,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         size={30}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g4762.png",
+                            "uri": "http://localhost/static/cover/g3336.png",
                           }
                         }
                         style={
@@ -233,7 +233,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         size={30}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3578.png",
+                            "uri": "http://localhost/static/cover/g1878.png",
                           }
                         }
                         style={
@@ -298,7 +298,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         size={30}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3456.png",
+                            "uri": "http://localhost/static/cover/g3658.png",
                           }
                         }
                         style={
@@ -360,7 +360,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           }
                         }>
                         +
-                        49
+                        16
                       </Text>
                     </View>
                   </View>
@@ -416,7 +416,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "fontWeight": "bold",
                         }
                       }>
-                      2,045
+                      2,304
                     </Text>
                     <Text
                       accessible={true}
@@ -610,401 +610,113 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                 Array [
                   Object {
                     "author": Object {
-                      "name": "Elza Pfeffer",
+                      "name": "Fletcher Tremblay",
                     },
-                    "category": "N",
-                    "cover": "http://localhost/static/cover/g3456.png",
-                    "followerCount": 2045,
+                    "category": "M",
+                    "cover": "http://localhost/static/cover/g4642.png",
+                    "followerCount": 2304,
                     "followersYouKnow": Array [
                       Object {
-                        "name": "Barton Leffler",
-                        "profilePicture": "http://localhost/static/cover/g4762.png",
-                      },
-                      Object {
-                        "name": "Valentin Price",
-                        "profilePicture": "http://localhost/static/cover/g3578.png",
-                      },
-                      Object {
-                        "name": "Harry Lemke",
-                        "profilePicture": "http://localhost/static/cover/g3456.png",
-                      },
-                      Object {
-                        "name": "Nova Legros",
-                        "profilePicture": "http://localhost/static/cover/g4802.png",
-                      },
-                      Object {
-                        "name": "Malcolm Conn",
-                        "profilePicture": "http://localhost/static/cover/g4762.png",
-                      },
-                      Object {
-                        "name": "Payton Welch",
-                        "profilePicture": "http://localhost/static/cover/g4602.png",
-                      },
-                      Object {
-                        "name": "Kyler Torp",
-                        "profilePicture": "http://localhost/static/cover/g4602.png",
-                      },
-                      Object {
-                        "name": "Kamryn Collins",
-                        "profilePicture": "http://localhost/static/cover/g3376.png",
-                      },
-                      Object {
-                        "name": "Brody Trantow",
-                        "profilePicture": "http://localhost/static/cover/g3376.png",
-                      },
-                      Object {
-                        "name": "Gayle Huel",
-                        "profilePicture": "http://localhost/static/cover/g4722.png",
-                      },
-                      Object {
-                        "name": "Cassandra Nolan",
-                        "profilePicture": "http://localhost/static/cover/g4602.png",
-                      },
-                      Object {
-                        "name": "Francesca Heathcote",
-                        "profilePicture": "http://localhost/static/cover/g4602.png",
-                      },
-                      Object {
-                        "name": "Nestor Murphy",
+                        "name": "Shaniya Wintheiser",
                         "profilePicture": "http://localhost/static/cover/g3336.png",
                       },
                       Object {
-                        "name": "Brandon Torp",
-                        "profilePicture": "http://localhost/static/cover/g3336.png",
-                      },
-                      Object {
-                        "name": "Linda Nikolaus",
+                        "name": "Malachi Kuhn",
                         "profilePicture": "http://localhost/static/cover/g1878.png",
                       },
                       Object {
-                        "name": "Filiberto Hegmann",
-                        "profilePicture": "http://localhost/static/cover/g3618.png",
+                        "name": "April Bruen",
+                        "profilePicture": "http://localhost/static/cover/g3658.png",
                       },
                       Object {
-                        "name": "Don Herman",
-                        "profilePicture": "http://localhost/static/cover/g3336.png",
-                      },
-                      Object {
-                        "name": "Nicholas Johnston",
-                        "profilePicture": "http://localhost/static/cover/g4642.png",
-                      },
-                      Object {
-                        "name": "Violet Anderson",
-                        "profilePicture": "http://localhost/static/cover/g3618.png",
-                      },
-                      Object {
-                        "name": "Jessica Morar",
-                        "profilePicture": "http://localhost/static/cover/g4802.png",
-                      },
-                      Object {
-                        "name": "Betsy Schamberger",
-                        "profilePicture": "http://localhost/static/cover/g4602.png",
-                      },
-                      Object {
-                        "name": "Anita Kihn",
-                        "profilePicture": "http://localhost/static/cover/g1878.png",
-                      },
-                      Object {
-                        "name": "Kody Weissnat",
+                        "name": "Ursula Bergnaum",
                         "profilePicture": "http://localhost/static/cover/g4762.png",
                       },
                       Object {
-                        "name": "Gennaro Feest",
-                        "profilePicture": "http://localhost/static/cover/g4842.png",
+                        "name": "Flavie Marquardt",
+                        "profilePicture": "http://localhost/static/cover/g4602.png",
                       },
                       Object {
-                        "name": "Stewart Ryan",
+                        "name": "Hailee Hirthe",
                         "profilePicture": "http://localhost/static/cover/g4722.png",
                       },
                       Object {
-                        "name": "Elissa Abernathy",
-                        "profilePicture": "http://localhost/static/cover/g3618.png",
-                      },
-                      Object {
-                        "name": "Lexus Corwin",
-                        "profilePicture": "http://localhost/static/cover/g3456.png",
-                      },
-                      Object {
-                        "name": "Kolby Leannon",
-                        "profilePicture": "http://localhost/static/cover/g4842.png",
-                      },
-                      Object {
-                        "name": "Sheila Rath",
-                        "profilePicture": "http://localhost/static/cover/g3336.png",
-                      },
-                      Object {
-                        "name": "Janick Upton",
+                        "name": "Norbert Turner",
                         "profilePicture": "http://localhost/static/cover/g4602.png",
                       },
                       Object {
-                        "name": "Lincoln Koelpin",
-                        "profilePicture": "http://localhost/static/cover/g3376.png",
-                      },
-                      Object {
-                        "name": "Domingo Ward",
-                        "profilePicture": "http://localhost/static/cover/g4762.png",
-                      },
-                      Object {
-                        "name": "Maryse Littel",
-                        "profilePicture": "http://localhost/static/cover/g3456.png",
-                      },
-                      Object {
-                        "name": "Antoinette Dach",
-                        "profilePicture": "http://localhost/static/cover/g4602.png",
-                      },
-                      Object {
-                        "name": "Brigitte Rodriguez",
+                        "name": "Kiera Gulgowski",
                         "profilePicture": "http://localhost/static/cover/g3618.png",
                       },
                       Object {
-                        "name": "Claudie Prohaska",
-                        "profilePicture": "http://localhost/static/cover/g4642.png",
-                      },
-                      Object {
-                        "name": "Annabel Farrell",
+                        "name": "Oliver Monahan",
                         "profilePicture": "http://localhost/static/cover/g3578.png",
                       },
                       Object {
-                        "name": "Joey Roob",
+                        "name": "Erik Marquardt",
+                        "profilePicture": "http://localhost/static/cover/g3658.png",
+                      },
+                      Object {
+                        "name": "Adelbert Torphy",
+                        "profilePicture": "http://localhost/static/cover/g4842.png",
+                      },
+                      Object {
+                        "name": "Florencio Koepp",
+                        "profilePicture": "http://localhost/static/cover/g3336.png",
+                      },
+                      Object {
+                        "name": "Norval Morar",
+                        "profilePicture": "http://localhost/static/cover/g4602.png",
+                      },
+                      Object {
+                        "name": "Aglae Gleason",
+                        "profilePicture": "http://localhost/static/cover/g3376.png",
+                      },
+                      Object {
+                        "name": "Ricky Powlowski",
+                        "profilePicture": "http://localhost/static/cover/g3618.png",
+                      },
+                      Object {
+                        "name": "Zion Bernier",
+                        "profilePicture": "http://localhost/static/cover/g3658.png",
+                      },
+                      Object {
+                        "name": "Jaquan Collins",
+                        "profilePicture": "http://localhost/static/cover/g4602.png",
+                      },
+                      Object {
+                        "name": "Tony Dicki",
                         "profilePicture": "http://localhost/static/cover/g3456.png",
                       },
                       Object {
-                        "name": "Therese Beatty",
-                        "profilePicture": "http://localhost/static/cover/g4642.png",
+                        "name": "Jamal Bergstrom",
+                        "profilePicture": "http://localhost/static/cover/g4722.png",
                       },
-                      Object {
-                        "name": "Joshuah Casper",
-                        "profilePicture": "http://localhost/static/cover/g4602.png",
-                      },
+                    ],
+                    "title": "Placeat ex aliquid",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Merle Langosh",
+                    },
+                    "category": "N",
+                    "cover": "http://localhost/static/cover/g4802.png",
+                    "followerCount": 8600,
+                    "followersYouKnow": Array [
                       Object {
                         "name": "Aiyana Huel",
                         "profilePicture": "http://localhost/static/cover/g4642.png",
                       },
                       Object {
                         "name": "Berenice Barrows",
-                        "profilePicture": "http://localhost/static/cover/g4722.png",
+                        "profilePicture": "http://localhost/static/cover/g3658.png",
                       },
                       Object {
                         "name": "Delfina Brakus",
-                        "profilePicture": "http://localhost/static/cover/g3336.png",
-                      },
-                      Object {
-                        "name": "Edyth Lehner",
-                        "profilePicture": "http://localhost/static/cover/g4762.png",
-                      },
-                      Object {
-                        "name": "Kattie Wisoky",
-                        "profilePicture": "http://localhost/static/cover/g1878.png",
-                      },
-                      Object {
-                        "name": "Dulce Casper",
-                        "profilePicture": "http://localhost/static/cover/g4722.png",
-                      },
-                      Object {
-                        "name": "Dustin Bosco",
-                        "profilePicture": "http://localhost/static/cover/g4722.png",
-                      },
-                      Object {
-                        "name": "Kevon Wisozk",
-                        "profilePicture": "http://localhost/static/cover/g4642.png",
-                      },
-                      Object {
-                        "name": "Kelley Hettinger",
-                        "profilePicture": "http://localhost/static/cover/g4802.png",
-                      },
-                      Object {
-                        "name": "Raoul Schmitt",
-                        "profilePicture": "http://localhost/static/cover/g4762.png",
-                      },
-                      Object {
-                        "name": "Darrel Reichel",
-                        "profilePicture": "http://localhost/static/cover/g1878.png",
-                      },
-                      Object {
-                        "name": "Lesley Hoppe",
-                        "profilePicture": "http://localhost/static/cover/g3578.png",
+                        "profilePicture": "http://localhost/static/cover/g3456.png",
                       },
                     ],
-                    "title": "Qui recusandae ut",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Marco Volkman",
-                    },
-                    "category": "D",
-                    "cover": "http://localhost/static/cover/g3376.png",
-                    "followerCount": 4572,
-                    "followersYouKnow": Array [
-                      Object {
-                        "name": "Salma Romaguera",
-                        "profilePicture": "http://localhost/static/cover/g3456.png",
-                      },
-                      Object {
-                        "name": "Hilario Lockman",
-                        "profilePicture": "http://localhost/static/cover/g4642.png",
-                      },
-                      Object {
-                        "name": "Bridie Herzog",
-                        "profilePicture": "http://localhost/static/cover/g3658.png",
-                      },
-                      Object {
-                        "name": "Candida Cartwright",
-                        "profilePicture": "http://localhost/static/cover/g3618.png",
-                      },
-                      Object {
-                        "name": "Alvena Von",
-                        "profilePicture": "http://localhost/static/cover/g3578.png",
-                      },
-                      Object {
-                        "name": "Oswaldo Fadel",
-                        "profilePicture": "http://localhost/static/cover/g3618.png",
-                      },
-                      Object {
-                        "name": "Meta Bashirian",
-                        "profilePicture": "http://localhost/static/cover/g3456.png",
-                      },
-                      Object {
-                        "name": "Madeline Ankunding",
-                        "profilePicture": "http://localhost/static/cover/g3618.png",
-                      },
-                      Object {
-                        "name": "Antonietta Greenfelder",
-                        "profilePicture": "http://localhost/static/cover/g1878.png",
-                      },
-                      Object {
-                        "name": "Foster Macejkovic",
-                        "profilePicture": "http://localhost/static/cover/g3618.png",
-                      },
-                      Object {
-                        "name": "Concepcion Bins",
-                        "profilePicture": "http://localhost/static/cover/g3658.png",
-                      },
-                      Object {
-                        "name": "Camylle Rogahn",
-                        "profilePicture": "http://localhost/static/cover/g3578.png",
-                      },
-                      Object {
-                        "name": "Cleta Wehner",
-                        "profilePicture": "http://localhost/static/cover/g3376.png",
-                      },
-                      Object {
-                        "name": "Gabriella Wisozk",
-                        "profilePicture": "http://localhost/static/cover/g4602.png",
-                      },
-                      Object {
-                        "name": "Rosella Roberts",
-                        "profilePicture": "http://localhost/static/cover/g4602.png",
-                      },
-                      Object {
-                        "name": "Elijah Kuhic",
-                        "profilePicture": "http://localhost/static/cover/g3618.png",
-                      },
-                      Object {
-                        "name": "Liliana Wuckert",
-                        "profilePicture": "http://localhost/static/cover/g3376.png",
-                      },
-                      Object {
-                        "name": "Sister Crist",
-                        "profilePicture": "http://localhost/static/cover/g4842.png",
-                      },
-                      Object {
-                        "name": "Aiden Nitzsche",
-                        "profilePicture": "http://localhost/static/cover/g3618.png",
-                      },
-                      Object {
-                        "name": "Aliya Kris",
-                        "profilePicture": "http://localhost/static/cover/g4642.png",
-                      },
-                      Object {
-                        "name": "Lemuel Runolfsdottir",
-                        "profilePicture": "http://localhost/static/cover/g4642.png",
-                      },
-                      Object {
-                        "name": "Jackie Haley",
-                        "profilePicture": "http://localhost/static/cover/g3376.png",
-                      },
-                      Object {
-                        "name": "Yasmeen Brekke",
-                        "profilePicture": "http://localhost/static/cover/g3456.png",
-                      },
-                      Object {
-                        "name": "Cade Hirthe",
-                        "profilePicture": "http://localhost/static/cover/g3618.png",
-                      },
-                      Object {
-                        "name": "Kathryne Eichmann",
-                        "profilePicture": "http://localhost/static/cover/g1878.png",
-                      },
-                      Object {
-                        "name": "Telly Pacocha",
-                        "profilePicture": "http://localhost/static/cover/g3578.png",
-                      },
-                      Object {
-                        "name": "Dimitri Cole",
-                        "profilePicture": "http://localhost/static/cover/g3456.png",
-                      },
-                      Object {
-                        "name": "Norris Hickle",
-                        "profilePicture": "http://localhost/static/cover/g4762.png",
-                      },
-                      Object {
-                        "name": "Lola Blanda",
-                        "profilePicture": "http://localhost/static/cover/g1878.png",
-                      },
-                      Object {
-                        "name": "Austin Roob",
-                        "profilePicture": "http://localhost/static/cover/g4802.png",
-                      },
-                      Object {
-                        "name": "Annabelle Herman",
-                        "profilePicture": "http://localhost/static/cover/g4802.png",
-                      },
-                      Object {
-                        "name": "Austen Schoen",
-                        "profilePicture": "http://localhost/static/cover/g4802.png",
-                      },
-                      Object {
-                        "name": "Clement Waters",
-                        "profilePicture": "http://localhost/static/cover/g4722.png",
-                      },
-                      Object {
-                        "name": "Kirsten Larkin",
-                        "profilePicture": "http://localhost/static/cover/g4642.png",
-                      },
-                      Object {
-                        "name": "Thurman Morar",
-                        "profilePicture": "http://localhost/static/cover/g3658.png",
-                      },
-                      Object {
-                        "name": "Era Bergstrom",
-                        "profilePicture": "http://localhost/static/cover/g3456.png",
-                      },
-                      Object {
-                        "name": "Murray Larkin",
-                        "profilePicture": "http://localhost/static/cover/g1878.png",
-                      },
-                      Object {
-                        "name": "Myles Upton",
-                        "profilePicture": "http://localhost/static/cover/g3456.png",
-                      },
-                      Object {
-                        "name": "Toni Pollich",
-                        "profilePicture": "http://localhost/static/cover/g3578.png",
-                      },
-                      Object {
-                        "name": "Hertha Feeney",
-                        "profilePicture": "http://localhost/static/cover/g4762.png",
-                      },
-                      Object {
-                        "name": "Lexi Rosenbaum",
-                        "profilePicture": "http://localhost/static/cover/g3658.png",
-                      },
-                      Object {
-                        "name": "Graham Wiegand",
-                        "profilePicture": "http://localhost/static/cover/g3658.png",
-                      },
-                    ],
-                    "title": "Debitis incidunt",
+                    "title": "Molestias facere non",
                   },
                 ]
               }
@@ -1127,7 +839,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                               "fontWeight": "bold",
                             }
                           }>
-                          Qui recusandae ut
+                          Placeat ex aliquid
                         </Text>
                         <Text
                           accessible={true}
@@ -1140,7 +852,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                               "fontWeight": "bold",
                             }
                           }>
-                          Elza Pfeffer
+                          Fletcher Tremblay
                         </Text>
                       </View>
                     </View>
@@ -1247,7 +959,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                               "fontWeight": "bold",
                             }
                           }>
-                          Debitis incidunt
+                          Molestias facere non
                         </Text>
                         <Text
                           accessible={true}
@@ -1260,7 +972,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                               "fontWeight": "bold",
                             }
                           }>
-                          Marco Volkman
+                          Merle Langosh
                         </Text>
                       </View>
                     </View>
@@ -1453,13 +1165,13 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                               }
                             } />
                           <Image
-                            category="N"
+                            category="M"
                             shadowColor="rgba(255, 255, 255, 0.3)"
                             shadowRadius={5}
                             size={85}
                             source={
                               Object {
-                                "uri": "http://localhost/static/cover/g4762.png",
+                                "uri": "http://localhost/static/cover/g4722.png",
                               }
                             }
                             style={
@@ -1523,7 +1235,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                             "fontSize": 12,
                           }
                         }>
-                        Asperiores quisquam
+                        Ut dolorem
                       </Text>
                     </View>
                     <View
@@ -1544,7 +1256,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                             "fontSize": 10,
                           }
                         }>
-                        Branson Gusikowski
+                        Francesca Heathcote
                       </Text>
                     </View>
                   </View>
@@ -1604,13 +1316,13 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                               }
                             } />
                           <Image
-                            category="G"
+                            category="D"
                             shadowColor="rgba(255, 255, 255, 0.3)"
                             shadowRadius={5}
                             size={85}
                             source={
                               Object {
-                                "uri": "http://localhost/static/cover/g4602.png",
+                                "uri": "http://localhost/static/cover/g1878.png",
                               }
                             }
                             style={
@@ -1674,7 +1386,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                             "fontSize": 12,
                           }
                         }>
-                        Ratione labore explicabo
+                        Placeat quidem est
                       </Text>
                     </View>
                     <View
@@ -1695,7 +1407,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                             "fontSize": 10,
                           }
                         }>
-                        Gilbert Heaney
+                        Maryam Morissette
                       </Text>
                     </View>
                   </View>
@@ -1817,7 +1529,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
             <ScrollView
               dataSource={
                 ListViewDataSource {
-                  "items": 11,
+                  "items": 20,
                 }
               }
               horizontal={true}
@@ -1893,13 +1605,13 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           }
                         } />
                       <Image
-                        category="G"
+                        category="N"
                         shadowColor="rgba(255, 255, 255, 0.3)"
                         shadowRadius={5}
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3658.png",
+                            "uri": "http://localhost/static/cover/g3376.png",
                           }
                         }
                         style={
@@ -1963,7 +1675,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         "fontSize": 12,
                       }
                     }>
-                    Et qui itaque
+                    Asperiores quisquam
                   </Text>
                 </View>
                 <View
@@ -1984,7 +1696,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         "fontSize": 10,
                       }
                     }>
-                    Precious Reichel
+                    Branson Gusikowski
                   </Text>
                 </View>
               </View>
@@ -2044,7 +1756,460 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           }
                         } />
                       <Image
-                        category="M"
+                        category="G"
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
+                        size={85}
+                        source={
+                          Object {
+                            "uri": "http://localhost/static/cover/g4722.png",
+                          }
+                        }
+                        style={
+                          Array [
+                            Object {
+                              "borderRadius": 42.5,
+                              "height": 85,
+                              "width": 85,
+                            },
+                            Array [
+                              undefined,
+                              Object {
+                                "backgroundColor": "transparent",
+                              },
+                            ],
+                          ]
+                        } />
+                      <View
+                        style={
+                          Object {
+                            "height": 85,
+                            "left": 0,
+                            "position": "absolute",
+                            "top": 0,
+                            "width": 85,
+                          }
+                        } />
+                    </View>
+                    <Image
+                      source={1}
+                      style={
+                        Array [
+                          Object {
+                            "bottom": 2.65625,
+                            "height": 21.25,
+                            "position": "absolute",
+                            "right": 2.65625,
+                            "width": 21.25,
+                          },
+                          undefined,
+                        ]
+                      } />
+                  </View>
+                </View>
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "flex": 1,
+                      "paddingTop": 20,
+                    }
+                  }>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    numberOfLines={1}
+                    style={
+                      Object {
+                        "color": "rgba(255, 255, 255, 1)",
+                        "fontSize": 12,
+                      }
+                    }>
+                    Ratione labore explicabo
+                  </Text>
+                </View>
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "flex": 1,
+                    }
+                  }>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    numberOfLines={1}
+                    style={
+                      Object {
+                        "color": "rgba(255, 255, 255, 0.6)",
+                        "fontSize": 10,
+                      }
+                    }>
+                    Gilbert Heaney
+                  </Text>
+                </View>
+              </View>
+              <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "flex": 1,
+                    "opacity": 1,
+                    "paddingHorizontal": 5,
+                    "paddingVertical": 10,
+                    "width": 100,
+                  }
+                }
+                testID={undefined}>
+                <View
+                  style={
+                    Object {
+                      "flex": 7,
+                    }
+                  }>
+                  <View
+                    style={
+                      Object {
+                        "height": 85,
+                        "width": 85,
+                      }
+                    }>
+                    <View
+                      style={
+                        Object {
+                          "height": 85,
+                          "width": 85,
+                        }
+                      }>
+                      <View
+                        style={
+                          Object {
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
+                            "position": "absolute",
+                            "top": -2.5,
+                            "width": 90,
+                          }
+                        } />
+                      <Image
+                        category="N"
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
+                        size={85}
+                        source={
+                          Object {
+                            "uri": "http://localhost/static/cover/g3376.png",
+                          }
+                        }
+                        style={
+                          Array [
+                            Object {
+                              "borderRadius": 42.5,
+                              "height": 85,
+                              "width": 85,
+                            },
+                            Array [
+                              undefined,
+                              Object {
+                                "backgroundColor": "transparent",
+                              },
+                            ],
+                          ]
+                        } />
+                      <View
+                        style={
+                          Object {
+                            "height": 85,
+                            "left": 0,
+                            "position": "absolute",
+                            "top": 0,
+                            "width": 85,
+                          }
+                        } />
+                    </View>
+                    <Image
+                      source={1}
+                      style={
+                        Array [
+                          Object {
+                            "bottom": 2.65625,
+                            "height": 21.25,
+                            "position": "absolute",
+                            "right": 2.65625,
+                            "width": 21.25,
+                          },
+                          undefined,
+                        ]
+                      } />
+                  </View>
+                </View>
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "flex": 1,
+                      "paddingTop": 20,
+                    }
+                  }>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    numberOfLines={1}
+                    style={
+                      Object {
+                        "color": "rgba(255, 255, 255, 1)",
+                        "fontSize": 12,
+                      }
+                    }>
+                    Qui recusandae ut
+                  </Text>
+                </View>
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "flex": 1,
+                    }
+                  }>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    numberOfLines={1}
+                    style={
+                      Object {
+                        "color": "rgba(255, 255, 255, 0.6)",
+                        "fontSize": 10,
+                      }
+                    }>
+                    Elza Pfeffer
+                  </Text>
+                </View>
+              </View>
+              <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "flex": 1,
+                    "opacity": 1,
+                    "paddingHorizontal": 5,
+                    "paddingVertical": 10,
+                    "width": 100,
+                  }
+                }
+                testID={undefined}>
+                <View
+                  style={
+                    Object {
+                      "flex": 7,
+                    }
+                  }>
+                  <View
+                    style={
+                      Object {
+                        "height": 85,
+                        "width": 85,
+                      }
+                    }>
+                    <View
+                      style={
+                        Object {
+                          "height": 85,
+                          "width": 85,
+                        }
+                      }>
+                      <View
+                        style={
+                          Object {
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
+                            "position": "absolute",
+                            "top": -2.5,
+                            "width": 90,
+                          }
+                        } />
+                      <Image
+                        category="G"
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
+                        size={85}
+                        source={
+                          Object {
+                            "uri": "http://localhost/static/cover/g3376.png",
+                          }
+                        }
+                        style={
+                          Array [
+                            Object {
+                              "borderRadius": 42.5,
+                              "height": 85,
+                              "width": 85,
+                            },
+                            Array [
+                              undefined,
+                              Object {
+                                "backgroundColor": "transparent",
+                              },
+                            ],
+                          ]
+                        } />
+                      <View
+                        style={
+                          Object {
+                            "height": 85,
+                            "left": 0,
+                            "position": "absolute",
+                            "top": 0,
+                            "width": 85,
+                          }
+                        } />
+                    </View>
+                    <Image
+                      source={1}
+                      style={
+                        Array [
+                          Object {
+                            "bottom": 2.65625,
+                            "height": 21.25,
+                            "position": "absolute",
+                            "right": 2.65625,
+                            "width": 21.25,
+                          },
+                          undefined,
+                        ]
+                      } />
+                  </View>
+                </View>
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "flex": 1,
+                      "paddingTop": 20,
+                    }
+                  }>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    numberOfLines={1}
+                    style={
+                      Object {
+                        "color": "rgba(255, 255, 255, 1)",
+                        "fontSize": 12,
+                      }
+                    }>
+                    Quia dignissimos debitis
+                  </Text>
+                </View>
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "flex": 1,
+                    }
+                  }>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    numberOfLines={1}
+                    style={
+                      Object {
+                        "color": "rgba(255, 255, 255, 0.6)",
+                        "fontSize": 10,
+                      }
+                    }>
+                    Kadin Pacocha
+                  </Text>
+                </View>
+              </View>
+              <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "flex": 1,
+                    "opacity": 1,
+                    "paddingHorizontal": 5,
+                    "paddingVertical": 10,
+                    "width": 100,
+                  }
+                }
+                testID={undefined}>
+                <View
+                  style={
+                    Object {
+                      "flex": 7,
+                    }
+                  }>
+                  <View
+                    style={
+                      Object {
+                        "height": 85,
+                        "width": 85,
+                      }
+                    }>
+                    <View
+                      style={
+                        Object {
+                          "height": 85,
+                          "width": 85,
+                        }
+                      }>
+                      <View
+                        style={
+                          Object {
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
+                            "position": "absolute",
+                            "top": -2.5,
+                            "width": 90,
+                          }
+                        } />
+                      <Image
+                        category="G"
                         shadowColor="rgba(255, 255, 255, 0.3)"
                         shadowRadius={5}
                         size={85}
@@ -2114,7 +2279,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         "fontSize": 12,
                       }
                     }>
-                    Et ipsam explicabo
+                    Esse blanditiis natus
                   </Text>
                 </View>
                 <View
@@ -2135,7 +2300,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         "fontSize": 10,
                       }
                     }>
-                    Selina Streich
+                    Trevor Donnelly
                   </Text>
                 </View>
               </View>
@@ -2195,7 +2360,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           }
                         } />
                       <Image
-                        category="D"
+                        category="M"
                         shadowColor="rgba(255, 255, 255, 0.3)"
                         shadowRadius={5}
                         size={85}
@@ -2265,7 +2430,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         "fontSize": 12,
                       }
                     }>
-                    Eum dicta eum
+                    Et porro delectus
                   </Text>
                 </View>
                 <View
@@ -2286,7 +2451,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         "fontSize": 10,
                       }
                     }>
-                    Cecelia Beier
+                    Augusta Predovic
                   </Text>
                 </View>
               </View>
@@ -2346,7 +2511,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           }
                         } />
                       <Image
-                        category="G"
+                        category="M"
                         shadowColor="rgba(255, 255, 255, 0.3)"
                         shadowRadius={5}
                         size={85}
@@ -2416,7 +2581,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         "fontSize": 12,
                       }
                     }>
-                    Libero aspernatur deserunt
+                    Officiis et saepe
                   </Text>
                 </View>
                 <View
@@ -2437,7 +2602,158 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         "fontSize": 10,
                       }
                     }>
-                    Vernice Jaskolski
+                    Richard Batz
+                  </Text>
+                </View>
+              </View>
+              <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "flex": 1,
+                    "opacity": 1,
+                    "paddingHorizontal": 5,
+                    "paddingVertical": 10,
+                    "width": 100,
+                  }
+                }
+                testID={undefined}>
+                <View
+                  style={
+                    Object {
+                      "flex": 7,
+                    }
+                  }>
+                  <View
+                    style={
+                      Object {
+                        "height": 85,
+                        "width": 85,
+                      }
+                    }>
+                    <View
+                      style={
+                        Object {
+                          "height": 85,
+                          "width": 85,
+                        }
+                      }>
+                      <View
+                        style={
+                          Object {
+                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                            "borderRadius": 45,
+                            "height": 90,
+                            "left": -2.5,
+                            "position": "absolute",
+                            "top": -2.5,
+                            "width": 90,
+                          }
+                        } />
+                      <Image
+                        category="N"
+                        shadowColor="rgba(255, 255, 255, 0.3)"
+                        shadowRadius={5}
+                        size={85}
+                        source={
+                          Object {
+                            "uri": "http://localhost/static/cover/g4842.png",
+                          }
+                        }
+                        style={
+                          Array [
+                            Object {
+                              "borderRadius": 42.5,
+                              "height": 85,
+                              "width": 85,
+                            },
+                            Array [
+                              undefined,
+                              Object {
+                                "backgroundColor": "transparent",
+                              },
+                            ],
+                          ]
+                        } />
+                      <View
+                        style={
+                          Object {
+                            "height": 85,
+                            "left": 0,
+                            "position": "absolute",
+                            "top": 0,
+                            "width": 85,
+                          }
+                        } />
+                    </View>
+                    <Image
+                      source={1}
+                      style={
+                        Array [
+                          Object {
+                            "bottom": 2.65625,
+                            "height": 21.25,
+                            "position": "absolute",
+                            "right": 2.65625,
+                            "width": 21.25,
+                          },
+                          undefined,
+                        ]
+                      } />
+                  </View>
+                </View>
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "flex": 1,
+                      "paddingTop": 20,
+                    }
+                  }>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    numberOfLines={1}
+                    style={
+                      Object {
+                        "color": "rgba(255, 255, 255, 1)",
+                        "fontSize": 12,
+                      }
+                    }>
+                    Ipsum veritatis
+                  </Text>
+                </View>
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "flex": 1,
+                    }
+                  }>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    numberOfLines={1}
+                    style={
+                      Object {
+                        "color": "rgba(255, 255, 255, 0.6)",
+                        "fontSize": 10,
+                      }
+                    }>
+                    Ayla McDermott
                   </Text>
                 </View>
               </View>
@@ -2503,7 +2819,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g1878.png",
+                            "uri": "http://localhost/static/cover/g3336.png",
                           }
                         }
                         style={
@@ -2567,7 +2883,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         "fontSize": 12,
                       }
                     }>
-                    Velit eligendi nostrum
+                    Tempore a
                   </Text>
                 </View>
                 <View
@@ -2588,7 +2904,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         "fontSize": 10,
                       }
                     }>
-                    Marques Schaden
+                    Clinton Powlowski
                   </Text>
                 </View>
               </View>
@@ -2654,7 +2970,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g4802.png",
+                            "uri": "http://localhost/static/cover/g4762.png",
                           }
                         }
                         style={
@@ -2718,7 +3034,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         "fontSize": 12,
                       }
                     }>
-                    Velit voluptatem aperiam
+                    Ipsam qui
                   </Text>
                 </View>
                 <View
@@ -2739,611 +3055,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         "fontSize": 10,
                       }
                     }>
-                    Yasmin Ondricka
-                  </Text>
-                </View>
-              </View>
-              <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
-                accessible={true}
-                hitSlop={undefined}
-                onLayout={undefined}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "flex": 1,
-                    "opacity": 1,
-                    "paddingHorizontal": 5,
-                    "paddingVertical": 10,
-                    "width": 100,
-                  }
-                }
-                testID={undefined}>
-                <View
-                  style={
-                    Object {
-                      "flex": 7,
-                    }
-                  }>
-                  <View
-                    style={
-                      Object {
-                        "height": 85,
-                        "width": 85,
-                      }
-                    }>
-                    <View
-                      style={
-                        Object {
-                          "height": 85,
-                          "width": 85,
-                        }
-                      }>
-                      <View
-                        style={
-                          Object {
-                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
-                            "borderRadius": 45,
-                            "height": 90,
-                            "left": -2.5,
-                            "position": "absolute",
-                            "top": -2.5,
-                            "width": 90,
-                          }
-                        } />
-                      <Image
-                        category="M"
-                        shadowColor="rgba(255, 255, 255, 0.3)"
-                        shadowRadius={5}
-                        size={85}
-                        source={
-                          Object {
-                            "uri": "http://localhost/static/cover/g4602.png",
-                          }
-                        }
-                        style={
-                          Array [
-                            Object {
-                              "borderRadius": 42.5,
-                              "height": 85,
-                              "width": 85,
-                            },
-                            Array [
-                              undefined,
-                              Object {
-                                "backgroundColor": "transparent",
-                              },
-                            ],
-                          ]
-                        } />
-                      <View
-                        style={
-                          Object {
-                            "height": 85,
-                            "left": 0,
-                            "position": "absolute",
-                            "top": 0,
-                            "width": 85,
-                          }
-                        } />
-                    </View>
-                    <Image
-                      source={1}
-                      style={
-                        Array [
-                          Object {
-                            "bottom": 2.65625,
-                            "height": 21.25,
-                            "position": "absolute",
-                            "right": 2.65625,
-                            "width": 21.25,
-                          },
-                          undefined,
-                        ]
-                      } />
-                  </View>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
-                    }
-                  }>
-                  <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    ellipsizeMode="tail"
-                    numberOfLines={1}
-                    style={
-                      Object {
-                        "color": "rgba(255, 255, 255, 1)",
-                        "fontSize": 12,
-                      }
-                    }>
-                    Ullam veniam ducimus
-                  </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
-                  <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    ellipsizeMode="tail"
-                    numberOfLines={1}
-                    style={
-                      Object {
-                        "color": "rgba(255, 255, 255, 0.6)",
-                        "fontSize": 10,
-                      }
-                    }>
-                    Beatrice Bins
-                  </Text>
-                </View>
-              </View>
-              <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
-                accessible={true}
-                hitSlop={undefined}
-                onLayout={undefined}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "flex": 1,
-                    "opacity": 1,
-                    "paddingHorizontal": 5,
-                    "paddingVertical": 10,
-                    "width": 100,
-                  }
-                }
-                testID={undefined}>
-                <View
-                  style={
-                    Object {
-                      "flex": 7,
-                    }
-                  }>
-                  <View
-                    style={
-                      Object {
-                        "height": 85,
-                        "width": 85,
-                      }
-                    }>
-                    <View
-                      style={
-                        Object {
-                          "height": 85,
-                          "width": 85,
-                        }
-                      }>
-                      <View
-                        style={
-                          Object {
-                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
-                            "borderRadius": 45,
-                            "height": 90,
-                            "left": -2.5,
-                            "position": "absolute",
-                            "top": -2.5,
-                            "width": 90,
-                          }
-                        } />
-                      <Image
-                        category="D"
-                        shadowColor="rgba(255, 255, 255, 0.3)"
-                        shadowRadius={5}
-                        size={85}
-                        source={
-                          Object {
-                            "uri": "http://localhost/static/cover/g3456.png",
-                          }
-                        }
-                        style={
-                          Array [
-                            Object {
-                              "borderRadius": 42.5,
-                              "height": 85,
-                              "width": 85,
-                            },
-                            Array [
-                              undefined,
-                              Object {
-                                "backgroundColor": "transparent",
-                              },
-                            ],
-                          ]
-                        } />
-                      <View
-                        style={
-                          Object {
-                            "height": 85,
-                            "left": 0,
-                            "position": "absolute",
-                            "top": 0,
-                            "width": 85,
-                          }
-                        } />
-                    </View>
-                    <Image
-                      source={1}
-                      style={
-                        Array [
-                          Object {
-                            "bottom": 2.65625,
-                            "height": 21.25,
-                            "position": "absolute",
-                            "right": 2.65625,
-                            "width": 21.25,
-                          },
-                          undefined,
-                        ]
-                      } />
-                  </View>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
-                    }
-                  }>
-                  <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    ellipsizeMode="tail"
-                    numberOfLines={1}
-                    style={
-                      Object {
-                        "color": "rgba(255, 255, 255, 1)",
-                        "fontSize": 12,
-                      }
-                    }>
-                    Totam et
-                  </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
-                  <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    ellipsizeMode="tail"
-                    numberOfLines={1}
-                    style={
-                      Object {
-                        "color": "rgba(255, 255, 255, 0.6)",
-                        "fontSize": 10,
-                      }
-                    }>
-                    Stewart Graham
-                  </Text>
-                </View>
-              </View>
-              <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
-                accessible={true}
-                hitSlop={undefined}
-                onLayout={undefined}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "flex": 1,
-                    "opacity": 1,
-                    "paddingHorizontal": 5,
-                    "paddingVertical": 10,
-                    "width": 100,
-                  }
-                }
-                testID={undefined}>
-                <View
-                  style={
-                    Object {
-                      "flex": 7,
-                    }
-                  }>
-                  <View
-                    style={
-                      Object {
-                        "height": 85,
-                        "width": 85,
-                      }
-                    }>
-                    <View
-                      style={
-                        Object {
-                          "height": 85,
-                          "width": 85,
-                        }
-                      }>
-                      <View
-                        style={
-                          Object {
-                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
-                            "borderRadius": 45,
-                            "height": 90,
-                            "left": -2.5,
-                            "position": "absolute",
-                            "top": -2.5,
-                            "width": 90,
-                          }
-                        } />
-                      <Image
-                        category="D"
-                        shadowColor="rgba(255, 255, 255, 0.3)"
-                        shadowRadius={5}
-                        size={85}
-                        source={
-                          Object {
-                            "uri": "http://localhost/static/cover/g3618.png",
-                          }
-                        }
-                        style={
-                          Array [
-                            Object {
-                              "borderRadius": 42.5,
-                              "height": 85,
-                              "width": 85,
-                            },
-                            Array [
-                              undefined,
-                              Object {
-                                "backgroundColor": "transparent",
-                              },
-                            ],
-                          ]
-                        } />
-                      <View
-                        style={
-                          Object {
-                            "height": 85,
-                            "left": 0,
-                            "position": "absolute",
-                            "top": 0,
-                            "width": 85,
-                          }
-                        } />
-                    </View>
-                    <Image
-                      source={1}
-                      style={
-                        Array [
-                          Object {
-                            "bottom": 2.65625,
-                            "height": 21.25,
-                            "position": "absolute",
-                            "right": 2.65625,
-                            "width": 21.25,
-                          },
-                          undefined,
-                        ]
-                      } />
-                  </View>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
-                    }
-                  }>
-                  <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    ellipsizeMode="tail"
-                    numberOfLines={1}
-                    style={
-                      Object {
-                        "color": "rgba(255, 255, 255, 1)",
-                        "fontSize": 12,
-                      }
-                    }>
-                    Magni cupiditate
-                  </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
-                  <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    ellipsizeMode="tail"
-                    numberOfLines={1}
-                    style={
-                      Object {
-                        "color": "rgba(255, 255, 255, 0.6)",
-                        "fontSize": 10,
-                      }
-                    }>
-                    Mariela Von
-                  </Text>
-                </View>
-              </View>
-              <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
-                accessible={true}
-                hitSlop={undefined}
-                onLayout={undefined}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "flex": 1,
-                    "opacity": 1,
-                    "paddingHorizontal": 5,
-                    "paddingVertical": 10,
-                    "width": 100,
-                  }
-                }
-                testID={undefined}>
-                <View
-                  style={
-                    Object {
-                      "flex": 7,
-                    }
-                  }>
-                  <View
-                    style={
-                      Object {
-                        "height": 85,
-                        "width": 85,
-                      }
-                    }>
-                    <View
-                      style={
-                        Object {
-                          "height": 85,
-                          "width": 85,
-                        }
-                      }>
-                      <View
-                        style={
-                          Object {
-                            "backgroundColor": "rgba(255, 255, 255, 0.3)",
-                            "borderRadius": 45,
-                            "height": 90,
-                            "left": -2.5,
-                            "position": "absolute",
-                            "top": -2.5,
-                            "width": 90,
-                          }
-                        } />
-                      <Image
-                        category="G"
-                        shadowColor="rgba(255, 255, 255, 0.3)"
-                        shadowRadius={5}
-                        size={85}
-                        source={
-                          Object {
-                            "uri": "http://localhost/static/cover/g3456.png",
-                          }
-                        }
-                        style={
-                          Array [
-                            Object {
-                              "borderRadius": 42.5,
-                              "height": 85,
-                              "width": 85,
-                            },
-                            Array [
-                              undefined,
-                              Object {
-                                "backgroundColor": "transparent",
-                              },
-                            ],
-                          ]
-                        } />
-                      <View
-                        style={
-                          Object {
-                            "height": 85,
-                            "left": 0,
-                            "position": "absolute",
-                            "top": 0,
-                            "width": 85,
-                          }
-                        } />
-                    </View>
-                    <Image
-                      source={1}
-                      style={
-                        Array [
-                          Object {
-                            "bottom": 2.65625,
-                            "height": 21.25,
-                            "position": "absolute",
-                            "right": 2.65625,
-                            "width": 21.25,
-                          },
-                          undefined,
-                        ]
-                      } />
-                  </View>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
-                    }
-                  }>
-                  <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    ellipsizeMode="tail"
-                    numberOfLines={1}
-                    style={
-                      Object {
-                        "color": "rgba(255, 255, 255, 1)",
-                        "fontSize": 12,
-                      }
-                    }>
-                    Voluptates ut
-                  </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
-                  <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    ellipsizeMode="tail"
-                    numberOfLines={1}
-                    style={
-                      Object {
-                        "color": "rgba(255, 255, 255, 0.6)",
-                        "fontSize": 10,
-                      }
-                    }>
-                    Krystina Becker
+                    Roberta Jaskolski
                   </Text>
                 </View>
               </View>
@@ -3457,94 +3169,90 @@ exports[`Shelf.ClogCategory render correct 1`] = `
             data={
               Array [
                 Object {
-                  "name": "Kaylie Doyle",
-                  "profilePicture": "http://localhost/static/cover/g4762.png",
-                },
-                Object {
-                  "name": "Addie Nader",
-                  "profilePicture": "http://localhost/static/cover/g4762.png",
-                },
-                Object {
-                  "name": "Gino Greenfelder",
+                  "name": "Kali Fay",
                   "profilePicture": "http://localhost/static/cover/g3376.png",
                 },
                 Object {
-                  "name": "Caterina Metz",
-                  "profilePicture": "http://localhost/static/cover/g4602.png",
-                },
-                Object {
-                  "name": "Katherine Kilback",
+                  "name": "Vivian Spinka",
                   "profilePicture": "http://localhost/static/cover/g3336.png",
                 },
                 Object {
-                  "name": "Raheem VonRueden",
+                  "name": "Bradley Feeney",
                   "profilePicture": "http://localhost/static/cover/g4722.png",
                 },
                 Object {
-                  "name": "Golda Mills",
-                  "profilePicture": "http://localhost/static/cover/g3336.png",
-                },
-                Object {
-                  "name": "Alfonso Daniel",
-                  "profilePicture": "http://localhost/static/cover/g3658.png",
-                },
-                Object {
-                  "name": "Brandon Block",
-                  "profilePicture": "http://localhost/static/cover/g3618.png",
-                },
-                Object {
-                  "name": "Matilde Kuphal",
-                  "profilePicture": "http://localhost/static/cover/g4722.png",
-                },
-                Object {
-                  "name": "Alana Klein",
-                  "profilePicture": "http://localhost/static/cover/g1878.png",
-                },
-                Object {
-                  "name": "Victoria Shields",
-                  "profilePicture": "http://localhost/static/cover/g4602.png",
-                },
-                Object {
-                  "name": "Adrien Kohler",
-                  "profilePicture": "http://localhost/static/cover/g3336.png",
-                },
-                Object {
-                  "name": "Benedict Harber",
-                  "profilePicture": "http://localhost/static/cover/g3658.png",
-                },
-                Object {
-                  "name": "Brendan Torphy",
-                  "profilePicture": "http://localhost/static/cover/g4762.png",
-                },
-                Object {
-                  "name": "Kadin Heaney",
+                  "name": "Audra Mayert",
                   "profilePicture": "http://localhost/static/cover/g3578.png",
                 },
                 Object {
-                  "name": "Trisha Heller",
+                  "name": "Wade Jerde",
+                  "profilePicture": "http://localhost/static/cover/g3456.png",
+                },
+                Object {
+                  "name": "Freeda Aufderhar",
                   "profilePicture": "http://localhost/static/cover/g4642.png",
                 },
                 Object {
-                  "name": "Sonya Thompson",
+                  "name": "Precious Grant",
                   "profilePicture": "http://localhost/static/cover/g3336.png",
                 },
                 Object {
-                  "name": "Rosalinda Bailey",
+                  "name": "Mike Schowalter",
+                  "profilePicture": "http://localhost/static/cover/g3456.png",
+                },
+                Object {
+                  "name": "Gilbert Johnston",
+                  "profilePicture": "http://localhost/static/cover/g3336.png",
+                },
+                Object {
+                  "name": "Newell Rohan",
                   "profilePicture": "http://localhost/static/cover/g4722.png",
                 },
                 Object {
-                  "name": "Virgil Klein",
-                  "profilePicture": "http://localhost/static/cover/g3618.png",
+                  "name": "Kayli Jones",
+                  "profilePicture": "http://localhost/static/cover/g3376.png",
                 },
                 Object {
-                  "name": "Karson Heaney",
+                  "name": "Francis Beier",
+                  "profilePicture": "http://localhost/static/cover/g3336.png",
+                },
+                Object {
+                  "name": "Bobby Wehner",
+                  "profilePicture": "http://localhost/static/cover/g3578.png",
+                },
+                Object {
+                  "name": "Telly Breitenberg",
+                  "profilePicture": "http://localhost/static/cover/g3456.png",
+                },
+                Object {
+                  "name": "Danial Mohr",
+                  "profilePicture": "http://localhost/static/cover/g3336.png",
+                },
+                Object {
+                  "name": "Alfred Lubowitz",
+                  "profilePicture": "http://localhost/static/cover/g4762.png",
+                },
+                Object {
+                  "name": "Adolphus Champlin",
+                  "profilePicture": "http://localhost/static/cover/g3376.png",
+                },
+                Object {
+                  "name": "Eleanore Wisoky",
+                  "profilePicture": "http://localhost/static/cover/g3376.png",
+                },
+                Object {
+                  "name": "Kenyon Goldner",
+                  "profilePicture": "http://localhost/static/cover/g4802.png",
+                },
+                Object {
+                  "name": "April Fritsch",
                   "profilePicture": "http://localhost/static/cover/g4642.png",
                 },
               ]
             }
             dataSource={
               ListViewDataSource {
-                "items": 21,
+                "items": 20,
               }
             }
             horizontal={true}
@@ -3567,178 +3275,6 @@ exports[`Shelf.ClogCategory render correct 1`] = `
             scrollRenderAheadDistance={1000}
             showsHorizontalScrollIndicator={false}
             stickyHeaderIndices={Array []}>
-            <View
-              style={
-                Object {
-                  "alignItems": "center",
-                  "paddingHorizontal": 15,
-                  "paddingVertical": 8,
-                }
-              }>
-              <View
-                style={
-                  Object {
-                    "height": 80,
-                    "width": 80,
-                  }
-                }>
-                <View
-                  style={
-                    Object {
-                      "backgroundColor": "white",
-                      "borderRadius": 42,
-                      "height": 84,
-                      "left": -2,
-                      "position": "absolute",
-                      "top": -2,
-                      "width": 84,
-                    }
-                  } />
-                <Image
-                  shadowColor="white"
-                  shadowRadius={4}
-                  size={80}
-                  source={
-                    Object {
-                      "uri": "http://localhost/static/cover/g4762.png",
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "borderRadius": 40,
-                        "height": 80,
-                        "width": 80,
-                      },
-                      undefined,
-                    ]
-                  } />
-                <View
-                  style={
-                    Object {
-                      "height": 80,
-                      "left": 0,
-                      "position": "absolute",
-                      "top": 0,
-                      "width": 80,
-                    }
-                  } />
-              </View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "paddingTop": 5,
-                    "width": 80,
-                  }
-                }>
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  numberOfLines={1}
-                  style={
-                    Object {
-                      "color": "white",
-                    }
-                  }>
-                  Kaylie Doyle
-                </Text>
-              </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "backgroundColor": "#eeeeee",
-                  "height": 1,
-                }
-              } />
-            <View
-              style={
-                Object {
-                  "alignItems": "center",
-                  "paddingHorizontal": 15,
-                  "paddingVertical": 8,
-                }
-              }>
-              <View
-                style={
-                  Object {
-                    "height": 80,
-                    "width": 80,
-                  }
-                }>
-                <View
-                  style={
-                    Object {
-                      "backgroundColor": "white",
-                      "borderRadius": 42,
-                      "height": 84,
-                      "left": -2,
-                      "position": "absolute",
-                      "top": -2,
-                      "width": 84,
-                    }
-                  } />
-                <Image
-                  shadowColor="white"
-                  shadowRadius={4}
-                  size={80}
-                  source={
-                    Object {
-                      "uri": "http://localhost/static/cover/g4762.png",
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "borderRadius": 40,
-                        "height": 80,
-                        "width": 80,
-                      },
-                      undefined,
-                    ]
-                  } />
-                <View
-                  style={
-                    Object {
-                      "height": 80,
-                      "left": 0,
-                      "position": "absolute",
-                      "top": 0,
-                      "width": 80,
-                    }
-                  } />
-              </View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "paddingTop": 5,
-                    "width": 80,
-                  }
-                }>
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  numberOfLines={1}
-                  style={
-                    Object {
-                      "color": "white",
-                    }
-                  }>
-                  Addie Nader
-                </Text>
-              </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "backgroundColor": "#eeeeee",
-                  "height": 1,
-                }
-              } />
             <View
               style={
                 Object {
@@ -3814,93 +3350,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "color": "white",
                     }
                   }>
-                  Gino Greenfelder
-                </Text>
-              </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "backgroundColor": "#eeeeee",
-                  "height": 1,
-                }
-              } />
-            <View
-              style={
-                Object {
-                  "alignItems": "center",
-                  "paddingHorizontal": 15,
-                  "paddingVertical": 8,
-                }
-              }>
-              <View
-                style={
-                  Object {
-                    "height": 80,
-                    "width": 80,
-                  }
-                }>
-                <View
-                  style={
-                    Object {
-                      "backgroundColor": "white",
-                      "borderRadius": 42,
-                      "height": 84,
-                      "left": -2,
-                      "position": "absolute",
-                      "top": -2,
-                      "width": 84,
-                    }
-                  } />
-                <Image
-                  shadowColor="white"
-                  shadowRadius={4}
-                  size={80}
-                  source={
-                    Object {
-                      "uri": "http://localhost/static/cover/g4602.png",
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "borderRadius": 40,
-                        "height": 80,
-                        "width": 80,
-                      },
-                      undefined,
-                    ]
-                  } />
-                <View
-                  style={
-                    Object {
-                      "height": 80,
-                      "left": 0,
-                      "position": "absolute",
-                      "top": 0,
-                      "width": 80,
-                    }
-                  } />
-              </View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "paddingTop": 5,
-                    "width": 80,
-                  }
-                }>
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  numberOfLines={1}
-                  style={
-                    Object {
-                      "color": "white",
-                    }
-                  }>
-                  Caterina Metz
+                  Kali Fay
                 </Text>
               </View>
             </View>
@@ -3986,7 +3436,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "color": "white",
                     }
                   }>
-                  Katherine Kilback
+                  Vivian Spinka
                 </Text>
               </View>
             </View>
@@ -4072,7 +3522,265 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "color": "white",
                     }
                   }>
-                  Raheem VonRueden
+                  Bradley Feeney
+                </Text>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "height": 1,
+                }
+              } />
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "paddingHorizontal": 15,
+                  "paddingVertical": 8,
+                }
+              }>
+              <View
+                style={
+                  Object {
+                    "height": 80,
+                    "width": 80,
+                  }
+                }>
+                <View
+                  style={
+                    Object {
+                      "backgroundColor": "white",
+                      "borderRadius": 42,
+                      "height": 84,
+                      "left": -2,
+                      "position": "absolute",
+                      "top": -2,
+                      "width": 84,
+                    }
+                  } />
+                <Image
+                  shadowColor="white"
+                  shadowRadius={4}
+                  size={80}
+                  source={
+                    Object {
+                      "uri": "http://localhost/static/cover/g3578.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "borderRadius": 40,
+                        "height": 80,
+                        "width": 80,
+                      },
+                      undefined,
+                    ]
+                  } />
+                <View
+                  style={
+                    Object {
+                      "height": 80,
+                      "left": 0,
+                      "position": "absolute",
+                      "top": 0,
+                      "width": 80,
+                    }
+                  } />
+              </View>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "paddingTop": 5,
+                    "width": 80,
+                  }
+                }>
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  numberOfLines={1}
+                  style={
+                    Object {
+                      "color": "white",
+                    }
+                  }>
+                  Audra Mayert
+                </Text>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "height": 1,
+                }
+              } />
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "paddingHorizontal": 15,
+                  "paddingVertical": 8,
+                }
+              }>
+              <View
+                style={
+                  Object {
+                    "height": 80,
+                    "width": 80,
+                  }
+                }>
+                <View
+                  style={
+                    Object {
+                      "backgroundColor": "white",
+                      "borderRadius": 42,
+                      "height": 84,
+                      "left": -2,
+                      "position": "absolute",
+                      "top": -2,
+                      "width": 84,
+                    }
+                  } />
+                <Image
+                  shadowColor="white"
+                  shadowRadius={4}
+                  size={80}
+                  source={
+                    Object {
+                      "uri": "http://localhost/static/cover/g3456.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "borderRadius": 40,
+                        "height": 80,
+                        "width": 80,
+                      },
+                      undefined,
+                    ]
+                  } />
+                <View
+                  style={
+                    Object {
+                      "height": 80,
+                      "left": 0,
+                      "position": "absolute",
+                      "top": 0,
+                      "width": 80,
+                    }
+                  } />
+              </View>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "paddingTop": 5,
+                    "width": 80,
+                  }
+                }>
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  numberOfLines={1}
+                  style={
+                    Object {
+                      "color": "white",
+                    }
+                  }>
+                  Wade Jerde
+                </Text>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "height": 1,
+                }
+              } />
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "paddingHorizontal": 15,
+                  "paddingVertical": 8,
+                }
+              }>
+              <View
+                style={
+                  Object {
+                    "height": 80,
+                    "width": 80,
+                  }
+                }>
+                <View
+                  style={
+                    Object {
+                      "backgroundColor": "white",
+                      "borderRadius": 42,
+                      "height": 84,
+                      "left": -2,
+                      "position": "absolute",
+                      "top": -2,
+                      "width": 84,
+                    }
+                  } />
+                <Image
+                  shadowColor="white"
+                  shadowRadius={4}
+                  size={80}
+                  source={
+                    Object {
+                      "uri": "http://localhost/static/cover/g4642.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "borderRadius": 40,
+                        "height": 80,
+                        "width": 80,
+                      },
+                      undefined,
+                    ]
+                  } />
+                <View
+                  style={
+                    Object {
+                      "height": 80,
+                      "left": 0,
+                      "position": "absolute",
+                      "top": 0,
+                      "width": 80,
+                    }
+                  } />
+              </View>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "paddingTop": 5,
+                    "width": 80,
+                  }
+                }>
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  numberOfLines={1}
+                  style={
+                    Object {
+                      "color": "white",
+                    }
+                  }>
+                  Freeda Aufderhar
                 </Text>
               </View>
             </View>
@@ -4158,7 +3866,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "color": "white",
                     }
                   }>
-                  Golda Mills
+                  Precious Grant
                 </Text>
               </View>
             </View>
@@ -4202,7 +3910,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   size={80}
                   source={
                     Object {
-                      "uri": "http://localhost/static/cover/g3658.png",
+                      "uri": "http://localhost/static/cover/g3456.png",
                     }
                   }
                   style={
@@ -4244,7 +3952,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "color": "white",
                     }
                   }>
-                  Alfonso Daniel
+                  Mike Schowalter
                 </Text>
               </View>
             </View>
@@ -4288,7 +3996,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   size={80}
                   source={
                     Object {
-                      "uri": "http://localhost/static/cover/g3618.png",
+                      "uri": "http://localhost/static/cover/g3336.png",
                     }
                   }
                   style={
@@ -4330,7 +4038,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "color": "white",
                     }
                   }>
-                  Brandon Block
+                  Gilbert Johnston
                 </Text>
               </View>
             </View>
@@ -4416,7 +4124,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "color": "white",
                     }
                   }>
-                  Matilde Kuphal
+                  Newell Rohan
                 </Text>
               </View>
             </View>

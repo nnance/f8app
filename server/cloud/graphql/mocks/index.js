@@ -3,7 +3,7 @@ import casual from 'casual';
 import {MockList} from 'graphql-tools';
 
 const mocks = {
-  User: {
+  User: () => ({
     name() {
       return casual.full_name;
     },
@@ -11,16 +11,16 @@ const mocks = {
       let uri = await casual.profilePicture;
       return `http://${request.get('host')}${uri}`;
     }
-  },
-  Tag: {
+  }),
+  Tag: () => ({
     name() {
       return casual.word;
     },
     trendingClogs() {
-      return [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ,1];
+      return new MockList(30);
     }
-  },
-  Clog: {
+  }),
+  Clog: () => ({
     title() {
       return casual.title;
     },
@@ -38,31 +38,31 @@ const mocks = {
       return casual.integer(from=0, to=10000);
     },
     followersYouKnow() {
-      return casual.arrayN(100);
+      return new MockList(casual.integer(from=0, to=25));
     }
-  },
-  CategoryDetail: {
+  }),
+  CategoryDetail: () => ({
     category() {
       return casual.clog_category;
     },
     trendingClogs() {
-      return [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+      return new MockList(20);
     },
     editors() {
-      return [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+      return new MockList(20);
     }
-  },
-  Query: {
+  }),
+  Query: () => ({
     trendingClogs() {
-      return [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+      return new MockList(20);
     },
     favoriteTags() {
-      return [1, 1, 1];
+      return new MockList(3);
     },
     heroBanners() {
-      return [1, 1, 1, 1, 1, 1, 1, 1];
+      return new MockList(5);
     }
-  }
+  })
 };
 
 export default mocks;
