@@ -23,10 +23,11 @@
 import 'dotenv/config';
 import path from 'path';
 import express from 'express';
-import graphqlHTTP from 'express-graphql';
 import Parse from 'parse/node';
 import {ParseServer} from 'parse-server';
 import ParseDashboard from 'parse-dashboard';
+import { graphqlExpress, graphiqlExpress } from 'graphql-server-express';
+import bodyParser from 'body-parser';
 
 const SERVER_PORT = process.env.SERVER_PORT || 8080;
 const SERVER_URL = process.env.URL;
@@ -110,20 +111,20 @@ if (IS_DEVELOPMENT) {
   );
 }
 
-server.use(
-  '/graphql',
-  graphqlHTTP(request => {
-    return {
-      graphiql: IS_DEVELOPMENT,
-      pretty: IS_DEVELOPMENT,
-      schema: getSchema(),
-      rootValue: Math.random(), // TODO: Check credentials, assign user
-      context: {
-        request
-      }
-    };
-  })
-);
+server.use('/graphql', bodyParser.json(), graphqlExpress(request => {
+  return {
+    schema: getSchema(),
+    context: {
+      request
+    }
+  };
+}));
+
+if (IS_DEVELOPMENT) {
+  server.use('/graphiql', graphiqlExpress({
+    endpointURL: '/graphql',
+  }));
+}
 
 server.use('/', (req, res) => res.redirect('/graphql'));
 
