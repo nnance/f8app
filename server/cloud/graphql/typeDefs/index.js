@@ -46,6 +46,8 @@ const schema = `
     favoriteTags: [Tag!]!
     heroBanners: [Clog!]!
     categoryDetail(category: Category!): CategoryDetail!
+    getClogs: [Clog!]!
+    getClog: Clog!
   }
 `;
 

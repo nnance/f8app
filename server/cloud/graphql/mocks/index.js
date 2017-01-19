@@ -4,42 +4,27 @@ import {MockList} from 'graphql-tools';
 
 const mocks = {
   User: () => ({
-    name() {
-      return casual.full_name;
-    },
+    name: casual.full_name,
     async profilePicture(rootValue, args, {request}) {
       let uri = await casual.profilePicture;
       return `http://${request.get('host')}${uri}`;
     }
   }),
   Tag: () => ({
-    name() {
-      return casual.word;
-    },
-    trendingClogs() {
-      return new MockList(30);
-    }
+    name: casual.word,
+    trendingClogs: () => new MockList(30)
   }),
   Clog: () => ({
-    title() {
-      return casual.title;
-    },
+    title: casual.title,
     async cover(rootValue, args, {request}) {
       let uri = await casual.clog_cover;
       return `http://${request.get('host')}${uri}`;
     },
-    category() {
-      return casual.clog_category;
-    },
-    review() {
-      return casual.sentences(n = 20)
-    },
-    followerCount() {
-      return casual.integer(from=0, to=10000);
-    },
-    followersYouKnow() {
-      return new MockList(casual.integer(from=0, to=25));
-    }
+    category: casual.clog_category,
+    review: casual.sentences(n = 20),
+    followerCount: casual.integer(from=0, to=10000),
+    followersYouKnow: () => new MockList(casual.integer(from=0, to=25)),
+    likeCount: casual.integer(from = 0, to = 10000)
   }),
   CategoryDetail: () => ({
     category() {
@@ -53,15 +38,9 @@ const mocks = {
     }
   }),
   Query: () => ({
-    trendingClogs() {
-      return new MockList(20);
-    },
-    favoriteTags() {
-      return new MockList(3);
-    },
-    heroBanners() {
-      return new MockList(5);
-    }
+    trendingClogs: () => new MockList(20),
+    favoriteTags: () => new MockList(3),
+    heroBanners: () => new MockList(5)
   })
 };
 
