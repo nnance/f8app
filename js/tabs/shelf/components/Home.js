@@ -12,7 +12,7 @@ import {
 import NavBar from './NavBar';
 import BorderButton from '../../../common/BorderButton';
 
-import ClogListView from './ClogListView';
+import MetaClogListView from './MetaClogListView';
 import RecommendedClog from './RecommendedClog';
 import ExploreCategory from './ExploreCategory';
 import HeroBanner from './HeroBanner';
@@ -44,7 +44,7 @@ class Home extends React.Component {
               <HeroBanner clogs={this.props.heroBanners}/>
             </View>
             <View style={{flex: 1, paddingLeft: 10}}>
-              <ClogListView header="TRENDING" clogs={this.props.trendingClogs} renderButton={this.renderTrendingButton.bind(this)}/>
+              <MetaClogListView header="TRENDING" clogs={this.props.trendingClogs} renderButton={this.renderTrendingButton.bind(this)}/>
             </View>
             <View style={{flex: 1.6}}>
               <RecommendedClog {...this.props.recommendedClog}/>
@@ -54,7 +54,7 @@ class Home extends React.Component {
             {
               this.props.favoriteTags.map((tag, idx) => (
                 <View key={idx} style={{paddingLeft: 10}}>
-                  <ClogListView header={tag.name.toUpperCase()} clogs={tag.trendingClogs} renderButton={!tag.following ? this.renderFollowButton.bind(this) : this.renderUnfollowButton.bind(this)}/>
+                  <MetaClogListView header={tag.name.toUpperCase()} clogs={tag.trendingClogs} renderButton={!tag.following ? this.renderFollowButton.bind(this) : this.renderUnfollowButton.bind(this)}/>
                 </View>
               ))
             }

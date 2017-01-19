@@ -17,7 +17,7 @@ import {toHumanNumber} from '../../../common/utils';
 import {getCategoryLogo} from '../../../models/clog';
 import NavBar, {HEIGHT} from './NavBar';
 import WriterList from './WriterList';
-import ClogListView from './ClogListView';
+import MetaClogListView from './MetaClogListView';
 
 const clogThemes = {
   D: {
@@ -209,14 +209,14 @@ class ClogCategory extends React.Component {
                   />
                 </View>
                 <View style={{height: 160, padding: 5}}>
-                  <ClogListView header="What's New" clogs={this.props.recentlyClogs} renderButton={this.renderViewAllClog.bind(this)}/>
+                  <MetaClogListView header="What's New" clogs={this.props.recentlyClogs} renderButton={this.renderViewAllClog.bind(this)}/>
                 </View>
               </View>
             </Image>
           </LinearGradient>
           <LinearGradient colors={['rgb(164, 58, 124)', 'rgb(220, 4, 87)']}>
             <View style={{height: 160, padding: 5}}>
-              <ClogListView header="Top Chart" clogs={this.props.trendingClogs} renderButton={this.renderViewAllClog.bind(this)}/>
+              <MetaClogListView header="Top Chart" clogs={this.props.trendingClogs} renderButton={this.renderViewAllClog.bind(this)}/>
             </View>
             <View style={{height: 180, padding: 5}}>
               <WriterList type="big" editors={this.props.editors}/>
