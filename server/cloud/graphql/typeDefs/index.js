@@ -6,6 +6,8 @@ const schema = `
     N
   }
 
+  scalar Date
+
   type Tag {
     name: String!
     trendingClogs: [Clog!]!
@@ -30,6 +32,7 @@ const schema = `
     likeCount: Int!
     viewCount: Int!
     tags: [Tag!]!
+    createdAt: Date!
   }
 
   type CategoryDetail {

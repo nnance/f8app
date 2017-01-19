@@ -3,6 +3,7 @@ import casual from 'casual';
 import {MockList} from 'graphql-tools';
 
 const mocks = {
+  Date: () => new Date(casual.moment),
   User: () => ({
     name: casual.full_name,
     async profilePicture(rootValue, args, {request}) {
