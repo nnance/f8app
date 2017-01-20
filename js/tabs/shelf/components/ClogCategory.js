@@ -207,14 +207,16 @@ class ClogCategory extends React.Component {
                   />
                 </View>
                 <View style={{height: 160, padding: 5}}>
-                  <MetaClogListView header="What's New" clogs={this.props.recentlyClogs} renderButton={this.renderViewAllClog.bind(this)}/>
+                  <MetaClogListView header="What's New" clogs={this.props.recentlyClogs}
+                    renderButton={this.renderButtonViewAllClog.bind(this, {title: `What's new`, sortBy: "RECENTLY"})}/>
                 </View>
               </View>
             </Image>
           </LinearGradient>
           <LinearGradient colors={['rgb(164, 58, 124)', 'rgb(220, 4, 87)']}>
             <View style={{height: 160, padding: 5}}>
-              <MetaClogListView header="Top Chart" clogs={this.props.trendingClogs} renderButton={this.renderViewAllClog.bind(this)}/>
+              <MetaClogListView header="Top Chart" clogs={this.props.trendingClogs}
+                renderButton={this.renderButtonViewAllClog.bind(this, {title: 'ยอดนิยม', sortBy: "TRENDING"})}/>
             </View>
             <View style={{height: 180, padding: 5}}>
               <WriterList type="big" editors={this.props.editors}/>
@@ -266,8 +268,10 @@ class ClogCategory extends React.Component {
     );
   }
 
-  renderViewAllClog() {
-    return <BorderButton type="fadedWhite" caption="ทั้งหมด"/>
+  renderButtonViewAllClog(pushOption = {}) {
+    return <BorderButton type="fadedWhite" caption="ทั้งหมด"
+      onPress={() => this.props.navigator.push({page: 'clog-list-view', category: this.props.category, ...pushOption})}
+      />
   }
 }
 

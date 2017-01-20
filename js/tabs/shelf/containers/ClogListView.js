@@ -13,8 +13,8 @@ import {colors} from '../../../common/styles';
 import NavBar from '../components/NavBar';
 
 const query = gql`
-  query ClogListView{
-    clogs {
+  query ClogListView($option: QueryClogOption){
+    clogs(option: $option) {
       ...clogMetaData
       createdAt
     }
@@ -28,7 +28,7 @@ class Container extends React.Component {
       flex: 1,
       backgroundColor: colors.greyBackground
     }}>
-      <NavBar backButton onBackPress={this.props.onBackPress} title={this.props.title} containerStyle={styles.navBar} titleTextStyle={styles.titleText}/>
+      <NavBar backButton onBackPress={() => this.props.navigator.pop()} title={this.props.title} containerStyle={styles.navBar} titleTextStyle={styles.titleText}/>
       <ClogListView clogs={this.props.clogs}/>
     </View>
     );
@@ -44,6 +44,16 @@ const styles = StyleSheet.create({
   }
 });
 
+export const mapPropsToOptions = ({category, tag, sortBy}) => ({
+  variables: {
+    option: {
+      category,
+      tag,
+      sortBy
+    }
+  }
+});
+
 const mapQueryToProps = ({ ownProps, data }) => {
   const {loading, clogs} = data;
   return {
@@ -52,5 +62,6 @@ const mapQueryToProps = ({ ownProps, data }) => {
 };
 
 export default graphql(query, {
-  props: mapQueryToProps
+  props: mapQueryToProps,
+  options: mapPropsToOptions
 })(Container);
