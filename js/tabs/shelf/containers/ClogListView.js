@@ -14,7 +14,7 @@ import NavBar from '../components/NavBar';
 
 const query = gql`
   query ClogList {
-    getClogs {
+    clogs {
       ...clogMetaData
       createdAt
     }
@@ -45,9 +45,9 @@ const styles = StyleSheet.create({
 });
 
 const mapQueryToProps = ({ ownProps, data }) => {
-  const {loading, getClogs} = data;
+  const {loading, clogs} = data;
   return {
-    clogs: loading ? [] : getClogs
+    clogs: loading ? [] : clogs
   };
 };
 

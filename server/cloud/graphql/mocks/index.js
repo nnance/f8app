@@ -36,21 +36,16 @@ const mocks = {
     viewCount: casual.integer(from = 0, to = 10000)
   }),
   CategoryDetail: () => ({
-    category() {
-      return casual.clog_category;
-    },
-    trendingClogs() {
-      return new MockList(20);
-    },
-    editors() {
-      return new MockList(20);
-    }
+    category: casual.clog_category,
+    editors: () => new MockList(20),
+    clogs: () => new MockList(50)
   }),
   Query: () => ({
     trendingClogs: () => new MockList(20),
     favoriteTags: () => new MockList(3),
     heroBanners: () => new MockList(5),
-    getClogs: () => new MockList(50)
+    getClogs: () => new MockList(50),
+    clogs: () => new MockList(50)
   })
 };
 

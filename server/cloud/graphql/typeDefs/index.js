@@ -1,14 +1,20 @@
 const schema = `
-  enum Category {
+  enum CATEGORY {
     D
     M
     G
     N
   }
 
+  enum CLOG_SORTING {
+    TRENDING
+    RECENTLY
+  }
+
   scalar Date
 
   type Tag {
+    id: ID!
     name: String!
     trendingClogs: [Clog!]!
   }
@@ -24,10 +30,10 @@ const schema = `
   }
 
   type Clog {
-    id: Int!
+    id: ID!
     title: String!
     cover: String
-    category: Category!
+    category: CATEGORY!
     author: Editor!
     review: String!
     followers: [User!]!
@@ -40,22 +46,26 @@ const schema = `
     createdAt: Date!
   }
 
+  input QueryClogOption {
+    tag: ID
+    limit: Int
+    sortBy: CLOG_SORTING
+  }
+
   type CategoryDetail {
-    category: Category!
+    category: CATEGORY!
+    clogs(option: QueryClogOption): [Clog!]!
     recommendedClogs: [Clog!]!
-    trendingClogs: [Clog!]!
-    recentlyClogs: [Clog!]!
     editors: [Editor!]!
   }
 
   type Query {
-    trendingClogs(category: Category): [Clog!]!
     recommendedClog: Clog!
     favoriteTags: [Tag!]!
     heroBanners: [Clog!]!
-    categoryDetail(category: Category!): CategoryDetail!
-    getClogs: [Clog!]!
-    getClog: Clog!
+    categoryDetail(category: CATEGORY!): CategoryDetail!
+    clogs(option: QueryClogOption): [Clog!]!
+    clog(id: ID!): Clog!
   }
 `;
 

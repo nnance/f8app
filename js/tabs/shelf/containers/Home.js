@@ -8,7 +8,7 @@ import {fragments} from '../../../models/clog';
 
 export const query = gql`
   query {
-    trendingClogs {
+    trendingClogs: clogs {
       ...clogMetaData
     }
     recommendedClog {

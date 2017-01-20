@@ -7,12 +7,12 @@ import ClogCategory from '../components/ClogCategory';
 import {fragments} from '../../../models/clog';
 
 export const query = gql`
-  query CategoryDetail($category: Category!){
+  query CategoryDetail($category: CATEGORY!){
     categoryDetail(category: $category) {
-      trendingClogs {
+      trendingClogs: clogs {
         ...clogMetaData
       }
-      recentlyClogs {
+      recentlyClogs: clogs {
         ...clogMetaData
       }
       recommendedClogs {
