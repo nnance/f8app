@@ -79,7 +79,9 @@ class Home extends React.Component {
 
   renderTrendingButton() {
     return (
-      <BorderButton caption="ทั้งหมด" type="fadedWhite" containerStyle={styles.clogListButton}/>
+      <BorderButton caption="ทั้งหมด" type="fadedWhite" containerStyle={styles.clogListButton}
+        onPress={() => this.props.navigator.push({page: 'clog-list-view', title: 'ยอดนิยม', sortBy: 'TRENDING'})}
+        />
     );
   }
 }
