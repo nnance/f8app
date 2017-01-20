@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 import CircleImage from '../../../common/CircleImage';
-import PureListView from '../../../common/PureListView';
+import HorizontalListView from '../../../common/HorizontalListView';
 import {colors} from '../../../common/styles';
 
 const Row = (props) => (<TouchableOpacity style={{flex: 1, padding: 20}}>
@@ -30,12 +30,10 @@ class HeroBanner extends React.Component {
   render() {
     return (
       <View style={{flex: 1}}>
-        <PureListView
+        <HorizontalListView
           data={this.props.clogs}
           renderRow={Row}
-          horizontal={true}
           showsHorizontalScrollIndicator={false}
-          minContentHeight={0}
           />
       </View>
     );

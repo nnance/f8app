@@ -8,7 +8,7 @@ import {
   ListView
 } from 'react-native';
 
-import PureListView from '../../../common/PureListView';
+import HorizontalListView from '../../../common/HorizontalListView';
 import {colors} from '../../../common/styles';
 import CircleImageWithCategory from '../../../common/CircleImageWithCategory';
 import {mapSource} from '../../../common/utils';
@@ -39,28 +39,6 @@ class ClogMeta extends React.Component {
 }
 
 export default class MetaClogListView extends React.Component {
-  constructor(...args) {
-    super(...args);
-    let dataSource = new ListView.DataSource({
-      getRowData: (dataBlob, sid, rid) => dataBlob[sid][rid],
-      getSectionHeaderData: (dataBlob, sid) => dataBlob[sid],
-      rowHasChanged: (row1, row2) => row1 !== row2,
-      sectionHeaderHasChanged: (s1, s2) => s1 !== s2,
-    });
-
-    this.state = {
-      dataSource: dataSource.cloneWithRows(this.props.clogs)
-    };
-  }
-
-  componentWillReceiveProps(nextProps: Props) {
-    if (this.props.clogs !== nextProps.clogs) {
-      this.setState({
-        dataSource: this.state.dataSource.cloneWithRows(nextProps.clogs)
-      });
-    }
-  }
-
   render() {
     return (
       <View style={{flex: 1}}>
@@ -74,10 +52,9 @@ export default class MetaClogListView extends React.Component {
           </View>
         </View>
         <View style={{flex: 3}}>
-          <ListView
+          <HorizontalListView
             showsHorizontalScrollIndicator={false}
-            horizontal={true}
-            dataSource={this.state.dataSource}
+            data={this.props.clogs}
             renderRow={(props) => {
               return <ClogMeta {...props}/>;
             }}

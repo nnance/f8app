@@ -12,7 +12,7 @@ import LinearGradient from 'react-native-linear-gradient';
 
 import {colors} from '../../../common/styles';
 import BorderButton from '../../../common/BorderButton';
-import PureListView from '../../../common/PureListView';
+import HorizontalListView from '../../../common/HorizontalListView';
 import {toHumanNumber} from '../../../common/utils';
 import {getCategoryLogo} from '../../../models/clog';
 import NavBar, {HEIGHT} from './NavBar';
@@ -198,14 +198,12 @@ class ClogCategory extends React.Component {
                   <ClogLogo category={this.props.category}/>
                 </View>
                 <View style={{height: 150, padding: 10, justifyContent: 'center', alignItems: 'center'}}>
-                  <PureListView
-                  data={this.props.recommendedClogs}
-                  pagingEnabled
-                  horizontal={true}
-                  showsHorizontalScrollIndicator={false}
-                  minContentHeight={0}
-                  renderRow={this.renderClogBanner.bind(this)}
-                  onScroll={this.onScroll.bind(this)}
+                  <HorizontalListView
+                    data={this.props.recommendedClogs}
+                    pagingEnabled
+                    showsHorizontalScrollIndicator={false}
+                    renderRow={this.renderClogBanner.bind(this)}
+                    onScroll={this.onScroll.bind(this)}
                   />
                 </View>
                 <View style={{height: 160, padding: 5}}>

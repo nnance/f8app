@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 
 import CircleImage from '../../../common/CircleImage';
-import PureListView from '../../../common/PureListView';
+import HorizontalListView from '../../../common/HorizontalListView';
 import BorderButton from '../../../common/BorderButton';
 import {colors} from '../../../common/styles';
 
@@ -76,12 +76,10 @@ class WriterList extends React.Component {
             </View>
           </View> : null
         }
-        <PureListView
+        <HorizontalListView
           data={realData}
           renderRow={this.renderRow.bind(this)}
-          horizontal={true}
           showsHorizontalScrollIndicator={false}
-          minContentHeight={0}
         />
       </View>
     );
