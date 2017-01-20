@@ -1122,8 +1122,8 @@ exports[`Shelf.Home render correct 1`] = `
           <View
             style={
               Object {
-                "flex": 0.3,
                 "flexDirection": "row",
+                "height": 20,
               }
             }>
             <Text
@@ -1203,7 +1203,7 @@ exports[`Shelf.Home render correct 1`] = `
           <View
             style={
               Object {
-                "flex": 3,
+                "height": 130,
               }
             }>
             <ScrollView
@@ -1768,7 +1768,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -1853,8 +1853,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -1870,14 +1869,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Asperiores quisquam
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -1926,7 +1917,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -2011,8 +2002,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -2028,14 +2018,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Commodi ut sunt
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -2084,7 +2066,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -2169,8 +2151,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -2186,14 +2167,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Sed architecto
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -2242,7 +2215,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -2327,8 +2300,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -2344,14 +2316,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     In quis consequuntur
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -2400,7 +2364,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -2485,8 +2449,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -2502,14 +2465,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Architecto est distinctio
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -2558,7 +2513,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -2643,8 +2598,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -2660,14 +2614,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Maxime sint aperiam
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -2716,7 +2662,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -2801,8 +2747,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -2818,14 +2763,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     In sunt magnam
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -2874,7 +2811,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -2959,8 +2896,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -2976,14 +2912,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Dolorem harum fuga
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -3032,7 +2960,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -3117,8 +3045,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -3134,14 +3061,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Nemo voluptatum
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -3190,7 +3109,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -3275,8 +3194,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -3292,14 +3210,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Placeat cumque
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -3587,6 +3497,7 @@ exports[`Shelf.Home render correct 1`] = `
         style={
           Object {
             "paddingLeft": 10,
+            "paddingTop": 10,
           }
         }>
         <View
@@ -3598,8 +3509,8 @@ exports[`Shelf.Home render correct 1`] = `
           <View
             style={
               Object {
-                "flex": 0.3,
                 "flexDirection": "row",
+                "height": 20,
               }
             }>
             <Text
@@ -3679,7 +3590,7 @@ exports[`Shelf.Home render correct 1`] = `
           <View
             style={
               Object {
-                "flex": 3,
+                "height": 130,
               }
             }>
             <ScrollView
@@ -4044,7 +3955,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -4129,8 +4040,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -4146,14 +4056,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Ad nisi enim
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -4202,7 +4104,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -4287,8 +4189,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -4304,14 +4205,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Blanditiis quia
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -4360,7 +4253,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -4445,8 +4338,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -4462,14 +4354,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Sint ratione corporis
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -4518,7 +4402,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -4603,8 +4487,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -4620,14 +4503,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Rem velit
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -4676,7 +4551,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -4761,8 +4636,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -4778,14 +4652,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Voluptatem minima
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -4834,7 +4700,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -4919,8 +4785,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -4936,14 +4801,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Quia harum fugit
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -4992,7 +4849,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -5077,8 +4934,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -5094,14 +4950,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Quasi quia
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -5150,7 +4998,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -5235,8 +5083,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -5252,14 +5099,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Molestiae corrupti
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -5308,7 +5147,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -5393,8 +5232,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -5410,14 +5248,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Commodi autem
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -5466,7 +5296,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -5551,8 +5381,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -5568,14 +5397,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Fugiat consequatur officia
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -5606,6 +5427,7 @@ exports[`Shelf.Home render correct 1`] = `
         style={
           Object {
             "paddingLeft": 10,
+            "paddingTop": 10,
           }
         }>
         <View
@@ -5617,8 +5439,8 @@ exports[`Shelf.Home render correct 1`] = `
           <View
             style={
               Object {
-                "flex": 0.3,
                 "flexDirection": "row",
+                "height": 20,
               }
             }>
             <Text
@@ -5698,7 +5520,7 @@ exports[`Shelf.Home render correct 1`] = `
           <View
             style={
               Object {
-                "flex": 3,
+                "height": 130,
               }
             }>
             <ScrollView
@@ -6063,7 +5885,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -6148,8 +5970,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -6165,14 +5986,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Harum sit sunt
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -6221,7 +6034,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -6306,8 +6119,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -6323,14 +6135,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Rerum sed facilis
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -6379,7 +6183,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -6464,8 +6268,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -6481,14 +6284,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Vel expedita aut
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -6537,7 +6332,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -6622,8 +6417,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -6639,14 +6433,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Voluptates corporis ipsam
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -6695,7 +6481,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -6780,8 +6566,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -6797,14 +6582,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Quo quam architecto
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -6853,7 +6630,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -6938,8 +6715,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -6955,14 +6731,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Rerum libero
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -7011,7 +6779,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -7096,8 +6864,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -7113,14 +6880,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Sed qui
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -7169,7 +6928,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -7254,8 +7013,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -7271,14 +7029,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Rerum odio et
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -7327,7 +7077,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -7412,8 +7162,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -7429,14 +7178,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Consequatur maxime temporibus
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -7485,7 +7226,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -7570,8 +7311,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -7587,14 +7327,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Blanditiis facere
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -7625,6 +7357,7 @@ exports[`Shelf.Home render correct 1`] = `
         style={
           Object {
             "paddingLeft": 10,
+            "paddingTop": 10,
           }
         }>
         <View
@@ -7636,8 +7369,8 @@ exports[`Shelf.Home render correct 1`] = `
           <View
             style={
               Object {
-                "flex": 0.3,
                 "flexDirection": "row",
+                "height": 20,
               }
             }>
             <Text
@@ -7717,7 +7450,7 @@ exports[`Shelf.Home render correct 1`] = `
           <View
             style={
               Object {
-                "flex": 3,
+                "height": 130,
               }
             }>
             <ScrollView
@@ -8082,7 +7815,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -8167,8 +7900,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -8184,14 +7916,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Tenetur consequuntur eligendi
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -8240,7 +7964,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -8325,8 +8049,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -8342,14 +8065,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Expedita rerum
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -8398,7 +8113,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -8483,8 +8198,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -8500,14 +8214,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Sed in et
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -8556,7 +8262,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -8641,8 +8347,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -8658,14 +8363,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Alias esse et
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -8714,7 +8411,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -8799,8 +8496,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -8816,14 +8512,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Ad reiciendis porro
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -8872,7 +8560,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -8957,8 +8645,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -8974,14 +8661,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Odio doloremque
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -9030,7 +8709,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -9115,8 +8794,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -9132,14 +8810,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Rerum deserunt
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -9188,7 +8858,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -9273,8 +8943,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -9290,14 +8959,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Excepturi amet
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -9346,7 +9007,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -9431,8 +9092,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -9448,14 +9108,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Repellendus pariatur
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -9504,7 +9156,7 @@ exports[`Shelf.Home render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -9589,8 +9241,7 @@ exports[`Shelf.Home render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -9606,14 +9257,6 @@ exports[`Shelf.Home render correct 1`] = `
                     }>
                     Est illo expedita
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}

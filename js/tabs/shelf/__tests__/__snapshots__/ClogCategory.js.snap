@@ -1015,7 +1015,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
           <View
             style={
               Object {
-                "height": 160,
+                "height": 180,
                 "padding": 5,
               }
             }>
@@ -1028,8 +1028,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
               <View
                 style={
                   Object {
-                    "flex": 0.3,
                     "flexDirection": "row",
+                    "height": 20,
                   }
                 }>
                 <Text
@@ -1107,7 +1107,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
               <View
                 style={
                   Object {
-                    "flex": 3,
+                    "height": 130,
                   }
                 }>
                 <ScrollView
@@ -1672,7 +1672,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     <View
                       style={
                         Object {
-                          "flex": 7,
+                          "height": 90,
                         }
                       }>
                       <View
@@ -1757,8 +1757,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       style={
                         Object {
                           "alignItems": "center",
-                          "flex": 1,
-                          "paddingTop": 20,
+                          "height": 10,
                         }
                       }>
                       <Text
@@ -1774,14 +1773,6 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         }>
                         Nobis voluptatem rem
                       </Text>
-                    </View>
-                    <View
-                      style={
-                        Object {
-                          "alignItems": "center",
-                          "flex": 1,
-                        }
-                      }>
                       <Text
                         accessible={true}
                         allowFontScaling={true}
@@ -1830,7 +1821,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     <View
                       style={
                         Object {
-                          "flex": 7,
+                          "height": 90,
                         }
                       }>
                       <View
@@ -1915,8 +1906,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       style={
                         Object {
                           "alignItems": "center",
-                          "flex": 1,
-                          "paddingTop": 20,
+                          "height": 10,
                         }
                       }>
                       <Text
@@ -1932,14 +1922,6 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         }>
                         Illum esse
                       </Text>
-                    </View>
-                    <View
-                      style={
-                        Object {
-                          "alignItems": "center",
-                          "flex": 1,
-                        }
-                      }>
                       <Text
                         accessible={true}
                         allowFontScaling={true}
@@ -1988,7 +1970,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     <View
                       style={
                         Object {
-                          "flex": 7,
+                          "height": 90,
                         }
                       }>
                       <View
@@ -2073,8 +2055,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       style={
                         Object {
                           "alignItems": "center",
-                          "flex": 1,
-                          "paddingTop": 20,
+                          "height": 10,
                         }
                       }>
                       <Text
@@ -2090,14 +2071,6 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         }>
                         Provident quam sunt
                       </Text>
-                    </View>
-                    <View
-                      style={
-                        Object {
-                          "alignItems": "center",
-                          "flex": 1,
-                        }
-                      }>
                       <Text
                         accessible={true}
                         allowFontScaling={true}
@@ -2146,7 +2119,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     <View
                       style={
                         Object {
-                          "flex": 7,
+                          "height": 90,
                         }
                       }>
                       <View
@@ -2231,8 +2204,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       style={
                         Object {
                           "alignItems": "center",
-                          "flex": 1,
-                          "paddingTop": 20,
+                          "height": 10,
                         }
                       }>
                       <Text
@@ -2248,14 +2220,6 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         }>
                         Temporibus fugiat ut
                       </Text>
-                    </View>
-                    <View
-                      style={
-                        Object {
-                          "alignItems": "center",
-                          "flex": 1,
-                        }
-                      }>
                       <Text
                         accessible={true}
                         allowFontScaling={true}
@@ -2304,7 +2268,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     <View
                       style={
                         Object {
-                          "flex": 7,
+                          "height": 90,
                         }
                       }>
                       <View
@@ -2389,8 +2353,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       style={
                         Object {
                           "alignItems": "center",
-                          "flex": 1,
-                          "paddingTop": 20,
+                          "height": 10,
                         }
                       }>
                       <Text
@@ -2406,14 +2369,6 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         }>
                         Nam quasi
                       </Text>
-                    </View>
-                    <View
-                      style={
-                        Object {
-                          "alignItems": "center",
-                          "flex": 1,
-                        }
-                      }>
                       <Text
                         accessible={true}
                         allowFontScaling={true}
@@ -2462,7 +2417,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     <View
                       style={
                         Object {
-                          "flex": 7,
+                          "height": 90,
                         }
                       }>
                       <View
@@ -2547,8 +2502,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       style={
                         Object {
                           "alignItems": "center",
-                          "flex": 1,
-                          "paddingTop": 20,
+                          "height": 10,
                         }
                       }>
                       <Text
@@ -2564,14 +2518,6 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         }>
                         Accusantium in
                       </Text>
-                    </View>
-                    <View
-                      style={
-                        Object {
-                          "alignItems": "center",
-                          "flex": 1,
-                        }
-                      }>
                       <Text
                         accessible={true}
                         allowFontScaling={true}
@@ -2620,7 +2566,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     <View
                       style={
                         Object {
-                          "flex": 7,
+                          "height": 90,
                         }
                       }>
                       <View
@@ -2705,8 +2651,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       style={
                         Object {
                           "alignItems": "center",
-                          "flex": 1,
-                          "paddingTop": 20,
+                          "height": 10,
                         }
                       }>
                       <Text
@@ -2722,14 +2667,6 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         }>
                         Quia non quis
                       </Text>
-                    </View>
-                    <View
-                      style={
-                        Object {
-                          "alignItems": "center",
-                          "flex": 1,
-                        }
-                      }>
                       <Text
                         accessible={true}
                         allowFontScaling={true}
@@ -2778,7 +2715,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     <View
                       style={
                         Object {
-                          "flex": 7,
+                          "height": 90,
                         }
                       }>
                       <View
@@ -2863,8 +2800,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       style={
                         Object {
                           "alignItems": "center",
-                          "flex": 1,
-                          "paddingTop": 20,
+                          "height": 10,
                         }
                       }>
                       <Text
@@ -2880,14 +2816,6 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         }>
                         Quisquam hic
                       </Text>
-                    </View>
-                    <View
-                      style={
-                        Object {
-                          "alignItems": "center",
-                          "flex": 1,
-                        }
-                      }>
                       <Text
                         accessible={true}
                         allowFontScaling={true}
@@ -2936,7 +2864,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     <View
                       style={
                         Object {
-                          "flex": 7,
+                          "height": 90,
                         }
                       }>
                       <View
@@ -3021,8 +2949,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       style={
                         Object {
                           "alignItems": "center",
-                          "flex": 1,
-                          "paddingTop": 20,
+                          "height": 10,
                         }
                       }>
                       <Text
@@ -3038,14 +2965,6 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         }>
                         Ut iusto est
                       </Text>
-                    </View>
-                    <View
-                      style={
-                        Object {
-                          "alignItems": "center",
-                          "flex": 1,
-                        }
-                      }>
                       <Text
                         accessible={true}
                         allowFontScaling={true}
@@ -3094,7 +3013,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     <View
                       style={
                         Object {
-                          "flex": 7,
+                          "height": 90,
                         }
                       }>
                       <View
@@ -3179,8 +3098,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       style={
                         Object {
                           "alignItems": "center",
-                          "flex": 1,
-                          "paddingTop": 20,
+                          "height": 10,
                         }
                       }>
                       <Text
@@ -3196,14 +3114,6 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         }>
                         Ut magni et
                       </Text>
-                    </View>
-                    <View
-                      style={
-                        Object {
-                          "alignItems": "center",
-                          "flex": 1,
-                        }
-                      }>
                       <Text
                         accessible={true}
                         allowFontScaling={true}
@@ -3246,7 +3156,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
       <View
         style={
           Object {
-            "height": 160,
+            "height": 180,
             "padding": 5,
           }
         }>
@@ -3259,8 +3169,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
           <View
             style={
               Object {
-                "flex": 0.3,
                 "flexDirection": "row",
+                "height": 20,
               }
             }>
             <Text
@@ -3338,7 +3248,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
           <View
             style={
               Object {
-                "flex": 3,
+                "height": 130,
               }
             }>
             <ScrollView
@@ -3903,7 +3813,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -3988,8 +3898,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -4005,14 +3914,6 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     }>
                     Amet neque cupiditate
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -4061,7 +3962,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -4146,8 +4047,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -4163,14 +4063,6 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     }>
                     Voluptas dignissimos
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -4219,7 +4111,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -4304,8 +4196,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -4321,14 +4212,6 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     }>
                     Officiis ratione nulla
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -4377,7 +4260,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -4462,8 +4345,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -4479,14 +4361,6 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     }>
                     Perferendis reiciendis
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -4535,7 +4409,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -4620,8 +4494,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -4637,14 +4510,6 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     }>
                     Doloremque deleniti quasi
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -4693,7 +4558,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -4778,8 +4643,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -4795,14 +4659,6 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     }>
                     Non quia
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -4851,7 +4707,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -4936,8 +4792,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -4953,14 +4808,6 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     }>
                     Nulla voluptate
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -5009,7 +4856,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -5094,8 +4941,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -5111,14 +4957,6 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     }>
                     Rerum ut
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -5167,7 +5005,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -5252,8 +5090,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -5269,14 +5106,6 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     }>
                     Odio delectus iure
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -5325,7 +5154,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                 <View
                   style={
                     Object {
-                      "flex": 7,
+                      "height": 90,
                     }
                   }>
                   <View
@@ -5410,8 +5239,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "flex": 1,
-                      "paddingTop": 20,
+                      "height": 10,
                     }
                   }>
                   <Text
@@ -5427,14 +5255,6 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     }>
                     Libero magnam et
                   </Text>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "flex": 1,
-                    }
-                  }>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
