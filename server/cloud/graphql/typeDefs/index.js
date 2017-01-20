@@ -47,6 +47,7 @@ const schema = `
   }
 
   input QueryClogOption {
+    category: CATEGORY
     tag: ID
     limit: Int
     sortBy: CLOG_SORTING
@@ -54,7 +55,6 @@ const schema = `
 
   type CategoryDetail {
     category: CATEGORY!
-    clogs(option: QueryClogOption): [Clog!]!
     recommendedClogs: [Clog!]!
     editors: [Editor!]!
   }

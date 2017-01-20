@@ -13,7 +13,7 @@ import {colors} from '../../../common/styles';
 import NavBar from '../components/NavBar';
 
 const query = gql`
-  query ClogList {
+  query ClogListView{
     clogs {
       ...clogMetaData
       createdAt

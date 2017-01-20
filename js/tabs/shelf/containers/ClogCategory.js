@@ -3,18 +3,13 @@ import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 
 import ClogCategory from '../components/ClogCategory';
+import {CLOG_PREVIEW_LIMIT} from '../constants';
 
 import {fragments} from '../../../models/clog';
 
 export const query = gql`
   query CategoryDetail($category: CATEGORY!){
     categoryDetail(category: $category) {
-      trendingClogs: clogs {
-        ...clogMetaData
-      }
-      recentlyClogs: clogs {
-        ...clogMetaData
-      }
       recommendedClogs {
         ...clogMetaData
         followersYouKnow {
@@ -28,6 +23,12 @@ export const query = gql`
         profilePicture
       }
     }
+    trendingClogs: clogs(option: {category: $category, sortBy: TRENDING, limit: ${CLOG_PREVIEW_LIMIT}}) {
+      ...clogMetaData
+    }
+    recentlyClogs: clogs(option: {category: $category, sortBy: RECENTLY, limit: ${CLOG_PREVIEW_LIMIT}}) {
+      ...clogMetaData
+    }
   }
   ${fragments.clogMetaData}
 `;
@@ -39,10 +40,10 @@ export const mapPropsToOptions = ({category}) => ({
 });
 
 export const mapQueryToProps = ({ ownProps, data }) => {
-  const { loading, categoryDetail } = data;
+  const { loading, categoryDetail, trendingClogs, recentlyClogs } = data;
   return ({
-    trendingClogs: loading ? [] : categoryDetail.trendingClogs,
-    recentlyClogs: loading ? [] : categoryDetail.recentlyClogs,
+    trendingClogs: loading ? [] : trendingClogs,
+    recentlyClogs: loading ? [] : recentlyClogs,
     editors: loading ? [] : categoryDetail.editors,
     recommendedClogs: loading ? [] : categoryDetail.recommendedClogs,
     loading

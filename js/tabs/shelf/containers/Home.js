@@ -3,12 +3,13 @@ import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 
 import Home from '../components/Home';
+import {CLOG_PREVIEW_LIMIT} from '../constants';
 
 import {fragments} from '../../../models/clog';
 
 export const query = gql`
   query {
-    trendingClogs: clogs {
+    trendingClogs: clogs(option: {sortBy: TRENDING, limit: ${CLOG_PREVIEW_LIMIT}}) {
       ...clogMetaData
     }
     recommendedClog {

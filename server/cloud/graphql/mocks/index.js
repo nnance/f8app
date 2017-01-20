@@ -37,14 +37,11 @@ const mocks = {
   }),
   CategoryDetail: () => ({
     category: casual.clog_category,
-    editors: () => new MockList(20),
-    clogs: () => new MockList(50)
+    editors: () => new MockList(20)
   }),
   Query: () => ({
-    trendingClogs: () => new MockList(20),
     favoriteTags: () => new MockList(3),
     heroBanners: () => new MockList(5),
-    getClogs: () => new MockList(50),
     clogs: () => new MockList(50)
   })
 };
