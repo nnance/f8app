@@ -88,6 +88,7 @@ class Home extends React.Component {
 
 const styles = StyleSheet.create({
   clogListButton: {
+    flex: 1,
     width: 80,
     paddingHorizontal: 0,
     alignItems: 'center'

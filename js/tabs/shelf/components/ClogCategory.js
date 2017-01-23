@@ -269,7 +269,7 @@ class ClogCategory extends React.Component {
   }
 
   renderButtonViewAllClog(pushOption = {}) {
-    return <BorderButton type="fadedWhite" caption="ทั้งหมด"
+    return <BorderButton type="fadedWhite" caption="ทั้งหมด" containerStyle={{flex: 1}}
       onPress={() => this.props.navigator.push({page: 'clog-list-view', category: this.props.category, ...pushOption})}
       />
   }
