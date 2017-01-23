@@ -9,7 +9,7 @@ import {fragments} from '../../../models/clog';
 
 export const query = gql`
   query {
-    trendingClogs: clogs(option: {sortBy: TRENDING, limit: ${CLOG_PREVIEW_LIMIT}}) {
+    trendingClogs: clogs(filter: {limit: ${CLOG_PREVIEW_LIMIT}}, orderBy: TRENDING) {
       ...clogMetaData
     }
     recommendedClog {

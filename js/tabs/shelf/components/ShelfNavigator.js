@@ -33,7 +33,7 @@ class ShelfNavigator extends React.Component {
       return <ClogCategory navigator={navigator} category={route.category}/>;
     }
     if (route.page === 'clog-list-view') {
-      return <ClogListView navigator={navigator} title={route.title} category={route.category} sortBy={route.sortBy} tag={route.tag}/>;
+      return <ClogListView navigator={navigator} title={route.title} category={route.category} orderBy={route.orderBy} tag={route.tag}/>;
     }
     return <NotFound/>;
   }

@@ -23,10 +23,10 @@ export const query = gql`
         profilePicture
       }
     }
-    trendingClogs: clogs(option: {category: $category, sortBy: TRENDING, limit: ${CLOG_PREVIEW_LIMIT}}) {
+    trendingClogs: clogs(filter: {category: $category, limit: ${CLOG_PREVIEW_LIMIT}}, orderBy: TRENDING) {
       ...clogMetaData
     }
-    recentlyClogs: clogs(option: {category: $category, sortBy: RECENTLY, limit: ${CLOG_PREVIEW_LIMIT}}) {
+    recentlyClogs: clogs(filter: {category: $category, limit: ${CLOG_PREVIEW_LIMIT}}, orderBy: RECENTLY) {
       ...clogMetaData
     }
   }

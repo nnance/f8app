@@ -208,7 +208,7 @@ class ClogCategory extends React.Component {
                 </View>
                 <View style={{height: 180, padding: 5}}>
                   <MetaClogListView header="What's New" clogs={this.props.recentlyClogs}
-                    renderButton={this.renderButtonViewAllClog.bind(this, {title: `What's new`, sortBy: "RECENTLY"})}/>
+                    renderButton={this.renderButtonViewAllClog.bind(this, {title: `What's new`, orderBy: "RECENTLY"})}/>
                 </View>
               </View>
             </Image>
@@ -216,7 +216,7 @@ class ClogCategory extends React.Component {
           <LinearGradient colors={['rgb(164, 58, 124)', 'rgb(220, 4, 87)']}>
             <View style={{height: 180, padding: 5}}>
               <MetaClogListView header="Top Chart" clogs={this.props.trendingClogs}
-                renderButton={this.renderButtonViewAllClog.bind(this, {title: 'ยอดนิยม', sortBy: "TRENDING"})}/>
+                renderButton={this.renderButtonViewAllClog.bind(this, {title: 'ยอดนิยม', orderBy: "TRENDING"})}/>
             </View>
             <View style={{height: 180, padding: 5}}>
               <WriterList type="big" editors={this.props.editors}/>

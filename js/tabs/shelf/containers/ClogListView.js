@@ -13,8 +13,8 @@ import {colors} from '../../../common/styles';
 import NavBar from '../components/NavBar';
 
 const query = gql`
-  query ClogListView($option: QueryClogOption){
-    clogs(option: $option) {
+  query ClogListView($filter: ClogFilterInput, $orderBy: CLOG_SORTING){
+    clogs(filter: $filter, orderBy: $orderBy) {
       ...clogMetaData
       createdAt
     }
@@ -44,13 +44,13 @@ const styles = StyleSheet.create({
   }
 });
 
-export const mapPropsToOptions = ({category, tag, sortBy}) => ({
+export const mapPropsToOptions = ({category, tag, orderBy}) => ({
   variables: {
-    option: {
+    filter: {
       category,
-      tag,
-      sortBy
-    }
+      tag
+    },
+    orderBy
   }
 });
 

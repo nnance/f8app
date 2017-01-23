@@ -47,6 +47,6 @@ describe('Shelf.Home', () => {
     wrapper.simulate('press');
     const calledArgs = navigator.push.mock.calls[0][0];
     expect(calledArgs.page).toBe('clog-list-view');
-    expect(calledArgs.sortBy).toBe('TRENDING');
+    expect(calledArgs.orderBy).toBe('TRENDING');
   });
 });

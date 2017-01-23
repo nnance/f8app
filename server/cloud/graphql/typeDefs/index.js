@@ -46,11 +46,10 @@ const schema = `
     createdAt: Date!
   }
 
-  input QueryClogOption {
+  input ClogFilterInput {
     category: CATEGORY
     tag: ID
     limit: Int
-    sortBy: CLOG_SORTING
   }
 
   type CategoryDetail {
@@ -64,7 +63,7 @@ const schema = `
     favoriteTags: [Tag!]!
     heroBanners: [Clog!]!
     categoryDetail(category: CATEGORY!): CategoryDetail!
-    clogs(option: QueryClogOption): [Clog!]!
+    clogs(filter: ClogFilterInput, orderBy: CLOG_SORTING): [Clog!]!
     clog(id: ID!): Clog!
   }
 `;

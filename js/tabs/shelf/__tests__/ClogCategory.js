@@ -32,9 +32,9 @@ describe('Shelf.ClogCategory', () => {
       push: jest.fn()
     };
     const dump = shallow(<ClogCategoryComponent {...{...props, navigator, category: 'D'}}/>);
-    const wrapper = shallow(dump.instance().renderButtonViewAllClog({sortBy: 'TRENDING'}));
+    const wrapper = shallow(dump.instance().renderButtonViewAllClog({orderBy: 'TRENDING'}));
     wrapper.simulate('press');
-    expect(navigator.push).toBeCalledWith({page: 'clog-list-view', category: 'D', sortBy: 'TRENDING'});
+    expect(navigator.push).toBeCalledWith({page: 'clog-list-view', category: 'D', orderBy: 'TRENDING'});
   });
 
   it('set currentClogBanner onScroll', async () => {
