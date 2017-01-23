@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Image,
   View,
   TouchableOpacity,
   StyleSheet,
@@ -32,6 +33,9 @@ class BorderButton extends React.Component {
     return (
       <View>
         <TouchableOpacity onPress={this.props.onPress} style={[styles.commonButton, containerStyle, this.props.containerStyle]}>
+          {
+            this.props.renderBeforeText ? this.props.renderBeforeText() : null
+          }
           <Text style={[styles.textContainer, textStyle, this.props.textStyle]}>{this.props.caption}</Text>
         </TouchableOpacity>
       </View>
@@ -39,7 +43,7 @@ class BorderButton extends React.Component {
   }
 }
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   textContainer: {
     fontSize: 12
   },
@@ -58,8 +62,10 @@ const styles = StyleSheet.create({
   commonButton: {
     paddingHorizontal: 15,
     justifyContent: 'center',
+    alignItems: 'center',
     borderRadius: 4,
-    backgroundColor: 'transparent'
+    backgroundColor: 'transparent',
+    flexDirection: 'row'
   },
   whiteButton: {
     backgroundColor: 'white'
