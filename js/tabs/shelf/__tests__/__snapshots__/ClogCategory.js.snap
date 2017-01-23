@@ -95,15 +95,15 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     Array [
                       Object {
                         "name": "Elijah Kuhic",
-                        "profilePicture": "http://localhost/static/cover/g3618.png",
+                        "profilePicture": "http://localhost/static/preview/g3618.png",
                       },
                       Object {
                         "name": "Liliana Wuckert",
-                        "profilePicture": "http://localhost/static/cover/g1878.png",
+                        "profilePicture": "http://localhost/static/preview/g1878.png",
                       },
                       Object {
                         "name": "Sister Crist",
-                        "profilePicture": "http://localhost/static/cover/g1878.png",
+                        "profilePicture": "http://localhost/static/preview/g1878.png",
                       },
                       Object {
                         "remaining": 16,
@@ -168,7 +168,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         size={30}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3618.png",
+                            "uri": "http://localhost/static/preview/g3618.png",
                           }
                         }
                         style={
@@ -233,7 +233,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         size={30}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g1878.png",
+                            "uri": "http://localhost/static/preview/g1878.png",
                           }
                         }
                         style={
@@ -298,7 +298,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         size={30}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g1878.png",
+                            "uri": "http://localhost/static/preview/g1878.png",
                           }
                         }
                         style={
@@ -613,87 +613,87 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Amaya Stanton",
                     },
                     "category": "D",
-                    "cover": "http://localhost/static/cover/g3376.png",
                     "followerCount": 6378,
                     "followersYouKnow": Array [
                       Object {
                         "name": "Elijah Kuhic",
-                        "profilePicture": "http://localhost/static/cover/g3618.png",
+                        "profilePicture": "http://localhost/static/preview/g3618.png",
                       },
                       Object {
                         "name": "Liliana Wuckert",
-                        "profilePicture": "http://localhost/static/cover/g1878.png",
+                        "profilePicture": "http://localhost/static/preview/g1878.png",
                       },
                       Object {
                         "name": "Sister Crist",
-                        "profilePicture": "http://localhost/static/cover/g1878.png",
+                        "profilePicture": "http://localhost/static/preview/g1878.png",
                       },
                       Object {
                         "name": "Aiden Nitzsche",
-                        "profilePicture": "http://localhost/static/cover/g3376.png",
+                        "profilePicture": "http://localhost/static/preview/g3376.png",
                       },
                       Object {
                         "name": "Aliya Kris",
-                        "profilePicture": "http://localhost/static/cover/g4722.png",
+                        "profilePicture": "http://localhost/static/preview/g4722.png",
                       },
                       Object {
                         "name": "Lemuel Runolfsdottir",
-                        "profilePicture": "http://localhost/static/cover/g4722.png",
+                        "profilePicture": "http://localhost/static/preview/g4722.png",
                       },
                       Object {
                         "name": "Jackie Haley",
-                        "profilePicture": "http://localhost/static/cover/g3578.png",
+                        "profilePicture": "http://localhost/static/preview/g3578.png",
                       },
                       Object {
                         "name": "Yasmeen Brekke",
-                        "profilePicture": "http://localhost/static/cover/g4842.png",
+                        "profilePicture": "http://localhost/static/preview/g4842.png",
                       },
                       Object {
                         "name": "Cade Hirthe",
-                        "profilePicture": "http://localhost/static/cover/g3456.png",
+                        "profilePicture": "http://localhost/static/preview/g3456.png",
                       },
                       Object {
                         "name": "Kathryne Eichmann",
-                        "profilePicture": "http://localhost/static/cover/g4602.png",
+                        "profilePicture": "http://localhost/static/preview/g4602.png",
                       },
                       Object {
                         "name": "Telly Pacocha",
-                        "profilePicture": "http://localhost/static/cover/g3658.png",
+                        "profilePicture": "http://localhost/static/preview/g3658.png",
                       },
                       Object {
                         "name": "Dimitri Cole",
-                        "profilePicture": "http://localhost/static/cover/g3618.png",
+                        "profilePicture": "http://localhost/static/preview/g3618.png",
                       },
                       Object {
                         "name": "Norris Hickle",
-                        "profilePicture": "http://localhost/static/cover/g4642.png",
+                        "profilePicture": "http://localhost/static/preview/g4642.png",
                       },
                       Object {
                         "name": "Lola Blanda",
-                        "profilePicture": "http://localhost/static/cover/g3618.png",
+                        "profilePicture": "http://localhost/static/preview/g3618.png",
                       },
                       Object {
                         "name": "Austin Roob",
-                        "profilePicture": "http://localhost/static/cover/g3336.png",
+                        "profilePicture": "http://localhost/static/preview/g3336.png",
                       },
                       Object {
                         "name": "Annabelle Herman",
-                        "profilePicture": "http://localhost/static/cover/g4642.png",
+                        "profilePicture": "http://localhost/static/preview/g4642.png",
                       },
                       Object {
                         "name": "Austen Schoen",
-                        "profilePicture": "http://localhost/static/cover/g4842.png",
+                        "profilePicture": "http://localhost/static/preview/g4842.png",
                       },
                       Object {
                         "name": "Clement Waters",
-                        "profilePicture": "http://localhost/static/cover/g3336.png",
+                        "profilePicture": "http://localhost/static/preview/g3336.png",
                       },
                       Object {
                         "name": "Kirsten Larkin",
-                        "profilePicture": "http://localhost/static/cover/g3618.png",
+                        "profilePicture": "http://localhost/static/preview/g3618.png",
                       },
                     ],
                     "likeCount": 7260,
+                    "preview": "http://localhost/static/preview/g3376.png",
                     "title": "Quisquam non alias",
                     "viewCount": 1263,
                   },
@@ -702,43 +702,43 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Victoria Shields",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3456.png",
                     "followerCount": 9387,
                     "followersYouKnow": Array [
                       Object {
                         "name": "Jany Dare",
-                        "profilePicture": "http://localhost/static/cover/g4762.png",
+                        "profilePicture": "http://localhost/static/preview/g4762.png",
                       },
                       Object {
                         "name": "Esteban Kunde",
-                        "profilePicture": "http://localhost/static/cover/g4602.png",
+                        "profilePicture": "http://localhost/static/preview/g4602.png",
                       },
                       Object {
                         "name": "Shea Schroeder",
-                        "profilePicture": "http://localhost/static/cover/g3376.png",
+                        "profilePicture": "http://localhost/static/preview/g3376.png",
                       },
                       Object {
                         "name": "Ewell Gottlieb",
-                        "profilePicture": "http://localhost/static/cover/g4642.png",
+                        "profilePicture": "http://localhost/static/preview/g4642.png",
                       },
                       Object {
                         "name": "Finn Marvin",
-                        "profilePicture": "http://localhost/static/cover/g4602.png",
+                        "profilePicture": "http://localhost/static/preview/g4602.png",
                       },
                       Object {
                         "name": "Shakira Fisher",
-                        "profilePicture": "http://localhost/static/cover/g4802.png",
+                        "profilePicture": "http://localhost/static/preview/g4802.png",
                       },
                       Object {
                         "name": "Albertha Ullrich",
-                        "profilePicture": "http://localhost/static/cover/g4802.png",
+                        "profilePicture": "http://localhost/static/preview/g4802.png",
                       },
                       Object {
                         "name": "Jaida Jones",
-                        "profilePicture": "http://localhost/static/cover/g4762.png",
+                        "profilePicture": "http://localhost/static/preview/g4762.png",
                       },
                     ],
                     "likeCount": 5814,
+                    "preview": "http://localhost/static/preview/g3456.png",
                     "title": "Est fuga est",
                     "viewCount": 3711,
                   },
@@ -1124,8 +1124,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Marquis Hayes",
                         },
                         "category": "G",
-                        "cover": "http://localhost/static/cover/g3578.png",
                         "likeCount": 2971,
+                        "preview": "http://localhost/static/preview/g3578.png",
                         "title": "Nobis voluptatem rem",
                         "viewCount": 4753,
                       },
@@ -1134,8 +1134,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Ned Rodriguez",
                         },
                         "category": "M",
-                        "cover": "http://localhost/static/cover/g4762.png",
                         "likeCount": 4451,
+                        "preview": "http://localhost/static/preview/g4762.png",
                         "title": "Illum esse",
                         "viewCount": 7689,
                       },
@@ -1144,8 +1144,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Chaim Hane",
                         },
                         "category": "M",
-                        "cover": "http://localhost/static/cover/g3336.png",
                         "likeCount": 4822,
+                        "preview": "http://localhost/static/preview/g3336.png",
                         "title": "Provident quam sunt",
                         "viewCount": 1649,
                       },
@@ -1154,8 +1154,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Lorenz Mraz",
                         },
                         "category": "N",
-                        "cover": "http://localhost/static/cover/g3376.png",
                         "likeCount": 2306,
+                        "preview": "http://localhost/static/preview/g3376.png",
                         "title": "Temporibus fugiat ut",
                         "viewCount": 778,
                       },
@@ -1164,8 +1164,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Ricky Cummerata",
                         },
                         "category": "M",
-                        "cover": "http://localhost/static/cover/g3618.png",
                         "likeCount": 3069,
+                        "preview": "http://localhost/static/preview/g3618.png",
                         "title": "Nam quasi",
                         "viewCount": 8284,
                       },
@@ -1174,8 +1174,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Sabrina Schimmel",
                         },
                         "category": "D",
-                        "cover": "http://localhost/static/cover/g3578.png",
                         "likeCount": 4685,
+                        "preview": "http://localhost/static/preview/g3578.png",
                         "title": "Accusantium in",
                         "viewCount": 1737,
                       },
@@ -1184,8 +1184,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Terrell Bartoletti",
                         },
                         "category": "N",
-                        "cover": "http://localhost/static/cover/g3456.png",
                         "likeCount": 555,
+                        "preview": "http://localhost/static/preview/g3456.png",
                         "title": "Quia non quis",
                         "viewCount": 2586,
                       },
@@ -1194,8 +1194,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Earl Pagac",
                         },
                         "category": "G",
-                        "cover": "http://localhost/static/cover/g4722.png",
                         "likeCount": 2529,
+                        "preview": "http://localhost/static/preview/g4722.png",
                         "title": "Quisquam hic",
                         "viewCount": 2426,
                       },
@@ -1204,8 +1204,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Ewell Schoen",
                         },
                         "category": "M",
-                        "cover": "http://localhost/static/cover/g3376.png",
                         "likeCount": 9734,
+                        "preview": "http://localhost/static/preview/g3376.png",
                         "title": "Ut iusto est",
                         "viewCount": 2742,
                       },
@@ -1214,8 +1214,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Viviane Conn",
                         },
                         "category": "N",
-                        "cover": "http://localhost/static/cover/g4762.png",
                         "likeCount": 4893,
+                        "preview": "http://localhost/static/preview/g4762.png",
                         "title": "Ut magni et",
                         "viewCount": 9621,
                       },
@@ -1224,8 +1224,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Molly Hayes",
                         },
                         "category": "G",
-                        "cover": "http://localhost/static/cover/g4642.png",
                         "likeCount": 6714,
+                        "preview": "http://localhost/static/preview/g4642.png",
                         "title": "Quaerat qui",
                         "viewCount": 1419,
                       },
@@ -1234,8 +1234,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Robert Nikolaus",
                         },
                         "category": "M",
-                        "cover": "http://localhost/static/cover/g4602.png",
                         "likeCount": 1194,
+                        "preview": "http://localhost/static/preview/g4602.png",
                         "title": "Vel sint sequi",
                         "viewCount": 7312,
                       },
@@ -1244,8 +1244,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Arianna Walker",
                         },
                         "category": "M",
-                        "cover": "http://localhost/static/cover/g3618.png",
                         "likeCount": 8537,
+                        "preview": "http://localhost/static/preview/g3618.png",
                         "title": "Saepe mollitia itaque",
                         "viewCount": 5838,
                       },
@@ -1254,8 +1254,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Carol Rutherford",
                         },
                         "category": "M",
-                        "cover": "http://localhost/static/cover/g4642.png",
                         "likeCount": 5382,
+                        "preview": "http://localhost/static/preview/g4642.png",
                         "title": "Dolor ut qui",
                         "viewCount": 7895,
                       },
@@ -1264,8 +1264,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Maurice Kassulke",
                         },
                         "category": "G",
-                        "cover": "http://localhost/static/cover/g3618.png",
                         "likeCount": 5113,
+                        "preview": "http://localhost/static/preview/g3618.png",
                         "title": "Consequatur quo sunt",
                         "viewCount": 7807,
                       },
@@ -1274,8 +1274,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Florence Weber",
                         },
                         "category": "M",
-                        "cover": "http://localhost/static/cover/g3578.png",
                         "likeCount": 5005,
+                        "preview": "http://localhost/static/preview/g3578.png",
                         "title": "Maiores voluptatem dolore",
                         "viewCount": 6409,
                       },
@@ -1284,8 +1284,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Breana Rutherford",
                         },
                         "category": "N",
-                        "cover": "http://localhost/static/cover/g3618.png",
                         "likeCount": 4328,
+                        "preview": "http://localhost/static/preview/g3618.png",
                         "title": "Error et",
                         "viewCount": 1914,
                       },
@@ -1294,8 +1294,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Rosa Hahn",
                         },
                         "category": "D",
-                        "cover": "http://localhost/static/cover/g3618.png",
                         "likeCount": 5233,
+                        "preview": "http://localhost/static/preview/g3618.png",
                         "title": "Omnis vero eligendi",
                         "viewCount": 8250,
                       },
@@ -1304,8 +1304,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Constance Padberg",
                         },
                         "category": "N",
-                        "cover": "http://localhost/static/cover/g4802.png",
                         "likeCount": 3732,
+                        "preview": "http://localhost/static/preview/g4802.png",
                         "title": "Ea sequi impedit",
                         "viewCount": 4558,
                       },
@@ -1314,8 +1314,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Fidel Crona",
                         },
                         "category": "M",
-                        "cover": "http://localhost/static/cover/g4602.png",
                         "likeCount": 2969,
+                        "preview": "http://localhost/static/preview/g4602.png",
                         "title": "Quae ut",
                         "viewCount": 7904,
                       },
@@ -1324,8 +1324,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Edmond Schimmel",
                         },
                         "category": "M",
-                        "cover": "http://localhost/static/cover/g4642.png",
                         "likeCount": 804,
+                        "preview": "http://localhost/static/preview/g4642.png",
                         "title": "Perferendis illum",
                         "viewCount": 5841,
                       },
@@ -1334,8 +1334,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Adrian Schiller",
                         },
                         "category": "N",
-                        "cover": "http://localhost/static/cover/g4722.png",
                         "likeCount": 1792,
+                        "preview": "http://localhost/static/preview/g4722.png",
                         "title": "Earum porro molestias",
                         "viewCount": 9885,
                       },
@@ -1344,8 +1344,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Kieran Auer",
                         },
                         "category": "D",
-                        "cover": "http://localhost/static/cover/g4602.png",
                         "likeCount": 6942,
+                        "preview": "http://localhost/static/preview/g4602.png",
                         "title": "Eius exercitationem quam",
                         "viewCount": 3645,
                       },
@@ -1354,8 +1354,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Letha Parisian",
                         },
                         "category": "D",
-                        "cover": "http://localhost/static/cover/g3658.png",
                         "likeCount": 6315,
+                        "preview": "http://localhost/static/preview/g3658.png",
                         "title": "Et culpa omnis",
                         "viewCount": 4544,
                       },
@@ -1364,8 +1364,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Marcel Bogan",
                         },
                         "category": "G",
-                        "cover": "http://localhost/static/cover/g4802.png",
                         "likeCount": 8923,
+                        "preview": "http://localhost/static/preview/g4802.png",
                         "title": "Cum nihil aut",
                         "viewCount": 3833,
                       },
@@ -1374,8 +1374,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "May Beatty",
                         },
                         "category": "G",
-                        "cover": "http://localhost/static/cover/g4762.png",
                         "likeCount": 6792,
+                        "preview": "http://localhost/static/preview/g4762.png",
                         "title": "Qui accusantium",
                         "viewCount": 5584,
                       },
@@ -1384,8 +1384,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Kathryn Gutmann",
                         },
                         "category": "D",
-                        "cover": "http://localhost/static/cover/g4642.png",
                         "likeCount": 7200,
+                        "preview": "http://localhost/static/preview/g4642.png",
                         "title": "Dicta repudiandae",
                         "viewCount": 9821,
                       },
@@ -1394,8 +1394,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Cleve Gulgowski",
                         },
                         "category": "D",
-                        "cover": "http://localhost/static/cover/g4762.png",
                         "likeCount": 5345,
+                        "preview": "http://localhost/static/preview/g4762.png",
                         "title": "Ipsum iusto explicabo",
                         "viewCount": 1041,
                       },
@@ -1404,8 +1404,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Mitchell Christiansen",
                         },
                         "category": "M",
-                        "cover": "http://localhost/static/cover/g3376.png",
                         "likeCount": 9196,
+                        "preview": "http://localhost/static/preview/g3376.png",
                         "title": "Et a",
                         "viewCount": 6867,
                       },
@@ -1414,8 +1414,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Paul Kovacek",
                         },
                         "category": "N",
-                        "cover": "http://localhost/static/cover/g3456.png",
                         "likeCount": 6140,
+                        "preview": "http://localhost/static/preview/g3456.png",
                         "title": "Quo et vero",
                         "viewCount": 7032,
                       },
@@ -1424,8 +1424,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Gudrun Beatty",
                         },
                         "category": "M",
-                        "cover": "http://localhost/static/cover/g3336.png",
                         "likeCount": 7687,
+                        "preview": "http://localhost/static/preview/g3336.png",
                         "title": "Commodi provident sint",
                         "viewCount": 590,
                       },
@@ -1434,8 +1434,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Margaretta King",
                         },
                         "category": "M",
-                        "cover": "http://localhost/static/cover/g4762.png",
                         "likeCount": 9923,
+                        "preview": "http://localhost/static/preview/g4762.png",
                         "title": "Ut aut",
                         "viewCount": 4285,
                       },
@@ -1444,8 +1444,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Simone Fadel",
                         },
                         "category": "M",
-                        "cover": "http://localhost/static/cover/g4762.png",
                         "likeCount": 6986,
+                        "preview": "http://localhost/static/preview/g4762.png",
                         "title": "Nam consequuntur autem",
                         "viewCount": 1925,
                       },
@@ -1454,8 +1454,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Ida Goldner",
                         },
                         "category": "M",
-                        "cover": "http://localhost/static/cover/g3336.png",
                         "likeCount": 6889,
+                        "preview": "http://localhost/static/preview/g3336.png",
                         "title": "Praesentium doloribus",
                         "viewCount": 8663,
                       },
@@ -1464,8 +1464,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Armani Bahringer",
                         },
                         "category": "M",
-                        "cover": "http://localhost/static/cover/g4842.png",
                         "likeCount": 3534,
+                        "preview": "http://localhost/static/preview/g4842.png",
                         "title": "Non aut",
                         "viewCount": 6235,
                       },
@@ -1474,8 +1474,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Clifford Wiza",
                         },
                         "category": "D",
-                        "cover": "http://localhost/static/cover/g3578.png",
                         "likeCount": 670,
+                        "preview": "http://localhost/static/preview/g3578.png",
                         "title": "Rerum eos",
                         "viewCount": 6323,
                       },
@@ -1484,8 +1484,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Rosemarie Beer",
                         },
                         "category": "M",
-                        "cover": "http://localhost/static/cover/g3658.png",
                         "likeCount": 3877,
+                        "preview": "http://localhost/static/preview/g3658.png",
                         "title": "Culpa sunt",
                         "viewCount": 9359,
                       },
@@ -1494,8 +1494,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Sandra Goodwin",
                         },
                         "category": "G",
-                        "cover": "http://localhost/static/cover/g4642.png",
                         "likeCount": 8369,
+                        "preview": "http://localhost/static/preview/g4642.png",
                         "title": "Aut laborum",
                         "viewCount": 401,
                       },
@@ -1504,8 +1504,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Jazlyn Bogisich",
                         },
                         "category": "G",
-                        "cover": "http://localhost/static/cover/g3376.png",
                         "likeCount": 8689,
+                        "preview": "http://localhost/static/preview/g3376.png",
                         "title": "Sunt et provident",
                         "viewCount": 7743,
                       },
@@ -1514,8 +1514,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Justen Bechtelar",
                         },
                         "category": "D",
-                        "cover": "http://localhost/static/cover/g4642.png",
                         "likeCount": 1639,
+                        "preview": "http://localhost/static/preview/g4642.png",
                         "title": "Quisquam qui",
                         "viewCount": 9124,
                       },
@@ -1524,8 +1524,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Neal Russel",
                         },
                         "category": "G",
-                        "cover": "http://localhost/static/cover/g4722.png",
                         "likeCount": 6686,
+                        "preview": "http://localhost/static/preview/g4722.png",
                         "title": "Laudantium voluptas consequatur",
                         "viewCount": 2001,
                       },
@@ -1534,8 +1534,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Vincent Hessel",
                         },
                         "category": "G",
-                        "cover": "http://localhost/static/cover/g4842.png",
                         "likeCount": 7320,
+                        "preview": "http://localhost/static/preview/g4842.png",
                         "title": "Quae aut et",
                         "viewCount": 7143,
                       },
@@ -1544,8 +1544,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Christina Hilpert",
                         },
                         "category": "N",
-                        "cover": "http://localhost/static/cover/g4722.png",
                         "likeCount": 2149,
+                        "preview": "http://localhost/static/preview/g4722.png",
                         "title": "Maiores officiis",
                         "viewCount": 4703,
                       },
@@ -1554,8 +1554,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Albin Schinner",
                         },
                         "category": "N",
-                        "cover": "http://localhost/static/cover/g4602.png",
                         "likeCount": 3422,
+                        "preview": "http://localhost/static/preview/g4602.png",
                         "title": "Rem voluptas",
                         "viewCount": 2020,
                       },
@@ -1564,8 +1564,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Fletcher Heathcote",
                         },
                         "category": "G",
-                        "cover": "http://localhost/static/cover/g4842.png",
                         "likeCount": 1143,
+                        "preview": "http://localhost/static/preview/g4842.png",
                         "title": "Est perferendis",
                         "viewCount": 4388,
                       },
@@ -1574,8 +1574,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Sid Kassulke",
                         },
                         "category": "M",
-                        "cover": "http://localhost/static/cover/g4602.png",
                         "likeCount": 4785,
+                        "preview": "http://localhost/static/preview/g4602.png",
                         "title": "Suscipit consequatur laboriosam",
                         "viewCount": 5182,
                       },
@@ -1584,8 +1584,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Deonte McKenzie",
                         },
                         "category": "D",
-                        "cover": "http://localhost/static/cover/g4642.png",
                         "likeCount": 8537,
+                        "preview": "http://localhost/static/preview/g4642.png",
                         "title": "Laudantium culpa vitae",
                         "viewCount": 7067,
                       },
@@ -1594,8 +1594,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Katrina Orn",
                         },
                         "category": "D",
-                        "cover": "http://localhost/static/cover/g4722.png",
                         "likeCount": 6613,
+                        "preview": "http://localhost/static/preview/g4722.png",
                         "title": "Necessitatibus distinctio maxime",
                         "viewCount": 12,
                       },
@@ -1604,8 +1604,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Meta Wyman",
                         },
                         "category": "M",
-                        "cover": "http://localhost/static/cover/g3578.png",
                         "likeCount": 5492,
+                        "preview": "http://localhost/static/preview/g3578.png",
                         "title": "Voluptatum consequuntur",
                         "viewCount": 4736,
                       },
@@ -1614,8 +1614,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           "name": "Bertha Deckow",
                         },
                         "category": "G",
-                        "cover": "http://localhost/static/cover/g3618.png",
                         "likeCount": 4743,
+                        "preview": "http://localhost/static/preview/g3618.png",
                         "title": "Esse est magnam",
                         "viewCount": 3608,
                       },
@@ -1708,7 +1708,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                             size={85}
                             source={
                               Object {
-                                "uri": "http://localhost/static/cover/g3578.png",
+                                "uri": "http://localhost/static/preview/g3578.png",
                               }
                             }
                             style={
@@ -1857,7 +1857,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                             size={85}
                             source={
                               Object {
-                                "uri": "http://localhost/static/cover/g4762.png",
+                                "uri": "http://localhost/static/preview/g4762.png",
                               }
                             }
                             style={
@@ -2006,7 +2006,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                             size={85}
                             source={
                               Object {
-                                "uri": "http://localhost/static/cover/g3336.png",
+                                "uri": "http://localhost/static/preview/g3336.png",
                               }
                             }
                             style={
@@ -2155,7 +2155,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                             size={85}
                             source={
                               Object {
-                                "uri": "http://localhost/static/cover/g3376.png",
+                                "uri": "http://localhost/static/preview/g3376.png",
                               }
                             }
                             style={
@@ -2304,7 +2304,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                             size={85}
                             source={
                               Object {
-                                "uri": "http://localhost/static/cover/g3618.png",
+                                "uri": "http://localhost/static/preview/g3618.png",
                               }
                             }
                             style={
@@ -2453,7 +2453,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                             size={85}
                             source={
                               Object {
-                                "uri": "http://localhost/static/cover/g3578.png",
+                                "uri": "http://localhost/static/preview/g3578.png",
                               }
                             }
                             style={
@@ -2602,7 +2602,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                             size={85}
                             source={
                               Object {
-                                "uri": "http://localhost/static/cover/g3456.png",
+                                "uri": "http://localhost/static/preview/g3456.png",
                               }
                             }
                             style={
@@ -2751,7 +2751,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                             size={85}
                             source={
                               Object {
-                                "uri": "http://localhost/static/cover/g4722.png",
+                                "uri": "http://localhost/static/preview/g4722.png",
                               }
                             }
                             style={
@@ -2900,7 +2900,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                             size={85}
                             source={
                               Object {
-                                "uri": "http://localhost/static/cover/g3376.png",
+                                "uri": "http://localhost/static/preview/g3376.png",
                               }
                             }
                             style={
@@ -3049,7 +3049,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                             size={85}
                             source={
                               Object {
-                                "uri": "http://localhost/static/cover/g4762.png",
+                                "uri": "http://localhost/static/preview/g4762.png",
                               }
                             }
                             style={
@@ -3265,8 +3265,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Brannon Carroll",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g4642.png",
                     "likeCount": 6909,
+                    "preview": "http://localhost/static/preview/g4642.png",
                     "title": "Amet neque cupiditate",
                     "viewCount": 4876,
                   },
@@ -3275,8 +3275,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Rosie Jaskolski",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3618.png",
                     "likeCount": 1195,
+                    "preview": "http://localhost/static/preview/g3618.png",
                     "title": "Voluptas dignissimos",
                     "viewCount": 8894,
                   },
@@ -3285,8 +3285,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Queenie Graham",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3618.png",
                     "likeCount": 563,
+                    "preview": "http://localhost/static/preview/g3618.png",
                     "title": "Officiis ratione nulla",
                     "viewCount": 4769,
                   },
@@ -3295,8 +3295,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Nettie Hodkiewicz",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g4802.png",
                     "likeCount": 9235,
+                    "preview": "http://localhost/static/preview/g4802.png",
                     "title": "Perferendis reiciendis",
                     "viewCount": 1007,
                   },
@@ -3305,8 +3305,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Jermey Lindgren",
                     },
                     "category": "D",
-                    "cover": "http://localhost/static/cover/g3336.png",
                     "likeCount": 8964,
+                    "preview": "http://localhost/static/preview/g3336.png",
                     "title": "Doloremque deleniti quasi",
                     "viewCount": 7232,
                   },
@@ -3315,8 +3315,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Tara White",
                     },
                     "category": "D",
-                    "cover": "http://localhost/static/cover/g3336.png",
                     "likeCount": 4086,
+                    "preview": "http://localhost/static/preview/g3336.png",
                     "title": "Non quia",
                     "viewCount": 9175,
                   },
@@ -3325,8 +3325,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Jazmyn Haley",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g4842.png",
                     "likeCount": 12,
+                    "preview": "http://localhost/static/preview/g4842.png",
                     "title": "Nulla voluptate",
                     "viewCount": 1517,
                   },
@@ -3335,8 +3335,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Hilma Rolfson",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3658.png",
                     "likeCount": 2912,
+                    "preview": "http://localhost/static/preview/g3658.png",
                     "title": "Rerum ut",
                     "viewCount": 3992,
                   },
@@ -3345,8 +3345,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Johnathon Quigley",
                     },
                     "category": "D",
-                    "cover": "http://localhost/static/cover/g3336.png",
                     "likeCount": 5084,
+                    "preview": "http://localhost/static/preview/g3336.png",
                     "title": "Odio delectus iure",
                     "viewCount": 6939,
                   },
@@ -3355,8 +3355,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Rozella Russel",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3336.png",
                     "likeCount": 8472,
+                    "preview": "http://localhost/static/preview/g3336.png",
                     "title": "Libero magnam et",
                     "viewCount": 6022,
                   },
@@ -3365,8 +3365,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Hassie Howe",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g4802.png",
                     "likeCount": 5373,
+                    "preview": "http://localhost/static/preview/g4802.png",
                     "title": "Sapiente eius ut",
                     "viewCount": 1986,
                   },
@@ -3375,8 +3375,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Willis Bogisich",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3336.png",
                     "likeCount": 4929,
+                    "preview": "http://localhost/static/preview/g3336.png",
                     "title": "Accusantium atque",
                     "viewCount": 66,
                   },
@@ -3385,8 +3385,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Summer VonRueden",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3578.png",
                     "likeCount": 3889,
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Aut aut",
                     "viewCount": 5893,
                   },
@@ -3395,8 +3395,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Murray McLaughlin",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g4722.png",
                     "likeCount": 8007,
+                    "preview": "http://localhost/static/preview/g4722.png",
                     "title": "Corrupti laboriosam accusantium",
                     "viewCount": 2154,
                   },
@@ -3405,8 +3405,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Antone Zboncak",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g4802.png",
                     "likeCount": 9474,
+                    "preview": "http://localhost/static/preview/g4802.png",
                     "title": "Mollitia dolor commodi",
                     "viewCount": 2697,
                   },
@@ -3415,8 +3415,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Adolph Erdman",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g4762.png",
                     "likeCount": 8905,
+                    "preview": "http://localhost/static/preview/g4762.png",
                     "title": "Natus sapiente",
                     "viewCount": 1078,
                   },
@@ -3425,8 +3425,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Gerhard Rowe",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3578.png",
                     "likeCount": 5792,
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Dicta tempore fuga",
                     "viewCount": 2145,
                   },
@@ -3435,8 +3435,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Marion Schumm",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3336.png",
                     "likeCount": 4107,
+                    "preview": "http://localhost/static/preview/g3336.png",
                     "title": "Itaque quos",
                     "viewCount": 416,
                   },
@@ -3445,8 +3445,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Diamond Little",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3336.png",
                     "likeCount": 7717,
+                    "preview": "http://localhost/static/preview/g3336.png",
                     "title": "Maiores quisquam",
                     "viewCount": 3654,
                   },
@@ -3455,8 +3455,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Barton Kub",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3658.png",
                     "likeCount": 5728,
+                    "preview": "http://localhost/static/preview/g3658.png",
                     "title": "Sed expedita",
                     "viewCount": 9052,
                   },
@@ -3465,8 +3465,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Ellis Bins",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g4642.png",
                     "likeCount": 3411,
+                    "preview": "http://localhost/static/preview/g4642.png",
                     "title": "Consectetur quos odio",
                     "viewCount": 5312,
                   },
@@ -3475,8 +3475,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Lacy Ferry",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g1878.png",
                     "likeCount": 7890,
+                    "preview": "http://localhost/static/preview/g1878.png",
                     "title": "Assumenda ut",
                     "viewCount": 8540,
                   },
@@ -3485,8 +3485,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Antwon Ratke",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3618.png",
                     "likeCount": 2259,
+                    "preview": "http://localhost/static/preview/g3618.png",
                     "title": "Mollitia aspernatur",
                     "viewCount": 7339,
                   },
@@ -3495,8 +3495,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Maud Morissette",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3376.png",
                     "likeCount": 9200,
+                    "preview": "http://localhost/static/preview/g3376.png",
                     "title": "Sunt ea in",
                     "viewCount": 9724,
                   },
@@ -3505,8 +3505,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Darryl Dach",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3336.png",
                     "likeCount": 9627,
+                    "preview": "http://localhost/static/preview/g3336.png",
                     "title": "Quas non",
                     "viewCount": 840,
                   },
@@ -3515,8 +3515,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Caitlyn Swift",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g4802.png",
                     "likeCount": 490,
+                    "preview": "http://localhost/static/preview/g4802.png",
                     "title": "Eum cumque",
                     "viewCount": 5768,
                   },
@@ -3525,8 +3525,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Rafael Weissnat",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g4802.png",
                     "likeCount": 9644,
+                    "preview": "http://localhost/static/preview/g4802.png",
                     "title": "Et nulla minima",
                     "viewCount": 8102,
                   },
@@ -3535,8 +3535,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Josianne Kuhlman",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3618.png",
                     "likeCount": 1807,
+                    "preview": "http://localhost/static/preview/g3618.png",
                     "title": "Eaque aut",
                     "viewCount": 4330,
                   },
@@ -3545,8 +3545,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Meghan DuBuque",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3376.png",
                     "likeCount": 5272,
+                    "preview": "http://localhost/static/preview/g3376.png",
                     "title": "Officiis facere quis",
                     "viewCount": 775,
                   },
@@ -3555,8 +3555,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Soledad Rosenbaum",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g4842.png",
                     "likeCount": 1806,
+                    "preview": "http://localhost/static/preview/g4842.png",
                     "title": "Autem excepturi",
                     "viewCount": 5202,
                   },
@@ -3565,8 +3565,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Valentin Torp",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g4722.png",
                     "likeCount": 6954,
+                    "preview": "http://localhost/static/preview/g4722.png",
                     "title": "Soluta vitae quo",
                     "viewCount": 3349,
                   },
@@ -3575,8 +3575,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Green Schiller",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g4762.png",
                     "likeCount": 3515,
+                    "preview": "http://localhost/static/preview/g4762.png",
                     "title": "Et tempore et",
                     "viewCount": 9314,
                   },
@@ -3585,8 +3585,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Etha Kemmer",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3336.png",
                     "likeCount": 7771,
+                    "preview": "http://localhost/static/preview/g3336.png",
                     "title": "Rerum temporibus mollitia",
                     "viewCount": 586,
                   },
@@ -3595,8 +3595,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Simeon DuBuque",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g3376.png",
                     "likeCount": 7604,
+                    "preview": "http://localhost/static/preview/g3376.png",
                     "title": "Magni voluptatem",
                     "viewCount": 5656,
                   },
@@ -3605,8 +3605,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Nannie Dickinson",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g4722.png",
                     "likeCount": 7018,
+                    "preview": "http://localhost/static/preview/g4722.png",
                     "title": "Nemo vitae officiis",
                     "viewCount": 1880,
                   },
@@ -3615,8 +3615,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Jamarcus Skiles",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3578.png",
                     "likeCount": 2684,
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Provident et esse",
                     "viewCount": 7376,
                   },
@@ -3625,8 +3625,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Lilla Block",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g3578.png",
                     "likeCount": 4665,
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Consequatur tempore et",
                     "viewCount": 4254,
                   },
@@ -3635,8 +3635,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Jamarcus Larkin",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g4842.png",
                     "likeCount": 4678,
+                    "preview": "http://localhost/static/preview/g4842.png",
                     "title": "Cum enim laudantium",
                     "viewCount": 4952,
                   },
@@ -3645,8 +3645,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Tommie Dickinson",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3618.png",
                     "likeCount": 6737,
+                    "preview": "http://localhost/static/preview/g3618.png",
                     "title": "Libero in",
                     "viewCount": 711,
                   },
@@ -3655,8 +3655,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Aniyah McCullough",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3376.png",
                     "likeCount": 1101,
+                    "preview": "http://localhost/static/preview/g3376.png",
                     "title": "Omnis omnis",
                     "viewCount": 6836,
                   },
@@ -3665,8 +3665,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Lowell Kessler",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g1878.png",
                     "likeCount": 4049,
+                    "preview": "http://localhost/static/preview/g1878.png",
                     "title": "Numquam laudantium",
                     "viewCount": 7157,
                   },
@@ -3675,8 +3675,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Zane Gleichner",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3618.png",
                     "likeCount": 2520,
+                    "preview": "http://localhost/static/preview/g3618.png",
                     "title": "Enim accusamus non",
                     "viewCount": 5809,
                   },
@@ -3685,8 +3685,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Meredith Kerluke",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g4842.png",
                     "likeCount": 5016,
+                    "preview": "http://localhost/static/preview/g4842.png",
                     "title": "Alias ut consequatur",
                     "viewCount": 5334,
                   },
@@ -3695,8 +3695,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Rene Hessel",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g4762.png",
                     "likeCount": 4817,
+                    "preview": "http://localhost/static/preview/g4762.png",
                     "title": "Facere ducimus occaecati",
                     "viewCount": 1216,
                   },
@@ -3705,8 +3705,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Arnaldo Keeling",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g4802.png",
                     "likeCount": 4058,
+                    "preview": "http://localhost/static/preview/g4802.png",
                     "title": "Voluptatem et enim",
                     "viewCount": 5348,
                   },
@@ -3715,8 +3715,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Liliane Hammes",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g3658.png",
                     "likeCount": 4988,
+                    "preview": "http://localhost/static/preview/g3658.png",
                     "title": "Est est",
                     "viewCount": 248,
                   },
@@ -3725,8 +3725,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Alex Jacobs",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3618.png",
                     "likeCount": 3588,
+                    "preview": "http://localhost/static/preview/g3618.png",
                     "title": "Ullam consectetur",
                     "viewCount": 3388,
                   },
@@ -3735,8 +3735,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Jude Quitzon",
                     },
                     "category": "D",
-                    "cover": "http://localhost/static/cover/g3658.png",
                     "likeCount": 8527,
+                    "preview": "http://localhost/static/preview/g3658.png",
                     "title": "Voluptatem similique excepturi",
                     "viewCount": 8131,
                   },
@@ -3745,8 +3745,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Jessie Heaney",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g4762.png",
                     "likeCount": 1643,
+                    "preview": "http://localhost/static/preview/g4762.png",
                     "title": "Cum sint quia",
                     "viewCount": 6028,
                   },
@@ -3755,8 +3755,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "name": "Katheryn Braun",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g4722.png",
                     "likeCount": 8049,
+                    "preview": "http://localhost/static/preview/g4722.png",
                     "title": "A consequatur",
                     "viewCount": 9961,
                   },
@@ -3849,7 +3849,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g4642.png",
+                            "uri": "http://localhost/static/preview/g4642.png",
                           }
                         }
                         style={
@@ -3998,7 +3998,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3618.png",
+                            "uri": "http://localhost/static/preview/g3618.png",
                           }
                         }
                         style={
@@ -4147,7 +4147,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3618.png",
+                            "uri": "http://localhost/static/preview/g3618.png",
                           }
                         }
                         style={
@@ -4296,7 +4296,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g4802.png",
+                            "uri": "http://localhost/static/preview/g4802.png",
                           }
                         }
                         style={
@@ -4445,7 +4445,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3336.png",
+                            "uri": "http://localhost/static/preview/g3336.png",
                           }
                         }
                         style={
@@ -4594,7 +4594,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3336.png",
+                            "uri": "http://localhost/static/preview/g3336.png",
                           }
                         }
                         style={
@@ -4743,7 +4743,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g4842.png",
+                            "uri": "http://localhost/static/preview/g4842.png",
                           }
                         }
                         style={
@@ -4892,7 +4892,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3658.png",
+                            "uri": "http://localhost/static/preview/g3658.png",
                           }
                         }
                         style={
@@ -5041,7 +5041,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3336.png",
+                            "uri": "http://localhost/static/preview/g3336.png",
                           }
                         }
                         style={
@@ -5190,7 +5190,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3336.png",
+                            "uri": "http://localhost/static/preview/g3336.png",
                           }
                         }
                         style={
@@ -5388,83 +5388,83 @@ exports[`Shelf.ClogCategory render correct 1`] = `
               Array [
                 Object {
                   "name": "Claude Schamberger",
-                  "profilePicture": "http://localhost/static/cover/g3618.png",
+                  "profilePicture": "http://localhost/static/preview/g3618.png",
                 },
                 Object {
                   "name": "Leopoldo Beahan",
-                  "profilePicture": "http://localhost/static/cover/g1878.png",
+                  "profilePicture": "http://localhost/static/preview/g1878.png",
                 },
                 Object {
                   "name": "Aglae Jewess",
-                  "profilePicture": "http://localhost/static/cover/g4602.png",
+                  "profilePicture": "http://localhost/static/preview/g4602.png",
                 },
                 Object {
                   "name": "Marielle Huels",
-                  "profilePicture": "http://localhost/static/cover/g4802.png",
+                  "profilePicture": "http://localhost/static/preview/g4802.png",
                 },
                 Object {
                   "name": "Kirstin Abbott",
-                  "profilePicture": "http://localhost/static/cover/g4802.png",
+                  "profilePicture": "http://localhost/static/preview/g4802.png",
                 },
                 Object {
                   "name": "Weston Schaefer",
-                  "profilePicture": "http://localhost/static/cover/g3376.png",
+                  "profilePicture": "http://localhost/static/preview/g3376.png",
                 },
                 Object {
                   "name": "Derek Wiza",
-                  "profilePicture": "http://localhost/static/cover/g4762.png",
+                  "profilePicture": "http://localhost/static/preview/g4762.png",
                 },
                 Object {
                   "name": "Lela Crona",
-                  "profilePicture": "http://localhost/static/cover/g3578.png",
+                  "profilePicture": "http://localhost/static/preview/g3578.png",
                 },
                 Object {
                   "name": "Cornelius Mante",
-                  "profilePicture": "http://localhost/static/cover/g3658.png",
+                  "profilePicture": "http://localhost/static/preview/g3658.png",
                 },
                 Object {
                   "name": "Lizzie Heathcote",
-                  "profilePicture": "http://localhost/static/cover/g4722.png",
+                  "profilePicture": "http://localhost/static/preview/g4722.png",
                 },
                 Object {
                   "name": "Maximus Mayert",
-                  "profilePicture": "http://localhost/static/cover/g4642.png",
+                  "profilePicture": "http://localhost/static/preview/g4642.png",
                 },
                 Object {
                   "name": "Nelson Blanda",
-                  "profilePicture": "http://localhost/static/cover/g4802.png",
+                  "profilePicture": "http://localhost/static/preview/g4802.png",
                 },
                 Object {
                   "name": "Alfredo Rosenbaum",
-                  "profilePicture": "http://localhost/static/cover/g3376.png",
+                  "profilePicture": "http://localhost/static/preview/g3376.png",
                 },
                 Object {
                   "name": "Maxime Turcotte",
-                  "profilePicture": "http://localhost/static/cover/g3336.png",
+                  "profilePicture": "http://localhost/static/preview/g3336.png",
                 },
                 Object {
                   "name": "Abigale Hamill",
-                  "profilePicture": "http://localhost/static/cover/g3336.png",
+                  "profilePicture": "http://localhost/static/preview/g3336.png",
                 },
                 Object {
                   "name": "Marcos Koelpin",
-                  "profilePicture": "http://localhost/static/cover/g4722.png",
+                  "profilePicture": "http://localhost/static/preview/g4722.png",
                 },
                 Object {
                   "name": "Ford Hodkiewicz",
-                  "profilePicture": "http://localhost/static/cover/g3658.png",
+                  "profilePicture": "http://localhost/static/preview/g3658.png",
                 },
                 Object {
                   "name": "Hallie Bailey",
-                  "profilePicture": "http://localhost/static/cover/g3376.png",
+                  "profilePicture": "http://localhost/static/preview/g3376.png",
                 },
                 Object {
                   "name": "Justyn Haley",
-                  "profilePicture": "http://localhost/static/cover/g3618.png",
+                  "profilePicture": "http://localhost/static/preview/g3618.png",
                 },
                 Object {
                   "name": "Lilly Lueilwitz",
-                  "profilePicture": "http://localhost/static/cover/g3618.png",
+                  "profilePicture": "http://localhost/static/preview/g3618.png",
                 },
               ]
             }
@@ -5526,7 +5526,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   size={80}
                   source={
                     Object {
-                      "uri": "http://localhost/static/cover/g3618.png",
+                      "uri": "http://localhost/static/preview/g3618.png",
                     }
                   }
                   style={
@@ -5612,7 +5612,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   size={80}
                   source={
                     Object {
-                      "uri": "http://localhost/static/cover/g1878.png",
+                      "uri": "http://localhost/static/preview/g1878.png",
                     }
                   }
                   style={
@@ -5698,7 +5698,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   size={80}
                   source={
                     Object {
-                      "uri": "http://localhost/static/cover/g4602.png",
+                      "uri": "http://localhost/static/preview/g4602.png",
                     }
                   }
                   style={
@@ -5784,7 +5784,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   size={80}
                   source={
                     Object {
-                      "uri": "http://localhost/static/cover/g4802.png",
+                      "uri": "http://localhost/static/preview/g4802.png",
                     }
                   }
                   style={
@@ -5870,7 +5870,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   size={80}
                   source={
                     Object {
-                      "uri": "http://localhost/static/cover/g4802.png",
+                      "uri": "http://localhost/static/preview/g4802.png",
                     }
                   }
                   style={
@@ -5956,7 +5956,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   size={80}
                   source={
                     Object {
-                      "uri": "http://localhost/static/cover/g3376.png",
+                      "uri": "http://localhost/static/preview/g3376.png",
                     }
                   }
                   style={
@@ -6042,7 +6042,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   size={80}
                   source={
                     Object {
-                      "uri": "http://localhost/static/cover/g4762.png",
+                      "uri": "http://localhost/static/preview/g4762.png",
                     }
                   }
                   style={
@@ -6128,7 +6128,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   size={80}
                   source={
                     Object {
-                      "uri": "http://localhost/static/cover/g3578.png",
+                      "uri": "http://localhost/static/preview/g3578.png",
                     }
                   }
                   style={
@@ -6214,7 +6214,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   size={80}
                   source={
                     Object {
-                      "uri": "http://localhost/static/cover/g3658.png",
+                      "uri": "http://localhost/static/preview/g3658.png",
                     }
                   }
                   style={
@@ -6300,7 +6300,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   size={80}
                   source={
                     Object {
-                      "uri": "http://localhost/static/cover/g4722.png",
+                      "uri": "http://localhost/static/preview/g4722.png",
                     }
                   }
                   style={

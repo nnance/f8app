@@ -34,7 +34,7 @@ export const myClogs = [
     author: {
       name: 'David Beckham'
     },
-    cover: require('./img/A.png'),
+    preview: require('./img/A.png'),
     category: 'M',
     viewCount: 12300,
     likeCount: 1500,
@@ -45,7 +45,7 @@ export const myClogs = [
     author: {
       name: 'สุดสาครนอย ไทรโยค'
     },
-    cover: require('./img/B.png'),
+    preview: require('./img/B.png'),
     category: 'N',
     viewCount: 100,
     likeCount: 55,
@@ -56,13 +56,13 @@ export const myClogs = [
 export const bookmark = [
   {
     title: 'Richy Rich! รวยมากนะ! รู้ยังคะทุกคน',
-    cover: require('./img/A.png'),
+    preview: require('./img/A.png'),
     category: 'N',
     bookmarkCount: 7
   },
   {
     title: 'Money Honey คุณชายหน้าตายกับยัยขี้งก',
-    cover: require('./img/B.png'),
+    preview: require('./img/B.png'),
     category: 'M',
     bookmarkCount: 3
   }

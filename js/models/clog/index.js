@@ -34,7 +34,7 @@ export const fragments = {
   clogMetaData: gql`
     fragment clogMetaData on Clog {
       title
-      cover
+      preview
       category
       likeCount
       viewCount

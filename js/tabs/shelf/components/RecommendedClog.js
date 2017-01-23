@@ -19,7 +19,7 @@ class RecommendedClog extends React.Component {
         <Image source={require('../img/top-clog-bg.png')} style={{flex: 1, flexDirection: 'row', resizeMode: 'stretch', width: undefined, height: undefined}}>
           <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', paddingLeft: 10}}>
             <CircleImageWithCategory
-              source={mapSource(this.props.cover)}
+              source={mapSource(this.props.preview)}
               category={this.props.category}
               size={130}
               shadowRadius={5}

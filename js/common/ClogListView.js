@@ -15,7 +15,7 @@ import {toHumanNumber, mapSource} from './utils';
 
 const ClogRow = (props) => (<TouchableOpacity style={styles.rowContainer}>
   <CircleImageWithCategory
-    source={mapSource(props.cover)}
+    source={mapSource(props.preview)}
     category={props.category}
     size={100}
   />

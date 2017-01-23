@@ -161,8 +161,8 @@ exports[`Shelf.Home render correct 1`] = `
                     "name": "Andy Bosco",
                   },
                   "category": "D",
-                  "cover": "http://localhost/static/cover/g4722.png",
                   "likeCount": 7604,
+                  "preview": "http://localhost/static/preview/g4722.png",
                   "review": "Libero quo voluptatem ut enim maxime. Aut aut excepturi officia. Quis voluptatibus doloribus ut sunt et nobis. Expedita omnis officiis molestias aliquam. Esse quis tempore fugiat. Beatae optio porro eum quod odit. Harum possimus eius aut sed eaque veritatis unde deleniti. Repudiandae sed debitis rerum aliquid ipsa aut et dolorum. Corrupti minus aut. Ipsam possimus excepturi nobis totam unde sed aliquid repellendus. Et ipsum animi velit consectetur consectetur sed ratione vitae. Quo omnis dignissimos voluptas cum optio et. Laboriosam velit laudantium tempore fugit. Excepturi omnis consectetur dolorem ut. Reiciendis aperiam inventore perferendis unde eius maiores cumque. Quia exercitationem qui in autem. Placeat distinctio quia ipsam doloribus. At enim commodi adipisci voluptatum qui iusto fugiat. Nam velit aspernatur accusantium amet et dolorem est qui. Rerum quis quos eum ut cumque unde voluptatem vero.",
                   "title": "Eos est",
                   "viewCount": 4319,
@@ -172,8 +172,8 @@ exports[`Shelf.Home render correct 1`] = `
                     "name": "Evangeline Wunsch",
                   },
                   "category": "D",
-                  "cover": "http://localhost/static/cover/g4642.png",
                   "likeCount": 8825,
+                  "preview": "http://localhost/static/preview/g4642.png",
                   "review": "Illum illum quam facere. Maiores quos vitae vel aut vel illo. Dolor cumque magnam ut quia saepe. Iusto numquam nulla explicabo. Dolorem et molestias ad reprehenderit officiis ullam. Sed debitis ratione laborum cupiditate molestias molestiae. Molestias consequuntur esse quia consequuntur doloremque quis aut sed id. Dicta vel aut itaque eius dolor. Excepturi occaecati ipsum consequuntur soluta aut voluptatem facere saepe. Fugit aut quasi ex. Nisi minima voluptatem provident eum. Nostrum expedita perspiciatis est assumenda ducimus. Corrupti praesentium vitae ab rem dolorem quia. Omnis eos mollitia eaque voluptatem aspernatur sit voluptatem voluptatum. Iusto modi est quia at soluta. Voluptatum nesciunt labore et quibusdam molestiae qui est inventore. Voluptatum sint minus iste voluptates voluptate sit. Error et dolores nostrum velit. Doloribus provident libero fugiat adipisci ipsa voluptatem est. Nemo amet officiis similique qui.",
                   "title": "Odit sequi consequatur",
                   "viewCount": 2409,
@@ -183,8 +183,8 @@ exports[`Shelf.Home render correct 1`] = `
                     "name": "Marc Swift",
                   },
                   "category": "N",
-                  "cover": "http://localhost/static/cover/g4722.png",
                   "likeCount": 3577,
+                  "preview": "http://localhost/static/preview/g4722.png",
                   "review": "Assumenda accusantium unde tempora voluptatem enim qui. Quo ab eos laboriosam quia. Et ab repudiandae eum rerum et nisi sit consectetur. Omnis cumque similique aspernatur minus non aspernatur ex qui quidem. Et dolores dicta tempore praesentium consequuntur eos aut. Est fuga tempore deleniti iusto quibusdam a minima. Ut adipisci sed dolor non vero aliquam odio nobis rem. Quia rerum sunt nam aut. Sunt optio optio aliquam quia minima labore. Nostrum eius voluptates consectetur quidem accusamus labore dicta consequatur et. Itaque ut doloremque deserunt omnis soluta quaerat voluptatum quisquam. Earum fugiat voluptatem assumenda distinctio. Aut placeat nam aut et doloribus est possimus a error. Veniam veritatis aut sit blanditiis eveniet ea voluptatibus. Iste blanditiis porro molestiae sequi minima voluptatem qui. Vitae libero quos omnis hic. Quod cupiditate id. Totam dolor non distinctio dolores voluptatibus voluptatum. Voluptas amet iure eveniet quis quasi qui quaerat enim ut. Omnis molestiae consequatur ea quia.",
                   "title": "Sed qui et",
                   "viewCount": 2866,
@@ -194,8 +194,8 @@ exports[`Shelf.Home render correct 1`] = `
                     "name": "Jovan Hartmann",
                   },
                   "category": "M",
-                  "cover": "http://localhost/static/cover/g4802.png",
                   "likeCount": 6413,
+                  "preview": "http://localhost/static/preview/g4802.png",
                   "review": "Natus adipisci omnis vero dignissimos molestias. Recusandae laudantium et cumque. Mollitia enim nostrum dolor sapiente. Dignissimos unde voluptatibus nostrum et adipisci nihil quia nemo incidunt. Sunt est qui sunt. Doloribus tempora fuga. Voluptates quam omnis laudantium ut quasi consequatur. Deserunt ducimus dolores enim quos sint ad quos officiis. Sed consectetur accusantium natus eos corporis vel est optio. Et voluptates est unde nobis sed aliquam dolores quas cupiditate. Occaecati laboriosam libero sint consequatur dicta distinctio provident repellat. Et qui ullam aliquid qui. Dicta perspiciatis occaecati delectus quas iure facere. Doloribus magni quia assumenda omnis ipsam deleniti enim. Dolor deleniti consequuntur magni atque dignissimos. Dolor unde libero est aliquam minus accusamus cumque non. Dolorem ipsum ab quam quos officia eveniet et. Quod omnis magnam quo commodi quis amet. Laudantium alias mollitia. Deserunt velit est et aperiam consequatur adipisci est.",
                   "title": "Sit quis qui",
                   "viewCount": 3283,
@@ -205,8 +205,8 @@ exports[`Shelf.Home render correct 1`] = `
                     "name": "Alessia Schimmel",
                   },
                   "category": "M",
-                  "cover": "http://localhost/static/cover/g4722.png",
                   "likeCount": 6213,
+                  "preview": "http://localhost/static/preview/g4722.png",
                   "review": "Repellendus est quia aperiam maiores. Aut provident provident ut atque repellendus earum debitis. Aliquam possimus velit consequatur et dolorem. Blanditiis pariatur temporibus voluptatem sequi eos dolores voluptas quam. Voluptate aperiam incidunt quis iure. Excepturi ducimus est assumenda ut. Iste eum officiis ex illo. Doloremque est corporis qui esse quae. Voluptate distinctio quidem suscipit doloribus ut. Sequi eos provident quod. Odio rerum omnis quod quam. Omnis nobis aliquam et aut tempora et qui. Non voluptate laborum dignissimos rem officia. Harum excepturi sint ad blanditiis et deserunt dolores dolorum amet. Modi adipisci recusandae rerum eos consequatur eum totam eligendi. Magni ipsum nisi accusamus rem. Quo doloribus molestiae quis ad nihil ea ea hic. Voluptate quam aut consequatur natus similique. Ducimus et ipsam quaerat saepe laboriosam. Ut esse consequuntur deserunt error ex ut minima.",
                   "title": "Praesentium qui",
                   "viewCount": 939,
@@ -282,7 +282,7 @@ exports[`Shelf.Home render correct 1`] = `
                   size={250}
                   source={
                     Object {
-                      "uri": "http://localhost/static/cover/g4722.png",
+                      "uri": "http://localhost/static/preview/g4722.png",
                     }
                   }
                   style={
@@ -455,7 +455,7 @@ exports[`Shelf.Home render correct 1`] = `
                   size={250}
                   source={
                     Object {
-                      "uri": "http://localhost/static/cover/g4642.png",
+                      "uri": "http://localhost/static/preview/g4642.png",
                     }
                   }
                   style={
@@ -628,7 +628,7 @@ exports[`Shelf.Home render correct 1`] = `
                   size={250}
                   source={
                     Object {
-                      "uri": "http://localhost/static/cover/g4722.png",
+                      "uri": "http://localhost/static/preview/g4722.png",
                     }
                   }
                   style={
@@ -801,7 +801,7 @@ exports[`Shelf.Home render correct 1`] = `
                   size={250}
                   source={
                     Object {
-                      "uri": "http://localhost/static/cover/g4802.png",
+                      "uri": "http://localhost/static/preview/g4802.png",
                     }
                   }
                   style={
@@ -974,7 +974,7 @@ exports[`Shelf.Home render correct 1`] = `
                   size={250}
                   source={
                     Object {
-                      "uri": "http://localhost/static/cover/g4722.png",
+                      "uri": "http://localhost/static/preview/g4722.png",
                     }
                   }
                   style={
@@ -1220,8 +1220,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Yolanda Bradtke",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g3618.png",
                     "likeCount": 1654,
+                    "preview": "http://localhost/static/preview/g3618.png",
                     "title": "Asperiores quisquam",
                     "viewCount": 6523,
                   },
@@ -1230,8 +1230,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Joesph Mayert",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3658.png",
                     "likeCount": 3608,
+                    "preview": "http://localhost/static/preview/g3658.png",
                     "title": "Commodi ut sunt",
                     "viewCount": 5681,
                   },
@@ -1240,8 +1240,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Gerhard Ankunding",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3376.png",
                     "likeCount": 5463,
+                    "preview": "http://localhost/static/preview/g3376.png",
                     "title": "Sed architecto",
                     "viewCount": 3463,
                   },
@@ -1250,8 +1250,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Maurice Runolfsdottir",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3618.png",
                     "likeCount": 8119,
+                    "preview": "http://localhost/static/preview/g3618.png",
                     "title": "In quis consequuntur",
                     "viewCount": 8651,
                   },
@@ -1260,8 +1260,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Dallas Dach",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3376.png",
                     "likeCount": 5339,
+                    "preview": "http://localhost/static/preview/g3376.png",
                     "title": "Architecto est distinctio",
                     "viewCount": 1604,
                   },
@@ -1270,8 +1270,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Kailee Schroeder",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3456.png",
                     "likeCount": 2645,
+                    "preview": "http://localhost/static/preview/g3456.png",
                     "title": "Maxime sint aperiam",
                     "viewCount": 9093,
                   },
@@ -1280,8 +1280,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Dora Ebert",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g4642.png",
                     "likeCount": 7675,
+                    "preview": "http://localhost/static/preview/g4642.png",
                     "title": "In sunt magnam",
                     "viewCount": 1959,
                   },
@@ -1290,8 +1290,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Jarrell Johns",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3618.png",
                     "likeCount": 5177,
+                    "preview": "http://localhost/static/preview/g3618.png",
                     "title": "Dolorem harum fuga",
                     "viewCount": 5539,
                   },
@@ -1300,8 +1300,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Amparo Wisozk",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g3336.png",
                     "likeCount": 4234,
+                    "preview": "http://localhost/static/preview/g3336.png",
                     "title": "Nemo voluptatum",
                     "viewCount": 7703,
                   },
@@ -1310,8 +1310,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Braeden Schroeder",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g4642.png",
                     "likeCount": 9048,
+                    "preview": "http://localhost/static/preview/g4642.png",
                     "title": "Placeat cumque",
                     "viewCount": 6958,
                   },
@@ -1320,8 +1320,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Kaleigh Strosin",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g4802.png",
                     "likeCount": 4986,
+                    "preview": "http://localhost/static/preview/g4802.png",
                     "title": "Omnis nostrum",
                     "viewCount": 6070,
                   },
@@ -1330,8 +1330,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Chance Bauch",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3336.png",
                     "likeCount": 3351,
+                    "preview": "http://localhost/static/preview/g3336.png",
                     "title": "Ratione quo",
                     "viewCount": 4489,
                   },
@@ -1340,8 +1340,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Chris Abshire",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g4802.png",
                     "likeCount": 813,
+                    "preview": "http://localhost/static/preview/g4802.png",
                     "title": "Rerum cumque non",
                     "viewCount": 7517,
                   },
@@ -1350,8 +1350,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Roger Moore",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g4642.png",
                     "likeCount": 3162,
+                    "preview": "http://localhost/static/preview/g4642.png",
                     "title": "Omnis voluptatem",
                     "viewCount": 1151,
                   },
@@ -1360,8 +1360,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Oswaldo Stracke",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g1878.png",
                     "likeCount": 1938,
+                    "preview": "http://localhost/static/preview/g1878.png",
                     "title": "Tempora est mollitia",
                     "viewCount": 9330,
                   },
@@ -1370,8 +1370,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Krista Lubowitz",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3658.png",
                     "likeCount": 7003,
+                    "preview": "http://localhost/static/preview/g3658.png",
                     "title": "Enim animi cum",
                     "viewCount": 2616,
                   },
@@ -1380,8 +1380,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Marcellus Ernser",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g4642.png",
                     "likeCount": 4533,
+                    "preview": "http://localhost/static/preview/g4642.png",
                     "title": "Quia dolorem",
                     "viewCount": 896,
                   },
@@ -1390,8 +1390,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Casper Corkery",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g4642.png",
                     "likeCount": 9904,
+                    "preview": "http://localhost/static/preview/g4642.png",
                     "title": "Non aut quas",
                     "viewCount": 5437,
                   },
@@ -1400,8 +1400,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Darrell Keeling",
                     },
                     "category": "D",
-                    "cover": "http://localhost/static/cover/g4602.png",
                     "likeCount": 9380,
+                    "preview": "http://localhost/static/preview/g4602.png",
                     "title": "Qui suscipit animi",
                     "viewCount": 8616,
                   },
@@ -1410,8 +1410,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Bonnie Mosciski",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3578.png",
                     "likeCount": 835,
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Fugiat non",
                     "viewCount": 4821,
                   },
@@ -1420,8 +1420,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Madonna Ortiz",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3376.png",
                     "likeCount": 560,
+                    "preview": "http://localhost/static/preview/g3376.png",
                     "title": "In tempora soluta",
                     "viewCount": 6510,
                   },
@@ -1430,8 +1430,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Imelda Gerhold",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3456.png",
                     "likeCount": 4310,
+                    "preview": "http://localhost/static/preview/g3456.png",
                     "title": "Quis pariatur",
                     "viewCount": 9979,
                   },
@@ -1440,8 +1440,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Lavada Hickle",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3336.png",
                     "likeCount": 5506,
+                    "preview": "http://localhost/static/preview/g3336.png",
                     "title": "Iusto deleniti exercitationem",
                     "viewCount": 4933,
                   },
@@ -1450,8 +1450,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Kendall Weber",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3658.png",
                     "likeCount": 6691,
+                    "preview": "http://localhost/static/preview/g3658.png",
                     "title": "Quia qui consectetur",
                     "viewCount": 2002,
                   },
@@ -1460,8 +1460,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Queen Dooley",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g4602.png",
                     "likeCount": 3534,
+                    "preview": "http://localhost/static/preview/g4602.png",
                     "title": "Aut eum delectus",
                     "viewCount": 6039,
                   },
@@ -1470,8 +1470,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Everardo Daniel",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g3336.png",
                     "likeCount": 568,
+                    "preview": "http://localhost/static/preview/g3336.png",
                     "title": "Voluptatem dolorem soluta",
                     "viewCount": 9033,
                   },
@@ -1480,8 +1480,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Jedediah Casper",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3456.png",
                     "likeCount": 8272,
+                    "preview": "http://localhost/static/preview/g3456.png",
                     "title": "Quam dignissimos",
                     "viewCount": 2411,
                   },
@@ -1490,8 +1490,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Rebeka Grant",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g4802.png",
                     "likeCount": 3625,
+                    "preview": "http://localhost/static/preview/g4802.png",
                     "title": "Recusandae minus",
                     "viewCount": 3668,
                   },
@@ -1500,8 +1500,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Victoria Lowe",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g3376.png",
                     "likeCount": 4721,
+                    "preview": "http://localhost/static/preview/g3376.png",
                     "title": "Ut consectetur",
                     "viewCount": 9231,
                   },
@@ -1510,8 +1510,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Samir Smitham",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3578.png",
                     "likeCount": 9472,
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Maxime illum",
                     "viewCount": 6250,
                   },
@@ -1520,8 +1520,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Ewell Bahringer",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g3456.png",
                     "likeCount": 4111,
+                    "preview": "http://localhost/static/preview/g3456.png",
                     "title": "Non aliquam enim",
                     "viewCount": 3366,
                   },
@@ -1530,8 +1530,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Candida Denesik",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g1878.png",
                     "likeCount": 5465,
+                    "preview": "http://localhost/static/preview/g1878.png",
                     "title": "Commodi qui",
                     "viewCount": 9591,
                   },
@@ -1540,8 +1540,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Marlin Zboncak",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3578.png",
                     "likeCount": 4621,
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Omnis optio et",
                     "viewCount": 5289,
                   },
@@ -1550,8 +1550,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Alexander Renner",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g4602.png",
                     "likeCount": 1815,
+                    "preview": "http://localhost/static/preview/g4602.png",
                     "title": "Ut qui ullam",
                     "viewCount": 1608,
                   },
@@ -1560,8 +1560,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Hulda Cummerata",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3618.png",
                     "likeCount": 8903,
+                    "preview": "http://localhost/static/preview/g3618.png",
                     "title": "Nulla quod et",
                     "viewCount": 9810,
                   },
@@ -1570,8 +1570,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Cathy Yundt",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3618.png",
                     "likeCount": 5210,
+                    "preview": "http://localhost/static/preview/g3618.png",
                     "title": "Accusantium molestiae",
                     "viewCount": 5130,
                   },
@@ -1580,8 +1580,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Gene Kertzmann",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3658.png",
                     "likeCount": 9071,
+                    "preview": "http://localhost/static/preview/g3658.png",
                     "title": "Nobis rem",
                     "viewCount": 2029,
                   },
@@ -1590,8 +1590,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Karen Watsica",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g4802.png",
                     "likeCount": 1101,
+                    "preview": "http://localhost/static/preview/g4802.png",
                     "title": "Dolorem ut",
                     "viewCount": 7894,
                   },
@@ -1600,8 +1600,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Ransom Donnelly",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g4722.png",
                     "likeCount": 2558,
+                    "preview": "http://localhost/static/preview/g4722.png",
                     "title": "Adipisci voluptatem",
                     "viewCount": 7712,
                   },
@@ -1610,8 +1610,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Celestine Abernathy",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g4722.png",
                     "likeCount": 1410,
+                    "preview": "http://localhost/static/preview/g4722.png",
                     "title": "Tenetur molestiae numquam",
                     "viewCount": 9846,
                   },
@@ -1620,8 +1620,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Ubaldo Larson",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3578.png",
                     "likeCount": 8250,
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Consectetur natus sapiente",
                     "viewCount": 888,
                   },
@@ -1630,8 +1630,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Zoila Bashirian",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g3658.png",
                     "likeCount": 8883,
+                    "preview": "http://localhost/static/preview/g3658.png",
                     "title": "Nemo neque architecto",
                     "viewCount": 5970,
                   },
@@ -1640,8 +1640,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Dejah Streich",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g4602.png",
                     "likeCount": 8342,
+                    "preview": "http://localhost/static/preview/g4602.png",
                     "title": "Molestias voluptas",
                     "viewCount": 1260,
                   },
@@ -1650,8 +1650,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Rudolph Klocko",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g4642.png",
                     "likeCount": 4221,
+                    "preview": "http://localhost/static/preview/g4642.png",
                     "title": "Et fugiat deserunt",
                     "viewCount": 8607,
                   },
@@ -1660,8 +1660,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Bradley Huel",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g4802.png",
                     "likeCount": 6739,
+                    "preview": "http://localhost/static/preview/g4802.png",
                     "title": "Quo enim maxime",
                     "viewCount": 6955,
                   },
@@ -1670,8 +1670,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Nelda Ankunding",
                     },
                     "category": "D",
-                    "cover": "http://localhost/static/cover/g4762.png",
                     "likeCount": 8278,
+                    "preview": "http://localhost/static/preview/g4762.png",
                     "title": "Nemo aut",
                     "viewCount": 4981,
                   },
@@ -1680,8 +1680,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Pink Grimes",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g3578.png",
                     "likeCount": 2306,
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Sunt quos ipsam",
                     "viewCount": 3768,
                   },
@@ -1690,8 +1690,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Edwin Stark",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3456.png",
                     "likeCount": 4817,
+                    "preview": "http://localhost/static/preview/g3456.png",
                     "title": "Quo et provident",
                     "viewCount": 1216,
                   },
@@ -1700,8 +1700,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Daphney Buckridge",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3376.png",
                     "likeCount": 4058,
+                    "preview": "http://localhost/static/preview/g3376.png",
                     "title": "Voluptatem et enim",
                     "viewCount": 5348,
                   },
@@ -1710,8 +1710,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Jonathan Predovic",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g3618.png",
                     "likeCount": 4988,
+                    "preview": "http://localhost/static/preview/g3618.png",
                     "title": "Est est",
                     "viewCount": 248,
                   },
@@ -1804,7 +1804,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3618.png",
+                            "uri": "http://localhost/static/preview/g3618.png",
                           }
                         }
                         style={
@@ -1953,7 +1953,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3658.png",
+                            "uri": "http://localhost/static/preview/g3658.png",
                           }
                         }
                         style={
@@ -2102,7 +2102,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3376.png",
+                            "uri": "http://localhost/static/preview/g3376.png",
                           }
                         }
                         style={
@@ -2251,7 +2251,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3618.png",
+                            "uri": "http://localhost/static/preview/g3618.png",
                           }
                         }
                         style={
@@ -2400,7 +2400,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3376.png",
+                            "uri": "http://localhost/static/preview/g3376.png",
                           }
                         }
                         style={
@@ -2549,7 +2549,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3456.png",
+                            "uri": "http://localhost/static/preview/g3456.png",
                           }
                         }
                         style={
@@ -2698,7 +2698,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g4642.png",
+                            "uri": "http://localhost/static/preview/g4642.png",
                           }
                         }
                         style={
@@ -2847,7 +2847,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3618.png",
+                            "uri": "http://localhost/static/preview/g3618.png",
                           }
                         }
                         style={
@@ -2996,7 +2996,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3336.png",
+                            "uri": "http://localhost/static/preview/g3336.png",
                           }
                         }
                         style={
@@ -3145,7 +3145,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g4642.png",
+                            "uri": "http://localhost/static/preview/g4642.png",
                           }
                         }
                         style={
@@ -3301,7 +3301,7 @@ exports[`Shelf.Home render correct 1`] = `
                     size={130}
                     source={
                       Object {
-                        "uri": "http://localhost/static/cover/g4642.png",
+                        "uri": "http://localhost/static/preview/g4642.png",
                       }
                     }
                     style={
@@ -3607,8 +3607,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Cedrick Orn",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g1878.png",
                     "likeCount": 3391,
+                    "preview": "http://localhost/static/preview/g1878.png",
                     "title": "Ad nisi enim",
                     "viewCount": 1054,
                   },
@@ -3617,8 +3617,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Jamel Corkery",
                     },
                     "category": "D",
-                    "cover": "http://localhost/static/cover/g3376.png",
                     "likeCount": 8338,
+                    "preview": "http://localhost/static/preview/g3376.png",
                     "title": "Blanditiis quia",
                     "viewCount": 2549,
                   },
@@ -3627,8 +3627,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Merritt Muller",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g4722.png",
                     "likeCount": 9774,
+                    "preview": "http://localhost/static/preview/g4722.png",
                     "title": "Sint ratione corporis",
                     "viewCount": 6847,
                   },
@@ -3637,8 +3637,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Louvenia Gibson",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3336.png",
                     "likeCount": 5889,
+                    "preview": "http://localhost/static/preview/g3336.png",
                     "title": "Rem velit",
                     "viewCount": 5635,
                   },
@@ -3647,8 +3647,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Jewel Nienow",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3578.png",
                     "likeCount": 9626,
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Voluptatem minima",
                     "viewCount": 8956,
                   },
@@ -3657,8 +3657,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Gerson Farrell",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3456.png",
                     "likeCount": 9144,
+                    "preview": "http://localhost/static/preview/g3456.png",
                     "title": "Quia harum fugit",
                     "viewCount": 1510,
                   },
@@ -3667,8 +3667,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Monserrate Upton",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3376.png",
                     "likeCount": 6709,
+                    "preview": "http://localhost/static/preview/g3376.png",
                     "title": "Quasi quia",
                     "viewCount": 4147,
                   },
@@ -3677,8 +3677,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Paxton Lueilwitz",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g4722.png",
                     "likeCount": 2484,
+                    "preview": "http://localhost/static/preview/g4722.png",
                     "title": "Molestiae corrupti",
                     "viewCount": 8530,
                   },
@@ -3687,8 +3687,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Christa Satterfield",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3336.png",
                     "likeCount": 1390,
+                    "preview": "http://localhost/static/preview/g3336.png",
                     "title": "Commodi autem",
                     "viewCount": 5787,
                   },
@@ -3697,8 +3697,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Joel Dooley",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g4842.png",
                     "likeCount": 4293,
+                    "preview": "http://localhost/static/preview/g4842.png",
                     "title": "Fugiat consequatur officia",
                     "viewCount": 5705,
                   },
@@ -3707,8 +3707,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Eva Cronin",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g3376.png",
                     "likeCount": 2529,
+                    "preview": "http://localhost/static/preview/g3376.png",
                     "title": "Mollitia iste atque",
                     "viewCount": 2426,
                   },
@@ -3717,8 +3717,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Yasmin Stoltenberg",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g1878.png",
                     "likeCount": 9734,
+                    "preview": "http://localhost/static/preview/g1878.png",
                     "title": "Ut iusto est",
                     "viewCount": 2742,
                   },
@@ -3727,8 +3727,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Bradley Lindgren",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g3376.png",
                     "likeCount": 4893,
+                    "preview": "http://localhost/static/preview/g3376.png",
                     "title": "Ut magni et",
                     "viewCount": 9621,
                   },
@@ -3737,8 +3737,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Reinhold Huels",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3578.png",
                     "likeCount": 6714,
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Quaerat qui",
                     "viewCount": 1419,
                   },
@@ -3747,8 +3747,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Wilma Jerde",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g4762.png",
                     "likeCount": 1194,
+                    "preview": "http://localhost/static/preview/g4762.png",
                     "title": "Vel sint sequi",
                     "viewCount": 7312,
                   },
@@ -3757,8 +3757,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Bridie Flatley",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g4762.png",
                     "likeCount": 8537,
+                    "preview": "http://localhost/static/preview/g4762.png",
                     "title": "Saepe mollitia itaque",
                     "viewCount": 5838,
                   },
@@ -3767,8 +3767,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Karli Lueilwitz",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3578.png",
                     "likeCount": 5382,
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Dolor ut qui",
                     "viewCount": 7895,
                   },
@@ -3777,8 +3777,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Bethel Cole",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3658.png",
                     "likeCount": 5113,
+                    "preview": "http://localhost/static/preview/g3658.png",
                     "title": "Consequatur quo sunt",
                     "viewCount": 7807,
                   },
@@ -3787,8 +3787,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Steve Brekke",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g4762.png",
                     "likeCount": 5005,
+                    "preview": "http://localhost/static/preview/g4762.png",
                     "title": "Maiores voluptatem dolore",
                     "viewCount": 6409,
                   },
@@ -3797,8 +3797,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Genoveva Smith",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g4722.png",
                     "likeCount": 4328,
+                    "preview": "http://localhost/static/preview/g4722.png",
                     "title": "Error et",
                     "viewCount": 1914,
                   },
@@ -3807,8 +3807,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Antonetta Kuhlman",
                     },
                     "category": "D",
-                    "cover": "http://localhost/static/cover/g3658.png",
                     "likeCount": 5233,
+                    "preview": "http://localhost/static/preview/g3658.png",
                     "title": "Omnis vero eligendi",
                     "viewCount": 8250,
                   },
@@ -3817,8 +3817,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Matilde Swift",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g3578.png",
                     "likeCount": 3732,
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Ea sequi impedit",
                     "viewCount": 4558,
                   },
@@ -3827,8 +3827,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Felipa Aufderhar",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g4762.png",
                     "likeCount": 2969,
+                    "preview": "http://localhost/static/preview/g4762.png",
                     "title": "Quae ut",
                     "viewCount": 7904,
                   },
@@ -3837,8 +3837,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Camila Hahn",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3376.png",
                     "likeCount": 804,
+                    "preview": "http://localhost/static/preview/g3376.png",
                     "title": "Perferendis illum",
                     "viewCount": 5841,
                   },
@@ -3847,8 +3847,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Elody Lindgren",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g4602.png",
                     "likeCount": 1792,
+                    "preview": "http://localhost/static/preview/g4602.png",
                     "title": "Earum porro molestias",
                     "viewCount": 9885,
                   },
@@ -3857,8 +3857,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Gladyce Marquardt",
                     },
                     "category": "D",
-                    "cover": "http://localhost/static/cover/g4802.png",
                     "likeCount": 6942,
+                    "preview": "http://localhost/static/preview/g4802.png",
                     "title": "Eius exercitationem quam",
                     "viewCount": 3645,
                   },
@@ -3867,8 +3867,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Elenor Green",
                     },
                     "category": "D",
-                    "cover": "http://localhost/static/cover/g4762.png",
                     "likeCount": 6315,
+                    "preview": "http://localhost/static/preview/g4762.png",
                     "title": "Et culpa omnis",
                     "viewCount": 4544,
                   },
@@ -3877,8 +3877,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Gilbert Senger",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3658.png",
                     "likeCount": 8923,
+                    "preview": "http://localhost/static/preview/g3658.png",
                     "title": "Cum nihil aut",
                     "viewCount": 3833,
                   },
@@ -3887,8 +3887,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Rusty Gerlach",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3578.png",
                     "likeCount": 6792,
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Qui accusantium",
                     "viewCount": 5584,
                   },
@@ -3897,8 +3897,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Libby Hamill",
                     },
                     "category": "D",
-                    "cover": "http://localhost/static/cover/g3456.png",
                     "likeCount": 7200,
+                    "preview": "http://localhost/static/preview/g3456.png",
                     "title": "Dicta repudiandae",
                     "viewCount": 9821,
                   },
@@ -3991,7 +3991,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g1878.png",
+                            "uri": "http://localhost/static/preview/g1878.png",
                           }
                         }
                         style={
@@ -4140,7 +4140,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3376.png",
+                            "uri": "http://localhost/static/preview/g3376.png",
                           }
                         }
                         style={
@@ -4289,7 +4289,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g4722.png",
+                            "uri": "http://localhost/static/preview/g4722.png",
                           }
                         }
                         style={
@@ -4438,7 +4438,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3336.png",
+                            "uri": "http://localhost/static/preview/g3336.png",
                           }
                         }
                         style={
@@ -4587,7 +4587,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3578.png",
+                            "uri": "http://localhost/static/preview/g3578.png",
                           }
                         }
                         style={
@@ -4736,7 +4736,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3456.png",
+                            "uri": "http://localhost/static/preview/g3456.png",
                           }
                         }
                         style={
@@ -4885,7 +4885,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3376.png",
+                            "uri": "http://localhost/static/preview/g3376.png",
                           }
                         }
                         style={
@@ -5034,7 +5034,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g4722.png",
+                            "uri": "http://localhost/static/preview/g4722.png",
                           }
                         }
                         style={
@@ -5183,7 +5183,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3336.png",
+                            "uri": "http://localhost/static/preview/g3336.png",
                           }
                         }
                         style={
@@ -5332,7 +5332,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g4842.png",
+                            "uri": "http://localhost/static/preview/g4842.png",
                           }
                         }
                         style={
@@ -5537,8 +5537,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Alexandria Blick",
                     },
                     "category": "D",
-                    "cover": "http://localhost/static/cover/g3456.png",
                     "likeCount": 6652,
+                    "preview": "http://localhost/static/preview/g3456.png",
                     "title": "Harum sit sunt",
                     "viewCount": 4710,
                   },
@@ -5547,8 +5547,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Dashawn Runte",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3336.png",
                     "likeCount": 3445,
+                    "preview": "http://localhost/static/preview/g3336.png",
                     "title": "Rerum sed facilis",
                     "viewCount": 999,
                   },
@@ -5557,8 +5557,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Lesly Casper",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g3618.png",
                     "likeCount": 2560,
+                    "preview": "http://localhost/static/preview/g3618.png",
                     "title": "Vel expedita aut",
                     "viewCount": 5441,
                   },
@@ -5567,8 +5567,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Gaetano Nitzsche",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3456.png",
                     "likeCount": 5308,
+                    "preview": "http://localhost/static/preview/g3456.png",
                     "title": "Voluptates corporis ipsam",
                     "viewCount": 2706,
                   },
@@ -5577,8 +5577,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Allan Swift",
                     },
                     "category": "D",
-                    "cover": "http://localhost/static/cover/g3578.png",
                     "likeCount": 8672,
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Quo quam architecto",
                     "viewCount": 5667,
                   },
@@ -5587,8 +5587,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Darryl Hermiston",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g4802.png",
                     "likeCount": 8709,
+                    "preview": "http://localhost/static/preview/g4802.png",
                     "title": "Rerum libero",
                     "viewCount": 3585,
                   },
@@ -5597,8 +5597,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Ned Mohr",
                     },
                     "category": "D",
-                    "cover": "http://localhost/static/cover/g4642.png",
                     "likeCount": 4946,
+                    "preview": "http://localhost/static/preview/g4642.png",
                     "title": "Sed qui",
                     "viewCount": 2688,
                   },
@@ -5607,8 +5607,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Gordon Conn",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g4642.png",
                     "likeCount": 956,
+                    "preview": "http://localhost/static/preview/g4642.png",
                     "title": "Rerum odio et",
                     "viewCount": 1955,
                   },
@@ -5617,8 +5617,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Immanuel Turner",
                     },
                     "category": "D",
-                    "cover": "http://localhost/static/cover/g3578.png",
                     "likeCount": 7685,
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Consequatur maxime temporibus",
                     "viewCount": 4560,
                   },
@@ -5627,8 +5627,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Cayla Gutmann",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g4762.png",
                     "likeCount": 4946,
+                    "preview": "http://localhost/static/preview/g4762.png",
                     "title": "Blanditiis facere",
                     "viewCount": 276,
                   },
@@ -5637,8 +5637,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Jay Lubowitz",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g3376.png",
                     "likeCount": 8728,
+                    "preview": "http://localhost/static/preview/g3376.png",
                     "title": "Optio sed dolorem",
                     "viewCount": 6284,
                   },
@@ -5647,8 +5647,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Richmond Thompson",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g4642.png",
                     "likeCount": 8654,
+                    "preview": "http://localhost/static/preview/g4642.png",
                     "title": "Placeat qui",
                     "viewCount": 9295,
                   },
@@ -5657,8 +5657,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Marina Rutherford",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3578.png",
                     "likeCount": 6776,
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Et quidem eos",
                     "viewCount": 6825,
                   },
@@ -5667,8 +5667,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Zachary Reichel",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3578.png",
                     "likeCount": 6480,
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Est ut",
                     "viewCount": 1255,
                   },
@@ -5677,8 +5677,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Freeman Okuneva",
                     },
                     "category": "D",
-                    "cover": "http://localhost/static/cover/g3578.png",
                     "likeCount": 6786,
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Vero ut",
                     "viewCount": 4890,
                   },
@@ -5687,8 +5687,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Rosalinda Marquardt",
                     },
                     "category": "D",
-                    "cover": "http://localhost/static/cover/g3578.png",
                     "likeCount": 7333,
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Necessitatibus optio officia",
                     "viewCount": 4074,
                   },
@@ -5697,8 +5697,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Merle Bechtelar",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g4802.png",
                     "likeCount": 2218,
+                    "preview": "http://localhost/static/preview/g4802.png",
                     "title": "Sapiente odio natus",
                     "viewCount": 5486,
                   },
@@ -5707,8 +5707,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Reva Ward",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g4722.png",
                     "likeCount": 4376,
+                    "preview": "http://localhost/static/preview/g4722.png",
                     "title": "Sunt et",
                     "viewCount": 9071,
                   },
@@ -5717,8 +5717,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Joseph Walsh",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g3658.png",
                     "likeCount": 526,
+                    "preview": "http://localhost/static/preview/g3658.png",
                     "title": "Ut molestiae est",
                     "viewCount": 9376,
                   },
@@ -5727,8 +5727,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Jaydon Wisoky",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3578.png",
                     "likeCount": 1403,
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Quia aut",
                     "viewCount": 2958,
                   },
@@ -5737,8 +5737,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Warren Sipes",
                     },
                     "category": "D",
-                    "cover": "http://localhost/static/cover/g1878.png",
                     "likeCount": 6114,
+                    "preview": "http://localhost/static/preview/g1878.png",
                     "title": "Quae quo",
                     "viewCount": 3830,
                   },
@@ -5747,8 +5747,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Marlee Cruickshank",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g3456.png",
                     "likeCount": 1595,
+                    "preview": "http://localhost/static/preview/g3456.png",
                     "title": "Nisi rerum",
                     "viewCount": 5466,
                   },
@@ -5757,8 +5757,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Antonina Tillman",
                     },
                     "category": "D",
-                    "cover": "http://localhost/static/cover/g4642.png",
                     "likeCount": 2919,
+                    "preview": "http://localhost/static/preview/g4642.png",
                     "title": "Sit architecto aut",
                     "viewCount": 920,
                   },
@@ -5767,8 +5767,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Ahmad Hills",
                     },
                     "category": "D",
-                    "cover": "http://localhost/static/cover/g4722.png",
                     "likeCount": 6603,
+                    "preview": "http://localhost/static/preview/g4722.png",
                     "title": "Aut et quia",
                     "viewCount": 2148,
                   },
@@ -5777,8 +5777,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Makenna Price",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3578.png",
                     "likeCount": 9007,
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Soluta voluptatibus dignissimos",
                     "viewCount": 250,
                   },
@@ -5787,8 +5787,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Dee Connelly",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3658.png",
                     "likeCount": 895,
+                    "preview": "http://localhost/static/preview/g3658.png",
                     "title": "Eum quidem et",
                     "viewCount": 6906,
                   },
@@ -5797,8 +5797,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Verda Hermann",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3456.png",
                     "likeCount": 9570,
+                    "preview": "http://localhost/static/preview/g3456.png",
                     "title": "Beatae nostrum",
                     "viewCount": 2253,
                   },
@@ -5807,8 +5807,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Maverick Christiansen",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3578.png",
                     "likeCount": 6650,
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Eaque optio",
                     "viewCount": 8230,
                   },
@@ -5817,8 +5817,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Imelda Konopelski",
                     },
                     "category": "D",
-                    "cover": "http://localhost/static/cover/g3578.png",
                     "likeCount": 9994,
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Explicabo doloremque aut",
                     "viewCount": 9849,
                   },
@@ -5827,8 +5827,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Charlene Hills",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g4602.png",
                     "likeCount": 9909,
+                    "preview": "http://localhost/static/preview/g4602.png",
                     "title": "Qui fuga et",
                     "viewCount": 286,
                   },
@@ -5921,7 +5921,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3456.png",
+                            "uri": "http://localhost/static/preview/g3456.png",
                           }
                         }
                         style={
@@ -6070,7 +6070,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3336.png",
+                            "uri": "http://localhost/static/preview/g3336.png",
                           }
                         }
                         style={
@@ -6219,7 +6219,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3618.png",
+                            "uri": "http://localhost/static/preview/g3618.png",
                           }
                         }
                         style={
@@ -6368,7 +6368,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3456.png",
+                            "uri": "http://localhost/static/preview/g3456.png",
                           }
                         }
                         style={
@@ -6517,7 +6517,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3578.png",
+                            "uri": "http://localhost/static/preview/g3578.png",
                           }
                         }
                         style={
@@ -6666,7 +6666,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g4802.png",
+                            "uri": "http://localhost/static/preview/g4802.png",
                           }
                         }
                         style={
@@ -6815,7 +6815,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g4642.png",
+                            "uri": "http://localhost/static/preview/g4642.png",
                           }
                         }
                         style={
@@ -6964,7 +6964,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g4642.png",
+                            "uri": "http://localhost/static/preview/g4642.png",
                           }
                         }
                         style={
@@ -7113,7 +7113,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3578.png",
+                            "uri": "http://localhost/static/preview/g3578.png",
                           }
                         }
                         style={
@@ -7262,7 +7262,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g4762.png",
+                            "uri": "http://localhost/static/preview/g4762.png",
                           }
                         }
                         style={
@@ -7467,8 +7467,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Estrella Parisian",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3578.png",
                     "likeCount": 4602,
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Tenetur consequuntur eligendi",
                     "viewCount": 800,
                   },
@@ -7477,8 +7477,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Crawford Kihn",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3658.png",
                     "likeCount": 8952,
+                    "preview": "http://localhost/static/preview/g3658.png",
                     "title": "Expedita rerum",
                     "viewCount": 2533,
                   },
@@ -7487,8 +7487,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Berry Purdy",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3456.png",
                     "likeCount": 5865,
+                    "preview": "http://localhost/static/preview/g3456.png",
                     "title": "Sed in et",
                     "viewCount": 2595,
                   },
@@ -7497,8 +7497,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Retta Macejkovic",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g4762.png",
                     "likeCount": 7860,
+                    "preview": "http://localhost/static/preview/g4762.png",
                     "title": "Alias esse et",
                     "viewCount": 6665,
                   },
@@ -7507,8 +7507,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Gianni Morissette",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g1878.png",
                     "likeCount": 2412,
+                    "preview": "http://localhost/static/preview/g1878.png",
                     "title": "Ad reiciendis porro",
                     "viewCount": 2885,
                   },
@@ -7517,8 +7517,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Camille Hintz",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g4602.png",
                     "likeCount": 4752,
+                    "preview": "http://localhost/static/preview/g4602.png",
                     "title": "Odio doloremque",
                     "viewCount": 37,
                   },
@@ -7527,8 +7527,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Nolan Treutel",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3578.png",
                     "likeCount": 548,
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Rerum deserunt",
                     "viewCount": 1728,
                   },
@@ -7537,8 +7537,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Tyler Smith",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g3456.png",
                     "likeCount": 2880,
+                    "preview": "http://localhost/static/preview/g3456.png",
                     "title": "Excepturi amet",
                     "viewCount": 2965,
                   },
@@ -7547,8 +7547,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Camylle Volkman",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g4762.png",
                     "likeCount": 6642,
+                    "preview": "http://localhost/static/preview/g4762.png",
                     "title": "Repellendus pariatur",
                     "viewCount": 6304,
                   },
@@ -7557,8 +7557,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Donny Aufderhar",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g4642.png",
                     "likeCount": 2878,
+                    "preview": "http://localhost/static/preview/g4642.png",
                     "title": "Est illo expedita",
                     "viewCount": 1379,
                   },
@@ -7567,8 +7567,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Francisco Kirlin",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g3336.png",
                     "likeCount": 6889,
+                    "preview": "http://localhost/static/preview/g3336.png",
                     "title": "Nam est",
                     "viewCount": 5796,
                   },
@@ -7577,8 +7577,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Annetta Boehm",
                     },
                     "category": "D",
-                    "cover": "http://localhost/static/cover/g4642.png",
                     "likeCount": 7364,
+                    "preview": "http://localhost/static/preview/g4642.png",
                     "title": "Autem quam",
                     "viewCount": 7996,
                   },
@@ -7587,8 +7587,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Lorna Rath",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3578.png",
                     "likeCount": 2507,
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Voluptatibus at labore",
                     "viewCount": 9839,
                   },
@@ -7597,8 +7597,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Dallas Armstrong",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g4802.png",
                     "likeCount": 6140,
+                    "preview": "http://localhost/static/preview/g4802.png",
                     "title": "Distinctio ullam excepturi",
                     "viewCount": 9832,
                   },
@@ -7607,8 +7607,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Lonzo Pfannerstill",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3376.png",
                     "likeCount": 3233,
+                    "preview": "http://localhost/static/preview/g3376.png",
                     "title": "Ut ad omnis",
                     "viewCount": 461,
                   },
@@ -7617,8 +7617,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Danny Larkin",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g4842.png",
                     "likeCount": 7705,
+                    "preview": "http://localhost/static/preview/g4842.png",
                     "title": "Cumque quia non",
                     "viewCount": 6260,
                   },
@@ -7627,8 +7627,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Jaden Carter",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g3456.png",
                     "likeCount": 7684,
+                    "preview": "http://localhost/static/preview/g3456.png",
                     "title": "Soluta vel maiores",
                     "viewCount": 6981,
                   },
@@ -7637,8 +7637,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Jose Anderson",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3578.png",
                     "likeCount": 9385,
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Animi repellendus",
                     "viewCount": 4449,
                   },
@@ -7647,8 +7647,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Tavares Crona",
                     },
                     "category": "G",
-                    "cover": "http://localhost/static/cover/g3658.png",
                     "likeCount": 7127,
+                    "preview": "http://localhost/static/preview/g3658.png",
                     "title": "Itaque qui",
                     "viewCount": 2107,
                   },
@@ -7657,8 +7657,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "London Wolff",
                     },
                     "category": "N",
-                    "cover": "http://localhost/static/cover/g4762.png",
                     "likeCount": 3133,
+                    "preview": "http://localhost/static/preview/g4762.png",
                     "title": "Quidem unde",
                     "viewCount": 326,
                   },
@@ -7667,8 +7667,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Lavada White",
                     },
                     "category": "D",
-                    "cover": "http://localhost/static/cover/g3376.png",
                     "likeCount": 7486,
+                    "preview": "http://localhost/static/preview/g3376.png",
                     "title": "Quia natus autem",
                     "viewCount": 2981,
                   },
@@ -7677,8 +7677,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Guadalupe Willms",
                     },
                     "category": "D",
-                    "cover": "http://localhost/static/cover/g3618.png",
                     "likeCount": 2620,
+                    "preview": "http://localhost/static/preview/g3618.png",
                     "title": "Nobis corrupti porro",
                     "viewCount": 8661,
                   },
@@ -7687,8 +7687,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Diego Zemlak",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g3336.png",
                     "likeCount": 9829,
+                    "preview": "http://localhost/static/preview/g3336.png",
                     "title": "Blanditiis tempora ut",
                     "viewCount": 5641,
                   },
@@ -7697,8 +7697,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Shemar Rowe",
                     },
                     "category": "D",
-                    "cover": "http://localhost/static/cover/g3456.png",
                     "likeCount": 8656,
+                    "preview": "http://localhost/static/preview/g3456.png",
                     "title": "Et repellendus",
                     "viewCount": 5987,
                   },
@@ -7707,8 +7707,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Mose Ratke",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g4842.png",
                     "likeCount": 5388,
+                    "preview": "http://localhost/static/preview/g4842.png",
                     "title": "Tenetur laudantium doloremque",
                     "viewCount": 9263,
                   },
@@ -7717,8 +7717,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Brandyn Ratke",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g4802.png",
                     "likeCount": 1753,
+                    "preview": "http://localhost/static/preview/g4802.png",
                     "title": "Facilis ea",
                     "viewCount": 5088,
                   },
@@ -7727,8 +7727,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Ruby Altenwerth",
                     },
                     "category": "D",
-                    "cover": "http://localhost/static/cover/g3376.png",
                     "likeCount": 3241,
+                    "preview": "http://localhost/static/preview/g3376.png",
                     "title": "Eveniet et",
                     "viewCount": 4941,
                   },
@@ -7737,8 +7737,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Maymie Volkman",
                     },
                     "category": "M",
-                    "cover": "http://localhost/static/cover/g4802.png",
                     "likeCount": 5978,
+                    "preview": "http://localhost/static/preview/g4802.png",
                     "title": "Quisquam quam",
                     "viewCount": 8096,
                   },
@@ -7747,8 +7747,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Bessie Crona",
                     },
                     "category": "D",
-                    "cover": "http://localhost/static/cover/g3376.png",
                     "likeCount": 1024,
+                    "preview": "http://localhost/static/preview/g3376.png",
                     "title": "Repellat et est",
                     "viewCount": 3449,
                   },
@@ -7757,8 +7757,8 @@ exports[`Shelf.Home render correct 1`] = `
                       "name": "Eriberto Muller",
                     },
                     "category": "D",
-                    "cover": "http://localhost/static/cover/g4802.png",
                     "likeCount": 8874,
+                    "preview": "http://localhost/static/preview/g4802.png",
                     "title": "Vel ut",
                     "viewCount": 4724,
                   },
@@ -7851,7 +7851,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3578.png",
+                            "uri": "http://localhost/static/preview/g3578.png",
                           }
                         }
                         style={
@@ -8000,7 +8000,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3658.png",
+                            "uri": "http://localhost/static/preview/g3658.png",
                           }
                         }
                         style={
@@ -8149,7 +8149,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3456.png",
+                            "uri": "http://localhost/static/preview/g3456.png",
                           }
                         }
                         style={
@@ -8298,7 +8298,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g4762.png",
+                            "uri": "http://localhost/static/preview/g4762.png",
                           }
                         }
                         style={
@@ -8447,7 +8447,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g1878.png",
+                            "uri": "http://localhost/static/preview/g1878.png",
                           }
                         }
                         style={
@@ -8596,7 +8596,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g4602.png",
+                            "uri": "http://localhost/static/preview/g4602.png",
                           }
                         }
                         style={
@@ -8745,7 +8745,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3578.png",
+                            "uri": "http://localhost/static/preview/g3578.png",
                           }
                         }
                         style={
@@ -8894,7 +8894,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g3456.png",
+                            "uri": "http://localhost/static/preview/g3456.png",
                           }
                         }
                         style={
@@ -9043,7 +9043,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g4762.png",
+                            "uri": "http://localhost/static/preview/g4762.png",
                           }
                         }
                         style={
@@ -9192,7 +9192,7 @@ exports[`Shelf.Home render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/cover/g4642.png",
+                            "uri": "http://localhost/static/preview/g4642.png",
                           }
                         }
                         style={

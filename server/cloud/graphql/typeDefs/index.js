@@ -32,6 +32,7 @@ const schema = `
   type Clog {
     id: ID!
     title: String!
+    preview: String
     cover: String
     category: CATEGORY!
     author: Editor!

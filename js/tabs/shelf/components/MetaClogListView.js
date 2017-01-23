@@ -20,7 +20,7 @@ class ClogMeta extends React.Component {
       <TouchableOpacity style={{flex: 1, paddingHorizontal: 5, paddingVertical: 10, width: 100}}>
           <View style={{height: 90}}>
             <CircleImageWithCategory
-              source={mapSource(this.props.cover)}
+              source={mapSource(this.props.preview)}
               category={this.props.category}
               size={85}
               shadowRadius={5}

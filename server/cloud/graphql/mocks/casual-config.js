@@ -4,23 +4,27 @@ import casual from 'casual';
 
 casual.seed(1);
 
-let clogCovers = undefined;
-async function getCovers() {
-  if (clogCovers) {
-    return clogCovers;
+let clogPreviews = undefined;
+async function getPreviews() {
+  if (clogPreviews) {
+    return clogPreviews;
   }
-  let files = await new Promise((resolve, reject) => fs.readdir(path.join(__dirname, '../../../static/cover'), (err, files) => {
+  let files = await new Promise((resolve, reject) => fs.readdir(path.join(__dirname, '../../../static/preview'), (err, files) => {
     if (err) {
       return reject(err);
     }
     resolve(files);
   }));
-  clogCovers = files.map(file => `/static/cover/${file}`);
-  return clogCovers;
+  clogPreviews = files.map(file => `/static/preview/${file}`);
+  return clogPreviews;
 }
 
 casual.define('clog_cover', async () => {
-  let clogCovers = await getCovers();
+  return null;
+});
+
+casual.define('clog_preview', async () => {
+  let clogCovers = await getPreviews();
   let idx = casual.integer(from = 0, to = clogCovers.length - 1);
   return clogCovers[idx];
 });
@@ -33,7 +37,7 @@ casual.define('clog_category', async () => {
 });
 
 casual.define('profilePicture', async () => {
-  let clogCovers = await getCovers();
+  let clogCovers = await getPreviews();
   let idx = casual.integer(from = 0, to = clogCovers.length - 1);
   return clogCovers[idx];
 });

@@ -26,6 +26,16 @@ const mocks = {
     title: casual.title,
     async cover(rootValue, args, {request}) {
       let uri = await casual.clog_cover;
+      if (!uri) {
+        return null;
+      }
+      return `http://${request.get('host')}${uri}`;
+    },
+    async preview(rootValue, args, {request}) {
+      let uri = await casual.clog_preview;
+      if (!uri) {
+        return null;
+      }
       return `http://${request.get('host')}${uri}`;
     },
     category: casual.clog_category,
