@@ -462,11 +462,12 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
+                        "alignItems": "center",
                         "backgroundColor": "transparent",
                         "borderColor": "white",
                         "borderRadius": 4,
                         "borderWidth": 1,
-                        "height": 22,
+                        "flexDirection": "row",
                         "justifyContent": "center",
                         "opacity": 1,
                         "paddingHorizontal": 15,
@@ -1073,11 +1074,13 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     onStartShouldSetResponder={[Function]}
                     style={
                       Object {
+                        "alignItems": "center",
                         "backgroundColor": "transparent",
                         "borderColor": "white",
                         "borderRadius": 4,
                         "borderWidth": 1,
-                        "height": 22,
+                        "flex": 1,
+                        "flexDirection": "row",
                         "justifyContent": "center",
                         "opacity": 1,
                         "paddingHorizontal": 15,
@@ -3214,11 +3217,13 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                 onStartShouldSetResponder={[Function]}
                 style={
                   Object {
+                    "alignItems": "center",
                     "backgroundColor": "transparent",
                     "borderColor": "white",
                     "borderRadius": 4,
                     "borderWidth": 1,
-                    "height": 22,
+                    "flex": 1,
+                    "flexDirection": "row",
                     "justifyContent": "center",
                     "opacity": 1,
                     "paddingHorizontal": 15,
@@ -5346,11 +5351,12 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                 onStartShouldSetResponder={[Function]}
                 style={
                   Object {
+                    "alignItems": "center",
                     "backgroundColor": "transparent",
                     "borderColor": "white",
                     "borderRadius": 4,
                     "borderWidth": 1,
-                    "height": 22,
+                    "flexDirection": "row",
                     "justifyContent": "center",
                     "opacity": 1,
                     "paddingHorizontal": 15,

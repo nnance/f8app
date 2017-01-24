@@ -31,14 +31,12 @@ class BorderButton extends React.Component {
       containerStyle = styles.borderFadedBlack;
     }
     return (
-      <View>
-        <TouchableOpacity onPress={this.props.onPress} style={[styles.commonButton, containerStyle, this.props.containerStyle]}>
-          {
-            this.props.renderBeforeText ? this.props.renderBeforeText() : null
-          }
-          <Text style={[styles.textContainer, textStyle, this.props.textStyle]}>{this.props.caption}</Text>
-        </TouchableOpacity>
-      </View>
+      <TouchableOpacity onPress={this.props.onPress} style={[styles.commonButton, containerStyle, this.props.containerStyle]}>
+        {
+          this.props.renderBeforeText ? this.props.renderBeforeText() : null
+        }
+        <Text style={[styles.textContainer, textStyle, this.props.textStyle]}>{this.props.caption}</Text>
+      </TouchableOpacity>
     );
   }
 }
