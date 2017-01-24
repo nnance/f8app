@@ -1,5 +1,6 @@
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
+import _ from 'lodash';
 
 import Book from '../components/Book';
 
@@ -24,7 +25,10 @@ export const query = gql`
 
 export const mapQueryToProps = ({ ownProps, data }) => {
   return {
-    clog: data.clog,
+    clog: {
+      ...data.clog,
+      episodes: data.loading ? [] : _.sortBy(data.clog.episodes, 'no')
+    },
     loading: data.loading
   };
 };
