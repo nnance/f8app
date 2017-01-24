@@ -108,8 +108,8 @@ class Book extends React.Component {
     }
     const clog = this.props.clog;
     return (
-      <View style={{flex: 1}}>
-        <Image source={require('../img/mockCover.png')} style={styles.cover}>
+      <View style={{flex: 1, backgroundColor: 'white'}}>
+        <Image source={mapSource(clog.cover)} style={styles.cover}>
           <TouchableOpacity style={styles.backButtonContainer} onPress={this.onBackPress.bind(this)}>
             <Image source={require('../../../common/img/icon/backButton.png')} style={commonStyles.navBarIcon}/>
           </TouchableOpacity>
@@ -137,7 +137,7 @@ class Book extends React.Component {
   }
 
   onBackPress() {
-    this.props.onBackPress && this.props.onBackPress();
+    this.props.navigator && this.props.navigator.pop();
   }
 }
 

@@ -8,6 +8,7 @@ export const query = gql`
   query Clog($id: ID!){
     clog(id: $id) {
       title
+      cover
       review
       author {
         name
@@ -43,3 +44,5 @@ export default graphql(query, {
   props: mapQueryToProps,
   options: mapPropsToOptions
 })(Book);
+
+// export default require('View')

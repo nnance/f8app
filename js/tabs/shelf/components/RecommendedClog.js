@@ -42,15 +42,17 @@ class RecommendedClog extends React.Component {
                 </Text>
               </View>
               <View style={{flex: 1, alignItems: 'flex-end'}}>
-                <View style={{padding: 10}}>
-                  <BorderButton caption="อ่าน" textStyle={{color: 'rgba(60, 30, 90, 1)'}}/>
-                </View>
+                <BorderButton onPress={this.onReadPress.bind(this)} caption="อ่าน" containerStyle={{height: 18}} textStyle={{color: 'rgba(60, 30, 90, 1)'}}/>
               </View>
             </View>
           </View>
         </Image>
       </View>
     );
+  }
+
+  onReadPress() {
+    this.props.navigator && this.props.navigator.push({page: 'book', id: this.props.id})
   }
 }
 
