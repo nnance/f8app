@@ -150,7 +150,7 @@ class ClogBanner extends React.Component {
   }
 }
 
-class RecommendClogs extends React.Component {
+export class RecommendClogs extends React.Component {
   constructor(...args) {
     super(...args);
     this.state = {

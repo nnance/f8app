@@ -1,3 +1,408 @@
+exports[`Shelf.ClogCategory RecommendClogs render 1`] = `
+<ScrollView
+  contentInset={
+    Object {
+      "bottom": 0,
+      "top": 0,
+    }
+  }
+  data={
+    Array [
+      Object {
+        "author": Object {
+          "name": "Lemuel Runolfsdottir",
+        },
+        "category": "G",
+        "followerCount": 3539,
+        "followersYouKnow": Array [
+          Object {
+            "name": "Emilie Ledner",
+            "profilePicture": "http://localhost/static/preview/g4842.png",
+          },
+          Object {
+            "name": "Bernhard Marquardt",
+            "profilePicture": "http://localhost/static/preview/g4762.png",
+          },
+          Object {
+            "name": "Genoveva Kutch",
+            "profilePicture": "http://localhost/static/preview/g4802.png",
+          },
+          Object {
+            "name": "Crystal Rogahn",
+            "profilePicture": "http://localhost/static/preview/g3658.png",
+          },
+          Object {
+            "name": "Marcelle Kling",
+            "profilePicture": "http://localhost/static/preview/g3618.png",
+          },
+          Object {
+            "name": "Brenna Bergstrom",
+            "profilePicture": "http://localhost/static/preview/g3658.png",
+          },
+          Object {
+            "name": "Furman Effertz",
+            "profilePicture": "http://localhost/static/preview/g4762.png",
+          },
+          Object {
+            "name": "Ara Ebert",
+            "profilePicture": "http://localhost/static/preview/g4722.png",
+          },
+          Object {
+            "name": "Nicholas Crooks",
+            "profilePicture": "http://localhost/static/preview/g3578.png",
+          },
+          Object {
+            "name": "Fletcher Gerhold",
+            "profilePicture": "http://localhost/static/preview/g4762.png",
+          },
+          Object {
+            "name": "Quincy Conroy",
+            "profilePicture": "http://localhost/static/preview/g3336.png",
+          },
+          Object {
+            "name": "Tomasa Murray",
+            "profilePicture": "http://localhost/static/preview/g3376.png",
+          },
+          Object {
+            "name": "Judson Spencer",
+            "profilePicture": "http://localhost/static/preview/g3618.png",
+          },
+          Object {
+            "name": "Lincoln Gibson",
+            "profilePicture": "http://localhost/static/preview/g3578.png",
+          },
+        ],
+        "id": "9971848",
+        "likeCount": 3489,
+        "preview": "http://localhost/static/preview/g3618.png",
+        "title": "Non alias magni",
+        "viewCount": 7632,
+      },
+      Object {
+        "author": Object {
+          "name": "Chaim Heller",
+        },
+        "category": "G",
+        "followerCount": 700,
+        "followersYouKnow": Array [
+          Object {
+            "name": "Brianne Predovic",
+            "profilePicture": "http://localhost/static/preview/g4722.png",
+          },
+          Object {
+            "name": "Adolphus Bahringer",
+            "profilePicture": "http://localhost/static/preview/g3376.png",
+          },
+          Object {
+            "name": "Unique Willms",
+            "profilePicture": "http://localhost/static/preview/g4762.png",
+          },
+        ],
+        "id": "2699279",
+        "likeCount": 397,
+        "preview": "http://localhost/static/preview/g3456.png",
+        "title": "Saepe facere",
+        "viewCount": 4863,
+      },
+    ]
+  }
+  dataSource={
+    ListViewDataSource {
+      "items": 2,
+    }
+  }
+  horizontal={true}
+  initialListSize={10}
+  minContentHeight={0}
+  onContentSizeChange={[Function]}
+  onEndReachedThreshold={1000}
+  onKeyboardDidHide={undefined}
+  onKeyboardDidShow={undefined}
+  onKeyboardWillHide={undefined}
+  onKeyboardWillShow={undefined}
+  onLayout={[Function]}
+  onScroll={[Function]}
+  pageSize={1}
+  pagingEnabled={true}
+  removeClippedSubviews={true}
+  renderFooter={[Function]}
+  renderRow={[Function]}
+  renderSeparator={[Function]}
+  scrollEventThrottle={50}
+  scrollRenderAheadDistance={1000}
+  showsHorizontalScrollIndicator={false}
+  stickyHeaderIndices={Array []}>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "flex": 1,
+        "marginHorizontal": 205,
+        "opacity": 1,
+        "width": 320,
+      }
+    }
+    testID={undefined}>
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "backgroundColor": "rgb(249, 220, 73)",
+            "borderBottomLeftRadius": 10,
+            "borderTopLeftRadius": 10,
+            "flex": 4,
+          }
+        }>
+        <Image
+          source={1}
+          style={
+            Object {
+              "borderRadius": 10,
+              "flex": 1,
+              "resizeMode": "cover",
+              "width": undefined,
+            }
+          }>
+          <BVLinearGradient
+            colors={
+              Array [
+                16777215,
+                4294564937,
+              ]
+            }
+            end={
+              Object {
+                "x": 1,
+                "y": 0.5,
+              }
+            }
+            locations={null}
+            start={
+              Object {
+                "x": 0.1,
+                "y": 0.5,
+              }
+            }
+            style={
+              Object {
+                "flex": 1,
+                "height": undefined,
+                "top": 0,
+              }
+            } />
+        </Image>
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "rgb(249, 220, 73)",
+            "borderBottomRightRadius": 10,
+            "borderTopRightRadius": 10,
+            "flex": 5,
+            "height": undefined,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "justifyContent": "center",
+              "paddingHorizontal": 10,
+            }
+          }>
+          <View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "white",
+                  "fontSize": 20,
+                  "fontWeight": "bold",
+                }
+              }>
+              Non alias magni
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "rgba(255, 255, 255, 0.6)",
+                  "fontSize": 16,
+                  "fontWeight": "bold",
+                }
+              }>
+              Lemuel Runolfsdottir
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#eeeeee",
+        "height": 1,
+      }
+    } />
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "flex": 1,
+        "marginHorizontal": 205,
+        "opacity": 1,
+        "width": 320,
+      }
+    }
+    testID={undefined}>
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "backgroundColor": "rgb(249, 220, 73)",
+            "borderBottomLeftRadius": 10,
+            "borderTopLeftRadius": 10,
+            "flex": 4,
+          }
+        }>
+        <Image
+          source={1}
+          style={
+            Object {
+              "borderRadius": 10,
+              "flex": 1,
+              "resizeMode": "cover",
+              "width": undefined,
+            }
+          }>
+          <BVLinearGradient
+            colors={
+              Array [
+                16777215,
+                4294564937,
+              ]
+            }
+            end={
+              Object {
+                "x": 1,
+                "y": 0.5,
+              }
+            }
+            locations={null}
+            start={
+              Object {
+                "x": 0.1,
+                "y": 0.5,
+              }
+            }
+            style={
+              Object {
+                "flex": 1,
+                "height": undefined,
+                "top": 0,
+              }
+            } />
+        </Image>
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "rgb(249, 220, 73)",
+            "borderBottomRightRadius": 10,
+            "borderTopRightRadius": 10,
+            "flex": 5,
+            "height": undefined,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "justifyContent": "center",
+              "paddingHorizontal": 10,
+            }
+          }>
+          <View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "white",
+                  "fontSize": 20,
+                  "fontWeight": "bold",
+                }
+              }>
+              Saepe facere
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "rgba(255, 255, 255, 0.6)",
+                  "fontSize": 16,
+                  "fontWeight": "bold",
+                }
+              }>
+              Chaim Heller
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#eeeeee",
+        "height": 1,
+      }
+    } />
+</ScrollView>
+`;
+
 exports[`Shelf.ClogCategory render correct 1`] = `
 <BVLinearGradient
   colors={
@@ -1033,7 +1438,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "fontWeight": "bold",
                     }
                   }>
-                  What\'s New
+                  What's New
                 </Text>
                 <View
                   style={
