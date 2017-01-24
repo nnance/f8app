@@ -31,6 +31,7 @@ const mocks = {
     trendingClogs: () => new MockList(30)
   }),
   Clog: () => ({
+    id: casual.positive_int(10000000),
     title: casual.title,
     async cover(rootValue, args, {request}) {
       let uri = await casual.clog_cover;

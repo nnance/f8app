@@ -37,7 +37,7 @@ describe('Shelf.ClogCategory', () => {
     expect(navigator.push).toBeCalledWith({page: 'clog-list-view', category: 'D', orderBy: 'TRENDING'});
   });
 
-  it('set currentClogBanner onScroll', async () => {
+  it.skip('set currentClogBanner onScroll', async () => {
     const windowSize = Dimensions.get('window').width - 20;
     const result = await graphql(query, mapPropsToOptions({category: 'D'}));
     const props = mapQueryToProps({data: result.data});
