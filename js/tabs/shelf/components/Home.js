@@ -20,6 +20,23 @@ import HeroBanner from './HeroBanner';
 import mockData from '../mockData';
 
 class Home extends React.Component {
+  constructor(...args) {
+    super(...args);
+    this.state = {
+      mainScrollX: 0,
+      mainScrollY: 0
+    };
+    this.fixScrollBug = this.fixScrollBug.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.addFixBugListener && this.props.addFixBugListener(this.fixScrollBug);
+  }
+
+  componentWillUnmount() {
+    this.props.removeFixBugListener && this.props.removeFixBugListener(this.fixScrollBug);
+  }
+
   render() {
     return (
       <View style={{flex: 1}}>
@@ -38,7 +55,12 @@ class Home extends React.Component {
             alignItems: 'flex-start'
           }}
           />
-        <ScrollView>
+        <ScrollView ref="mainScrollView" onScroll={(e) => {
+            this.setState({
+              mainScrollX: e.nativeEvent.contentOffset.x,
+              mainScrollY: e.nativeEvent.contentOffset.y
+            });
+          }}>
           <Image source={require('../img/home-bg-1.png')} style={{width: undefined, height: 700, resizeMode: 'stretch', backgroundColor: 'transparent'}}>
             <View style={{flex: 2}}>
               <HeroBanner navigator={this.props.navigator} clogs={this.props.heroBanners}/>
@@ -83,6 +105,19 @@ class Home extends React.Component {
         onPress={() => this.props.navigator.push({page: 'clog-list-view', title: 'ยอดนิยม', orderBy: 'TRENDING'})}
         />
     );
+  }
+
+  fixScrollBug() {
+    const x = this.state.mainScrollX;
+    const y = this.state.mainScrollY;
+    this.refs.mainScrollView.scrollTo({
+      x: x,
+      y: y + 1
+    });
+    this.refs.mainScrollView.scrollTo({
+      x: x,
+      y: y
+    });
   }
 }
 
