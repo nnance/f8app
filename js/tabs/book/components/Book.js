@@ -7,26 +7,20 @@ import {
   ScrollView,
   TouchableOpacity
 } from 'react-native';
+import moment from 'moment';
 
 import NavBar from '../../../common/NavBar';
 import BorderButton, {styles as borderButtonStyles} from '../../../common/BorderButton';
 import PureListView from '../../../common/PureListView';
 import CircleImage from '../../../common/CircleImage';
-import {toHumanNumber} from '../../../common/utils';
+import {toHumanNumber, mapSource} from '../../../common/utils';
 import {colors, styles as commonStyles} from '../../../common/styles';
-
-const mockData = {
-  title: 'STRANGER THINGS STRAGER THINGS',
-  author: 'บัวขาว ป. ประมุข',
-  review: 'Blalalalalalaalal Blalalalalalaalal Blalalalalalaalal Blalalalalalaalal Blalalalalalaalal Blalalalalalaalal Blalalalalalaalal Blalalalalalaalal Blalalalalalaalal Blalalalalalaalal Blalalalalalaalal',
-  episodes: [{no: 1, lock: true}, {no: 1}, {no: 1}, {no: 1}, {no: 1}, {no: 129}]
-}
 
 const MetaEpisode = (props) => (
   <View style={styles.metaEpisodeContainer}>
     <View style={{width: 60}}>
       <CircleImage
-        source={require('../../profile/img/A.png')}
+        source={mapSource(props.preview)}
         size={50}
         />
     </View>
@@ -37,17 +31,17 @@ const MetaEpisode = (props) => (
           <Text style={styles.textEpisodeNo}>{props.no}</Text>
         </View>
         <View style={{}}>
-          <Text style={styles.textEpisodeUpdateAt}>Update October 9</Text>
+          <Text style={styles.textEpisodeUpdateAt}>{moment(props.createdAt).locale('en').format('MMMM D')}</Text>
         </View>
       </View>
       <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
         <View style={{flex: 3, flexDirection: 'row', alignItems: 'center'}}>
           <Image source={require('../../../common/img/icon/read.png')} style={{width: 20, height: 20, resizeMode: 'contain', borderRadius: 4}}/>
-          <Text style={{paddingLeft: 5, fontSize: 12, color: colors.textFadedGrey}}>ดู {toHumanNumber(props.viewCount || 1000)} ครั้ง</Text>
+          <Text style={{paddingLeft: 5, fontSize: 12, color: colors.textFadedGrey}}>ดู {toHumanNumber(props.viewCount || 0)} ครั้ง</Text>
         </View>
         <View style={{flex: 4, flexDirection: 'row', alignItems: 'center'}}>
           <Image source={require('../../../common/img/icon/heart.png')} style={{width: 15, height: 15, resizeMode: 'contain', borderRadius: 4, marginLeft: 20}}/>
-          <Text style={{paddingLeft: 5, fontSize: 12, color: colors.textFadedGrey}}>{toHumanNumber(props.likeCount || 1000)} Like</Text>
+          <Text style={{paddingLeft: 5, fontSize: 12, color: colors.textFadedGrey}}>{toHumanNumber(props.likeCount || 0)} Like</Text>
         </View>
       </View>
     </View>
@@ -59,7 +53,6 @@ const MetaEpisode = (props) => (
         <BorderButton containerStyle={styles.metaEpisodeButton} textStyle={styles.unlockEpisodeText} type="lightGreen" caption="jelly"
           renderBeforeText={() => <LockImg/>}/>
       }
-
     </View>
   </View>
 );
@@ -77,7 +70,7 @@ const SubDetail = ({title, author, review }) => (
       <View style={{flex: 3}}>
         <View>
           <Text style={styles.titleText}>{title}</Text>
-          <Text style={styles.authorText}>{author}</Text>
+          <Text style={styles.authorText}>{author.name}</Text>
         </View>
       </View>
       <View style={{paddingHorizontal: 5}}>
@@ -110,7 +103,10 @@ const SubDetail = ({title, author, review }) => (
 
 class Book extends React.Component {
   render() {
-    const clog = mockData;
+    if (this.props.loading) {
+      return null;
+    }
+    const clog = this.props.clog;
     return (
       <View style={{flex: 1}}>
         <Image source={require('../img/mockCover.png')} style={styles.cover}>
@@ -160,7 +156,6 @@ const styles = StyleSheet.create({
     padding: 15
   },
   subDetailContainer: {
-    height: 200,
     width: undefined
   },
   titleText: {
@@ -182,7 +177,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 40
   },
   episodeContainer: {
-    paddingVertical: 30
+    paddingVertical: 10
   },
   metaEpisodeContainer: {
     paddingVertical: 8,
