@@ -17,7 +17,7 @@ import {getCategoryIcon} from '../../../models/clog';
 class ClogMeta extends React.Component {
   render() {
     return (
-      <TouchableOpacity style={{flex: 1, paddingHorizontal: 5, paddingVertical: 10, width: 100}}>
+      <TouchableOpacity onPress={this.props.onPress ? this.props.onPress.bind(null, this.props.id) : null} style={{flex: 1, paddingHorizontal: 5, paddingVertical: 10, width: 100}}>
           <View style={{height: 90}}>
             <CircleImageWithCategory
               source={mapSource(this.props.preview)}
@@ -54,11 +54,15 @@ export default class MetaClogListView extends React.Component {
             showsHorizontalScrollIndicator={false}
             data={this.props.clogs}
             renderRow={(props) => {
-              return <ClogMeta {...props}/>;
+              return <ClogMeta {...props} onPress={this.clogPress.bind(this)}/>;
             }}
           />
         </View>
       </View>
     );
+  }
+
+  clogPress(id) {
+    this.props.navigator && this.props.navigator.push({page: 'book', id});
   }
 }

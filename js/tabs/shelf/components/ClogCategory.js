@@ -150,6 +150,51 @@ class ClogBanner extends React.Component {
   }
 }
 
+export class RecommendClogs extends React.Component {
+  constructor(...args) {
+    super(...args);
+    this.state = {
+      currentClogBanner: 0
+    };
+  }
+
+  render() {
+    return <HorizontalListView
+      data={this.props.clogs}
+      pagingEnabled
+      showsHorizontalScrollIndicator={false}
+      renderRow={this.renderClogBanner.bind(this)}
+      onScroll={this.onScroll.bind(this)}
+    />;
+  }
+
+  renderClogBanner(data) {
+    return (
+      <TouchableOpacity onPress={this.onPress.bind(this, data.id)} style={{flex: 1, width: 320, marginHorizontal: (Dimensions.get('window').width - 320 - 20) / 2}}>
+        <ClogBanner category={this.props.category} clog={data}/>
+      </TouchableOpacity>
+    );
+  }
+
+  onPress(id) {
+    this.props.navigator && this.props.navigator.push({page: 'book', id});
+  }
+
+  onScroll(e) {
+    const offsetX = e.nativeEvent.contentOffset.x;
+    const heroBannerWidth = Dimensions.get('window').width - 20;
+    const oldIdx = this.state.currentClogBanner;
+    let idx = Math.floor(offsetX / heroBannerWidth);
+    idx = idx >= 0 ? idx : 0;
+    this.setState({
+      currentClogBanner: idx
+    });
+    if (oldIdx !== idx) {
+      this.props.onIndexChange && this.props.onIndexChange(idx);
+    }
+  }
+}
+
 class ClogCategory extends React.Component {
   constructor(...args) {
     super(...args);
@@ -198,16 +243,10 @@ class ClogCategory extends React.Component {
                   <ClogLogo category={this.props.category}/>
                 </View>
                 <View style={{height: 150, padding: 10, justifyContent: 'center', alignItems: 'center'}}>
-                  <HorizontalListView
-                    data={this.props.recommendedClogs}
-                    pagingEnabled
-                    showsHorizontalScrollIndicator={false}
-                    renderRow={this.renderClogBanner.bind(this)}
-                    onScroll={this.onScroll.bind(this)}
-                  />
+                  <RecommendClogs navigator={this.props.navigator} category={this.props.category} clogs={this.props.recommendedClogs} onIndexChange={this.onRecommendClogChange.bind(this)}/>
                 </View>
                 <View style={{height: 180, padding: 5}}>
-                  <MetaClogListView header="What's New" clogs={this.props.recentlyClogs}
+                  <MetaClogListView navigator={this.props.navigator} header="What's New" clogs={this.props.recentlyClogs}
                     renderButton={this.renderButtonViewAllClog.bind(this, {title: `What's new`, orderBy: "RECENTLY"})}/>
                 </View>
               </View>
@@ -215,7 +254,7 @@ class ClogCategory extends React.Component {
           </LinearGradient>
           <LinearGradient colors={['rgb(164, 58, 124)', 'rgb(220, 4, 87)']}>
             <View style={{height: 180, padding: 5}}>
-              <MetaClogListView header="Top Chart" clogs={this.props.trendingClogs}
+              <MetaClogListView navigator={this.props.navigator} header="Top Chart" clogs={this.props.trendingClogs}
                 renderButton={this.renderButtonViewAllClog.bind(this, {title: 'ยอดนิยม', orderBy: "TRENDING"})}/>
             </View>
             <View style={{height: 180, padding: 5}}>
@@ -250,26 +289,14 @@ class ClogCategory extends React.Component {
     );
   }
 
-  onScroll(e) {
-    const offsetX = e.nativeEvent.contentOffset.x;
-    const heroBannerWidth = Dimensions.get('window').width - 20;
-    let idx = Math.floor(offsetX / heroBannerWidth);
-    idx = idx >= 0 ? idx : 0;
+  onRecommendClogChange(idx) {
     this.setState({
       currentClogBanner: idx
     });
   }
 
-  renderClogBanner(data) {
-    return (
-      <View style={{flex: 1, width: 320, marginHorizontal: (Dimensions.get('window').width - 320 - 20) / 2}}>
-        <ClogBanner category={this.props.category} clog={data}/>
-      </View>
-    );
-  }
-
   renderButtonViewAllClog(pushOption = {}) {
-    return <BorderButton type="fadedWhite" caption="ทั้งหมด"
+    return <BorderButton type="fadedWhite" caption="ทั้งหมด" containerStyle={{flex: 1}}
       onPress={() => this.props.navigator.push({page: 'clog-list-view', category: this.props.category, ...pushOption})}
       />
   }

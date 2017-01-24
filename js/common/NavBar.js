@@ -10,6 +10,8 @@ import {
   Dimensions
 } from 'react-native';
 
+import {styles as commonStyles} from './styles';
+
 export const HEIGHT = 60;
 
 export default class NavBar extends React.Component {
@@ -37,7 +39,7 @@ export default class NavBar extends React.Component {
 
   renderBackButton() {
     return (
-      <TouchableOpacity onPress={this.props.onBackPress}><Image style={{height: 20, resizeMode: 'contain'}} source={require('./img/backButton.png')}/></TouchableOpacity>
+      <TouchableOpacity onPress={this.props.onBackPress}><Image style={commonStyles.navBarIcon} source={require('./img/icon/backButton.png')}/></TouchableOpacity>
     );
   }
 

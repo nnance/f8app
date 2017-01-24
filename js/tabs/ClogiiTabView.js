@@ -10,6 +10,7 @@ import ScrollableTabView from 'react-native-scrollable-tab-view';
 
 import ProfileScreen from './profile/containers/ProfileScreen';
 import ShelfScreen from './shelf';
+import BookScreen from './book';
 
 import ClogiiTabBar from './ClogiiTabBar';
 

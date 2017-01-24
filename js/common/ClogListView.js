@@ -13,7 +13,7 @@ import PureListView from './PureListView';
 import CircleImageWithCategory from './CircleImageWithCategory';
 import {toHumanNumber, mapSource} from './utils';
 
-const ClogRow = (props) => (<TouchableOpacity style={styles.rowContainer}>
+const ClogRow = (props) => (<TouchableOpacity onPress={props.onPress ? props.onPress.bind(null, props.id) : null} style={styles.rowContainer}>
   <CircleImageWithCategory
     source={mapSource(props.preview)}
     category={props.category}
@@ -42,10 +42,14 @@ class ClogListView extends React.Component {
       <PureListView
         data={this.props.clogs}
         renderRow={(clog) => {
-          return <ClogRow {...clog}/>;
+          return <ClogRow {...clog} onPress={this.onClogPress.bind(this)}/>;
         }}
       />
     );
+  }
+
+  onClogPress(id) {
+    this.props.navigator && this.props.navigator.push({page: 'book', id});
   }
 }
 

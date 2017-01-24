@@ -29,9 +29,19 @@ const schema = `
     profilePicture: String
   }
 
+  type Episode {
+    no: Int!
+    title: String
+    preview: String
+    viewCount: Int!
+    likeCount: Int!
+    createdAt: Date!
+  }
+
   type Clog {
     id: ID!
     title: String!
+    episodes: [Episode!]!
     preview: String
     cover: String
     category: CATEGORY!

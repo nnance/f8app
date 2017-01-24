@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Image,
   View,
   TouchableOpacity,
   StyleSheet,
@@ -21,15 +22,26 @@ class BorderButton extends React.Component {
       textStyle = styles.whiteFadedText;
       containerStyle = styles.greyButton;
     }
+    if (this.props.type === 'lightGreen') {
+      textStyle = styles.lightGreenText;
+      containerStyle = styles.lightGreenButton;
+    }
+    if (this.props.type === 'borderFadedBlack') {
+      textStyle = styles.whiteText;
+      containerStyle = styles.borderFadedBlack;
+    }
     return (
       <TouchableOpacity onPress={this.props.onPress} style={[styles.commonButton, containerStyle, this.props.containerStyle]}>
+        {
+          this.props.renderBeforeText ? this.props.renderBeforeText() : null
+        }
         <Text style={[styles.textContainer, textStyle, this.props.textStyle]}>{this.props.caption}</Text>
       </TouchableOpacity>
     );
   }
 }
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   textContainer: {
     fontSize: 12
   },
@@ -42,15 +54,23 @@ const styles = StyleSheet.create({
   whiteFadedText: {
     color: colors.textFadedWhite
   },
+  lightGreenText: {
+    color: 'rgb(141, 227, 188)'
+  },
   commonButton: {
-    height: 22,
     paddingHorizontal: 15,
     justifyContent: 'center',
+    alignItems: 'center',
     borderRadius: 4,
-    backgroundColor: 'transparent'
+    backgroundColor: 'transparent',
+    flexDirection: 'row'
   },
   whiteButton: {
     backgroundColor: 'white'
+  },
+  lightGreenButton: {
+    borderWidth: 1,
+    borderColor: 'rgb(141, 227, 188)'
   },
   fadedWhiteButton: {
     borderWidth: 1,
@@ -58,6 +78,9 @@ const styles = StyleSheet.create({
   },
   greyButton: {
     backgroundColor: colors.fadedGreyBackground
+  },
+  borderFadedBlack: {
+    backgroundColor: 'rgba(0, 0, 0, 0.8)'
   }
 });
 

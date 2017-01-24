@@ -11,7 +11,7 @@ import CircleImage from '../../../common/CircleImage';
 import HorizontalListView from '../../../common/HorizontalListView';
 import {colors} from '../../../common/styles';
 
-const Row = (props) => (<TouchableOpacity style={{flex: 1, padding: 20}}>
+const Row = (props) => (<TouchableOpacity style={{flex: 1, padding: 20}} onPress={props.onPress.bind(null, props.id)}>
   <CircleImage size={250} source={{uri: props.preview}}>
     <CircleImage size={250} source={require('../img/faded-blue.png')}>
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', paddingTop: 180}}>
@@ -32,11 +32,19 @@ class HeroBanner extends React.Component {
       <View style={{flex: 1}}>
         <HorizontalListView
           data={this.props.clogs}
-          renderRow={Row}
+          renderRow={this.renderRow.bind(this)}
           showsHorizontalScrollIndicator={false}
           />
       </View>
     );
+  }
+
+  renderRow(props) {
+    return <Row {...props} onPress={this.onBannerPress.bind(this)}/>;
+  }
+
+  onBannerPress(id) {
+    this.props.navigator && this.props.navigator.push({page: 'book', id});
   }
 }
 

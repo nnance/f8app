@@ -41,20 +41,20 @@ class Home extends React.Component {
         <ScrollView>
           <Image source={require('../img/home-bg-1.png')} style={{width: undefined, height: 700, resizeMode: 'stretch', backgroundColor: 'transparent'}}>
             <View style={{flex: 2}}>
-              <HeroBanner clogs={this.props.heroBanners}/>
+              <HeroBanner navigator={this.props.navigator} clogs={this.props.heroBanners}/>
             </View>
             <View style={{flex: 1, paddingLeft: 10}}>
-              <MetaClogListView header="TRENDING" clogs={this.props.trendingClogs} renderButton={this.renderTrendingButton.bind(this)}/>
+              <MetaClogListView navigator={this.props.navigator} header="TRENDING" clogs={this.props.trendingClogs} renderButton={this.renderTrendingButton.bind(this)}/>
             </View>
             <View style={{flex: 1.6}}>
-              <RecommendedClog {...this.props.recommendedClog}/>
+              <RecommendedClog {...this.props.recommendedClog} navigator={this.props.navigator}/>
             </View>
           </Image>
           <Image source={require('../img/home-bg-1.5.png')} style={{resizeMode: 'stretch', backgroundColor: 'transparent', width: undefined, height: undefined, paddingTop: 20}}>
             {
               this.props.favoriteTags.map((tag, idx) => (
                 <View key={idx} style={{paddingLeft: 10, paddingTop: 10}}>
-                  <MetaClogListView header={tag.name.toUpperCase()} clogs={tag.trendingClogs} renderButton={!tag.following ? this.renderFollowButton.bind(this) : this.renderUnfollowButton.bind(this)}/>
+                  <MetaClogListView navigator={this.props.navigator} header={tag.name.toUpperCase()} clogs={tag.trendingClogs} renderButton={!tag.following ? this.renderFollowButton.bind(this) : this.renderUnfollowButton.bind(this)}/>
                 </View>
               ))
             }
@@ -88,6 +88,7 @@ class Home extends React.Component {
 
 const styles = StyleSheet.create({
   clogListButton: {
+    flex: 1,
     width: 80,
     paddingHorizontal: 0,
     alignItems: 'center'

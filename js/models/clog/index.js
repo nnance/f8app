@@ -33,6 +33,7 @@ export function getCategoryLogo(category) {
 export const fragments = {
   clogMetaData: gql`
     fragment clogMetaData on Clog {
+      id
       title
       preview
       category
