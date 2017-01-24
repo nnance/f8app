@@ -2,6 +2,14 @@ import './casual-config';
 import casual from 'casual';
 import {MockList} from 'graphql-tools';
 
+const preview = async (rootValue, args, {request}) => {
+  let uri = await casual.clog_preview;
+  if (!uri) {
+    return null;
+  }
+  return `http://${request.get('host')}${uri}`;
+}
+
 const mocks = {
   Date: () => new Date(casual.moment),
   User: () => ({
@@ -31,19 +39,22 @@ const mocks = {
       }
       return `http://${request.get('host')}${uri}`;
     },
-    async preview(rootValue, args, {request}) {
-      let uri = await casual.clog_preview;
-      if (!uri) {
-        return null;
-      }
-      return `http://${request.get('host')}${uri}`;
-    },
+    preview,
     category: casual.clog_category,
     review: casual.sentences(n = 20),
     followerCount: casual.integer(from=0, to=10000),
     followersYouKnow: () => new MockList(casual.integer(from=0, to=25)),
-    likeCount: casual.integer(from = 0, to = 10000),
-    viewCount: casual.integer(from = 0, to = 10000)
+    likeCount: casual.positive_int(10000),
+    viewCount: casual.positive_int(10000),
+    episodes: () => new MockList(20)
+  }),
+  Episode: () => ({
+    no: casual.positive_int(10),
+    title: casual.title,
+    preview,
+    viewCount: casual.positive_int(10000),
+    likeCount: casual.positive_int(10000),
+    createdAt: () => new Date(casual.moment)
   }),
   CategoryDetail: () => ({
     category: casual.clog_category,

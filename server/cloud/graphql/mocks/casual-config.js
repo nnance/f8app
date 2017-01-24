@@ -42,6 +42,10 @@ casual.define('profilePicture', async () => {
   return clogCovers[idx];
 });
 
+casual.define('positive_int', function(max) {
+  return casual.integer(from = 0, to = max);
+});
+
 casual.define('arrayN', function(max) {
   let n = casual.integer(from = 0, to = max);
   let result = [];
