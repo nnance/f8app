@@ -165,9 +165,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: colors.textFadedGrey
   },
-  reviewContainer: {
-    paddingHorizontal: 5
-  },
+  reviewContainer: {},
   reviewText: {
     fontSize: 14,
     color: colors.textGrey
