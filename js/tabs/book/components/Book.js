@@ -8,6 +8,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 import moment from 'moment';
+import ReadMore from '@exponent/react-native-read-more-text';
 
 import NavBar from '../../../common/NavBar';
 import BorderButton, {styles as borderButtonStyles} from '../../../common/BorderButton';
@@ -64,6 +65,28 @@ const LockImg = () => (
   </View>
 );
 
+const ReadMoreRender = (handlePress) => (
+  <TouchableOpacity
+    style={{
+      alignItems: 'flex-end'
+    }}
+    onPress={handlePress}
+    >
+    <Text style={{color: colors.textFadedGrey, fontSize: 12, padding: 5}}>Read more</Text>
+  </TouchableOpacity>
+);
+
+const ShowLessRender = (handlePress) => (
+  <TouchableOpacity
+    style={{
+      alignItems: 'flex-end'
+    }}
+    onPress={handlePress}
+    >
+    <Text style={{color: colors.textFadedGrey, fontSize: 12, padding: 5}}>Show less</Text>
+  </TouchableOpacity>
+);
+
 const SubDetail = ({title, author, review }) => (
   <View style={styles.subDetailContainer}>
     <View style={{flexDirection: 'row', paddingVertical: 10}}>
@@ -79,7 +102,14 @@ const SubDetail = ({title, author, review }) => (
     </View>
     <View>
       <View style={styles.reviewContainer}>
-        <Text style={styles.reviewText}>{review}</Text>
+        <ReadMore
+          numberOfLines={3}
+          style={styles.reviewText}
+          renderTruncatedFooter={ReadMoreRender}
+          renderRevealedFooter={ShowLessRender}
+          >
+          {review}
+        </ReadMore>
       </View>
     </View>
     <View>

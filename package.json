@@ -13,6 +13,7 @@
     "dev:db": ". ./scripts/dev-db"
   },
   "dependencies": {
+    "@exponent/react-native-read-more-text": "^1.0.0",
     "apollo-client": "^0.7.1",
     "apollo-server": "^0.3.3",
     "art": "~0.10.1",
