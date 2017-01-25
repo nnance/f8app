@@ -19,7 +19,7 @@ import ClogListView from '../../../common/ClogListView';
 class MyClogScreen extends React.Component {
   render() {
     return (<View style={commonStyles.listViewContainer}>
-      <NavBar title="Clog ของฉัน" onLeftPress={this.props.onBackPress}/>
+      <NavBar title="Clog ของฉัน" onBackPress={this.props.onBackPress}/>
       <ClogListView clogs={this.props.clogs}/>
     </View>);
   }

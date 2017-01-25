@@ -58,7 +58,7 @@ class ProfileEditorScreen extends React.Component {
       <NavBar
         title="แก้ไขข้อมูล"
         renderRightMenu={OKButton}
-        onLeftPress={this.props.onBackPress}
+        onBackPress={this.props.onBackPress}
         onRightPress={() => {
           this.setState({
             savingProfile: true

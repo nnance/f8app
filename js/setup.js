@@ -27,7 +27,7 @@
 import { ApolloProvider } from 'react-apollo';
 import client from './store/apollo';
 
-var F8App = require('F8App');
+var App = require('App');
 var FacebookSDK = require('FacebookSDK');
 var Parse = require('parse/react-native');
 var React = require('React');
@@ -68,7 +68,7 @@ function setup(): React.Component {
       }
       return (
         <ApolloProvider store={this.state.store} client={this.state.client}>
-          <F8App/>
+          <App/>
         </ApolloProvider>
       );
     }
