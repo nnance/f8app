@@ -57,13 +57,16 @@ exports[`ProfileScreen ProfileMenuScreen render 1`] = `
           Object {
             "alignItems": "center",
             "flexDirection": "row",
+            "justifyContent": "center",
             "padding": 10,
+            "width": 200,
           }
         }>
         <Text
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
+          numberOfLines={1}
           style={
             Object {
               "color": "white",
@@ -308,410 +311,413 @@ exports[`ProfileScreen ProfileMenuScreen render 1`] = `
     style={
       Object {
         "backgroundColor": "white",
-        "flex": 2,
+        "flex": 1,
       }
     }>
     <ScrollView
-      contentInset={
-        Object {
-          "bottom": 1354,
-          "top": 0,
-        }
-      }
-      data={
-        Array [
+      onScroll={[Function]}>
+      <ScrollView
+        contentInset={
           Object {
-            "icon": 1,
-            "name": "bookmark",
-            "title": "Bookmark",
-          },
-          Object {
-            "icon": 1,
-            "name": "myclog",
-            "title": "Clog ของฉัน",
-          },
-          Object {
-            "icon": 1,
-            "name": "myfan",
-            "title": "แฟนคลับของฉัน",
-          },
-          Object {
-            "icon": 1,
-            "name": "jellyShop",
-            "title": "Jelly Shop",
-          },
-          Object {
-            "icon": 1,
-            "name": "activity",
-            "title": "กิจกรรม",
-          },
-          Object {
-            "icon": 1,
-            "name": "logout",
-            "title": "Logout",
-          },
-        ]
-      }
-      dataSource={
-        ListViewDataSource {
-          "items": 6,
-        }
-      }
-      initialListSize={10}
-      minContentHeight={1354}
-      onContentSizeChange={[Function]}
-      onEndReachedThreshold={1000}
-      onKeyboardDidHide={undefined}
-      onKeyboardDidShow={undefined}
-      onKeyboardWillHide={undefined}
-      onKeyboardWillShow={undefined}
-      onLayout={[Function]}
-      onScroll={[Function]}
-      pageSize={1}
-      removeClippedSubviews={true}
-      renderFooter={[Function]}
-      renderRow={[Function]}
-      renderSeparator={[Function]}
-      scrollEventThrottle={50}
-      scrollRenderAheadDistance={1000}
-      stickyHeaderIndices={Array []}
-      title="Profile">
-      <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
-        accessible={true}
-        hitSlop={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "opacity": 1,
+            "bottom": 0,
+            "top": 0,
           }
         }
-        testID={undefined}>
+        data={
+          Array [
+            Object {
+              "icon": 1,
+              "name": "bookmark",
+              "title": "Bookmark",
+            },
+            Object {
+              "icon": 1,
+              "name": "myclog",
+              "title": "Clog ของฉัน",
+            },
+            Object {
+              "icon": 1,
+              "name": "myfan",
+              "title": "แฟนคลับของฉัน",
+            },
+            Object {
+              "icon": 1,
+              "name": "jellyShop",
+              "title": "Jelly Shop",
+            },
+            Object {
+              "icon": 1,
+              "name": "activity",
+              "title": "กิจกรรม",
+            },
+            Object {
+              "icon": 1,
+              "name": "logout",
+              "title": "Logout",
+            },
+          ]
+        }
+        dataSource={
+          ListViewDataSource {
+            "items": 6,
+          }
+        }
+        initialListSize={10}
+        minContentHeight={0}
+        onContentSizeChange={[Function]}
+        onEndReachedThreshold={1000}
+        onKeyboardDidHide={undefined}
+        onKeyboardDidShow={undefined}
+        onKeyboardWillHide={undefined}
+        onKeyboardWillShow={undefined}
+        onLayout={[Function]}
+        onScroll={[Function]}
+        pageSize={1}
+        removeClippedSubviews={true}
+        renderFooter={[Function]}
+        renderRow={[Function]}
+        renderSeparator={[Function]}
+        scrollEventThrottle={50}
+        scrollRenderAheadDistance={1000}
+        stickyHeaderIndices={Array []}
+        title="Profile">
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "row",
+                "padding": 15,
+              }
+            }>
+            <Image
+              source={1}
+              style={
+                Object {
+                  "height": 20,
+                  "resizeMode": "contain",
+                  "width": 20,
+                }
+              } />
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "paddingLeft": 20,
+                }
+              }>
+              Bookmark
+            </Text>
+          </View>
+        </View>
         <View
           style={
             Object {
-              "flex": 1,
-              "flexDirection": "row",
-              "padding": 15,
+              "backgroundColor": "#eeeeee",
+              "height": 1,
             }
-          }>
-          <Image
-            source={1}
+          } />
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <View
             style={
               Object {
-                "height": 20,
-                "resizeMode": "contain",
-                "width": 20,
-              }
-            } />
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "paddingLeft": 20,
+                "flex": 1,
+                "flexDirection": "row",
+                "padding": 15,
               }
             }>
-            Bookmark
-          </Text>
+            <Image
+              source={1}
+              style={
+                Object {
+                  "height": 20,
+                  "resizeMode": "contain",
+                  "width": 20,
+                }
+              } />
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "paddingLeft": 20,
+                }
+              }>
+              Clog ของฉัน
+            </Text>
+          </View>
         </View>
-      </View>
-      <View
-        style={
-          Object {
-            "backgroundColor": "#eeeeee",
-            "height": 1,
-          }
-        } />
-      <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
-        accessible={true}
-        hitSlop={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "opacity": 1,
-          }
-        }
-        testID={undefined}>
         <View
           style={
             Object {
-              "flex": 1,
-              "flexDirection": "row",
-              "padding": 15,
+              "backgroundColor": "#eeeeee",
+              "height": 1,
             }
-          }>
-          <Image
-            source={1}
+          } />
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <View
             style={
               Object {
-                "height": 20,
-                "resizeMode": "contain",
-                "width": 20,
-              }
-            } />
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "paddingLeft": 20,
+                "flex": 1,
+                "flexDirection": "row",
+                "padding": 15,
               }
             }>
-            Clog ของฉัน
-          </Text>
+            <Image
+              source={1}
+              style={
+                Object {
+                  "height": 20,
+                  "resizeMode": "contain",
+                  "width": 20,
+                }
+              } />
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "paddingLeft": 20,
+                }
+              }>
+              แฟนคลับของฉัน
+            </Text>
+          </View>
         </View>
-      </View>
-      <View
-        style={
-          Object {
-            "backgroundColor": "#eeeeee",
-            "height": 1,
-          }
-        } />
-      <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
-        accessible={true}
-        hitSlop={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "opacity": 1,
-          }
-        }
-        testID={undefined}>
         <View
           style={
             Object {
-              "flex": 1,
-              "flexDirection": "row",
-              "padding": 15,
+              "backgroundColor": "#eeeeee",
+              "height": 1,
             }
-          }>
-          <Image
-            source={1}
+          } />
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <View
             style={
               Object {
-                "height": 20,
-                "resizeMode": "contain",
-                "width": 20,
-              }
-            } />
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "paddingLeft": 20,
+                "flex": 1,
+                "flexDirection": "row",
+                "padding": 15,
               }
             }>
-            แฟนคลับของฉัน
-          </Text>
+            <Image
+              source={1}
+              style={
+                Object {
+                  "height": 20,
+                  "resizeMode": "contain",
+                  "width": 20,
+                }
+              } />
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "paddingLeft": 20,
+                }
+              }>
+              Jelly Shop
+            </Text>
+          </View>
         </View>
-      </View>
-      <View
-        style={
-          Object {
-            "backgroundColor": "#eeeeee",
-            "height": 1,
-          }
-        } />
-      <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
-        accessible={true}
-        hitSlop={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "opacity": 1,
-          }
-        }
-        testID={undefined}>
         <View
           style={
             Object {
-              "flex": 1,
-              "flexDirection": "row",
-              "padding": 15,
+              "backgroundColor": "#eeeeee",
+              "height": 1,
             }
-          }>
-          <Image
-            source={1}
+          } />
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <View
             style={
               Object {
-                "height": 20,
-                "resizeMode": "contain",
-                "width": 20,
-              }
-            } />
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "paddingLeft": 20,
+                "flex": 1,
+                "flexDirection": "row",
+                "padding": 15,
               }
             }>
-            Jelly Shop
-          </Text>
+            <Image
+              source={1}
+              style={
+                Object {
+                  "height": 20,
+                  "resizeMode": "contain",
+                  "width": 20,
+                }
+              } />
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "paddingLeft": 20,
+                }
+              }>
+              กิจกรรม
+            </Text>
+          </View>
         </View>
-      </View>
-      <View
-        style={
-          Object {
-            "backgroundColor": "#eeeeee",
-            "height": 1,
-          }
-        } />
-      <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
-        accessible={true}
-        hitSlop={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "opacity": 1,
-          }
-        }
-        testID={undefined}>
         <View
           style={
             Object {
-              "flex": 1,
-              "flexDirection": "row",
-              "padding": 15,
+              "backgroundColor": "#eeeeee",
+              "height": 1,
             }
-          }>
-          <Image
-            source={1}
+          } />
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <View
             style={
               Object {
-                "height": 20,
-                "resizeMode": "contain",
-                "width": 20,
-              }
-            } />
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "paddingLeft": 20,
+                "flex": 1,
+                "flexDirection": "row",
+                "padding": 15,
               }
             }>
-            กิจกรรม
-          </Text>
+            <Image
+              source={1}
+              style={
+                Object {
+                  "height": 20,
+                  "resizeMode": "contain",
+                  "width": 20,
+                }
+              } />
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "paddingLeft": 20,
+                }
+              }>
+              Logout
+            </Text>
+          </View>
         </View>
-      </View>
-      <View
-        style={
-          Object {
-            "backgroundColor": "#eeeeee",
-            "height": 1,
-          }
-        } />
-      <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
-        accessible={true}
-        hitSlop={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "opacity": 1,
-          }
-        }
-        testID={undefined}>
         <View
           style={
             Object {
-              "flex": 1,
-              "flexDirection": "row",
-              "padding": 15,
+              "backgroundColor": "#eeeeee",
+              "height": 1,
             }
-          }>
-          <Image
-            source={1}
-            style={
-              Object {
-                "height": 20,
-                "resizeMode": "contain",
-                "width": 20,
-              }
-            } />
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "paddingLeft": 20,
-              }
-            }>
-            Logout
-          </Text>
-        </View>
-      </View>
-      <View
-        style={
-          Object {
-            "backgroundColor": "#eeeeee",
-            "height": 1,
-          }
-        } />
+          } />
+      </ScrollView>
     </ScrollView>
   </View>
   <View
@@ -952,13 +958,16 @@ exports[`ProfileScreen render 1`] = `
                 Object {
                   "alignItems": "center",
                   "flexDirection": "row",
+                  "justifyContent": "center",
                   "padding": 10,
+                  "width": 200,
                 }
               }>
               <Text
                 accessible={true}
                 allowFontScaling={true}
                 ellipsizeMode="tail"
+                numberOfLines={1}
                 style={
                   Object {
                     "color": "white",
@@ -1203,410 +1212,413 @@ exports[`ProfileScreen render 1`] = `
           style={
             Object {
               "backgroundColor": "white",
-              "flex": 2,
+              "flex": 1,
             }
           }>
           <ScrollView
-            contentInset={
-              Object {
-                "bottom": 1354,
-                "top": 0,
-              }
-            }
-            data={
-              Array [
+            onScroll={[Function]}>
+            <ScrollView
+              contentInset={
                 Object {
-                  "icon": 1,
-                  "name": "bookmark",
-                  "title": "Bookmark",
-                },
-                Object {
-                  "icon": 1,
-                  "name": "myclog",
-                  "title": "Clog ของฉัน",
-                },
-                Object {
-                  "icon": 1,
-                  "name": "myfan",
-                  "title": "แฟนคลับของฉัน",
-                },
-                Object {
-                  "icon": 1,
-                  "name": "jellyShop",
-                  "title": "Jelly Shop",
-                },
-                Object {
-                  "icon": 1,
-                  "name": "activity",
-                  "title": "กิจกรรม",
-                },
-                Object {
-                  "icon": 1,
-                  "name": "logout",
-                  "title": "Logout",
-                },
-              ]
-            }
-            dataSource={
-              ListViewDataSource {
-                "items": 6,
-              }
-            }
-            initialListSize={10}
-            minContentHeight={1354}
-            onContentSizeChange={[Function]}
-            onEndReachedThreshold={1000}
-            onKeyboardDidHide={undefined}
-            onKeyboardDidShow={undefined}
-            onKeyboardWillHide={undefined}
-            onKeyboardWillShow={undefined}
-            onLayout={[Function]}
-            onScroll={[Function]}
-            pageSize={1}
-            removeClippedSubviews={true}
-            renderFooter={[Function]}
-            renderRow={[Function]}
-            renderSeparator={[Function]}
-            scrollEventThrottle={50}
-            scrollRenderAheadDistance={1000}
-            stickyHeaderIndices={Array []}
-            title="Profile">
-            <View
-              accessibilityComponentType={undefined}
-              accessibilityLabel={undefined}
-              accessibilityTraits={undefined}
-              accessible={true}
-              hitSlop={undefined}
-              onLayout={undefined}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "opacity": 1,
+                  "bottom": 0,
+                  "top": 0,
                 }
               }
-              testID={undefined}>
+              data={
+                Array [
+                  Object {
+                    "icon": 1,
+                    "name": "bookmark",
+                    "title": "Bookmark",
+                  },
+                  Object {
+                    "icon": 1,
+                    "name": "myclog",
+                    "title": "Clog ของฉัน",
+                  },
+                  Object {
+                    "icon": 1,
+                    "name": "myfan",
+                    "title": "แฟนคลับของฉัน",
+                  },
+                  Object {
+                    "icon": 1,
+                    "name": "jellyShop",
+                    "title": "Jelly Shop",
+                  },
+                  Object {
+                    "icon": 1,
+                    "name": "activity",
+                    "title": "กิจกรรม",
+                  },
+                  Object {
+                    "icon": 1,
+                    "name": "logout",
+                    "title": "Logout",
+                  },
+                ]
+              }
+              dataSource={
+                ListViewDataSource {
+                  "items": 6,
+                }
+              }
+              initialListSize={10}
+              minContentHeight={0}
+              onContentSizeChange={[Function]}
+              onEndReachedThreshold={1000}
+              onKeyboardDidHide={undefined}
+              onKeyboardDidShow={undefined}
+              onKeyboardWillHide={undefined}
+              onKeyboardWillShow={undefined}
+              onLayout={[Function]}
+              onScroll={[Function]}
+              pageSize={1}
+              removeClippedSubviews={true}
+              renderFooter={[Function]}
+              renderRow={[Function]}
+              renderSeparator={[Function]}
+              scrollEventThrottle={50}
+              scrollRenderAheadDistance={1000}
+              stickyHeaderIndices={Array []}
+              title="Profile">
+              <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+                testID={undefined}>
+                <View
+                  style={
+                    Object {
+                      "flex": 1,
+                      "flexDirection": "row",
+                      "padding": 15,
+                    }
+                  }>
+                  <Image
+                    source={1}
+                    style={
+                      Object {
+                        "height": 20,
+                        "resizeMode": "contain",
+                        "width": 20,
+                      }
+                    } />
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "paddingLeft": 20,
+                      }
+                    }>
+                    Bookmark
+                  </Text>
+                </View>
+              </View>
               <View
                 style={
                   Object {
-                    "flex": 1,
-                    "flexDirection": "row",
-                    "padding": 15,
+                    "backgroundColor": "#eeeeee",
+                    "height": 1,
                   }
-                }>
-                <Image
-                  source={1}
+                } />
+              <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+                testID={undefined}>
+                <View
                   style={
                     Object {
-                      "height": 20,
-                      "resizeMode": "contain",
-                      "width": 20,
-                    }
-                  } />
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  style={
-                    Object {
-                      "paddingLeft": 20,
+                      "flex": 1,
+                      "flexDirection": "row",
+                      "padding": 15,
                     }
                   }>
-                  Bookmark
-                </Text>
+                  <Image
+                    source={1}
+                    style={
+                      Object {
+                        "height": 20,
+                        "resizeMode": "contain",
+                        "width": 20,
+                      }
+                    } />
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "paddingLeft": 20,
+                      }
+                    }>
+                    Clog ของฉัน
+                  </Text>
+                </View>
               </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "backgroundColor": "#eeeeee",
-                  "height": 1,
-                }
-              } />
-            <View
-              accessibilityComponentType={undefined}
-              accessibilityLabel={undefined}
-              accessibilityTraits={undefined}
-              accessible={true}
-              hitSlop={undefined}
-              onLayout={undefined}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "opacity": 1,
-                }
-              }
-              testID={undefined}>
               <View
                 style={
                   Object {
-                    "flex": 1,
-                    "flexDirection": "row",
-                    "padding": 15,
+                    "backgroundColor": "#eeeeee",
+                    "height": 1,
                   }
-                }>
-                <Image
-                  source={1}
+                } />
+              <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+                testID={undefined}>
+                <View
                   style={
                     Object {
-                      "height": 20,
-                      "resizeMode": "contain",
-                      "width": 20,
-                    }
-                  } />
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  style={
-                    Object {
-                      "paddingLeft": 20,
+                      "flex": 1,
+                      "flexDirection": "row",
+                      "padding": 15,
                     }
                   }>
-                  Clog ของฉัน
-                </Text>
+                  <Image
+                    source={1}
+                    style={
+                      Object {
+                        "height": 20,
+                        "resizeMode": "contain",
+                        "width": 20,
+                      }
+                    } />
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "paddingLeft": 20,
+                      }
+                    }>
+                    แฟนคลับของฉัน
+                  </Text>
+                </View>
               </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "backgroundColor": "#eeeeee",
-                  "height": 1,
-                }
-              } />
-            <View
-              accessibilityComponentType={undefined}
-              accessibilityLabel={undefined}
-              accessibilityTraits={undefined}
-              accessible={true}
-              hitSlop={undefined}
-              onLayout={undefined}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "opacity": 1,
-                }
-              }
-              testID={undefined}>
               <View
                 style={
                   Object {
-                    "flex": 1,
-                    "flexDirection": "row",
-                    "padding": 15,
+                    "backgroundColor": "#eeeeee",
+                    "height": 1,
                   }
-                }>
-                <Image
-                  source={1}
+                } />
+              <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+                testID={undefined}>
+                <View
                   style={
                     Object {
-                      "height": 20,
-                      "resizeMode": "contain",
-                      "width": 20,
-                    }
-                  } />
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  style={
-                    Object {
-                      "paddingLeft": 20,
+                      "flex": 1,
+                      "flexDirection": "row",
+                      "padding": 15,
                     }
                   }>
-                  แฟนคลับของฉัน
-                </Text>
+                  <Image
+                    source={1}
+                    style={
+                      Object {
+                        "height": 20,
+                        "resizeMode": "contain",
+                        "width": 20,
+                      }
+                    } />
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "paddingLeft": 20,
+                      }
+                    }>
+                    Jelly Shop
+                  </Text>
+                </View>
               </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "backgroundColor": "#eeeeee",
-                  "height": 1,
-                }
-              } />
-            <View
-              accessibilityComponentType={undefined}
-              accessibilityLabel={undefined}
-              accessibilityTraits={undefined}
-              accessible={true}
-              hitSlop={undefined}
-              onLayout={undefined}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "opacity": 1,
-                }
-              }
-              testID={undefined}>
               <View
                 style={
                   Object {
-                    "flex": 1,
-                    "flexDirection": "row",
-                    "padding": 15,
+                    "backgroundColor": "#eeeeee",
+                    "height": 1,
                   }
-                }>
-                <Image
-                  source={1}
+                } />
+              <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+                testID={undefined}>
+                <View
                   style={
                     Object {
-                      "height": 20,
-                      "resizeMode": "contain",
-                      "width": 20,
-                    }
-                  } />
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  style={
-                    Object {
-                      "paddingLeft": 20,
+                      "flex": 1,
+                      "flexDirection": "row",
+                      "padding": 15,
                     }
                   }>
-                  Jelly Shop
-                </Text>
+                  <Image
+                    source={1}
+                    style={
+                      Object {
+                        "height": 20,
+                        "resizeMode": "contain",
+                        "width": 20,
+                      }
+                    } />
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "paddingLeft": 20,
+                      }
+                    }>
+                    กิจกรรม
+                  </Text>
+                </View>
               </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "backgroundColor": "#eeeeee",
-                  "height": 1,
-                }
-              } />
-            <View
-              accessibilityComponentType={undefined}
-              accessibilityLabel={undefined}
-              accessibilityTraits={undefined}
-              accessible={true}
-              hitSlop={undefined}
-              onLayout={undefined}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "opacity": 1,
-                }
-              }
-              testID={undefined}>
               <View
                 style={
                   Object {
-                    "flex": 1,
-                    "flexDirection": "row",
-                    "padding": 15,
+                    "backgroundColor": "#eeeeee",
+                    "height": 1,
                   }
-                }>
-                <Image
-                  source={1}
+                } />
+              <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+                testID={undefined}>
+                <View
                   style={
                     Object {
-                      "height": 20,
-                      "resizeMode": "contain",
-                      "width": 20,
-                    }
-                  } />
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  style={
-                    Object {
-                      "paddingLeft": 20,
+                      "flex": 1,
+                      "flexDirection": "row",
+                      "padding": 15,
                     }
                   }>
-                  กิจกรรม
-                </Text>
+                  <Image
+                    source={1}
+                    style={
+                      Object {
+                        "height": 20,
+                        "resizeMode": "contain",
+                        "width": 20,
+                      }
+                    } />
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "paddingLeft": 20,
+                      }
+                    }>
+                    Logout
+                  </Text>
+                </View>
               </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "backgroundColor": "#eeeeee",
-                  "height": 1,
-                }
-              } />
-            <View
-              accessibilityComponentType={undefined}
-              accessibilityLabel={undefined}
-              accessibilityTraits={undefined}
-              accessible={true}
-              hitSlop={undefined}
-              onLayout={undefined}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "opacity": 1,
-                }
-              }
-              testID={undefined}>
               <View
                 style={
                   Object {
-                    "flex": 1,
-                    "flexDirection": "row",
-                    "padding": 15,
+                    "backgroundColor": "#eeeeee",
+                    "height": 1,
                   }
-                }>
-                <Image
-                  source={1}
-                  style={
-                    Object {
-                      "height": 20,
-                      "resizeMode": "contain",
-                      "width": 20,
-                    }
-                  } />
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  style={
-                    Object {
-                      "paddingLeft": 20,
-                    }
-                  }>
-                  Logout
-                </Text>
-              </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "backgroundColor": "#eeeeee",
-                  "height": 1,
-                }
-              } />
+                } />
+            </ScrollView>
           </ScrollView>
         </View>
         <View

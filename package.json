@@ -92,7 +92,8 @@
       "node_modules/(?!react-native|react-clone-referenced-element|parse)"
     ],
     "setupFiles": [
-      "dotenv/config"
+      "dotenv/config",
+      "./js/libs/test-setup"
     ]
   },
   "engines": {

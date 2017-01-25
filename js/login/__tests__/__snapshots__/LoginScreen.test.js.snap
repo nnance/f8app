@@ -174,38 +174,43 @@ exports[`LoginScreen render 1`] = `
 
 exports[`LoginScreen renderLeftButton 1`] = `
 <View
-  accessibilityComponentType={undefined}
-  accessibilityLabel={undefined}
-  accessibilityTraits={undefined}
-  accessible={true}
-  hitSlop={undefined}
-  onLayout={undefined}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "opacity": 1,
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
     }
-  }
-  testID={undefined}>
-  <Text
+  }>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
     accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
+    hitSlop={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "color": "white",
-        "fontSize": 30,
-        "fontWeight": "bold",
-        "paddingHorizontal": 10,
+        "opacity": 1,
       }
-    }>
-    <
-  </Text>
+    }
+    testID={undefined}>
+    <Image
+      source={1}
+      style={
+        Object {
+          "height": 20,
+          "paddingHorizontal": 15,
+          "resizeMode": "contain",
+          "width": 20,
+        }
+      } />
+  </View>
 </View>
 `;
 
@@ -295,6 +300,7 @@ exports[`LoginScreen renderTitle 1`] = `
     Object {
       "alignItems": "center",
       "flex": 1,
+      "justifyContent": "center",
     }
   }>
   <Text

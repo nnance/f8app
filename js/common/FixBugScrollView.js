@@ -16,14 +16,14 @@ class FixBugScrollView extends React.Component {
   }
 
   componentDidMount() {
-    this.context.addFixBugListener(this.fixScrollBug);
+    this.context && this.context.addFixBugListener && this.context.addFixBugListener(this.fixScrollBug);
     InteractionManager.runAfterInteractions(() => {
       this.fixScrollBug();
     });
   }
 
   componentWillUnmount() {
-    this.context.removeFixBugListener(this.fixScrollBug);
+    this.context && this.context.removeFixBugListener && this.context.removeFixBugListener(this.fixScrollBug);
   }
 
   render() {
