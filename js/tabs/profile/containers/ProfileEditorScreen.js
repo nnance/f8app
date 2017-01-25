@@ -183,6 +183,9 @@ class ProfileEditorScreen extends React.Component {
             changedProfilePicture: response
           });
         }
+        if (response.error) {
+          Alert.alert("Error", response.error);
+        }
         resolve();
       });
     });
@@ -195,6 +198,9 @@ class ProfileEditorScreen extends React.Component {
           this.setState({
             changedProfileCover: response
           });
+        }
+        if (response.error) {
+          Alert.alert("Error", response.error);
         }
         resolve();
       });
