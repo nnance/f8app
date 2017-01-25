@@ -11,6 +11,8 @@ import {
   Navigator
 } from 'react-native';
 import PureListView from '../../../common/PureListView';
+import FixBugScrollViewNavigator from '../../../common/FixBugScrollViewNavigator';
+import FixBugScrollView from '../../../common/FixBugScrollView';
 import {toHumanNumber} from '../../../common/utils';
 
 import ProfileHeader from '../components/ProfileHeader';
@@ -116,7 +118,7 @@ class NavigatorProfile extends React.Component {
 
   render() {
     return (
-      <Navigator
+      <FixBugScrollViewNavigator
         ref="navigator"
         initialRoute={{page: 'profile'}}
         renderScene={this.renderScene}
@@ -227,12 +229,14 @@ class ProfileMenuScreen extends React.Component {
           </View>
         </ProfileHeader>
         <View style={styles.menuList}>
-          <PureListView
-            minContentHeight={0}
-            title="Profile"
-            data={menuList}
-            renderRow={this.renderMenu}
-          />
+          <FixBugScrollView>
+            <PureListView
+              minContentHeight={0}
+              title="Profile"
+              data={menuList}
+              renderRow={this.renderMenu}
+            />
+          </FixBugScrollView>
         </View>
         <CandyCorner candys={this.props.candys} />
       </View>

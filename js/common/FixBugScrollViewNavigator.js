@@ -32,6 +32,7 @@ class FixBugScrollViewNavigator extends React.Component {
   render() {
     return (
       <Navigator
+        ref="navigator"
         onWillFocus={this.onWillFocus.bind(this)}
         {...this.props}
         renderScene={this.renderScene.bind(this)}
@@ -71,6 +72,14 @@ class FixBugScrollViewNavigator extends React.Component {
 
   removeFixBugListener(page, cb) {
     this.fixBugCallback[page] = this.fixBugCallback[page].filter(_cb => cb !== _cb);
+  }
+
+  push(route) {
+    this.refs.navigator.push(route);
+  }
+
+  pop(route) {
+    this.refs.navigator.pop(route);
   }
 }
 

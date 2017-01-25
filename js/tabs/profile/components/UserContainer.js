@@ -9,6 +9,7 @@ import {
 
 import PureListView from '../../../common/PureListView';
 import ProfilePicture from '../../../common/ProfilePicture';
+import FixBugScrollView from '../../../common/FixBugScrollView';
 import {toHumanNumber} from '../../../common/utils';
 
 import NavBar from './NavBar';
@@ -71,24 +72,26 @@ export default class UserContainer extends React.Component {
     return (
       <View style={commonStyles.listViewContainer}>
         <NavBar title={this.props.title} onLeftPress={() => this.props.onBackPress && this.props.onBackPress()}/>
-        <PureListView
-          data={this.props.userList}
-          renderRow={(user, i, idx) => {
-            return (<View style={styles.rowContainer}>
-              <View style={styles.profile}>
-                <ProfilePicture size={40}/>
-              </View>
-              <Text style={styles.name}>
-                {Number(idx) + 1}. {user.name}
-              </Text>
-              <View style={styles.detail}>
-                {
-                  this.props.renderDetail(user, idx)
-                }
-              </View>
-            </View>);
-          }}
-        />
+        <FixBugScrollView>
+          <PureListView
+            data={this.props.userList}
+            renderRow={(user, i, idx) => {
+              return (<View style={styles.rowContainer}>
+                <View style={styles.profile}>
+                  <ProfilePicture size={40}/>
+                </View>
+                <Text style={styles.name}>
+                  {Number(idx) + 1}. {user.name}
+                </Text>
+                <View style={styles.detail}>
+                  {
+                    this.props.renderDetail(user, idx)
+                  }
+                </View>
+              </View>);
+            }}
+          />
+        </FixBugScrollView>
       </View>
     );
   }
