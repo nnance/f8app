@@ -146,7 +146,6 @@ class Book extends React.Component {
           </TouchableOpacity>
         </Image>
         <FixBugScrollView
-          addFixBugListener={this.props.addFixBugListener} removeFixBugListener={this.props.removeFixBugListener}
           style={styles.detailContainer}>
           <SubDetail {...clog}/>
           <View style={styles.episodeContainer}>

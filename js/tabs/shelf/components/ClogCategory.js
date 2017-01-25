@@ -210,8 +210,6 @@ class ClogCategory extends React.Component {
     return (
       <LinearGradient locations={[0, 0.5, 0.5, 1]} colors={[clogTheme.color, clogTheme.color, 'rgb(220, 4, 87)', 'rgb(220, 4, 87)']} style={{flex: 1, backgroundColor: 'transparent'}}>
         <FixBugScrollView
-          addFixBugListener={this.props.addFixBugListener}
-          removeFixBugListener={this.props.removeFixBugListener}
           style={{flex: 1, backgroundColor: 'transparent'}}>
           <LinearGradient style={{height: 570}} colors={[clogTheme.color, 'rgb(164, 58, 124)']}>
             <Image source={require('../img/star-bg.png')}

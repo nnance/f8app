@@ -16,14 +16,14 @@ class FixBugScrollView extends React.Component {
   }
 
   componentDidMount() {
-    this.props.addFixBugListener(this.fixScrollBug);
+    this.context.addFixBugListener(this.fixScrollBug);
     InteractionManager.runAfterInteractions(() => {
       this.fixScrollBug();
     });
   }
 
   componentWillUnmount() {
-    this.props.removeFixBugListener(this.fixScrollBug);
+    this.context.removeFixBugListener(this.fixScrollBug);
   }
 
   render() {
@@ -48,5 +48,10 @@ class FixBugScrollView extends React.Component {
     });
   }
 }
+
+FixBugScrollView.contextTypes = {
+  addFixBugListener: React.PropTypes.func,
+  removeFixBugListener: React.PropTypes.func
+};
 
 export default FixBugScrollView;

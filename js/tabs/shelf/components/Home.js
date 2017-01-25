@@ -43,7 +43,7 @@ class Home extends React.Component {
             alignItems: 'flex-start'
           }}
           />
-        <FixBugScrollView addFixBugListener={this.props.addFixBugListener} removeFixBugListener={this.props.removeFixBugListener}>
+        <FixBugScrollView>
           <Image source={require('../img/home-bg-1.png')} style={{width: undefined, height: 700, resizeMode: 'stretch', backgroundColor: 'transparent'}}>
             <View style={{flex: 2}}>
               <HeroBanner navigator={this.props.navigator} clogs={this.props.heroBanners}/>

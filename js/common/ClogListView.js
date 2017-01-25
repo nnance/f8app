@@ -40,9 +40,7 @@ const ClogRow = (props) => (<TouchableOpacity onPress={props.onPress ? props.onP
 class ClogListView extends React.Component {
   render() {
     return (
-      <FixBugScrollView
-        addFixBugListener={this.props.addFixBugListener}
-        removeFixBugListener={this.props.removeFixBugListener}>
+      <FixBugScrollView>
         <PureListView
           data={this.props.clogs}
           renderRow={(clog) => {
