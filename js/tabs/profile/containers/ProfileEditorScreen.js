@@ -7,7 +7,9 @@ import {
   StyleSheet,
   TouchableOpacity,
   TextInput,
-  Switch
+  Switch,
+  Alert,
+  InteractionManager
 } from 'react-native';
 import moment from 'moment';
 import Picker from 'react-native-picker';
@@ -68,9 +70,9 @@ class ProfileEditorScreen extends React.Component {
               });
               this.props.onBackPress && this.props.onBackPress();
             }).catch(error => {
-              this.setState({
-                savingProfile: false
-              });
+              Alert.alert("Error", error.message, [
+                { text: "OK", onPress: () => this.setState({ savingProfile: false}) }
+              ]);
             });
         }}
         />
@@ -155,9 +157,9 @@ class ProfileEditorScreen extends React.Component {
           linkingFacebook: false
         });
       }).catch(error => {
-        this.setState({
-          linkingFacebook: false
-        });
+        Alert.alert("Error", error.message, [
+          { text: "OK", onPress: () => this.setState({ linkingFacebook: false}) }
+        ]);
       });
     }
     else {
@@ -166,9 +168,9 @@ class ProfileEditorScreen extends React.Component {
           linkingFacebook: false
         });
       }).catch(error => {
-        this.setState({
-          linkingFacebook: false
-        });
+        Alert.alert("Error", error.message, [
+          { text: "OK", onPress: () => this.setState({ linkingFacebook: false}) }
+        ]);
       });
     }
   }

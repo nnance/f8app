@@ -110,7 +110,7 @@ async function _linkFacebook(user) {
   await new Promise((resolve, reject) => {
     Parse.FacebookUtils.link(user, null, {
       success: () => resolve(),
-      error: error => reject(error)
+      error: (user, error) => reject(error.error)
     });
   });
   await user.save();
