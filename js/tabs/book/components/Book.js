@@ -13,6 +13,7 @@ import ReadMore from '@exponent/react-native-read-more-text';
 import NavBar from '../../../common/NavBar';
 import BorderButton, {styles as borderButtonStyles} from '../../../common/BorderButton';
 import PureListView from '../../../common/PureListView';
+import FixBugScrollView from '../../../common/FixBugScrollView';
 import CircleImage from '../../../common/CircleImage';
 import {toHumanNumber, mapSource} from '../../../common/utils';
 import {colors, styles as commonStyles} from '../../../common/styles';
@@ -144,7 +145,9 @@ class Book extends React.Component {
             <Image source={require('../../../common/img/icon/backButton.png')} style={commonStyles.navBarIcon}/>
           </TouchableOpacity>
         </Image>
-        <ScrollView style={styles.detailContainer}>
+        <FixBugScrollView
+          addFixBugListener={this.props.addFixBugListener} removeFixBugListener={this.props.removeFixBugListener}
+          style={styles.detailContainer}>
           <SubDetail {...clog}/>
           <View style={styles.episodeContainer}>
             <View style={{height: 1, backgroundColor: colors.greyBorder}}/>
@@ -152,7 +155,7 @@ class Book extends React.Component {
               clog.episodes.map(this.renderEpisode.bind(this))
             }
           </View>
-        </ScrollView>
+        </FixBugScrollView>
       </View>
     );
   }

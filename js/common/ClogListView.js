@@ -10,6 +10,7 @@ import moment from 'moment';
 
 import {colors} from './styles';
 import PureListView from './PureListView';
+import FixBugScrollView from './FixBugScrollView';
 import CircleImageWithCategory from './CircleImageWithCategory';
 import {toHumanNumber, mapSource} from './utils';
 
@@ -39,12 +40,16 @@ const ClogRow = (props) => (<TouchableOpacity onPress={props.onPress ? props.onP
 class ClogListView extends React.Component {
   render() {
     return (
-      <PureListView
-        data={this.props.clogs}
-        renderRow={(clog) => {
-          return <ClogRow {...clog} onPress={this.onClogPress.bind(this)}/>;
-        }}
-      />
+      <FixBugScrollView
+        addFixBugListener={this.props.addFixBugListener}
+        removeFixBugListener={this.props.removeFixBugListener}>
+        <PureListView
+          data={this.props.clogs}
+          renderRow={(clog) => {
+            return <ClogRow {...clog} onPress={this.onClogPress.bind(this)}/>;
+          }}
+        />
+      </FixBugScrollView>
     );
   }
 

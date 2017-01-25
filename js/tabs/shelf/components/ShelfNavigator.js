@@ -56,16 +56,34 @@ class ShelfNavigator extends React.Component {
       return <NotFound/>;
     }
     if (route.page === 'home') {
-      return <Home addFixBugListener={this.addFixBugListener.bind(this, 'home')} removeFixBugListener={this.removeFixBugListener.bind(this, 'home')} navigator={navigator}/>;
+      return <Home
+        addFixBugListener={this.addFixBugListener.bind(this, route.page)}
+        removeFixBugListener={this.removeFixBugListener.bind(this, route.page)}
+        navigator={navigator}/>;
     }
     if (route.page === 'clog-category') {
-      return <ClogCategory navigator={navigator} category={route.category}/>;
+      return <ClogCategory
+        addFixBugListener={this.addFixBugListener.bind(this, route.page)}
+        removeFixBugListener={this.removeFixBugListener.bind(this, route.page)}
+        navigator={navigator}
+        category={route.category}/>;
     }
     if (route.page === 'clog-list-view') {
-      return <ClogListView navigator={navigator} title={route.title} category={route.category} orderBy={route.orderBy} tag={route.tag}/>;
+      return <ClogListView
+        addFixBugListener={this.addFixBugListener.bind(this, route.page)}
+        removeFixBugListener={this.removeFixBugListener.bind(this, route.page)}
+        navigator={navigator}
+        title={route.title}
+        category={route.category}
+        orderBy={route.orderBy}
+        tag={route.tag}/>;
     }
     if (route.page === 'book') {
-      return <Book navigator={navigator} id={route.id}/>
+      return <Book
+        addFixBugListener={this.addFixBugListener.bind(this, route.page)}
+        removeFixBugListener={this.removeFixBugListener.bind(this, route.page)}
+        navigator={navigator}
+        id={route.id}/>
     }
     return <NotFound/>;
   }

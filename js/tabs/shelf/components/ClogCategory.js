@@ -11,6 +11,7 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 
 import {colors} from '../../../common/styles';
+import FixBugScrollView from '../../../common/FixBugScrollView';
 import BorderButton from '../../../common/BorderButton';
 import HorizontalListView from '../../../common/HorizontalListView';
 import {toHumanNumber} from '../../../common/utils';
@@ -208,7 +209,10 @@ class ClogCategory extends React.Component {
     const currentClogBanner = this.props.recommendedClogs[this.state.currentClogBanner];
     return (
       <LinearGradient locations={[0, 0.5, 0.5, 1]} colors={[clogTheme.color, clogTheme.color, 'rgb(220, 4, 87)', 'rgb(220, 4, 87)']} style={{flex: 1, backgroundColor: 'transparent'}}>
-        <ScrollView style={{flex: 1, backgroundColor: 'transparent'}}>
+        <FixBugScrollView
+          addFixBugListener={this.props.addFixBugListener}
+          removeFixBugListener={this.props.removeFixBugListener}
+          style={{flex: 1, backgroundColor: 'transparent'}}>
           <LinearGradient style={{height: 570}} colors={[clogTheme.color, 'rgb(164, 58, 124)']}>
             <Image source={require('../img/star-bg.png')}
               style={{
@@ -261,7 +265,7 @@ class ClogCategory extends React.Component {
               <WriterList type="big" editors={this.props.editors}/>
             </View>
           </LinearGradient>
-        </ScrollView>
+        </FixBugScrollView>
         <NavBar
           onBackPress={() => this.props.navigator.pop()}
           renderRightMenu={() => (

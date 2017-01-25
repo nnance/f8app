@@ -11,6 +11,7 @@ import {
 
 import NavBar from './NavBar';
 import BorderButton from '../../../common/BorderButton';
+import FixBugScrollView from '../../../common/FixBugScrollView';
 
 import MetaClogListView from './MetaClogListView';
 import RecommendedClog from './RecommendedClog';
@@ -22,19 +23,6 @@ import mockData from '../mockData';
 class Home extends React.Component {
   constructor(...args) {
     super(...args);
-    this.state = {
-      mainScrollX: 0,
-      mainScrollY: 0
-    };
-    this.fixScrollBug = this.fixScrollBug.bind(this);
-  }
-
-  componentDidMount() {
-    this.props.addFixBugListener && this.props.addFixBugListener(this.fixScrollBug);
-  }
-
-  componentWillUnmount() {
-    this.props.removeFixBugListener && this.props.removeFixBugListener(this.fixScrollBug);
   }
 
   render() {
@@ -55,12 +43,7 @@ class Home extends React.Component {
             alignItems: 'flex-start'
           }}
           />
-        <ScrollView ref="mainScrollView" onScroll={(e) => {
-            this.setState({
-              mainScrollX: e.nativeEvent.contentOffset.x,
-              mainScrollY: e.nativeEvent.contentOffset.y
-            });
-          }}>
+        <FixBugScrollView addFixBugListener={this.props.addFixBugListener} removeFixBugListener={this.props.removeFixBugListener}>
           <Image source={require('../img/home-bg-1.png')} style={{width: undefined, height: 700, resizeMode: 'stretch', backgroundColor: 'transparent'}}>
             <View style={{flex: 2}}>
               <HeroBanner navigator={this.props.navigator} clogs={this.props.heroBanners}/>
@@ -82,7 +65,7 @@ class Home extends React.Component {
             }
           </Image>
           <ExploreCategory onPress={(category) => this.props.navigator.push({page: 'clog-category', category})}/>
-        </ScrollView>
+        </FixBugScrollView>
       </View>
     );
   }
@@ -105,19 +88,6 @@ class Home extends React.Component {
         onPress={() => this.props.navigator.push({page: 'clog-list-view', title: 'ยอดนิยม', orderBy: 'TRENDING'})}
         />
     );
-  }
-
-  fixScrollBug() {
-    const x = this.state.mainScrollX;
-    const y = this.state.mainScrollY;
-    this.refs.mainScrollView.scrollTo({
-      x: x,
-      y: y + 1
-    });
-    this.refs.mainScrollView.scrollTo({
-      x: x,
-      y: y
-    });
   }
 }
 

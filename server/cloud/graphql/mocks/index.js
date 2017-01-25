@@ -32,7 +32,12 @@ const mocks = {
   }),
   Clog: () => ({
     id: casual.positive_int(10000000),
-    title: casual.title,
+    title: async () => {
+      // await new Promise(resolve => {
+      //   setTimeout(resolve, 1000)
+      // })
+      return casual.title
+    },
     async cover(rootValue, args, {request}) {
       let uri = await casual.clog_cover;
       if (!uri) {
