@@ -27,7 +27,7 @@ class Home extends React.Component {
 
   render() {
     return (
-      <View style={{flex: 1}}>
+      <View style={{flex: 1, backgroundColor: 'rgb(81, 20, 64)'}}>
         <NavBar
           renderLeftMenu={() => (
             <TouchableOpacity><Image style={{height: 20, resizeMode: 'contain'}} source={require('../img/menu.png')}/></TouchableOpacity>

@@ -74,7 +74,7 @@ class LoginScreen extends React.Component {
   renderTitle(route, navigator, index, navState) {
     let title = '';
     title = titles[route.page];
-    return (<View style={{flex: 1, alignItems: 'center'}}><Text style={styles.titleNavBar}>{title}</Text></View>);
+    return (<View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}><Text style={styles.titleNavBar}>{title}</Text></View>);
   }
 
   renderLeftButton(route, navigator, index, navState) {
@@ -82,11 +82,11 @@ class LoginScreen extends React.Component {
       return null;
     }
     return (
-      <TouchableOpacity onPress={this.goBack}>
-       <Text style={styles.backButton}>
-         {'<'}
-       </Text>
-      </TouchableOpacity>
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <TouchableOpacity onPress={this.goBack}>
+         <Image style={styles.backButton} source={require('../common/img/icon/backButton.png')}/>
+        </TouchableOpacity>
+      </View>
     );
   }
 

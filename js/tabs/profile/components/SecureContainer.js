@@ -21,9 +21,9 @@ class SecureContainer extends React.Component {
 
   render() {
     if (this.state.passed) {
-      return this.props.children;
+      return <View key="passed">{this.props.children}</View>;
     }
-    return (<View style={[styles.container, this.props.style]}>
+    return (<View key="secure" style={[styles.container, this.props.style]}>
       <View style={styles.spaceFlex}/>
       <View style={styles.innerContainer}>
         <Text style={styles.error}>

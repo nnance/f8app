@@ -67,6 +67,10 @@ class ProfileEditorScreen extends React.Component {
                 savingProfile: false
               });
               this.props.onBackPress && this.props.onBackPress();
+            }).catch(error => {
+              this.setState({
+                savingProfile: false
+              });
             });
         }}
         />
@@ -150,10 +154,18 @@ class ProfileEditorScreen extends React.Component {
         this.setState({
           linkingFacebook: false
         });
+      }).catch(error => {
+        this.setState({
+          linkingFacebook: false
+        });
       });
     }
     else {
       return this.props.linkFacebook().then(() => {
+        this.setState({
+          linkingFacebook: false
+        });
+      }).catch(error => {
         this.setState({
           linkingFacebook: false
         });

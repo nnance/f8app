@@ -205,7 +205,7 @@ class ProfileMenuScreen extends React.Component {
       <View style={styles.container}>
         <ProfileHeader user={this.props.user}>
           <View style={styles.nameContainer}>
-            <Text style={styles.name}>
+            <Text numberOfLines={1} style={styles.name}>
               {name.toUpperCase()}
             </Text>
             <TouchableOpacity onPress={() => this.props.onEditProfile && this.props.onEditProfile()}>
@@ -228,6 +228,7 @@ class ProfileMenuScreen extends React.Component {
         </ProfileHeader>
         <View style={styles.menuList}>
           <PureListView
+            minContentHeight={0}
             title="Profile"
             data={menuList}
             renderRow={this.renderMenu}
@@ -253,7 +254,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   menuList: {
-    flex: 2,
+    flex: 1,
     backgroundColor: 'white'
   },
   row: {
@@ -270,9 +271,11 @@ const styles = StyleSheet.create({
     paddingLeft: 20
   },
   nameContainer: {
+    width: 200,
     padding: 10,
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   name: {
     color: 'white',

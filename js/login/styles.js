@@ -51,10 +51,10 @@ export default StyleSheet.create({
     color: 'red'
   },
   backButton: {
-    color: 'white',
-    fontSize: 30,
-    fontWeight: 'bold',
-    paddingHorizontal: 10
+    width: 20,
+    height: 20,
+    resizeMode: 'contain',
+    paddingHorizontal: 15
   },
   titleNavBar: {
     color: 'white',

@@ -91,6 +91,7 @@ async function _logInWithFacebook(source: ?string): Promise<Array<Action>> {
 const signUp = (email: string, password: string) => dispatch => {
   const user = new Parse.User();
   user.set('username', email);
+  user.set('name', email);
   user.set('password', password);
   user.set('email', email);
   user.set('birthDayDate', null);
