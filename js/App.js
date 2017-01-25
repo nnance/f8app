@@ -82,7 +82,7 @@ var App = React.createClass({
     if (!this.props.isLoggedIn) {
       return <LoginScreen />;
     }
-    // return <Player/>;
+    return <Player/>;
     return <ClogiiTabView/>;
   },
 

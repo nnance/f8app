@@ -49,6 +49,6 @@ const styles = StyleSheet.create({
   titleText: {
     fontSize: 22,
     fontWeight: 'bold',
-    color: 'rgb(249, 65, 92)'
+    color: colors.textPink
   }
 });

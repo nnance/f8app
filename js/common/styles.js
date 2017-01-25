@@ -9,6 +9,8 @@ export const colors = {
   textFadedGrey: 'rgba(0, 0, 0, 0.3)',
   textGrey: 'rgba(0, 0, 0, 0.5)',
   textWhite: 'rgba(255, 255, 255, 1)',
+  textPink: 'rgb(249, 65, 92)',
+  textFadedPink: 'rgba(249, 65, 92, 0.6)',
   textFadedWhite: 'rgba(255, 255, 255, 0.6)'
 };
 
