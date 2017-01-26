@@ -14,13 +14,13 @@ export const query = gql`
   }
 `;
 
-const mapQueryToProps = ({ data }) => {
+export const mapQueryToProps = ({ data }) => {
   return {
     loading: data.loading,
     episode: data.episode
   };
 }
-const mapPropsToOptions = ({id}) => ({
+export const mapPropsToOptions = ({id}) => ({
   variables: {
     id
   }
