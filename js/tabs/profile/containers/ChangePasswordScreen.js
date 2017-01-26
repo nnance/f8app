@@ -16,7 +16,7 @@ import {styles as commonStyles} from '../common';
 import {colors as commonColors} from '../../../common/styles';
 
 import {changePassword} from '../../../actions/changeProfile';
-import ModalSpinner from '../components/ModalSpinner';
+import ModalSpinner from '../../../common/ModalSpinner';
 
 class ChangePasswordScreen extends React.Component {
   constructor(...args) {

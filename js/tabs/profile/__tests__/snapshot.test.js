@@ -19,19 +19,6 @@ describe('JellyShopScreen', () => {
   });
 });
 
-describe('ModalSpinner', () => {
-  const ModalSpinner = require('../components/ModalSpinner').default;
-  it('render visible', () => {
-    const tree = renderer.create(<ModalSpinner visible={true}/>);
-    expect(tree.toJSON()).toMatchSnapshot();
-  });
-
-  it('render invisible', () => {
-    const tree = renderer.create(<ModalSpinner visible={false}/>);
-    expect(tree.toJSON()).toMatchSnapshot();
-  });
-});
-
 describe('MyClogScreen', () => {
   const MyClogScreen = require('../components/MyClogScreen').default;
   it('render MyClogScreen', () => {

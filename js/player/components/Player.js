@@ -12,10 +12,18 @@ import WKWebView from 'react-native-wkwebview-reborn';
 import NavBar, {NavBarWithPinkButton} from '../../common/NavBar';
 import {colors} from '../../common/styles';
 import {toHumanNumber} from '../../common/utils';
+import ModalSpinner from '../../common/ModalSpinner';
 
 import ButtomMenu from './ButtomMenu';
 
 class Player extends React.Component {
+  constructor(...args) {
+    super(...args);
+    this.state = {
+      loading: true
+    };
+  }
+
   render() {
     if (this.props.loading) {
       return null;
@@ -35,7 +43,10 @@ class Player extends React.Component {
             paddingRight: 10
           }}
           />
-        <WKWebView style={{flex: 1}} source={{uri: 'http://zapkub.github.io/clog/clog.html'}}/>
+        <View style={{flex: 1}}>
+          <ModalSpinner visible={this.state.loading}/>
+          <WKWebView style={{flex: 1}} source={{uri: 'http://zapkub.github.io/clog/clog.html'}} onLoadEnd={() => this.setState({ loading: false })}/>
+        </View>
         <ButtomMenu likeCount={this.props.episode.likeCount} commentCount={this.props.episode.commentCount}/>
       </View>
     );

@@ -12,3 +12,16 @@ describe('CircleImageWithCategory', () => {
     expect(tree.toJSON()).toMatchSnapshot();
   });
 });
+
+describe('ModalSpinner', () => {
+  const ModalSpinner = require('../ModalSpinner').default;
+  it('render visible', () => {
+    const tree = renderer.create(<ModalSpinner visible={true}/>);
+    expect(tree.toJSON()).toMatchSnapshot();
+  });
+
+  it('render invisible', () => {
+    const tree = renderer.create(<ModalSpinner visible={false}/>);
+    expect(tree.toJSON()).toMatchSnapshot();
+  });
+});

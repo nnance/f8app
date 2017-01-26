@@ -24,7 +24,7 @@ import {colors as commonColors} from '../../../common/styles';
 
 import ProfileHeader from '../components/ProfileHeader';
 import DatePickerDialog from '../components/DatePickerDialog';
-import ModalSpinner from '../components/ModalSpinner';
+import ModalSpinner from '../../../common/ModalSpinner';
 
 import {connect} from 'react-redux';
 
