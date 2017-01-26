@@ -47,8 +47,7 @@ var { updateInstallation } = require('./actions/installation');
 var { connect } = require('react-redux');
 
 var { version } = require('./env.js');
-import ClogiiTabView from './tabs/ClogiiTabView';
-import Player from './player';
+import ClogiiNavigator from './ClogiiNavigator';
 
 var App = React.createClass({
   componentDidMount: function() {
@@ -82,8 +81,7 @@ var App = React.createClass({
     if (!this.props.isLoggedIn) {
       return <LoginScreen />;
     }
-    return <Player/>;
-    return <ClogiiTabView/>;
+    return <ClogiiNavigator/>;
   },
 
 });

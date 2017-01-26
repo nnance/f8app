@@ -23,6 +23,7 @@ class Player extends React.Component {
     return (
       <View style={{flex: 1}}>
         <NavBarWithPinkButton
+          onBackPress={this.props.onBackPress}
           renderRightMenu={this.renderNavBarButton.bind(this)}
           renderTitle={this.renderTitle.bind(this)}
           titleStyle={{

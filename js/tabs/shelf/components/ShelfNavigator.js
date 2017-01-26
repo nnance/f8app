@@ -50,9 +50,14 @@ class ShelfNavigator extends React.Component {
     if (route.page === 'book') {
       return <Book
         navigator={navigator}
+        goToPlayer={this.goToPlayer.bind(this)}
         id={route.id}/>
     }
     return <NotFound/>;
+  }
+
+  goToPlayer(id) {
+    this.props.navigator.push({page: 'player', id})
   }
 }
 

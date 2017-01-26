@@ -50,7 +50,11 @@ const MetaEpisode = (props) => (
     <View style={{flex: 1, alignItems: 'flex-end', paddingLeft: 10}}>
       {
         !props.lock ?
-        <BorderButton containerStyle={styles.metaEpisodeButton} type="borderFadedBlack" caption="อ่าน"/>
+        <BorderButton
+          containerStyle={styles.metaEpisodeButton}
+          type="borderFadedBlack"
+          caption="อ่าน"
+          onPress={props.onReadPress ? props.onReadPress.bind(null, props.id) : null}/>
         :
         <BorderButton containerStyle={styles.metaEpisodeButton} textStyle={styles.unlockEpisodeText} type="lightGreen" caption="jelly"
           renderBeforeText={() => <LockImg/>}/>
@@ -88,7 +92,7 @@ const ShowLessRender = (handlePress) => (
   </TouchableOpacity>
 );
 
-const SubDetail = ({title, author, review }) => (
+const SubDetail = ({ title, author, review, episodes, onReadPress }) => (
   <View style={styles.subDetailContainer}>
     <View style={{flexDirection: 'row', paddingVertical: 10}}>
       <View style={{flex: 3}}>
@@ -114,20 +118,24 @@ const SubDetail = ({title, author, review }) => (
       </View>
     </View>
     <View>
-      <View style={styles.startReadButtonContainer}>
-        <BorderButton
-          type="borderFadedBlack"
-          caption="เริ่มอ่านตอนที่ 1"
-          textStyle={{
-            fontSize: 25
-          }}
-          containerStyle={{
-            paddingVertical: 5,
-            justifyContent: 'center',
-            alignItems: 'center'
-          }}
-          />
-      </View>
+      {
+        episodes.length > 0 ?
+        <View style={styles.startReadButtonContainer}>
+          <BorderButton
+            type="borderFadedBlack"
+            onPress={onReadPress.bind(null, episodes[episodes.length - 1].id)}
+            caption={`เริ่มอ่านตอนที่ ${episodes[episodes.length - 1].no}`}
+            textStyle={{
+              fontSize: 25
+            }}
+            containerStyle={{
+              paddingVertical: 5,
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}
+            />
+        </View> : null
+      }
     </View>
   </View>
 );
@@ -147,7 +155,7 @@ class Book extends React.Component {
         </Image>
         <FixBugScrollView
           style={styles.detailContainer}>
-          <SubDetail {...clog}/>
+          <SubDetail {...clog} onReadPress={this.props.goToPlayer}/>
           <View style={styles.episodeContainer}>
             <View style={{height: 1, backgroundColor: colors.greyBorder}}/>
             {
@@ -162,7 +170,7 @@ class Book extends React.Component {
   renderEpisode(data) {
     return (
       <View>
-        <MetaEpisode {...data}/>
+        <MetaEpisode {...data} onReadPress={this.props.goToPlayer}/>
         <View style={{height: 1, backgroundColor: colors.greyBorder}}/>
       </View>
     );
