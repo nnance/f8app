@@ -59,7 +59,8 @@ const mocks = {
     title: casual.title,
     preview,
     viewCount: casual.positive_int(10000),
-    likeCount: casual.positive_int(10000),
+    likeCount: casual.positive_int(100000),
+    commentCount: casual.positive_int(1000000),
     createdAt: () => new Date(casual.moment)
   }),
   CategoryDetail: () => ({

@@ -20,3 +20,5 @@ export const styles = StyleSheet.create({
     resizeMode: 'contain'
   }
 });
+
+export const BUTTOM_TAB_HEIGHT = 45;

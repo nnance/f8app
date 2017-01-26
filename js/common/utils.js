@@ -1,4 +1,9 @@
 export const toHumanNumber = number => {
+  let tail = '';
+  if (number >= 100000) {
+    tail = 'k';
+    number = Math.floor(number / 1000);
+  }
   const stringNumber = number + '';
   let result = '';
   const slen = stringNumber.length;
@@ -8,7 +13,7 @@ export const toHumanNumber = number => {
     }
     result = stringNumber[i] + result;
   }
-  return result;
+  return result + tail;
 };
 
 export const random = to => {
