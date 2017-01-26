@@ -668,72 +668,52 @@ exports[`JellyShopScreen render JellyShopScreen 1`] = `
         onStartShouldSetResponder={[Function]}
         style={
           Object {
+            "borderColor": "rgb(134, 246, 226)",
+            "borderRadius": 5,
+            "borderWidth": 1.5,
             "opacity": 1,
           }
         }
         testID={undefined}>
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          hitSlop={undefined}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "borderColor": "rgb(134, 246, 226)",
-              "borderRadius": 5,
-              "borderWidth": 1.5,
-              "opacity": 1,
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "minWidth": 65,
+              "paddingVertical": 3,
             }
-          }
-          testID={undefined}>
+          }>
+          <Image
+            source={1}
+            style={
+              Object {
+                "height": 15,
+                "marginLeft": 5,
+                "resizeMode": "contain",
+                "width": 15,
+              }
+            } />
           <View
             style={
               Object {
-                "alignItems": "center",
-                "flexDirection": "row",
-                "justifyContent": "center",
-                "minWidth": 65,
-                "paddingVertical": 3,
+                "paddingHorizontal": 5,
               }
             }>
-            <Image
-              source={1}
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
               style={
                 Object {
-                  "height": 15,
-                  "marginLeft": 5,
-                  "resizeMode": "contain",
-                  "width": 15,
-                }
-              } />
-            <View
-              style={
-                Object {
-                  "paddingHorizontal": 5,
+                  "color": "rgb(134, 246, 226)",
+                  "fontSize": 12,
+                  "fontWeight": "bold",
                 }
               }>
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Object {
-                    "color": "rgb(134, 246, 226)",
-                    "fontSize": 12,
-                    "fontWeight": "bold",
-                  }
-                }>
-                12,500
-              </Text>
-            </View>
+              12,500
+            </Text>
           </View>
         </View>
       </View>
