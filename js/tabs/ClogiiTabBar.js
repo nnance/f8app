@@ -7,6 +7,8 @@ import {
   Image
 } from 'react-native';
 
+import {BUTTOM_TAB_HEIGHT} from '../common/styles';
+
 const icons = {
   Clogii: {
     active: require('./img/icons/clogii-active.png'),
@@ -78,7 +80,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   tabs: {
-    height: 45,
+    height: BUTTOM_TAB_HEIGHT,
     flexDirection: 'row',
     borderWidth: 1,
     borderBottomWidth: 0,

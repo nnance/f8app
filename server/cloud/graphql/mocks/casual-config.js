@@ -40,7 +40,7 @@ casual.define('clog_category', async () => {
 casual.define('profilePicture', () => randomStatic('preview'));
 
 casual.define('positive_int', function(max) {
-  return casual.integer(from = 0, to = max);
+  return casual.integer(from = 1, to = max);
 });
 
 casual.define('arrayN', function(max) {

@@ -20,7 +20,7 @@ export default class NavBar extends React.Component {
       <View style={[styles.container, this.props.containerStyle]}>
         <View style={[styles.leftMenu, this.props.leftMenuStyle]}>
           {
-            this.props.renderLeftMenu ? this.props.renderLeftMenu() : (this.props.backButton ? this.renderBackButton() : null)
+            this.props.renderLeftMenu ? this.props.renderLeftMenu() : null
           }
         </View>
         <View style={[styles.titleMenu, this.props.titleStyle]}>
@@ -37,15 +37,39 @@ export default class NavBar extends React.Component {
     );
   }
 
+  renderTitle() {
+    return (
+      <Text style={[styles.navText, this.props.titleTextStyle]}>{this.props.title}</Text>
+    );
+  }
+}
+
+export class NavBarWithButton extends React.Component {
+  render() {
+    return <NavBar
+      renderLeftMenu={this.renderBackButton.bind(this)}
+      {...this.props}
+      />;
+  }
+
   renderBackButton() {
     return (
       <TouchableOpacity onPress={this.props.onBackPress}><Image style={commonStyles.navBarIcon} source={require('./img/icon/backButton.png')}/></TouchableOpacity>
     );
   }
+}
 
-  renderTitle() {
+export class NavBarWithPinkButton extends React.Component {
+  render() {
+    return <NavBar
+      renderLeftMenu={this.renderBackButton.bind(this)}
+      {...this.props}
+      />;
+  }
+
+  renderBackButton() {
     return (
-      <Text style={[styles.navText, this.props.titleTextStyle]}>{this.props.title}</Text>
+      <TouchableOpacity onPress={this.props.onBackPress}><Image style={commonStyles.navBarIcon} source={require('./img/icon/backButton-pink.png')}/></TouchableOpacity>
     );
   }
 }

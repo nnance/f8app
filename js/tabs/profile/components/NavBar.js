@@ -9,28 +9,20 @@ import {
   Image
 } from 'react-native';
 
-import CustomNavBar from '../../../common/NavBar';
+import {NavBarWithPinkButton} from '../../../common/NavBar';
 
 import {colors} from '../../../common/styles';
 
 export default class NavBar extends React.Component {
   render() {
     return (
-      <CustomNavBar
+      <NavBarWithPinkButton
         containerStyle={styles.container}
-        renderLeftMenu={this.renderLeftMenu.bind(this)}
         renderRightMenu={this.renderRightMenu.bind(this)}
         title={this.props.title}
         titleTextStyle={styles.titleText}
+        {...this.props}
         />
-    );
-  }
-
-  renderLeftMenu() {
-    return (
-      <TouchableOpacity style={styles.leftMenu} onPress={this.props.onLeftPress}>
-        <Image style={styles.backButton} source={require('../img/icons/backButton.png')}/>
-      </TouchableOpacity>
     );
   }
 
@@ -57,6 +49,6 @@ const styles = StyleSheet.create({
   titleText: {
     fontSize: 22,
     fontWeight: 'bold',
-    color: 'rgb(249, 65, 92)'
+    color: colors.textPink
   }
 });

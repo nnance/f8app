@@ -30,12 +30,20 @@ const schema = `
   }
 
   type Episode {
+    id: ID!
     no: Int!
     title: String
     preview: String
     viewCount: Int!
     likeCount: Int!
     createdAt: Date!
+    comments: [Comment!]!
+    commentCount: Int!
+  }
+
+  type Comment {
+    user: User!
+    comment: String!
   }
 
   type Clog {
@@ -76,6 +84,7 @@ const schema = `
     categoryDetail(category: CATEGORY!): CategoryDetail!
     clogs(filter: ClogFilterInput, orderBy: CLOG_SORTING): [Clog!]!
     clog(id: ID!): Clog!
+    episode(id: ID!): Episode!
   }
 `;
 

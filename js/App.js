@@ -19,7 +19,7 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE
  *
- * @providesModule F8App
+ * @providesModule App
  * @flow
  */
 
@@ -47,9 +47,9 @@ var { updateInstallation } = require('./actions/installation');
 var { connect } = require('react-redux');
 
 var { version } = require('./env.js');
-import ClogiiTabView from './tabs/ClogiiTabView';
+import ClogiiNavigator from './ClogiiNavigator';
 
-var F8App = React.createClass({
+var App = React.createClass({
   componentDidMount: function() {
     AppState.addEventListener('change', this.handleAppStateChange);
 
@@ -81,7 +81,7 @@ var F8App = React.createClass({
     if (!this.props.isLoggedIn) {
       return <LoginScreen />;
     }
-    return <ClogiiTabView/>;
+    return <ClogiiNavigator/>;
   },
 
 });
@@ -92,4 +92,4 @@ function select(store) {
   };
 }
 
-module.exports = connect(select)(F8App);
+module.exports = connect(select)(App);

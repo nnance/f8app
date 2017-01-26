@@ -34,7 +34,7 @@ class ChangeEmailScreen extends React.Component {
       <ModalSpinner visible={this.state.saving}/>
       <NavBar
         title="เปลี่ยน Email"
-        onLeftPress={this.props.onBackPress}
+        onBackPress={this.props.onBackPress}
         />
       <SecureContainer onCheck={() => Promise.resolve()}>
         <View>

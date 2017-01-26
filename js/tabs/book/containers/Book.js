@@ -14,6 +14,7 @@ export const query = gql`
         name
       }
       episodes {
+        id
         no
         preview
         viewCount

@@ -75,7 +75,7 @@ const ActivityRow = (props) => (<TouchableOpacity style={styles.rowContainer}>
 class ActivityScreen extends React.Component {
   render() {
     return (<View style={commonStyles.listViewContainer}>
-        <NavBar title="กิจกรรม" onLeftPress={this.props.onBackPress}/>
+        <NavBar title="กิจกรรม" onBackPress={this.props.onBackPress}/>
         <PureListView
           data={this.props.activity}
           renderRow={(props) => {

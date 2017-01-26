@@ -9,15 +9,14 @@ import {
   Image
 } from 'react-native';
 
-import DefaultNavBar from '../../../common/NavBar';
+import {NavBarWithButton} from '../../../common/NavBar';
 export {HEIGHT} from '../../../common/NavBar';
 import {colors} from '../../../common/styles';
 
 export default class NavBar extends React.Component {
   render() {
     return (
-      <DefaultNavBar
-        backButton
+      <NavBarWithButton
         {...this.props}
         />
     );

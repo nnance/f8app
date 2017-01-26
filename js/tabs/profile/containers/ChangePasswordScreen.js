@@ -34,7 +34,7 @@ class ChangePasswordScreen extends React.Component {
       <ModalSpinner visible={this.state.saving}/>
       <NavBar
         title="เปลี่ยน Password"
-        onLeftPress={this.props.onBackPress}
+        onBackPress={this.props.onBackPress}
         />
       <SecureContainer onCheck={() => Promise.resolve()}>
         <View>
