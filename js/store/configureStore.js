@@ -36,6 +36,7 @@ var {persistStore, autoRehydrate} = require('redux-persist');
 var {AsyncStorage} = require('react-native');
 
 var isDebuggingInChrome = __DEV__ && !!window.navigator.userAgent;
+import devToolsEnhancer from 'remote-redux-devtools';
 
 var logger = createLogger({
   predicate: (getState, action) => isDebuggingInChrome,
@@ -50,6 +51,7 @@ function configureStore(onComplete: ?() => void) {
   // const store = autoRehydrate()(createF8Store)(reducers);
   const store = autoRehydrate()(createStore)(
     reducers,
+    devToolsEnhancer({ realtime: true }),
     undefined,
     applyMiddleware(thunk, promise, array, analytics, logger)
   );
