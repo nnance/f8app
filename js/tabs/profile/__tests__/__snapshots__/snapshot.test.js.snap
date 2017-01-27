@@ -1581,64 +1581,6 @@ exports[`JellyShopScreen render JellyShopScreen 1`] = `
 </View>
 `;
 
-exports[`ModalSpinner render invisible 1`] = `
-<Modal
-  transparent={true}
-  visible={false}>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "rgba(255, 255, 255, 0.6)",
-        "flex": 1,
-        "justifyContent": "center",
-      }
-    }>
-    <ActivityIndicator
-      animating={true}
-      color="#999999"
-      hidesWhenStopped={true}
-      size="large"
-      style={
-        Array [
-          Object {
-            "height": 80,
-          },
-        ]
-      } />
-  </View>
-</Modal>
-`;
-
-exports[`ModalSpinner render visible 1`] = `
-<Modal
-  transparent={true}
-  visible={true}>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "rgba(255, 255, 255, 0.6)",
-        "flex": 1,
-        "justifyContent": "center",
-      }
-    }>
-    <ActivityIndicator
-      animating={true}
-      color="#999999"
-      hidesWhenStopped={true}
-      size="large"
-      style={
-        Array [
-          Object {
-            "height": 80,
-          },
-        ]
-      } />
-  </View>
-</Modal>
-`;
-
 exports[`MyClogScreen render MyClogScreen 1`] = `
 <View
   style={

@@ -249,7 +249,7 @@ exports[`Player render 1`] = `
         sendCookies={undefined}
         source={
           Object {
-            "uri": "http://zapkub.github.io/clog/clog.html",
+            "uri": "http://localhost:8080/static/demo-episode/clog.html",
           }
         }
         style={

@@ -18,8 +18,8 @@ const menuIcon = {
   share: require('../img/share.png')
 };
 
-const Menu = ({name, style, children}) => (
-  <TouchableOpacity style={[styles.buttonMenuContainer, style]}>
+const Menu = ({name, style, children, onPress}) => (
+  <TouchableOpacity onPress={onPress} style={[styles.buttonMenuContainer, style]}>
     {children}
   </TouchableOpacity>
 );
@@ -28,17 +28,17 @@ class ButtomMenu extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Menu><Image style={styles.icon} source={menuIcon.menu}/></Menu>
-        <Menu style={{flex: 1.6, flexDirection: 'row', justifyContent: 'center'}}>
+        <Menu onPress={this.props.onMenuPress}><Image style={styles.icon} source={menuIcon.menu}/></Menu>
+        <Menu onPress={this.props.onLikePress} style={{flex: 1.6, flexDirection: 'row', justifyContent: 'center'}}>
           <Image style={styles.icon} source={menuIcon.like}/>
           <Text style={styles.menuText}>{toHumanNumber(this.props.likeCount)}</Text>
         </Menu>
-        <Menu style={{flex: 1.6, flexDirection: 'row', justifyContent: 'center'}}>
+        <Menu onPress={this.props.onCommentPress} style={{flex: 1.6, flexDirection: 'row', justifyContent: 'center'}}>
           <Image style={styles.icon} source={menuIcon.read}/>
           <Text style={styles.menuText}>{toHumanNumber(this.props.commentCount)}</Text>
         </Menu>
-        <Menu><Image style={styles.icon} source={menuIcon.subBookmark}/></Menu>
-        <Menu><Image style={styles.icon} source={menuIcon.share}/></Menu>
+        <Menu onPress={this.props.onSubBookmarkPress}><Image style={styles.icon} source={menuIcon.subBookmark}/></Menu>
+        <Menu onPress={this.props.onSharePress}><Image style={styles.icon} source={menuIcon.share}/></Menu>
       </View>
     );
   }
