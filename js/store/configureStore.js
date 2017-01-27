@@ -36,7 +36,7 @@ var {persistStore, autoRehydrate} = require('redux-persist');
 var {AsyncStorage} = require('react-native');
 
 var isDebuggingInChrome = __DEV__ && !!window.navigator.userAgent;
-import devToolsEnhancer from 'remote-redux-devtools';
+import {composeWithDevTools} from 'remote-redux-devtools';
 
 var logger = createLogger({
   predicate: (getState, action) => isDebuggingInChrome,
@@ -49,11 +49,11 @@ var logger = createLogger({
 function configureStore(onComplete: ?() => void) {
   // TODO(frantic): reconsider usage of redux-persist, maybe add cache breaker
   // const store = autoRehydrate()(createF8Store)(reducers);
+  const composeEnhancers = composeWithDevTools({ realtime: true});
   const store = autoRehydrate()(createStore)(
     reducers,
     undefined,
-    applyMiddleware(thunk, promise, array, analytics, logger),
-    devToolsEnhancer({ realtime: true })
+    composeEnhancers(applyMiddleware(thunk, promise, array, analytics, logger)),
   );
   persistStore(store, {storage: AsyncStorage}, onComplete);
   if (isDebuggingInChrome) {
