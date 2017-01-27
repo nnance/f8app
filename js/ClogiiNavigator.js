@@ -1,12 +1,24 @@
 import React from 'react';
 import {
-  Navigator
+  Navigator,
+  Linking
 } from 'react-native';
+import {parse} from 'query-string';
 
 import ClogiiTabView from './tabs/ClogiiTabView';
 import Player from './player';
 
 class ClogiiNavigator extends React.Component {
+  componentDidMount() {
+    Linking.getInitialURL().then((url) => {
+      if (url) {
+        this.fromURL(url);
+      }
+    }).catch(error => {
+      console.error('initial url error: ', error);
+    });
+  }
+
   render() {
     return (
       <Navigator
@@ -15,6 +27,29 @@ class ClogiiNavigator extends React.Component {
         renderScene={this.renderScene.bind(this)}
         />
     );
+  }
+
+  fromURL(url) {
+    let {method, query} = this.parseURL(url);
+    if (method === 'play' && query.id) {
+      this.refs.navigator.push({page: 'player', id: query.id});
+    }
+  }
+
+  parseURL(url) {
+    try {
+      url = url.split(':')[1];
+      let [method, queryS] = url.split('?');
+      let query = parse(queryS);
+      if (method.indexOf('//') === 0) {
+        method = method.slice(2);
+      }
+      return {method, query};
+    }
+    catch (error) {
+      console.error('parse url error: ', error);
+    }
+    return {};
   }
 
   renderScene(route, navigator) {

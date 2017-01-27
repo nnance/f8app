@@ -6,7 +6,8 @@ import {
   WebView,
   TouchableOpacity,
   StyleSheet,
-  Share
+  Share,
+  Linking
 } from 'react-native';
 
 import WKWebView from 'react-native-wkwebview-reborn';
@@ -50,6 +51,11 @@ class Player extends React.Component {
         </View>
         <ButtomMenu
           onSharePress={this.onSharePress.bind(this)}
+          onLikePress={
+            () => {
+              Linking.openURL(`tel:9876543210`).catch(err => console.log(err))
+            }
+          }
           likeCount={this.props.episode.likeCount}
           commentCount={this.props.episode.commentCount}
         />
