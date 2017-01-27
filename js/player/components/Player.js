@@ -5,7 +5,8 @@ import {
   Text,
   WebView,
   TouchableOpacity,
-  StyleSheet
+  StyleSheet,
+  Share
 } from 'react-native';
 
 import WKWebView from 'react-native-wkwebview-reborn';
@@ -47,7 +48,11 @@ class Player extends React.Component {
           <ModalSpinner visible={this.state.loading}/>
           <WKWebView style={{flex: 1}} source={{uri: 'http://localhost:8080/static/demo-episode/clog.html'}} onLoadEnd={() => this.setState({ loading: false })}/>
         </View>
-        <ButtomMenu likeCount={this.props.episode.likeCount} commentCount={this.props.episode.commentCount}/>
+        <ButtomMenu
+          onSharePress={this.onSharePress.bind(this)}
+          likeCount={this.props.episode.likeCount}
+          commentCount={this.props.episode.commentCount}
+        />
       </View>
     );
   }
@@ -74,6 +79,12 @@ class Player extends React.Component {
         อ่านแล้ว {toHumanNumber(this.props.episode.viewCount)} คน
       </Text>
     </View>);
+  }
+
+  onSharePress() {
+    Share.share({
+      message: `EP.${this.props.episode.no} ${this.props.episode.title}`
+    });
   }
 }
 
