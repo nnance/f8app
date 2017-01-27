@@ -40,7 +40,7 @@
     "react-dom": "^15.4.1",
     "react-native": "^0.38.1",
     "react-native-code-push": "^1.16.1-beta",
-    "react-native-config": "^0.2.1",
+    "react-native-config": "0.2.1",
     "react-native-fbsdk": "^0.4.0",
     "react-native-image-picker": "^0.24.1",
     "react-native-linear-gradient": "^1.6.2",
