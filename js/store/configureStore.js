@@ -51,9 +51,9 @@ function configureStore(onComplete: ?() => void) {
   // const store = autoRehydrate()(createF8Store)(reducers);
   const store = autoRehydrate()(createStore)(
     reducers,
-    devToolsEnhancer({ realtime: true }),
     undefined,
-    applyMiddleware(thunk, promise, array, analytics, logger)
+    applyMiddleware(thunk, promise, array, analytics, logger),
+    devToolsEnhancer({ realtime: true })
   );
   persistStore(store, {storage: AsyncStorage}, onComplete);
   if (isDebuggingInChrome) {
