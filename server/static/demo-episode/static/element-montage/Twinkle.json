@@ -1,0 +1,82 @@
+{
+    "data": [{
+        "data": [{
+            "elementType": "IMAGE",
+            "src": "./static/element-montage/header.png"
+        }, {
+            "elementType": "TEXT",
+            "text": "อยู่ๆ ก็มีเหตุให้ยัยโก๊ะกังอย่างฉันต้องมาสวมรอยเป็นพี่สาวตัวเองอย่าง 'แวนด้า' สาวดาวรุ่ง ซึ่งนั่นไม่ใช่ตัวตนของฉันเลยสักนิด คิดดูละกันว่ามันจะแนบเนียนมั้ยเล่า แต่นั่นก็ยังไม่เจ็บปวดเท่ากับการที่ฉันต้องย้ายเข้าไปอยู่บ้านเดียวกับ 'เธโอ' ดาราหนุ่มชื่อดังที่ควบตำแหน่งแฟนของพี่สาวฉันนี่แหล่ะ (；一_一)"
+        }, {
+            "elementType": "TEXT",
+            "text": "แง ฉันล่ะอยากจะหนีไปอยู่ที่อื่นซะจริงๆ ก็หมอนี่น่ะทั้งปากจัดและเผด็จการ ชอบออกคำสั่งสารพัด ไม่เห็นจะเป็นอย่างที่เขาพูดกันเลยเหอะ ไหนว่าเธโอเป็นสุภาพบุรุษ แล้วก็รักพี่สาวฉันมากจนยอมเชื่อฟังทุกอย่างไง แล้วนี่อะไรก๊าน!! วันแรกที่เจอหน้ากันเขาก็ย้ายตำแหน่งฉันจากแฟน มาเป็นลูกหนี้ได้อย่างหน้าตาเฉย ฮึ่ยถ้าไม่ติดว่าทำเพื่อพี่สาว ป่านนี้ฉันคงเก็บข้าวของหนีออกจากบ้านไปแล้วล่ะ"
+        }, {
+            "elementType": "CHAT_NOTIFICATION",
+            "text": "มีข้อความเข้ามาแฮะ"
+        }]
+    }, {
+        "background": "#f9fafc",
+        "data": [{
+            "elementType": "CHAT_BUBBLE",
+            "isSender": true,
+            "profileURL": "./static/element-montage/derp.png",
+            "name": "เธโอ",
+            "text": "อย่าลืมล้างจานนะ",
+            "timestamp": "11.15AM",
+            "typingDelay": 0.5,
+            "revealPosition": 0.5
+        }, {
+            "elementType": "CHAT_BUBBLE",
+            "isSender": true,
+            "profileURL": "./static/element-montage/derp.png",
+            "name": "เธโอ",
+            "text": "ทำหรือยัง ทำไมไม่อ่าน",
+            "timestamp": "11.48AM",
+            "typingDelay": 0.5,
+            "revealPosition": 0.5
+        }, {
+            "elementType": "CHAT_BUBBLE",
+            "isSender": true,
+            "profileURL": "./static/element-montage/derp.png",
+            "name": "เธโอ",
+            "text": "เมื่อกี้ฉันไปทานข้าวกับพี่ทนายมา ก็เลยคุยกันเรื่องเอกสารประนอมหนี้ของเธอ",
+            "timestamp": "1.02PM",
+            "typingDelay": 0.5,
+            "revealPosition": 0.5
+        }, {
+            "elementType": "CHAT_BUBBLE",
+            "isSender": false,
+            "profileURL": "./static/element-montage/derpina.png",
+            "name": "เดอพิน่า",
+            "text": "จริงอ่อ เย้ยยยยยยย! ใจดีจัง ขอบคุนค่าาาา ><",
+            "timestamp": "1.08PM",
+            "typingDelay": 0.5,
+            "revealPosition": 0.5
+        }, {
+            "elementType": "CHAT_BUBBLE",
+            "isSender": true,
+            "profileURL": "./static/element-montage/derp.png",
+            "name": "เธโอ",
+            "text": "เปล่า ล้อเล่น ฉันแค่จะเช็คว่าเธอ เห็นข้อความแล้วหรือยัง",
+            "timestamp": "1.08PM",
+            "typingDelay": 0.5,
+            "revealPosition": 0.5
+        }, {
+            "elementType": "CHAT_BUBBLE",
+            "isSender": false,
+            "profileURL": "./static/element-montage/derpina.png",
+            "name": "เดอพิน่า",
+            "text": "zZzZz",
+            "timestamp": "1.08PM",
+            "typingDelay": 0.5,
+            "revealPosition": 0.5
+        }]
+    }, {
+        "data": [{
+            "elementType": "TEXT",
+            "text": "แง ฉันล่ะอยากจะหนีไปอยู่ที่อื่นซะจริงๆ ก็หมอนี่น่ะทั้งปากจัดและเผด็จการ ชอบออกคำสั่งสารพัด ไม่เห็นจะเป็นอย่างที่เขาพูดกันเลยเหอะ ไหนว่าเธโอเป็นสุภาพบุรุษ แล้วก็รักพี่สาวฉันมากจนยอมเชื่อฟังทุกอย่างไง แล้วนี่อะไรก๊าน!! วันแรกที่เจอหน้ากันเขาก็ย้ายตำแหน่งฉันจากแฟน มาเป็นลูกหนี้ได้อย่างหน้าตาเฉย ฮึ่ยถ้าไม่ติดว่าทำเพื่อพี่สาว ป่านนี้ฉันคงเก็บข้าวของหนีออกจากบ้านไปแล้วล่ะ"
+        }]
+    }],
+    "meta": {
+        "title": "Twin(kle) Mission แผนลับฟรุ้งฟริ้งส่งวิ้งบอกรักเธอ"
+    }
+}

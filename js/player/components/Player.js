@@ -45,7 +45,7 @@ class Player extends React.Component {
           />
         <View style={{flex: 1}}>
           <ModalSpinner visible={this.state.loading}/>
-          <WKWebView style={{flex: 1}} source={{uri: 'http://zapkub.github.io/clog/clog.html'}} onLoadEnd={() => this.setState({ loading: false })}/>
+          <WKWebView style={{flex: 1}} source={{uri: 'http://localhost:8080/static/demo-episode/clog.html'}} onLoadEnd={() => this.setState({ loading: false })}/>
         </View>
         <ButtomMenu likeCount={this.props.episode.likeCount} commentCount={this.props.episode.commentCount}/>
       </View>
