@@ -27,6 +27,7 @@
 
 #import "RCTRootView.h"
 #import "RCTPushNotificationManager.h"
+#import "RCTLinkingManager.h"
 
 @implementation AppDelegate
 
@@ -73,10 +74,13 @@
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-  return [[FBSDKApplicationDelegate sharedInstance] application:application
+  BOOL handledFB = [[FBSDKApplicationDelegate sharedInstance] application:application
                                                         openURL:url
                                               sourceApplication:sourceApplication
                                                      annotation:annotation];
+  BOOL handledLinking = [RCTLinkingManager application:application openURL:url
+                      sourceApplication:sourceApplication annotation:annotation];
+  return handledLinking || handledFB;
 }
 
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings

@@ -9,6 +9,11 @@ import ClogiiTabView from './tabs/ClogiiTabView';
 import Player from './player';
 
 class ClogiiNavigator extends React.Component {
+  constructor(...args) {
+    super(...args);
+    this.onOpenURL = this.onOpenURL.bind(this);
+  }
+
   componentDidMount() {
     Linking.getInitialURL().then((url) => {
       if (url) {
@@ -17,6 +22,11 @@ class ClogiiNavigator extends React.Component {
     }).catch(error => {
       console.error('initial url error: ', error);
     });
+    Linking.addEventListener('url', this.onOpenURL);
+  }
+
+  componentWillUnmount() {
+    Linking.removeEventListener('url', this.onOpenURL);
   }
 
   render() {
@@ -27,6 +37,10 @@ class ClogiiNavigator extends React.Component {
         renderScene={this.renderScene.bind(this)}
         />
     );
+  }
+
+  onOpenURL(event) {
+    this.fromURL(event.url);
   }
 
   fromURL(url) {
