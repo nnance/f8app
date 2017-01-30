@@ -7,7 +7,8 @@ import {
   TouchableOpacity,
   StyleSheet,
   Share,
-  Linking
+  Linking,
+  Platform
 } from 'react-native';
 
 import WKWebView from 'react-native-wkwebview-reborn';
@@ -30,6 +31,13 @@ class Player extends React.Component {
     if (this.props.loading) {
       return null;
     }
+    let playerView;
+    if (Platform.OS === 'android') {
+      playerView = <WebView style={{flex: 1}} source={{uri: 'http://localhost:8080/static/demo-episode/clog.html'}} onLoadEnd={() => this.setState({ loading: false })}/>;
+    }
+    else {
+      playerView = <WKWebView style={{flex: 1}} source={{uri: 'http://localhost:8080/static/demo-episode/clog.html'}} onLoadEnd={() => this.setState({ loading: false })}/>;
+    }
     return (
       <View style={{flex: 1}}>
         <NavBarWithPinkButton
@@ -47,7 +55,7 @@ class Player extends React.Component {
           />
         <View style={{flex: 1}}>
           <ModalSpinner visible={this.state.loading}/>
-          <WKWebView style={{flex: 1}} source={{uri: 'http://localhost:8080/static/demo-episode/clog.html'}} onLoadEnd={() => this.setState({ loading: false })}/>
+          {playerView}
         </View>
         <ButtomMenu
           onSharePress={this.onSharePress.bind(this)}
