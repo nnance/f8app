@@ -3,9 +3,10 @@ import renderer from 'react-test-renderer';
 import {shallow} from 'enzyme';
 
 import {
-  Switch,
-  TextInput
+  Switch
 } from 'react-native';
+
+import TextInput from '../../../common/TextInput';
 
 jest.mock('react-native-picker');
 jest.mock('react-native-image-picker');

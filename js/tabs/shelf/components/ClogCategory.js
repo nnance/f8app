@@ -151,6 +151,8 @@ class ClogBanner extends React.Component {
   }
 }
 
+export const RecommendClogWidth = Dimensions.get('window').width * 0.9;
+
 export class RecommendClogs extends React.Component {
   constructor(...args) {
     super(...args);
@@ -171,7 +173,7 @@ export class RecommendClogs extends React.Component {
 
   renderClogBanner(data) {
     return (
-      <TouchableOpacity onPress={this.onPress.bind(this, data.id)} style={{flex: 1, width: 320, marginHorizontal: (Dimensions.get('window').width - 320 - 20) / 2}}>
+      <TouchableOpacity onPress={this.onPress.bind(this, data.id)} style={{flex: 1, width: RecommendClogWidth, marginHorizontal: (Dimensions.get('window').width - RecommendClogWidth - 20) / 2}}>
         <ClogBanner category={this.props.category} clog={data}/>
       </TouchableOpacity>
     );
