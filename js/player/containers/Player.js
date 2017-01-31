@@ -5,6 +5,7 @@ import { graphql } from 'react-apollo';
 export const query = gql`
   query EpisodeQuery($id: ID!){
     episode(id: $id) {
+      id
       no
       title
       likeCount

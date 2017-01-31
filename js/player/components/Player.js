@@ -97,7 +97,11 @@ class Player extends React.Component {
 
   onSharePress() {
     Share.share({
-      message: `EP.${this.props.episode.no} ${this.props.episode.title}`
+      title: `EP.${this.props.episode.no} ${this.props.episode.title}`,
+      message: `http://exporter-noun-28062.bitballoon.com/`,
+      url: `http://exporter-noun-28062.bitballoon.com/`
+    }, {
+      dialogTitle: 'test'
     });
   }
 }
