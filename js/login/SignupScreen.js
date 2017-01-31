@@ -1,9 +1,10 @@
 'use strict';
 
 import React from 'React';
-import {View, Text, TextInput, Image} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import ClogiiButton from 'ClogiiButton';
 
+import TextInput from '../common/TextInput';
 import {DashButtonWithContainer} from './DashButton';
 
 import styles from './styles';

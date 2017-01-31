@@ -1,8 +1,10 @@
 'use strict';
 
 import React from 'React';
-import {Image, View, Text, TextInput} from 'react-native';
+import {Image, View, Text} from 'react-native';
 import ClogiiButton from 'ClogiiButton';
+
+import TextInput from '../common/TextInput';
 
 import styles from './styles';
 
