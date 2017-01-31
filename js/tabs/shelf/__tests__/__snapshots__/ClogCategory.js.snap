@@ -164,9 +164,9 @@ exports[`Shelf.ClogCategory RecommendClogs render 1`] = `
     style={
       Object {
         "flex": 1,
-        "marginHorizontal": 205,
+        "marginHorizontal": 27.5,
         "opacity": 1,
-        "width": 320,
+        "width": 675,
       }
     }
     testID={undefined}>
@@ -298,9 +298,9 @@ exports[`Shelf.ClogCategory RecommendClogs render 1`] = `
     style={
       Object {
         "flex": 1,
-        "marginHorizontal": 205,
+        "marginHorizontal": 27.5,
         "opacity": 1,
-        "width": 320,
+        "width": 675,
       }
     }
     testID={undefined}>
@@ -1187,9 +1187,9 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                 style={
                   Object {
                     "flex": 1,
-                    "marginHorizontal": 205,
+                    "marginHorizontal": 27.5,
                     "opacity": 1,
-                    "width": 320,
+                    "width": 675,
                   }
                 }
                 testID={undefined}>
@@ -1321,9 +1321,9 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                 style={
                   Object {
                     "flex": 1,
-                    "marginHorizontal": 205,
+                    "marginHorizontal": 27.5,
                     "opacity": 1,
-                    "width": 320,
+                    "width": 675,
                   }
                 }
                 testID={undefined}>

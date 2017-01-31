@@ -1,11 +1,12 @@
 'use strict';
 
 import React from 'React';
-import {Image, View, Text, TextInput, TouchableOpacity} from 'react-native';
+import {Image, View, Text, TouchableOpacity} from 'react-native';
 import ClogiiButton from 'ClogiiButton';
 import styles from './styles';
 
 import {DashButtonWithContainer} from './DashButton';
+import TextInput from '../common/TextInput';
 
 export default class EmailLoginScreen extends React.Component {
   constructor(props) {

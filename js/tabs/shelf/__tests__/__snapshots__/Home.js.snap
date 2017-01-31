@@ -9441,211 +9441,228 @@ exports[`Shelf.Home render correct 1`] = `
         }
       }>
       <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
-        accessible={true}
-        hitSlop={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
         style={
           Object {
             "alignItems": "center",
+            "flex": 1,
             "justifyContent": "center",
-            "left": 45,
-            "opacity": 1,
-            "position": "absolute",
-            "top": 120,
           }
-        }
-        testID={undefined}>
-        <Image
-          source={1}
-          style={
-            Object {
-              "height": 90,
-              "width": 90,
-            }
-          } />
+        }>
         <View
           style={
             Object {
-              "padding": 5,
+              "flex": 1,
+              "width": 290,
             }
           }>
-          <Text
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
             accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+            hitSlop={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "color": "white",
-                "fontWeight": "bold",
+                "alignItems": "center",
+                "justifyContent": "center",
+                "left": 0,
+                "opacity": 1,
+                "position": "absolute",
+                "top": 120,
               }
-            }>
-            Diary Clog
-          </Text>
-        </View>
-      </View>
-      <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
-        accessible={true}
-        hitSlop={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "justifyContent": "center",
-            "left": 220,
-            "opacity": 1,
-            "position": "absolute",
-            "top": 105,
-          }
-        }
-        testID={undefined}>
-        <Image
-          source={1}
-          style={
-            Object {
-              "height": 80,
-              "width": 80,
             }
-          } />
-        <View
-          style={
-            Object {
-              "padding": 5,
-            }
-          }>
-          <Text
+            testID={undefined}>
+            <Image
+              source={1}
+              style={
+                Object {
+                  "height": 90,
+                  "width": 90,
+                }
+              } />
+            <View
+              style={
+                Object {
+                  "padding": 5,
+                }
+              }>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "white",
+                    "fontWeight": "bold",
+                  }
+                }>
+                Diary Clog
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
             accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+            hitSlop={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "color": "white",
-                "fontWeight": "bold",
+                "alignItems": "center",
+                "justifyContent": "center",
+                "left": 175,
+                "opacity": 1,
+                "position": "absolute",
+                "top": 105,
               }
-            }>
-            Myth Clog
-          </Text>
-        </View>
-      </View>
-      <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
-        accessible={true}
-        hitSlop={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "justifyContent": "center",
-            "left": 80,
-            "opacity": 1,
-            "position": "absolute",
-            "top": 280,
-          }
-        }
-        testID={undefined}>
-        <Image
-          source={1}
-          style={
-            Object {
-              "height": 100,
-              "width": 100,
             }
-          } />
-        <View
-          style={
-            Object {
-              "padding": 5,
-            }
-          }>
-          <Text
+            testID={undefined}>
+            <Image
+              source={1}
+              style={
+                Object {
+                  "height": 80,
+                  "width": 80,
+                }
+              } />
+            <View
+              style={
+                Object {
+                  "padding": 5,
+                }
+              }>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "white",
+                    "fontWeight": "bold",
+                  }
+                }>
+                Myth Clog
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
             accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+            hitSlop={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "color": "white",
-                "fontWeight": "bold",
+                "alignItems": "center",
+                "justifyContent": "center",
+                "left": 35,
+                "opacity": 1,
+                "position": "absolute",
+                "top": 280,
               }
-            }>
-            Gag Clog
-          </Text>
-        </View>
-      </View>
-      <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
-        accessible={true}
-        hitSlop={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "justifyContent": "center",
-            "left": 250,
-            "opacity": 1,
-            "position": "absolute",
-            "top": 235,
-          }
-        }
-        testID={undefined}>
-        <Image
-          source={1}
-          style={
-            Object {
-              "height": 80,
-              "width": 80,
             }
-          } />
-        <View
-          style={
-            Object {
-              "padding": 5,
-            }
-          }>
-          <Text
+            testID={undefined}>
+            <Image
+              source={1}
+              style={
+                Object {
+                  "height": 100,
+                  "width": 100,
+                }
+              } />
+            <View
+              style={
+                Object {
+                  "padding": 5,
+                }
+              }>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "white",
+                    "fontWeight": "bold",
+                  }
+                }>
+                Gag Clog
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
             accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+            hitSlop={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "color": "white",
-                "fontWeight": "bold",
+                "alignItems": "center",
+                "justifyContent": "center",
+                "left": 205,
+                "opacity": 1,
+                "position": "absolute",
+                "top": 235,
               }
-            }>
-            Novel Clog
-          </Text>
+            }
+            testID={undefined}>
+            <Image
+              source={1}
+              style={
+                Object {
+                  "height": 80,
+                  "width": 80,
+                }
+              } />
+            <View
+              style={
+                Object {
+                  "padding": 5,
+                }
+              }>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "white",
+                    "fontWeight": "bold",
+                  }
+                }>
+                Novel Clog
+              </Text>
+            </View>
+          </View>
         </View>
       </View>
     </Image>

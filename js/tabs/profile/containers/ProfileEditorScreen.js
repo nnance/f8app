@@ -1,12 +1,10 @@
 import React from 'react';
-
 import {
   Image,
   Text,
   View,
   StyleSheet,
   TouchableOpacity,
-  TextInput,
   Switch,
   Alert,
   InteractionManager
@@ -14,6 +12,7 @@ import {
 import moment from 'moment';
 import Picker from 'react-native-picker';
 import ImagePicker from 'react-native-image-picker';
+import {connect} from 'react-redux';
 
 import {changePublicProfile} from '../../../actions/changeProfile';
 import {linkFacebook, unlinkFacebook} from '../../../actions/login';
@@ -25,8 +24,7 @@ import {colors as commonColors} from '../../../common/styles';
 import ProfileHeader from '../components/ProfileHeader';
 import DatePickerDialog from '../components/DatePickerDialog';
 import ModalSpinner from '../../../common/ModalSpinner';
-
-import {connect} from 'react-redux';
+import TextInput from '../../../common/TextInput';
 
 export const OKButton = () => (<Image
       source={require('../img/icons/ok.png')}

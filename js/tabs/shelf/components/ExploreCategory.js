@@ -3,7 +3,8 @@ import {
   Text,
   View,
   Image,
-  TouchableOpacity
+  TouchableOpacity,
+  Dimensions
 } from 'react-native';
 
 import {getCategoryIcon} from '../../../models/clog';
@@ -15,7 +16,7 @@ const categories = [
     img: getCategoryIcon('D'),
     size: 90,
     pos: {
-      x: 45,
+      x: 0,
       y: 120
     }
   },
@@ -25,7 +26,7 @@ const categories = [
     img: getCategoryIcon('M'),
     size: 80,
     pos: {
-      x: 220,
+      x: 175,
       y: 105
     }
   },
@@ -35,7 +36,7 @@ const categories = [
     img: getCategoryIcon('G'),
     size: 100,
     pos: {
-      x: 80,
+      x: 35,
       y: 280
     }
   },
@@ -45,7 +46,7 @@ const categories = [
     img: getCategoryIcon('N'),
     size: 80,
     pos: {
-      x: 250,
+      x: 205,
       y: 235
     }
   }
@@ -55,9 +56,13 @@ class ExploreCategory extends React.Component {
   render() {
     return (
       <Image source={require('../img/home-bg-2.png')} style={{width: undefined, height: 450, resizeMode: 'stretch', backgroundColor: 'transparent'}}>
-        {
-          categories.map(this.renderCategory.bind(this))
-        }
+        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+          <View style={{flex: 1, width: 205 + 85}}>
+          {
+            categories.map(this.renderCategory.bind(this))
+          }
+          </View>
+        </View>
       </Image>
     );
   }
