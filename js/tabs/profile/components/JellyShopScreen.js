@@ -50,7 +50,7 @@ class JellyShopScreen extends React.Component {
     return (<View style={commonStyles.listViewContainer}>
       <NavBar
         title="Jelly Shop"
-        onLeftPress={this.props.onBackPress}
+        onBackPress={this.props.onBackPress}
         renderRightMenu={() => {
           return (<Coin coin={12500}/>);
         }}
