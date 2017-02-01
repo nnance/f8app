@@ -59,11 +59,6 @@ class Player extends React.Component {
         </View>
         <ButtomMenu
           onSharePress={this.onSharePress.bind(this)}
-          onLikePress={
-            () => {
-              Linking.openURL(`tel:9876543210`).catch(err => console.log(err))
-            }
-          }
           likeCount={this.props.episode.likeCount}
           commentCount={this.props.episode.commentCount}
         />
@@ -97,7 +92,8 @@ class Player extends React.Component {
 
   onSharePress() {
     Share.share({
-      message: `EP.${this.props.episode.no} ${this.props.episode.title}`
+      title: `EP.${this.props.episode.no} ${this.props.episode.title}`,
+      message: `http://139.59.253.62/mock-deep-link/`
     });
   }
 }
