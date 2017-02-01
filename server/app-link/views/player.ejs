@@ -1,0 +1,36 @@
+<html>
+    <body>
+        <script type="text/javascript">
+          function tryOpenStoreOnClick(id) {
+            document.getElementById(id).onclick = function() {
+              window.location = "clogii://player?id=1";
+              // document.getElementById('store').src = "clogii://player?id=1";
+              setTimeout(function() {
+                // alert(document.webkitHidden)
+                // window.location = "https://play.google.com/store/apps/details?id=com.bar.foo&referrer=BlahBlah";
+                // window.location = "https://itunes.apple.com/us/app/my.app/id123456789?ls=1&mt=8";
+                // window.location = "market://details?id=com.bar.foo";
+              }, 2000);
+            };
+          }
+          window.onload = function() {
+            tryOpenStoreOnClick('player');
+            tryOpenStoreOnClick('book');
+
+            document.addEventListener( 'visibilitychange' , function() {
+              if (!document.hidden) {
+                  alert('well back');
+              }
+          }, false );
+          };
+        </script>
+        <a id="player" href="#">
+          Episode
+        </a>
+        <br>
+        <a id="book" href="clogii://book?id=1">
+          Book
+        </a>
+        <iframe id="store" width="1" height="1" style="visibility:hidden"></iframe>
+    </body>
+</html>

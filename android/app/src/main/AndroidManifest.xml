@@ -66,7 +66,8 @@
           <category android:name="android.intent.category.BROWSABLE" />
           <!-- <data android:scheme="http" android:host="www.clogii.clog" android:pathPrefix="/play" />
           <data android:scheme="https" android:host="www.clogii.clog" android:pathPrefix="/play" /> -->
-          <data android:scheme="clogii" android:host="play"/>
+          <data android:scheme="clogii" android:host="player"/>
+          <data android:scheme="clogii" android:host="book"/>
         </intent-filter>
       </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />

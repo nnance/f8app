@@ -29,6 +29,8 @@ import ParseDashboard from 'parse-dashboard';
 import { graphqlExpress, graphiqlExpress } from 'graphql-server-express';
 import bodyParser from 'body-parser';
 
+import appLink from './app-link';
+
 const SERVER_PORT = process.env.SERVER_PORT || 8080;
 const SERVER_URL = process.env.URL;
 const JAVASCRIPT_KEY = process.env.JAVASCRIPT_KEY || '';
@@ -66,6 +68,7 @@ function getSchema() {
 const server = express();
 
 server.use('/static', express.static(path.join(__dirname, 'static')));
+server.use('/app-link', appLink);
 
 server.use(
   '/parse',
