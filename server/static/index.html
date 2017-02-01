@@ -1,28 +1,19 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        <script type="text/javascript">
-          function tryOpenStoreOnClick(id) {
-            document.getElementById(id).onclick = function() {
-              window.location = "clogii://player?id=1";
-              setTimeout(function() {
-                window.location = "https://play.google.com/store/apps/details?id=com.bar.foo&referrer=BlahBlah";
-                // window.location = "market://details?id=com.bar.foo";
-              }, 500);
-            };
-          }
-          window.onload = function() {
-            tryOpenStoreOnClick('player');
-            tryOpenStoreOnClick('book');
-          };
-        </script>
-        <a id="player" href="#">
-          Episode
-        </a>
-        <br>
-        <a id="book" href="clogii://book?id=1">
-          Book
-        </a>
-        <iframe id="store" width="1" height="1" style="visibility:hidden"></iframe>
-    </body>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta http-equiv="refresh" content="0; url=clogii://player?id=10059" />
+    <meta property="al:ios:url" content="clogii://player?id=10059" />
+    <meta property="al:ios:app_store_id" content="12345" />
+    <meta property="al:ios:app_name" content="Clogii" />
+    <meta property="al:android:url" content="clogii://player?id=10059">
+    <meta property="al:android:package" content="com.clogii.clog">
+    <meta property="al:android:app_name" content="Clogii">
+    <meta property="og:title" content="Read Richer Man Ep. 10" />
+  </head>
+  <body>
+    <a href="clogii://player?id=10059">
+      <button class="btn btn-default">Read Richer Man Ep. 10</button>
+    </a>
+  </body>
 </html>

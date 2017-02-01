@@ -45,7 +45,7 @@ class ClogiiNavigator extends React.Component {
 
   fromURL(url) {
     let {method, query} = this.parseURL(url);
-    if (method === 'play' && query.id) {
+    if (method === 'player' && query.id) {
       this.refs.navigator.push({page: 'player', id: query.id});
     }
   }

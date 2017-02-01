@@ -6,11 +6,14 @@ const app = express();
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
-app.get('/player', (req, res) => {
-  const md = new MobileDetect(req.headers['user-agent']);
+app.get('/player/:id', (req, res) => {
+  // const md = new MobileDetect(req.headers['user-agent']);
   // md.is('iPhone')
-  // res.redirect('clogii://player');
-  res.render(path.join(__dirname, './views/player'), {});
+  res.redirect(`clogii://player?id=${req.params.id}`);
+});
+
+app.get('/test', (req, res) => {
+  res.render(path.join(__dirname, './views/test'), {});
 });
 
 export default app;
