@@ -10,9 +10,9 @@ import {
   Dimensions
 } from 'react-native';
 
-import {styles as commonStyles} from './styles';
+import {styles as commonStyles, NAV_BAR_HEIGHT, STATUS_BAR_HEIGHT} from './styles';
 
-export const HEIGHT = 60;
+export const HEIGHT = NAV_BAR_HEIGHT + STATUS_BAR_HEIGHT;
 
 export default class NavBar extends React.Component {
   render() {
@@ -76,8 +76,8 @@ export class NavBarWithPinkButton extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 5,
-    height: HEIGHT,
+    paddingTop: STATUS_BAR_HEIGHT,
+    height: NAV_BAR_HEIGHT,
     width: Dimensions.get('window').width,
     backgroundColor: 'white',
     justifyContent: 'space-between',

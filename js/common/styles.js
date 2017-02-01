@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Platform} from 'react-native';
 
 export const colors = {
   greyBackground: 'rgb(250, 250, 250)',
@@ -21,4 +21,6 @@ export const styles = StyleSheet.create({
   }
 });
 
+export const NAV_BAR_HEIGHT = 60;
 export const BUTTOM_TAB_HEIGHT = 45;
+export const STATUS_BAR_HEIGHT = Platform.OS === 'ios' ? 15 : 0;

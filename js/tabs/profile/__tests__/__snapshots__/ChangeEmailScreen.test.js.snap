@@ -41,7 +41,7 @@ exports[`ChangeEmailScreen render authen 1`] = `
           "flexDirection": "row",
           "height": 60,
           "justifyContent": "space-between",
-          "paddingTop": 5,
+          "paddingTop": 15,
           "width": 750,
         },
         Object {

@@ -486,7 +486,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
           <View
             style={
               Object {
-                "height": 60,
+                "height": 75,
               }
             } />
           <View
@@ -6901,7 +6901,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
           "flexDirection": "row",
           "height": 60,
           "justifyContent": "space-between",
-          "paddingTop": 5,
+          "paddingTop": 15,
           "width": 750,
         },
         Object {
