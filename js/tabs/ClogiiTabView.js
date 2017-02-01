@@ -7,12 +7,14 @@ import {
 } from 'react-native';
 
 import ScrollableTabView from 'react-native-scrollable-tab-view';
+import Drawer from 'react-native-drawer';
+
+import {STATUS_BAR_HEIGHT, NAV_BAR_HEIGHT} from '../common/styles';
 
 import ProfileScreen from './profile/containers/ProfileScreen';
 import ShelfScreen from './shelf';
 import FeedScreen from './feed';
-
-
+import ShelfMenu from './ShelfMenu';
 import ClogiiTabBar from './ClogiiTabBar';
 
 import {connect} from 'react-redux';
@@ -32,26 +34,34 @@ class ClogiiTabView extends React.Component {
   render() {
     // <TestBadges tabLabel="Clogii" isActive={this.state.activeTab === 0 ? true : false}><Image style={styles.mockScreen} source={require('./img/mock/clog.png')}/></TestBadges>
     return (
-      <ScrollableTabView
-        tabBarPosition={'bottom'}
-        style={{}}
-        renderTabBar={() => {
-          return <ClogiiTabBar badges={this.props.badges}/>;
+      <Drawer
+        open={false}
+        ref="drawer"
+        type="overlay"
+        content={<ShelfMenu />}
+        openDrawerOffset={0}
+        >
+        <ScrollableTabView
+          tabBarPosition={'bottom'}
+          style={{}}
+          renderTabBar={() => {
+            return <ClogiiTabBar badges={this.props.badges}/>;
+            }
           }
-        }
-        onChangeTab={({i}) => {
-            this.setState({
-              activeTab: i
-            });
+          onChangeTab={({i}) => {
+              this.setState({
+                activeTab: i
+              });
+            }
           }
-        }
-        locked={Platform.OS === 'android'}
-      >
-        <ShelfScreen navigator={this.props.navigator} tabLabel="Clogii"/>
-        <TestBadges navigator={this.props.navigator} tabLabel="Feed" isActive={this.state.activeTab === 1 ? true : false}><FeedScreen navigator={this.props.navigator}/></TestBadges>
-        <TestBadges navigator={this.props.navigator} tabLabel="Notifications" isActive={this.state.activeTab === 2 ? true : false}><Image style={styles.mockScreen} source={require('./img/mock/notification.png')}/></TestBadges>
-        <ProfileScreen navigator={this.props.navigator} tabLabel="Profile" isActive={this.state.activeTab === 3}/>
-      </ScrollableTabView>
+          locked={Platform.OS === 'android'}
+        >
+          <ShelfScreen navigator={this.props.navigator} tabLabel="Clogii"/>
+          <TestBadges navigator={this.props.navigator} tabLabel="Feed" isActive={this.state.activeTab === 1 ? true : false}><FeedScreen navigator={this.props.navigator}/></TestBadges>
+          <TestBadges navigator={this.props.navigator} tabLabel="Notifications" isActive={this.state.activeTab === 2 ? true : false}><Image style={styles.mockScreen} source={require('./img/mock/notification.png')}/></TestBadges>
+          <ProfileScreen navigator={this.props.navigator} tabLabel="Profile" isActive={this.state.activeTab === 3}/>
+        </ScrollableTabView>
+      </Drawer>
     );
   }
 }
