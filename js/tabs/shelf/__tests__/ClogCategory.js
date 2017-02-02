@@ -70,12 +70,10 @@ describe('Shelf.ClogCategory', () => {
     it('onPress should navigate to book', async () => {
       const result = await graphql(query, mapPropsToOptions({category: 'D'}));
       const props = mapQueryToProps({data: result.data});
-      const navigator = {
-        push: jest.fn()
-      };
-      const wrapper = shallow(<RecommendClogs navigator={navigator} category='D' clogs={props.recommendedClogs}/>);
+      const goToBook = jest.fn();
+      const wrapper = shallow(<RecommendClogs goToBook={goToBook} category='D' clogs={props.recommendedClogs}/>);
       wrapper.instance().onPress(5);
-      expect(navigator.push).toBeCalledWith({page: 'book', id: 5});
+      expect(goToBook).toBeCalledWith(5);
     });
   });
 });

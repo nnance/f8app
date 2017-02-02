@@ -33,6 +33,7 @@ class Container extends React.Component {
         addFixBugListener={this.props.addFixBugListener}
         removeFixBugListener={this.props.removeFixBugListener}
         navigator={this.props.navigator} clogs={this.props.clogs}
+        onClogPress={this.props.goToBook}
         />
     </View>
     );

@@ -10,13 +10,13 @@ import {
 import moment from 'moment';
 import ReadMore from '@exponent/react-native-read-more-text';
 
-import NavBar from '../../../common/NavBar';
-import BorderButton, {styles as borderButtonStyles} from '../../../common/BorderButton';
-import PureListView from '../../../common/PureListView';
-import FixBugScrollView from '../../../common/FixBugScrollView';
-import CircleImage from '../../../common/CircleImage';
-import {toHumanNumber, mapSource} from '../../../common/utils';
-import {colors, styles as commonStyles} from '../../../common/styles';
+import NavBar from '../../common/NavBar';
+import BorderButton, {styles as borderButtonStyles} from '../../common/BorderButton';
+import PureListView from '../../common/PureListView';
+import FixBugScrollView from '../../common/FixBugScrollView';
+import CircleImage from '../../common/CircleImage';
+import {toHumanNumber, mapSource} from '../../common/utils';
+import {colors, styles as commonStyles} from '../../common/styles';
 
 const MetaEpisode = (props) => (
   <View style={styles.metaEpisodeContainer}>
@@ -38,11 +38,11 @@ const MetaEpisode = (props) => (
       </View>
       <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
         <View style={{flex: 3, flexDirection: 'row', alignItems: 'center'}}>
-          <Image source={require('../../../common/img/icon/read.png')} style={{width: 20, height: 20, resizeMode: 'contain', borderRadius: 4}}/>
+          <Image source={require('../../common/img/icon/read.png')} style={{width: 20, height: 20, resizeMode: 'contain', borderRadius: 4}}/>
           <Text style={{paddingLeft: 5, fontSize: 12, color: colors.textFadedGrey}}>ดู {toHumanNumber(props.viewCount || 0)} ครั้ง</Text>
         </View>
         <View style={{flex: 4, flexDirection: 'row', alignItems: 'center'}}>
-          <Image source={require('../../../common/img/icon/heart.png')} style={{width: 15, height: 15, resizeMode: 'contain', borderRadius: 4, marginLeft: 20}}/>
+          <Image source={require('../../common/img/icon/heart.png')} style={{width: 15, height: 15, resizeMode: 'contain', borderRadius: 4, marginLeft: 20}}/>
           <Text style={{paddingLeft: 5, fontSize: 12, color: colors.textFadedGrey}}>{toHumanNumber(props.likeCount || 0)} Like</Text>
         </View>
       </View>
@@ -65,7 +65,7 @@ const MetaEpisode = (props) => (
 
 const LockImg = () => (
   <View style={{flexDirection: 'row', marginRight: 2, alignItems: 'center', justifyContent: 'center'}}>
-    <Image style={{height: 10, width: 8, resizeMode: 'stretch', marginRight: 2}} source={require('../../img/icons/lock.png')}/>
+    <Image style={{height: 10, width: 8, resizeMode: 'stretch', marginRight: 2}} source={require('../img/lock.png')}/>
     <Text style={[{fontSize: 12, fontWeight: 'bold', lineHeight: 12}, borderButtonStyles.lightGreenText]}>20</Text>
   </View>
 );
@@ -149,8 +149,8 @@ class Book extends React.Component {
     return (
       <View style={{flex: 1, backgroundColor: 'white'}}>
         <Image source={mapSource(clog.cover)} style={styles.cover}>
-          <TouchableOpacity style={styles.backButtonContainer} onPress={this.onBackPress.bind(this)}>
-            <Image source={require('../../../common/img/icon/backButton.png')} style={commonStyles.navBarIcon}/>
+          <TouchableOpacity style={styles.backButtonContainer} onPress={this.props.onBackPress}>
+            <Image source={require('../../common/img/icon/backButton.png')} style={commonStyles.navBarIcon}/>
           </TouchableOpacity>
         </Image>
         <FixBugScrollView
@@ -174,10 +174,6 @@ class Book extends React.Component {
         <View style={{height: 1, backgroundColor: colors.greyBorder}}/>
       </View>
     );
-  }
-
-  onBackPress() {
-    this.props.navigator && this.props.navigator.pop();
   }
 }
 

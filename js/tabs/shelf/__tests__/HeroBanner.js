@@ -7,12 +7,10 @@ import graphql from '../../../libs/mockGraphQL';
 import HeroBanner from '../components/HeroBanner';
 
 describe('HeroBanner', () => {
-  it('onBannerPress should navigate to book', () => {
-    const navigator = {
-      push: jest.fn()
-    };
-    const wrapper = shallow(<HeroBanner navigator={navigator} clogs={[]}/>);
+  it('onBannerPress should call goToBook', () => {
+    const goToBook = jest.fn();
+    const wrapper = shallow(<HeroBanner goToBook={goToBook} clogs={[]}/>);
     wrapper.instance().onBannerPress(5);
-    expect(navigator.push).toBeCalledWith({page: 'book', id: 5});
+    expect(goToBook).toBeCalledWith(5);
   });
 });

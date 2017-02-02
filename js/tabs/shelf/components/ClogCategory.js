@@ -180,7 +180,7 @@ export class RecommendClogs extends React.Component {
   }
 
   onPress(id) {
-    this.props.navigator && this.props.navigator.push({page: 'book', id});
+    this.props.goToBook && this.props.goToBook(id);
   }
 
   onScroll(e) {
@@ -213,7 +213,7 @@ class ClogCategory extends React.Component {
       <LinearGradient locations={[0, 0.5, 0.5, 1]} colors={[clogTheme.color, clogTheme.color, 'rgb(220, 4, 87)', 'rgb(220, 4, 87)']} style={{flex: 1, backgroundColor: 'transparent'}}>
         <FixBugScrollView
           style={{flex: 1, backgroundColor: 'transparent'}}>
-          <LinearGradient style={{height: 570}} colors={[clogTheme.color, 'rgb(164, 58, 124)']}>
+          <LinearGradient style={{height: 520 + HEIGHT}} colors={[clogTheme.color, 'rgb(164, 58, 124)']}>
             <Image source={require('../img/star-bg.png')}
               style={{
                 flex: 1,
@@ -247,10 +247,10 @@ class ClogCategory extends React.Component {
                   <ClogLogo category={this.props.category}/>
                 </View>
                 <View style={{height: 150, padding: 10, justifyContent: 'center', alignItems: 'center'}}>
-                  <RecommendClogs navigator={this.props.navigator} category={this.props.category} clogs={this.props.recommendedClogs} onIndexChange={this.onRecommendClogChange.bind(this)}/>
+                  <RecommendClogs goToBook={this.props.goToBook} category={this.props.category} clogs={this.props.recommendedClogs} onIndexChange={this.onRecommendClogChange.bind(this)}/>
                 </View>
-                <View style={{height: 180, padding: 5}}>
-                  <MetaClogListView navigator={this.props.navigator} header="What's New" clogs={this.props.recentlyClogs}
+                <View style={{padding: 5}}>
+                  <MetaClogListView goToBook={this.props.goToBook} header="What's New" clogs={this.props.recentlyClogs}
                     renderButton={this.renderButtonViewAllClog.bind(this, {title: `What's new`, orderBy: "RECENTLY"})}/>
                 </View>
               </View>
@@ -258,7 +258,7 @@ class ClogCategory extends React.Component {
           </LinearGradient>
           <LinearGradient colors={['rgb(164, 58, 124)', 'rgb(220, 4, 87)']}>
             <View style={{height: 180, padding: 5}}>
-              <MetaClogListView navigator={this.props.navigator} header="Top Chart" clogs={this.props.trendingClogs}
+              <MetaClogListView goToBook={this.props.goToBook} header="Top Chart" clogs={this.props.trendingClogs}
                 renderButton={this.renderButtonViewAllClog.bind(this, {title: 'ยอดนิยม', orderBy: "TRENDING"})}/>
             </View>
             <View style={{height: 180, padding: 5}}>
