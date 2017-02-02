@@ -8,11 +8,9 @@ import MetaClogListView from '../components/MetaClogListView';
 
 describe('MetaClogListView', () => {
   it('clogPress should navigate to book', () => {
-    const navigator = {
-      push: jest.fn()
-    };
-    const wrapper = shallow(<MetaClogListView navigator={navigator} clogs={[]}/>);
+    const goToBook = jest.fn();
+    const wrapper = shallow(<MetaClogListView goToBook={goToBook} clogs={[]}/>);
     wrapper.instance().clogPress(5);
-    expect(navigator.push).toBeCalledWith({page: 'book', id: 5});
+    expect(goToBook).toBeCalledWith(5);
   });
 });

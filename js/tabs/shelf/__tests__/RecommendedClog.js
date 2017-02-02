@@ -8,11 +8,9 @@ import RecommendedClog from '../components/RecommendedClog';
 
 describe('RecommendedClog', () => {
   it('onReadPress should navigate to book', () => {
-    const navigator = {
-      push: jest.fn()
-    };
-    const wrapper = shallow(<RecommendedClog navigator={navigator} id={5}/>);
+    const goToBook = jest.fn();
+    const wrapper = shallow(<RecommendedClog goToBook={goToBook} id={5}/>);
     wrapper.instance().onReadPress(5);
-    expect(navigator.push).toBeCalledWith({page: 'book', id: 5});
+    expect(goToBook).toBeCalledWith(5);
   });
 });

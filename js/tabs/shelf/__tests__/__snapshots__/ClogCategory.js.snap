@@ -465,7 +465,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
       start={undefined}
       style={
         Object {
-          "height": 570,
+          "height": 595,
         }
       }>
       <Image
@@ -1444,7 +1444,6 @@ exports[`Shelf.ClogCategory render correct 1`] = `
           <View
             style={
               Object {
-                "height": 180,
                 "padding": 5,
               }
             }>
