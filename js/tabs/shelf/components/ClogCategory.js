@@ -213,7 +213,7 @@ class ClogCategory extends React.Component {
       <LinearGradient locations={[0, 0.5, 0.5, 1]} colors={[clogTheme.color, clogTheme.color, 'rgb(220, 4, 87)', 'rgb(220, 4, 87)']} style={{flex: 1, backgroundColor: 'transparent'}}>
         <FixBugScrollView
           style={{flex: 1, backgroundColor: 'transparent'}}>
-          <LinearGradient style={{height: 570}} colors={[clogTheme.color, 'rgb(164, 58, 124)']}>
+          <LinearGradient style={{height: 520 + HEIGHT}} colors={[clogTheme.color, 'rgb(164, 58, 124)']}>
             <Image source={require('../img/star-bg.png')}
               style={{
                 flex: 1,
@@ -249,7 +249,7 @@ class ClogCategory extends React.Component {
                 <View style={{height: 150, padding: 10, justifyContent: 'center', alignItems: 'center'}}>
                   <RecommendClogs goToBook={this.props.goToBook} category={this.props.category} clogs={this.props.recommendedClogs} onIndexChange={this.onRecommendClogChange.bind(this)}/>
                 </View>
-                <View style={{height: 180, padding: 5}}>
+                <View style={{padding: 5}}>
                   <MetaClogListView goToBook={this.props.goToBook} header="What's New" clogs={this.props.recentlyClogs}
                     renderButton={this.renderButtonViewAllClog.bind(this, {title: `What's new`, orderBy: "RECENTLY"})}/>
                 </View>
