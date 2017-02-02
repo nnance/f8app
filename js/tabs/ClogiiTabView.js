@@ -9,12 +9,13 @@ import {
 
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 import Drawer from 'react-native-drawer';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
 import ProfileScreen from './profile';
 import ShelfScreen from './shelf';
 import FeedScreen from './feed';
 import ShelfMenu from './ShelfMenu';
+import NotificationsScreen from './notifications';
 import ClogiiTabBar from './ClogiiTabBar';
 
 const styles = StyleSheet.create({
@@ -146,14 +147,19 @@ class ClogiiTabView extends React.Component {
             navigator={this.props.navigator}
             tabLabel="Feed"
           />
+          <NotificationsScreen
+            navigator={this.props.navigator}
+            tabLabel="Notifications"
+            isActive={this.state.activeTab === 2 ? true : false}
+          />
           <TestBadges
             navigator={this.props.navigator}
             tabLabel="Notifications"
             isActive={this.state.activeTab === 2}
           >
-            <Image style={styles.mockScreen} source={require('./img/mock/notification.png')} />
+            <Image style={styles.mockScreen} source={require('./img/mock/notification.png')}/>
           </TestBadges>
-          <ProfileScreen navigator={this.props.navigator} tabLabel="Profile" isActive={this.state.activeTab === 3} />
+          <ProfileScreen navigator={this.props.navigator} tabLabel="Profile" isActive={this.state.activeTab === 3}/>
         </ScrollableTabView>
       </Drawer>
     );
@@ -182,14 +188,15 @@ class _TestBadges extends React.Component {
 
   render() {
     // {this.props.children}
-    return (<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', width: undefined, height: undefined }}>
-      {this.props.children}
-    </View>);
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', width: undefined, height: undefined }}>
+        {this.props.children}
+      </View>);
   }
 }
 
 const TestBadges = connect(null, (dispatch, ownProps) => ({
-  clearBadge: () => dispatch({ type: 'CLEAR_MOCK_BADGE', payload: ownProps.tabLabel }),
+  clearBadge: () => dispatch({type: 'CLEAR_MOCK_BADGE', payload: ownProps.tabLabel}),
 }))(_TestBadges);
 
 const select = state => ({
@@ -197,8 +204,8 @@ const select = state => ({
 });
 
 const actions = ({
-  clear: iden => ({ type: 'CLEAR_MOCK_BADGE', payload: iden }),
-  init: () => ({ type: 'INIT_MOCK_BADGES' }),
+  clear: iden => ({type: 'CLEAR_MOCK_BADGE', payload: iden}),
+  init: () => ({type: 'INIT_MOCK_BADGES'}),
 });
 
 export default connect(select, actions)(ClogiiTabView);
