@@ -30,6 +30,7 @@ class ShelfNavigator extends React.Component {
     }
     if (route.page === 'home') {
       return <Home
+        onOpenShelfMenu={this.props.onOpenShelfMenu}
         goToBook={this.goToBook.bind(this)}
         navigator={navigator}/>;
     }

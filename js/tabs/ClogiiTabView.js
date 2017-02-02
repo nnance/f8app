@@ -35,10 +35,10 @@ class ClogiiTabView extends React.Component {
     // <TestBadges tabLabel="Clogii" isActive={this.state.activeTab === 0 ? true : false}><Image style={styles.mockScreen} source={require('./img/mock/clog.png')}/></TestBadges>
     return (
       <Drawer
-        open={true}
-        ref="drawer"
+        open={false}
+        ref="shelfMenu"
         type="overlay"
-        content={<ShelfMenu />}
+        content={<ShelfMenu onClose={this.closeShelfMenu.bind(this)}/>}
         openDrawerOffset={0}
         >
         <ScrollableTabView
@@ -56,13 +56,21 @@ class ClogiiTabView extends React.Component {
           }
           locked={Platform.OS === 'android'}
         >
-          <ShelfScreen navigator={this.props.navigator} tabLabel="Clogii"/>
+          <ShelfScreen onOpenShelfMenu={this.openShelfMenu.bind(this)} navigator={this.props.navigator} tabLabel="Clogii"/>
           <TestBadges navigator={this.props.navigator} tabLabel="Feed" isActive={this.state.activeTab === 1 ? true : false}><FeedScreen navigator={this.props.navigator}/></TestBadges>
           <TestBadges navigator={this.props.navigator} tabLabel="Notifications" isActive={this.state.activeTab === 2 ? true : false}><Image style={styles.mockScreen} source={require('./img/mock/notification.png')}/></TestBadges>
           <ProfileScreen navigator={this.props.navigator} tabLabel="Profile" isActive={this.state.activeTab === 3}/>
         </ScrollableTabView>
       </Drawer>
     );
+  }
+
+  openShelfMenu() {
+    this.refs.shelfMenu.open();
+  }
+
+  closeShelfMenu() {
+    this.refs.shelfMenu.close();
   }
 }
 

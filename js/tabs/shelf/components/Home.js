@@ -30,7 +30,7 @@ class Home extends React.Component {
       <View style={{flex: 1, backgroundColor: 'rgb(81, 20, 64)'}}>
         <NavBar
           renderLeftMenu={() => (
-            <TouchableOpacity><Image style={{height: 20, resizeMode: 'contain'}} source={require('../img/menu.png')}/></TouchableOpacity>
+            <TouchableOpacity onPress={this.props.onOpenShelfMenu}><Image style={{height: 20, resizeMode: 'contain'}} source={require('../img/menu.png')}/></TouchableOpacity>
           )}
           renderRightMenu={() => (
             <TouchableOpacity><Image style={{height: 20, resizeMode: 'contain'}} source={require('../img/search.png')}/></TouchableOpacity>
