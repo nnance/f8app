@@ -11,6 +11,8 @@ import ScrollableTabView from 'react-native-scrollable-tab-view';
 import ProfileScreen from './profile/containers/ProfileScreen';
 import ShelfScreen from './shelf';
 import FeedScreen from './feed';
+import NotificationsScreen from './notifications';
+
 
 
 import ClogiiTabBar from './ClogiiTabBar';
@@ -49,7 +51,8 @@ class ClogiiTabView extends React.Component {
       >
         <ShelfScreen navigator={this.props.navigator} tabLabel="Clogii"/>
         <TestBadges navigator={this.props.navigator} tabLabel="Feed" isActive={this.state.activeTab === 1 ? true : false}><FeedScreen navigator={this.props.navigator}/></TestBadges>
-        <TestBadges navigator={this.props.navigator} tabLabel="Notifications" isActive={this.state.activeTab === 2 ? true : false}><Image style={styles.mockScreen} source={require('./img/mock/notification.png')}/></TestBadges>
+        <NotificationsScreen navigator={this.props.navigator} tabLabel="Notifications" isActive={this.state.activeTab === 2 ? true : false}/>
+        {/*<TestBadges navigator={this.props.navigator} tabLabel="Notifications" isActive={this.state.activeTab === 2 ? true : false}><Image style={styles.mockScreen} source={require('./img/mock/notification.png')}/></TestBadges>*/}
         <ProfileScreen navigator={this.props.navigator} tabLabel="Profile" isActive={this.state.activeTab === 3}/>
       </ScrollableTabView>
     );
