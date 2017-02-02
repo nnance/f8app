@@ -4,14 +4,28 @@ import {
   Text
 } from 'react-native';
 import FixBugScrollViewNavigator from '../../../common/FixBugScrollViewNavigator';
-import Home from './Home';
+import FeedHome from './FeedHome';
+import NavBar from './NavBar';
 
-const NotFound = () => <Text>not found</Text>;
+
+
 class FeedNavigator extends React.Component {
+
+
   render() {
     return (
-      <Home/>
+      <FixBugScrollViewNavigator
+        ref="navigator"
+        initialRoute={{page: 'feedHome'}}
+        renderScene={this.renderScene.bind(this)}
+      />
     )
+  }
+
+  renderScene(route, navigator) {
+    if (route.page === 'feedHome') {
+      return <FeedHome navigator={navigator}/>
+    }
   }
 }
 

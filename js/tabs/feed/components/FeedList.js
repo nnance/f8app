@@ -6,8 +6,6 @@ import {
   Text
 } from 'react-native';
 import FeedRow from './FeedRow';
-import data from '../data';
-
 
 const styles = StyleSheet.create({
   separator: {
@@ -32,7 +30,7 @@ class FeedList extends React.Component {
     super(props);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows(data)
+      dataSource: ds.cloneWithRows(this.props.data)
     };
   }
 

@@ -48,7 +48,7 @@ class ClogiiTabView extends React.Component {
         locked={Platform.OS === 'android'}
       >
         <ShelfScreen navigator={this.props.navigator} tabLabel="Clogii"/>
-        <TestBadges navigator={this.props.navigator} tabLabel="Feed" isActive={this.state.activeTab === 1 ? true : false}><FeedScreen navigator={this.props.navigator}/></TestBadges>
+        <FeedScreen navigator={this.props.navigator} tabLabel="Feed"/>
         <TestBadges navigator={this.props.navigator} tabLabel="Notifications" isActive={this.state.activeTab === 2 ? true : false}><Image style={styles.mockScreen} source={require('./img/mock/notification.png')}/></TestBadges>
         <ProfileScreen navigator={this.props.navigator} tabLabel="Profile" isActive={this.state.activeTab === 3}/>
       </ScrollableTabView>
