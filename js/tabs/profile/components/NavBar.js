@@ -17,11 +17,11 @@ export default class NavBar extends React.Component {
   render() {
     return (
       <NavBarWithPinkButton
+        {...this.props}
         containerStyle={styles.container}
         renderRightMenu={this.renderRightMenu.bind(this)}
         title={this.props.title}
         titleTextStyle={styles.titleText}
-        {...this.props}
         />
     );
   }
