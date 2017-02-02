@@ -35,7 +35,7 @@ class ClogiiTabView extends React.Component {
     // <TestBadges tabLabel="Clogii" isActive={this.state.activeTab === 0 ? true : false}><Image style={styles.mockScreen} source={require('./img/mock/clog.png')}/></TestBadges>
     return (
       <Drawer
-        open={false}
+        open={true}
         ref="drawer"
         type="overlay"
         content={<ShelfMenu />}

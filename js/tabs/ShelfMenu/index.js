@@ -20,10 +20,10 @@ const CloseMenuButton = ({onPress}) => (
 
 const Topic = ({title, children}) => (
   <View>
-    <View style={{backgroundColor: colors.fadedGreyBackground, paddingVertical: 8, paddingHorizontal: 10}}>
-      <Text style={{color: 'rgba(255, 255, 255, 0.3)', fontWeight: 'bold', fontSize: 16}}>{title}</Text>
+    <View style={{backgroundColor: colors.fadedGreyBackground, paddingVertical: 4, paddingLeft: 10}}>
+      <Text style={{color: 'rgba(255, 255, 255, 0.2)', fontSize: 12}}>{title}</Text>
     </View>
-    <View style={{paddingVertical: 10, paddingHorizontal: 10}}>
+    <View style={{paddingVertical: 0, paddingLeft: 10}}>
       {children}
     </View>
   </View>
@@ -33,19 +33,59 @@ const FadedMenuItem = ({title, source}) => (
   <View style={{flexDirection: 'row', paddingVertical: 10, paddingHorizontal: 5, alignItems: 'center'}}>
     <CircleImage source={source} size={25}/>
     <View style={{marginLeft: 10}}>
-      <Text style={{color: 'rgba(255, 255, 255, 0.3)', fontWeight: 'bold'}}>{title}</Text>
+      <Text style={[{fontSize: 13}, styles.fadedWhiteText]}>{title}</Text>
     </View>
   </View>
 );
 
-const WhiteMenuItem = ({title, source}) => (
-  <View style={{flexDirection: 'row', paddingVertical: 10, paddingHorizontal: 5, alignItems: 'center'}}>
+const WhiteMenuItem = ({title, source, renderButton, style}) => (
+  <View style={[{flexDirection: 'row', paddingVertical: 10, paddingLeft: 5, alignItems: 'center'}, style]}>
     <CircleImage source={source} size={25}/>
     <View style={{marginLeft: 10}}>
       <Text style={{color: 'white', fontWeight: 'bold'}}>{title}</Text>
     </View>
   </View>
 );
+
+class ClogMenuItem extends React.Component {
+  constructor(...args) {
+    super(...args);
+    this.state = {
+      showTag: false
+    };
+  }
+
+  render() {
+    return (
+      <View>
+        <WhiteMenuItem style={{paddingTop: 10, paddingBottom: this.state.showTag ? 5 : 10}} title={this.props.title} source={this.props.source}/>
+        {
+          this.state.showTag ?
+            <View style={{paddingLeft: 40, marginBottom: 10}}>{this.renderTagItem()}</View>
+            : null
+        }
+        {
+          !this.props.notShowBottomLine ?
+            <View style={{flex: 1, marginVertical: 0, marginLeft: 40, height: 1, backgroundColor: 'rgba(0, 0, 0, 0.2)'}}></View>
+            : null
+        }
+      </View>
+    );
+  }
+
+  renderTagItem() {
+    const tags = [{title: 'Chat Clog'}, {title: 'Vide Clog'}];
+    return (
+      <View>
+        {
+          tags.map(tag => (
+            <Text style={[styles.fadedWhiteText, {paddingVertical: 1}]}>{tag.title}</Text>
+          ))
+        }
+      </View>
+    )
+  }
+}
 
 class ShelfMenu extends React.Component {
   render() {
@@ -57,10 +97,10 @@ class ShelfMenu extends React.Component {
         </View>
         <ScrollView>
           <Topic title="หมวดหมู่เรื่องราว">
-            <WhiteMenuItem title="Gag Clog" source={getCategoryLogo('G')}/>
-            <WhiteMenuItem title="Diary Clog" source={getCategoryLogo('D')}/>
-            <WhiteMenuItem title="Novel Clog" source={getCategoryLogo('N')}/>
-            <WhiteMenuItem title="Myth Clog" source={getCategoryLogo('M')}/>
+            <ClogMenuItem title="Gag Clog" source={getCategoryLogo('G')}/>
+            <ClogMenuItem title="Diary Clog" source={getCategoryLogo('D')}/>
+            <ClogMenuItem title="Novel Clog" source={getCategoryLogo('N')}/>
+            <ClogMenuItem title="Myth Clog" notShowBottomLine={true} source={getCategoryLogo('M')}/>
           </Topic>
           <Topic title="ข้อมูล">
             <WhiteMenuItem title="David Beckham" source={getCategoryIcon('D')}/>
@@ -82,7 +122,11 @@ class ShelfMenu extends React.Component {
 
 const styles = StyleSheet.create({
   closeContainer: {
-    padding: 15
+    paddingLeft: 15,
+    paddingVertical: 10
+  },
+  fadedWhiteText: {
+    color: 'rgba(255, 255, 255, 0.2)'
   }
 });
 
