@@ -52,7 +52,7 @@ class ShelfMenu extends React.Component {
             <ClogMenuItem tags={mockTags} title="Myth Clog" notShowBottomLine={true} source={getCategoryIcon('M')}/>
           </Topic>
           <Topic title="ข้อมูล">
-            <WhiteMenuItem onPress={this.props.onProfilePress} title={this.props.user.name} source={this.props.user.profilePicture}/>
+            <WhiteMenuItem onPress={this.props.onProfilePress} title={this.props.user.name} source={mapSource(this.props.user.profilePicture)}/>
           </Topic>
           <Topic title="เกี่ยวกับ" style={{paddingVertical: 5}}>
             <FadedMenuItem onPress={this.props.onAboutClogiiPress} title="เกี่ยวกับ Clogii" source={require('../img/about.png')}/>
