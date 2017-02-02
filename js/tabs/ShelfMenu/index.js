@@ -14,12 +14,24 @@ import {getCategoryIcon, getCategoryLogo} from '../../models/clog';
 
 const CloseMenuButton = ({onPress}) => (
   <TouchableOpacity onPress={onPress}>
-    <Text style={{fontSize: 25, color: 'white'}}>X</Text>
+    <Image source={require('./img/close.png')} style={{width: 15, height: 15, resizeMode: 'contain'}}/>
   </TouchableOpacity>
 );
 
-const Topic = ({title, children}) => (
-  <View>
+const ShowTagButton = ({onPress}) => (
+  <TouchableOpacity onPress={onPress}>
+    <Image source={require('./img/show-tag.png')} style={{width: 20, height: 20, resizeMode: 'contain'}}/>
+  </TouchableOpacity>
+);
+
+const HideTagButton = ({onPress}) => (
+  <TouchableOpacity onPress={onPress}>
+    <Image source={require('./img/hide-tag.png')} style={{width: 20, height: 20, resizeMode: 'contain'}}/>
+  </TouchableOpacity>
+);
+
+const Topic = ({title, children, style}) => (
+  <View style={style}>
     <View style={{backgroundColor: colors.fadedGreyBackground, paddingVertical: 4, paddingLeft: 10}}>
       <Text style={{color: 'rgba(255, 255, 255, 0.2)', fontSize: 12}}>{title}</Text>
     </View>
@@ -30,19 +42,22 @@ const Topic = ({title, children}) => (
 );
 
 const FadedMenuItem = ({title, source}) => (
-  <View style={{flexDirection: 'row', paddingVertical: 10, paddingHorizontal: 5, alignItems: 'center'}}>
-    <CircleImage source={source} size={25}/>
+  <View style={{flexDirection: 'row', paddingVertical: 6, paddingHorizontal: 5, alignItems: 'center'}}>
+    <Image source={source} style={{width: 20, height: 20, resizeMode: 'contain'}}/>
     <View style={{marginLeft: 10}}>
       <Text style={[{fontSize: 13}, styles.fadedWhiteText]}>{title}</Text>
     </View>
   </View>
 );
 
-const WhiteMenuItem = ({title, source, renderButton, style}) => (
+const WhiteMenuItem = ({title, source, renderedButton, style}) => (
   <View style={[{flexDirection: 'row', paddingVertical: 10, paddingLeft: 5, alignItems: 'center'}, style]}>
     <CircleImage source={source} size={25}/>
     <View style={{marginLeft: 10}}>
       <Text style={{color: 'white', fontWeight: 'bold'}}>{title}</Text>
+    </View>
+    <View style={{flex: 1, paddingRight: 10, alignItems: 'flex-end', justifyContent: 'center'}}>
+      {renderedButton}
     </View>
   </View>
 );
@@ -58,7 +73,12 @@ class ClogMenuItem extends React.Component {
   render() {
     return (
       <View>
-        <WhiteMenuItem style={{paddingTop: 10, paddingBottom: this.state.showTag ? 5 : 10}} title={this.props.title} source={this.props.source}/>
+        <WhiteMenuItem
+          style={{paddingTop: 10, paddingBottom: this.state.showTag ? 5 : 10}}
+          title={this.props.title}
+          source={this.props.source}
+          renderedButton={!this.state.showTag ? <ShowTagButton onPress={this.onShowTagPress.bind(this)}/> : <HideTagButton onPress={this.onHideTagPress.bind(this)}/>}
+          />
         {
           this.state.showTag ?
             <View style={{paddingLeft: 40, marginBottom: 10}}>{this.renderTagItem()}</View>
@@ -71,6 +91,18 @@ class ClogMenuItem extends React.Component {
         }
       </View>
     );
+  }
+
+  onShowTagPress() {
+    this.setState({
+      showTag: true
+    });
+  }
+
+  onHideTagPress() {
+    this.setState({
+      showTag: false
+    });
   }
 
   renderTagItem() {
@@ -106,13 +138,13 @@ class ShelfMenu extends React.Component {
             <WhiteMenuItem title="David Beckham" source={getCategoryIcon('D')}/>
           </Topic>
           <Topic title="เกี่ยวกับ">
-            <FadedMenuItem title="เกี่ยวกับ Clogii" source={getCategoryIcon('D')}/>
-            <FadedMenuItem title="ข้อกำหนดในการใช้ Clogii" source={getCategoryIcon('D')}/>
+            <FadedMenuItem title="เกี่ยวกับ Clogii" source={require('./img/about.png')}/>
+            <FadedMenuItem title="ข้อกำหนดในการใช้ Clogii" source={require('./img/policy.png')}/>
           </Topic>
           <Topic title="ติดตาม">
-            <FadedMenuItem title="Facebook" source={getCategoryIcon('D')}/>
-            <FadedMenuItem title="Line" source={getCategoryIcon('D')}/>
-            <FadedMenuItem title="Instagram" source={getCategoryIcon('D')}/>
+            <FadedMenuItem title="Facebook" source={require('./img/fb.png')}/>
+            <FadedMenuItem title="Line" source={require('./img/line.png')}/>
+            <FadedMenuItem title="Instagram" source={require('./img/ig.png')}/>
           </Topic>
         </ScrollView>
       </View>
