@@ -46,13 +46,13 @@ class Home extends React.Component {
         <FixBugScrollView>
           <Image source={require('../img/home-bg-1.png')} style={{width: undefined, height: 700, resizeMode: 'stretch', backgroundColor: 'transparent'}}>
             <View style={{flex: 2}}>
-              <HeroBanner navigator={this.props.navigator} clogs={this.props.heroBanners}/>
+              <HeroBanner goToBook={this.props.goToBook} clogs={this.props.heroBanners}/>
             </View>
             <View style={{flex: 1, paddingLeft: 10}}>
-              <MetaClogListView navigator={this.props.navigator} header="TRENDING" clogs={this.props.trendingClogs} renderButton={this.renderTrendingButton.bind(this)}/>
+              <MetaClogListView goToBook={this.props.goToBook} header="TRENDING" clogs={this.props.trendingClogs} renderButton={this.renderTrendingButton.bind(this)}/>
             </View>
             <View style={{flex: 1.6}}>
-              <RecommendedClog {...this.props.recommendedClog} navigator={this.props.navigator}/>
+              <RecommendedClog {...this.props.recommendedClog} goToBook={this.props.goToBook}/>
             </View>
           </Image>
           <Image source={require('../img/home-bg-1.5.png')} style={{resizeMode: 'stretch', backgroundColor: 'transparent', width: undefined, height: undefined, paddingTop: 20}}>

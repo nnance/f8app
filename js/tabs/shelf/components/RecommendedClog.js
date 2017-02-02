@@ -52,7 +52,7 @@ class RecommendedClog extends React.Component {
   }
 
   onReadPress() {
-    this.props.navigator && this.props.navigator.push({page: 'book', id: this.props.id})
+    this.props.goToBook && this.props.goToBook(this.props.id)
   }
 }
 

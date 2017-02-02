@@ -7,6 +7,7 @@ import {parse} from 'query-string';
 
 import ClogiiTabView from './tabs/ClogiiTabView';
 import Player from './player';
+import Book from './book';
 
 class ClogiiNavigator extends React.Component {
   constructor(...args) {
@@ -73,6 +74,16 @@ class ClogiiNavigator extends React.Component {
     if (route.page === 'player') {
       return <Player onBackPress={this.onBackPress.bind(this)} navigator={navigator} id={route.id}/>;
     }
+    if (route.page === 'book') {
+      return <Book
+        onBackPress={this.onBackPress.bind(this)}
+        goToPlayer={this.goToPlayer.bind(this)}
+        id={route.id}/>;
+    }
+  }
+
+  goToPlayer(id) {
+    this.refs.navigator.push({page: 'player', id})
   }
 
   onBackPress() {
