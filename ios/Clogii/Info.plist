@@ -25,7 +25,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb275405849522835</string>
+				<string>fb1824824607769616</string>
 				<string>clogii</string>
 			</array>
 		</dict>
@@ -35,7 +35,7 @@
 	<key>CodePushDeploymentKey</key>
 	<string>XZu3PfXXkUa7LkYujXEQtrdN4l87EJ6b-AFoe</string>
 	<key>FacebookAppID</key>
-	<string>275405849522835</string>
+	<string>1824824607769616</string>
 	<key>FacebookDisplayName</key>
 	<string>clogii</string>
 	<key>LSApplicationQueriesSchemes</key>
