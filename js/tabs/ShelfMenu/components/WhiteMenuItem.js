@@ -8,17 +8,17 @@ import {
   ScrollView
 } from 'react-native';
 
-import CircleImage from '../../../common/CircleImage';
-
-const WhiteMenuItem = ({title, source, renderedButton, style, onPress}) => (
+const WhiteMenuItem = ({icon, title, source, renderedButton, style, onPress}) => (
   <View style={[{flexDirection: 'row', paddingVertical: 10, paddingLeft: 5, alignItems: 'center'}, style]}>
-    <TouchableOpacity onPress={onPress} style={{flexDirection: 'row', alignItems: 'center'}}>
-      <CircleImage source={source} size={25}/>
-      <View style={{paddingLeft: 10, width: 300}}>
+    <TouchableOpacity onPress={onPress} style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
+      <View style={{width: 25, height: 25}}>
+        {icon}
+      </View>
+      <View style={{flex: 1, paddingLeft: 10}}>
         <Text style={{color: 'white', fontWeight: 'bold'}} numberOfLines={1}>{title}</Text>
       </View>
     </TouchableOpacity>
-    <View style={{flex: 1, paddingRight: 10, alignItems: 'flex-end', justifyContent: 'center'}}>
+    <View style={{width: 50, marginRight: 10, alignItems: 'flex-end', justifyContent: 'center'}}>
       {renderedButton}
     </View>
   </View>

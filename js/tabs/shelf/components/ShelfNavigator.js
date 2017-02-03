@@ -59,6 +59,10 @@ class ShelfNavigator extends React.Component {
   goToBook(id) {
     this.props.navigator.push({page: 'book', id});
   }
+
+  goToClogCategory(category) {
+    this.refs.navigator.push({page: 'clog-category', category})
+  }
 }
 
 export default ShelfNavigator;

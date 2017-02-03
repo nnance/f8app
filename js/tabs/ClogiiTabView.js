@@ -3,7 +3,9 @@ import {
   Image,
   View,
   StyleSheet,
-  Platform
+  Platform,
+  InteractionManager,
+  Linking
 } from 'react-native';
 
 import ScrollableTabView from 'react-native-scrollable-tab-view';
@@ -35,13 +37,23 @@ class ClogiiTabView extends React.Component {
     // <TestBadges tabLabel="Clogii" isActive={this.state.activeTab === 0 ? true : false}><Image style={styles.mockScreen} source={require('./img/mock/clog.png')}/></TestBadges>
     return (
       <Drawer
-        open={false}
         ref="shelfMenu"
         type="overlay"
-        content={<ShelfMenu onClose={this.closeShelfMenu.bind(this)}/>}
+        content={<ShelfMenu
+          onClose={this.closeShelfMenu.bind(this)}
+          onGagClogPress={this.goToClogCategory.bind(this, 'G')}
+          onDiaryClogPress={this.goToClogCategory.bind(this, 'D')}
+          onNovelClogPress={this.goToClogCategory.bind(this, 'N')}
+          onMythClogPress={this.goToClogCategory.bind(this, 'M')}
+          onProfilePress={this.goToProfile.bind(this)}
+          onFacebookPress={this.goToFacebook.bind(this)}
+          onLinePress={this.goToLine.bind(this)}
+          onInstagramPress={this.goToInstagram.bind(this)}
+        />}
         openDrawerOffset={0}
         >
         <ScrollableTabView
+          ref="tabView"
           tabBarPosition={'bottom'}
           style={{}}
           renderTabBar={() => {
@@ -56,13 +68,47 @@ class ClogiiTabView extends React.Component {
           }
           locked={Platform.OS === 'android'}
         >
-          <ShelfScreen onOpenShelfMenu={this.openShelfMenu.bind(this)} navigator={this.props.navigator} tabLabel="Clogii"/>
+          <ShelfScreen ref="shelf" onOpenShelfMenu={this.openShelfMenu.bind(this)} navigator={this.props.navigator} tabLabel="Clogii"/>
           <TestBadges navigator={this.props.navigator} tabLabel="Feed" isActive={this.state.activeTab === 1 ? true : false}><FeedScreen navigator={this.props.navigator}/></TestBadges>
           <TestBadges navigator={this.props.navigator} tabLabel="Notifications" isActive={this.state.activeTab === 2 ? true : false}><Image style={styles.mockScreen} source={require('./img/mock/notification.png')}/></TestBadges>
           <ProfileScreen navigator={this.props.navigator} tabLabel="Profile" isActive={this.state.activeTab === 3}/>
         </ScrollableTabView>
       </Drawer>
     );
+  }
+
+  goToClogCategory(category) {
+    this.refs.shelf.goToClogCategory(category);
+    this.closeShelfMenu();
+    // InteractionManager.runAfterInteractions(() => this.closeShelfMenu());
+  }
+
+  goToProfile() {
+    this.refs.tabView.goToPage(3);
+    this.closeShelfMenu();
+  }
+
+  openAppOrWeb(appUrl, webUrl) {
+    Linking.canOpenURL(appUrl).then(can => {
+      if(can) {
+        Linking.openURL(appUrl);
+      }
+      else {
+        Linking.openURL(webUrl);
+      }
+    });
+  }
+
+  goToFacebook() {
+    this.openAppOrWeb('fb://page/', 'https://www.facebook.com');
+  }
+
+  goToInstagram() {
+    this.openAppOrWeb('instagram://user?username=', 'https://www.instagram.com/');
+  }
+
+  goToLine() {
+    this.openAppOrWeb('line://', 'https://www.line.me');
   }
 
   openShelfMenu() {

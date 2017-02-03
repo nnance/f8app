@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 import WhiteMenuItem from './WhiteMenuItem';
+import CircleImage from '../../../common/CircleImage';
 import styles from './styles';
 
 const ShowTagButton = ({onPress}) => (
@@ -38,8 +39,8 @@ class ClogMenuItem extends React.Component {
         <WhiteMenuItem
           style={{paddingTop: 10, paddingBottom: this.state.showTag ? 5 : 10}}
           title={this.props.title}
-          onPress={this.props.onPress}
-          source={this.props.source}
+          onPress={this.props.onClogPress}
+          icon={<Image source={this.props.source} style={{width: 25, height: 25, resizeMode: 'contain'}}/>}
           renderedButton={!this.state.showTag ? <ShowTagButton onPress={this.onShowTagPress.bind(this)}/> : <HideTagButton onPress={this.onHideTagPress.bind(this)}/>}
           />
         {

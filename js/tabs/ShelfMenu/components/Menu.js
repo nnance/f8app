@@ -8,6 +8,7 @@ import {
   ScrollView
 } from 'react-native';
 
+import ProfilePicture from '../../../common/ProfilePicture';
 import {STATUS_BAR_HEIGHT, colors} from '../../../common/styles';
 import CircleImage from '../../../common/CircleImage';
 import {mapSource} from '../../../common/utils';
@@ -46,13 +47,13 @@ class ShelfMenu extends React.Component {
         </View>
         <ScrollView>
           <Topic title="หมวดหมู่เรื่องราว">
-            <ClogMenuItem tags={mockTags} title="Gag Clog" source={getCategoryIcon('G')}/>
-            <ClogMenuItem tags={mockTags} title="Diary Clog" source={getCategoryIcon('D')}/>
-            <ClogMenuItem tags={mockTags} title="Novel Clog" source={getCategoryIcon('N')}/>
-            <ClogMenuItem tags={mockTags} title="Myth Clog" notShowBottomLine={true} source={getCategoryIcon('M')}/>
+            <ClogMenuItem onClogPress={this.props.onGagClogPress} tags={mockTags} title="Gag Clog" source={getCategoryIcon('G')}/>
+            <ClogMenuItem onClogPress={this.props.onDiaryClogPress} tags={mockTags} title="Diary Clog" source={getCategoryIcon('D')}/>
+            <ClogMenuItem onClogPress={this.props.onNovelClogPress} tags={mockTags} title="Novel Clog" source={getCategoryIcon('N')}/>
+            <ClogMenuItem onClogPress={this.props.onMythClogPress} tags={mockTags} title="Myth Clog" notShowBottomLine={true} source={getCategoryIcon('M')}/>
           </Topic>
           <Topic title="ข้อมูล">
-            <WhiteMenuItem onPress={this.props.onProfilePress} title={this.props.user.name} source={mapSource(this.props.user.profilePicture)}/>
+            <WhiteMenuItem onPress={this.props.onProfilePress} title={this.props.user.name} icon={<ProfilePicture size={25} user={this.props.user}/>}/>
           </Topic>
           <Topic title="เกี่ยวกับ" style={{paddingVertical: 5}}>
             <FadedMenuItem onPress={this.props.onAboutClogiiPress} title="เกี่ยวกับ Clogii" source={require('../img/about.png')}/>
