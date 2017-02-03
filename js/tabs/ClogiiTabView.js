@@ -13,7 +13,7 @@ import Drawer from 'react-native-drawer';
 
 import {STATUS_BAR_HEIGHT, NAV_BAR_HEIGHT} from '../common/styles';
 
-import ProfileScreen from './profile/containers/ProfileScreen';
+import ProfileScreen from './profile';
 import ShelfScreen from './shelf';
 import FeedScreen from './feed';
 import ShelfMenu from './ShelfMenu';

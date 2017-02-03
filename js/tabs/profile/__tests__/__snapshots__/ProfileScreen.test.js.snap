@@ -1,4 +1,4 @@
-exports[`ProfileScreen ProfileMenuScreen render 1`] = `
+exports[`ProfileScreen Home render 1`] = `
 <View
   style={
     Object {
@@ -772,7 +772,7 @@ exports[`ProfileScreen ProfileMenuScreen render 1`] = `
 </View>
 `;
 
-exports[`ProfileScreen ProfileMenuScreen renderMenu 1`] = `
+exports[`ProfileScreen Home renderMenu 1`] = `
 <View
   accessibilityComponentType={undefined}
   accessibilityLabel={undefined}
@@ -3393,7 +3393,7 @@ exports[`ProfileScreen renderScene correct component 10`] = `
 
 exports[`ProfileScreen renderScene correct component 11`] = `
 <View>
-  <ProfileMenuScreen
+  <Home
     activity={
       Array [
         Object {

@@ -82,10 +82,10 @@ describe('UserContainer', () => {
   });
 });
 
-describe('ProfileScreen', () => {
-  const ProfileScreenComponent = require('../containers/ProfileScreen').Component;
+describe('ProfileNavigator', () => {
+  const ProfileNavigator = require('../components/ProfileNavigator').Component;
   it('render', () => {
-    const tree = renderer.create(<ProfileScreenComponent {...mockData}/>);
+    const tree = renderer.create(<ProfileNavigator {...mockData}/>);
     expect(tree.toJSON()).toMatchSnapshot();
   });
 });

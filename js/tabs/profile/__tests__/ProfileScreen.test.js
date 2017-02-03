@@ -5,18 +5,19 @@ import toJSON from 'enzyme-to-json';
 import {View, TouchableOpacity} from 'react-native';
 
 import ProfileHeader from '../components/ProfileHeader';
-import {Component as ProfileScreenComponent, ProfileMenuScreen} from '../containers/ProfileScreen';
+import {Component as ProfileNavigatorComponent} from '../components/ProfileNavigator';
+import Home from '../components/Home';
 import * as mockData from '../mockData';
 
 describe('ProfileScreen', () => {
   it('render', () => {
-    const tree = renderer.create(<ProfileScreenComponent {...mockData}/>);
+    const tree = renderer.create(<ProfileNavigatorComponent {...mockData}/>);
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
   it('renderScene correct component', () => {
     const scenes = ['following', 'follower', 'myfan', 'activity', 'myclog', 'bookmark', 'jellyShop', 'edit-profile', 'change-email', 'change-password', undefined];
-    const dump = shallow(<ProfileScreenComponent {...mockData}/>);
+    const dump = shallow(<ProfileNavigatorComponent {...mockData}/>);
     scenes.forEach(scene => {
       const component = dump.instance().renderScene({page: scene});
       const tree = shallow(<View>{component}</View>);
@@ -25,7 +26,7 @@ describe('ProfileScreen', () => {
   });
 
   it('onMenuPress, should push into navigator', () => {
-    const dump = shallow(<ProfileScreenComponent {...mockData}/>);
+    const dump = shallow(<ProfileNavigatorComponent {...mockData}/>);
     const menues = ['myfan', 'activity', 'myclog', 'bookmark', 'jellyShop'];
     menues.forEach(menu => {
       const spy = jest.fn();
@@ -41,19 +42,19 @@ describe('ProfileScreen', () => {
 
   it('onBack', () => {
     const spy = jest.fn();
-    const dump = shallow(<ProfileScreenComponent {...mockData}/>);
+    const dump = shallow(<ProfileNavigatorComponent {...mockData}/>);
     dump.instance().onBack({pop: spy});
     expect(spy).toBeCalled();
   });
 
   it('pushPage', () => {
     const spy = jest.fn();
-    const dump = shallow(<ProfileScreenComponent {...mockData}/>);
+    const dump = shallow(<ProfileNavigatorComponent {...mockData}/>);
     dump.instance().pushPage({push: spy}, 'test');
     expect(spy).toBeCalledWith({page: 'test'});
   });
 
-  describe('ProfileMenuScreen', () => {
+  describe('Home', () => {
     let wrapper;
     const followingSpy = jest.fn();
     const followerSpy = jest.fn();
@@ -61,7 +62,7 @@ describe('ProfileScreen', () => {
     const editProfileSpy = jest.fn();
     const menuPressSpy = jest.fn();
     beforeEach(() => {
-      wrapper = shallow(<ProfileMenuScreen
+      wrapper = shallow(<Home
         {...mockData}
         onFollowerPress={followingSpy}
         onFollowingPress={followerSpy}
@@ -80,7 +81,7 @@ describe('ProfileScreen', () => {
     });
 
     it('render', () => {
-      const tree = renderer.create(<ProfileMenuScreen {...mockData}/>);
+      const tree = renderer.create(<Home {...mockData}/>);
       expect(tree.toJSON()).toMatchSnapshot();
     });
 

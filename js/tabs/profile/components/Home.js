@@ -1,5 +1,3 @@
-'use strict';
-
 import {connect} from 'react-redux';
 import React from 'react';
 import {
@@ -15,17 +13,15 @@ import FixBugScrollViewNavigator from '../../../common/FixBugScrollViewNavigator
 import FixBugScrollView from '../../../common/FixBugScrollView';
 import {toHumanNumber} from '../../../common/utils';
 
-import ProfileHeader from '../components/ProfileHeader';
-import {FollowingScreen, FollowerScreen, MyFanScreen} from '../components/UserContainer';
-import ActivityScreen from '../components/ActivityScreen';
-import MyClogScreen from '../components/MyClogScreen';
-import BookmarkScreen from '../components/BookmarkScreen';
-import JellyShopScreen from '../components/JellyShopScreen';
+import ProfileHeader from './ProfileHeader';
+import {FollowingScreen, FollowerScreen, MyFanScreen} from './UserContainer';
+import ActivityScreen from './ActivityScreen';
+import MyClogScreen from './MyClogScreen';
+import BookmarkScreen from './BookmarkScreen';
+import JellyShopScreen from './JellyShopScreen';
 import ProfileEditorScreen from '../containers/ProfileEditorScreen';
 import ChangeEmailScreen from '../containers/ChangeEmailScreen';
 import ChangePasswordScreen from '../containers/ChangePasswordScreen';
-
-import * as mockData from '../mockData';
 
 const menuList = [
   {
@@ -109,93 +105,7 @@ const CandyCorner = (props) => (
   </View>
 );
 
-class NavigatorProfile extends React.Component {
-  constructor(...args) {
-    super(...args);
-    this.renderScene = this.renderScene.bind(this);
-    this.onMenuPress = this.onMenuPress.bind(this);
-  }
-
-  render() {
-    return (
-      <FixBugScrollViewNavigator
-        ref="navigator"
-        initialRoute={{page: 'profile'}}
-        renderScene={this.renderScene}
-        />
-    );
-  }
-
-  renderScene(route, navigator) {
-    const onBack = this.onBack.bind(this, navigator);
-    if (route.page === 'following') {
-      return <FollowingScreen {...this.props} userList={this.props.following} onBackPress={onBack}/>;
-    }
-    if (route.page === 'follower') {
-      return <FollowerScreen {...this.props} userList={this.props.follower} onBackPress={onBack}/>;
-    }
-    if (route.page === 'myfan') {
-      return <MyFanScreen {...this.props} userList={this.props.myFan} onBackPress={onBack}/>;
-    }
-    if (route.page === 'activity') {
-      return <ActivityScreen {...this.props} onBackPress={onBack}/>;
-    }
-    if (route.page === 'myclog') {
-      return <MyClogScreen title="My Clog" clogs={mockData.myClogs} {...this.props} onBackPress={onBack}/>;
-    }
-    if (route.page === 'bookmark') {
-      return <BookmarkScreen {...this.props} onBackPress={onBack}/>;
-    }
-    if (route.page === 'jellyShop') {
-      return <JellyShopScreen {...this.props} onBackPress={onBack}/>;
-    }
-    if (route.page === 'edit-profile') {
-      return <ProfileEditorScreen navigator={this.refs.navigator} {...this.props} onBackPress={onBack}/>;
-    }
-    if (route.page === 'change-email') {
-      return <ChangeEmailScreen {...this.props} onBackPress={onBack}/>;
-    }
-    if (route.page === 'change-password') {
-      return <ChangePasswordScreen {...this.props} onBackPress={onBack}/>;
-    }
-    return <ProfileMenuScreen
-      {...this.props}
-      onMenuPress={this.onMenuPress}
-      onFollowingPress={this.pushPage.bind(this, navigator, 'following')}
-      onFollowerPress={this.pushPage.bind(this, navigator, 'follower')}
-      onEditProfile={this.pushPage.bind(this, navigator, 'edit-profile')}
-      />;
-  }
-
-  onMenuPress(name) {
-    const navigator = this.refs.navigator;
-    if (name === 'myfan') {
-      navigator.push({page: 'myfan'});
-    }
-    if (name === 'activity') {
-      navigator.push({page: 'activity'});
-    }
-    if (name === 'myclog') {
-      navigator.push({page: 'myclog'});
-    }
-    if (name === 'bookmark') {
-      navigator.push({page: 'bookmark'});
-    }
-    if (name === 'jellyShop') {
-      navigator.push({page: 'jellyShop'});
-    }
-  }
-
-  onBack(navigator) {
-    navigator.pop();
-  }
-
-  pushPage(navigator, page) {
-    navigator.push({page})
-  }
-}
-
-class ProfileMenuScreen extends React.Component {
+class Home extends React.Component {
   constructor(...args) {
     super(...args);
     this.renderMenu = this.renderMenu.bind(this);
@@ -313,13 +223,4 @@ const styles = StyleSheet.create({
   }
 });
 
-const select = state => ({
-  ...mockData,
-  user: state.user
-});
-
-export default connect(select)(NavigatorProfile);
-export {
-  NavigatorProfile as Component,
-  ProfileMenuScreen
-};
+export default Home;

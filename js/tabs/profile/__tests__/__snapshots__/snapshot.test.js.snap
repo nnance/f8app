@@ -2349,7 +2349,7 @@ exports[`ProfileHeader render 1`] = `
 </Image>
 `;
 
-exports[`ProfileScreen render 1`] = `
+exports[`ProfileNavigator render 1`] = `
 <View
   style={
     Array [

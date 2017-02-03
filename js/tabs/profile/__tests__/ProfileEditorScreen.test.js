@@ -14,7 +14,7 @@ jest.mock('react-native-image-picker');
 import ImagePicker from 'react-native-image-picker';
 
 import NavBar from '../components/NavBar';
-import {Component as ProfileEditorScreenComponent, OKButton} from '../containers/ProfileEditorScreen';
+import ProfileEditorScreenComponent, {OKButton} from '../components/ProfileEditorScreen';
 
 describe('ProfileEditorScreen', () => {
   const expectImage = {image: 'expect.png'};
