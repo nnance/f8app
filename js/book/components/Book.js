@@ -5,7 +5,8 @@ import {
   Text,
   StyleSheet,
   ScrollView,
-  TouchableOpacity
+  TouchableOpacity,
+  Dimensions
 } from 'react-native';
 import moment from 'moment';
 import ReadMore from '@exponent/react-native-read-more-text';
@@ -18,15 +19,19 @@ import CircleImage from '../../common/CircleImage';
 import {toHumanNumber, mapSource} from '../../common/utils';
 import {colors, styles as commonStyles} from '../../common/styles';
 
+const previewWidth = 60;
+const readLikeWidth = 180;
+const rowButtonWidth = 55;
+
 const MetaEpisode = (props) => (
   <View style={styles.metaEpisodeContainer}>
-    <View style={{width: 60}}>
+    <View style={{width: previewWidth}}>
       <CircleImage
         source={mapSource(props.preview)}
         size={50}
         />
     </View>
-    <View style={{width: 200}}>
+    <View style={{width: readLikeWidth}}>
       <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
           <Text style={styles.textEpisodeNo}>ตอนที่ </Text>
@@ -47,7 +52,7 @@ const MetaEpisode = (props) => (
         </View>
       </View>
     </View>
-    <View style={{flex: 1, alignItems: 'flex-end', paddingLeft: 10}}>
+    <View style={{flex: 1, alignItems: 'flex-end', paddingRight: (Dimensions.get('window').width - (previewWidth + readLikeWidth + rowButtonWidth)) / 10}}>
       {
         !props.lock ?
         <BorderButton
@@ -189,7 +194,8 @@ const styles = StyleSheet.create({
   },
   detailContainer: {
     flex: 1,
-    padding: 15
+    paddingVertical: 15,
+    paddingHorizontal: 10
   },
   subDetailContainer: {
     width: undefined
@@ -215,13 +221,13 @@ const styles = StyleSheet.create({
   },
   metaEpisodeContainer: {
     paddingVertical: 8,
-    paddingHorizontal: 5,
+    paddingLeft: 5,
     flexDirection: 'row',
     alignItems: 'center'
   },
   metaEpisodeButton: {
-    paddingVertical: 2,
-    width: 60,
+    paddingVertical: 1,
+    width: rowButtonWidth,
     alignItems: 'center'
   },
   textEpisodeNo: {

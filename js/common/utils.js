@@ -1,8 +1,14 @@
 export const toHumanNumber = number => {
   let tail = '';
-  if (number >= 100000) {
+  let s_float_point = '';
+  if (number >= 10000) {
     tail = 'k';
+    let float_point = Math.floor(number / 100) % 10;
+    s_float_point = float_point === 0 ? '' : `.${float_point}`;
     number = Math.floor(number / 1000);
+    if (number >= 100) {
+      s_float_point = '';
+    }
   }
   const stringNumber = number + '';
   let result = '';
@@ -13,7 +19,7 @@ export const toHumanNumber = number => {
     }
     result = stringNumber[i] + result;
   }
-  return result + tail;
+  return result + s_float_point + tail;
 };
 
 export const random = to => {

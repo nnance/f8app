@@ -25,13 +25,13 @@ const ClogRow = (props) => (<TouchableOpacity onPress={props.onPress ? props.onP
     <Text style={{fontWeight: 'bold', marginTop: 7}}>{props.title}</Text>
     <Text style={{fontSize: 12, marginTop: 5, color: colors.textGrey}}>{props.author.name}</Text>
     <View style={{flexDirection: 'row', alignItems: 'center'}}>
-      <View style={styles.detailSeparate}>
-        <Image source={require('./img/icon/read.png')} style={{width: 20, height: 20, resizeMode: 'contain', borderRadius: 4}}/>
-        <Text style={{paddingLeft: 5, fontSize: 12, color: colors.textFadedGrey}}>ดู {toHumanNumber(props.viewCount)} ครั้ง</Text>
+      <View style={styles.readContainer}>
+        <Image source={require('./img/icon/read.png')} style={{width: 15, height: 15, resizeMode: 'contain', borderRadius: 4}}/>
+        <Text style={{paddingLeft: 5, fontSize: 11, color: colors.textFadedGrey}}>ดู {toHumanNumber(props.viewCount)} ครั้ง</Text>
       </View>
-      <View style={styles.detailSeparate}>
-        <Image source={require('./img/icon/heart.png')} style={{width: 20, height: 20, resizeMode: 'contain', borderRadius: 4, marginLeft: 20}}/>
-        <Text style={{paddingLeft: 5, fontSize: 12, color: colors.textFadedGrey}}>{toHumanNumber(props.likeCount)} Like</Text>
+      <View style={styles.likeContainer}>
+        <Image source={require('./img/icon/heart.png')} style={{width: 15, height: 15, resizeMode: 'contain', borderRadius: 4, marginLeft: 20}}/>
+        <Text style={{paddingLeft: 5, fontSize: 11, color: colors.textFadedGrey}}>{toHumanNumber(props.likeCount)} Like</Text>
       </View>
     </View>
   </View>
@@ -61,8 +61,12 @@ const styles = StyleSheet.create({
     padding: 13,
     flexDirection: 'row'
   },
-  detailSeparate: {
-    flex: 1,
+  likeContainer: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  readContainer: {
+    width: 80,
     flexDirection: 'row',
     alignItems: 'center'
   }
