@@ -28,19 +28,17 @@ describe('Shelf.ClogCategory', () => {
   it('navigate to ClogListView onPress viewAll', async () => {
     const result = await graphql(query, mapPropsToOptions({category: 'D'}));
     const props = mapQueryToProps({data: result.data});
-    const navigator = {
-      push: jest.fn()
-    };
-    const dump = shallow(<ClogCategoryComponent {...{...props, navigator, category: 'D'}}/>);
+    const goToClogListView = jest.fn();
+    const dump = shallow(<ClogCategoryComponent {...{...props, goToClogListView, category: 'D'}}/>);
     const wrapper = shallow(dump.instance().renderButtonViewAllClog({orderBy: 'TRENDING'}));
     wrapper.simulate('press');
-    expect(navigator.push).toBeCalledWith({page: 'clog-list-view', category: 'D', orderBy: 'TRENDING'});
+    expect(goToClogListView).toBeCalledWith({category: 'D', orderBy: 'TRENDING'});
   });
 
   it('onRecommendClogChange should set currentClogBanner', async () => {
     const result = await graphql(query, mapPropsToOptions({category: 'D'}));
     const props = mapQueryToProps({data: result.data});
-    const wrapper = shallow(<ClogCategoryComponent {...{...props, navigator, category: 'D'}}/>);
+    const wrapper = shallow(<ClogCategoryComponent {...{...props, category: 'D'}}/>);
     wrapper.find(RecommendClogs).props().onIndexChange(2);
     expect(wrapper.state().currentClogBanner).toBe(2);
   });

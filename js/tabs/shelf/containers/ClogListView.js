@@ -28,11 +28,9 @@ class Container extends React.Component {
       flex: 1,
       backgroundColor: colors.greyBackground
     }}>
-      <NavBar backButton onBackPress={() => this.props.navigator.pop()} title={this.props.title} containerStyle={styles.navBar} titleTextStyle={styles.titleText}/>
+      <NavBar backButton onBackPress={this.props.goBack} title={this.props.title} containerStyle={styles.navBar} titleTextStyle={styles.titleText}/>
       <ClogListView
-        addFixBugListener={this.props.addFixBugListener}
-        removeFixBugListener={this.props.removeFixBugListener}
-        navigator={this.props.navigator} clogs={this.props.clogs}
+        clogs={this.props.clogs}
         onClogPress={this.props.goToBook}
         />
     </View>

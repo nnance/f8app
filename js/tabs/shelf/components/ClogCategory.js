@@ -267,7 +267,7 @@ class ClogCategory extends React.Component {
           </LinearGradient>
         </FixBugScrollView>
         <NavBar
-          onBackPress={() => this.props.navigator.pop()}
+          onBackPress={this.props.goBack}
           renderRightMenu={() => (
             <TouchableOpacity><Image style={{height: 20, resizeMode: 'contain'}} source={require('../img/white-search.png')}/></TouchableOpacity>
           )}
@@ -301,7 +301,7 @@ class ClogCategory extends React.Component {
 
   renderButtonViewAllClog(pushOption = {}) {
     return <BorderButton type="fadedWhite" caption="ทั้งหมด" containerStyle={{flex: 1}}
-      onPress={() => this.props.navigator.push({page: 'clog-list-view', category: this.props.category, ...pushOption})}
+      onPress={() => this.props.goToClogListView({category: this.props.category, ...pushOption})}
       />
   }
 }

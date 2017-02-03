@@ -28,25 +28,20 @@ describe('Shelf.Home', () => {
   it('navigate to ClogCategory onPress category', async () => {
     const result = await graphql(query);
     const props = mapQueryToProps({data: result.data});
-    const navigator = {
-      push: jest.fn()
-    };
-    const wrapper = shallow(<HomeComponent {...{...props, navigator: navigator}}/>);
+    const goToClogCategory = jest.fn();
+    const wrapper = shallow(<HomeComponent {...{...props, goToClogCategory: goToClogCategory}}/>);
     wrapper.find(ExploreCategory).simulate('press', 'D');
-    expect(navigator.push).toBeCalledWith({page: 'clog-category', category: 'D'});
+    expect(goToClogCategory).toBeCalledWith('D');
   });
 
   it('navigate to ClogListView onPress viewAllTrending', async () => {
     const result = await graphql(query);
     const props = mapQueryToProps({data: result.data});
-    const navigator = {
-      push: jest.fn()
-    };
-    const dump = shallow(<HomeComponent {...{...props, navigator: navigator}}/>);
+    const goToClogListView = jest.fn();
+    const dump = shallow(<HomeComponent {...{...props, goToClogListView: goToClogListView}}/>);
     const wrapper = shallow(dump.instance().renderTrendingButton());
     wrapper.simulate('press');
-    const calledArgs = navigator.push.mock.calls[0][0];
-    expect(calledArgs.page).toBe('clog-list-view');
+    const calledArgs = goToClogListView.mock.calls[0][0];
     expect(calledArgs.orderBy).toBe('TRENDING');
   });
 });

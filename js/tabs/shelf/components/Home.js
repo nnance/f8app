@@ -59,12 +59,12 @@ class Home extends React.Component {
             {
               this.props.favoriteTags.map((tag, idx) => (
                 <View key={idx} style={{paddingLeft: 10, paddingTop: 10}}>
-                  <MetaClogListView navigator={this.props.navigator} header={tag.name.toUpperCase()} clogs={tag.trendingClogs} renderButton={!tag.following ? this.renderFollowButton.bind(this) : this.renderUnfollowButton.bind(this)}/>
+                  <MetaClogListView goToBook={this.props.goToBook} header={tag.name.toUpperCase()} clogs={tag.trendingClogs} renderButton={!tag.following ? this.renderFollowButton.bind(this) : this.renderUnfollowButton.bind(this)}/>
                 </View>
               ))
             }
           </Image>
-          <ExploreCategory onPress={(category) => this.props.navigator.push({page: 'clog-category', category})}/>
+          <ExploreCategory onPress={(category) => this.props.goToClogCategory(category)}/>
         </FixBugScrollView>
       </View>
     );
@@ -85,7 +85,7 @@ class Home extends React.Component {
   renderTrendingButton() {
     return (
       <BorderButton caption="ทั้งหมด" type="fadedWhite" containerStyle={styles.clogListButton}
-        onPress={() => this.props.navigator.push({page: 'clog-list-view', title: 'ยอดนิยม', orderBy: 'TRENDING'})}
+        onPress={() => this.props.goToClogListView({page: 'clog-list-view', title: 'ยอดนิยม', orderBy: 'TRENDING'})}
         />
     );
   }
