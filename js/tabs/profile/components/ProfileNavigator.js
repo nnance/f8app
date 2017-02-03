@@ -1,4 +1,3 @@
-import {connect} from 'react-redux';
 import React from 'react';
 import {
   Image,
@@ -14,12 +13,14 @@ import FixBugScrollView from '../../../common/FixBugScrollView';
 import {toHumanNumber} from '../../../common/utils';
 
 import ProfileHeader from '../components/ProfileHeader';
-import {FollowingScreen, FollowerScreen, MyFanScreen} from '../components/UserContainer';
-import ActivityScreen from '../components/ActivityScreen';
-import MyClogScreen from '../components/MyClogScreen';
-import BookmarkScreen from '../components/BookmarkScreen';
+import FollowerScreen from '../containers/FollowerScreen';
+import FollowingScreen from '../containers/FollowingScreen';
+import MyFanScreen from '../containers/MyFanScreen';
+import ActivityScreen from '../containers/ActivityScreen';
+import MyClogScreen from '../containers/MyClogScreen';
+import BookmarkScreen from '../containers/BookmarkScreen';
 import JellyShopScreen from '../components/JellyShopScreen';
-import Home from '../components/Home';
+import Home from '../containers/Home';
 import ProfileEditorScreen from '../containers/ProfileEditorScreen';
 import ChangeEmailScreen from '../containers/ChangeEmailScreen';
 import ChangePasswordScreen from '../containers/ChangePasswordScreen';
@@ -46,41 +47,39 @@ class ProfileNavigator extends React.Component {
   renderScene(route, navigator) {
     const onBack = this.onBack.bind(this, navigator);
     if (route.page === 'following') {
-      return <FollowingScreen {...this.props} userList={this.props.following} onBackPress={onBack}/>;
+      return <FollowingScreen onBackPress={onBack}/>;
     }
     if (route.page === 'follower') {
-      return <FollowerScreen {...this.props} userList={this.props.follower} onBackPress={onBack}/>;
+      return <FollowerScreen onBackPress={onBack}/>;
     }
     if (route.page === 'myfan') {
-      return <MyFanScreen {...this.props} userList={this.props.myFan} onBackPress={onBack}/>;
+      return <MyFanScreen onBackPress={onBack}/>;
     }
     if (route.page === 'activity') {
-      return <ActivityScreen {...this.props} onBackPress={onBack}/>;
+      return <ActivityScreen onBackPress={onBack}/>;
     }
     if (route.page === 'myclog') {
-      return <MyClogScreen title="My Clog" clogs={mockData.myClogs} {...this.props} onBackPress={onBack}/>;
+      return <MyClogScreen onBackPress={onBack}/>;
     }
     if (route.page === 'bookmark') {
-      return <BookmarkScreen {...this.props} onBackPress={onBack}/>;
+      return <BookmarkScreen onBackPress={onBack}/>;
     }
     if (route.page === 'jellyShop') {
-      return <JellyShopScreen {...this.props} onBackPress={onBack}/>;
+      return <JellyShopScreen onBackPress={onBack}/>;
     }
     if (route.page === 'edit-profile') {
       return <ProfileEditorScreen
-        {...this.props}
         goToChangeEmail={this.goToChangeEmail.bind(this)}
         goToChangePassword={this.goToChangePassword.bind(this)}
         onBackPress={onBack}/>;
     }
     if (route.page === 'change-email') {
-      return <ChangeEmailScreen {...this.props} onBackPress={onBack}/>;
+      return <ChangeEmailScreen onBackPress={onBack}/>;
     }
     if (route.page === 'change-password') {
-      return <ChangePasswordScreen {...this.props} onBackPress={onBack}/>;
+      return <ChangePasswordScreen onBackPress={onBack}/>;
     }
     return <Home
-      {...this.props}
       onMenuPress={this.onMenuPress}
       onFollowingPress={this.pushPage.bind(this, 'following')}
       onFollowerPress={this.pushPage.bind(this, 'follower')}
@@ -129,7 +128,4 @@ const select = state => ({
   user: state.user
 });
 
-export default connect(select)(ProfileNavigator);
-export {
-  ProfileNavigator as Component
-};
+export default ProfileNavigator;

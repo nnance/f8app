@@ -14,14 +14,6 @@ import FixBugScrollView from '../../../common/FixBugScrollView';
 import {toHumanNumber} from '../../../common/utils';
 
 import ProfileHeader from './ProfileHeader';
-import {FollowingScreen, FollowerScreen, MyFanScreen} from './UserContainer';
-import ActivityScreen from './ActivityScreen';
-import MyClogScreen from './MyClogScreen';
-import BookmarkScreen from './BookmarkScreen';
-import JellyShopScreen from './JellyShopScreen';
-import ProfileEditorScreen from '../containers/ProfileEditorScreen';
-import ChangeEmailScreen from '../containers/ChangeEmailScreen';
-import ChangePasswordScreen from '../containers/ChangePasswordScreen';
 
 const menuList = [
   {
@@ -133,8 +125,8 @@ class Home extends React.Component {
             </TouchableOpacity>
           </View>
           <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-            <NumberDetail title="ผู้ติดตาม" number={this.props.follower.length} borderRight={true} onPress={() => this.props.onFollowerPress && this.props.onFollowerPress()}/>
-            <NumberDetail title="กำลังติดตาม" number={this.props.following.length} borderRight={true} onPress={() => this.props.onFollowingPress && this.props.onFollowingPress()}/>
+            <NumberDetail title="ผู้ติดตาม" number={this.props.followerCount} borderRight={true} onPress={() => this.props.onFollowerPress && this.props.onFollowerPress()}/>
+            <NumberDetail title="กำลังติดตาม" number={this.props.followingCount} borderRight={true} onPress={() => this.props.onFollowingPress && this.props.onFollowingPress()}/>
             <NumberDetail title="Candys" number={this.props.candys} onPress={() => this.props.onCandyPress && this.props.onCandyPress()}/>
           </View>
         </ProfileHeader>

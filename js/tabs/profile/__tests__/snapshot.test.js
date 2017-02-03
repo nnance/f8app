@@ -1,5 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import {shallow} from 'enzyme';
+import toJSON from 'enzyme-to-json';
 import {bookmark as mockBookmark, myClogs as mockMyClogs, user as mockUser} from '../mockData';
 import * as mockData from '../mockData';
 
@@ -83,9 +85,9 @@ describe('UserContainer', () => {
 });
 
 describe('ProfileNavigator', () => {
-  const ProfileNavigator = require('../components/ProfileNavigator').Component;
+  const ProfileNavigator = require('../components/ProfileNavigator').default;
   it('render', () => {
-    const tree = renderer.create(<ProfileNavigator {...mockData}/>);
-    expect(tree.toJSON()).toMatchSnapshot();
+    const tree = shallow(<ProfileNavigator/>);
+    expect(toJSON(tree)).toMatchSnapshot();
   });
 });
