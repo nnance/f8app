@@ -345,7 +345,7 @@ exports[`Player render 1`] = `
             "color": "rgba(0, 0, 0, 0.3)",
           }
         }>
-        30,234
+        30.2k
       </Text>
     </View>
     <View
