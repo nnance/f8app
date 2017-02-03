@@ -267,7 +267,7 @@ class ClogCategory extends React.Component {
           </LinearGradient>
         </FixBugScrollView>
         <NavBar
-          onBackPress={this.props.goBack}
+          onBackPress={this.props.onBackPress}
           renderRightMenu={() => (
             <TouchableOpacity><Image style={{height: 20, resizeMode: 'contain'}} source={require('../img/white-search.png')}/></TouchableOpacity>
           )}

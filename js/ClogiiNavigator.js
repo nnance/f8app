@@ -47,7 +47,7 @@ class ClogiiNavigator extends React.Component {
   fromURL(url) {
     let {method, query} = this.parseURL(url);
     if (method === 'player' && query.id) {
-      this.refs.navigator.push({page: 'player', id: query.id});
+      this.goToPlayer(query.id);
     }
   }
 
@@ -69,14 +69,14 @@ class ClogiiNavigator extends React.Component {
 
   renderScene(route, navigator) {
     if (route.page === 'main-tab') {
-      return <ClogiiTabView navigator={navigator}/>;
+      return <ClogiiTabView goToBook={this.goToBook.bind(this)}/>;
     }
     if (route.page === 'player') {
-      return <Player onBackPress={this.onBackPress.bind(this)} navigator={navigator} id={route.id}/>;
+      return <Player onBackPress={this.goBack.bind(this)} id={route.id}/>;
     }
     if (route.page === 'book') {
       return <Book
-        onBackPress={this.onBackPress.bind(this)}
+        onBackPress={this.goBack.bind(this)}
         goToPlayer={this.goToPlayer.bind(this)}
         id={route.id}/>;
     }
@@ -86,7 +86,11 @@ class ClogiiNavigator extends React.Component {
     this.refs.navigator.push({page: 'player', id})
   }
 
-  onBackPress() {
+  goToBook(id) {
+    this.refs.navigator.push({page: 'book', id});
+  }
+
+  goBack() {
     this.refs.navigator.pop();
   }
 }
