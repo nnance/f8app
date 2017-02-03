@@ -44,6 +44,7 @@ npm-debug.log
 build-server
 
 .env
+.vscode
 
 # test
 coverage/
