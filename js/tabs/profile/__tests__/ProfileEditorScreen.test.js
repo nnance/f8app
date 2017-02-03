@@ -26,15 +26,6 @@ describe('ProfileEditorScreen', () => {
     return Promise.resolve();
   }
 
-  it('pushPage', () => {
-    const spy = jest.fn();
-    const wrapper = shallow(<ProfileEditorScreenComponent navigator={{
-      push: spy
-    }}/>);
-    wrapper.instance().pushPage('test');
-    expect(spy).toBeCalledWith({page: 'test'});
-  });
-
   it('OKButton', () => {
     const tree = renderer.create(<OKButton/>);
     expect(tree.toJSON()).toMatchSnapshot();

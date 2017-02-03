@@ -3003,6 +3003,8 @@ exports[`ProfileScreen renderScene correct component 8`] = `
         },
       ]
     }
+    goToChangeEmail={[Function]}
+    goToChangePassword={[Function]}
     myClogs={
       Array [
         Object {

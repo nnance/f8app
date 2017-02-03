@@ -126,19 +126,15 @@ class ProfileEditorScreen extends React.Component {
               <Switch value={this.props.facebookLinked} onValueChange={this.onToggleFacebookLink.bind(this)}/>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.row2} onPress={this.pushPage.bind(this, 'change-email')}>
+          <TouchableOpacity style={styles.row2} onPress={this.props.goToChangeEmail}>
             <Text style={styles.label2}>เปลี่ยน Email</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.row2} onPress={this.pushPage.bind(this, 'change-password')}>
+          <TouchableOpacity style={styles.row2} onPress={this.props.goToChangePassword}>
             <Text style={styles.label2}>เปลี่ยน Password</Text>
           </TouchableOpacity>
         </View>
       </View>
     </View>);
-  }
-
-  pushPage(page) {
-    this.props.navigator.push({page});
   }
 
   onToggleFacebookLink() {

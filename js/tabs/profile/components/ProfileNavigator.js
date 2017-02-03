@@ -67,7 +67,11 @@ class ProfileNavigator extends React.Component {
       return <JellyShopScreen {...this.props} onBackPress={onBack}/>;
     }
     if (route.page === 'edit-profile') {
-      return <ProfileEditorScreen {...this.props} navigator={navigator} onBackPress={onBack}/>;
+      return <ProfileEditorScreen
+        {...this.props}
+        goToChangeEmail={this.goToChangeEmail.bind(this)}
+        goToChangePassword={this.goToChangePassword.bind(this)}
+        onBackPress={onBack}/>;
     }
     if (route.page === 'change-email') {
       return <ChangeEmailScreen {...this.props} onBackPress={onBack}/>;
@@ -78,10 +82,18 @@ class ProfileNavigator extends React.Component {
     return <Home
       {...this.props}
       onMenuPress={this.onMenuPress}
-      onFollowingPress={this.pushPage.bind(this, navigator, 'following')}
-      onFollowerPress={this.pushPage.bind(this, navigator, 'follower')}
-      onEditProfile={this.pushPage.bind(this, navigator, 'edit-profile')}
+      onFollowingPress={this.pushPage.bind(this, 'following')}
+      onFollowerPress={this.pushPage.bind(this, 'follower')}
+      onEditProfile={this.pushPage.bind(this, 'edit-profile')}
       />;
+  }
+
+  goToChangeEmail() {
+    this.refs.navigator.push({page: 'change-email'});
+  }
+
+  goToChangePassword() {
+    this.refs.navigator.push({page: 'change-password'});
   }
 
   onMenuPress(name) {
@@ -107,8 +119,8 @@ class ProfileNavigator extends React.Component {
     navigator.pop();
   }
 
-  pushPage(navigator, page) {
-    navigator.push({page})
+  pushPage(page) {
+    this.refs.navigator.push({page})
   }
 }
 
