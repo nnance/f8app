@@ -1,0 +1,67 @@
+exports[`ClogiiNavigator render 1`] = `
+<Navigator
+  configureScene={[Function]}
+  initialRoute={
+    Object {
+      "id": 3,
+      "page": "main-tab",
+    }
+  }
+  renderScene={[Function]}
+  sceneStyle={
+    Object {
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+      "transform": Array [
+        Object {
+          "translateX": 0,
+        },
+        Object {
+          "translateY": 0,
+        },
+        Object {
+          "scaleX": 1,
+        },
+        Object {
+          "scaleY": 1,
+        },
+        Object {
+          "rotate": "0deg",
+        },
+        Object {
+          "skewX": "0deg",
+        },
+        Object {
+          "skewY": "0deg",
+        },
+      ],
+    }
+  } />
+`;
+
+exports[`ClogiiNavigator renderScene book 1`] = `
+<View>
+  <Apollo(Book)
+    goToPlayer={[Function]}
+    id={3}
+    onBackPress={[Function]} />
+</View>
+`;
+
+exports[`ClogiiNavigator renderScene main-tab 1`] = `
+<View>
+  <Connect(ClogiiTabView)
+    goToBook={[Function]} />
+</View>
+`;
+
+exports[`ClogiiNavigator renderScene player 1`] = `
+<View>
+  <Apollo(Player)
+    id={1}
+    onBackPress={[Function]} />
+</View>
+`;

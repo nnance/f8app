@@ -129,7 +129,7 @@ const SubDetail = ({ title, author, review, episodes, onReadPress }) => (
         <View style={styles.startReadButtonContainer}>
           <BorderButton
             type="borderFadedBlack"
-            onPress={onReadPress.bind(null, episodes[episodes.length - 1].id)}
+            onPress={onReadPress ? onReadPress.bind(null, episodes[episodes.length - 1].id) : null}
             caption={`เริ่มอ่านตอนที่ ${episodes[episodes.length - 1].no}`}
             textStyle={{
               fontSize: 25
@@ -175,7 +175,7 @@ class Book extends React.Component {
 
   renderEpisode(data) {
     return (
-      <View>
+      <View key={data.id}>
         <MetaEpisode {...data} onReadPress={this.props.goToPlayer}/>
         <View style={{height: 1, backgroundColor: colors.greyBorder}}/>
       </View>
