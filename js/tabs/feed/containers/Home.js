@@ -1,17 +1,46 @@
 import React from 'react';
-import {
-  View,
-  Text
-} from 'react-native';
+import gql from 'graphql-tag';
+import { graphql } from 'react-apollo';
 
-class Home extends React.Component {
-  render() {
-    return (
-      <View>
-        <Text>Home Feed</Text>
-      </View>
-    )
-  }
-}
+import FeedHome from '../components/FeedHome';
+// import {CLOG_PREVIEW_LIMIT} from '../constants';
 
-export default Home;
+import {fragments} from '../../../models/clog';
+
+export const query = gql`
+    query {
+        trendingClogs: clogs(filter: {limit: 20}, orderBy: TRENDING) {
+            ...clogMetaData
+        }
+        recommendedClog {
+            ...clogMetaData
+            review
+        }
+        favoriteTags {
+            name
+            trendingClogs {
+                ...clogMetaData
+            }
+        }
+        heroBanners {
+            ...clogMetaData
+            review
+        }
+    }
+    ${fragments.clogMetaData}
+`;
+
+export const mapQueryToProps = ({ ownProps, data }) => {
+  const { loading, trendingClogs, recommendedClog, favoriteTags, heroBanners } = data;
+  return ({
+    trendingClogs: loading ? [] : trendingClogs,
+    recommendedClog: recommendedClog,
+    heroBanners: loading ? [] : heroBanners,
+    favoriteTags: loading ? [] : favoriteTags,
+    loading
+  });
+};
+
+export default graphql(query, {
+  props: mapQueryToProps
+})(FeedHome);
