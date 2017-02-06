@@ -13,7 +13,7 @@ import Drawer from 'react-native-drawer';
 
 import {STATUS_BAR_HEIGHT, NAV_BAR_HEIGHT} from '../common/styles';
 
-import ProfileScreen from './profile/containers/ProfileScreen';
+import ProfileScreen from './profile';
 import ShelfScreen from './shelf';
 import FeedScreen from './feed';
 import ShelfMenu from './ShelfMenu';
@@ -68,7 +68,7 @@ class ClogiiTabView extends React.Component {
           }
           locked={Platform.OS === 'android'}
         >
-          <ShelfScreen ref="shelf" onOpenShelfMenu={this.openShelfMenu.bind(this)} navigator={this.props.navigator} tabLabel="Clogii"/>
+          <ShelfScreen ref="shelf" goToBook={this.props.goToBook} onOpenShelfMenu={this.openShelfMenu.bind(this)} navigator={this.props.navigator} tabLabel="Clogii"/>
           <TestBadges navigator={this.props.navigator} tabLabel="Feed" isActive={this.state.activeTab === 1 ? true : false}><FeedScreen navigator={this.props.navigator}/></TestBadges>
           <TestBadges navigator={this.props.navigator} tabLabel="Notifications" isActive={this.state.activeTab === 2 ? true : false}><Image style={styles.mockScreen} source={require('./img/mock/notification.png')}/></TestBadges>
           <ProfileScreen navigator={this.props.navigator} tabLabel="Profile" isActive={this.state.activeTab === 3}/>

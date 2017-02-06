@@ -4,6 +4,8 @@ export const user = {
   sex: 'M',
   facebookLinked: false
 };
+export const followingCount = 1800;
+export const followerCount = 1800;
 export const following = [{name: 'Art Nattapat'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}];
 export const follower = [{name: 'Art Nattapat', following: true}, {name: 'Art Art Art', following: false}, {name: 'Art Art Art', following: false}, {name: 'Art Art Art', following: true}, {name: 'Art Art Art', following: true}, {name: 'Art Art Art', following: false}];
 export const myFan = [{name: 'Art Nattapat', candys: 1250}, {name: 'Art Art Art', candys: 1250}, {name: 'Art Art Art', candys: 1000}, {name: 'Art Art Art', candys: 789}, {name: 'Art Art Art', candys: 7013}, {name: 'Art Art Art', candys: 0}];
