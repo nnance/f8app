@@ -12,7 +12,6 @@ import NavBar from './NavBar';
 import FeedList from './FeedList';
 import data from '../data';
 
-
 class FeedHome extends React.Component {
   constructor(props) {
     super(props)
@@ -57,7 +56,7 @@ class FeedHome extends React.Component {
               />
           }>
           <View style={{backgroundColor: '#7d7d7d'}}>
-            <FeedList data={this.state.data} navigator={this.props.navigator}/>
+            <FeedList data={this.state.data} goToBook={this.props.goToBook} navigator={this.props.navigator}/>
           </View>
         </FixBugScrollView>
 

@@ -5,13 +5,13 @@ import {
 } from 'react-native';
 import FixBugScrollViewNavigator from '../../../common/FixBugScrollViewNavigator';
 import FeedHome from './FeedHome';
+// import Home from '../containers/Home';
+
 import NavBar from './NavBar';
 
 
 
 class FeedNavigator extends React.Component {
-
-
   render() {
     return (
       <FixBugScrollViewNavigator
@@ -24,7 +24,10 @@ class FeedNavigator extends React.Component {
 
   renderScene(route, navigator) {
     if (route.page === 'feedHome') {
-      return <FeedHome navigator={navigator}/>
+      return <FeedHome
+        navigator={navigator}
+        goToBook={this.props.goToBook}
+      />
     }
   }
 }
