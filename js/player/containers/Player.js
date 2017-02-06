@@ -12,9 +12,13 @@ export const query = gql`
 `;
 
 export const mapQueryToProps = ({ data }) => {
+  const {episode, error, loading} = data;
+  if (error) {
+    console.error('graphql error: ', error);
+  }
   return {
-    loading: data.loading,
-    episode: data.episode
+    loading: loading,
+    episode: episode || {}
   };
 }
 export const mapPropsToOptions = ({id}) => ({

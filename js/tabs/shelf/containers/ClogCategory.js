@@ -34,13 +34,15 @@ export const mapPropsToOptions = ({category}) => ({
 });
 
 export const mapQueryToProps = ({ ownProps, data }) => {
-  const { loading, categoryDetail, trendingClogs, recentlyClogs } = data;
+  let { loading, categoryDetail, trendingClogs, recentlyClogs, error } = data;
+  if (error) {
+    console.error('graphql error: ', error);
+  }
   return ({
-    trendingClogs: loading ? [] : trendingClogs,
-    recentlyClogs: loading ? [] : recentlyClogs,
-    editors: loading ? [] : categoryDetail.editors,
-    recommendedClogs: loading ? [] : categoryDetail.recommendedClogs,
-    loading
+    trendingClogs: loading || !!error ? [] : trendingClogs,
+    recentlyClogs: loading || !!error ? [] : recentlyClogs,
+    editors: loading || !!error ? [] : categoryDetail.editors,
+    recommendedClogs: loading || !!error ? [] : categoryDetail.recommendedClogs
   });
 };
 

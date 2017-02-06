@@ -54,13 +54,15 @@ class RecommendedClog extends React.Component {
   }
 
   onReadPress() {
-    this.props.goToBook && this.props.goToBook(this.props.id)
+    const clog = this.props.clog;
+    this.props.goToBook && clog && this.props.goToBook(clog.id)
   }
 }
 
 RecommendedClog.fragments = {
   clog: gql`
     fragment RecommendedClog on Clog {
+      id
       title
       preview
       category

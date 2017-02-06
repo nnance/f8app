@@ -57,9 +57,12 @@ export const mapPropsToOptions = ({category, tag, orderBy}) => ({
 });
 
 const mapQueryToProps = ({ ownProps, data }) => {
-  const {loading, clogs} = data;
+  const {loading, clogs, error} = data;
+  if (error) {
+    console.error('graphql error: ', error);
+  }
   return {
-    clogs: loading ? [] : clogs
+    clogs: loading || !!error ? [] : clogs
   };
 };
 

@@ -29,13 +29,15 @@ export const query = gql`
 `;
 
 export const mapQueryToProps = ({ ownProps, data }) => {
-  const { loading, trendingClogs, recommendedClog, favoriteTags, heroBanners } = data;
+  const { loading, trendingClogs, recommendedClog, favoriteTags, heroBanners, error } = data;
+  if (error) {
+    console.error('graphql error: ', error);
+  }
   return ({
-    trendingClogs: loading ? [] : trendingClogs,
+    trendingClogs: loading || !!error ? [] : trendingClogs,
     recommendedClog: recommendedClog,
-    heroBanners: loading ? [] : heroBanners,
-    favoriteTags: loading ? [] : favoriteTags,
-    loading
+    heroBanners: loading || !!error ? [] : heroBanners,
+    favoriteTags: loading || !!error ? [] : favoriteTags
   });
 };
 
