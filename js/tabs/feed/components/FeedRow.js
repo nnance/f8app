@@ -59,7 +59,7 @@ class EditorAcivity extends React.Component {
                   style={{fontSize: 12, fontWeight: 'normal'}}>{`${this.props.activity.action} ${this.props.clogs.length} ${this.props.activity.type}`}</Text>
             }
           </Text>
-          <Text style={{fontSize: 12, fontColor: '#dfdfdf'}}> {diffMins} min ago</Text>
+          <Text style={{fontSize: 12, color: '#dfdfdf'}}> {diffMins} min ago</Text>
         </View>
       </View>
     )
@@ -75,11 +75,9 @@ class FeedRow extends React.Component {
     }
   }
 
-  goToBook() {
-    console.log('FeedRow----');
-  }
-
   render() {
+    console.log(this.props.goToBook);
+
     return (
       <View style={styles.container}>
         <EditorAcivity {...this.props} />
@@ -90,10 +88,10 @@ class FeedRow extends React.Component {
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
                 dataSource={this.state.dataSource}
-                renderRow={(data) => <ClogList {...data} />}
+                renderRow={(data) => <ClogList goToBook={this.props.goToBook} {...data} />}
                 renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} /> }
               /> :
-              <Clog clog={this.props.clogs[0]} goToBook={(e) => this.goToBook(e)}/>
+              <Clog clog={this.props.clogs[0]} goToBook={this.props.goToBook}/>
           }
         </View>
       </View>
@@ -101,30 +99,42 @@ class FeedRow extends React.Component {
   }
 }
 
-const Clog = ({clog, goToBook}) => (
-  <View style={styles.container}>
-    <TouchableOpacity onPress={goToBook}>
-      <Image style={styles.photoClog} source={{ uri: clog.picture.thumbnail}}/>
-      <Text style={{fontWeight: 'bold'}}>
-        {`${clog.title}`}
-      </Text>
-      <Text numberOfLines={2} style={{lineHeight: 12}}>
-        {`${clog.review}`}
-      </Text>
-    </TouchableOpacity>
-  </View>
-);
+class Clog extends React.Component {
+  render() {
+    const {clog, goToBook} = this.props
+    return (
+      <View style={styles.container}>
+        <TouchableOpacity onPress={() => goToBook(1)}>
+          <Image style={styles.photoClog} source={{ uri: clog.picture.thumbnail}}/>
+          <Text style={{fontWeight: 'bold'}}>
+            {`${clog.title}`}
+          </Text>
+          <Text numberOfLines={2} style={{lineHeight: 12}}>
+            {`${clog.review}`}
+          </Text>
+        </TouchableOpacity>
+      </View>
+    )
+  }
+}
 
-const ClogList = (props) => (
-  <View style={styles.container}>
-    <Image style={styles.photoClogList} source={{ uri: props.picture.thumbnail }}/>
-    <Text style={{fontWeight: 'bold', marginTop: 5}}>
-      {`${props.title}`}
-    </Text>
-    <Text style={{fontSize: 12}}>
-      {`${props.author.name}`}
-    </Text>
-  </View>
-);
+class ClogList extends React.Component {
+  render() {
+    const {picture, title, author, goToBook} = this.props
+    return (
+      <View style={styles.container}>
+        <TouchableOpacity onPress={() => goToBook(1)}>
+          <Image style={styles.photoClogList} source={{ uri: picture.thumbnail }}/>
+          <Text style={{fontWeight: 'bold', marginTop: 5}}>
+            {`${title}`}
+          </Text>
+          <Text style={{fontSize: 12}}>
+            {`${author.name}`}
+          </Text>
+        </TouchableOpacity>
+      </View>
+    )
+  }
+}
 
 export default FeedRow;
