@@ -94,7 +94,7 @@
     },
     "preset": "react-native",
     "transformIgnorePatterns": [
-      "node_modules/(?!react-native|react-clone-referenced-element|parse)"
+      "node_modules/(?!react-native|react-clone-referenced-element|parse|@exponent/react-native-read-more-text)"
     ],
     "setupFiles": [
       "dotenv/config",

@@ -9,6 +9,7 @@ import {
   Dimensions
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import gql from 'graphql-tag';
 
 import {colors} from '../../../common/styles';
 import FixBugScrollView from '../../../common/FixBugScrollView';
@@ -305,6 +306,29 @@ class ClogCategory extends React.Component {
       />
   }
 }
+
+ClogCategory.fragments = {
+  ClogCategoryEditor: gql`
+    fragment ClogCategoryEditor on Editor {
+      name
+      profilePicture
+    }
+  `,
+  ClogCategoryClog: gql`
+    fragment ClogCategoryClog on Clog {
+      title
+      author {
+        name
+      }
+      followersYouKnow {
+        name
+        profilePicture
+      }
+      followerCount
+    }
+  `,
+  MetaClogListView: MetaClogListView.fragments.clog
+};
 
 const styles = StyleSheet.create({
   centerItems: {

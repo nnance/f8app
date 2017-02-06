@@ -11,6 +11,7 @@ import {
   Platform
 } from 'react-native';
 
+import gql from 'graphql-tag';
 import WKWebView from 'react-native-wkwebview-reborn';
 import NavBar, {NavBarWithPinkButton} from '../../common/NavBar';
 import {colors} from '../../common/styles';
@@ -97,6 +98,19 @@ class Player extends React.Component {
     });
   }
 }
+
+Player.fragments = {
+  episode: gql`
+    fragment Player on Episode {
+      id
+      no
+      title
+      likeCount
+      commentCount
+      viewCount
+    }
+  `
+};
 
 const styles = StyleSheet.create({
   navButton: {

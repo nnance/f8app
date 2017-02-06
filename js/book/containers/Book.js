@@ -5,33 +5,25 @@ import _ from 'lodash';
 import Book from '../components/Book';
 
 export const query = gql`
-  query Clog($id: ID!){
+  query BookQuery($id: ID!){
     clog(id: $id) {
-      title
-      cover
-      review
-      author {
-        name
-      }
-      episodes {
-        id
-        no
-        preview
-        viewCount
-        likeCount
-        createdAt
-      }
+      ...Book
     }
   }
+  ${Book.fragments.clog}
 `;
 
 export const mapQueryToProps = ({ ownProps, data }) => {
+  const {clog, error, loading} = data;
+  if (error) {
+    console.error('graphql error: ', error);
+  }
   return {
     clog: {
-      ...data.clog,
-      episodes: data.loading ? [] : _.sortBy(data.clog.episodes, ep => -ep.no)
+      ...(clog || {}),
+      episodes: loading || error ? [] : _.sortBy(clog.episodes, ep => -ep.no)
     },
-    loading: data.loading
+    loading: loading
   };
 };
 

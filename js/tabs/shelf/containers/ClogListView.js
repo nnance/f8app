@@ -15,11 +15,10 @@ import NavBar from '../components/NavBar';
 const query = gql`
   query ClogListView($filter: ClogFilterInput, $orderBy: CLOG_SORTING){
     clogs(filter: $filter, orderBy: $orderBy) {
-      ...clogMetaData
-      createdAt
+      ...ClogListView
     }
   }
-  ${fragments.clogMetaData}
+  ${ClogListView.fragments.clog}
 `;
 
 class Container extends React.Component {
@@ -58,9 +57,12 @@ export const mapPropsToOptions = ({category, tag, orderBy}) => ({
 });
 
 const mapQueryToProps = ({ ownProps, data }) => {
-  const {loading, clogs} = data;
+  const {loading, clogs, error} = data;
+  if (error) {
+    console.error('graphql error: ', error);
+  }
   return {
-    clogs: loading ? [] : clogs
+    clogs: loading || !!error ? [] : clogs
   };
 };
 

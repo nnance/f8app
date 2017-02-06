@@ -5,32 +5,26 @@ import { graphql } from 'react-apollo';
 import ClogCategory from '../components/ClogCategory';
 import {CLOG_PREVIEW_LIMIT} from '../constants';
 
-import {fragments} from '../../../models/clog';
-
 export const query = gql`
   query CategoryDetail($category: CATEGORY!){
     categoryDetail(category: $category) {
       recommendedClogs {
-        ...clogMetaData
-        followersYouKnow {
-          name
-          profilePicture
-        }
-        followerCount
+        ...ClogCategoryClog
       }
       editors {
-        name
-        profilePicture
+        ...ClogCategoryEditor
       }
     }
     trendingClogs: clogs(filter: {category: $category, limit: ${CLOG_PREVIEW_LIMIT}}, orderBy: TRENDING) {
-      ...clogMetaData
+      ...MetaClogListView
     }
     recentlyClogs: clogs(filter: {category: $category, limit: ${CLOG_PREVIEW_LIMIT}}, orderBy: RECENTLY) {
-      ...clogMetaData
+      ...MetaClogListView
     }
   }
-  ${fragments.clogMetaData}
+  ${ClogCategory.fragments.MetaClogListView}
+  ${ClogCategory.fragments.ClogCategoryEditor}
+  ${ClogCategory.fragments.ClogCategoryClog}
 `;
 
 export const mapPropsToOptions = ({category}) => ({
@@ -40,13 +34,15 @@ export const mapPropsToOptions = ({category}) => ({
 });
 
 export const mapQueryToProps = ({ ownProps, data }) => {
-  const { loading, categoryDetail, trendingClogs, recentlyClogs } = data;
+  let { loading, categoryDetail, trendingClogs, recentlyClogs, error } = data;
+  if (error) {
+    console.error('graphql error: ', error);
+  }
   return ({
-    trendingClogs: loading ? [] : trendingClogs,
-    recentlyClogs: loading ? [] : recentlyClogs,
-    editors: loading ? [] : categoryDetail.editors,
-    recommendedClogs: loading ? [] : categoryDetail.recommendedClogs,
-    loading
+    trendingClogs: loading || !!error ? [] : trendingClogs,
+    recentlyClogs: loading || !!error ? [] : recentlyClogs,
+    editors: loading || !!error ? [] : categoryDetail.editors,
+    recommendedClogs: loading || !!error ? [] : categoryDetail.recommendedClogs
   });
 };
 

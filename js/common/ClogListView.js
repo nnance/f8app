@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Image
 } from 'react-native';
+import gql from 'graphql-tag';
 import moment from 'moment';
 
 import {colors} from './styles';
@@ -55,6 +56,22 @@ class ClogListView extends React.Component {
     this.props.onClogPress && this.props.onClogPress(id);
   }
 }
+
+ClogListView.fragments = {
+  clog: gql`
+    fragment ClogListView on Clog {
+      title
+      preview
+      category
+      viewCount
+      likeCount
+      author {
+        name
+      }
+      createdAt
+    }
+  `
+};
 
 const styles = StyleSheet.create({
   rowContainer: {

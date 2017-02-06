@@ -9,6 +9,7 @@ import {
   Dimensions
 } from 'react-native';
 import moment from 'moment';
+import gql from 'graphql-tag';
 import ReadMore from '@exponent/react-native-read-more-text';
 
 import NavBar from '../../common/NavBar';
@@ -128,7 +129,7 @@ const SubDetail = ({ title, author, review, episodes, onReadPress }) => (
         <View style={styles.startReadButtonContainer}>
           <BorderButton
             type="borderFadedBlack"
-            onPress={onReadPress.bind(null, episodes[episodes.length - 1].id)}
+            onPress={onReadPress ? onReadPress.bind(null, episodes[episodes.length - 1].id) : null}
             caption={`เริ่มอ่านตอนที่ ${episodes[episodes.length - 1].no}`}
             textStyle={{
               fontSize: 25
@@ -174,13 +175,34 @@ class Book extends React.Component {
 
   renderEpisode(data) {
     return (
-      <View>
+      <View key={data.id}>
         <MetaEpisode {...data} onReadPress={this.props.goToPlayer}/>
         <View style={{height: 1, backgroundColor: colors.greyBorder}}/>
       </View>
     );
   }
 }
+
+Book.fragments = {
+  clog: gql`
+    fragment Book on Clog {
+      title
+      cover
+      review
+      author {
+        name
+      }
+      episodes {
+        id
+        no
+        preview
+        viewCount
+        likeCount
+        createdAt
+      }
+    }
+  `
+};
 
 const styles = StyleSheet.create({
   cover: {

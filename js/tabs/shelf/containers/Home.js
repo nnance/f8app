@@ -10,34 +10,34 @@ import {fragments} from '../../../models/clog';
 export const query = gql`
   query {
     trendingClogs: clogs(filter: {limit: ${CLOG_PREVIEW_LIMIT}}, orderBy: TRENDING) {
-      ...clogMetaData
+      ...MetaClogListView
     }
     recommendedClog {
-      ...clogMetaData
-      review
+      ...RecommendedClog
     }
     favoriteTags {
-      name
-      trendingClogs {
-        ...clogMetaData
-      }
+      ...FavoritTag
     }
     heroBanners {
-      ...clogMetaData
-      review
+      ...HeroBanner
     }
   }
-  ${fragments.clogMetaData}
+  ${Home.fragments.RecommendedClog}
+  ${Home.fragments.HeroBanner}
+  ${Home.fragments.MetaClogListView}
+  ${Home.fragments.FavoritTag}
 `;
 
 export const mapQueryToProps = ({ ownProps, data }) => {
-  const { loading, trendingClogs, recommendedClog, favoriteTags, heroBanners } = data;
+  const { loading, trendingClogs, recommendedClog, favoriteTags, heroBanners, error } = data;
+  if (error) {
+    console.error('graphql error: ', error);
+  }
   return ({
-    trendingClogs: loading ? [] : trendingClogs,
+    trendingClogs: loading || !!error ? [] : trendingClogs,
     recommendedClog: recommendedClog,
-    heroBanners: loading ? [] : heroBanners,
-    favoriteTags: loading ? [] : favoriteTags,
-    loading
+    heroBanners: loading || !!error ? [] : heroBanners,
+    favoriteTags: loading || !!error ? [] : favoriteTags
   });
 };
 

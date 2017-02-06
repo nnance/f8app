@@ -3,22 +3,22 @@ import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 
 export const query = gql`
-  query EpisodeQuery($id: ID!){
+  query PlayerQuery($id: ID!){
     episode(id: $id) {
-      id
-      no
-      title
-      likeCount
-      commentCount
-      viewCount
+      ...Player
     }
   }
+  ${Player.fragments.episode}
 `;
 
 export const mapQueryToProps = ({ data }) => {
+  const {episode, error, loading} = data;
+  if (error) {
+    console.error('graphql error: ', error);
+  }
   return {
-    loading: data.loading,
-    episode: data.episode
+    loading: loading,
+    episode: episode || {}
   };
 }
 export const mapPropsToOptions = ({id}) => ({

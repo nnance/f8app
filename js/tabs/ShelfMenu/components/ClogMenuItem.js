@@ -12,18 +12,23 @@ import WhiteMenuItem from './WhiteMenuItem';
 import CircleImage from '../../../common/CircleImage';
 import styles from './styles';
 
-const ShowTagButton = ({onPress}) => (
-  <TouchableOpacity onPress={onPress}>
-    <Image source={require('../img/show-tag.png')} style={{width: 20, height: 20, resizeMode: 'contain'}}/>
-  </TouchableOpacity>
-);
+export class ShowTagButton extends React.Component {
+  render() {
+    const {onPress} = this.props;
+    return (<TouchableOpacity onPress={onPress}>
+      <Image source={require('../img/show-tag.png')} style={{width: 20, height: 20, resizeMode: 'contain'}}/>
+    </TouchableOpacity>);
+  }
+}
 
-const HideTagButton = ({onPress}) => (
-  <TouchableOpacity onPress={onPress}>
-    <Image source={require('../img/hide-tag.png')} style={{width: 20, height: 20, resizeMode: 'contain'}}/>
-  </TouchableOpacity>
-);
-
+export class HideTagButton extends React.Component {
+  render() {
+    const {onPress} = this.props;
+    return (<TouchableOpacity onPress={onPress}>
+      <Image source={require('../img/hide-tag.png')} style={{width: 20, height: 20, resizeMode: 'contain'}}/>
+    </TouchableOpacity>);
+  }
+}
 
 class ClogMenuItem extends React.Component {
   constructor(...args) {
@@ -69,8 +74,8 @@ class ClogMenuItem extends React.Component {
     });
   }
 
-  onTagPress(tag) {
-    this.props.onTagPress && this.props.onTagPress();
+  onTagPress(id) {
+    this.props.onTagPress && this.props.onTagPress(id);
   }
 
   renderTagItem() {
@@ -79,7 +84,7 @@ class ClogMenuItem extends React.Component {
       <View>
         {
           tags.map(tag => (
-            <TouchableOpacity onPress={this.onTagPress.bind(this, tag.id)}>
+            <TouchableOpacity key={tag.id} onPress={this.onTagPress.bind(this, tag.id)}>
               <Text style={[styles.fadedWhiteText, {paddingVertical: 5}]}>{tag.title}</Text>
             </TouchableOpacity>
           ))

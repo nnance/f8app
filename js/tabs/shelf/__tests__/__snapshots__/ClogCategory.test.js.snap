@@ -12,86 +12,80 @@ exports[`Shelf.ClogCategory RecommendClogs render 1`] = `
         "author": Object {
           "name": "Elijah Kuhic",
         },
-        "category": "M",
         "followerCount": 6378,
         "followersYouKnow": Array [
           Object {
             "name": "William Simonis",
-            "profilePicture": "http://localhost/static/preview/g3456.png",
+            "profilePicture": "http://localhost/static/preview/g4762.png",
           },
           Object {
             "name": "Carlo Ruecker",
-            "profilePicture": "http://localhost/static/preview/g4842.png",
+            "profilePicture": "http://localhost/static/preview/g3456.png",
           },
           Object {
             "name": "Macey Bernier",
-            "profilePicture": "http://localhost/static/preview/g3376.png",
+            "profilePicture": "http://localhost/static/preview/g4842.png",
           },
           Object {
             "name": "Jeanie Schultz",
-            "profilePicture": "http://localhost/static/preview/g4602.png",
+            "profilePicture": "http://localhost/static/preview/g3376.png",
           },
           Object {
             "name": "Nora Macejkovic",
-            "profilePicture": "http://localhost/static/preview/g4722.png",
+            "profilePicture": "http://localhost/static/preview/g4602.png",
           },
         ],
-        "id": "9971848",
-        "likeCount": 7260,
-        "preview": "http://localhost/static/preview/g4762.png",
         "title": "Ab nulla quod",
-        "viewCount": 1264,
       },
       Object {
         "author": Object {
           "name": "Furman Effertz",
         },
-        "category": "M",
         "followerCount": 9387,
         "followersYouKnow": Array [
           Object {
             "name": "Corrine Botsford",
-            "profilePicture": "http://localhost/static/preview/g4602.png",
-          },
-          Object {
-            "name": "Carrie Bergstrom",
-            "profilePicture": "http://localhost/static/preview/g4762.png",
-          },
-          Object {
-            "name": "Deven Botsford",
-            "profilePicture": "http://localhost/static/preview/g4642.png",
-          },
-          Object {
-            "name": "Bud Dickinson",
-            "profilePicture": "http://localhost/static/preview/g4602.png",
-          },
-          Object {
-            "name": "Luciano Marks",
-            "profilePicture": "http://localhost/static/preview/g3336.png",
-          },
-          Object {
-            "name": "Rogers Walsh",
-            "profilePicture": "http://localhost/static/preview/g4802.png",
-          },
-          Object {
-            "name": "Diana Hammes",
-            "profilePicture": "http://localhost/static/preview/g1878.png",
-          },
-          Object {
-            "name": "Monroe Ritchie",
-            "profilePicture": "http://localhost/static/preview/g3376.png",
-          },
-          Object {
-            "name": "Olga Ritchie",
             "profilePicture": "http://localhost/static/preview/g4722.png",
           },
           Object {
+            "name": "Carrie Bergstrom",
+            "profilePicture": "http://localhost/static/preview/g3578.png",
+          },
+          Object {
+            "name": "Deven Botsford",
+            "profilePicture": "http://localhost/static/preview/g4602.png",
+          },
+          Object {
+            "name": "Bud Dickinson",
+            "profilePicture": "http://localhost/static/preview/g4762.png",
+          },
+          Object {
+            "name": "Luciano Marks",
+            "profilePicture": "http://localhost/static/preview/g4642.png",
+          },
+          Object {
+            "name": "Rogers Walsh",
+            "profilePicture": "http://localhost/static/preview/g4602.png",
+          },
+          Object {
+            "name": "Diana Hammes",
+            "profilePicture": "http://localhost/static/preview/g3336.png",
+          },
+          Object {
+            "name": "Monroe Ritchie",
+            "profilePicture": "http://localhost/static/preview/g4802.png",
+          },
+          Object {
+            "name": "Olga Ritchie",
+            "profilePicture": "http://localhost/static/preview/g1878.png",
+          },
+          Object {
             "name": "Cassandra Waters",
-            "profilePicture": "http://localhost/static/preview/g3618.png",
+            "profilePicture": "http://localhost/static/preview/g3376.png",
           },
           Object {
             "name": "Adriana Johnston",
-            "profilePicture": "http://localhost/static/preview/g4642.png",
+            "profilePicture": "http://localhost/static/preview/g4722.png",
           },
           Object {
             "name": "Monserrat Mohr",
@@ -99,26 +93,22 @@ exports[`Shelf.ClogCategory RecommendClogs render 1`] = `
           },
           Object {
             "name": "Uriel Huel",
-            "profilePicture": "http://localhost/static/preview/g3456.png",
+            "profilePicture": "http://localhost/static/preview/g4642.png",
           },
           Object {
             "name": "Tia Lockman",
-            "profilePicture": "http://localhost/static/preview/g3578.png",
+            "profilePicture": "http://localhost/static/preview/g3618.png",
           },
           Object {
             "name": "Taylor Altenwerth",
-            "profilePicture": "http://localhost/static/preview/g4802.png",
+            "profilePicture": "http://localhost/static/preview/g3456.png",
           },
           Object {
             "name": "Tierra Howe",
-            "profilePicture": "http://localhost/static/preview/g3376.png",
+            "profilePicture": "http://localhost/static/preview/g3578.png",
           },
         ],
-        "id": "8833061",
-        "likeCount": 5814,
-        "preview": "http://localhost/static/preview/g3578.png",
         "title": "Dolores et",
-        "viewCount": 3712,
       },
     ]
   }
@@ -517,15 +507,15 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     Array [
                       Object {
                         "name": "William Simonis",
-                        "profilePicture": "http://localhost/static/preview/g3456.png",
+                        "profilePicture": "http://localhost/static/preview/g4762.png",
                       },
                       Object {
                         "name": "Carlo Ruecker",
-                        "profilePicture": "http://localhost/static/preview/g4842.png",
+                        "profilePicture": "http://localhost/static/preview/g3456.png",
                       },
                       Object {
                         "name": "Macey Bernier",
-                        "profilePicture": "http://localhost/static/preview/g3376.png",
+                        "profilePicture": "http://localhost/static/preview/g4842.png",
                       },
                       Object {
                         "remaining": 2,
@@ -557,6 +547,71 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   scrollRenderAheadDistance={1000}
                   showsHorizontalScrollIndicator={false}
                   stickyHeaderIndices={Array []}>
+                  <View
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "paddingHorizontal": 1.5,
+                        "paddingVertical": 1.5,
+                      }
+                    }>
+                    <View
+                      style={
+                        Object {
+                          "height": 30,
+                          "width": 30,
+                        }
+                      }>
+                      <View
+                        style={
+                          Object {
+                            "backgroundColor": "white",
+                            "borderRadius": 16,
+                            "height": 32,
+                            "left": -1,
+                            "position": "absolute",
+                            "top": -1,
+                            "width": 32,
+                          }
+                        } />
+                      <Image
+                        shadowColor="white"
+                        shadowRadius={2}
+                        size={30}
+                        source={
+                          Object {
+                            "uri": "http://localhost/static/preview/g4762.png",
+                          }
+                        }
+                        style={
+                          Array [
+                            Object {
+                              "borderRadius": 15,
+                              "height": 30,
+                              "width": 30,
+                            },
+                            undefined,
+                          ]
+                        } />
+                      <View
+                        style={
+                          Object {
+                            "height": 30,
+                            "left": 0,
+                            "position": "absolute",
+                            "top": 0,
+                            "width": 30,
+                          }
+                        } />
+                    </View>
+                  </View>
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#eeeeee",
+                        "height": 1,
+                      }
+                    } />
                   <View
                     style={
                       Object {
@@ -656,71 +711,6 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         source={
                           Object {
                             "uri": "http://localhost/static/preview/g4842.png",
-                          }
-                        }
-                        style={
-                          Array [
-                            Object {
-                              "borderRadius": 15,
-                              "height": 30,
-                              "width": 30,
-                            },
-                            undefined,
-                          ]
-                        } />
-                      <View
-                        style={
-                          Object {
-                            "height": 30,
-                            "left": 0,
-                            "position": "absolute",
-                            "top": 0,
-                            "width": 30,
-                          }
-                        } />
-                    </View>
-                  </View>
-                  <View
-                    style={
-                      Object {
-                        "backgroundColor": "#eeeeee",
-                        "height": 1,
-                      }
-                    } />
-                  <View
-                    style={
-                      Object {
-                        "alignItems": "center",
-                        "paddingHorizontal": 1.5,
-                        "paddingVertical": 1.5,
-                      }
-                    }>
-                    <View
-                      style={
-                        Object {
-                          "height": 30,
-                          "width": 30,
-                        }
-                      }>
-                      <View
-                        style={
-                          Object {
-                            "backgroundColor": "white",
-                            "borderRadius": 16,
-                            "height": 32,
-                            "left": -1,
-                            "position": "absolute",
-                            "top": -1,
-                            "width": 32,
-                          }
-                        } />
-                      <Image
-                        shadowColor="white"
-                        shadowRadius={2}
-                        size={30}
-                        source={
-                          Object {
-                            "uri": "http://localhost/static/preview/g3376.png",
                           }
                         }
                         style={
@@ -1035,86 +1025,80 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     "author": Object {
                       "name": "Elijah Kuhic",
                     },
-                    "category": "M",
                     "followerCount": 6378,
                     "followersYouKnow": Array [
                       Object {
                         "name": "William Simonis",
-                        "profilePicture": "http://localhost/static/preview/g3456.png",
+                        "profilePicture": "http://localhost/static/preview/g4762.png",
                       },
                       Object {
                         "name": "Carlo Ruecker",
-                        "profilePicture": "http://localhost/static/preview/g4842.png",
+                        "profilePicture": "http://localhost/static/preview/g3456.png",
                       },
                       Object {
                         "name": "Macey Bernier",
-                        "profilePicture": "http://localhost/static/preview/g3376.png",
+                        "profilePicture": "http://localhost/static/preview/g4842.png",
                       },
                       Object {
                         "name": "Jeanie Schultz",
-                        "profilePicture": "http://localhost/static/preview/g4602.png",
+                        "profilePicture": "http://localhost/static/preview/g3376.png",
                       },
                       Object {
                         "name": "Nora Macejkovic",
-                        "profilePicture": "http://localhost/static/preview/g4722.png",
+                        "profilePicture": "http://localhost/static/preview/g4602.png",
                       },
                     ],
-                    "id": "9971848",
-                    "likeCount": 7260,
-                    "preview": "http://localhost/static/preview/g4762.png",
                     "title": "Ab nulla quod",
-                    "viewCount": 1264,
                   },
                   Object {
                     "author": Object {
                       "name": "Furman Effertz",
                     },
-                    "category": "M",
                     "followerCount": 9387,
                     "followersYouKnow": Array [
                       Object {
                         "name": "Corrine Botsford",
-                        "profilePicture": "http://localhost/static/preview/g4602.png",
-                      },
-                      Object {
-                        "name": "Carrie Bergstrom",
-                        "profilePicture": "http://localhost/static/preview/g4762.png",
-                      },
-                      Object {
-                        "name": "Deven Botsford",
-                        "profilePicture": "http://localhost/static/preview/g4642.png",
-                      },
-                      Object {
-                        "name": "Bud Dickinson",
-                        "profilePicture": "http://localhost/static/preview/g4602.png",
-                      },
-                      Object {
-                        "name": "Luciano Marks",
-                        "profilePicture": "http://localhost/static/preview/g3336.png",
-                      },
-                      Object {
-                        "name": "Rogers Walsh",
-                        "profilePicture": "http://localhost/static/preview/g4802.png",
-                      },
-                      Object {
-                        "name": "Diana Hammes",
-                        "profilePicture": "http://localhost/static/preview/g1878.png",
-                      },
-                      Object {
-                        "name": "Monroe Ritchie",
-                        "profilePicture": "http://localhost/static/preview/g3376.png",
-                      },
-                      Object {
-                        "name": "Olga Ritchie",
                         "profilePicture": "http://localhost/static/preview/g4722.png",
                       },
                       Object {
+                        "name": "Carrie Bergstrom",
+                        "profilePicture": "http://localhost/static/preview/g3578.png",
+                      },
+                      Object {
+                        "name": "Deven Botsford",
+                        "profilePicture": "http://localhost/static/preview/g4602.png",
+                      },
+                      Object {
+                        "name": "Bud Dickinson",
+                        "profilePicture": "http://localhost/static/preview/g4762.png",
+                      },
+                      Object {
+                        "name": "Luciano Marks",
+                        "profilePicture": "http://localhost/static/preview/g4642.png",
+                      },
+                      Object {
+                        "name": "Rogers Walsh",
+                        "profilePicture": "http://localhost/static/preview/g4602.png",
+                      },
+                      Object {
+                        "name": "Diana Hammes",
+                        "profilePicture": "http://localhost/static/preview/g3336.png",
+                      },
+                      Object {
+                        "name": "Monroe Ritchie",
+                        "profilePicture": "http://localhost/static/preview/g4802.png",
+                      },
+                      Object {
+                        "name": "Olga Ritchie",
+                        "profilePicture": "http://localhost/static/preview/g1878.png",
+                      },
+                      Object {
                         "name": "Cassandra Waters",
-                        "profilePicture": "http://localhost/static/preview/g3618.png",
+                        "profilePicture": "http://localhost/static/preview/g3376.png",
                       },
                       Object {
                         "name": "Adriana Johnston",
-                        "profilePicture": "http://localhost/static/preview/g4642.png",
+                        "profilePicture": "http://localhost/static/preview/g4722.png",
                       },
                       Object {
                         "name": "Monserrat Mohr",
@@ -1122,26 +1106,22 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       },
                       Object {
                         "name": "Uriel Huel",
-                        "profilePicture": "http://localhost/static/preview/g3456.png",
+                        "profilePicture": "http://localhost/static/preview/g4642.png",
                       },
                       Object {
                         "name": "Tia Lockman",
-                        "profilePicture": "http://localhost/static/preview/g3578.png",
+                        "profilePicture": "http://localhost/static/preview/g3618.png",
                       },
                       Object {
                         "name": "Taylor Altenwerth",
-                        "profilePicture": "http://localhost/static/preview/g4802.png",
+                        "profilePicture": "http://localhost/static/preview/g3456.png",
                       },
                       Object {
                         "name": "Tierra Howe",
-                        "profilePicture": "http://localhost/static/preview/g3376.png",
+                        "profilePicture": "http://localhost/static/preview/g3578.png",
                       },
                     ],
-                    "id": "8833061",
-                    "likeCount": 5814,
-                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Dolores et",
-                    "viewCount": 3712,
                   },
                 ]
               }
@@ -1555,10 +1535,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "N",
                         "id": "1265975",
-                        "likeCount": 2067,
-                        "preview": "http://localhost/static/preview/g3336.png",
+                        "preview": "http://localhost/static/preview/g3578.png",
                         "title": "Et sapiente ex",
-                        "viewCount": 9287,
                       },
                       Object {
                         "author": Object {
@@ -1566,10 +1544,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "M",
                         "id": "8501576",
-                        "likeCount": 6906,
-                        "preview": "http://localhost/static/preview/g4642.png",
+                        "preview": "http://localhost/static/preview/g3658.png",
                         "title": "Facilis tempora",
-                        "viewCount": 7328,
                       },
                       Object {
                         "author": Object {
@@ -1577,10 +1553,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "N",
                         "id": "2921971",
-                        "likeCount": 414,
-                        "preview": "http://localhost/static/preview/g4722.png",
+                        "preview": "http://localhost/static/preview/g3336.png",
                         "title": "Placeat est qui",
-                        "viewCount": 6638,
                       },
                       Object {
                         "author": Object {
@@ -1588,10 +1562,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "M",
                         "id": "9791594",
-                        "likeCount": 2984,
-                        "preview": "http://localhost/static/preview/g4722.png",
+                        "preview": "http://localhost/static/preview/g4642.png",
                         "title": "Magnam qui",
-                        "viewCount": 6487,
                       },
                       Object {
                         "author": Object {
@@ -1599,10 +1571,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "G",
                         "id": "5329189",
-                        "likeCount": 9855,
-                        "preview": "http://localhost/static/preview/g3578.png",
+                        "preview": "http://localhost/static/preview/g4722.png",
                         "title": "Illo repellendus",
-                        "viewCount": 8694,
                       },
                       Object {
                         "author": Object {
@@ -1610,10 +1580,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "M",
                         "id": "9776860",
-                        "likeCount": 3097,
-                        "preview": "http://localhost/static/preview/g4842.png",
+                        "preview": "http://localhost/static/preview/g4722.png",
                         "title": "Velit veniam nostrum",
-                        "viewCount": 9336,
                       },
                       Object {
                         "author": Object {
@@ -1621,10 +1589,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "M",
                         "id": "8427835",
-                        "likeCount": 1063,
                         "preview": "http://localhost/static/preview/g3578.png",
                         "title": "Sit dolorum in",
-                        "viewCount": 8142,
                       },
                       Object {
                         "author": Object {
@@ -1632,10 +1598,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "N",
                         "id": "2989761",
-                        "likeCount": 9747,
-                        "preview": "http://localhost/static/preview/g3336.png",
+                        "preview": "http://localhost/static/preview/g4842.png",
                         "title": "Necessitatibus non",
-                        "viewCount": 8824,
                       },
                       Object {
                         "author": Object {
@@ -1643,10 +1607,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "M",
                         "id": "5043352",
-                        "likeCount": 3835,
-                        "preview": "http://localhost/static/preview/g3376.png",
+                        "preview": "http://localhost/static/preview/g3578.png",
                         "title": "Officiis dolorem",
-                        "viewCount": 7632,
                       },
                       Object {
                         "author": Object {
@@ -1654,10 +1616,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "G",
                         "id": "225632",
-                        "likeCount": 3252,
-                        "preview": "http://localhost/static/preview/g3618.png",
+                        "preview": "http://localhost/static/preview/g3336.png",
                         "title": "Harum repudiandae",
-                        "viewCount": 5417,
                       },
                       Object {
                         "author": Object {
@@ -1665,10 +1625,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "M",
                         "id": "7684853",
-                        "likeCount": 1782,
-                        "preview": "http://localhost/static/preview/g1878.png",
+                        "preview": "http://localhost/static/preview/g3376.png",
                         "title": "Et et aut",
-                        "viewCount": 4569,
                       },
                       Object {
                         "author": Object {
@@ -1676,10 +1634,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "M",
                         "id": "2277683",
-                        "likeCount": 2903,
-                        "preview": "http://localhost/static/preview/g1878.png",
+                        "preview": "http://localhost/static/preview/g3618.png",
                         "title": "Molestiae dicta et",
-                        "viewCount": 1112,
                       },
                       Object {
                         "author": Object {
@@ -1687,10 +1643,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "M",
                         "id": "3951183",
-                        "likeCount": 5871,
-                        "preview": "http://localhost/static/preview/g4762.png",
+                        "preview": "http://localhost/static/preview/g1878.png",
                         "title": "Quo est facere",
-                        "viewCount": 4233,
                       },
                       Object {
                         "author": Object {
@@ -1698,10 +1652,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "M",
                         "id": "536495",
-                        "likeCount": 1358,
-                        "preview": "http://localhost/static/preview/g4842.png",
+                        "preview": "http://localhost/static/preview/g1878.png",
                         "title": "Animi nam ipsa",
-                        "viewCount": 176,
                       },
                       Object {
                         "author": Object {
@@ -1709,10 +1661,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "D",
                         "id": "4459974",
-                        "likeCount": 2289,
-                        "preview": "http://localhost/static/preview/g3578.png",
+                        "preview": "http://localhost/static/preview/g4762.png",
                         "title": "Debitis officiis",
-                        "viewCount": 9785,
                       },
                       Object {
                         "author": Object {
@@ -1720,10 +1670,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "N",
                         "id": "3022363",
-                        "likeCount": 8798,
-                        "preview": "http://localhost/static/preview/g3578.png",
+                        "preview": "http://localhost/static/preview/g4842.png",
                         "title": "Dolores est in",
-                        "viewCount": 1202,
                       },
                       Object {
                         "author": Object {
@@ -1731,10 +1679,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "M",
                         "id": "3885109",
-                        "likeCount": 2960,
-                        "preview": "http://localhost/static/preview/g4722.png",
+                        "preview": "http://localhost/static/preview/g3578.png",
                         "title": "Accusantium aut",
-                        "viewCount": 698,
                       },
                       Object {
                         "author": Object {
@@ -1742,10 +1688,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "G",
                         "id": "1934966",
-                        "likeCount": 5344,
-                        "preview": "http://localhost/static/preview/g4802.png",
+                        "preview": "http://localhost/static/preview/g3578.png",
                         "title": "Voluptas quaerat nobis",
-                        "viewCount": 514,
                       },
                       Object {
                         "author": Object {
@@ -1753,10 +1697,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "D",
                         "id": "3720606",
-                        "likeCount": 9056,
-                        "preview": "http://localhost/static/preview/g3618.png",
+                        "preview": "http://localhost/static/preview/g4722.png",
                         "title": "Minima fuga nihil",
-                        "viewCount": 7889,
                       },
                       Object {
                         "author": Object {
@@ -1764,10 +1706,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "N",
                         "id": "3110138",
-                        "likeCount": 503,
-                        "preview": "http://localhost/static/preview/g1878.png",
+                        "preview": "http://localhost/static/preview/g4802.png",
                         "title": "Eligendi et",
-                        "viewCount": 3681,
                       },
                       Object {
                         "author": Object {
@@ -1775,10 +1715,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "G",
                         "id": "1787721",
-                        "likeCount": 598,
-                        "preview": "http://localhost/static/preview/g3456.png",
+                        "preview": "http://localhost/static/preview/g3618.png",
                         "title": "Cupiditate maiores",
-                        "viewCount": 3966,
                       },
                       Object {
                         "author": Object {
@@ -1786,10 +1724,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "M",
                         "id": "9054880",
-                        "likeCount": 7845,
-                        "preview": "http://localhost/static/preview/g4602.png",
+                        "preview": "http://localhost/static/preview/g1878.png",
                         "title": "Sequi tempora",
-                        "viewCount": 1316,
                       },
                       Object {
                         "author": Object {
@@ -1797,10 +1733,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "N",
                         "id": "5761136",
-                        "likeCount": 6312,
-                        "preview": "http://localhost/static/preview/g4722.png",
+                        "preview": "http://localhost/static/preview/g3456.png",
                         "title": "Iusto eius",
-                        "viewCount": 7503,
                       },
                       Object {
                         "author": Object {
@@ -1808,10 +1742,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "G",
                         "id": "8185537",
-                        "likeCount": 8040,
                         "preview": "http://localhost/static/preview/g4602.png",
                         "title": "Sapiente accusamus quis",
-                        "viewCount": 7609,
                       },
                       Object {
                         "author": Object {
@@ -1819,10 +1751,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "G",
                         "id": "7653285",
-                        "likeCount": 3859,
-                        "preview": "http://localhost/static/preview/g4642.png",
+                        "preview": "http://localhost/static/preview/g4722.png",
                         "title": "Sed doloribus earum",
-                        "viewCount": 2860,
                       },
                       Object {
                         "author": Object {
@@ -1830,10 +1760,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "D",
                         "id": "7454606",
-                        "likeCount": 8223,
-                        "preview": "http://localhost/static/preview/g3376.png",
+                        "preview": "http://localhost/static/preview/g4602.png",
                         "title": "Voluptatem laborum id",
-                        "viewCount": 3841,
                       },
                       Object {
                         "author": Object {
@@ -1841,10 +1769,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "M",
                         "id": "6172277",
-                        "likeCount": 8626,
-                        "preview": "http://localhost/static/preview/g4722.png",
+                        "preview": "http://localhost/static/preview/g4642.png",
                         "title": "Totam id cumque",
-                        "viewCount": 6952,
                       },
                       Object {
                         "author": Object {
@@ -1852,10 +1778,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "M",
                         "id": "9945608",
-                        "likeCount": 4583,
-                        "preview": "http://localhost/static/preview/g4842.png",
+                        "preview": "http://localhost/static/preview/g3376.png",
                         "title": "A asperiores sed",
-                        "viewCount": 33,
                       },
                       Object {
                         "author": Object {
@@ -1863,10 +1787,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "N",
                         "id": "515280",
-                        "likeCount": 1333,
-                        "preview": "http://localhost/static/preview/g4762.png",
+                        "preview": "http://localhost/static/preview/g4722.png",
                         "title": "Repellendus earum consequatur",
-                        "viewCount": 4679,
                       },
                       Object {
                         "author": Object {
@@ -1874,10 +1796,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "G",
                         "id": "7252107",
-                        "likeCount": 51,
-                        "preview": "http://localhost/static/preview/g3336.png",
+                        "preview": "http://localhost/static/preview/g4842.png",
                         "title": "Ab ut",
-                        "viewCount": 2161,
                       },
                       Object {
                         "author": Object {
@@ -1885,10 +1805,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "N",
                         "id": "8831921",
-                        "likeCount": 6141,
-                        "preview": "http://localhost/static/preview/g3376.png",
+                        "preview": "http://localhost/static/preview/g4762.png",
                         "title": "Facere dolores",
-                        "viewCount": 7032,
                       },
                       Object {
                         "author": Object {
@@ -1896,10 +1814,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "G",
                         "id": "8057772",
-                        "likeCount": 1561,
-                        "preview": "http://localhost/static/preview/g3376.png",
+                        "preview": "http://localhost/static/preview/g3336.png",
                         "title": "Itaque ipsum",
-                        "viewCount": 8307,
                       },
                       Object {
                         "author": Object {
@@ -1907,10 +1823,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "D",
                         "id": "9561603",
-                        "likeCount": 9607,
-                        "preview": "http://localhost/static/preview/g3618.png",
+                        "preview": "http://localhost/static/preview/g3376.png",
                         "title": "Illo sit ipsum",
-                        "viewCount": 5413,
                       },
                       Object {
                         "author": Object {
@@ -1918,10 +1832,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "G",
                         "id": "7017111",
-                        "likeCount": 6986,
-                        "preview": "http://localhost/static/preview/g1878.png",
+                        "preview": "http://localhost/static/preview/g3376.png",
                         "title": "Maxime voluptatibus",
-                        "viewCount": 1926,
                       },
                       Object {
                         "author": Object {
@@ -1929,10 +1841,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "G",
                         "id": "4479737",
-                        "likeCount": 7753,
-                        "preview": "http://localhost/static/preview/g1878.png",
+                        "preview": "http://localhost/static/preview/g3618.png",
                         "title": "Aut eum cupiditate",
-                        "viewCount": 3708,
                       },
                       Object {
                         "author": Object {
@@ -1940,10 +1850,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "D",
                         "id": "2186817",
-                        "likeCount": 8639,
-                        "preview": "http://localhost/static/preview/g3376.png",
+                        "preview": "http://localhost/static/preview/g1878.png",
                         "title": "Expedita omnis quisquam",
-                        "viewCount": 773,
                       },
                       Object {
                         "author": Object {
@@ -1951,10 +1859,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "G",
                         "id": "9983578",
-                        "likeCount": 3107,
-                        "preview": "http://localhost/static/preview/g4722.png",
+                        "preview": "http://localhost/static/preview/g1878.png",
                         "title": "Minima harum eum",
-                        "viewCount": 7273,
                       },
                       Object {
                         "author": Object {
@@ -1962,10 +1868,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "G",
                         "id": "8221213",
-                        "likeCount": 9277,
-                        "preview": "http://localhost/static/preview/g4722.png",
+                        "preview": "http://localhost/static/preview/g3376.png",
                         "title": "Iure et",
-                        "viewCount": 9745,
                       },
                       Object {
                         "author": Object {
@@ -1973,10 +1877,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "G",
                         "id": "157880",
-                        "likeCount": 7745,
-                        "preview": "http://localhost/static/preview/g3578.png",
+                        "preview": "http://localhost/static/preview/g4722.png",
                         "title": "Eveniet officiis",
-                        "viewCount": 1111,
                       },
                       Object {
                         "author": Object {
@@ -1984,10 +1886,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "D",
                         "id": "8558273",
-                        "likeCount": 9895,
-                        "preview": "http://localhost/static/preview/g4842.png",
+                        "preview": "http://localhost/static/preview/g4722.png",
                         "title": "Vel vero libero",
-                        "viewCount": 2067,
                       },
                       Object {
                         "author": Object {
@@ -1995,10 +1895,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "G",
                         "id": "1635026",
-                        "likeCount": 3507,
-                        "preview": "http://localhost/static/preview/g3456.png",
+                        "preview": "http://localhost/static/preview/g3578.png",
                         "title": "Minima qui",
-                        "viewCount": 2046,
                       },
                       Object {
                         "author": Object {
@@ -2006,10 +1904,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "D",
                         "id": "3936",
-                        "likeCount": 6686,
-                        "preview": "http://localhost/static/preview/g4602.png",
+                        "preview": "http://localhost/static/preview/g4842.png",
                         "title": "Sint minima",
-                        "viewCount": 2002,
                       },
                       Object {
                         "author": Object {
@@ -2017,10 +1913,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "D",
                         "id": "5249961",
-                        "likeCount": 1331,
-                        "preview": "http://localhost/static/preview/g3658.png",
+                        "preview": "http://localhost/static/preview/g3456.png",
                         "title": "Consequatur ut",
-                        "viewCount": 4639,
                       },
                       Object {
                         "author": Object {
@@ -2028,10 +1922,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "M",
                         "id": "4195667",
-                        "likeCount": 5971,
-                        "preview": "http://localhost/static/preview/g3618.png",
+                        "preview": "http://localhost/static/preview/g4602.png",
                         "title": "Et architecto",
-                        "viewCount": 9431,
                       },
                       Object {
                         "author": Object {
@@ -2039,10 +1931,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "M",
                         "id": "6790824",
-                        "likeCount": 3423,
-                        "preview": "http://localhost/static/preview/g4642.png",
+                        "preview": "http://localhost/static/preview/g3658.png",
                         "title": "Quae voluptatum",
-                        "viewCount": 2021,
                       },
                       Object {
                         "author": Object {
@@ -2050,10 +1940,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "M",
                         "id": "2487082",
-                        "likeCount": 2501,
                         "preview": "http://localhost/static/preview/g3618.png",
                         "title": "Eius accusantium",
-                        "viewCount": 5092,
                       },
                       Object {
                         "author": Object {
@@ -2061,10 +1949,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "N",
                         "id": "3979391",
-                        "likeCount": 2308,
-                        "preview": "http://localhost/static/preview/g3336.png",
+                        "preview": "http://localhost/static/preview/g4642.png",
                         "title": "Exercitationem nobis nisi",
-                        "viewCount": 7790,
                       },
                       Object {
                         "author": Object {
@@ -2072,10 +1958,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "N",
                         "id": "105175",
-                        "likeCount": 9976,
-                        "preview": "http://localhost/static/preview/g4642.png",
+                        "preview": "http://localhost/static/preview/g3618.png",
                         "title": "Quia voluptas delectus",
-                        "viewCount": 4469,
                       },
                       Object {
                         "author": Object {
@@ -2083,10 +1967,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "M",
                         "id": "7094706",
-                        "likeCount": 9035,
-                        "preview": "http://localhost/static/preview/g4842.png",
+                        "preview": "http://localhost/static/preview/g3336.png",
                         "title": "Ipsum adipisci eos",
-                        "viewCount": 4074,
                       },
                       Object {
                         "author": Object {
@@ -2094,10 +1976,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         },
                         "category": "D",
                         "id": "5634157",
-                        "likeCount": 9889,
-                        "preview": "http://localhost/static/preview/g3336.png",
+                        "preview": "http://localhost/static/preview/g4642.png",
                         "title": "Dolores veniam",
-                        "viewCount": 396,
                       },
                     ]
                   }
@@ -2188,7 +2068,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                             size={85}
                             source={
                               Object {
-                                "uri": "http://localhost/static/preview/g3336.png",
+                                "uri": "http://localhost/static/preview/g3578.png",
                               }
                             }
                             style={
@@ -2337,7 +2217,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                             size={85}
                             source={
                               Object {
-                                "uri": "http://localhost/static/preview/g4642.png",
+                                "uri": "http://localhost/static/preview/g3658.png",
                               }
                             }
                             style={
@@ -2486,7 +2366,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                             size={85}
                             source={
                               Object {
-                                "uri": "http://localhost/static/preview/g4722.png",
+                                "uri": "http://localhost/static/preview/g3336.png",
                               }
                             }
                             style={
@@ -2635,7 +2515,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                             size={85}
                             source={
                               Object {
-                                "uri": "http://localhost/static/preview/g4722.png",
+                                "uri": "http://localhost/static/preview/g4642.png",
                               }
                             }
                             style={
@@ -2784,7 +2664,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                             size={85}
                             source={
                               Object {
-                                "uri": "http://localhost/static/preview/g3578.png",
+                                "uri": "http://localhost/static/preview/g4722.png",
                               }
                             }
                             style={
@@ -2933,7 +2813,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                             size={85}
                             source={
                               Object {
-                                "uri": "http://localhost/static/preview/g4842.png",
+                                "uri": "http://localhost/static/preview/g4722.png",
                               }
                             }
                             style={
@@ -3231,7 +3111,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                             size={85}
                             source={
                               Object {
-                                "uri": "http://localhost/static/preview/g3336.png",
+                                "uri": "http://localhost/static/preview/g4842.png",
                               }
                             }
                             style={
@@ -3380,7 +3260,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                             size={85}
                             source={
                               Object {
-                                "uri": "http://localhost/static/preview/g3376.png",
+                                "uri": "http://localhost/static/preview/g3578.png",
                               }
                             }
                             style={
@@ -3529,7 +3409,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                             size={85}
                             source={
                               Object {
-                                "uri": "http://localhost/static/preview/g3618.png",
+                                "uri": "http://localhost/static/preview/g3336.png",
                               }
                             }
                             style={
@@ -3748,10 +3628,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "M",
                     "id": "835464",
-                    "likeCount": 9680,
-                    "preview": "http://localhost/static/preview/g3336.png",
+                    "preview": "http://localhost/static/preview/g4602.png",
                     "title": "Soluta consequatur assumenda",
-                    "viewCount": 1431,
                   },
                   Object {
                     "author": Object {
@@ -3759,10 +3637,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "N",
                     "id": "3595604",
-                    "likeCount": 372,
-                    "preview": "http://localhost/static/preview/g4602.png",
+                    "preview": "http://localhost/static/preview/g1878.png",
                     "title": "Ipsum dolorem dolor",
-                    "viewCount": 6537,
                   },
                   Object {
                     "author": Object {
@@ -3770,10 +3646,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "D",
                     "id": "7738744",
-                    "likeCount": 5191,
-                    "preview": "http://localhost/static/preview/g4642.png",
+                    "preview": "http://localhost/static/preview/g3336.png",
                     "title": "Tempora perspiciatis praesentium",
-                    "viewCount": 1781,
                   },
                   Object {
                     "author": Object {
@@ -3781,10 +3655,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "M",
                     "id": "1747202",
-                    "likeCount": 3087,
-                    "preview": "http://localhost/static/preview/g4762.png",
+                    "preview": "http://localhost/static/preview/g4602.png",
                     "title": "Et dicta",
-                    "viewCount": 9765,
                   },
                   Object {
                     "author": Object {
@@ -3792,10 +3664,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "D",
                     "id": "7332451",
-                    "likeCount": 5589,
                     "preview": "http://localhost/static/preview/g4642.png",
                     "title": "Ipsam officia qui",
-                    "viewCount": 7046,
                   },
                   Object {
                     "author": Object {
@@ -3803,10 +3673,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "M",
                     "id": "4032205",
-                    "likeCount": 4916,
-                    "preview": "http://localhost/static/preview/g3336.png",
+                    "preview": "http://localhost/static/preview/g4762.png",
                     "title": "Asperiores quo",
-                    "viewCount": 2448,
                   },
                   Object {
                     "author": Object {
@@ -3814,10 +3682,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "M",
                     "id": "8567025",
-                    "likeCount": 4247,
-                    "preview": "http://localhost/static/preview/g3456.png",
+                    "preview": "http://localhost/static/preview/g4642.png",
                     "title": "Voluptas magnam maiores",
-                    "viewCount": 5376,
                   },
                   Object {
                     "author": Object {
@@ -3825,10 +3691,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "D",
                     "id": "3719222",
-                    "likeCount": 9110,
-                    "preview": "http://localhost/static/preview/g4642.png",
+                    "preview": "http://localhost/static/preview/g3336.png",
                     "title": "Expedita omnis",
-                    "viewCount": 5111,
                   },
                   Object {
                     "author": Object {
@@ -3836,10 +3700,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "N",
                     "id": "435344",
-                    "likeCount": 942,
-                    "preview": "http://localhost/static/preview/g3336.png",
+                    "preview": "http://localhost/static/preview/g3456.png",
                     "title": "Aut aspernatur",
-                    "viewCount": 476,
                   },
                   Object {
                     "author": Object {
@@ -3847,10 +3709,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "D",
                     "id": "8701918",
-                    "likeCount": 6050,
-                    "preview": "http://localhost/static/preview/g3658.png",
+                    "preview": "http://localhost/static/preview/g4642.png",
                     "title": "Odit sunt",
-                    "viewCount": 4968,
                   },
                   Object {
                     "author": Object {
@@ -3858,10 +3718,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "D",
                     "id": "7323749",
-                    "likeCount": 4543,
-                    "preview": "http://localhost/static/preview/g4602.png",
+                    "preview": "http://localhost/static/preview/g3336.png",
                     "title": "Nostrum esse cum",
-                    "viewCount": 8062,
                   },
                   Object {
                     "author": Object {
@@ -3869,10 +3727,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "M",
                     "id": "1289003",
-                    "likeCount": 3949,
-                    "preview": "http://localhost/static/preview/g3578.png",
+                    "preview": "http://localhost/static/preview/g3658.png",
                     "title": "Quia sunt",
-                    "viewCount": 1053,
                   },
                   Object {
                     "author": Object {
@@ -3880,10 +3736,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "D",
                     "id": "4615798",
-                    "likeCount": 4160,
-                    "preview": "http://localhost/static/preview/g3658.png",
+                    "preview": "http://localhost/static/preview/g4602.png",
                     "title": "Quod aut",
-                    "viewCount": 5465,
                   },
                   Object {
                     "author": Object {
@@ -3891,10 +3745,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "M",
                     "id": "6191160",
-                    "likeCount": 7393,
-                    "preview": "http://localhost/static/preview/g3376.png",
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Accusantium veritatis",
-                    "viewCount": 9985,
                   },
                   Object {
                     "author": Object {
@@ -3902,10 +3754,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "D",
                     "id": "8230017",
-                    "likeCount": 4690,
-                    "preview": "http://localhost/static/preview/g3578.png",
+                    "preview": "http://localhost/static/preview/g3658.png",
                     "title": "Quibusdam et culpa",
-                    "viewCount": 4444,
                   },
                   Object {
                     "author": Object {
@@ -3913,10 +3763,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "D",
                     "id": "1334056",
-                    "likeCount": 5003,
-                    "preview": "http://localhost/static/preview/g4642.png",
+                    "preview": "http://localhost/static/preview/g3376.png",
                     "title": "Totam a",
-                    "viewCount": 8886,
                   },
                   Object {
                     "author": Object {
@@ -3924,10 +3772,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "G",
                     "id": "3448142",
-                    "likeCount": 6571,
-                    "preview": "http://localhost/static/preview/g4722.png",
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Consequatur sunt in",
-                    "viewCount": 1662,
                   },
                   Object {
                     "author": Object {
@@ -3935,10 +3781,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "M",
                     "id": "8433232",
-                    "likeCount": 395,
-                    "preview": "http://localhost/static/preview/g3376.png",
+                    "preview": "http://localhost/static/preview/g4642.png",
                     "title": "Quod est aut",
-                    "viewCount": 6225,
                   },
                   Object {
                     "author": Object {
@@ -3946,10 +3790,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "N",
                     "id": "2415585",
-                    "likeCount": 3565,
                     "preview": "http://localhost/static/preview/g4722.png",
                     "title": "Eligendi eveniet ad",
-                    "viewCount": 9554,
                   },
                   Object {
                     "author": Object {
@@ -3957,10 +3799,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "D",
                     "id": "7120424",
-                    "likeCount": 6495,
-                    "preview": "http://localhost/static/preview/g4722.png",
+                    "preview": "http://localhost/static/preview/g3376.png",
                     "title": "Ratione quidem",
-                    "viewCount": 3752,
                   },
                   Object {
                     "author": Object {
@@ -3968,10 +3808,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "G",
                     "id": "7158270",
-                    "likeCount": 4704,
-                    "preview": "http://localhost/static/preview/g3658.png",
+                    "preview": "http://localhost/static/preview/g4722.png",
                     "title": "Et magnam tenetur",
-                    "viewCount": 1652,
                   },
                   Object {
                     "author": Object {
@@ -3979,10 +3817,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "G",
                     "id": "6826981",
-                    "likeCount": 2522,
-                    "preview": "http://localhost/static/preview/g4642.png",
+                    "preview": "http://localhost/static/preview/g4722.png",
                     "title": "Magnam dolor",
-                    "viewCount": 8287,
                   },
                   Object {
                     "author": Object {
@@ -3990,10 +3826,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "D",
                     "id": "4510901",
-                    "likeCount": 2179,
-                    "preview": "http://localhost/static/preview/g3618.png",
+                    "preview": "http://localhost/static/preview/g3658.png",
                     "title": "Et minus nulla",
-                    "viewCount": 4137,
                   },
                   Object {
                     "author": Object {
@@ -4001,10 +3835,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "D",
                     "id": "6829700",
-                    "likeCount": 51,
-                    "preview": "http://localhost/static/preview/g3336.png",
+                    "preview": "http://localhost/static/preview/g4642.png",
                     "title": "Et ullam",
-                    "viewCount": 3653,
                   },
                   Object {
                     "author": Object {
@@ -4012,10 +3844,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "D",
                     "id": "1945165",
-                    "likeCount": 5455,
-                    "preview": "http://localhost/static/preview/g4602.png",
+                    "preview": "http://localhost/static/preview/g3618.png",
                     "title": "Explicabo laborum",
-                    "viewCount": 9321,
                   },
                   Object {
                     "author": Object {
@@ -4023,10 +3853,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "G",
                     "id": "6065355",
-                    "likeCount": 347,
-                    "preview": "http://localhost/static/preview/g4642.png",
+                    "preview": "http://localhost/static/preview/g3336.png",
                     "title": "Nisi sint",
-                    "viewCount": 9711,
                   },
                   Object {
                     "author": Object {
@@ -4034,10 +3862,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "M",
                     "id": "6931946",
-                    "likeCount": 8748,
-                    "preview": "http://localhost/static/preview/g3618.png",
+                    "preview": "http://localhost/static/preview/g4602.png",
                     "title": "Molestias aliquam sed",
-                    "viewCount": 241,
                   },
                   Object {
                     "author": Object {
@@ -4045,10 +3871,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "M",
                     "id": "7334061",
-                    "likeCount": 3783,
                     "preview": "http://localhost/static/preview/g4642.png",
                     "title": "Quaerat qui",
-                    "viewCount": 3741,
                   },
                   Object {
                     "author": Object {
@@ -4056,10 +3880,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "M",
                     "id": "5037574",
-                    "likeCount": 577,
-                    "preview": "http://localhost/static/preview/g4802.png",
+                    "preview": "http://localhost/static/preview/g3618.png",
                     "title": "Quia dicta",
-                    "viewCount": 9514,
                   },
                   Object {
                     "author": Object {
@@ -4067,10 +3889,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "N",
                     "id": "1607642",
-                    "likeCount": 8568,
-                    "preview": "http://localhost/static/preview/g3456.png",
+                    "preview": "http://localhost/static/preview/g4642.png",
                     "title": "Quisquam inventore",
-                    "viewCount": 9426,
                   },
                   Object {
                     "author": Object {
@@ -4078,10 +3898,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "G",
                     "id": "4436832",
-                    "likeCount": 3972,
-                    "preview": "http://localhost/static/preview/g4602.png",
+                    "preview": "http://localhost/static/preview/g4802.png",
                     "title": "Assumenda quasi dignissimos",
-                    "viewCount": 9192,
                   },
                   Object {
                     "author": Object {
@@ -4089,10 +3907,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "G",
                     "id": "6115167",
-                    "likeCount": 1764,
-                    "preview": "http://localhost/static/preview/g3618.png",
+                    "preview": "http://localhost/static/preview/g3456.png",
                     "title": "Explicabo ut et",
-                    "viewCount": 3986,
                   },
                   Object {
                     "author": Object {
@@ -4100,10 +3916,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "G",
                     "id": "9363085",
-                    "likeCount": 7816,
-                    "preview": "http://localhost/static/preview/g3456.png",
+                    "preview": "http://localhost/static/preview/g4602.png",
                     "title": "Incidunt sed eligendi",
-                    "viewCount": 4635,
                   },
                   Object {
                     "author": Object {
@@ -4111,10 +3925,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "M",
                     "id": "4494237",
-                    "likeCount": 2377,
-                    "preview": "http://localhost/static/preview/g4602.png",
+                    "preview": "http://localhost/static/preview/g3618.png",
                     "title": "Fugiat aliquam et",
-                    "viewCount": 4146,
                   },
                   Object {
                     "author": Object {
@@ -4122,10 +3934,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "G",
                     "id": "8254506",
-                    "likeCount": 2130,
-                    "preview": "http://localhost/static/preview/g3336.png",
+                    "preview": "http://localhost/static/preview/g3456.png",
                     "title": "Nulla quasi incidunt",
-                    "viewCount": 5970,
                   },
                   Object {
                     "author": Object {
@@ -4133,10 +3943,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "M",
                     "id": "2497598",
-                    "likeCount": 5579,
-                    "preview": "http://localhost/static/preview/g1878.png",
+                    "preview": "http://localhost/static/preview/g4602.png",
                     "title": "A quam",
-                    "viewCount": 4842,
                   },
                   Object {
                     "author": Object {
@@ -4144,10 +3952,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "G",
                     "id": "7122810",
-                    "likeCount": 3862,
-                    "preview": "http://localhost/static/preview/g3578.png",
+                    "preview": "http://localhost/static/preview/g3336.png",
                     "title": "Dolores magni",
-                    "viewCount": 3694,
                   },
                   Object {
                     "author": Object {
@@ -4155,10 +3961,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "M",
                     "id": "1226811",
-                    "likeCount": 3145,
-                    "preview": "http://localhost/static/preview/g3376.png",
+                    "preview": "http://localhost/static/preview/g1878.png",
                     "title": "Veniam et",
-                    "viewCount": 964,
                   },
                   Object {
                     "author": Object {
@@ -4166,10 +3970,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "M",
                     "id": "9041863",
-                    "likeCount": 2863,
-                    "preview": "http://localhost/static/preview/g4842.png",
+                    "preview": "http://localhost/static/preview/g3578.png",
                     "title": "Velit dolores",
-                    "viewCount": 3982,
                   },
                   Object {
                     "author": Object {
@@ -4177,10 +3979,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "G",
                     "id": "2961768",
-                    "likeCount": 8142,
-                    "preview": "http://localhost/static/preview/g3456.png",
+                    "preview": "http://localhost/static/preview/g3376.png",
                     "title": "Illo atque voluptatem",
-                    "viewCount": 3357,
                   },
                   Object {
                     "author": Object {
@@ -4188,10 +3988,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "M",
                     "id": "8122981",
-                    "likeCount": 7999,
-                    "preview": "http://localhost/static/preview/g4762.png",
+                    "preview": "http://localhost/static/preview/g4842.png",
                     "title": "Excepturi nihil ducimus",
-                    "viewCount": 2973,
                   },
                   Object {
                     "author": Object {
@@ -4199,10 +3997,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "M",
                     "id": "4558273",
-                    "likeCount": 1206,
-                    "preview": "http://localhost/static/preview/g3336.png",
+                    "preview": "http://localhost/static/preview/g3456.png",
                     "title": "Reprehenderit et",
-                    "viewCount": 1170,
                   },
                   Object {
                     "author": Object {
@@ -4210,10 +4006,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "D",
                     "id": "331424",
-                    "likeCount": 2317,
-                    "preview": "http://localhost/static/preview/g3336.png",
+                    "preview": "http://localhost/static/preview/g4762.png",
                     "title": "Sint blanditiis minus",
-                    "viewCount": 6124,
                   },
                   Object {
                     "author": Object {
@@ -4221,10 +4015,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "G",
                     "id": "9774794",
-                    "likeCount": 617,
-                    "preview": "http://localhost/static/preview/g4762.png",
+                    "preview": "http://localhost/static/preview/g3336.png",
                     "title": "Non perferendis modi",
-                    "viewCount": 8409,
                   },
                   Object {
                     "author": Object {
@@ -4232,10 +4024,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "D",
                     "id": "4402339",
-                    "likeCount": 2000,
-                    "preview": "http://localhost/static/preview/g3456.png",
+                    "preview": "http://localhost/static/preview/g3336.png",
                     "title": "Soluta vel voluptatibus",
-                    "viewCount": 1895,
                   },
                   Object {
                     "author": Object {
@@ -4243,10 +4033,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "D",
                     "id": "2390462",
-                    "likeCount": 8264,
-                    "preview": "http://localhost/static/preview/g3376.png",
+                    "preview": "http://localhost/static/preview/g4762.png",
                     "title": "Quos rerum",
-                    "viewCount": 3454,
                   },
                   Object {
                     "author": Object {
@@ -4254,10 +4042,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "G",
                     "id": "7104606",
-                    "likeCount": 23,
-                    "preview": "http://localhost/static/preview/g3658.png",
+                    "preview": "http://localhost/static/preview/g3456.png",
                     "title": "Et eveniet architecto",
-                    "viewCount": 5196,
                   },
                   Object {
                     "author": Object {
@@ -4265,10 +4051,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "D",
                     "id": "4599390",
-                    "likeCount": 8792,
-                    "preview": "http://localhost/static/preview/g3336.png",
+                    "preview": "http://localhost/static/preview/g3376.png",
                     "title": "Totam ut ipsum",
-                    "viewCount": 3073,
                   },
                   Object {
                     "author": Object {
@@ -4276,10 +4060,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "M",
                     "id": "978393",
-                    "likeCount": 3799,
-                    "preview": "http://localhost/static/preview/g3578.png",
+                    "preview": "http://localhost/static/preview/g3658.png",
                     "title": "Aut earum",
-                    "viewCount": 9730,
                   },
                   Object {
                     "author": Object {
@@ -4287,10 +4069,8 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     },
                     "category": "M",
                     "id": "814255",
-                    "likeCount": 6407,
-                    "preview": "http://localhost/static/preview/g3658.png",
+                    "preview": "http://localhost/static/preview/g3336.png",
                     "title": "Nihil quia",
-                    "viewCount": 8719,
                   },
                 ]
               }
@@ -4381,7 +4161,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/preview/g3336.png",
+                            "uri": "http://localhost/static/preview/g4602.png",
                           }
                         }
                         style={
@@ -4530,7 +4310,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/preview/g4602.png",
+                            "uri": "http://localhost/static/preview/g1878.png",
                           }
                         }
                         style={
@@ -4679,7 +4459,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/preview/g4642.png",
+                            "uri": "http://localhost/static/preview/g3336.png",
                           }
                         }
                         style={
@@ -4828,7 +4608,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/preview/g4762.png",
+                            "uri": "http://localhost/static/preview/g4602.png",
                           }
                         }
                         style={
@@ -5126,7 +4906,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/preview/g3336.png",
+                            "uri": "http://localhost/static/preview/g4762.png",
                           }
                         }
                         style={
@@ -5275,7 +5055,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/preview/g3456.png",
+                            "uri": "http://localhost/static/preview/g4642.png",
                           }
                         }
                         style={
@@ -5424,7 +5204,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/preview/g4642.png",
+                            "uri": "http://localhost/static/preview/g3336.png",
                           }
                         }
                         style={
@@ -5573,7 +5353,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/preview/g3336.png",
+                            "uri": "http://localhost/static/preview/g3456.png",
                           }
                         }
                         style={
@@ -5722,7 +5502,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/preview/g3658.png",
+                            "uri": "http://localhost/static/preview/g4642.png",
                           }
                         }
                         style={
@@ -5921,19 +5701,19 @@ exports[`Shelf.ClogCategory render correct 1`] = `
               Array [
                 Object {
                   "name": "Susana Wintheiser",
-                  "profilePicture": "http://localhost/static/preview/g3376.png",
+                  "profilePicture": "http://localhost/static/preview/g4802.png",
                 },
                 Object {
                   "name": "Hilma Lind",
-                  "profilePicture": "http://localhost/static/preview/g4722.png",
+                  "profilePicture": "http://localhost/static/preview/g3376.png",
                 },
                 Object {
                   "name": "Pietro Marks",
-                  "profilePicture": "http://localhost/static/preview/g3578.png",
+                  "profilePicture": "http://localhost/static/preview/g3376.png",
                 },
                 Object {
                   "name": "Brandon Kshlerin",
-                  "profilePicture": "http://localhost/static/preview/g4762.png",
+                  "profilePicture": "http://localhost/static/preview/g4722.png",
                 },
                 Object {
                   "name": "Lavon Hagenes",
@@ -5945,59 +5725,59 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                 },
                 Object {
                   "name": "Horacio Franecki",
-                  "profilePicture": "http://localhost/static/preview/g3376.png",
+                  "profilePicture": "http://localhost/static/preview/g3578.png",
                 },
                 Object {
                   "name": "Salvador Hahn",
-                  "profilePicture": "http://localhost/static/preview/g4642.png",
-                },
-                Object {
-                  "name": "Sincere Schumm",
-                  "profilePicture": "http://localhost/static/preview/g3336.png",
-                },
-                Object {
-                  "name": "Karina Denesik",
-                  "profilePicture": "http://localhost/static/preview/g3578.png",
-                },
-                Object {
-                  "name": "Parker McClure",
-                  "profilePicture": "http://localhost/static/preview/g3376.png",
-                },
-                Object {
-                  "name": "Amalia Becker",
-                  "profilePicture": "http://localhost/static/preview/g4722.png",
-                },
-                Object {
-                  "name": "Heidi Beatty",
-                  "profilePicture": "http://localhost/static/preview/g3456.png",
-                },
-                Object {
-                  "name": "Green VonRueden",
                   "profilePicture": "http://localhost/static/preview/g4762.png",
                 },
                 Object {
-                  "name": "Aaron Stroman",
-                  "profilePicture": "http://localhost/static/preview/g1878.png",
+                  "name": "Sincere Schumm",
+                  "profilePicture": "http://localhost/static/preview/g3376.png",
                 },
                 Object {
-                  "name": "Paige Hilpert",
-                  "profilePicture": "http://localhost/static/preview/g1878.png",
+                  "name": "Karina Denesik",
+                  "profilePicture": "http://localhost/static/preview/g4642.png",
                 },
                 Object {
-                  "name": "Waylon Bode",
-                  "profilePicture": "http://localhost/static/preview/g4722.png",
+                  "name": "Parker McClure",
+                  "profilePicture": "http://localhost/static/preview/g3336.png",
                 },
                 Object {
-                  "name": "Carmel Simonis",
+                  "name": "Amalia Becker",
                   "profilePicture": "http://localhost/static/preview/g3578.png",
                 },
                 Object {
+                  "name": "Heidi Beatty",
+                  "profilePicture": "http://localhost/static/preview/g3376.png",
+                },
+                Object {
+                  "name": "Green VonRueden",
+                  "profilePicture": "http://localhost/static/preview/g4722.png",
+                },
+                Object {
+                  "name": "Aaron Stroman",
+                  "profilePicture": "http://localhost/static/preview/g3456.png",
+                },
+                Object {
+                  "name": "Paige Hilpert",
+                  "profilePicture": "http://localhost/static/preview/g4762.png",
+                },
+                Object {
+                  "name": "Waylon Bode",
+                  "profilePicture": "http://localhost/static/preview/g1878.png",
+                },
+                Object {
+                  "name": "Carmel Simonis",
+                  "profilePicture": "http://localhost/static/preview/g1878.png",
+                },
+                Object {
                   "name": "Kim Jerde",
-                  "profilePicture": "http://localhost/static/preview/g4602.png",
+                  "profilePicture": "http://localhost/static/preview/g4722.png",
                 },
                 Object {
                   "name": "Fatima Grady",
-                  "profilePicture": "http://localhost/static/preview/g1878.png",
+                  "profilePicture": "http://localhost/static/preview/g3578.png",
                 },
               ]
             }
@@ -6059,7 +5839,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   size={80}
                   source={
                     Object {
-                      "uri": "http://localhost/static/preview/g3376.png",
+                      "uri": "http://localhost/static/preview/g4802.png",
                     }
                   }
                   style={
@@ -6145,7 +5925,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   size={80}
                   source={
                     Object {
-                      "uri": "http://localhost/static/preview/g4722.png",
+                      "uri": "http://localhost/static/preview/g3376.png",
                     }
                   }
                   style={
@@ -6231,7 +6011,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   size={80}
                   source={
                     Object {
-                      "uri": "http://localhost/static/preview/g3578.png",
+                      "uri": "http://localhost/static/preview/g3376.png",
                     }
                   }
                   style={
@@ -6317,7 +6097,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   size={80}
                   source={
                     Object {
-                      "uri": "http://localhost/static/preview/g4762.png",
+                      "uri": "http://localhost/static/preview/g4722.png",
                     }
                   }
                   style={
@@ -6575,7 +6355,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   size={80}
                   source={
                     Object {
-                      "uri": "http://localhost/static/preview/g3376.png",
+                      "uri": "http://localhost/static/preview/g3578.png",
                     }
                   }
                   style={
@@ -6661,7 +6441,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   size={80}
                   source={
                     Object {
-                      "uri": "http://localhost/static/preview/g4642.png",
+                      "uri": "http://localhost/static/preview/g4762.png",
                     }
                   }
                   style={
@@ -6747,7 +6527,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   size={80}
                   source={
                     Object {
-                      "uri": "http://localhost/static/preview/g3336.png",
+                      "uri": "http://localhost/static/preview/g3376.png",
                     }
                   }
                   style={
@@ -6833,7 +6613,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   size={80}
                   source={
                     Object {
-                      "uri": "http://localhost/static/preview/g3578.png",
+                      "uri": "http://localhost/static/preview/g4642.png",
                     }
                   }
                   style={
