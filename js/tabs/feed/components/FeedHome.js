@@ -57,7 +57,7 @@ class FeedHome extends React.Component {
               />
           }>
           <View style={{backgroundColor: '#7d7d7d'}}>
-            <FeedList data={this.state.data}/>
+            <FeedList data={this.state.data} navigator={this.props.navigator}/>
           </View>
         </FixBugScrollView>
 

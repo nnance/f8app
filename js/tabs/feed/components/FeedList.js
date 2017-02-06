@@ -15,15 +15,6 @@ const styles = StyleSheet.create({
   },
 });
 
-class Row extends React.Component {
-  render() {
-    return (
-      <View>
-        <Text>{this.props.name.first}</Text>
-      </View>
-    )
-  }
-}
 
 class FeedList extends React.Component {
   constructor(props) {
@@ -39,7 +30,7 @@ class FeedList extends React.Component {
       <ListView
         showsHorizontalScrollIndicator={false}
         dataSource={this.state.dataSource}
-        renderRow={(data) => <FeedRow {...data} />}
+        renderRow={(data) => <FeedRow navigator={this.props.navigator} {...data} />}
         renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} /> }
       />
     );
