@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   StyleSheet
 } from 'react-native';
+import gql from 'graphql-tag';
 
 import NavBar from './NavBar';
 import BorderButton from '../../../common/BorderButton';
@@ -52,7 +53,7 @@ class Home extends React.Component {
               <MetaClogListView goToBook={this.props.goToBook} header="TRENDING" clogs={this.props.trendingClogs} renderButton={this.renderTrendingButton.bind(this)}/>
             </View>
             <View style={{flex: 1.6}}>
-              <RecommendedClog {...this.props.recommendedClog} goToBook={this.props.goToBook}/>
+              <RecommendedClog clog={this.props.recommendedClog} goToBook={this.props.goToBook}/>
             </View>
           </Image>
           <Image source={require('../img/home-bg-1.5.png')} style={{resizeMode: 'stretch', backgroundColor: 'transparent', width: undefined, height: undefined, paddingTop: 20}}>
@@ -90,6 +91,20 @@ class Home extends React.Component {
     );
   }
 }
+
+Home.fragments = {
+  HeroBanner: HeroBanner.fragments.clog,
+  RecommendedClog: RecommendedClog.fragments.clog,
+  MetaClogListView: MetaClogListView.fragments.clog,
+  FavoritTag: gql`
+    fragment FavoritTag on Tag {
+      name
+      trendingClogs {
+        ...MetaClogListView
+      }
+    }
+  `
+};
 
 const styles = StyleSheet.create({
   clogListButton: {

@@ -9,6 +9,7 @@ import {
   Dimensions
 } from 'react-native';
 import moment from 'moment';
+import gql from 'graphql-tag';
 import ReadMore from '@exponent/react-native-read-more-text';
 
 import NavBar from '../../common/NavBar';
@@ -181,6 +182,27 @@ class Book extends React.Component {
     );
   }
 }
+
+Book.fragments = {
+  clog: gql`
+    fragment Book on Clog {
+      title
+      cover
+      review
+      author {
+        name
+      }
+      episodes {
+        id
+        no
+        preview
+        viewCount
+        likeCount
+        createdAt
+      }
+    }
+  `
+};
 
 const styles = StyleSheet.create({
   cover: {

@@ -15,11 +15,10 @@ import NavBar from '../components/NavBar';
 const query = gql`
   query ClogListView($filter: ClogFilterInput, $orderBy: CLOG_SORTING){
     clogs(filter: $filter, orderBy: $orderBy) {
-      ...clogMetaData
-      createdAt
+      ...ClogListView
     }
   }
-  ${fragments.clogMetaData}
+  ${ClogListView.fragments.clog}
 `;
 
 class Container extends React.Component {

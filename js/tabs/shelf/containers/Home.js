@@ -10,24 +10,22 @@ import {fragments} from '../../../models/clog';
 export const query = gql`
   query {
     trendingClogs: clogs(filter: {limit: ${CLOG_PREVIEW_LIMIT}}, orderBy: TRENDING) {
-      ...clogMetaData
+      ...MetaClogListView
     }
     recommendedClog {
-      ...clogMetaData
-      review
+      ...RecommendedClog
     }
     favoriteTags {
-      name
-      trendingClogs {
-        ...clogMetaData
-      }
+      ...FavoritTag
     }
     heroBanners {
-      ...clogMetaData
-      review
+      ...HeroBanner
     }
   }
-  ${fragments.clogMetaData}
+  ${Home.fragments.RecommendedClog}
+  ${Home.fragments.HeroBanner}
+  ${Home.fragments.MetaClogListView}
+  ${Home.fragments.FavoritTag}
 `;
 
 export const mapQueryToProps = ({ ownProps, data }) => {

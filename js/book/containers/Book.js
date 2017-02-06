@@ -5,24 +5,12 @@ import _ from 'lodash';
 import Book from '../components/Book';
 
 export const query = gql`
-  query Clog($id: ID!){
+  query BookQuery($id: ID!){
     clog(id: $id) {
-      title
-      cover
-      review
-      author {
-        name
-      }
-      episodes {
-        id
-        no
-        preview
-        viewCount
-        likeCount
-        createdAt
-      }
+      ...Book
     }
   }
+  ${Book.fragments.clog}
 `;
 
 export const mapQueryToProps = ({ ownProps, data }) => {

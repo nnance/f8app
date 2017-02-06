@@ -3,16 +3,12 @@ import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 
 export const query = gql`
-  query EpisodeQuery($id: ID!){
+  query PlayerQuery($id: ID!){
     episode(id: $id) {
-      id
-      no
-      title
-      likeCount
-      commentCount
-      viewCount
+      ...Player
     }
   }
+  ${Player.fragments.episode}
 `;
 
 export const mapQueryToProps = ({ data }) => {
