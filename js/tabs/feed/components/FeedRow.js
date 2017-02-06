@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   },
   text: {
     marginLeft: 12,
-    fontSize: 16,
+    fontSize: 16
   },
   photo: {
     width: 40,
@@ -45,16 +45,18 @@ class EditorAcivity extends React.Component {
     let now = Date.now();
     let timeAdded = new Date(this.props.activity.time)
     let diffMins = Math.round((((now - timeAdded) % 86400000) % 3600000) / 60000);
-    return(
+    return (
       <View style={styles.container}>
         <View style={styles.containerProfile}>
-          <Image style={styles.photo} source={{ uri: this.props.picture.large}} />
+          <Image style={styles.photo} source={{ uri: this.props.picture.large}}/>
           <Text style={{marginLeft: 12, fontWeight: 'bold', fontSize: 16}}>
             {`${this.props.name.first} ${this.props.name.last} `}
             {
               this.props.clogs.length === 1 ?
-                <Text style={{fontSize: 12, fontWeight: 'normal'}}>{`${this.props.activity.action} `}<Text style={{fontSize: 16, fontWeight: 'bold'}}>{this.props.clogs[0].title}</Text></Text>
-                : <Text style={{fontSize: 12, fontWeight: 'normal'}}>{`${this.props.activity.action} ${this.props.clogs.length} ${this.props.activity.type}`}</Text>
+                <Text style={{fontSize: 12, fontWeight: 'normal'}}>{`${this.props.activity.action} `}<Text
+                  style={{fontSize: 16, fontWeight: 'bold'}}>{this.props.clogs[0].title}</Text></Text>
+                : <Text
+                  style={{fontSize: 12, fontWeight: 'normal'}}>{`${this.props.activity.action} ${this.props.clogs.length} ${this.props.activity.type}`}</Text>
             }
           </Text>
           <Text style={{fontSize: 12, fontColor: '#dfdfdf'}}> {diffMins} min ago</Text>
@@ -73,8 +75,12 @@ class FeedRow extends React.Component {
     }
   }
 
+  goToBook() {
+    console.log('FeedRow----');
+  }
+
   render() {
-    return(
+    return (
       <View style={styles.container}>
         <EditorAcivity {...this.props} />
         <View style={styles.containerProfile}>
@@ -87,7 +93,7 @@ class FeedRow extends React.Component {
                 renderRow={(data) => <ClogList {...data} />}
                 renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} /> }
               /> :
-              <Clog clog={this.props.clogs[0]} />
+              <Clog clog={this.props.clogs[0]} goToBook={(e) => this.goToBook(e)}/>
           }
         </View>
       </View>
@@ -95,21 +101,23 @@ class FeedRow extends React.Component {
   }
 }
 
-const Clog = ({clog}) => (
+const Clog = ({clog, goToBook}) => (
   <View style={styles.container}>
-    <Image style={styles.photoClog} source={{ uri: clog.picture.thumbnail}} />
-    <Text style={{fontWeight: 'bold'}}>
-      {`${clog.title}`}
-    </Text>
-    <Text numberOfLines={2} style={{lineHeight: 12}}>
-      {`${clog.review}`}
-    </Text>
+    <TouchableOpacity onPress={goToBook}>
+      <Image style={styles.photoClog} source={{ uri: clog.picture.thumbnail}}/>
+      <Text style={{fontWeight: 'bold'}}>
+        {`${clog.title}`}
+      </Text>
+      <Text numberOfLines={2} style={{lineHeight: 12}}>
+        {`${clog.review}`}
+      </Text>
+    </TouchableOpacity>
   </View>
 );
 
 const ClogList = (props) => (
   <View style={styles.container}>
-    <Image style={styles.photoClogList} source={{ uri: props.picture.thumbnail }} />
+    <Image style={styles.photoClogList} source={{ uri: props.picture.thumbnail }}/>
     <Text style={{fontWeight: 'bold', marginTop: 5}}>
       {`${props.title}`}
     </Text>
