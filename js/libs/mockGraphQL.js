@@ -1,5 +1,6 @@
 import { graphql } from 'graphql';
 import casual from 'casual';
+
 const MockSchema = require('../../server/cloud/graphql/mockSchema');
 
 if (process.env.NODE_ENV !== 'test') {
