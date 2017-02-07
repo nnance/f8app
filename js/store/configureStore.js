@@ -22,23 +22,22 @@
  * @flow
  */
 
-'use strict';
 
-var {applyMiddleware, createStore} = require('redux');
+const { applyMiddleware, createStore } = require('redux');
 import thunk from 'redux-thunk';
 // var thunk = require('redux-thunk');
-var promise = require('./promise');
-var array = require('./array');
-var analytics = require('./analytics');
-var reducers = require('../reducers');
-var createLogger = require('redux-logger');
-var {persistStore, autoRehydrate} = require('redux-persist');
-var {AsyncStorage} = require('react-native');
+const promise = require('./promise');
+const array = require('./array');
+const analytics = require('./analytics');
+const reducers = require('../reducers');
+const createLogger = require('redux-logger');
+const { persistStore, autoRehydrate } = require('redux-persist');
+const { AsyncStorage } = require('react-native');
 
-var isDebuggingInChrome = __DEV__ && !!window.navigator.userAgent;
-import {composeWithDevTools} from 'remote-redux-devtools';
+const isDebuggingInChrome = __DEV__ && !!window.navigator.userAgent;
+import { composeWithDevTools } from 'remote-redux-devtools';
 
-var logger = createLogger({
+const logger = createLogger({
   predicate: (getState, action) => isDebuggingInChrome,
   collapsed: true,
   duration: true,
@@ -49,13 +48,13 @@ var logger = createLogger({
 function configureStore(onComplete: ?() => void) {
   // TODO(frantic): reconsider usage of redux-persist, maybe add cache breaker
   // const store = autoRehydrate()(createF8Store)(reducers);
-  const composeEnhancers = composeWithDevTools({ realtime: true});
+  const composeEnhancers = composeWithDevTools({ realtime: true });
   const store = autoRehydrate()(createStore)(
     reducers,
     undefined,
     composeEnhancers(applyMiddleware(thunk, promise, array, analytics, logger)),
   );
-  persistStore(store, {storage: AsyncStorage}, onComplete);
+  persistStore(store, { storage: AsyncStorage }, onComplete);
   if (isDebuggingInChrome) {
     window.store = store;
   }

@@ -22,15 +22,14 @@
  * @flow
  */
 
-'use strict';
 
-var React = require('react');
-var {
+const React = require('react');
+const {
   StyleSheet,
   View,
   TouchableOpacity,
 } = require('react-native');
-var { Text } = require('F8Text');
+const { Text } = require('F8Text');
 
 class TopicItem extends React.Component {
   props: {
@@ -41,10 +40,10 @@ class TopicItem extends React.Component {
   };
 
   render() {
-    const {topic, color, isChecked, onToggle} = this.props;
+    const { topic, color, isChecked, onToggle } = this.props;
     const style = isChecked
-      ? {backgroundColor: color}
-      : {borderColor: color, borderWidth: 1};
+      ? { backgroundColor: color }
+      : { borderColor: color, borderWidth: 1 };
     const accessibilityTraits = ['button'];
     if (isChecked) {
       accessibilityTraits.push('selected');
@@ -54,7 +53,8 @@ class TopicItem extends React.Component {
         accessibilityTraits={accessibilityTraits}
         activeOpacity={0.8}
         style={styles.container}
-        onPress={onToggle}>
+        onPress={onToggle}
+      >
         <View style={[styles.checkbox, style]} />
         <Text style={styles.title}>
           {topic}

@@ -22,12 +22,11 @@
  * @flow
  */
 
-'use strict';
 
 const Parse = require('parse/react-native');
 const ActionSheetIOS = require('ActionSheetIOS');
 const Platform = require('Platform');
-const {version} = require('../env');
+const { version } = require('../env');
 
 import type { Action, ThunkAction } from './types';
 
@@ -36,11 +35,11 @@ function testPlainPush(): ThunkAction {
 }
 
 function testLinkPush(): ThunkAction {
-  return () => Parse.Cloud.run('test_push', {url: 'link'});
+  return () => Parse.Cloud.run('test_push', { url: 'link' });
 }
 
 function testSessionPush(): ThunkAction {
-  return () => Parse.Cloud.run('test_push', {url: 'session'});
+  return () => Parse.Cloud.run('test_push', { url: 'session' });
 }
 
 function testSurveyPush(): ThunkAction {
@@ -59,15 +58,15 @@ function testExportAppState(): ThunkAction {
     const message = JSON.stringify(getState(), undefined, 2);
     if (Platform.OS === 'ios') {
       ActionSheetIOS.showShareActionSheetWithOptions({
-        subject: subject,
-        message: message,
+        subject,
+        message,
       }, () => {}, () => {});
     } else {
       const SendIntentAndroid = require('react-native-send-intent');
       SendIntentAndroid.sendText({
         title: subject,
         text: message,
-        type: SendIntentAndroid.TEXT_PLAIN
+        type: SendIntentAndroid.TEXT_PLAIN,
       });
     }
   };
@@ -82,4 +81,4 @@ const TEST_MENU = {
   'Get app state': testExportAppState,
 };
 
-module.exports = {TEST_MENU};
+module.exports = { TEST_MENU };

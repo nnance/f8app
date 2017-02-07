@@ -8,14 +8,14 @@ import {
   StyleSheet,
   Share,
   Linking,
-  Platform
+  Platform,
 } from 'react-native';
 
 import gql from 'graphql-tag';
 import WKWebView from 'react-native-wkwebview-reborn';
-import NavBar, {NavBarWithPinkButton} from '../../common/NavBar';
-import {colors} from '../../common/styles';
-import {toHumanNumber} from '../../common/utils';
+import NavBar, { NavBarWithPinkButton } from '../../common/NavBar';
+import { colors } from '../../common/styles';
+import { toHumanNumber } from '../../common/utils';
 import ModalSpinner from '../../common/ModalSpinner';
 
 import ButtomMenu from './ButtomMenu';
@@ -24,7 +24,7 @@ class Player extends React.Component {
   constructor(...args) {
     super(...args);
     this.state = {
-      loading: true
+      loading: true,
     };
   }
 
@@ -34,28 +34,27 @@ class Player extends React.Component {
     }
     let playerView;
     if (Platform.OS === 'android') {
-      playerView = <WebView style={{flex: 1}} source={{uri: 'http://localhost:8080/static/demo-episode/clog.html'}} onLoadEnd={() => this.setState({ loading: false })}/>;
-    }
-    else {
-      playerView = <WKWebView style={{flex: 1}} source={{uri: 'http://localhost:8080/static/demo-episode/clog.html'}} onLoadEnd={() => this.setState({ loading: false })}/>;
+      playerView = <WebView style={{ flex: 1 }} source={{ uri: 'http://localhost:8080/static/demo-episode/clog.html' }} onLoadEnd={() => this.setState({ loading: false })} />;
+    } else {
+      playerView = <WKWebView style={{ flex: 1 }} source={{ uri: 'http://localhost:8080/static/demo-episode/clog.html' }} onLoadEnd={() => this.setState({ loading: false })} />;
     }
     return (
-      <View style={{flex: 1}}>
+      <View style={{ flex: 1 }}>
         <NavBarWithPinkButton
           onBackPress={this.props.onBackPress}
           renderRightMenu={this.renderNavBarButton.bind(this)}
           renderTitle={this.renderTitle.bind(this)}
           titleStyle={{
             justifyContent: 'center',
-            alignItems: 'flex-start'
+            alignItems: 'flex-start',
           }}
           leftMenuStyle={{
             flex: 0,
-            paddingRight: 10
+            paddingRight: 10,
           }}
-          />
-        <View style={{flex: 1}}>
-          <ModalSpinner visible={this.state.loading}/>
+        />
+        <View style={{ flex: 1 }}>
+          <ModalSpinner visible={this.state.loading} />
           {playerView}
         </View>
         <ButtomMenu
@@ -69,12 +68,12 @@ class Player extends React.Component {
 
   renderNavBarButton() {
     return (
-      <View style={{flexDirection: 'row'}}>
+      <View style={{ flexDirection: 'row' }}>
         <TouchableOpacity>
-          <Image style={styles.navButton} source={require('../img/bookmark-button.png')}/>
+          <Image style={styles.navButton} source={require('../img/bookmark-button.png')} />
         </TouchableOpacity>
         <TouchableOpacity>
-          <Image style={styles.navButton} source={require('../img/follow-button.png')}/>
+          <Image style={styles.navButton} source={require('../img/follow-button.png')} />
         </TouchableOpacity>
       </View>
     );
@@ -94,7 +93,7 @@ class Player extends React.Component {
   onSharePress() {
     Share.share({
       title: `EP.${this.props.episode.no} ${this.props.episode.title}`,
-      message: `http://139.59.253.62/mock-deep-link/`
+      message: 'http://139.59.253.62/mock-deep-link/',
     });
   }
 }
@@ -109,7 +108,7 @@ Player.fragments = {
       commentCount
       viewCount
     }
-  `
+  `,
 };
 
 const styles = StyleSheet.create({
@@ -117,19 +116,19 @@ const styles = StyleSheet.create({
     width: 25,
     height: 25,
     marginRight: 10,
-    resizeMode: 'contain'
+    resizeMode: 'contain',
   },
   titleText: {
     fontSize: 14,
-    color: colors.textPink
+    color: colors.textPink,
   },
   viewCountText: {
     fontSize: 10,
-    color: colors.textFadedPink
+    color: colors.textFadedPink,
   },
   textContainer: {
-    marginRight: 50
-  }
+    marginRight: 50,
+  },
 });
 
 export default Player;

@@ -21,16 +21,16 @@
  *
  * @flow
  */
-'use strict';
 
-var Image = require('Image');
-var PixelRatio = require('PixelRatio');
-var React = require('React');
-var StyleSheet = require('StyleSheet');
-var View = require('View');
-var InteractionManager = require('InteractionManager');
 
-import type {Map} from '../reducers/maps';
+const Image = require('Image');
+const PixelRatio = require('PixelRatio');
+const React = require('React');
+const StyleSheet = require('StyleSheet');
+const View = require('View');
+const InteractionManager = require('InteractionManager');
+
+import type { Map } from '../reducers/maps';
 
 class MapView extends React.Component {
   _isMounted: boolean;
@@ -48,7 +48,7 @@ class MapView extends React.Component {
   componentDidMount() {
     this._isMounted = true;
     InteractionManager.runAfterInteractions(() => {
-      this._isMounted && this.setState({loaded: true});
+      this._isMounted && this.setState({ loaded: true });
     });
   }
 
@@ -57,12 +57,12 @@ class MapView extends React.Component {
   }
 
   render() {
-    var image;
+    let image;
     if (this.state.loaded) {
       image = (
         <Image
           style={styles.map}
-          source={{uri: urlForMap(this.props.map)}}
+          source={{ uri: urlForMap(this.props.map) }}
         />
       );
     }

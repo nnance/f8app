@@ -21,7 +21,7 @@
  *
  * @flow
  */
-'use strict';
+
 
 const React = require('react');
 const ViewPager = require('./ViewPager');
@@ -39,8 +39,8 @@ class Carousel extends React.Component {
   props: Props;
 
   render() {
-    let cards = [];
-    const {count, selectedIndex, renderCard} = this.props;
+    const cards = [];
+    const { count, selectedIndex, renderCard } = this.props;
 
     for (let i = 0; i < count; i++) {
       let content = null;
@@ -50,7 +50,7 @@ class Carousel extends React.Component {
       cards.push(content);
     }
     return (
-      <ViewPager style={styles.carousel} {...this.props} bounces={true}>
+      <ViewPager style={styles.carousel} {...this.props} bounces>
         {cards}
       </ViewPager>
     );
@@ -64,7 +64,7 @@ var styles = StyleSheet.create({
       overflow: 'visible',
       backgroundColor: 'black',
     },
-  }
+  },
 });
 
 module.exports = Carousel;

@@ -21,29 +21,29 @@
  *
  * @flow
  */
-'use strict';
 
-var F8Colors = require('F8Colors');
-var F8SessionCell = require('F8SessionCell');
-var React = require('React');
-var StyleSheet = require('StyleSheet');
-var findSessionByURI = require('findSessionByURI');
-var { Text } = require('F8Text');
-var TouchableHighlight = require('TouchableHighlight');
-var View = require('View');
-var moment = require('moment');
 
-var { connect } = require('react-redux');
+const F8Colors = require('F8Colors');
+const F8SessionCell = require('F8SessionCell');
+const React = require('React');
+const StyleSheet = require('StyleSheet');
+const findSessionByURI = require('findSessionByURI');
+const { Text } = require('F8Text');
+const TouchableHighlight = require('TouchableHighlight');
+const View = require('View');
+const moment = require('moment');
+
+const { connect } = require('react-redux');
 
 class NotificationCell extends React.Component {
   render() {
-    var attachment;
+    let attachment;
     if (this.props.session) {
       attachment = (
         <F8SessionCell
           style={styles.session}
           session={this.props.session}
-          showStartEndTime={true}
+          showStartEndTime
         />
       );
     } else if (this.props.notification.url) {
@@ -92,7 +92,7 @@ var styles = StyleSheet.create({
     borderRadius: 4,
     borderColor: F8Colors.cellBorder,
     // overflow: 'hidden',
-    shadowOffset: {width: 1, height: 1},
+    shadowOffset: { width: 1, height: 1 },
     shadowColor: '#eee',
     shadowOpacity: 1,
   },

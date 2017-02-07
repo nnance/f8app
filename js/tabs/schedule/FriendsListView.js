@@ -21,15 +21,15 @@
  *
  * @flow
  */
-'use strict';
 
-var EmptySchedule = require('./EmptySchedule');
-var Navigator = require('Navigator');
-var React = require('React');
-var SessionsSectionHeader = require('./SessionsSectionHeader');
-var InviteFriendsButton = require('./InviteFriendsButton');
-var PureListView = require('../../common/PureListView');
-var FriendCell = require('./FriendCell');
+
+const EmptySchedule = require('./EmptySchedule');
+const Navigator = require('Navigator');
+const React = require('React');
+const SessionsSectionHeader = require('./SessionsSectionHeader');
+const InviteFriendsButton = require('./InviteFriendsButton');
+const PureListView = require('../../common/PureListView');
+const FriendCell = require('./FriendCell');
 
 type Friend = any;
 
@@ -85,18 +85,19 @@ class FriendsListView extends React.Component {
     return (
       <EmptySchedule
         image={require('./img/no-friends-found.png')}
-        text={'Friends using the F8 app\nwill appear here.'}>
+        text={'Friends using the F8 app\nwill appear here.'}
+      >
         <InviteFriendsButton />
       </EmptySchedule>
     );
   }
 
   renderFooter() {
-    return <InviteFriendsButton style={{margin: 20}} />;
+    return <InviteFriendsButton style={{ margin: 20 }} />;
   }
 
   openFriendsSchedule(friend: Friend) {
-    this.props.navigator.push({friend});
+    this.props.navigator.push({ friend });
   }
 
   storeInnerRef(ref: ?PureListView) {

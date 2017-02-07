@@ -23,19 +23,18 @@
  * @flow
  */
 
-'use strict';
 
-import {StyleSheet, Platform} from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 
 export function create(styles: Object): {[name: string]: number} {
   const platformStyles = {};
   Object.keys(styles).forEach((name) => {
-    let {ios, android, ...style} = {...styles[name]};
+    const { ios, android, ...style } = { ...styles[name] };
     if (ios && Platform.OS === 'ios') {
-      style = {...style, ...ios};
+      style = { ...style, ...ios };
     }
     if (android && Platform.OS === 'android') {
-      style = {...style, ...android};
+      style = { ...style, ...android };
     }
     platformStyles[name] = style;
   });

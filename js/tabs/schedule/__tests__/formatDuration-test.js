@@ -22,7 +22,6 @@
  * @flow
  */
 
-'use strict';
 
 jest.autoMockOff();
 const formatDuration = require('../formatDuration');

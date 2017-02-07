@@ -1,8 +1,8 @@
-'use strict';
+
 
 import React from 'react';
-import {BackAndroid, Text, TouchableOpacity, Navigator, Image, View} from 'react-native';
-import {connect} from 'react-redux';
+import { BackAndroid, Text, TouchableOpacity, Navigator, Image, View } from 'react-native';
+import { connect } from 'react-redux';
 
 import * as actions from '../actions';
 
@@ -14,11 +14,11 @@ import SuccessScreen from './SuccessScreen';
 import styles from './styles';
 
 const titles = {
-  'index': '',
+  index: '',
   'email-login': 'ลงชื่อเข้าใช้ผ่านอีเมล',
-  'signup': 'สร้างบัญชีใหม่',
-  'forgotPassword': 'ขอรหัสผ่านใหม่',
-  'success': ''
+  signup: 'สร้างบัญชีใหม่',
+  forgotPassword: 'ขอรหัสผ่านใหม่',
+  success: '',
 };
 
 class LoginScreen extends React.Component {
@@ -55,17 +55,17 @@ class LoginScreen extends React.Component {
     return (
       <Navigator
         ref="navigator"
-        initialRoute={{page: this.props.withEmail ? 'email-login' : 'index'}}
+        initialRoute={{ page: this.props.withEmail ? 'email-login' : 'index' }}
         renderScene={this.renderScene}
         navigationBar={
-         <Navigator.NavigationBar
-           navigationStyles={Navigator.NavigationBar.StylesIOS}
-           routeMapper={{
-             LeftButton: this.renderLeftButton.bind(this),
-             RightButton: this.renderRightButton.bind(this),
-             Title: this.renderTitle.bind(this)
-           }}
-         />
+          <Navigator.NavigationBar
+            navigationStyles={Navigator.NavigationBar.StylesIOS}
+            routeMapper={{
+              LeftButton: this.renderLeftButton.bind(this),
+              RightButton: this.renderRightButton.bind(this),
+              Title: this.renderTitle.bind(this),
+            }}
+          />
         }
       />
     );
@@ -74,24 +74,24 @@ class LoginScreen extends React.Component {
   renderTitle(route, navigator, index, navState) {
     let title = '';
     title = titles[route.page];
-    return (<View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}><Text style={styles.titleNavBar}>{title}</Text></View>);
+    return (<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}><Text style={styles.titleNavBar}>{title}</Text></View>);
   }
 
   renderLeftButton(route, navigator, index, navState) {
-    if (route.page === 'index'){
+    if (route.page === 'index') {
       return null;
     }
     return (
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <TouchableOpacity onPress={this.goBack}>
-         <Image style={styles.backButton} source={require('../common/img/icon/backButton.png')}/>
+          <Image style={styles.backButton} source={require('../common/img/icon/backButton.png')} />
         </TouchableOpacity>
       </View>
     );
   }
 
   renderRightButton(route, navigator, index, navState) {
-    if (route.page !== 'index'){
+    if (route.page !== 'index') {
       return null;
     }
     return (
@@ -99,7 +99,8 @@ class LoginScreen extends React.Component {
         accessibilityLabel="Skip login"
         accessibilityTraits="button"
         style={styles.skip}
-        onPress={() => this.props.skipLogin()}>
+        onPress={() => this.props.skipLogin()}
+      >
         <Image
           source={require('./img/x.png')}
         />
@@ -109,10 +110,10 @@ class LoginScreen extends React.Component {
 
   renderScene(route, navigator) {
     if (route.page === 'index') {
-      return <IndexScreen {...this.props} pushPage={this.pushPage}/>;
+      return <IndexScreen {...this.props} pushPage={this.pushPage} />;
     }
     if (route.page === 'email-login') {
-      return <EmailLoginScreen error={this.props.error} logIn={this.props.logIn} pushPage={this.pushPage}/>;
+      return <EmailLoginScreen error={this.props.error} logIn={this.props.logIn} pushPage={this.pushPage} />;
     }
     if (route.page === 'signup') {
       return (<SignupScreen
@@ -128,11 +129,11 @@ class LoginScreen extends React.Component {
         error={this.props.error}
         forgotPassword={this.props.forgotPassword}
         goBack={this.goBack}
-        onReqed={() => this.pushPage('success', {successText: 'mail has been sent'})}
+        onReqed={() => this.pushPage('success', { successText: 'mail has been sent' })}
       />);
     }
     if (route.page === 'success') {
-      return <SuccessScreen successText={route.payload.successText} goToLogin={this.goToLogin}/>;
+      return <SuccessScreen successText={route.payload.successText} goToLogin={this.goToLogin} />;
     }
     return <Text>Page not found</Text>;
   }
@@ -143,9 +144,9 @@ class LoginScreen extends React.Component {
 
   goToLogin() {
     const navigator = this.refs.navigator;
-    let currentRoutes = navigator.getCurrentRoutes();
+    const currentRoutes = navigator.getCurrentRoutes();
     let N = navigator.getCurrentRoutes().length;
-    while (N){
+    while (N) {
       if (currentRoutes[N - 1].page === 'email-login') {
         break;
       }
@@ -158,25 +159,22 @@ class LoginScreen extends React.Component {
   }
 
   pushPage(page, payload) {
-    this.refs.navigator.push({page, payload});
+    this.refs.navigator.push({ page, payload });
   }
 
   goBack() {
     if (this.refs.navigator.getCurrentRoutes().length > 1) {
       this.refs.navigator.pop();
       return true;
-    }
-    else {
-      if (this.props.onExit) {
-        this.props.onExit();
-        return true;
-      }
+    } else if (this.props.onExit) {
+      this.props.onExit();
+      return true;
     }
     return false;
   }
 
   async logInWithFacebook() {
-    const {dispatch, onLoggedIn} = this.props;
+    const { dispatch, onLoggedIn } = this.props;
 
     try {
       await dispatch(actions.logInWithFacebook());
@@ -199,17 +197,17 @@ class LoginScreen extends React.Component {
 const select = state => ({
   isLoggedIn: state.user.isLoggedIn,
   isSignedUp: state.user.isSignedUp,
-  error: state.user.loginError
+  error: state.user.loginError,
 });
 
 const actionsMaping = {
   skipLogin: actions.skipLogin,
   logIn: actions.logIn,
   signUp: actions.signUp,
-  forgotPassword: actions.forgotPassword
+  forgotPassword: actions.forgotPassword,
 };
 
 export default connect()(connect(select, actionsMaping)(LoginScreen));
 export {
-  LoginScreen as Component
+  LoginScreen as Component,
 };

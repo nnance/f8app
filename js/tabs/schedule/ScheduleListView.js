@@ -21,17 +21,17 @@
  *
  * @flow
  */
-'use strict';
 
-var F8SessionCell = require('F8SessionCell');
-var FilterSessions = require('./filterSessions');
-var Navigator = require('Navigator');
-var React = require('React');
-var SessionsSectionHeader = require('./SessionsSectionHeader');
-var PureListView = require('../../common/PureListView');
-var groupSessions = require('./groupSessions');
 
-import type {Session} from '../../reducers/sessions';
+const F8SessionCell = require('F8SessionCell');
+const FilterSessions = require('./filterSessions');
+const Navigator = require('Navigator');
+const React = require('React');
+const SessionsSectionHeader = require('./SessionsSectionHeader');
+const PureListView = require('../../common/PureListView');
+const groupSessions = require('./groupSessions');
+
+import type { Session } from '../../reducers/sessions';
 
 type Props = {
   day: number;
@@ -94,7 +94,7 @@ class ScheduleListView extends React.Component {
   }
 
   renderEmptyList(): ?ReactElement {
-    const {renderEmptyList} = this.props;
+    const { renderEmptyList } = this.props;
     return renderEmptyList && renderEmptyList(this.props.day);
   }
 

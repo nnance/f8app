@@ -12,22 +12,22 @@ export const query = gql`
 `;
 
 export const mapQueryToProps = ({ data }) => {
-  const {episode, error, loading} = data;
+  const { episode, error, loading } = data;
   if (error) {
     console.error('graphql error: ', error);
   }
   return {
-    loading: loading,
-    episode: episode || {}
+    loading,
+    episode: episode || {},
   };
-}
-export const mapPropsToOptions = ({id}) => ({
+};
+export const mapPropsToOptions = ({ id }) => ({
   variables: {
-    id
-  }
+    id,
+  },
 });
 
 export default graphql(query, {
   props: mapQueryToProps,
-  options: mapPropsToOptions
+  options: mapPropsToOptions,
 })(Player);

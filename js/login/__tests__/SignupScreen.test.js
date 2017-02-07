@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import { shallow } from 'enzyme';
 
 import SignupScreen from '../SignupScreen';
 
@@ -12,14 +12,14 @@ describe('SignupScreen', () => {
   }
 
   it('show error if api fail', async () => {
-    const wrapper = shallow(<SignupScreen signUp={api}/>);
+    const wrapper = shallow(<SignupScreen signUp={api} />);
     wrapper.find('[keyboardType="email-address"]').simulate('changeText', 'fail@a.a');
     await wrapper.find('[caption="สร้างบัญชี"]').props().onPress();
     expect(wrapper.state().error).toContain('something error');
   });
 
   it('error if password not match', async () => {
-    const wrapper = shallow(<SignupScreen/>);
+    const wrapper = shallow(<SignupScreen />);
     wrapper.find('[keyboardType="email-address"]').simulate('changeText', 'emai@a.a');
     wrapper.find('[placeholder="รหัสผ่าน"]').simulate('changeText', '1');
     wrapper.find('[placeholder="ยืนยันรหัสผ่าน"]').simulate('changeText', '2');
@@ -30,7 +30,7 @@ describe('SignupScreen', () => {
   it('state loading', async () => {
     let _resolve;
     const signUp = jest.fn(() => new Promise(resolve => _resolve = resolve));
-    const wrapper = shallow(<SignupScreen signUp={signUp}/>);
+    const wrapper = shallow(<SignupScreen signUp={signUp} />);
     expect(wrapper.state().loading).toBe(false);
     const task = wrapper.find('[caption="สร้างบัญชี"]').props().onPress();
     expect(wrapper.state().loading).toBe(true);
@@ -40,24 +40,24 @@ describe('SignupScreen', () => {
   });
 
   it('call onSignedUp if success', async () => {
-    let spy = jest.fn();
-    const wrapper = shallow(<SignupScreen signUp={api} onSignedUp={spy}/>);
+    const spy = jest.fn();
+    const wrapper = shallow(<SignupScreen signUp={api} onSignedUp={spy} />);
     wrapper.find('[keyboardType="email-address"]').simulate('changeText', 'a@a.a');
     await wrapper.find('[caption="สร้างบัญชี"]').props().onPress();
     expect(spy).toBeCalled();
   });
 
   it('dont call onSignedUp if fail', async () => {
-    let spy = jest.fn();
-    const wrapper = shallow(<SignupScreen signUp={api} onSignedUp={spy}/>);
+    const spy = jest.fn();
+    const wrapper = shallow(<SignupScreen signUp={api} onSignedUp={spy} />);
     wrapper.find('[keyboardType="email-address"]').simulate('changeText', 'fail@a.a');
     await wrapper.find('[caption="สร้างบัญชี"]').props().onPress();
     expect(spy).not.toBeCalled();
   });
 
   it('call logIn after SignedUp', async () => {
-    let spy = jest.fn();
-    const wrapper = shallow(<SignupScreen signUp={api} logIn={spy}/>);
+    const spy = jest.fn();
+    const wrapper = shallow(<SignupScreen signUp={api} logIn={spy} />);
     wrapper.find('[keyboardType="email-address"]').simulate('changeText', 'a@a.a');
     await wrapper.find('[caption="สร้างบัญชี"]').props().onPress();
     expect(spy).toBeCalledWith('a@a.a', '');

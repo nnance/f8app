@@ -23,19 +23,18 @@
  * @flow
  */
 
-'use strict';
 
 import React from 'react';
 import LoginScreen from './login/LoginScreen';
 
-var AppState = require('AppState');
+const AppState = require('AppState');
 // var PushNotificationsController = require('./PushNotificationsController');
 // var StyleSheet = require('StyleSheet');
 // var F8Navigator = require('F8Navigator');
-var CodePush = require('react-native-code-push');
+const CodePush = require('react-native-code-push');
 // var View = require('View');
 // var StatusBar = require('StatusBar');
-var {
+const {
   loadConfig,
   loadViewer,
   loadNotifications,
@@ -43,14 +42,14 @@ var {
   loadFriendsSchedules,
   loadSurveys,
 } = require('./actions');
-var { updateInstallation } = require('./actions/installation');
-var { connect } = require('react-redux');
+const { updateInstallation } = require('./actions/installation');
+const { connect } = require('react-redux');
 
-var { version } = require('./env.js');
+const { version } = require('./env.js');
 import ClogiiNavigator from './ClogiiNavigator';
 
-var App = React.createClass({
-  componentDidMount: function() {
+const App = React.createClass({
+  componentDidMount() {
     AppState.addEventListener('change', this.handleAppStateChange);
 
     // this.props.dispatch(loadViewer());
@@ -60,28 +59,28 @@ var App = React.createClass({
     // this.props.dispatch(loadFriendsSchedules());
     // this.props.dispatch(loadSurveys());
 
-    updateInstallation({version});
-    CodePush.sync({installMode: CodePush.InstallMode.ON_NEXT_RESUME});
+    updateInstallation({ version });
+    CodePush.sync({ installMode: CodePush.InstallMode.ON_NEXT_RESUME });
   },
 
-  componentWillUnmount: function() {
+  componentWillUnmount() {
     AppState.removeEventListener('change', this.handleAppStateChange);
   },
 
-  handleAppStateChange: function(appState) {
+  handleAppStateChange(appState) {
     if (appState === 'active') {
       // this.props.dispatch(loadSessions());
       // this.props.dispatch(loadNotifications());
       // this.props.dispatch(loadSurveys());
-      CodePush.sync({installMode: CodePush.InstallMode.ON_NEXT_RESUME});
+      CodePush.sync({ installMode: CodePush.InstallMode.ON_NEXT_RESUME });
     }
   },
 
-  render: function() {
+  render() {
     if (!this.props.isLoggedIn) {
       return <LoginScreen />;
     }
-    return <ClogiiNavigator/>;
+    return <ClogiiNavigator />;
   },
 
 });

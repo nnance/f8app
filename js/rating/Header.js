@@ -21,7 +21,7 @@
  *
  * @flow
  */
-'use strict';
+
 
 const React = require('react');
 const F8Colors = require('F8Colors');
@@ -32,17 +32,17 @@ const {
   StyleSheet,
 } = require('react-native');
 
-import type {Session} from '../reducers/sessions';
+import type { Session } from '../reducers/sessions';
 
 type Props = {
   session: Session;
 };
 
-function Header({session}: Props) {
-  const pics = session.speakers.map((speaker) => (
+function Header({ session }: Props) {
+  const pics = session.speakers.map(speaker => (
     <Image
       key={speaker.id}
-      source={{uri: speaker.pic}}
+      source={{ uri: speaker.pic }}
       style={styles.pic}
     />
   ));
@@ -114,9 +114,11 @@ module.exports.__cards__ = (define) => {
   ));
 
   define('Long title', () => (
-    <Header session={{
-      title: 'Inside Facebook\'s Infrastructure (Part 1): The System that Serves Billions',
-      speakers: [],
-    }} />
+    <Header
+      session={{
+        title: 'Inside Facebook\'s Infrastructure (Part 1): The System that Serves Billions',
+        speakers: [],
+      }}
+    />
   ));
 };

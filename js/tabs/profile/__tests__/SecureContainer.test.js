@@ -1,10 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {shallow} from 'enzyme';
+import { shallow } from 'enzyme';
 
 import {
   Text,
-  TextInput
+  TextInput,
 } from 'react-native';
 import F8Button from 'F8Button';
 

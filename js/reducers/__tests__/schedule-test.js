@@ -22,25 +22,23 @@
  * @flow
  */
 
-'use strict';
 
 jest.dontMock('../schedule');
 const schedule = require('../schedule');
 
 describe('schedule reducer', () => {
-
   it('is empty by default', () => {
     expect(schedule(undefined, ({}: any))).toEqual({});
   });
 
   it('adds sessions to schedule', () => {
     expect(
-      schedule({}, {type: 'SESSION_ADDED', id: 'one'})
-    ).toEqual({one: true});
+      schedule({}, { type: 'SESSION_ADDED', id: 'one' }),
+    ).toEqual({ one: true });
 
     expect(
-      schedule({one: true}, {type: 'SESSION_ADDED', id: 'two'})
-    ).toEqual({one: true, two: true});
+      schedule({ one: true }, { type: 'SESSION_ADDED', id: 'two' }),
+    ).toEqual({ one: true, two: true });
   });
 
   it('removes sessions from schedule', () => {
@@ -51,7 +49,7 @@ describe('schedule reducer', () => {
       }, {
         type: 'SESSION_REMOVED',
         id: 'two',
-      })
+      }),
     ).toEqual({
       one: true,
     });
@@ -63,8 +61,8 @@ describe('schedule reducer', () => {
         one: true,
       }, {
         type: 'RESTORED_SCHEDULE',
-        list: [{id: 'two'}, {id: 'three'}],
-      })
+        list: [{ id: 'two' }, { id: 'three' }],
+      }),
     ).toEqual({
       two: true,
       three: true,
@@ -78,8 +76,7 @@ describe('schedule reducer', () => {
         two: true,
       }, {
         type: 'LOGGED_OUT',
-      })
+      }),
     ).toEqual({});
   });
-
 });

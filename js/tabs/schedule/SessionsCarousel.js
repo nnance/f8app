@@ -21,10 +21,10 @@
  *
  * @flow
  */
-'use strict';
+
 
 const Parse = require('parse/react-native');
-const {AppEventsLogger} = require('react-native-fbsdk');
+const { AppEventsLogger } = require('react-native-fbsdk');
 const React = require('react');
 const F8SessionDetails = require('F8SessionDetails');
 const F8PageControl = require('F8PageControl');
@@ -34,10 +34,10 @@ const Platform = require('Platform');
 const formatTime = require('./formatTime');
 const Carousel = require('../../common/Carousel');
 
-const {connect} = require('react-redux');
-const {loadFriendsSchedules, shareSession} = require('../../actions');
+const { connect } = require('react-redux');
+const { loadFriendsSchedules, shareSession } = require('../../actions');
 
-import type {Dispatch} from '../../actions/types';
+import type { Dispatch } from '../../actions/types';
 
 const {
   Text,
@@ -45,7 +45,7 @@ const {
   Navigator,
 } = require('react-native');
 
-import type {Session} from '../../reducers/sessions';
+import type { Session } from '../../reducers/sessions';
 
 type Context = {
   rowIndex: number; // TODO: IndexWithinSection
@@ -73,21 +73,21 @@ class SessionsCarusel extends React.Component {
   constructor(props: Props) {
     super(props);
 
-    var flatSessionsList = [];
-    var contexts: Array<Context> = [];
-    var allSessions = this.props.allSessions;
+    const flatSessionsList = [];
+    const contexts: Array<Context> = [];
+    let allSessions = this.props.allSessions;
     if (!allSessions) {
-      const {session} = this.props;
+      const { session } = this.props;
       allSessions = {
-        [formatTime(session.startTime)]: {[session.id]: session}
+        [formatTime(session.startTime)]: { [session.id]: session },
       };
     }
 
     // TODO: Add test
-    for (let sectionID in allSessions) {
+    for (const sectionID in allSessions) {
       const sectionLength = Object.keys(allSessions[sectionID]).length;
       let rowIndex = 0;
-      for (let sessionID in allSessions[sectionID]) {
+      for (const sessionID in allSessions[sectionID]) {
         const session = allSessions[sectionID][sessionID];
         flatSessionsList.push(session);
         contexts.push({
@@ -99,7 +99,7 @@ class SessionsCarusel extends React.Component {
       }
     }
 
-    const selectedIndex = flatSessionsList.findIndex((s) => s.id === this.props.session.id);
+    const selectedIndex = flatSessionsList.findIndex(s => s.id === this.props.session.id);
     if (selectedIndex === -1) {
       console.log(this.props.session);
       console.log(flatSessionsList);
@@ -119,8 +119,8 @@ class SessionsCarusel extends React.Component {
   }
 
   render() {
-    var {rowIndex, sectionLength, sectionTitle} = this.state.contexts[this.state.selectedIndex];
-    var rightItem;
+    const { rowIndex, sectionLength, sectionTitle } = this.state.contexts[this.state.selectedIndex];
+    let rightItem;
     if (Platform.OS === 'android') {
       rightItem = {
         title: 'Share',
@@ -138,7 +138,8 @@ class SessionsCarusel extends React.Component {
             icon: require('../../common/BackButtonIcon'),
             onPress: this.dismiss,
           }}
-          rightItem={rightItem}>
+          rightItem={rightItem}
+        >
           <View style={styles.headerContent}>
             <Text style={styles.title}>
               <Text style={styles.day}>DAY {this.state.day}</Text>
@@ -192,9 +193,9 @@ class SessionsCarusel extends React.Component {
   }
 
   track(index: number) {
-    const {id} = this.state.flatSessionsList[index];
-    Parse.Analytics.track('view', {id});
-    AppEventsLogger.logEvent('View Session', 1, {id});
+    const { id } = this.state.flatSessionsList[index];
+    Parse.Analytics.track('view', { id });
+    AppEventsLogger.logEvent('View Session', 1, { id });
   }
 }
 
@@ -238,7 +239,7 @@ var styles = StyleSheet.create({
     android: {
       fontWeight: 'bold',
       fontSize: 17,
-    }
+    },
   },
   card: {
     ios: {

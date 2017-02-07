@@ -22,7 +22,6 @@
  * @flow
  */
 
-'use strict';
 
 import Config from 'react-native-config';
 let config = Config;
@@ -36,7 +35,7 @@ module.exports = {
   serverURL: config.URL,
   parse: {
     appID: config.APP_ID,
-    javascriptKey: config.JAVASCRIPT_KEY
+    javascriptKey: config.JAVASCRIPT_KEY,
   },
   version: 323,
   fontFamily: undefined,

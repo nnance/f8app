@@ -21,17 +21,17 @@
  *
  * @flow
  */
-'use strict';
 
-var LoginButton = require('../common/LoginButton');
-var F8Colors = require('F8Colors');
-var Image = require('Image');
-var React = require('React');
-var StyleSheet = require('StyleSheet');
-var { Text } = require('F8Text');
-var View = require('View');
-var F8Button = require('F8Button');
-var Navigator = require('Navigator');
+
+const LoginButton = require('../common/LoginButton');
+const F8Colors = require('F8Colors');
+const Image = require('Image');
+const React = require('React');
+const StyleSheet = require('StyleSheet');
+const { Text } = require('F8Text');
+const View = require('View');
+const F8Button = require('F8Button');
+const Navigator = require('Navigator');
 
 class LoginModal extends React.Component {
   props: {
@@ -44,7 +44,8 @@ class LoginModal extends React.Component {
       <View style={styles.container}>
         <Image
           style={styles.content}
-          source={require('./img/bg.png')}>
+          source={require('./img/bg.png')}
+        >
           <Text style={styles.h1}>
             Log in with Facebook
           </Text>
@@ -105,7 +106,7 @@ var styles = StyleSheet.create({
   },
   notNowLabel: {
     color: F8Colors.lightText,
-  }
+  },
 });
 
 module.exports = LoginModal;

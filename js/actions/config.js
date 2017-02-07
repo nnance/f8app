@@ -22,7 +22,6 @@
  * @flow
  */
 
-'use strict';
 
 const Parse = require('parse/react-native');
 const InteractionManager = require('InteractionManager');
@@ -38,4 +37,4 @@ async function loadConfig(): Promise<Action> {
   };
 }
 
-module.exports = {loadConfig};
+module.exports = { loadConfig };

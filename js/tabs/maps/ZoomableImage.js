@@ -21,13 +21,13 @@
  *
  * @flow
  */
-'use strict';
 
-var Image = require('Image');
-var React = require('React');
-var ScrollView = require('ScrollView');
-var StyleSheet = require('StyleSheet');
-var TouchableWithoutFeedback = require('TouchableWithoutFeedback');
+
+const Image = require('Image');
+const React = require('React');
+const ScrollView = require('ScrollView');
+const StyleSheet = require('StyleSheet');
+const TouchableWithoutFeedback = require('TouchableWithoutFeedback');
 
 class ZoomableImage extends React.Component {
   props: {
@@ -58,12 +58,13 @@ class ZoomableImage extends React.Component {
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
         maximumZoomScale={4}
-        centerContent={true}
-        contentContainerStyle={{flex: 1}}>
+        centerContent
+        contentContainerStyle={{ flex: 1 }}
+      >
         <TouchableWithoutFeedback onPress={this.toggleZoom}>
           <Image
             style={styles.image}
-            source={{uri: this.props.url}}
+            source={{ uri: this.props.url }}
           />
         </TouchableWithoutFeedback>
       </ScrollView>
@@ -71,17 +72,17 @@ class ZoomableImage extends React.Component {
   }
 
   toggleZoom(e: any) {
-    var timestamp = new Date().getTime();
+    const timestamp = new Date().getTime();
     if (timestamp - this.state.lastTapTimestamp <= 500) {
-      var {locationX, locationY} = e.nativeEvent;
-      var size = this.state.isZoomed ? {width: 10000, height: 10000} : {width: 0, height: 0};
-      this.refs.zoomable_scroll.scrollResponderZoomTo({x: locationX, y: locationY, ...size});
+      const { locationX, locationY } = e.nativeEvent;
+      const size = this.state.isZoomed ? { width: 10000, height: 10000 } : { width: 0, height: 0 };
+      this.refs.zoomable_scroll.scrollResponderZoomTo({ x: locationX, y: locationY, ...size });
     }
-    this.setState({lastTapTimestamp: timestamp});
+    this.setState({ lastTapTimestamp: timestamp });
   }
 
   onZoomChanged(e: any) {
-    this.setState({isZoomed: e.nativeEvent.zoomScale > 1});
+    this.setState({ isZoomed: e.nativeEvent.zoomScale > 1 });
   }
 }
 

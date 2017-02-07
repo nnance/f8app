@@ -21,9 +21,9 @@
  *
  * @flow
  */
-'use strict';
 
-import type {Session} from '../../reducers/sessions';
+
+import type { Session } from '../../reducers/sessions';
 
 const formatTime = require('./formatTime');
 
@@ -34,9 +34,9 @@ export type SessionsListData = {
 };
 
 function groupSessions(sessions: Array<Session>): SessionsListData {
-  var data = {};
+  const data = {};
   sessions.forEach((session) => {
-    var timeSectionKey = session.allDay ? 'All Day' : formatTime(session.startTime);
+    const timeSectionKey = session.allDay ? 'All Day' : formatTime(session.startTime);
     data[timeSectionKey] = data[timeSectionKey] || {};
     data[timeSectionKey][session.id] = session;
   });

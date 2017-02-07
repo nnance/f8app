@@ -7,15 +7,15 @@ import {
   TouchableOpacity,
   Switch,
   Alert,
-  InteractionManager
+  InteractionManager,
 } from 'react-native';
 import moment from 'moment';
 import Picker from 'react-native-picker';
 import ImagePicker from 'react-native-image-picker';
 
 import NavBar from './NavBar';
-import {styles as commonStyles} from '../common';
-import {colors as commonColors} from '../../../common/styles';
+import { styles as commonStyles } from '../common';
+import { colors as commonColors } from '../../../common/styles';
 
 import ProfileHeader from './ProfileHeader';
 import DatePickerDialog from './DatePickerDialog';
@@ -23,13 +23,13 @@ import ModalSpinner from '../../../common/ModalSpinner';
 import TextInput from '../../../common/TextInput';
 
 export const OKButton = () => (<Image
-      source={require('../img/icons/ok.png')}
-      style={{
-        height: 25,
-        width: 25,
-        resizeMode: 'contain'
-      }}
-    />);
+  source={require('../img/icons/ok.png')}
+  style={{
+    height: 25,
+    width: 25,
+    resizeMode: 'contain',
+  }}
+/>);
 
 class ProfileEditorScreen extends React.Component {
   constructor(...args) {
@@ -41,40 +41,40 @@ class ProfileEditorScreen extends React.Component {
       changedProfilePicture: null,
       changedProfileCover: null,
       savingProfile: false,
-      linkingFacebook: false
+      linkingFacebook: false,
     };
   }
 
   render() {
     return (<View style={commonStyles.listViewContainer}>
-      <ModalSpinner visible={this.state.savingProfile || this.state.linkingFacebook}/>
-      <DatePickerDialog ref="datePicker"/>
+      <ModalSpinner visible={this.state.savingProfile || this.state.linkingFacebook} />
+      <DatePickerDialog ref="datePicker" />
       <NavBar
         title="แก้ไขข้อมูล"
         renderRightMenu={OKButton}
         onBackPress={this.props.onBackPress}
         onRightPress={() => {
           this.setState({
-            savingProfile: true
+            savingProfile: true,
           });
           return this.props.changePublicProfile(this.state.name, this.state.birthDayDate, this.state.sex, this.state.changedProfilePicture, this.state.changedProfileCover)
             .then(() => {
               this.setState({
-                savingProfile: false
+                savingProfile: false,
               });
               this.props.onBackPress && this.props.onBackPress();
-            }).catch(error => {
-              Alert.alert("Error", error.message, [
-                { text: "OK", onPress: () => this.setState({ savingProfile: false}) }
+            }).catch((error) => {
+              Alert.alert('Error', error.message, [
+                { text: 'OK', onPress: () => this.setState({ savingProfile: false }) },
               ]);
             });
         }}
-        />
+      />
       <ProfileHeader
         user={this.props.user}
-        customCoverSource={this.state.changedProfileCover ? {uri: 'data:image/jpeg;base64,' + this.state.changedProfileCover.data, isStatic: true} : null }
-        customSource={this.state.changedProfilePicture ? {uri: 'data:image/jpeg;base64,' + this.state.changedProfilePicture.data, isStatic: true} : null }
-        >
+        customCoverSource={this.state.changedProfileCover ? { uri: `data:image/jpeg;base64,${this.state.changedProfileCover.data}`, isStatic: true } : null}
+        customSource={this.state.changedProfilePicture ? { uri: `data:image/jpeg;base64,${this.state.changedProfilePicture.data}`, isStatic: true } : null}
+      >
         <View style={styles.rowDirection}>
           <TouchableOpacity name="profileImageInput" style={styles.whiteBorder} onPress={() => this.openProfilePicker()}>
             <Text style={styles.whiteText}>เปลี่ยนรูปโปรไฟล์</Text>
@@ -85,16 +85,16 @@ class ProfileEditorScreen extends React.Component {
         </View>
       </ProfileHeader>
 
-      <View style={{flex: 2}}>
-        <View style={[styles.editorBox, {marginVertical: 15}]}>
+      <View style={{ flex: 2 }}>
+        <View style={[styles.editorBox, { marginVertical: 15 }]}>
           <View style={styles.row}>
             <View style={styles.labelContainer}>
               <Text style={styles.label}>ชื่อ</Text>
             </View>
             <View style={[styles.input, styles.bottomBorderGrey]}>
               <TextInput
-                onChangeText={(name) => this.setState({name})}
-                style={[styles.textGrey, {flex: 1}]}
+                onChangeText={name => this.setState({ name })}
+                style={[styles.textGrey, { flex: 1 }]}
                 autoCapitalize="none"
                 value={this.state.name}
               />
@@ -123,7 +123,7 @@ class ProfileEditorScreen extends React.Component {
           <TouchableOpacity style={styles.row2} onPress={this.onToggleFacebookLink.bind(this)}>
             <Text style={styles.label2}>เชื่อมต่อ Facebook</Text>
             <View>
-              <Switch value={this.props.facebookLinked} onValueChange={this.onToggleFacebookLink.bind(this)}/>
+              <Switch value={this.props.facebookLinked} onValueChange={this.onToggleFacebookLink.bind(this)} />
             </View>
           </TouchableOpacity>
           <TouchableOpacity style={styles.row2} onPress={this.props.goToChangeEmail}>
@@ -139,42 +139,41 @@ class ProfileEditorScreen extends React.Component {
 
   onToggleFacebookLink() {
     this.setState({
-      linkingFacebook: true
+      linkingFacebook: true,
     });
     if (this.props.facebookLinked) {
       return this.props.unlinkFacebook().then(() => {
         this.setState({
-          linkingFacebook: false
+          linkingFacebook: false,
         });
-      }).catch(error => {
-        Alert.alert("Error", error.message, [
-          { text: "OK", onPress: () => this.setState({ linkingFacebook: false}) }
+      }).catch((error) => {
+        Alert.alert('Error', error.message, [
+          { text: 'OK', onPress: () => this.setState({ linkingFacebook: false }) },
         ]);
       });
     }
-    else {
-      return this.props.linkFacebook().then(() => {
-        this.setState({
-          linkingFacebook: false
-        });
-      }).catch(error => {
-        Alert.alert("Error", error.message, [
-          { text: "OK", onPress: () => this.setState({ linkingFacebook: false}) }
-        ]);
+
+    return this.props.linkFacebook().then(() => {
+      this.setState({
+        linkingFacebook: false,
       });
-    }
+    }).catch((error) => {
+      Alert.alert('Error', error.message, [
+          { text: 'OK', onPress: () => this.setState({ linkingFacebook: false }) },
+      ]);
+    });
   }
 
   openProfilePicker() {
     return new Promise((resolve, reject) => {
-      ImagePicker.showImagePicker(response => {
-        if(!response.error && !response.didCancel) {
+      ImagePicker.showImagePicker((response) => {
+        if (!response.error && !response.didCancel) {
           this.setState({
-            changedProfilePicture: response
+            changedProfilePicture: response,
           });
         }
         if (response.error) {
-          Alert.alert("Error", response.error);
+          Alert.alert('Error', response.error);
         }
         resolve();
       });
@@ -183,14 +182,14 @@ class ProfileEditorScreen extends React.Component {
 
   openProfileCoverPicker() {
     return new Promise((resolve, reject) => {
-      ImagePicker.showImagePicker(response => {
-        if(!response.error && !response.didCancel) {
+      ImagePicker.showImagePicker((response) => {
+        if (!response.error && !response.didCancel) {
           this.setState({
-            changedProfileCover: response
+            changedProfileCover: response,
           });
         }
         if (response.error) {
-          Alert.alert("Error", response.error);
+          Alert.alert('Error', response.error);
         }
         resolve();
       });
@@ -198,9 +197,9 @@ class ProfileEditorScreen extends React.Component {
   }
 
   openDatePicker() {
-    return this.refs.datePicker.open().then(date => {
+    return this.refs.datePicker.open().then((date) => {
       this.setState({
-        birthDayDate: date
+        birthDayDate: date,
       });
     });
   }
@@ -211,7 +210,7 @@ class ProfileEditorScreen extends React.Component {
         pickerData: [
           'ไม่ระบุ',
           'ชาย',
-          'หญิง'
+          'หญิง',
         ],
         selectedValue: [this.state.sex === 'M' ? 'ชาย' : (this.state.sex === 'F' ? 'หญิง' : 'ไม่ระบุ')],
         pickerConfirmBtnText: 'OK',
@@ -229,10 +228,10 @@ class ProfileEditorScreen extends React.Component {
             sex = null;
           }
           this.setState({
-            sex
+            sex,
           });
           resolve();
-        }
+        },
       });
       Picker.show();
     });
@@ -243,7 +242,7 @@ const styles = StyleSheet.create({
   rowDirection: {
     flexDirection: 'row',
     backgroundColor: 'transparent',
-    marginTop: 25
+    marginTop: 25,
   },
   whiteBorder: {
     padding: 3,
@@ -251,39 +250,39 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'white',
     borderRadius: 5,
-    marginHorizontal: 5
+    marginHorizontal: 5,
   },
   whiteText: {
     color: 'white',
-    fontSize: 10
+    fontSize: 10,
   },
   editorBox: {
     backgroundColor: 'white',
     borderWidth: 1,
-    borderColor: commonColors.greyBorder
+    borderColor: commonColors.greyBorder,
   },
   row: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   labelContainer: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   label: {
-    fontSize: 15
+    fontSize: 15,
   },
   input: {
     flex: 5,
     justifyContent: 'center',
-    height: 50
+    height: 50,
   },
   editorBox2: {
     backgroundColor: 'white',
     borderTopWidth: 1,
-    borderColor: commonColors.greyBorder
+    borderColor: commonColors.greyBorder,
   },
   row2: {
     flexDirection: 'row',
@@ -291,19 +290,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 15,
     borderBottomWidth: 1,
-    borderColor: commonColors.greyBorder
+    borderColor: commonColors.greyBorder,
   },
   label2: {
     fontSize: 15,
-    flex: 1
+    flex: 1,
   },
   bottomBorderGrey: {
     borderBottomWidth: 1,
-    borderColor: commonColors.greyBorder
+    borderColor: commonColors.greyBorder,
   },
   textGrey: {
-    color: commonColors.textGrey
-  }
+    color: commonColors.textGrey,
+  },
 });
 
 export default ProfileEditorScreen;

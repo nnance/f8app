@@ -21,12 +21,12 @@
  *
  * @flow
  */
-'use strict';
 
-var React = require('React');
-var StyleSheet = require('StyleSheet');
-var { Text } = require('F8Text');
-var View = require('View');
+
+const React = require('React');
+const StyleSheet = require('StyleSheet');
+const { Text } = require('F8Text');
+const View = require('View');
 
 class Section extends React.Component {
   props: {

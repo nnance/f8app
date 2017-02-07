@@ -21,30 +21,30 @@
  *
  * @flow
  */
-'use strict';
 
-var EmptySchedule = require('./EmptySchedule');
-var FilterHeader = require('./FilterHeader');
-var FilterSessions = require('./filterSessions');
-var ListContainer = require('ListContainer');
-var Navigator = require('Navigator');
-var React = require('React');
-var Platform = require('Platform');
-var F8DrawerLayout = require('F8DrawerLayout');
-var ScheduleListView = require('./ScheduleListView');
-var FilterScreen = require('../../filter/FilterScreen');
 
-var { connect } = require('react-redux');
-var {switchDay} = require('../../actions');
+const EmptySchedule = require('./EmptySchedule');
+const FilterHeader = require('./FilterHeader');
+const FilterSessions = require('./filterSessions');
+const ListContainer = require('ListContainer');
+const Navigator = require('Navigator');
+const React = require('React');
+const Platform = require('Platform');
+const F8DrawerLayout = require('F8DrawerLayout');
+const ScheduleListView = require('./ScheduleListView');
+const FilterScreen = require('../../filter/FilterScreen');
 
-import type {Session} from '../../reducers/sessions';
+const { connect } = require('react-redux');
+const { switchDay } = require('../../actions');
+
+import type { Session } from '../../reducers/sessions';
 
 // TODO: Move from reselect to memoize?
-var { createSelector } = require('reselect');
+const { createSelector } = require('reselect');
 
 const data = createSelector(
-  (store) => store.sessions,
-  (store) => store.filter,
+  store => store.sessions,
+  store => store.filter,
   (sessions, filter) => FilterSessions.byTopics(sessions, filter),
 );
 
@@ -90,7 +90,8 @@ class GeneralScheduleView extends React.Component {
         backgroundColor="#5597B8"
         selectedSectionColor="#51CDDA"
         stickyHeader={filterHeader}
-        rightItem={filterItem}>
+        rightItem={filterItem}
+      >
         <ScheduleListView
           title="Day 1"
           day={1}
@@ -113,10 +114,11 @@ class GeneralScheduleView extends React.Component {
     }
     return (
       <F8DrawerLayout
-        ref={(drawer) => this._drawer = drawer}
+        ref={drawer => this._drawer = drawer}
         drawerWidth={300}
         drawerPosition="right"
-        renderNavigationView={this.renderNavigationView}>
+        renderNavigationView={this.renderNavigationView}
+      >
         {content}
       </F8DrawerLayout>
     );
@@ -158,7 +160,7 @@ function select(store) {
 
 function actions(dispatch) {
   return {
-    switchDay: (day) => dispatch(switchDay(day)),
+    switchDay: day => dispatch(switchDay(day)),
   };
 }
 

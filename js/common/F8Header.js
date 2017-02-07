@@ -23,17 +23,16 @@
  * @flow
  */
 
-'use strict';
 
-var F8Colors = require('F8Colors');
-var React = require('React');
-var Platform = require('Platform');
-var StyleSheet = require('StyleSheet');
-var { Text } = require('F8Text');
-var TouchableOpacity = require('TouchableOpacity');
-var View = require('View');
-var Image = require('Image');
-var ToolbarAndroid = require('ToolbarAndroid');
+const F8Colors = require('F8Colors');
+const React = require('React');
+const Platform = require('Platform');
+const StyleSheet = require('StyleSheet');
+const { Text } = require('F8Text');
+const TouchableOpacity = require('TouchableOpacity');
+const View = require('View');
+const Image = require('Image');
+const ToolbarAndroid = require('ToolbarAndroid');
 
 export type Layout =
     'default'      // Use platform defaults (icon on Android, text on iOS)
@@ -63,18 +62,18 @@ class F8HeaderAndroid extends React.Component {
   props: Props;
 
   render() {
-    const {leftItem, rightItem, extraItems} = this.props;
+    const { leftItem, rightItem, extraItems } = this.props;
     let actions = [];
     if (rightItem) {
-      const {title, icon, layout} = rightItem;
+      const { title, icon, layout } = rightItem;
       actions.push({
         icon: layout !== 'title' ? icon : undefined,
-        title: title,
+        title,
         show: 'always',
       });
     }
     if (extraItems) {
-      actions = actions.concat(extraItems.map((item) => ({
+      actions = actions.concat(extraItems.map(item => ({
         title: item.title,
         show: 'never',
       })));
@@ -87,7 +86,7 @@ class F8HeaderAndroid extends React.Component {
     let content;
     if (React.Children.count(this.props.children) > 0) {
       content = (
-        <View collapsable={false} style={{flex: 1}}>
+        <View collapsable={false} style={{ flex: 1 }}>
           {this.props.children}
         </View>
       );
@@ -103,7 +102,8 @@ class F8HeaderAndroid extends React.Component {
           subtitleColor={textColor}
           actions={actions}
           onActionSelected={this.handleActionSelected.bind(this)}
-          style={styles.toolbar}>
+          style={styles.toolbar}
+        >
           {content}
         </ToolbarAndroid>
       </View>
@@ -125,14 +125,14 @@ class F8HeaderIOS extends React.Component {
   props: Props;
 
   render() {
-    const {leftItem, title, rightItem, foreground} = this.props;
+    const { leftItem, title, rightItem, foreground } = this.props;
     const titleColor = foreground === 'dark' ? F8Colors.darkText : 'white';
     const itemsColor = foreground === 'dark' ? F8Colors.lightText : 'white';
 
     const content = React.Children.count(this.props.children) === 0
-      ? <Text style={[styles.titleText, {color: titleColor}]}>
-          {title}
-        </Text>
+      ? (<Text style={[styles.titleText, { color: titleColor }]}>
+        {title}
+      </Text>)
       : this.props.children;
     return (
       <View style={[styles.header, this.props.style]}>
@@ -140,10 +140,11 @@ class F8HeaderIOS extends React.Component {
           <ItemWrapperIOS color={itemsColor} item={leftItem} />
         </View>
         <View
-          accessible={true}
+          accessible
           accessibilityLabel={title}
           accessibilityTraits="header"
-          style={styles.centerItem}>
+          style={styles.centerItem}
+        >
           {content}
         </View>
         <View style={styles.rightItem}>
@@ -162,17 +163,17 @@ class ItemWrapperIOS extends React.Component {
   };
 
   render() {
-    const {item, color} = this.props;
+    const { item, color } = this.props;
     if (!item) {
       return null;
     }
 
     let content;
-    const {title, icon, layout, onPress} = item;
+    const { title, icon, layout, onPress } = item;
 
     if (layout !== 'icon' && title) {
       content = (
-        <Text style={[styles.itemText, {color}]}>
+        <Text style={[styles.itemText, { color }]}>
           {title.toUpperCase()}
         </Text>
       );
@@ -185,7 +186,8 @@ class ItemWrapperIOS extends React.Component {
         accessibilityLabel={title}
         accessibilityTraits="button"
         onPress={onPress}
-        style={styles.itemWrapper}>
+        style={styles.itemWrapper}
+      >
         {content}
       </TouchableOpacity>
     );
@@ -193,8 +195,8 @@ class ItemWrapperIOS extends React.Component {
 }
 
 
-var STATUS_BAR_HEIGHT = Platform.OS === 'ios' ? 20 : 25;
-var HEADER_HEIGHT = Platform.OS === 'ios' ? 44 + STATUS_BAR_HEIGHT : 56 + STATUS_BAR_HEIGHT;
+const STATUS_BAR_HEIGHT = Platform.OS === 'ios' ? 20 : 25;
+const HEADER_HEIGHT = Platform.OS === 'ios' ? 44 + STATUS_BAR_HEIGHT : 56 + STATUS_BAR_HEIGHT;
 
 var styles = StyleSheet.create({
   toolbarContainer: {
@@ -265,21 +267,21 @@ module.exports.__cards__ = (define) => {
   define('Forcing icons', () => (
     <Header
       title="Forcing icons"
-      leftItem={{...menuItem, layout: 'icon'}}
-      rightItem={{...filterItem, layout: 'icon'}}
+      leftItem={{ ...menuItem, layout: 'icon' }}
+      rightItem={{ ...filterItem, layout: 'icon' }}
     />
   ));
   define('Forcing title', () => (
     <Header
       title="Forcing title"
-      leftItem={{...menuItem, layout: 'title'}}
-      rightItem={{...filterItem, layout: 'title'}}
+      leftItem={{ ...menuItem, layout: 'title' }}
+      rightItem={{ ...filterItem, layout: 'title' }}
     />
   ));
   define('With content', () => (
     <Header leftItem={menuItem}>
-      <View style={{backgroundColor: '#224488'}}>
-        <Text style={{color: 'yellow'}}>
+      <View style={{ backgroundColor: '#224488' }}>
+        <Text style={{ color: 'yellow' }}>
           Yellow text as title
         </Text>
       </View>
@@ -288,17 +290,17 @@ module.exports.__cards__ = (define) => {
   define('With Background', () => (
     <Header
       title="With Background"
-      leftItem={{...menuItem, layout: 'title'}}
-      rightItem={{...filterItem, layout: 'title'}}
-      style={{backgroundColor: '#224488'}}
+      leftItem={{ ...menuItem, layout: 'title' }}
+      rightItem={{ ...filterItem, layout: 'title' }}
+      style={{ backgroundColor: '#224488' }}
     />
   ));
   define('With light background', () => (
     <Header
       title="Light Background"
-      leftItem={{...menuItem, layout: 'title'}}
-      rightItem={{...filterItem, layout: 'title'}}
-      style={{backgroundColor: 'white'}}
+      leftItem={{ ...menuItem, layout: 'title' }}
+      rightItem={{ ...filterItem, layout: 'title' }}
+      style={{ backgroundColor: 'white' }}
       foreground="dark"
     />
   ));

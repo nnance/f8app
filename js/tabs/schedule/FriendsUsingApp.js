@@ -21,16 +21,16 @@
  *
  * @flow
  */
-'use strict';
 
-var F8Colors = require('F8Colors');
-var Image = require('Image');
-var React = require('React');
-var StyleSheet = require('StyleSheet');
-var { Text } = require('F8Text');
-var View = require('View');
 
-var { connect } = require('react-redux');
+const F8Colors = require('F8Colors');
+const Image = require('Image');
+const React = require('React');
+const StyleSheet = require('StyleSheet');
+const { Text } = require('F8Text');
+const View = require('View');
+
+const { connect } = require('react-redux');
 
 class FriendsUsingApp extends React.Component {
   props: {
@@ -38,14 +38,14 @@ class FriendsUsingApp extends React.Component {
   };
 
   render() {
-    const {friends} = this.props;
+    const { friends } = this.props;
     if (friends.length === 0) {
       return null;
     }
-    const pictures = friends.slice(0, 3).map((friend) => (
+    const pictures = friends.slice(0, 3).map(friend => (
       <Image
         key={friend.id}
-        source={{uri: `http://graph.facebook.com/${friend.id}/picture`}}
+        source={{ uri: `http://graph.facebook.com/${friend.id}/picture` }}
         style={styles.profilePic}
       />
     ));

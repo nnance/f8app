@@ -5,16 +5,16 @@ jest.mock('FacebookSDK', () => ({
   api: jest.fn((...args) => {
     args[args.length - 1]({});
   }),
-  logout: jest.fn(() => Promise.resolve())
+  logout: jest.fn(() => Promise.resolve()),
 }));
 jest.mock('../schedule', () => ({
   restoreSchedule: () => Promise.resolve(),
-  loadFriendsSchedules: () => Promise.resolve()
+  loadFriendsSchedules: () => Promise.resolve(),
 }));
 
 import thunk from 'redux-thunk';
-var promise = require('../../store/promise');
-var array = require('../../store/array');
+const promise = require('../../store/promise');
+const array = require('../../store/array');
 
 import Parse from 'parse/react-native';
 import configureMockStore from 'redux-mock-store';
@@ -22,8 +22,8 @@ import configureMockStore from 'redux-mock-store';
 const middlewares = [thunk, promise, array];
 const mockStore = configureMockStore(middlewares);
 
-let pictureObj = {
-  url: () => 'url'
+const pictureObj = {
+  url: () => 'url',
 };
 
 Parse.User.logIn.mockImplementation((username) => {
@@ -32,19 +32,17 @@ Parse.User.logIn.mockImplementation((username) => {
   }
   return Promise.resolve();
 });
-Parse.User.currentAsync.mockImplementation(() => {
-  return {
-    get: (f) => {
-      if (f === 'profilePicture' || f === 'profileCover') {
-        return pictureObj;
-      }
-      return 't';
-    },
-    set: () => Promise.resolve(),
-    save: () => Promise.resolve(),
-    _unlinkFrom: () => Promise.resolve()
-  };
-});
+Parse.User.currentAsync.mockImplementation(() => ({
+  get: (f) => {
+    if (f === 'profilePicture' || f === 'profileCover') {
+      return pictureObj;
+    }
+    return 't';
+  },
+  set: () => Promise.resolve(),
+  save: () => Promise.resolve(),
+  _unlinkFrom: () => Promise.resolve(),
+}));
 
 describe('Login Action', () => {
   it('logIn, dispatch loggedIn if success', async () => {
@@ -55,8 +53,8 @@ describe('Login Action', () => {
   });
 
   it('logIn, dont call anything, just return promise', async () => {
-    let success = jest.fn();
-    let fail = jest.fn();
+    const success = jest.fn();
+    const fail = jest.fn();
     await loginAction.logIn('fail', 'fail')(jest.fn()).then(success).catch(fail);
     expect(fail).toBeCalled();
     expect(success).not.toBeCalled();

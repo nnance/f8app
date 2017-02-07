@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   View,
-  StyleSheet
+  StyleSheet,
 } from 'react-native';
 
 import ProfilePicture from '../../../common/ProfilePicture';
@@ -26,14 +26,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: undefined,
     width: undefined,
-    paddingVertical: 10
+    paddingVertical: 10,
   },
   headerBackground: {
     justifyContent: 'center',
     alignItems: 'center',
     height: undefined,
     width: undefined,
-  }
+  },
 });
 
 export default ProfileHeader;

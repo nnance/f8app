@@ -4,25 +4,26 @@ import casual from 'casual';
 
 casual.seed(1);
 
-let memo = {};
+const memo = {};
 
-async function staticPath(_path) {
-  if (memo[_path]) {
-    return memo[_path];
+async function staticPath(dir) {
+  if (memo[dir]) {
+    return memo[dir];
   }
-  let files = await new Promise((resolve, reject) => fs.readdir(path.join(__dirname, '../../../static/', _path), (err, files) => {
+  const allFiles = await new Promise((resolve, reject) => fs.readdir(path.join(__dirname, '../../../static/', dir), (err, files) => {
     if (err) {
-      return reject(err);
+      reject(err);
+      return;
     }
     resolve(files);
   }));
-  memo[_path] = files.map(file => `/static/${_path}/${file}`);
-  return memo[_path];
+  memo[dir] = allFiles.map(file => `/static/${dir}/${file}`);
+  return memo[dir];
 }
 
-async function randomStatic(_path) {
-  let files = await staticPath(_path);
-  let idx = casual.integer(from = 0, to = files.length - 1);
+async function randomStatic(dir) {
+  const files = await staticPath(dir);
+  const idx = casual.integer(0, files.length - 1);
   return files[idx];
 }
 
@@ -30,24 +31,23 @@ casual.define('clog_cover', () => randomStatic('cover'));
 
 casual.define('clog_preview', () => randomStatic('preview'));
 
-let category = ['D', 'G', 'M', 'N'];
+const category = ['D', 'G', 'M', 'N'];
 
 casual.define('clog_category', async () => {
-  let idx = casual.integer(from = 0, to = category.length - 1);
+  const idx = casual.integer(0, category.length - 1);
   return category[idx];
 });
 
 casual.define('profilePicture', () => randomStatic('preview'));
 
-casual.define('positive_int', function(max) {
-  return casual.integer(from = 1, to = max);
-});
+casual.define('positive_int', max => casual.integer(1, max));
 
-casual.define('arrayN', function(max) {
-  let n = casual.integer(from = 0, to = max);
-  let result = [];
-  while(n--) {
+casual.define('arrayN', (max) => {
+  let n = casual.integer(0, max);
+  const result = [];
+  while (n) {
     result.push(1);
+    n -= 1;
   }
   return result;
 });

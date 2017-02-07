@@ -21,18 +21,18 @@
  *
  * @flow
  */
-'use strict';
 
-var Image = require('Image');
-var React = require('React');
-var StyleSheet = require('StyleSheet');
-var { Text, Heading1, Paragraph } = require('F8Text');
-var ProfilePicture = require('../../common/ProfilePicture');
-var View = require('View');
 
-var { connect } = require('react-redux');
+const Image = require('Image');
+const React = require('React');
+const StyleSheet = require('StyleSheet');
+const { Text, Heading1, Paragraph } = require('F8Text');
+const ProfilePicture = require('../../common/ProfilePicture');
+const View = require('View');
 
-import type {State as User} from '../../reducers/user';
+const { connect } = require('react-redux');
+
+import type { State as User } from '../../reducers/user';
 
 class SharingSettingsCommon extends React.Component {
   props: {
@@ -41,12 +41,12 @@ class SharingSettingsCommon extends React.Component {
   };
 
   render() {
-    const {user} = this.props;
+    const { user } = this.props;
     const title = user.name && (
       <View style={styles.title}>
         <ProfilePicture user={user} size={24} />
         <Text style={styles.name}>
-          {user.name.split(' ')[0] + "'"}s Schedule
+          {`${user.name.split(' ')[0]}'`}s Schedule
         </Text>
       </View>
     );

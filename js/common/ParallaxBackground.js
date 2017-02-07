@@ -23,15 +23,14 @@
  * @providesModule ParallaxBackground
  */
 
-'use strict';
 
-var Animated = require('Animated');
-var resolveAssetSource = require('resolveAssetSource');
-var React = require('React');
-var StyleSheet = require('StyleSheet');
-var View = require('View');
-var Image = require('Image');
-var Dimensions = require('Dimensions');
+const Animated = require('Animated');
+const resolveAssetSource = require('resolveAssetSource');
+const React = require('React');
+const StyleSheet = require('StyleSheet');
+const View = require('View');
+const Image = require('Image');
+const Dimensions = require('Dimensions');
 
 const HEIGHT = Dimensions.get('window').height > 600
   ? 200
@@ -68,7 +67,7 @@ class ParallaxBackground extends React.Component {
   }
 
   render(): ReactElement {
-    const {minHeight, maxHeight, offset, backgroundColor} = this.props;
+    const { minHeight, maxHeight, offset, backgroundColor } = this.props;
     const buffer = 10; // To reduce visual lag when scrolling
     const height = offset.interpolate({
       inputRange: [0, maxHeight - minHeight],
@@ -77,7 +76,7 @@ class ParallaxBackground extends React.Component {
     });
 
     return (
-      <Animated.View style={[styles.container, {height, backgroundColor}]}>
+      <Animated.View style={[styles.container, { height, backgroundColor }]}>
         {this.renderBackgroundImage()}
         {this.renderContent()}
       </Animated.View>
@@ -85,7 +84,7 @@ class ParallaxBackground extends React.Component {
   }
 
   renderBackgroundImage(): ?ReactElement {
-    const {backgroundImage, minHeight, maxHeight, offset} = this.props;
+    const { backgroundImage, minHeight, maxHeight, offset } = this.props;
     if (!backgroundImage) {
       return null;
     }
@@ -94,7 +93,7 @@ class ParallaxBackground extends React.Component {
     if (!source) {
       return null;
     }
-    const {width} = source;
+    const { width } = source;
     const translateX = this.state.shift.interpolate({
       inputRange: [0, 1],
       outputRange: [0, SCREEN_WIDTH - width],
@@ -114,7 +113,7 @@ class ParallaxBackground extends React.Component {
       outputRange: [2, initialScale],
       extrapolateRight: 'clamp',
     });
-    const transforms = { transform: [{translateX}, {translateY}, {scale}] };
+    const transforms = { transform: [{ translateX }, { translateY }, { scale }] };
     return (
       <Animated.Image
         source={backgroundImage}
@@ -129,7 +128,7 @@ class ParallaxBackground extends React.Component {
     }
     const content = React.Children.only(this.props.children);
 
-    const {minHeight, maxHeight, offset} = this.props;
+    const { minHeight, maxHeight, offset } = this.props;
     const length = maxHeight - minHeight;
     const opacity = offset.interpolate({
       inputRange: [0, length - 40],
@@ -141,7 +140,7 @@ class ParallaxBackground extends React.Component {
       outputRange: [-32, -(length / 2) - 32],
       extrapolate: 'clamp',
     });
-    const transforms = { opacity, transform: [{translateY}] };
+    const transforms = { opacity, transform: [{ translateY }] };
     return (
       <Animated.View style={[styles.contentContainer, transforms]}>
         {content}
@@ -153,7 +152,7 @@ class ParallaxBackground extends React.Component {
 // TODO: Remove this magic numbers
 ParallaxBackground.HEIGHT = HEIGHT;
 
-var HEADER_HEIGHT = HEIGHT + 156;
+const HEADER_HEIGHT = HEIGHT + 156;
 
 var styles = StyleSheet.create({
   container: {

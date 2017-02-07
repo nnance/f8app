@@ -8,10 +8,10 @@ const resolvers = {
         title: 'X',
         category: 'D',
         author: {
-          name: 'X'
+          name: 'X',
         },
         review: 'X',
-        tags: []
+        tags: [],
       };
     },
     favoriteTags() {
@@ -19,8 +19,8 @@ const resolvers = {
     },
     heroBanners() {
       return [];
-    }
-  }
+    },
+  },
 };
 
 export default resolvers;

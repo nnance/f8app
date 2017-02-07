@@ -22,7 +22,6 @@
  * @flow
  */
 
-'use strict';
 
 const createApolloReducer = require('./createApolloReducer');
 
@@ -52,32 +51,28 @@ export type Session = {
 };
 
 function reducer(action: Object): Session[] {
-  return action.data.schedule.map(session => {
-    return {
-      id: session.id,
-      day: session.day,
-      allDay: session.allDay,
-      title: session.title,
-      description: session.description,
-      hasDetails: session.hasDetails,
-      slug: session.slug,
-      onMySchedule: session.isAdded,
-      tags: session.tags,
-      startTime: session.startTime, // start time
-      endTime: session.endTime, // end time
-      map: session.location.x1url,
-      location: session.location.name,
-      speakers: session.speakers.map(speaker => {
-        return {
-          id: speaker.id,
-          bio: '',
-          name: speaker.name,
-          pic: speaker.picture,
-          title: speaker.title,
-        };
-      }),
-    };
-  });
+  return action.data.schedule.map(session => ({
+    id: session.id,
+    day: session.day,
+    allDay: session.allDay,
+    title: session.title,
+    description: session.description,
+    hasDetails: session.hasDetails,
+    slug: session.slug,
+    onMySchedule: session.isAdded,
+    tags: session.tags,
+    startTime: session.startTime, // start time
+    endTime: session.endTime, // end time
+    map: session.location.x1url,
+    location: session.location.name,
+    speakers: session.speakers.map(speaker => ({
+      id: speaker.id,
+      bio: '',
+      name: speaker.name,
+      pic: speaker.picture,
+      title: speaker.title,
+    })),
+  }));
 }
 
 module.exports = createApolloReducer('LOADED_SESSIONS', reducer);

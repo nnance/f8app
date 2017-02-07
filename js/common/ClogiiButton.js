@@ -23,15 +23,14 @@
  * @flow
  */
 
-'use strict';
 
-var Image = require('Image');
+const Image = require('Image');
 import LinearGradient from 'react-native-linear-gradient';
-var React = require('React');
-var StyleSheet = require('StyleSheet');
-var { Text } = require('F8Text');
-var TouchableOpacity = require('TouchableOpacity');
-var View = require('View');
+const React = require('React');
+const StyleSheet = require('StyleSheet');
+const { Text } = require('F8Text');
+const TouchableOpacity = require('TouchableOpacity');
+const View = require('View');
 
 class ClogiiButton extends React.Component {
   render() {
@@ -44,17 +43,17 @@ class ClogiiButton extends React.Component {
     if (this.props.type === 'primary' || this.props.type === undefined) {
       content = (
         <LinearGradient
-          start={{x: 0.5, y: 0}} end={{x: 0.5, y: 1}}
+          start={{ x: 0.5, y: 0 }} end={{ x: 0.5, y: 1 }}
           colors={['#6084CF', '#304E8A']}
-          style={[styles.button, styles.primaryButton]}>
+          style={[styles.button, styles.primaryButton]}
+        >
           {icon}
           <Text style={[styles.caption, styles.primaryCaption]}>
             {caption}
           </Text>
         </LinearGradient>
       );
-    }
-    else if (this.props.type === 'white') {
+    } else if (this.props.type === 'white') {
       content = (
         <View style={[styles.whiteButton]}>
           {icon}
@@ -63,9 +62,8 @@ class ClogiiButton extends React.Component {
           </Text>
         </View>
       );
-    }
-    else {
-      var border = this.props.type === 'bordered' && styles.border;
+    } else {
+      const border = this.props.type === 'bordered' && styles.border;
       content = (
         <View style={[styles.button, border]}>
           {icon}
@@ -80,7 +78,8 @@ class ClogiiButton extends React.Component {
         accessibilityTraits="button"
         onPress={this.props.onPress}
         activeOpacity={0.8}
-        style={[styles.container, this.props.style]}>
+        style={[styles.container, this.props.style]}
+      >
         {content}
       </TouchableOpacity>
     );
@@ -134,8 +133,8 @@ var styles = StyleSheet.create({
     color: 'white',
   },
   purpleCaption: {
-    color: 'rgb(161, 40, 128)'
-  }
+    color: 'rgb(161, 40, 128)',
+  },
 });
 
 module.exports = ClogiiButton;

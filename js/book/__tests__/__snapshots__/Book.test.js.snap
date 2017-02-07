@@ -632,7 +632,7 @@ exports[`Book render 1`] = `
                       "paddingLeft": 5,
                     }
                   }>
-                  February 11
+                  February 12
                 </Text>
               </View>
             </View>
@@ -2240,7 +2240,7 @@ exports[`Book render 1`] = `
                       "paddingLeft": 5,
                     }
                   }>
-                  December 26
+                  December 27
                 </Text>
               </View>
             </View>
@@ -2508,7 +2508,7 @@ exports[`Book render 1`] = `
                       "paddingLeft": 5,
                     }
                   }>
-                  January 11
+                  January 12
                 </Text>
               </View>
             </View>
@@ -3312,7 +3312,7 @@ exports[`Book render 1`] = `
                       "paddingLeft": 5,
                     }
                   }>
-                  September 1
+                  September 2
                 </Text>
               </View>
             </View>
@@ -5456,7 +5456,7 @@ exports[`Book render 1`] = `
                       "paddingLeft": 5,
                     }
                   }>
-                  April 8
+                  April 9
                 </Text>
               </View>
             </View>

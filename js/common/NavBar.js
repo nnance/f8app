@@ -1,4 +1,4 @@
-'use strict';
+
 
 import React from 'react';
 import {
@@ -7,10 +7,10 @@ import {
   StyleSheet,
   TouchableOpacity,
   Image,
-  Dimensions
+  Dimensions,
 } from 'react-native';
 
-import {styles as commonStyles, NAV_BAR_HEIGHT, STATUS_BAR_HEIGHT} from './styles';
+import { styles as commonStyles, NAV_BAR_HEIGHT, STATUS_BAR_HEIGHT } from './styles';
 
 export const HEIGHT = NAV_BAR_HEIGHT + STATUS_BAR_HEIGHT;
 
@@ -24,7 +24,7 @@ export default class NavBar extends React.Component {
           }
         </View>
         <View style={[styles.titleMenu, this.props.titleStyle]}>
-        {
+          {
           this.props.renderTitle ? this.props.renderTitle() : this.renderTitle()
         }
         </View>
@@ -46,30 +46,30 @@ export default class NavBar extends React.Component {
 
 export class NavBarWithButton extends React.Component {
   render() {
-    return <NavBar
+    return (<NavBar
       renderLeftMenu={this.renderBackButton.bind(this)}
       {...this.props}
-      />;
+    />);
   }
 
   renderBackButton() {
     return (
-      <TouchableOpacity onPress={this.props.onBackPress}><Image style={commonStyles.navBarIcon} source={require('./img/icon/backButton.png')}/></TouchableOpacity>
+      <TouchableOpacity onPress={this.props.onBackPress}><Image style={commonStyles.navBarIcon} source={require('./img/icon/backButton.png')} /></TouchableOpacity>
     );
   }
 }
 
 export class NavBarWithPinkButton extends React.Component {
   render() {
-    return <NavBar
+    return (<NavBar
       renderLeftMenu={this.renderBackButton.bind(this)}
       {...this.props}
-      />;
+    />);
   }
 
   renderBackButton() {
     return (
-      <TouchableOpacity onPress={this.props.onBackPress}><Image style={commonStyles.navBarIcon} source={require('./img/icon/backButton-pink.png')}/></TouchableOpacity>
+      <TouchableOpacity onPress={this.props.onBackPress}><Image style={commonStyles.navBarIcon} source={require('./img/icon/backButton-pink.png')} /></TouchableOpacity>
     );
   }
 }
@@ -82,24 +82,24 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     justifyContent: 'space-between',
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   titleMenu: {
     flex: 4,
-    alignItems: 'center'
+    alignItems: 'center',
   },
   leftMenu: {
     flex: 1,
     paddingLeft: 10,
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
   },
   rightMenu: {
     flex: 1,
     paddingRight: 10,
-    alignItems: 'flex-end'
+    alignItems: 'flex-end',
   },
   navText: {
     fontSize: 22,
-    fontWeight: 'bold'
-  }
+    fontWeight: 'bold',
+  },
 });

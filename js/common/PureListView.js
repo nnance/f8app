@@ -21,14 +21,14 @@
  *
  * @flow
  */
-'use strict';
 
-var ListView = require('ListView');
-var Dimensions = require('Dimensions');
-var Platform = require('Platform');
-var StyleSheet = require('StyleSheet');
-var React = require('React');
-var View = require('View');
+
+const ListView = require('ListView');
+const Dimensions = require('Dimensions');
+const Platform = require('Platform');
+const StyleSheet = require('StyleSheet');
+const React = require('React');
+const View = require('View');
 
 type Rows = Array<Object>;
 type RowsAndSections = {
@@ -54,7 +54,7 @@ class PureListView extends React.Component {
 
   constructor(props: Props) {
     super(props);
-    let dataSource = new ListView.DataSource({
+    const dataSource = new ListView.DataSource({
       getRowData: (dataBlob, sid, rid) => dataBlob[sid][rid],
       getSectionHeaderData: (dataBlob, sid) => dataBlob[sid],
       rowHasChanged: (row1, row2) => row1 !== row2,
@@ -79,7 +79,7 @@ class PureListView extends React.Component {
   }
 
   render() {
-    const {contentInset} = this.props;
+    const { contentInset } = this.props;
     const bottom = contentInset.bottom +
       Math.max(0, this.props.minContentHeight - this.state.contentHeight);
     return (
@@ -90,7 +90,7 @@ class PureListView extends React.Component {
         ref="listview"
         dataSource={this.state.dataSource}
         renderFooter={this.renderFooter}
-        contentInset={{bottom, top: contentInset.top}}
+        contentInset={{ bottom, top: contentInset.top }}
         onContentSizeChange={this.onContentSizeChange}
       />
     );
@@ -98,7 +98,7 @@ class PureListView extends React.Component {
 
   onContentSizeChange(contentWidth: number, contentHeight: number) {
     if (contentHeight !== this.state.contentHeight) {
-      this.setState({contentHeight});
+      this.setState({ contentHeight });
     }
   }
 

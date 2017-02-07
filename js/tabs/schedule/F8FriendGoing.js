@@ -22,17 +22,17 @@
  * @providesModule F8FriendGoing
  * @flow
  */
-'use strict';
 
-var ProfilePicture = require('../../common/ProfilePicture');
-var React = require('React');
-var StyleSheet = require('StyleSheet');
-var { Text } = require('F8Text');
-var View = require('View');
-var Image = require('Image');
-var F8Touchable = require('F8Touchable');
 
-import type {FriendsSchedule} from '../../reducers/friendsSchedules';
+const ProfilePicture = require('../../common/ProfilePicture');
+const React = require('React');
+const StyleSheet = require('StyleSheet');
+const { Text } = require('F8Text');
+const View = require('View');
+const Image = require('Image');
+const F8Touchable = require('F8Touchable');
+
+import type { FriendsSchedule } from '../../reducers/friendsSchedules';
 
 class F8FriendGoing extends React.Component {
   props: {

@@ -21,22 +21,22 @@
  *
  * @flow
  */
-'use strict';
 
-var Navigator = require('Navigator');
-var ProfilePicture = require('../../common/ProfilePicture');
-var React = require('React');
-var EmptySchedule = require('./EmptySchedule');
-var FilterSessions = require('./filterSessions');
-var ListContainer = require('ListContainer');
-var ScheduleListView = require('./ScheduleListView');
 
-var { connect } = require('react-redux');
+const Navigator = require('Navigator');
+const ProfilePicture = require('../../common/ProfilePicture');
+const React = require('React');
+const EmptySchedule = require('./EmptySchedule');
+const FilterSessions = require('./filterSessions');
+const ListContainer = require('ListContainer');
+const ScheduleListView = require('./ScheduleListView');
 
-import type {Session} from '../../reducers/sessions';
-import type {FriendsSchedule} from '../../reducers/friendsSchedules';
+const { connect } = require('react-redux');
 
-var { createSelector } = require('reselect');
+import type { Session } from '../../reducers/sessions';
+import type { FriendsSchedule } from '../../reducers/friendsSchedules';
+
+const { createSelector } = require('reselect');
 
 type Props = {
   sessions: Array<Session>;
@@ -65,7 +65,8 @@ class FriendsScheduleView extends React.Component {
         backgroundImage={require('./img/schedule-background.png')}
         backgroundColor={'#5597B8'}
         selectedSectionColor="#51CDDA"
-        leftItem={backItem}>
+        leftItem={backItem}
+      >
         <ScheduleListView
           title="Day 1"
           day={1}
@@ -95,7 +96,7 @@ class FriendsScheduleView extends React.Component {
 }
 
 const data = createSelector(
-  (store) => store.sessions,
+  store => store.sessions,
   (store, props) => props.friend.schedule,
   (sessions, schedule) => FilterSessions.bySchedule(sessions, schedule),
 );

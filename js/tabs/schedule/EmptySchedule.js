@@ -21,13 +21,13 @@
  *
  * @flow
  */
-'use strict';
 
-var Image = require('Image');
-var React = require('React');
-var StyleSheet = require('StyleSheet');
-var { Paragraph, Heading1 } = require('F8Text');
-var View = require('View');
+
+const Image = require('Image');
+const React = require('React');
+const StyleSheet = require('StyleSheet');
+const { Paragraph, Heading1 } = require('F8Text');
+const View = require('View');
 
 class EmptySchedule extends React.Component {
   props: {

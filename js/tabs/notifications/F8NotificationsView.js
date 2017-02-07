@@ -22,42 +22,42 @@
  * @providesModule F8NotificationsView
  * @flow
  */
-'use strict';
 
-var EmptySchedule = require('../schedule/EmptySchedule');
-var Linking = require('Linking');
-var PushNUXModal = require('./PushNUXModal');
-var PureListView = require('../../common/PureListView');
-var React = require('React');
-var Platform = require('Platform');
-var ActionSheetIOS = require('ActionSheetIOS');
-var ListContainer = require('ListContainer');
-var NotificationCell = require('./NotificationCell');
-var RateSessionsCell = require('./RateSessionsCell');
-var allNotifications = require('./allNotifications');
-var View = require('View');
-var findSessionByURI = require('findSessionByURI');
-var { connect } = require('react-redux');
-var {
+
+const EmptySchedule = require('../schedule/EmptySchedule');
+const Linking = require('Linking');
+const PushNUXModal = require('./PushNUXModal');
+const PureListView = require('../../common/PureListView');
+const React = require('React');
+const Platform = require('Platform');
+const ActionSheetIOS = require('ActionSheetIOS');
+const ListContainer = require('ListContainer');
+const NotificationCell = require('./NotificationCell');
+const RateSessionsCell = require('./RateSessionsCell');
+const allNotifications = require('./allNotifications');
+const View = require('View');
+const findSessionByURI = require('findSessionByURI');
+const { connect } = require('react-redux');
+const {
   turnOnPushNotifications,
   skipPushNotifications,
   TEST_MENU,
 } = require('../../actions');
-var {testMenuEnabled, version} = require('../../env');
+const { testMenuEnabled, version } = require('../../env');
 
-var { createSelector } = require('reselect');
+const { createSelector } = require('reselect');
 
 const data = createSelector(
   allNotifications,
-  (store) => store.surveys,
-  (store) => store.notifications.enabled,
+  store => store.surveys,
+  store => store.notifications.enabled,
   (notifications, surveys, enabled) => {
     const extra: Array<any> = [];
     if (surveys.length > 0) {
-      extra.push({surveysCount: surveys.length});
+      extra.push({ surveysCount: surveys.length });
     }
     return [...extra, ...notifications];
-  }
+  },
 );
 
 class F8NotificationsView extends React.Component {
@@ -72,7 +72,7 @@ class F8NotificationsView extends React.Component {
   }
 
   render() {
-    var modal;
+    let modal;
     if (this.props.nux) {
       modal = (
         <PushNUXModal
@@ -83,12 +83,13 @@ class F8NotificationsView extends React.Component {
     }
 
     return (
-      <View style={{flex: 1}}>
+      <View style={{ flex: 1 }}>
         <ListContainer
           title="Notifications"
           backgroundImage={require('./img/notifications-background.png')}
           backgroundColor={'#E78196'}
-          {...this.renderTestItems()}>
+          {...this.renderTestItems()}
+        >
           <PureListView
             data={this.props.notifications}
             renderEmptyList={this.renderEmptyList}
@@ -129,9 +130,9 @@ class F8NotificationsView extends React.Component {
 
   openNotification(notification) {
     if (notification.url) {
-      var session = findSessionByURI(this.props.sessions, notification.url);
+      const session = findSessionByURI(this.props.sessions, notification.url);
       if (session) {
-        this.props.navigator.push({session});
+        this.props.navigator.push({ session });
       } else {
         Linking.openURL(notification.url);
       }
@@ -161,7 +162,7 @@ class F8NotificationsView extends React.Component {
 
     if (Platform.OS === 'android') {
       return {
-        extraItems: Object.keys(TEST_MENU).map((title) => ({
+        extraItems: Object.keys(TEST_MENU).map(title => ({
           title,
           onPress: () => this.props.dispatch(TEST_MENU[title]()),
         })),
@@ -172,17 +173,17 @@ class F8NotificationsView extends React.Component {
   showTestMenu() {
     const itemTitles = Object.keys(TEST_MENU);
     ActionSheetIOS.showActionSheetWithOptions({
-      title: 'Testing F8 app v' + version,
+      title: `Testing F8 app v${version}`,
       options: ['Cancel', ...itemTitles],
       cancelButtonIndex: 0,
     }, (idx) => {
-        if (idx === 0) {
-          return;
-        }
-
-        const action: any = TEST_MENU[itemTitles[idx - 1]];
-        this.props.dispatch(action());
+      if (idx === 0) {
+        return;
       }
+
+      const action: any = TEST_MENU[itemTitles[idx - 1]];
+      this.props.dispatch(action());
+    },
     );
   }
 }

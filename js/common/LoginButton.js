@@ -21,14 +21,14 @@
  *
  * @flow
  */
-'use strict';
+
 
 const React = require('react');
-const {StyleSheet} = require('react-native');
+const { StyleSheet } = require('react-native');
 import ClogiiButton from 'ClogiiButton';
 
 const { logInWithFacebook } = require('../actions');
-const {connect} = require('react-redux');
+const { connect } = require('react-redux');
 
 class LoginButton extends React.Component {
   props: {
@@ -75,9 +75,9 @@ class LoginButton extends React.Component {
   }
 
   async logIn() {
-    const {dispatch, onLoggedIn} = this.props;
+    const { dispatch, onLoggedIn } = this.props;
 
-    this.setState({isLoading: true});
+    this.setState({ isLoading: true });
     try {
       await Promise.race([
         dispatch(logInWithFacebook(this.props.source)),
@@ -91,7 +91,7 @@ class LoginButton extends React.Component {
       }
       return;
     } finally {
-      this._isMounted && this.setState({isLoading: false});
+      this._isMounted && this.setState({ isLoading: false });
     }
 
     onLoggedIn && onLoggedIn();
@@ -107,7 +107,7 @@ async function timeout(ms: number): Promise {
 var styles = StyleSheet.create({
   button: {
     alignSelf: 'center',
-    width: 270
+    width: 270,
   },
 });
 

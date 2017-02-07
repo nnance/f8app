@@ -4,14 +4,15 @@ import {
   View,
   TouchableOpacity,
   StyleSheet,
-  Text
+  Text,
 } from 'react-native';
 
-import {colors} from './styles';
+import { colors } from './styles';
 
 class BorderButton extends React.Component {
   render() {
-    let textStyle, containerStyle;
+    let textStyle,
+      containerStyle;
     textStyle = styles.blackText;
     containerStyle = styles.whiteButton;
     if (this.props.type === 'fadedWhite') {
@@ -43,19 +44,19 @@ class BorderButton extends React.Component {
 
 export const styles = StyleSheet.create({
   textContainer: {
-    fontSize: 12
+    fontSize: 12,
   },
   whiteText: {
-    color: 'white'
+    color: 'white',
   },
   blackText: {
-    color: 'black'
+    color: 'black',
   },
   whiteFadedText: {
-    color: colors.textFadedWhite
+    color: colors.textFadedWhite,
   },
   lightGreenText: {
-    color: 'rgb(141, 227, 188)'
+    color: 'rgb(141, 227, 188)',
   },
   commonButton: {
     paddingHorizontal: 15,
@@ -63,25 +64,25 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 4,
     backgroundColor: 'transparent',
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   whiteButton: {
-    backgroundColor: 'white'
+    backgroundColor: 'white',
   },
   lightGreenButton: {
     borderWidth: 1,
-    borderColor: 'rgb(141, 227, 188)'
+    borderColor: 'rgb(141, 227, 188)',
   },
   fadedWhiteButton: {
     borderWidth: 1,
-    borderColor: 'white'
+    borderColor: 'white',
   },
   greyButton: {
-    backgroundColor: colors.fadedGreyBackground
+    backgroundColor: colors.fadedGreyBackground,
   },
   borderFadedBlack: {
-    backgroundColor: 'rgba(0, 0, 0, 0.8)'
-  }
+    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+  },
 });
 
 export default BorderButton;

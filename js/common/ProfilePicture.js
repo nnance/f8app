@@ -21,13 +21,13 @@
  *
  * @flow
  */
-'use strict';
 
-var Image = require('Image');
-var React = require('React');
-var PixelRatio = require('PixelRatio');
 
-import {View} from 'react-native';
+const Image = require('Image');
+const React = require('React');
+const PixelRatio = require('PixelRatio');
+
+import { View } from 'react-native';
 
 class ProfilePicture extends React.Component {
   props: {
@@ -37,7 +37,7 @@ class ProfilePicture extends React.Component {
   };
 
   render() {
-    const {user, size} = this.props;
+    const { user, size } = this.props;
     const userID = user ? user.id : null;
     const scaledSize = size * PixelRatio.get();
     let uri;
@@ -66,14 +66,14 @@ class ProfilePicture extends React.Component {
             width: size,
             height: size,
             borderRadius: size / 2,
-            backgroundColor: 'black'
+            backgroundColor: 'black',
           }}
         />
       );
     }
     return (
       <Image
-        source={{uri}}
+        source={{ uri }}
         style={{
           width: size,
           height: size,

@@ -1,4 +1,4 @@
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import BookmarkScreen from '../components/BookmarkScreen';
 import * as mockData from '../mockData';
 

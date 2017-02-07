@@ -22,10 +22,9 @@
  * @flow
  */
 
-'use strict';
 
-var Platform = require('Platform');
-var crc32 = require('crc32');
+const Platform = require('Platform');
+const crc32 = require('crc32');
 
 export type Notification = {
   id: string;
@@ -60,34 +59,34 @@ const initialState = {
   seen: {},
 };
 
-import type {Action} from '../actions/types';
+import type { Action } from '../actions/types';
 
 function notifications(state: State = initialState, action: Action): State {
   switch (action.type) {
     case 'LOADED_NOTIFICATIONS':
-      let list = action.data.viewer ? action.data.viewer.notifications : null;
-      return {...state, server: list};
+      const list = action.data.viewer ? action.data.viewer.notifications : null;
+      return { ...state, server: list };
 
     case 'RECEIVED_PUSH_NOTIFICATION':
-      return {...state, push: append(action.notification, state.push)};
+      return { ...state, push: append(action.notification, state.push) };
 
     case 'LOGGED_OUT':
-      return {...state, push: []};
+      return { ...state, push: [] };
 
     case 'TURNED_ON_PUSH_NOTIFICATIONS':
-      return {...state, enabled: true};
+      return { ...state, enabled: true };
 
     case 'SKIPPED_PUSH_NOTIFICATIONS':
-      return {...state, enabled: false};
+      return { ...state, enabled: false };
 
     case 'REGISTERED_PUSH_NOTIFICATIONS':
-      return {...state, registered: true};
+      return { ...state, registered: true };
 
     case 'RESET_NUXES':
-      return {...state, enabled: initialState.enabled};
+      return { ...state, enabled: initialState.enabled };
 
     case 'SEEN_ALL_NOTIFICATIONS':
-      return {...state, seen: fetchAllIds([...state.server, ...state.push])};
+      return { ...state, seen: fetchAllIds([...state.server, ...state.push]) };
 
     default:
       return state;
@@ -96,10 +95,10 @@ function notifications(state: State = initialState, action: Action): State {
 
 function append(notification, list) {
   const id = notification.id || crc32(notification.text + notification.url).toString(36);
-  if (list.find((n) => n.id === id)) {
+  if (list.find(n => n.id === id)) {
     return list;
   }
-  return [{id, ...notification}, ...list];
+  return [{ id, ...notification }, ...list];
 }
 
 function fetchAllIds(notifs: Array<Notification>): SeenNotifications {

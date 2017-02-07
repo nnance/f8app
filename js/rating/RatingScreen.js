@@ -21,7 +21,7 @@
  *
  * @flow
  */
-'use strict';
+
 
 const React = require('react');
 const {
@@ -38,9 +38,9 @@ const F8PageControl = require('F8PageControl');
 const { connect } = require('react-redux');
 const { submitSurveyAnswers } = require('../actions');
 
-import type {Survey} from '../reducers/surveys';
-import type {Session} from '../reducers/sessions';
-import type {Dispatch} from '../actions/types';
+import type { Survey } from '../reducers/surveys';
+import type { Session } from '../reducers/sessions';
+import type { Dispatch } from '../actions/types';
 
 type Props = {
   sessions: Array<Session>;
@@ -67,7 +67,7 @@ class RatingScreen extends React.Component {
   }
 
   render() {
-    const {surveys} = this.props;
+    const { surveys } = this.props;
     return (
       <View style={styles.container}>
         <F8Header
@@ -77,7 +77,8 @@ class RatingScreen extends React.Component {
             title: 'Close',
             icon: require('../common/BackButtonIcon'),
             onPress: this.dismiss,
-          }}>
+          }}
+        >
           <View style={styles.headerContent}>
             <Text style={styles.title}>
               {surveys.length > 1
@@ -103,13 +104,13 @@ class RatingScreen extends React.Component {
 
   renderCard(index: number): ReactElement {
     const survey = this.props.surveys[index];
-    const session = this.props.sessions.find((s) => s.id === survey.sessionId);
+    const session = this.props.sessions.find(s => s.id === survey.sessionId);
     return (
       <RatingCard
         style={styles.card}
         session={session}
         questions={survey.questions}
-        onSubmit={(answers) => this.submitAnswers(index, answers)}
+        onSubmit={answers => this.submitAnswers(index, answers)}
       />
     );
   }
@@ -117,13 +118,13 @@ class RatingScreen extends React.Component {
   submitAnswers(index: number, answers: Array<number>) {
     const survey = this.props.surveys[index];
     this.props.dispatch(submitSurveyAnswers(survey.id, answers)).then(
-      () => this.proceedToPage(index + 1)
+      () => this.proceedToPage(index + 1),
     );
   }
 
   proceedToPage(index: number) {
     if (index < this.props.surveys.length) {
-      this.setState({selectedIndex: index});
+      this.setState({ selectedIndex: index });
     } else {
       this.props.navigator.pop();
       if (Platform.OS === 'android') {

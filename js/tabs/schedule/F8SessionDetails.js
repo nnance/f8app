@@ -23,50 +23,49 @@
  * @providesModule F8SessionDetails
  */
 
-'use strict';
 
-var Animated = require('Animated');
-var F8Colors = require('F8Colors');
-var F8FriendGoing = require('F8FriendGoing');
-var F8SpeakerProfile = require('F8SpeakerProfile');
-var Image = require('Image');
+const Animated = require('Animated');
+const F8Colors = require('F8Colors');
+const F8FriendGoing = require('F8FriendGoing');
+const F8SpeakerProfile = require('F8SpeakerProfile');
+const Image = require('Image');
 import LinearGradient from 'react-native-linear-gradient';
-var MapView = require('../../common/MapView');
-var PixelRatio = require('PixelRatio');
-var React = require('React');
-var ScrollView = require('ScrollView');
-var StyleSheet = require('StyleSheet');
-var Subscribable = require('Subscribable');
-var { Text } = require('F8Text');
-var TouchableOpacity = require('TouchableOpacity');
-var View = require('View');
-var AddToScheduleButton = require('./AddToScheduleButton');
+const MapView = require('../../common/MapView');
+const PixelRatio = require('PixelRatio');
+const React = require('React');
+const ScrollView = require('ScrollView');
+const StyleSheet = require('StyleSheet');
+const Subscribable = require('Subscribable');
+const { Text } = require('F8Text');
+const TouchableOpacity = require('TouchableOpacity');
+const View = require('View');
+const AddToScheduleButton = require('./AddToScheduleButton');
 
-var formatDuration = require('./formatDuration');
-var {connect} = require('react-redux');
-var {addToSchedule, removeFromScheduleWithPrompt} = require('../../actions');
+const formatDuration = require('./formatDuration');
+const { connect } = require('react-redux');
+const { addToSchedule, removeFromScheduleWithPrompt } = require('../../actions');
 
-var F8SessionDetails = React.createClass({
+const F8SessionDetails = React.createClass({
   mixins: [Subscribable.Mixin],
 
-  getInitialState: function() {
+  getInitialState() {
     return {
       scrollTop: new Animated.Value(0),
     };
   },
 
-  render: function() {
-    var speakersProfiles = this.props.session.speakers.map(
-      (speaker) => (
+  render() {
+    const speakersProfiles = this.props.session.speakers.map(
+      speaker => (
         <F8SpeakerProfile
           key={speaker.name}
           speaker={speaker}
         />
-      )
+      ),
     );
 
-    var topics = null;
-    var {tags} = this.props.session;
+    let topics = null;
+    const { tags } = this.props.session;
     if (tags && tags.length > 0) {
       topics = (
         <Text style={styles.topics}>
@@ -75,25 +74,25 @@ var F8SessionDetails = React.createClass({
       );
     }
 
-    var friendsGoing = this.props.friendsGoing.map(
-      (friend) => (
+    const friendsGoing = this.props.friendsGoing.map(
+      friend => (
         <F8FriendGoing
           key={friend.id}
           friend={friend}
-          onPress={() => this.props.navigator.push({friend})}
+          onPress={() => this.props.navigator.push({ friend })}
         />
-      )
+      ),
     );
 
-    var inlineMap;
+    let inlineMap;
     if (this.props.map) {
       inlineMap = <MapView map={this.props.map} />;
     }
 
-    var locationColor = F8Colors.colorForLocation(this.props.session.location);
-    var locationTitle = this.props.session.location && this.props.session.location.toUpperCase();
-    var location = (
-      <Text style={[styles.location, {color: locationColor}]}>
+    const locationColor = F8Colors.colorForLocation(this.props.session.location);
+    const locationTitle = this.props.session.location && this.props.session.location.toUpperCase();
+    const location = (
+      <Text style={[styles.location, { color: locationColor }]}>
         {locationTitle}
         <Text style={styles.time}>
           {locationTitle && ' - '}
@@ -102,17 +101,18 @@ var F8SessionDetails = React.createClass({
       </Text>
     );
 
-    var title = this.props.session.title || '';
-    var isReactTalk = title.indexOf('React') > -1;
+    const title = this.props.session.title || '';
+    const isReactTalk = title.indexOf('React') > -1;
 
     return (
       <View style={[styles.container, this.props.style]}>
         <ScrollView
           contentContainerStyle={styles.contentContainer}
-          onScroll={({nativeEvent}) => this.state.scrollTop.setValue(nativeEvent.contentOffset.y)}
+          onScroll={({ nativeEvent }) => this.state.scrollTop.setValue(nativeEvent.contentOffset.y)}
           scrollEventThrottle={100}
           showsVerticalScrollIndicator={false}
-          automaticallyAdjustContentInsets={false}>
+          automaticallyAdjustContentInsets={false}
+        >
           {location}
           <Text style={styles.title}>
             {title}
@@ -134,7 +134,8 @@ var F8SessionDetails = React.createClass({
             accessibilityLabel="Share this session"
             accessibilityTraits="button"
             onPress={this.props.onShare}
-            style={styles.shareButton}>
+            style={styles.shareButton}
+          >
             <Image source={require('./img/share.png')} />
           </TouchableOpacity>
         </ScrollView>
@@ -145,16 +146,18 @@ var F8SessionDetails = React.createClass({
             onPress={this.toggleAdded}
           />
         </View>
-        <Animated.View style={[
-          styles.miniHeader,
-          {
-            opacity: this.state.scrollTop.interpolate({
-              inputRange: [0, 150, 200],
-              outputRange: [0, 0, 1],
-              extrapolate: 'clamp',
-            })
-          }
-        ]}>
+        <Animated.View
+          style={[
+            styles.miniHeader,
+            {
+              opacity: this.state.scrollTop.interpolate({
+                inputRange: [0, 150, 200],
+                outputRange: [0, 0, 1],
+                extrapolate: 'clamp',
+              }),
+            },
+          ]}
+        >
           <Text numberOfLines={1} style={styles.miniTitle}>
             {title}
           </Text>
@@ -164,7 +167,7 @@ var F8SessionDetails = React.createClass({
     );
   },
 
-  toggleAdded: function() {
+  toggleAdded() {
     if (this.props.isAddedToSchedule) {
       this.props.removeFromScheduleWithPrompt();
     } else {
@@ -172,7 +175,7 @@ var F8SessionDetails = React.createClass({
     }
   },
 
-  addToSchedule: function() {
+  addToSchedule() {
     if (!this.props.isLoggedIn) {
       this.props.navigator.push({
         login: true, // TODO: Proper route
@@ -181,7 +184,7 @@ var F8SessionDetails = React.createClass({
     } else {
       this.props.addToSchedule();
       if (this.props.sharedSchedule === null) {
-        setTimeout(() => this.props.navigator.push({share: true}), 1000);
+        setTimeout(() => this.props.navigator.push({ share: true }), 1000);
       }
     }
   },
@@ -194,11 +197,11 @@ class Section extends React.Component {
   };
 
   render() {
-    var {children} = this.props;
+    const { children } = this.props;
     if (React.Children.count(children) === 0) {
       return null;
     }
-    var header;
+    let header;
     if (this.props.title) {
       header = (
         <View style={styles.sectionHeader}>
@@ -206,7 +209,7 @@ class Section extends React.Component {
             {this.props.title.toUpperCase()}
           </Text>
           <LinearGradient
-            start={{x: 0, y: 0}} end={{x: 1, y: 0}}
+            start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}
             colors={['#E1E1E1', 'white']}
             style={styles.line}
           />
@@ -222,7 +225,7 @@ class Section extends React.Component {
   }
 }
 
-var PADDING = 15;
+const PADDING = 15;
 
 var styles = StyleSheet.create({
   container: {
@@ -307,13 +310,13 @@ var styles = StyleSheet.create({
     position: 'absolute',
     right: 0,
     top: 0,
-  }
+  },
 });
 
 function select(store, props) {
   const sessionID = props.session.id;
-  const friendsGoing = store.friendsSchedules.filter((friend) => friend.schedule[sessionID]);
-  const map = store.maps.find(({name}) => name === props.session.location);
+  const friendsGoing = store.friendsSchedules.filter(friend => friend.schedule[sessionID]);
+  const map = store.maps.find(({ name }) => name === props.session.location);
 
   return {
     isAddedToSchedule: !!store.schedule[props.session.id],
@@ -327,7 +330,7 @@ function select(store, props) {
 }
 
 function actions(dispatch, props) {
-  let id = props.session.id;
+  const id = props.session.id;
   return {
     addToSchedule: () => dispatch(addToSchedule(id)),
     removeFromScheduleWithPrompt:

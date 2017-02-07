@@ -1,9 +1,9 @@
 import React from 'react';
 import {
   Navigator,
-  Linking
+  Linking,
 } from 'react-native';
-import {parse} from 'query-string';
+import { parse } from 'query-string';
 
 import ClogiiTabView from './tabs/ClogiiTabView';
 import Player from './player';
@@ -20,7 +20,7 @@ class ClogiiNavigator extends React.Component {
       if (url) {
         this.fromURL(url);
       }
-    }).catch(error => {
+    }).catch((error) => {
       console.error('initial url error: ', error);
     });
     Linking.addEventListener('url', this.onOpenURL);
@@ -34,9 +34,9 @@ class ClogiiNavigator extends React.Component {
     return (
       <Navigator
         ref="navigator"
-        initialRoute={{page: 'main-tab', id: 3}}
+        initialRoute={{ page: 'main-tab', id: 3 }}
         renderScene={this.renderScene.bind(this)}
-        />
+      />
     );
   }
 
@@ -45,7 +45,7 @@ class ClogiiNavigator extends React.Component {
   }
 
   fromURL(url) {
-    let {method, query} = this.parseURL(url);
+    const { method, query } = this.parseURL(url);
     if (method === 'player' && query.id) {
       this.goToPlayer(query.id);
     }
@@ -55,13 +55,12 @@ class ClogiiNavigator extends React.Component {
     try {
       url = url.split(':')[1];
       let [method, queryS] = url.split('?');
-      let query = parse(queryS);
+      const query = parse(queryS);
       if (method.indexOf('//') === 0) {
         method = method.slice(2);
       }
-      return {method, query};
-    }
-    catch (error) {
+      return { method, query };
+    } catch (error) {
       console.error('parse url error: ', error);
     }
     return {};
@@ -69,25 +68,26 @@ class ClogiiNavigator extends React.Component {
 
   renderScene(route, navigator) {
     if (route.page === 'main-tab') {
-      return <ClogiiTabView goToBook={this.goToBook.bind(this)}/>;
+      return <ClogiiTabView goToBook={this.goToBook.bind(this)} />;
     }
     if (route.page === 'player') {
-      return <Player onBackPress={this.goBack.bind(this)} id={route.id}/>;
+      return <Player onBackPress={this.goBack.bind(this)} id={route.id} />;
     }
     if (route.page === 'book') {
-      return <Book
+      return (<Book
         onBackPress={this.goBack.bind(this)}
         goToPlayer={this.goToPlayer.bind(this)}
-        id={route.id}/>;
+        id={route.id}
+      />);
     }
   }
 
   goToPlayer(id) {
-    this.refs.navigator.push({page: 'player', id})
+    this.refs.navigator.push({ page: 'player', id });
   }
 
   goToBook(id) {
-    this.refs.navigator.push({page: 'book', id});
+    this.refs.navigator.push({ page: 'book', id });
   }
 
   goBack() {

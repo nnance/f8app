@@ -22,7 +22,6 @@
  * @flow
  */
 
-'use strict';
 
 const Parse = require('parse/react-native');
 
@@ -37,7 +36,7 @@ async function loadSurveys(): Promise<Action> {
 }
 
 async function submitSurveyAnswers(id: string, answers: Array<any>): Promise<Action> {
-  await Parse.Cloud.run('submit_survey', {id, answers});
+  await Parse.Cloud.run('submit_survey', { id, answers });
   return {
     type: 'SUBMITTED_SURVEY_ANSWERS',
     id,

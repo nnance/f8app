@@ -21,7 +21,7 @@
  *
  * @flow
  */
-'use strict';
+
 
 const React = require('react');
 const {
@@ -33,8 +33,8 @@ const Header = require('./Header');
 const RatingQuestion = require('./RatingQuestion');
 const F8Button = require('F8Button');
 
-import type {Question} from '../reducers/surveys';
-import type {Session} from '../reducers/sessions';
+import type { Question } from '../reducers/surveys';
+import type { Session } from '../reducers/sessions';
 
 type Props = {
   session: Session;
@@ -59,7 +59,7 @@ class RatingCard extends React.Component {
         style={styles.question}
         question={question}
         rating={this.state[ii]}
-        onChange={(rating) => this.setState({[ii]: rating})}
+        onChange={rating => this.setState({ [ii]: rating })}
       />
     ));
     const completed = Object.keys(this.state).length === this.props.questions.length;
@@ -97,7 +97,7 @@ var styles = StyleSheet.create({
   button: {
     marginHorizontal: 15,
     marginVertical: 20,
-  }
+  },
 });
 
 module.exports = RatingCard;

@@ -21,7 +21,7 @@
  *
  * @flow
  */
-'use strict';
+
 
 const React = require('react');
 const {
@@ -34,7 +34,7 @@ class ProfileButton extends React.Component {
   render() {
     return (
       <Image
-        source={{uri: `http://graph.facebook.com/${this.props.user.id}/picture`}}
+        source={{ uri: `http://graph.facebook.com/${this.props.user.id}/picture` }}
         style={styles.profilePic}
       />
     );

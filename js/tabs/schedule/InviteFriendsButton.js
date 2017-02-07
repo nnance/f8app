@@ -21,12 +21,12 @@
  *
  * @flow
  */
-'use strict';
 
-var React = require('React');
-var F8Button = require('F8Button');
-var {AppInviteDialog, AppEventsLogger} = require('react-native-fbsdk');
-var { connect } = require('react-redux');
+
+const React = require('React');
+const F8Button = require('F8Button');
+const { AppInviteDialog, AppEventsLogger } = require('react-native-fbsdk');
+const { connect } = require('react-redux');
 
 class InviteFriendsButton extends React.Component {
   props: {
@@ -36,7 +36,7 @@ class InviteFriendsButton extends React.Component {
   };
 
   render() {
-    const {appLinkURL, style} = this.props;
+    const { appLinkURL, style } = this.props;
     if (!appLinkURL) {
       return null;
     }

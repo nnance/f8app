@@ -1,4 +1,4 @@
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import ActivityScreen from '../components/ActivityScreen';
 import * as mockData from '../mockData';
 

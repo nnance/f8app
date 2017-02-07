@@ -22,20 +22,20 @@
  * @providesModule F8InfoView
  * @flow
  */
-'use strict';
 
-var CommonQuestions = require('./CommonQuestions');
-var LinksList = require('./LinksList');
-var ListContainer = require('ListContainer');
-var PureListView = require('../../common/PureListView');
-var React = require('React');
-var View = require('View');
-var WiFiDetails = require('./WiFiDetails');
 
-const {connect} = require('react-redux');
-import type {Config} from '../../reducers/config';
-import type {Faq} from '../../reducers/faq';
-import type {Page} from '../../reducers/pages';
+const CommonQuestions = require('./CommonQuestions');
+const LinksList = require('./LinksList');
+const ListContainer = require('ListContainer');
+const PureListView = require('../../common/PureListView');
+const React = require('React');
+const View = require('View');
+const WiFiDetails = require('./WiFiDetails');
+
+const { connect } = require('react-redux');
+import type { Config } from '../../reducers/config';
+import type { Faq } from '../../reducers/faq';
+import type { Page } from '../../reducers/pages';
 
 const POLICIES_LINKS = [{
   title: 'Terms of Service',
@@ -60,7 +60,8 @@ class F8InfoView extends React.Component {
       <ListContainer
         title="Information"
         backgroundImage={require('./img/info-background.png')}
-        backgroundColor={'#47BFBF'}>
+        backgroundColor={'#47BFBF'}
+      >
         <PureListView
           renderEmptyList={() => (
             <View>
@@ -72,7 +73,8 @@ class F8InfoView extends React.Component {
               <LinksList title="Facebook pages" links={this.props.pages} />
               <LinksList title="Facebook policies" links={POLICIES_LINKS} />
             </View>
-          )}/>
+          )}
+        />
       </ListContainer>
     );
   }
@@ -82,7 +84,7 @@ function select(store) {
   return {
     config: store.config,
     faqs: store.faqs,
-    pages: store.pages
+    pages: store.pages,
   };
 }
 module.exports = connect(select)(F8InfoView);

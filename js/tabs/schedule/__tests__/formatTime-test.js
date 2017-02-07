@@ -22,7 +22,6 @@
  * @flow
  */
 
-'use strict';
 
 jest.dontMock('../formatTime');
 const formatTime = require('../formatTime');

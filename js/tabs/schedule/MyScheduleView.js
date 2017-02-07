@@ -21,37 +21,37 @@
  *
  * @flow
  */
-'use strict';
 
-var EmptySchedule = require('./EmptySchedule');
-var F8Button = require('F8Button');
-var FilterSessions = require('./filterSessions');
-var ListContainer = require('ListContainer');
-var LoginButton = require('../../common/LoginButton');
-var Navigator = require('Navigator');
-var ProfilePicture = require('../../common/ProfilePicture');
-var React = require('React');
-var PureListView = require('../../common/PureListView');
-var ScheduleListView = require('./ScheduleListView');
-var FriendsListView = require('./FriendsListView');
 
-var { connect } = require('react-redux');
+const EmptySchedule = require('./EmptySchedule');
+const F8Button = require('F8Button');
+const FilterSessions = require('./filterSessions');
+const ListContainer = require('ListContainer');
+const LoginButton = require('../../common/LoginButton');
+const Navigator = require('Navigator');
+const ProfilePicture = require('../../common/ProfilePicture');
+const React = require('React');
+const PureListView = require('../../common/PureListView');
+const ScheduleListView = require('./ScheduleListView');
+const FriendsListView = require('./FriendsListView');
 
-var {
+const { connect } = require('react-redux');
+
+const {
   logOutWithPrompt,
   switchTab,
   switchDay,
   loadFriendsSchedules,
 } = require('../../actions');
 
-import {Text} from 'F8Text';
+import { Text } from 'F8Text';
 
-import type {Session} from '../../reducers/sessions';
-import type {FriendsSchedule} from '../../reducers/friendsSchedules';
-import type {State as User} from '../../reducers/user';
-import type {State as Schedule} from '../../reducers/schedule';
+import type { Session } from '../../reducers/sessions';
+import type { FriendsSchedule } from '../../reducers/friendsSchedules';
+import type { State as User } from '../../reducers/user';
+import type { State as Schedule } from '../../reducers/schedule';
 
-var { createSelector } = require('reselect');
+const { createSelector } = require('reselect');
 
 
 type Props = {
@@ -79,7 +79,7 @@ class MyScheduleView extends React.Component {
   }
 
   render() {
-    var rightItem;
+    let rightItem;
     if (this.props.user.isLoggedIn) {
       rightItem = {
         title: 'Settings',
@@ -98,7 +98,8 @@ class MyScheduleView extends React.Component {
         backgroundImage={require('./img/my-f8-background.png')}
         backgroundColor={'#A8D769'}
         onSegmentChange={this.handleSegmentChanged}
-        rightItem={rightItem}>
+        rightItem={rightItem}
+      >
         {this.renderContent()}
       </ListContainer>
     );
@@ -141,9 +142,10 @@ class MyScheduleView extends React.Component {
       <EmptySchedule
         key="login"
         title="Log in to make a schedule."
-        text="You’ll be able to save sessions to your schedule to view or share later.">
+        text="You’ll be able to save sessions to your schedule to view or share later."
+      >
         <LoginButton source="My F8" />
-        <Text style={{padding: 20}} onPress={() => this.props.navigator.push({logInWithEmail: 1})}>
+        <Text style={{ padding: 20 }} onPress={() => this.props.navigator.push({ logInWithEmail: 1 })}>
           or with Email
         </Text>
       </EmptySchedule>
@@ -155,7 +157,8 @@ class MyScheduleView extends React.Component {
       <EmptySchedule
         key="schedule"
         image={require('./img/no-sessions-added.png')}
-        text={'Sessions you save will\nappear here.'}>
+        text={'Sessions you save will\nappear here.'}
+      >
         <F8Button
           caption={`See the day ${day} schedule`}
           onPress={() => this.props.jumpToSchedule(day)}
@@ -165,7 +168,7 @@ class MyScheduleView extends React.Component {
   }
 
   openSharingSettings() {
-    this.props.navigator.push({shareSettings: 1});
+    this.props.navigator.push({ shareSettings: 1 });
   }
 
   handleSegmentChanged(segment) {
@@ -176,8 +179,8 @@ class MyScheduleView extends React.Component {
 }
 
 const data = createSelector(
-  (store) => store.sessions,
-  (store) => store.schedule,
+  store => store.sessions,
+  store => store.schedule,
   (sessions, schedule) => FilterSessions.bySchedule(sessions, schedule),
 );
 
@@ -188,7 +191,7 @@ function select(store) {
     schedule: store.schedule,
     // Only show friends who have something in their schedule
     friends: store.friendsSchedules.filter(
-      (friend) => Object.keys(friend.schedule).length > 0
+      friend => Object.keys(friend.schedule).length > 0,
     ),
   };
 }
@@ -196,7 +199,7 @@ function select(store) {
 function actions(dispatch) {
   return {
     logOut: () => dispatch(logOutWithPrompt()),
-    jumpToSchedule: (day) => dispatch([
+    jumpToSchedule: day => dispatch([
       switchTab('schedule'),
       switchDay(day),
     ]),

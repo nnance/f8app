@@ -22,7 +22,6 @@
  * @flow
  */
 
-'use strict';
 
 jest.autoMockOff();
 
@@ -30,13 +29,12 @@ const Parse = require('parse');
 const maps = require('../maps');
 
 describe.skip('maps reducer', () => {
-
   it('is empty by default', () => {
     expect(maps(undefined, {})).toEqual([]);
   });
 
   it('populates maps from server', () => {
-    let list = [
+    const list = [
       new Parse.Object({
         name: 'Day 1',
         x1: new Parse.File('x1.png'),
@@ -46,7 +44,7 @@ describe.skip('maps reducer', () => {
     ];
 
     expect(
-      maps([], {type: 'LOADED_MAPS', list})
+      maps([], { type: 'LOADED_MAPS', list }),
     ).toEqual([{
       id: jasmine.any(String),
       name: 'Day 1',
@@ -55,5 +53,4 @@ describe.skip('maps reducer', () => {
       x3url: 'x3.png',
     }]);
   });
-
 });

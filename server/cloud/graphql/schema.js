@@ -21,14 +21,14 @@
  *
  */
 
-import {addMockFunctionsToSchema, makeExecutableSchema} from 'graphql-tools';
+import { makeExecutableSchema } from 'graphql-tools';
 import typeDefs from './typeDefs';
 import resolvers from './resolvers';
 import scalars from './scalars';
 
-let Schema = makeExecutableSchema({
+const Schema = makeExecutableSchema({
   typeDefs,
-  resolvers: Object.assign(scalars, resolvers)
+  resolvers: Object.assign(scalars, resolvers),
 });
 
 module.exports = Schema;

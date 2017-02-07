@@ -21,13 +21,13 @@
  *
  * @flow
  */
-'use strict';
 
-var F8Colors = require('F8Colors');
+
+const F8Colors = require('F8Colors');
 import LinearGradient from 'react-native-linear-gradient';
-var React = require('React');
-var StyleSheet = require('StyleSheet');
-var { Text } = require('F8Text');
+const React = require('React');
+const StyleSheet = require('StyleSheet');
+const { Text } = require('F8Text');
 
 class SessionsSectionHeader extends React.Component {
   props: {

@@ -14,28 +14,28 @@ export const query = gql`
 `;
 
 export const mapQueryToProps = ({ ownProps, data }) => {
-  const {clog, error, loading} = data;
+  const { clog, error, loading } = data;
   if (error) {
     console.error('graphql error: ', error);
   }
   return {
     clog: {
       ...(clog || {}),
-      episodes: loading || error ? [] : _.sortBy(clog.episodes, ep => -ep.no)
+      episodes: loading || error ? [] : _.sortBy(clog.episodes, ep => -ep.no),
     },
-    loading: loading
+    loading,
   };
 };
 
-export const mapPropsToOptions = ({id}) => ({
+export const mapPropsToOptions = ({ id }) => ({
   variables: {
-    id
-  }
+    id,
+  },
 });
 
 export default graphql(query, {
   props: mapQueryToProps,
-  options: mapPropsToOptions
+  options: mapPropsToOptions,
 })(Book);
 
 // export default require('View')

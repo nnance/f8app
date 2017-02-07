@@ -3,9 +3,9 @@ import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 
 import Home from '../components/Home';
-import {CLOG_PREVIEW_LIMIT} from '../constants';
+import { CLOG_PREVIEW_LIMIT } from '../constants';
 
-import {fragments} from '../../../models/clog';
+import { fragments } from '../../../models/clog';
 
 export const query = gql`
   query {
@@ -35,12 +35,12 @@ export const mapQueryToProps = ({ ownProps, data }) => {
   }
   return ({
     trendingClogs: loading || !!error ? [] : trendingClogs,
-    recommendedClog: recommendedClog,
+    recommendedClog,
     heroBanners: loading || !!error ? [] : heroBanners,
-    favoriteTags: loading || !!error ? [] : favoriteTags
+    favoriteTags: loading || !!error ? [] : favoriteTags,
   });
 };
 
 export default graphql(query, {
-  props: mapQueryToProps
+  props: mapQueryToProps,
 })(Home);

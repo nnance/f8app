@@ -23,35 +23,34 @@
  * @flow
  */
 
-'use strict';
 
 import LoginScreen from './login/LoginScreen';
 
-var React = require('React');
-var Platform = require('Platform');
-var BackAndroid = require('BackAndroid');
-var F8TabsView = require('F8TabsView');
-var FriendsScheduleView = require('./tabs/schedule/FriendsScheduleView');
-var FilterScreen = require('./filter/FilterScreen');
-var LoginModal = require('./login/LoginModal');
-var Navigator = require('Navigator');
-var SessionsCarousel = require('./tabs/schedule/SessionsCarousel');
-var SharingSettingsModal = require('./tabs/schedule/SharingSettingsModal');
-var SharingSettingsScreen = require('./tabs/schedule/SharingSettingsScreen');
-var ThirdPartyNotices = require('./tabs/info/ThirdPartyNotices');
-var RatingScreen = require('./rating/RatingScreen');
-var StyleSheet = require('StyleSheet');
-var { connect } = require('react-redux');
-var { switchTab } = require('./actions');
+const React = require('React');
+const Platform = require('Platform');
+const BackAndroid = require('BackAndroid');
+const F8TabsView = require('F8TabsView');
+const FriendsScheduleView = require('./tabs/schedule/FriendsScheduleView');
+const FilterScreen = require('./filter/FilterScreen');
+const LoginModal = require('./login/LoginModal');
+const Navigator = require('Navigator');
+const SessionsCarousel = require('./tabs/schedule/SessionsCarousel');
+const SharingSettingsModal = require('./tabs/schedule/SharingSettingsModal');
+const SharingSettingsScreen = require('./tabs/schedule/SharingSettingsScreen');
+const ThirdPartyNotices = require('./tabs/info/ThirdPartyNotices');
+const RatingScreen = require('./rating/RatingScreen');
+const StyleSheet = require('StyleSheet');
+const { connect } = require('react-redux');
+const { switchTab } = require('./actions');
 
-var F8Navigator = React.createClass({
+const F8Navigator = React.createClass({
   _handlers: ([]: Array<() => boolean>),
 
-  componentDidMount: function() {
+  componentDidMount() {
     BackAndroid.addEventListener('hardwareBackPress', this.handleBackButton);
   },
 
-  componentWillUnmount: function() {
+  componentWillUnmount() {
     BackAndroid.removeEventListener('hardwareBackPress', this.handleBackButton);
   },
 
@@ -62,22 +61,22 @@ var F8Navigator = React.createClass({
     };
   },
 
-  addBackButtonListener: function(listener) {
+  addBackButtonListener(listener) {
     this._handlers.push(listener);
   },
 
-  removeBackButtonListener: function(listener) {
-    this._handlers = this._handlers.filter((handler) => handler !== listener);
+  removeBackButtonListener(listener) {
+    this._handlers = this._handlers.filter(handler => handler !== listener);
   },
 
-  handleBackButton: function() {
+  handleBackButton() {
     for (let i = this._handlers.length - 1; i >= 0; i--) {
       if (this._handlers[i]()) {
         return true;
       }
     }
 
-    const {navigator} = this.refs;
+    const { navigator } = this.refs;
     if (navigator && navigator.getCurrentRoutes().length > 1) {
       navigator.pop();
       return true;
@@ -90,7 +89,7 @@ var F8Navigator = React.createClass({
     return false;
   },
 
-  render: function() {
+  render() {
     return (
       <Navigator
         ref="navigator"
@@ -102,9 +101,8 @@ var F8Navigator = React.createClass({
           // TODO: Proper scene support
           if (route.shareSettings || route.friend) {
             return Navigator.SceneConfigs.FloatFromRight;
-          } else {
-            return Navigator.SceneConfigs.FloatFromBottom;
           }
+          return Navigator.SceneConfigs.FloatFromBottom;
         }}
         initialRoute={{}}
         renderScene={this.renderScene}
@@ -112,7 +110,7 @@ var F8Navigator = React.createClass({
     );
   },
 
-  renderScene: function(route, navigator) {
+  renderScene(route, navigator) {
     if (route.allSessions) {
       return (
         <SessionsCarousel
@@ -165,7 +163,7 @@ var F8Navigator = React.createClass({
       return <ThirdPartyNotices navigator={navigator} />;
     }
     if (route.logInWithEmail) {
-      return <LoginScreen withEmail={true} onExit={() => navigator.pop()} addBackButtonListener={this.addBackButtonListener} removeBackButtonListener={this.removeBackButtonListener}/>;
+      return <LoginScreen withEmail onExit={() => navigator.pop()} addBackButtonListener={this.addBackButtonListener} removeBackButtonListener={this.removeBackButtonListener} />;
     }
     return <F8TabsView navigator={navigator} />;
   },

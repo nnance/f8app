@@ -5,7 +5,7 @@ import { graphql } from 'react-apollo';
 import FeedHome from '../components/FeedHome';
 // import {CLOG_PREVIEW_LIMIT} from '../constants';
 
-import {fragments} from '../../../models/clog';
+import { fragments } from '../../../models/clog';
 
 export const query = gql`
     query {
@@ -34,13 +34,13 @@ export const mapQueryToProps = ({ ownProps, data }) => {
   const { loading, trendingClogs, recommendedClog, favoriteTags, heroBanners } = data;
   return ({
     trendingClogs: loading ? [] : trendingClogs,
-    recommendedClog: recommendedClog,
+    recommendedClog,
     heroBanners: loading ? [] : heroBanners,
     favoriteTags: loading ? [] : favoriteTags,
-    loading
+    loading,
   });
 };
 
 export default graphql(query, {
-  props: mapQueryToProps
+  props: mapQueryToProps,
 })(FeedHome);

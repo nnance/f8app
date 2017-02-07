@@ -23,21 +23,20 @@
  * @flow
  */
 
-'use strict';
 
-var F8Colors = require('F8Colors');
-var Image = require('Image');
-var React = require('React');
-var StyleSheet = require('StyleSheet');
-var { Text } = require('F8Text');
-var F8Touchable = require('F8Touchable');
-var View = require('View');
-var formatDuration = require('./formatDuration');
-var formatTime = require('./formatTime');
+const F8Colors = require('F8Colors');
+const Image = require('Image');
+const React = require('React');
+const StyleSheet = require('StyleSheet');
+const { Text } = require('F8Text');
+const F8Touchable = require('F8Touchable');
+const View = require('View');
+const formatDuration = require('./formatDuration');
+const formatTime = require('./formatTime');
 
-var { connect } = require('react-redux');
+const { connect } = require('react-redux');
 
-import type {Session} from '../../reducers/sessions';
+import type { Session } from '../../reducers/sessions';
 
 class F8SessionCell extends React.Component {
   props: {
@@ -49,42 +48,42 @@ class F8SessionCell extends React.Component {
   };
 
   render() {
-    var session = this.props.session;
-    var tick;
+    const session = this.props.session;
+    let tick;
     if (this.props.showTick) {
       tick =
         <Image style={styles.added} source={require('./img/added-cell.png')} />;
     }
-    var time;
+    let time;
     if (this.props.showStartEndTime) {
-      time = formatTime(session.startTime) + ' - ' + formatTime(session.endTime);
+      time = `${formatTime(session.startTime)} - ${formatTime(session.endTime)}`;
     } else {
       time = formatDuration(session.startTime, session.endTime);
     }
-    var location = session.location && session.location.toUpperCase();
-    var locationColor = F8Colors.colorForLocation(location);
-    var cell =
-      <View style={[styles.cell, this.props.style]}>
+    const location = session.location && session.location.toUpperCase();
+    const locationColor = F8Colors.colorForLocation(location);
+    let cell =
+      (<View style={[styles.cell, this.props.style]}>
         <View style={styles.titleSection}>
           <Text numberOfLines={2} style={styles.titleText}>
             {session.title}
           </Text>
         </View>
         <Text numberOfLines={1} style={styles.duration}>
-          <Text style={[styles.locationText, {color: locationColor}]}>
+          <Text style={[styles.locationText, { color: locationColor }]}>
             {location}
           </Text>
           {location && ' - '}
           {time}
         </Text>
         {tick}
-      </View>;
+      </View>);
 
     if (this.props.onPress) {
       cell =
-        <F8Touchable onPress={this.props.onPress}>
+        (<F8Touchable onPress={this.props.onPress}>
           {cell}
-        </F8Touchable>;
+        </F8Touchable>);
     }
 
     return cell;

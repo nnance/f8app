@@ -1,14 +1,14 @@
 import React from 'react';
 import {
   Navigator,
-  Text
+  Text,
 } from 'react-native';
 
 class Provider extends React.Component {
   getChildContext() {
     return {
       addFixBugListener: this.props.addFixBugListener,
-      removeFixBugListener: this.props.removeFixBugListener
+      removeFixBugListener: this.props.removeFixBugListener,
     };
   }
 
@@ -19,7 +19,7 @@ class Provider extends React.Component {
 
 Provider.childContextTypes = {
   addFixBugListener: React.PropTypes.func,
-  removeFixBugListener: React.PropTypes.func
+  removeFixBugListener: React.PropTypes.func,
 };
 
 class FixBugScrollViewNavigator extends React.Component {
@@ -41,12 +41,12 @@ class FixBugScrollViewNavigator extends React.Component {
   }
 
   renderScene(route, navigator) {
-    return <Provider
+    return (<Provider
       addFixBugListener={this.addFixBugListener.bind(this, route.page)}
       removeFixBugListener={this.removeFixBugListener.bind(this, route.page)}
-      >
-        {this.props.renderScene(route, navigator)}
-    </Provider>;
+    >
+      {this.props.renderScene(route, navigator)}
+    </Provider>);
   }
 
   onWillFocus(route) {

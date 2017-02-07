@@ -5,7 +5,7 @@ import {
   Modal,
   StyleSheet,
   View,
-  Platform
+  Platform,
 } from 'react-native';
 
 import Button from 'Button';
@@ -16,7 +16,7 @@ class DatePickerDialog extends React.Component {
     super(...args);
     this.state = {
       currentDate: this.props.currentDate || new Date(),
-      visible: false
+      visible: false,
     };
     this._resolve = null;
     this._reject = null;
@@ -25,8 +25,8 @@ class DatePickerDialog extends React.Component {
   open(currentDate) {
     currentDate = currentDate || this.state.currentDate;
     if (Platform.OS === 'android') {
-      return DatePickerAndroid.open({date: currentDate}).then(response => {
-        const {action, year, month, day} = response;
+      return DatePickerAndroid.open({ date: currentDate }).then((response) => {
+        const { action, year, month, day } = response;
         return new Date(year, month, day);
       });
     }
@@ -35,7 +35,7 @@ class DatePickerDialog extends React.Component {
     }
     this.setState({
       currentDate,
-      visible: true
+      visible: true,
     });
     return new Promise((resolve, reject) => {
       this._resolve = resolve;
@@ -47,7 +47,7 @@ class DatePickerDialog extends React.Component {
     this._resolve = null;
     this._reject = null;
     this.setState({
-      visible: false
+      visible: false,
     });
   }
 
@@ -66,23 +66,23 @@ class DatePickerDialog extends React.Component {
       return null;
     }
     return (<Modal
-        transparent={true}
-        visible={this.state.visible}
-      >
-        <View style={styles.container}>
-          <View style={styles.dialogContainer}>
-            <DatePickerIOS mode="date" date={this.state.currentDate} onDateChange={(date) => this.setState({currentDate: date})}/>
-            <View style={styles.buttonContainer}>
-              <View style={styles.button}>
-                <Button title="ok" onPress={() => this.onOK()}/>
-              </View>
-              <View style={styles.button}>
-                <Button title="cancel" onPress={() => this.onCancel()}/>
-              </View>
+      transparent
+      visible={this.state.visible}
+    >
+      <View style={styles.container}>
+        <View style={styles.dialogContainer}>
+          <DatePickerIOS mode="date" date={this.state.currentDate} onDateChange={date => this.setState({ currentDate: date })} />
+          <View style={styles.buttonContainer}>
+            <View style={styles.button}>
+              <Button title="ok" onPress={() => this.onOK()} />
+            </View>
+            <View style={styles.button}>
+              <Button title="cancel" onPress={() => this.onCancel()} />
             </View>
           </View>
         </View>
-      </Modal>);
+      </View>
+    </Modal>);
   }
 }
 
@@ -91,23 +91,23 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.3)'
+    backgroundColor: 'rgba(0, 0, 0, 0.3)',
   },
   dialogContainer: {
     backgroundColor: 'rgba(255, 255, 255, 0.9)',
     borderRadius: 10,
     width: 300,
     borderWidth: 0.2,
-    borderColor: 'rgba(0, 0, 0, 0.3)'
+    borderColor: 'rgba(0, 0, 0, 0.3)',
   },
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   button: {
-    flex: 1
-  }
+    flex: 1,
+  },
 });
 
 export default DatePickerDialog;

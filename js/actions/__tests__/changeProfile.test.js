@@ -3,8 +3,8 @@ import * as actions from '../changeProfile';
 jest.mock('parse/react-native');
 
 import thunk from 'redux-thunk';
-var promise = require('../../store/promise');
-var array = require('../../store/array');
+const promise = require('../../store/promise');
+const array = require('../../store/array');
 
 import Parse from 'parse/react-native';
 // import FacebookSDK from 'FacebookSDK';
@@ -13,11 +13,11 @@ import configureMockStore from 'redux-mock-store';
 const middlewares = [thunk, promise, array];
 const mockStore = configureMockStore(middlewares);
 
-let pictureObj = {
-  url: () => 'url'
+const pictureObj = {
+  url: () => 'url',
 };
 
-let setSpy = jest.fn(() => Promise.resolve());
+const setSpy = jest.fn(() => Promise.resolve());
 
 Parse.User.logIn.mockImplementation((username) => {
   if (username === 'fail') {
@@ -25,19 +25,17 @@ Parse.User.logIn.mockImplementation((username) => {
   }
   return Promise.resolve();
 });
-Parse.User.currentAsync.mockImplementation(() => {
-  return {
-    get: (f) => {
-      if (f === 'profilePicture' || f === 'profileCover') {
-        return pictureObj;
-      }
-      return 't';
-    },
-    set: setSpy,
-    save: () => Promise.resolve(),
-    fetch: function() { return Promise.resolve(this); }
-  };
-});
+Parse.User.currentAsync.mockImplementation(() => ({
+  get: (f) => {
+    if (f === 'profilePicture' || f === 'profileCover') {
+      return pictureObj;
+    }
+    return 't';
+  },
+  set: setSpy,
+  save: () => Promise.resolve(),
+  fetch() { return Promise.resolve(this); },
+}));
 
 describe('Action changeProfile', () => {
   it('changePublicProfile, dispatch changedPublicProfile, and call api with corrct parameter', async () => {

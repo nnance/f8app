@@ -21,25 +21,25 @@
  *
  * @flow
  */
-'use strict';
+
 
 import ClogiiButton from 'ClogiiButton';
-import {DashButtonWithContainer} from './DashButton';
+import { DashButtonWithContainer } from './DashButton';
 
 import {
   Animated,
   StatusBar,
   View,
-  Image
+  Image,
 } from 'react-native';
 
-var F8Colors = require('F8Colors');
-var React = require('React');
-var StyleSheet = require('StyleSheet');
-var { Text } = require('F8Text');
-var LoginButton = require('../common/LoginButton');
+const F8Colors = require('F8Colors');
+const React = require('React');
+const StyleSheet = require('StyleSheet');
+const { Text } = require('F8Text');
+const LoginButton = require('../common/LoginButton');
 
-var { connect } = require('react-redux');
+const { connect } = require('react-redux');
 
 class IndexScreen extends React.Component {
   constructor(props) {
@@ -58,31 +58,32 @@ class IndexScreen extends React.Component {
     return (
       <Image
         style={styles.container}
-        source={require('./img/bg.png')}>
-        <View style={{flex: 7, alignItems: 'center', justifyContent: 'center'}}>
-          <View style={{flex: 4}}/>
-          <View style={{flex: 3, flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
-            <View style={{flex: 1}}>
+        source={require('./img/bg.png')}
+      >
+        <View style={{ flex: 7, alignItems: 'center', justifyContent: 'center' }}>
+          <View style={{ flex: 4 }} />
+          <View style={{ flex: 3, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+            <View style={{ flex: 1 }}>
               <Image
-                style={{flex: 1, resizeMode: 'contain', width: undefined, height: undefined}}
+                style={{ flex: 1, resizeMode: 'contain', width: undefined, height: undefined }}
                 source={require('./img/header.png')}
               />
             </View>
           </View>
-          <Text style={{flex: 4, fontSize: 12, color: 'white'}}>ที่ที่จักวาลของคุณ จะอยู่ง่าย... แค่ปลายนิ้ว</Text>
+          <Text style={{ flex: 4, fontSize: 12, color: 'white' }}>ที่ที่จักวาลของคุณ จะอยู่ง่าย... แค่ปลายนิ้ว</Text>
         </View>
-        <View style={{flex: 4, alignItems: 'center', justifyContent: 'center'}}>
-          <LoginButton source="First screen" style={styles.button}/>
+        <View style={{ flex: 4, alignItems: 'center', justifyContent: 'center' }}>
+          <LoginButton source="First screen" style={styles.button} />
           <ClogiiButton
             type="bordered"
             style={styles.button}
             onPress={this.props.pushPage.bind(null, 'email-login')}
             caption="ลงชื่อเข้าใช้ผ่านอีเมล"
           />
-        <DashButtonWithContainer caption="สร้างบัญชีใหม่" onPress={this.props.pushPage.bind(null, 'signup')}/>
+          <DashButtonWithContainer caption="สร้างบัญชีใหม่" onPress={this.props.pushPage.bind(null, 'signup')} />
         </View>
-        <View style={{flex: 1, alignItems: 'center', justifyContent: 'flex-end'}}>
-            <Text style={{color: F8Colors.fadedLightText, fontSize: 10}}>By signing up you agree to our Terms & Privacy policy</Text>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-end' }}>
+          <Text style={{ color: F8Colors.fadedLightText, fontSize: 10 }}>By signing up you agree to our Terms & Privacy policy</Text>
         </View>
       </Image>
     );
@@ -110,7 +111,7 @@ var styles = StyleSheet.create({
   button: {
     margin: 10,
     height: 40,
-    width: 250
+    width: 250,
   },
   loginComment: {
     marginBottom: 14,
@@ -128,5 +129,5 @@ var styles = StyleSheet.create({
 
 export default connect()(IndexScreen);
 export {
-  IndexScreen as Component
+  IndexScreen as Component,
 };

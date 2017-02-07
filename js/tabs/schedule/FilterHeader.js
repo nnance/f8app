@@ -22,22 +22,21 @@
  * @flow
  */
 
-'use strict';
 
-var React = require('React');
-var StyleSheet = require('StyleSheet');
+const React = require('React');
+const StyleSheet = require('StyleSheet');
 const Text = require('Text');
 const TouchableOpacity = require('TouchableOpacity');
 const View = require('View');
 const Image = require('Image');
 
 // TODO: Pull redux connection up
-const {connect} = require('react-redux');
-const {clearFilter} = require('../../actions');
+const { connect } = require('react-redux');
+const { clearFilter } = require('../../actions');
 
 class FilterHeader extends React.Component {
   render() {
-    var topics = Object.keys(this.props.filter);
+    const topics = Object.keys(this.props.filter);
     if (topics.length === 0) {
       return null;
     }
@@ -54,7 +53,8 @@ class FilterHeader extends React.Component {
           accessibilityLabel="Clear filter"
           accessibilityTraits="button"
           style={styles.clear}
-          onPress={this.props.onClearFilter}>
+          onPress={this.props.onClearFilter}
+        >
           <Image source={require('../../common/img/x-white.png')} />
         </TouchableOpacity>
       </View>
@@ -82,7 +82,7 @@ var styles = StyleSheet.create({
   },
   filters: {
     color: 'rgba(255, 255, 255, 0.65)',
-  }
+  },
 });
 
 function select(store) {

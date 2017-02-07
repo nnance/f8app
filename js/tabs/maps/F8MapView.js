@@ -22,21 +22,21 @@
  * @providesModule F8MapView
  * @flow
  */
-'use strict';
 
-var ActionSheetIOS = require('ActionSheetIOS');
-var F8Button = require('F8Button');
-var PureListView = require('../../common/PureListView');
-var Linking = require('Linking');
-var Platform = require('Platform');
-var ListContainer = require('ListContainer');
-var MapView = require('../../common/MapView');
-var React = require('React');
-var StyleSheet = require('F8StyleSheet');
-var View = require('View');
-var { connect } = require('react-redux');
 
-var VENUE_ADDRESS = '2 Marina Blvd, San Francisco, CA 94123';
+const ActionSheetIOS = require('ActionSheetIOS');
+const F8Button = require('F8Button');
+const PureListView = require('../../common/PureListView');
+const Linking = require('Linking');
+const Platform = require('Platform');
+const ListContainer = require('ListContainer');
+const MapView = require('../../common/MapView');
+const React = require('React');
+const StyleSheet = require('F8StyleSheet');
+const View = require('View');
+const { connect } = require('react-redux');
+
+const VENUE_ADDRESS = '2 Marina Blvd, San Francisco, CA 94123';
 
 class F8MapView extends React.Component {
   constructor() {
@@ -47,7 +47,7 @@ class F8MapView extends React.Component {
   }
 
   render() {
-    const {map1, map2} = this.props;
+    const { map1, map2 } = this.props;
 
 
     return (
@@ -55,7 +55,8 @@ class F8MapView extends React.Component {
         <ListContainer
           title="Maps"
           backgroundImage={require('./img/maps-background.png')}
-          backgroundColor={'#9176D2'}>
+          backgroundColor={'#9176D2'}
+        >
           <PureListView
             title="Overview"
             renderEmptyList={() => <MapView map={map1} />}
@@ -85,26 +86,26 @@ class F8MapView extends React.Component {
           destructiveButtonIndex: -1,
           cancelButtonIndex: 2,
         },
-        this.openMaps
+        this.openMaps,
       );
     } else if (Platform.OS === 'android') {
-      var address = encodeURIComponent(VENUE_ADDRESS);
-      Linking.openURL('http://maps.google.com/maps?&q=' + address);
+      const address = encodeURIComponent(VENUE_ADDRESS);
+      Linking.openURL(`http://maps.google.com/maps?&q=${address}`);
     }
   }
 
   openMaps(option) {
-    var address = encodeURIComponent(VENUE_ADDRESS);
+    const address = encodeURIComponent(VENUE_ADDRESS);
     switch (option) {
       case 0:
-        Linking.openURL('http://maps.apple.com/?q=' + address);
+        Linking.openURL(`http://maps.apple.com/?q=${address}`);
         break;
 
       case 1:
-        var nativeGoogleUrl = 'comgooglemaps-x-callback://?q=' +
-          address + '&x-success=f8://&x-source=F8';
+        var nativeGoogleUrl = `comgooglemaps-x-callback://?q=${
+          address}&x-success=f8://&x-source=F8`;
         Linking.canOpenURL(nativeGoogleUrl).then((supported) => {
-          var url = supported ? nativeGoogleUrl : 'http://maps.google.com/?q=' + address;
+          const url = supported ? nativeGoogleUrl : `http://maps.google.com/?q=${address}`;
           Linking.openURL(url);
         });
         break;
@@ -134,8 +135,8 @@ var styles = StyleSheet.create({
 
 function select(store) {
   return {
-    map1: store.maps.find((map) => map.name === 'Overview'),
-    map2: store.maps.find((map) => map.name === 'Developer Garage'),
+    map1: store.maps.find(map => map.name === 'Overview'),
+    map2: store.maps.find(map => map.name === 'Developer Garage'),
   };
 }
 

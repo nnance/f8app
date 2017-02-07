@@ -23,30 +23,29 @@
  * @providesModule F8TabsView
  */
 
-'use strict';
 
-var F8InfoView = require('F8InfoView');
-var F8Colors = require('F8Colors');
-var F8NotificationsView = require('F8NotificationsView');
-var React = require('React');
-var Navigator = require('Navigator');
-var F8DrawerLayout = require('F8DrawerLayout');
-var View = require('View');
-var StyleSheet = require('StyleSheet');
-var TouchableOpacity = require('TouchableOpacity');
-var Image = require('Image');
-var { Text } = require('F8Text');
-var MenuItem = require('./MenuItem');
-var LoginButton = require('../common/LoginButton');
-var ProfilePicture = require('../common/ProfilePicture');
-var GeneralScheduleView = require('./schedule/GeneralScheduleView');
-var MyScheduleView = require('./schedule/MyScheduleView');
-var unseenNotificationsCount = require('./notifications/unseenNotificationsCount');
+const F8InfoView = require('F8InfoView');
+const F8Colors = require('F8Colors');
+const F8NotificationsView = require('F8NotificationsView');
+const React = require('React');
+const Navigator = require('Navigator');
+const F8DrawerLayout = require('F8DrawerLayout');
+const View = require('View');
+const StyleSheet = require('StyleSheet');
+const TouchableOpacity = require('TouchableOpacity');
+const Image = require('Image');
+const { Text } = require('F8Text');
+const MenuItem = require('./MenuItem');
+const LoginButton = require('../common/LoginButton');
+const ProfilePicture = require('../common/ProfilePicture');
+const GeneralScheduleView = require('./schedule/GeneralScheduleView');
+const MyScheduleView = require('./schedule/MyScheduleView');
+const unseenNotificationsCount = require('./notifications/unseenNotificationsCount');
 
-var { switchTab, logOutWithPrompt } = require('../actions');
-var { connect } = require('react-redux');
+const { switchTab, logOutWithPrompt } = require('../actions');
+const { connect } = require('react-redux');
 
-import type {Tab} from '../reducers/navigation';
+import type { Tab } from '../reducers/navigation';
 import ProfileScreen from './profile/containers/ProfileScreen';
 
 class F8TabsView extends React.Component {
@@ -84,20 +83,22 @@ class F8TabsView extends React.Component {
 
   openProfileSettings() {
     this.refs.drawer.closeDrawer();
-    this.props.navigator.push({shareSettings: true});
+    this.props.navigator.push({ shareSettings: true });
   }
 
   renderNavigationView() {
-    var scheduleIcon = this.props.day === 1
+    const scheduleIcon = this.props.day === 1
       ? require('./schedule/img/schedule-icon-1.png')
       : require('./schedule/img/schedule-icon-2.png');
-    var scheduleIconSelected = this.props.day === 1
+    const scheduleIconSelected = this.props.day === 1
       ? require('./schedule/img/schedule-icon-1-active.png')
       : require('./schedule/img/schedule-icon-2-active.png');
-    var accountItem, myF8Item, loginItem;
+    let accountItem,
+      myF8Item,
+      loginItem;
 
     if (this.props.user.isLoggedIn) {
-      var name = this.props.user.name || '';
+      const name = this.props.user.name || '';
       accountItem = (
         <View>
           <TouchableOpacity onPress={this.openProfileSettings}>
@@ -131,7 +132,7 @@ class F8TabsView extends React.Component {
           <Text style={styles.loginText}>
             Log in to find your friends at F8.
           </Text>
-          <Text style={styles.loginText} onPress={() => this.props.navigator.push({logInWithEmail: 1})}>
+          <Text style={styles.loginText} onPress={() => this.props.navigator.push({ logInWithEmail: 1 })}>
             or with Email
           </Text>
           <LoginButton source="Drawer" />
@@ -142,7 +143,8 @@ class F8TabsView extends React.Component {
       <View style={styles.drawer}>
         <Image
           style={styles.header}
-          source={require('./img/drawer-header.png')}>
+          source={require('./img/drawer-header.png')}
+        >
           {accountItem}
         </Image>
         <MenuItem
@@ -215,7 +217,8 @@ class F8TabsView extends React.Component {
         ref="drawer"
         drawerWidth={290}
         drawerPosition="left"
-        renderNavigationView={this.renderNavigationView}>
+        renderNavigationView={this.renderNavigationView}
+      >
         <View style={styles.content} key={this.props.tab}>
           {this.renderContent()}
         </View>
@@ -240,8 +243,8 @@ function select(store) {
 
 function actions(dispatch) {
   return {
-    onTabSelect: (tab) => dispatch(switchTab(tab)),
-    logOut: () => dispatch(logOutWithPrompt())
+    onTabSelect: tab => dispatch(switchTab(tab)),
+    logOut: () => dispatch(logOutWithPrompt()),
   };
 }
 

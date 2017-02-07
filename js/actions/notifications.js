@@ -22,7 +22,6 @@
  * @flow
  */
 
-'use strict';
 
 const Platform = require('Platform');
 const VibrationIOS = require('VibrationIOS');
@@ -36,7 +35,6 @@ import gql from 'graphql-tag';
 import apollo from '../store/apollo';
 
 import loadApolloQuery from './apollo';
-
 
 
 type PushNotification = {
@@ -86,7 +84,7 @@ function skipPushNotifications(): Action {
 
 function receivePushNotification(notification: PushNotification): ThunkAction {
   return (dispatch) => {
-    const {foreground, message } = notification;
+    const { foreground, message } = notification;
     const data = normalizeData(notification.data);
 
     if (!foreground) {
@@ -138,7 +136,7 @@ function loadNotifications() : ThunkAction {
         }
       }
     `,
-    forceFetch: false
+    forceFetch: false,
   });
 
   return loadApolloQuery('LOADED_NOTIFICATIONS', query);

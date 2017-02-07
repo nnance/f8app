@@ -22,16 +22,15 @@
  * @flow
  */
 
-'use strict';
 
-var Image = require('Image');
+const Image = require('Image');
 import LinearGradient from 'react-native-linear-gradient';
-var React = require('React');
-var StyleSheet = require('StyleSheet');
-var { Text } = require('F8Text');
-var TouchableOpacity = require('TouchableOpacity');
-var View = require('View');
-var Animated = require('Animated');
+const React = require('React');
+const StyleSheet = require('StyleSheet');
+const { Text } = require('F8Text');
+const TouchableOpacity = require('TouchableOpacity');
+const View = require('View');
+const Animated = require('Animated');
 
 type Props = {
   isAdded: boolean;
@@ -112,13 +111,15 @@ class AddToScheduleButton extends React.Component {
         accessibilityTraits="button"
         onPress={this.props.onPress}
         activeOpacity={0.9}
-        style={[styles.container, this.props.style]}>
+        style={[styles.container, this.props.style]}
+      >
         <LinearGradient
-          start={{x: 0.5, y: 1}} end={{x: 1, y: 1}}
+          start={{ x: 0.5, y: 1 }} end={{ x: 1, y: 1 }}
           colors={colors}
           collapsable={false}
-          style={styles.button}>
-          <View style={{flex: 1}}>
+          style={styles.button}
+        >
+          <View style={{ flex: 1 }}>
             <View style={styles.content} collapsable={false}>
               <Animated.Image
                 source={this.props.addedImageSource || require('./img/added.png')}
@@ -146,7 +147,7 @@ class AddToScheduleButton extends React.Component {
   componentWillReceiveProps(nextProps: Props) {
     if (this.props.isAdded !== nextProps.isAdded) {
       const toValue = nextProps.isAdded ? 1 : 0;
-      Animated.spring(this.state.anim, {toValue}).start();
+      Animated.spring(this.state.anim, { toValue }).start();
     }
   }
 }

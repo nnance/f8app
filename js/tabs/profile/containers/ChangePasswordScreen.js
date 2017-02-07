@@ -3,19 +3,19 @@ import {
   View,
   Text,
   TextInput,
-  StyleSheet
+  StyleSheet,
 } from 'react-native';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 import F8Button from 'F8Button';
 
 import SecureContainer from '../components/SecureContainer';
 import NavBar from '../components/NavBar';
 
-import {styles as commonStyles} from '../common';
-import {colors as commonColors} from '../../../common/styles';
+import { styles as commonStyles } from '../common';
+import { colors as commonColors } from '../../../common/styles';
 
-import {changePassword} from '../../../actions/changeProfile';
+import { changePassword } from '../../../actions/changeProfile';
 import ModalSpinner from '../../../common/ModalSpinner';
 
 class ChangePasswordScreen extends React.Component {
@@ -25,17 +25,17 @@ class ChangePasswordScreen extends React.Component {
       password: '',
       confirmPassword: '',
       error: null,
-      saving: false
+      saving: false,
     };
   }
 
   render() {
     return (<View style={styles.container}>
-      <ModalSpinner visible={this.state.saving}/>
+      <ModalSpinner visible={this.state.saving} />
       <NavBar
         title="เปลี่ยน Password"
         onBackPress={this.props.onBackPress}
-        />
+      />
       <SecureContainer onCheck={() => Promise.resolve()}>
         <View>
           <View style={styles.editorContainer}>
@@ -44,13 +44,14 @@ class ChangePasswordScreen extends React.Component {
                 <Text>New password</Text>
               </View>
               <View style={commonStyles.inputContainer}>
-                <TextInput style={{flex: 1, height: 40}}
+                <TextInput
+                  style={{ flex: 1, height: 40 }}
                   placeholder="password"
                   autoCapitalize="none"
                   value={this.state.password || ''}
-                  secureTextEntry={true}
-                  onChangeText={(password) => this.setState({password})}
-                  />
+                  secureTextEntry
+                  onChangeText={password => this.setState({ password })}
+                />
               </View>
             </View>
             <View style={commonStyles.row}>
@@ -58,20 +59,21 @@ class ChangePasswordScreen extends React.Component {
                 <Text>Confirm password</Text>
               </View>
               <View style={commonStyles.inputContainer}>
-                <TextInput style={{flex: 1, height: 40}}
+                <TextInput
+                  style={{ flex: 1, height: 40 }}
                   placeholder="confirm password"
                   autoCapitalize="none"
                   value={this.state.confirmPassword || ''}
-                  secureTextEntry={true}
-                  onChangeText={(confirmPassword) => this.setState({confirmPassword})}
-                  />
+                  secureTextEntry
+                  onChangeText={confirmPassword => this.setState({ confirmPassword })}
+                />
               </View>
             </View>
           </View>
           <View style={commonStyles.errorContainer}>
             <Text style={commonStyles.errorText}>{this.state.error}</Text>
           </View>
-          <F8Button style={styles.button} caption="เปลี่ยน Password" onPress={() => this.onChangePassword()}/>
+          <F8Button style={styles.button} caption="เปลี่ยน Password" onPress={() => this.onChangePassword()} />
         </View>
       </SecureContainer>
     </View>);
@@ -82,24 +84,24 @@ class ChangePasswordScreen extends React.Component {
     const confirmPassword = this.state.confirmPassword;
     this.setState({
       error: null,
-      saving: true
+      saving: true,
     });
     if (password !== confirmPassword) {
       this.setState({
         error: 'password not match',
-        saving: false
+        saving: false,
       });
       return Promise.resolve();
     }
     return this.props.changePassword(password).then(() => {
       this.setState({
-        saving: false
+        saving: false,
       });
       this.props.onBackPress && this.props.onBackPress();
-    }).catch(error => {
+    }).catch((error) => {
       this.setState({
         saving: false,
-        error: error.message
+        error: error.message,
       });
     });
   }
@@ -108,22 +110,22 @@ class ChangePasswordScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: commonColors.greyBackground
+    backgroundColor: commonColors.greyBackground,
   },
   editorContainer: {
     backgroundColor: 'white',
-    marginTop: 10
+    marginTop: 10,
   },
   button: {
-    margin: 50
-  }
+    margin: 50,
+  },
 });
 
 const actionsMaping = {
-  changePassword
+  changePassword,
 };
 
 export default connect(null, actionsMaping)(ChangePasswordScreen);
 export {
-  ChangePasswordScreen as Component
+  ChangePasswordScreen as Component,
 };

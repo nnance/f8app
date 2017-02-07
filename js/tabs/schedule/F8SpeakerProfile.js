@@ -23,28 +23,27 @@
  * @providesModule F8SpeakerProfile
  */
 
-'use strict';
 
-var F8Colors = require('F8Colors');
-var Image = require('Image');
-var React = require('React');
-var StyleSheet = require('StyleSheet');
-var { Text } = require('F8Text');
-var View = require('View');
+const F8Colors = require('F8Colors');
+const Image = require('Image');
+const React = require('React');
+const StyleSheet = require('StyleSheet');
+const { Text } = require('F8Text');
+const View = require('View');
 
-var F8SpeakerProfile = React.createClass({
-  render: function() {
-    var speaker = this.props.speaker;
+const F8SpeakerProfile = React.createClass({
+  render() {
+    const speaker = this.props.speaker;
     return (
       <View style={styles.row}>
-        <Image style={styles.picture} source={{uri: speaker.pic}} />
+        <Image style={styles.picture} source={{ uri: speaker.pic }} />
         <View style={styles.info}>
           <Text style={styles.name}>{speaker.name}</Text>
           <Text style={styles.title}>{speaker.title}</Text>
         </View>
       </View>
     );
-  }
+  },
 });
 
 const SIZE = 76;

@@ -21,22 +21,22 @@
  *
  * @flow
  */
-'use strict';
 
-var F8Colors = require('F8Colors');
-var React = require('React');
-var StyleSheet = require('StyleSheet');
-var { Text } = require('F8Text');
-var TouchableOpacity = require('TouchableOpacity');
-var View = require('View');
-var Image = require('Image');
+
+const F8Colors = require('F8Colors');
+const React = require('React');
+const StyleSheet = require('StyleSheet');
+const { Text } = require('F8Text');
+const TouchableOpacity = require('TouchableOpacity');
+const View = require('View');
+const Image = require('Image');
 
 type Props = {
   numberOfSessions: number;
   onPress: () => void;
 };
 
-function RateSessionsCell({numberOfSessions, onPress}: Props) {
+function RateSessionsCell({ numberOfSessions, onPress }: Props) {
   const pluralSuffix = numberOfSessions === 1 ? '' : 's';
   return (
     <View style={styles.cell}>

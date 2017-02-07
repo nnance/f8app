@@ -22,16 +22,15 @@
  * @flow
  */
 
-'use strict';
 
-var React = require('React');
-var StyleSheet = require('StyleSheet');
-var { Text } = require('F8Text');
-var View = require('View');
+const React = require('React');
+const StyleSheet = require('StyleSheet');
+const { Text } = require('F8Text');
+const View = require('View');
 
 class Section extends React.Component {
   render() {
-    var {children, title} = this.props;
+    const { children, title } = this.props;
     if (React.Children.count(children) === 0) {
       return null;
     }

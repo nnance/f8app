@@ -5,7 +5,7 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
-  RefreshControl
+  RefreshControl,
 } from 'react-native';
 import FixBugScrollView from '../../../common/FixBugScrollView';
 import NavBar from './NavBar';
@@ -14,36 +14,36 @@ import data from '../data';
 
 class FeedHome extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      data: data,
-      isRefreshing: false
-    }
+      data,
+      isRefreshing: false,
+    };
   }
 
   // Pull to refresh handler
   _onRefresh = () => {
-    this.setState({isRefreshing: true})
+    this.setState({ isRefreshing: true });
     setTimeout(() => {
       console.log('Feeds loading....');
-      this.setState({isRefreshing: false})
-    }, 3000)
+      this.setState({ isRefreshing: false });
+    }, 3000);
   }
 
   render() {
     return (
-      <View style={{flex: 1, backgroundColor: '#F0F0F0'}}>
+      <View style={{ flex: 1, backgroundColor: '#F0F0F0' }}>
         <NavBar
           renderRightMenu={() => (
-              <TouchableOpacity style={{zIndex: 3}}><Image style={{height: 20, resizeMode: 'contain'}} source={require('../img/search.png')}/></TouchableOpacity>
+            <TouchableOpacity style={{ zIndex: 3 }}><Image style={{ height: 20, resizeMode: 'contain' }} source={require('../img/search.png')} /></TouchableOpacity>
             )}
           renderTitle={() => (
-              <Image style={{width: 80, height: 30, resizeMode: 'contain'}} source={require('../img/title.png')}/>
+            <Image style={{ width: 80, height: 30, resizeMode: 'contain' }} source={require('../img/title.png')} />
             )}
           titleStyle={{
-              flex: 1,
-              alignItems: 'flex-start'
-            }}
+            flex: 1,
+            alignItems: 'flex-start',
+          }}
         />
         <FixBugScrollView
           refreshControl={
@@ -53,16 +53,17 @@ class FeedHome extends React.Component {
               tintColor="#ff0000"
               title="..."
               titleColor="#000"
-              />
-          }>
-          <View style={{backgroundColor: '#7d7d7d'}}>
-            <FeedList data={this.state.data} goToBook={this.props.goToBook} navigator={this.props.navigator}/>
+            />
+          }
+        >
+          <View style={{ backgroundColor: '#7d7d7d' }}>
+            <FeedList data={this.state.data} goToBook={this.props.goToBook} navigator={this.props.navigator} />
           </View>
         </FixBugScrollView>
 
       </View>
-    )
+    );
   }
 }
 
-export default FeedHome
+export default FeedHome;

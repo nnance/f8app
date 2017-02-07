@@ -21,14 +21,14 @@
  *
  * @flow
  */
-'use strict';
 
-import type {Session} from '../../reducers/sessions';
+
+import type { Session } from '../../reducers/sessions';
 
 type StringMap = {[key: string]: boolean};
 
 function byDay(sessions: Array<Session>, day: number): Array<Session> {
-  return sessions.filter((session) => session.day === day);
+  return sessions.filter(session => session.day === day);
 }
 
 function byTopics(sessions: Array<Session>, topics: StringMap): Array<Session> {
@@ -36,7 +36,7 @@ function byTopics(sessions: Array<Session>, topics: StringMap): Array<Session> {
     return sessions;
   }
   return sessions.filter((session) => {
-    var hasMatchingTag = false;
+    let hasMatchingTag = false;
     session.tags.forEach((tag) => {
       hasMatchingTag = hasMatchingTag || topics[tag];
     });
@@ -46,8 +46,8 @@ function byTopics(sessions: Array<Session>, topics: StringMap): Array<Session> {
 
 function bySchedule(sessions: Array<Session>, schedule: StringMap): Array<Session> {
   return sessions.filter(
-    (session) => schedule[session.id]
+    session => schedule[session.id],
   );
 }
 
-module.exports = {byDay, byTopics, bySchedule};
+module.exports = { byDay, byTopics, bySchedule };

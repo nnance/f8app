@@ -21,21 +21,21 @@
  *
  * @flow
  */
-'use strict';
 
-var ItemsWithSeparator = require('../../common/ItemsWithSeparator');
-var LayoutAnimation = require('LayoutAnimation');
-var React = require('React');
-var Section = require('./Section');
-var StyleSheet = require('StyleSheet');
-var { Text } = require('F8Text');
-var F8Touchable = require('F8Touchable');
-var View = require('View');
+
+const ItemsWithSeparator = require('../../common/ItemsWithSeparator');
+const LayoutAnimation = require('LayoutAnimation');
+const React = require('React');
+const Section = require('./Section');
+const StyleSheet = require('StyleSheet');
+const { Text } = require('F8Text');
+const F8Touchable = require('F8Touchable');
+const View = require('View');
 
 class CommonQuestions extends React.Component {
   render() {
-    let content = this.props.faqs.map(({question, answer}) =>
-      (<Row question={question} answer={answer} key={question} />)
+    const content = this.props.faqs.map(({ question, answer }) =>
+      (<Row question={question} answer={answer} key={question} />),
     );
     return (
       <Section title="Common questions">
@@ -63,7 +63,7 @@ class Row extends React.Component {
   }
 
   render() {
-    var answer;
+    let answer;
     if (this.state.expanded) {
       answer = (
         <View style={styles.answer}>
@@ -92,7 +92,7 @@ class Row extends React.Component {
 
   toggle() {
     LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
-    this.setState({expanded: !this.state.expanded});
+    this.setState({ expanded: !this.state.expanded });
   }
 }
 

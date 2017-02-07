@@ -22,25 +22,25 @@
  * @providesModule F8PageControl
  * @flow
  */
-'use strict';
 
-var React = require('React');
-var StyleSheet = require('StyleSheet');
-var View = require('View');
 
-var PropTypes = React.PropTypes;
+const React = require('React');
+const StyleSheet = require('StyleSheet');
+const View = require('View');
 
-var F8PageControl = React.createClass({
+const PropTypes = React.PropTypes;
+
+const F8PageControl = React.createClass({
   propTypes: {
     style: View.propTypes.style,
     count: PropTypes.number.isRequired,
     selectedIndex: PropTypes.number.isRequired,
   },
 
-  render: function() {
-    var images = [];
-    for (var i = 0; i < this.props.count; i++) {
-      var isSelected = this.props.selectedIndex === i;
+  render() {
+    const images = [];
+    for (let i = 0; i < this.props.count; i++) {
+      const isSelected = this.props.selectedIndex === i;
       images.push(<Circle key={i} isSelected={isSelected} />);
     }
     return (
@@ -50,17 +50,17 @@ var F8PageControl = React.createClass({
         </View>
       </View>
     );
-  }
+  },
 });
 
-var Circle = React.createClass({
-  render: function() {
-    var extraStyle = this.props.isSelected ? styles.full : styles.empty;
+const Circle = React.createClass({
+  render() {
+    const extraStyle = this.props.isSelected ? styles.full : styles.empty;
     return <View style={[styles.circle, extraStyle]} />;
-  }
+  },
 });
 
-var CIRCLE_SIZE = 4;
+const CIRCLE_SIZE = 4;
 
 var styles = StyleSheet.create({
   container: {

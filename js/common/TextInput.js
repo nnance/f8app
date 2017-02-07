@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  TextInput
+  TextInput,
 } from 'react-native';
 
-export default (props) => <TextInput underlineColorAndroid="transparent" {...props}/>;
+export default props => <TextInput underlineColorAndroid="transparent" {...props} />;

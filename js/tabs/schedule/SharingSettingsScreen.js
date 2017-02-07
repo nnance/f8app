@@ -21,27 +21,27 @@
  *
  * @flow
  */
-'use strict';
 
-var F8Colors = require('F8Colors');
-var React = require('React');
-var StyleSheet = require('StyleSheet');
-var { Text } = require('F8Text');
-var FriendsUsingApp = require('./FriendsUsingApp');
-var Navigator = require('Navigator');
-var Switch = require('Switch');
-var View = require('View');
-var F8Header = require('F8Header');
-var StatusBar = require('StatusBar');
-var SharingSettingsCommon = require('./SharingSettingsCommon');
 
-var { setSharingEnabled, logOutWithPrompt } = require('../../actions');
-var { connect } = require('react-redux');
+const F8Colors = require('F8Colors');
+const React = require('React');
+const StyleSheet = require('StyleSheet');
+const { Text } = require('F8Text');
+const FriendsUsingApp = require('./FriendsUsingApp');
+const Navigator = require('Navigator');
+const Switch = require('Switch');
+const View = require('View');
+const F8Header = require('F8Header');
+const StatusBar = require('StatusBar');
+const SharingSettingsCommon = require('./SharingSettingsCommon');
 
-import type {State as User} from '../../reducers/user';
+const { setSharingEnabled, logOutWithPrompt } = require('../../actions');
+const { connect } = require('react-redux');
+
+import type { State as User } from '../../reducers/user';
 
 import F8Button from 'F8Button';
-import {linkFacebook, unlinkFacebook} from '../../actions';
+import { linkFacebook, unlinkFacebook } from '../../actions';
 
 class SharingSettingsScreen extends React.Component {
   props: {
@@ -55,16 +55,16 @@ class SharingSettingsScreen extends React.Component {
     return (
       <View style={styles.container}>
         <StatusBar
-          translucent={true}
+          translucent
           backgroundColor="rgba(0, 0, 0, 0.2)"
           barStyle="default"
-         />
+        />
         <SharingSettingsCommon />
         <View>
-        {
+          {
           this.props.user && !this.props.user.id ?
-          <F8Button caption="Link facebook" onPress={() => this.props.dispatch(linkFacebook())}/> :
-          <F8Button caption="Unlink facebook" onPress={() => this.props.dispatch(unlinkFacebook())}/>
+            <F8Button caption="Link facebook" onPress={() => this.props.dispatch(linkFacebook())} /> :
+            <F8Button caption="Unlink facebook" onPress={() => this.props.dispatch(unlinkFacebook())} />
         }
         </View>
         <View style={styles.switchWrapper}>
@@ -75,7 +75,7 @@ class SharingSettingsScreen extends React.Component {
             accessibilityLabel="Let friends view your schedule"
             style={styles.switch}
             value={!!this.props.sharedSchedule}
-            onValueChange={(enabled) => this.props.dispatch(setSharingEnabled(enabled))}
+            onValueChange={enabled => this.props.dispatch(setSharingEnabled(enabled))}
             onTintColor="#00E3AD"
           />
           <Text style={styles.option}>

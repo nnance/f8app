@@ -22,7 +22,6 @@
  * @flow
  */
 
-'use strict';
 
 import type { Action } from './types';
 
@@ -41,4 +40,4 @@ function clearFilter(): Action {
   };
 }
 
-module.exports = {applyTopicsFilter, clearFilter};
+module.exports = { applyTopicsFilter, clearFilter };

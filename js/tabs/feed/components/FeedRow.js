@@ -5,7 +5,7 @@ import {
   StyleSheet,
   Image,
   Text,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   },
   text: {
     marginLeft: 12,
-    fontSize: 16
+    fontSize: 16,
   },
   photo: {
     width: 40,
@@ -37,42 +37,44 @@ const styles = StyleSheet.create({
     width: 85,
     height: 85,
     borderRadius: 40,
-  }
+  },
 });
 
 class EditorAcivity extends React.Component {
   render() {
-    let now = Date.now();
-    let timeAdded = new Date(this.props.activity.time)
-    let diffMins = Math.round((((now - timeAdded) % 86400000) % 3600000) / 60000);
+    const now = Date.now();
+    const timeAdded = new Date(this.props.activity.time);
+    const diffMins = Math.round((((now - timeAdded) % 86400000) % 3600000) / 60000);
     return (
       <View style={styles.container}>
         <View style={styles.containerProfile}>
-          <Image style={styles.photo} source={{ uri: this.props.picture.large}}/>
-          <Text style={{marginLeft: 12, fontWeight: 'bold', fontSize: 16}}>
+          <Image style={styles.photo} source={{ uri: this.props.picture.large }} />
+          <Text style={{ marginLeft: 12, fontWeight: 'bold', fontSize: 16 }}>
             {`${this.props.name.first} ${this.props.name.last} `}
             {
               this.props.clogs.length === 1 ?
-                <Text style={{fontSize: 12, fontWeight: 'normal'}}>{`${this.props.activity.action} `}<Text
-                  style={{fontSize: 16, fontWeight: 'bold'}}>{this.props.clogs[0].title}</Text></Text>
+                <Text style={{ fontSize: 12, fontWeight: 'normal' }}>{`${this.props.activity.action} `}<Text
+                  style={{ fontSize: 16, fontWeight: 'bold' }}
+                >{this.props.clogs[0].title}</Text></Text>
                 : <Text
-                  style={{fontSize: 12, fontWeight: 'normal'}}>{`${this.props.activity.action} ${this.props.clogs.length} ${this.props.activity.type}`}</Text>
+                  style={{ fontSize: 12, fontWeight: 'normal' }}
+                >{`${this.props.activity.action} ${this.props.clogs.length} ${this.props.activity.type}`}</Text>
             }
           </Text>
-          <Text style={{fontSize: 12, color: '#dfdfdf'}}> {diffMins} min ago</Text>
+          <Text style={{ fontSize: 12, color: '#dfdfdf' }}> {diffMins} min ago</Text>
         </View>
       </View>
-    )
+    );
   }
 }
 
 class FeedRow extends React.Component {
   constructor(props) {
     super(props);
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
     this.state = {
-      dataSource: ds.cloneWithRows(props.clogs)
-    }
+      dataSource: ds.cloneWithRows(props.clogs),
+    };
   }
 
   render() {
@@ -85,55 +87,55 @@ class FeedRow extends React.Component {
           {
             this.props.clogs.length > 1 ?
               <ListView
-                horizontal={true}
+                horizontal
                 showsHorizontalScrollIndicator={false}
                 dataSource={this.state.dataSource}
-                renderRow={(data) => <ClogList goToBook={this.props.goToBook} {...data} />}
-                renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} /> }
+                renderRow={data => <ClogList goToBook={this.props.goToBook} {...data} />}
+                renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
               /> :
-              <Clog clog={this.props.clogs[0]} goToBook={this.props.goToBook}/>
+              <Clog clog={this.props.clogs[0]} goToBook={this.props.goToBook} />
           }
         </View>
       </View>
-    )
+    );
   }
 }
 
 class Clog extends React.Component {
   render() {
-    const {clog, goToBook} = this.props
+    const { clog, goToBook } = this.props;
     return (
       <View style={styles.container}>
         <TouchableOpacity onPress={() => goToBook(1)}>
-          <Image style={styles.photoClog} source={{ uri: clog.picture.thumbnail}}/>
-          <Text style={{fontWeight: 'bold'}}>
+          <Image style={styles.photoClog} source={{ uri: clog.picture.thumbnail }} />
+          <Text style={{ fontWeight: 'bold' }}>
             {`${clog.title}`}
           </Text>
-          <Text numberOfLines={2} style={{lineHeight: 12}}>
+          <Text numberOfLines={2} style={{ lineHeight: 12 }}>
             {`${clog.review}`}
           </Text>
         </TouchableOpacity>
       </View>
-    )
+    );
   }
 }
 
 class ClogList extends React.Component {
   render() {
-    const {picture, title, author, goToBook} = this.props
+    const { picture, title, author, goToBook } = this.props;
     return (
       <View style={styles.container}>
         <TouchableOpacity onPress={() => goToBook(1)}>
-          <Image style={styles.photoClogList} source={{ uri: picture.thumbnail }}/>
-          <Text style={{fontWeight: 'bold', marginTop: 5}}>
+          <Image style={styles.photoClogList} source={{ uri: picture.thumbnail }} />
+          <Text style={{ fontWeight: 'bold', marginTop: 5 }}>
             {`${title}`}
           </Text>
-          <Text style={{fontSize: 12}}>
+          <Text style={{ fontSize: 12 }}>
             {`${author.name}`}
           </Text>
         </TouchableOpacity>
       </View>
-    )
+    );
   }
 }
 

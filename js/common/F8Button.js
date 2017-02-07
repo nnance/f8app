@@ -23,16 +23,15 @@
  * @flow
  */
 
-'use strict';
 
-var F8Colors = require('F8Colors');
-var Image = require('Image');
+const F8Colors = require('F8Colors');
+const Image = require('Image');
 import LinearGradient from 'react-native-linear-gradient';
-var React = require('React');
-var StyleSheet = require('StyleSheet');
-var { Text } = require('F8Text');
-var TouchableOpacity = require('TouchableOpacity');
-var View = require('View');
+const React = require('React');
+const StyleSheet = require('StyleSheet');
+const { Text } = require('F8Text');
+const TouchableOpacity = require('TouchableOpacity');
+const View = require('View');
 
 class F8Button extends React.Component {
   props: {
@@ -53,9 +52,10 @@ class F8Button extends React.Component {
     if (this.props.type === 'primary' || this.props.type === undefined) {
       content = (
         <LinearGradient
-          start={{x: 0.5, y: 1}} end={{x: 1, y: 1}}
+          start={{ x: 0.5, y: 1 }} end={{ x: 1, y: 1 }}
           colors={['#6A6AD5', '#6F86D9']}
-          style={[styles.button, styles.primaryButton]}>
+          style={[styles.button, styles.primaryButton]}
+        >
           {icon}
           <Text style={[styles.caption, styles.primaryCaption]}>
             {caption}
@@ -63,7 +63,7 @@ class F8Button extends React.Component {
         </LinearGradient>
       );
     } else {
-      var border = this.props.type === 'bordered' && styles.border;
+      const border = this.props.type === 'bordered' && styles.border;
       content = (
         <View style={[styles.button, border]}>
           {icon}
@@ -78,7 +78,8 @@ class F8Button extends React.Component {
         accessibilityTraits="button"
         onPress={this.props.onPress}
         activeOpacity={0.8}
-        style={[styles.container, this.props.style]}>
+        style={[styles.container, this.props.style]}
+      >
         {content}
       </TouchableOpacity>
     );
@@ -121,7 +122,7 @@ var styles = StyleSheet.create({
   },
   secondaryCaption: {
     color: F8Colors.lightText,
-  }
+  },
 });
 
 module.exports = F8Button;

@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   Navigator,
-  Text
+  Text,
 } from 'react-native';
 
 import Home from '../containers/Home';
@@ -18,7 +18,7 @@ class ShelfNavigator extends React.Component {
     return (
       <FixBugScrollViewNavigator
         ref="navigator"
-        initialRoute={{page: 'home'}}
+        initialRoute={{ page: 'home' }}
         renderScene={this.renderScene.bind(this)}
       />
     );
@@ -26,33 +26,35 @@ class ShelfNavigator extends React.Component {
 
   renderScene(route, navigator) {
     if (!route) {
-      return <NotFound/>;
+      return <NotFound />;
     }
     if (route.page === 'home') {
-      return <Home
+      return (<Home
         onOpenShelfMenu={this.props.onOpenShelfMenu}
         goToBook={this.props.goToBook}
         goToClogCategory={this.goToClogCategory.bind(this)}
         goToClogListView={this.goToClogListView.bind(this)}
-        />;
+      />);
     }
     if (route.page === 'clog-category') {
-      return <ClogCategory
+      return (<ClogCategory
         onBackPress={this.goBack.bind(this)}
         goToBook={this.props.goToBook}
         goToClogListView={this.goToClogListView.bind(this)}
-        category={route.category}/>;
+        category={route.category}
+      />);
     }
     if (route.page === 'clog-list-view') {
-      return <ClogListView
+      return (<ClogListView
         onBackPress={this.goBack.bind(this)}
         title={route.title}
         category={route.category}
         orderBy={route.orderBy}
         goToBook={this.props.goToBook}
-        tag={route.tag}/>;
+        tag={route.tag}
+      />);
     }
-    return <NotFound/>;
+    return <NotFound />;
   }
 
   goBack() {
@@ -60,11 +62,11 @@ class ShelfNavigator extends React.Component {
   }
 
   goToClogCategory(category) {
-    this.refs.navigator.push({page: 'clog-category', category});
+    this.refs.navigator.push({ page: 'clog-category', category });
   }
 
   goToClogListView(options) {
-    this.refs.navigator.push({page: 'clog-list-view', ...options});
+    this.refs.navigator.push({ page: 'clog-list-view', ...options });
   }
 }
 

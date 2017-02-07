@@ -21,14 +21,14 @@
  *
  * @flow
  */
-'use strict';
+
 
 const React = require('react');
 const F8Header = require('F8Header');
 const F8Colors = require('F8Colors');
 const TopicItem = require('./TopicItem');
 const F8Button = require('F8Button');
-var ItemsWithSeparator = require('../common/ItemsWithSeparator');
+const ItemsWithSeparator = require('../common/ItemsWithSeparator');
 
 const {
   Animated,
@@ -41,7 +41,7 @@ const shallowEqual = require('fbjs/lib/shallowEqual');
 const {
   applyTopicsFilter,
 } = require('../actions');
-const {connect} = require('react-redux');
+const { connect } = require('react-redux');
 
 class FilterScreen extends React.Component {
   props: {
@@ -60,7 +60,7 @@ class FilterScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTopics: {...this.props.selectedTopics},
+      selectedTopics: { ...this.props.selectedTopics },
       anim: new Animated.Value(0),
     };
 
@@ -71,7 +71,7 @@ class FilterScreen extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.selectedTopics !== nextProps.selectedTopics) {
-      this.setState({selectedTopics: {...nextProps.selectedTopics}});
+      this.setState({ selectedTopics: { ...nextProps.selectedTopics } });
     }
   }
 
@@ -82,16 +82,16 @@ class FilterScreen extends React.Component {
         nextState.selectedTopics,
       );
       const toValue = changedTopics ? 1 : 0;
-      Animated.spring(this.state.anim, {toValue}).start();
+      Animated.spring(this.state.anim, { toValue }).start();
     }
   }
 
   render() {
-    var bottom = this.state.anim.interpolate({
+    const bottom = this.state.anim.interpolate({
       inputRange: [0, 1],
       outputRange: [-100, 0],
     });
-    var topics = this.props.topics.map((topic, ii) => (
+    const topics = this.props.topics.map((topic, ii) => (
       <TopicItem
         key={topic}
         topic={topic}
@@ -100,13 +100,14 @@ class FilterScreen extends React.Component {
         onToggle={this.toggleTopic.bind(this, topic)}
       />
     ));
-    var selectedAnyTopics = this.props.topics.some(
-      (topic) => this.state.selectedTopics[topic]
+    const selectedAnyTopics = this.props.topics.some(
+      topic => this.state.selectedTopics[topic],
     );
 
-    let leftItem, rightItem;
+    let leftItem,
+      rightItem;
     if (this.props.navigator) {
-      leftItem = {title: 'Cancel', onPress: this.close};
+      leftItem = { title: 'Cancel', onPress: this.close };
     }
     if (selectedAnyTopics) {
       rightItem = {
@@ -124,12 +125,13 @@ class FilterScreen extends React.Component {
         />
         <ScrollView
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={styles.scrollview}>
+          contentContainerStyle={styles.scrollview}
+        >
           <ItemsWithSeparator separatorStyle={styles.separator}>
             {topics}
           </ItemsWithSeparator>
         </ScrollView>
-        <Animated.View style={[styles.applyButton, {bottom}]}>
+        <Animated.View style={[styles.applyButton, { bottom }]}>
           <F8Button
             caption="Apply filters"
             onPress={this.applyFilter}
@@ -140,14 +142,14 @@ class FilterScreen extends React.Component {
   }
 
   toggleTopic(topic: string, value: boolean) {
-    var selectedTopics = {...this.state.selectedTopics};
+    const selectedTopics = { ...this.state.selectedTopics };
     var value = !selectedTopics[topic];
     if (value) {
       selectedTopics[topic] = true;
     } else {
       delete selectedTopics[topic];
     }
-    this.setState({selectedTopics});
+    this.setState({ selectedTopics });
   }
 
   applyFilter() {
@@ -156,7 +158,7 @@ class FilterScreen extends React.Component {
   }
 
   close() {
-    const {navigator, onClose} = this.props;
+    const { navigator, onClose } = this.props;
     if (navigator) {
       requestAnimationFrame(() => navigator.pop());
     }
@@ -166,7 +168,7 @@ class FilterScreen extends React.Component {
   }
 
   clearFilter() {
-    this.setState({selectedTopics: {}});
+    this.setState({ selectedTopics: {} });
   }
 }
 

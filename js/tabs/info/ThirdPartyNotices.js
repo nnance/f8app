@@ -21,14 +21,14 @@
  *
  * @flow
  */
-'use strict';
 
-var F8Header = require('F8Header');
-var InteractionManager = require('InteractionManager');
-var React = require('React');
-var StyleSheet = require('StyleSheet');
-var View = require('View');
-var WebView = require('WebView');
+
+const F8Header = require('F8Header');
+const InteractionManager = require('InteractionManager');
+const React = require('React');
+const StyleSheet = require('StyleSheet');
+const View = require('View');
+const WebView = require('WebView');
 
 class ThirdPartyNotices extends React.Component {
   render() {
@@ -47,7 +47,7 @@ class ThirdPartyNotices extends React.Component {
         <Loading>
           <WebView
             style={styles.webview}
-            source={{uri: 'file:///android_res/raw/third_party_notices.html'}}
+            source={{ uri: 'file:///android_res/raw/third_party_notices.html' }}
           />
         </Loading>
       </View>
@@ -62,7 +62,7 @@ class Loading extends React.Component {
   }
 
   componentDidMount() {
-    InteractionManager.runAfterInteractions(() => this.setState({loaded: true}));
+    InteractionManager.runAfterInteractions(() => this.setState({ loaded: true }));
   }
 
   render() {

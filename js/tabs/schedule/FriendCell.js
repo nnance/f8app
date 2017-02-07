@@ -22,18 +22,17 @@
  * @flow
  */
 
-'use strict';
 
-var F8Colors = require('F8Colors');
-var React = require('React');
-var Image = require('Image');
-var StyleSheet = require('StyleSheet');
-var { Text } = require('F8Text');
-var TouchableHighlight = require('TouchableHighlight');
-var View = require('View');
-var ProfilePicture = require('../../common/ProfilePicture');
+const F8Colors = require('F8Colors');
+const React = require('React');
+const Image = require('Image');
+const StyleSheet = require('StyleSheet');
+const { Text } = require('F8Text');
+const TouchableHighlight = require('TouchableHighlight');
+const View = require('View');
+const ProfilePicture = require('../../common/ProfilePicture');
 
-import type {FriendsSchedule} from '../../reducers/friendsSchedules';
+import type { FriendsSchedule } from '../../reducers/friendsSchedules';
 
 class FriendCell extends React.Component {
   props: {
@@ -42,7 +41,7 @@ class FriendCell extends React.Component {
   };
 
   render() {
-    const {friend} = this.props;
+    const { friend } = this.props;
     const hasSchedule = friend.schedule && Object.keys(friend.schedule).length > 0;
     const auxView = hasSchedule
       ? <Image source={require('../../common/img/disclosure.png')} />
@@ -86,7 +85,7 @@ var styles = StyleSheet.create({
   },
   private: {
     color: F8Colors.lightText,
-  }
+  },
 });
 
 module.exports = FriendCell;

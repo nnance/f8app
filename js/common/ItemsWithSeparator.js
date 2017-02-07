@@ -21,12 +21,12 @@
  *
  * @flow
  */
-'use strict';
 
-var PixelRatio = require('PixelRatio');
-var React = require('React');
-var StyleSheet = require('StyleSheet');
-var View = require('View');
+
+const PixelRatio = require('PixelRatio');
+const React = require('React');
+const StyleSheet = require('StyleSheet');
+const View = require('View');
 
 class ItemsWithSeparator extends React.Component {
   props: {
@@ -36,8 +36,8 @@ class ItemsWithSeparator extends React.Component {
   };
 
   render() {
-    var children = [];
-    var length = React.Children.count(this.props.children);
+    const children = [];
+    const length = React.Children.count(this.props.children);
     React.Children.forEach(
       this.props.children,
       (child, ii) => {
@@ -45,12 +45,12 @@ class ItemsWithSeparator extends React.Component {
         if (ii !== length - 1) {
           children.push(
             <View
-              key={'separator-' + ii}
+              key={`separator-${ii}`}
               style={[styles.separator, this.props.separatorStyle]}
-            />
+            />,
           );
         }
-      }
+      },
     );
     return (
       <View style={this.props.style}>

@@ -22,10 +22,9 @@
  * @flow
  */
 
-'use strict';
 
-import type {Action} from '../actions/types';
-import {REHYDRATE} from 'redux-persist/constants';
+import type { Action } from '../actions/types';
+import { REHYDRATE } from 'redux-persist/constants';
 
 export type State = {
   isLoggedIn: boolean;
@@ -52,7 +51,7 @@ const initialState = {
   sex: null,
   facebookLinked: false,
   profilePicture: null,
-  profileCover: null
+  profileCover: null,
 };
 
 function changeProfile(state: State = initialState, action: Action): State {
@@ -63,7 +62,7 @@ function changeProfile(state: State = initialState, action: Action): State {
       birthDayDate: action.payload.birthDayDate,
       sex: action.payload.sex,
       profilePicture: action.payload.profilePicture,
-      profileCover: action.payload.profileCover
+      profileCover: action.payload.profileCover,
     };
   }
   return state;
@@ -71,23 +70,23 @@ function changeProfile(state: State = initialState, action: Action): State {
 
 function authen(state: State = initialState, action: Action): State {
   if (action.type === 'FACEBOOK_LINKED') {
-    let {id, name} = action.data;
+    const { id, name } = action.data;
     return {
       ...state,
       id,
       name,
-      facebookLinked: true
+      facebookLinked: true,
     };
   }
   if (action.type === 'FACEBOOK_UNLINKED') {
     return {
       ...state,
       id: null,
-      facebookLinked: false
+      facebookLinked: false,
     };
   }
   if (action.type === 'LOGGED_IN') {
-    let {id, name, sex, email, birthDayDate, profilePicture, profileCover, sharedSchedule, facebookLinked} = action.data;
+    let { id, name, sex, email, birthDayDate, profilePicture, profileCover, sharedSchedule, facebookLinked } = action.data;
     if (sharedSchedule === undefined) {
       sharedSchedule = null;
     }
@@ -102,7 +101,7 @@ function authen(state: State = initialState, action: Action): State {
       birthDayDate,
       profilePicture,
       profileCover,
-      facebookLinked
+      facebookLinked,
     };
   }
   if (action.type === 'SKIPPED_LOGIN') {
@@ -129,7 +128,7 @@ function user(state: State = initialState, action: Action): State {
       return {
         ...state,
         ...incoming,
-        birthDayDate: new Date(incoming.birthDayDate)
+        birthDayDate: new Date(incoming.birthDayDate),
       };
     }
   }
@@ -140,7 +139,7 @@ function user(state: State = initialState, action: Action): State {
     };
   }
   if (action.type === 'RESET_NUXES') {
-    return {...state, sharedSchedule: null};
+    return { ...state, sharedSchedule: null };
   }
   return state;
 }

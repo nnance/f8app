@@ -22,7 +22,6 @@
  * @flow
  */
 
-'use strict';
 
 type ParseObject = Object;
 

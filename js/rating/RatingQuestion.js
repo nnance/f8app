@@ -21,7 +21,7 @@
  *
  * @flow
  */
-'use strict';
+
 
 const React = require('react');
 const F8Colors = require('F8Colors');
@@ -46,16 +46,16 @@ type Props = {
   style: any;
 };
 
-function RatingQuestion({question, rating, onChange, style}: Props) {
+function RatingQuestion({ question, rating, onChange, style }: Props) {
   const stars = [1, 2, 3, 4, 5].map(
-    (value) => (
+    value => (
       <Star
         key={value}
         value={value}
         isFull={rating && value <= rating}
         onPress={() => onChange(value)}
       />
-    )
+    ),
   );
   return (
     <View style={style}>
@@ -77,7 +77,7 @@ function RatingQuestion({question, rating, onChange, style}: Props) {
   );
 }
 
-function Star({isFull, value, onPress}) {
+function Star({ isFull, value, onPress }) {
   const source = isFull
     ? require('./img/full-star.png')
     : require('./img/empty-star.png');
@@ -93,7 +93,8 @@ function Star({isFull, value, onPress}) {
       accessibilityTraits={accessibilityTraits}
       style={styles.star}
       activeOpacity={0.8}
-      onPress={onPress}>
+      onPress={onPress}
+    >
       <Image source={source} />
     </TouchableOpacity>
   );

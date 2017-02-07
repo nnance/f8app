@@ -25,9 +25,9 @@
  * @flow
  * @providesModule FacebookSDK
  */
-'use strict';
 
-var {
+
+const {
   LoginManager,
   AccessToken,
   GraphRequest,
@@ -77,8 +77,8 @@ var FacebookSDK = {
 
   login(callback: LoginCallback, options: LoginOptions) {
     loginWithFacebookSDK(options).then(
-      (authResponse) => callback({authResponse}),
-      (error) => callback({error})
+      authResponse => callback({ authResponse }),
+      error => callback({ error }),
     );
   },
 
@@ -113,18 +113,18 @@ var FacebookSDK = {
    * param params {Object}   the parameters for the query
    * param cb     {Function} the callback function to handle the response
    */
-  api: function(path: string, ...args: Array<mixed>) {
+  api(path: string, ...args: Array<mixed>) {
     const argByType = {};
     args.forEach((arg) => { argByType[typeof arg] = arg; });
 
-    const httpMethod = (argByType['string'] || 'get').toUpperCase();
-    const params = argByType['object'] || {};
-    const callback = argByType['function'] || emptyFunction;
+    const httpMethod = (argByType.string || 'get').toUpperCase();
+    const params = argByType.object || {};
+    const callback = argByType.function || emptyFunction;
 
     // FIXME: Move this into RNFBSDK
     // GraphRequest requires all parameters to be in {string: 'abc'}
     // or {uri: 'xyz'} format
-    const parameters = mapObject(params, (value) => ({string: value}));
+    const parameters = mapObject(params, value => ({ string: value }));
 
     function processResponse(error, result) {
       // FIXME: RNFBSDK bug: result is Object on iOS and string on Android
@@ -136,13 +136,13 @@ var FacebookSDK = {
         }
       }
 
-      const data = error ? {error} : result;
+      const data = error ? { error } : result;
       callback(data);
     }
 
-    const request = new GraphRequest(path, {parameters, httpMethod}, processResponse);
+    const request = new GraphRequest(path, { parameters, httpMethod }, processResponse);
     new GraphRequestManager().addRequest(request).start();
-  }
+  },
 };
 
 module.exports = FacebookSDK;

@@ -21,18 +21,18 @@
  *
  * @flow
  */
-'use strict';
 
-var F8Button = require('F8Button');
-var React = require('React');
-var StyleSheet = require('StyleSheet');
-var View = require('View');
-var Navigator = require('Navigator');
-var FriendsUsingApp = require('./FriendsUsingApp');
-var SharingSettingsCommon = require('./SharingSettingsCommon');
 
-var { setSharingEnabled } = require('../../actions');
-var { connect } = require('react-redux');
+const F8Button = require('F8Button');
+const React = require('React');
+const StyleSheet = require('StyleSheet');
+const View = require('View');
+const Navigator = require('Navigator');
+const FriendsUsingApp = require('./FriendsUsingApp');
+const SharingSettingsCommon = require('./SharingSettingsCommon');
+
+const { setSharingEnabled } = require('../../actions');
+const { connect } = require('react-redux');
 
 class SharingSettingsModal extends React.Component {
   props: {
@@ -44,7 +44,7 @@ class SharingSettingsModal extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.content}>
-          <SharingSettingsCommon style={{marginTop: -50}} />
+          <SharingSettingsCommon style={{ marginTop: -50 }} />
           <FriendsUsingApp />
           <F8Button
             style={styles.button}

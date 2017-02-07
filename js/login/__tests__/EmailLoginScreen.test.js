@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import { shallow } from 'enzyme';
 
 import EmailLoginScreen from '../EmailLoginScreen';
 
@@ -12,7 +12,7 @@ describe('EmailLoginScreen', () => {
   }
 
   it('show error if fail', async () => {
-    const wrapper = shallow(<EmailLoginScreen logIn={api} pushPage={jest.fn()}/>);
+    const wrapper = shallow(<EmailLoginScreen logIn={api} pushPage={jest.fn()} />);
     wrapper.find('[keyboardType="email-address"]').simulate('changeText', 'fail@a.a');
     wrapper.find('[placeholder="รหัสผ่าน"]').simulate('changeText', 'fail@a.a');
     await wrapper.find('[caption="เข้าสู่ระบบ"]').props().onPress();
@@ -22,7 +22,7 @@ describe('EmailLoginScreen', () => {
   it('state loading', async () => {
     let _resolve;
     const logIn = jest.fn(() => new Promise(resolve => _resolve = resolve));
-    const wrapper = shallow(<EmailLoginScreen logIn={logIn} pushPage={jest.fn()}/>);
+    const wrapper = shallow(<EmailLoginScreen logIn={logIn} pushPage={jest.fn()} />);
     expect(wrapper.state().loading).toBe(false);
     const task = wrapper.find('[caption="เข้าสู่ระบบ"]').props().onPress();
     expect(wrapper.state().loading).toBe(true);

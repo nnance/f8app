@@ -22,7 +22,6 @@
  * @flow
  */
 
-'use strict';
 
 class ParseObjectMock {
   id: string;

@@ -22,16 +22,15 @@
  * @flow
  */
 
-'use strict';
 
 type State = Array<string>;
 type Action = { type: string; list: Array<any>; };
 
 function topics(state: State = [], action: Action): State {
   if (action.type === 'LOADED_SESSIONS') {
-    var topicsMap = Object.create(null);
+    const topicsMap = Object.create(null);
     action.data.schedule.forEach((session) => {
-      var tags = session.tags || [];
+      const tags = session.tags || [];
       tags.forEach((tag) => {
         topicsMap[tag] = true;
       });

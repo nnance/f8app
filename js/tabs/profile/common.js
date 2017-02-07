@@ -1,35 +1,35 @@
 import StyleSheet from 'StyleSheet';
-import {colors} from '../../common/styles';
+import { colors } from '../../common/styles';
 
 export const styles = StyleSheet.create({
   listViewContainer: {
     flex: 1,
-    backgroundColor: colors.greyBackground
+    backgroundColor: colors.greyBackground,
   },
   greyContainer: {
     flex: 1,
-    backgroundColor: colors.greyBackground
+    backgroundColor: colors.greyBackground,
   },
   whiteContainer: {
     flex: 1,
-    backgroundColor: 'white'
+    backgroundColor: 'white',
   },
   row: {
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   label: {
     padding: 15,
-    flex: 2
+    flex: 2,
   },
   inputContainer: {
     flex: 4,
-    padding: 10
+    padding: 10,
   },
   errorContainer: {
     alignItems: 'flex-end',
-    padding: 3
+    padding: 3,
   },
   errorText: {
-    color: 'red'
-  }
+    color: 'red',
+  },
 });

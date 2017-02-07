@@ -1,8 +1,8 @@
-'use strict';
+
 
 import React from 'React';
-import {BackAndroid, Navigator, Text} from 'react-native';
-import {connect} from 'react-redux';
+import { BackAndroid, Navigator, Text } from 'react-native';
+import { connect } from 'react-redux';
 
 import * as actions from '../actions/login';
 
@@ -44,11 +44,11 @@ class Index extends React.Component {
     }
     if (nextProps.isReqedForgotPassword) {
       this.props.clearIsReqedForgotPassword();
-      this.pushPage('success', {successText: 'mail has been sent'});
+      this.pushPage('success', { successText: 'mail has been sent' });
     }
     if (nextProps.isSignedUp) {
       this.props.clearSignedUp();
-      this.pushPage('success', {successText: 'signed up'});
+      this.pushPage('success', { successText: 'signed up' });
     }
   }
 
@@ -56,7 +56,7 @@ class Index extends React.Component {
     return (
       <Navigator
         ref="navigator"
-        initialRoute={{page: 'login'}}
+        initialRoute={{ page: 'login' }}
         renderScene={this.renderScene}
       />
     );
@@ -64,23 +64,23 @@ class Index extends React.Component {
 
   renderScene(route, navigator) {
     if (route.page === 'login') {
-      return <LoginScreen error={this.props.error} logIn={this.props.logIn} pushPage={this.pushPage}/>;
+      return <LoginScreen error={this.props.error} logIn={this.props.logIn} pushPage={this.pushPage} />;
     }
     if (route.page === 'signup') {
-      return <SignupScreen error={this.props.error} signUp={this.props.signUp} pushPage={this.pushPage} goBack={this.goBack}/>;
+      return <SignupScreen error={this.props.error} signUp={this.props.signUp} pushPage={this.pushPage} goBack={this.goBack} />;
     }
     if (route.page === 'forgotPassword') {
-      return <ForgotPasswordScreen error={this.props.error} forgotPassword={this.props.forgotPassword} pushPage={this.pushPage} goBack={this.goBack}/>;
+      return <ForgotPasswordScreen error={this.props.error} forgotPassword={this.props.forgotPassword} pushPage={this.pushPage} goBack={this.goBack} />;
     }
     if (route.page === 'success') {
-      return <SuccessScreen successText={route.payload.successText} goToLogin={this.goToLogin}/>;
+      return <SuccessScreen successText={route.payload.successText} goToLogin={this.goToLogin} />;
     }
     return <Text>Page not found</Text>;
   }
 
   handleBackButton() {
     const navigator = this.refs.navigator;
-    if (navigator && navigator.getCurrentRoutes().length > 1 ) {
+    if (navigator && navigator.getCurrentRoutes().length > 1) {
       navigator.pop();
       return true;
     }
@@ -95,7 +95,7 @@ class Index extends React.Component {
     this.props.clearError();
     const navigator = this.refs.navigator;
     let N = navigator.getCurrentRoutes().length;
-    while (N-- > 1){
+    while (N-- > 1) {
       navigator.pop();
     }
   }
@@ -104,7 +104,7 @@ class Index extends React.Component {
     this.props.clearError();
     this.props.clearIsReqedForgotPassword();
     this.props.clearSignedUp();
-    this.refs.navigator.push({page, payload});
+    this.refs.navigator.push({ page, payload });
   }
 
   goBack() {
@@ -117,7 +117,7 @@ const select = state => ({
   isLoggedIn: state.user.isLoggedIn,
   isSignedUp: state.user.isSignedUp,
   isReqedForgotPassword: state.user.isReqedForgotPassword,
-  error: state.user.loginError
+  error: state.user.loginError,
 });
 
 const actionsMaping = {
@@ -126,7 +126,7 @@ const actionsMaping = {
   signUp: actions.signUp,
   forgotPassword: actions.forgotPassword,
   clearSignedUp: actions.clearSignedUp,
-  clearIsReqedForgotPassword: actions.clearIsReqedForgotPassword
+  clearIsReqedForgotPassword: actions.clearIsReqedForgotPassword,
 };
 
 export default connect(select, actionsMaping)(Index);

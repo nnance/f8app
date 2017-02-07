@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Image
+  Image,
 } from 'react-native';
 
 import ShelfNavigator from './components/ShelfNavigator';

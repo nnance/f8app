@@ -1,9 +1,9 @@
 import express from 'express';
-import MobileDetect from 'mobile-detect';
 import path from 'path';
 
 const app = express();
 app.engine('html', require('ejs').renderFile);
+
 app.set('view engine', 'ejs');
 
 app.get('/player/:id', (req, res) => {

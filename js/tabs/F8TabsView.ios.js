@@ -23,24 +23,23 @@
  * @providesModule F8TabsView
  */
 
-'use strict';
 
-var F8Colors = require('F8Colors');
-var StatusBar = require('StatusBar');
-var F8InfoView = require('F8InfoView');
-var F8NotificationsView = require('F8NotificationsView');
-var GeneralScheduleView = require('./schedule/GeneralScheduleView');
-var MyScheduleView = require('./schedule/MyScheduleView');
-var React = require('React');
-var TabBarIOS = require('TabBarIOS');
-var TabBarItemIOS = require('TabBarItemIOS');
-var Navigator = require('Navigator');
-var unseenNotificationsCount = require('./notifications/unseenNotificationsCount');
+const F8Colors = require('F8Colors');
+const StatusBar = require('StatusBar');
+const F8InfoView = require('F8InfoView');
+const F8NotificationsView = require('F8NotificationsView');
+const GeneralScheduleView = require('./schedule/GeneralScheduleView');
+const MyScheduleView = require('./schedule/MyScheduleView');
+const React = require('React');
+const TabBarIOS = require('TabBarIOS');
+const TabBarItemIOS = require('TabBarItemIOS');
+const Navigator = require('Navigator');
+const unseenNotificationsCount = require('./notifications/unseenNotificationsCount');
 
-var { switchTab } = require('../actions');
-var { connect } = require('react-redux');
+const { switchTab } = require('../actions');
+const { connect } = require('react-redux');
 
-import type {Tab, Day} from '../reducers/navigation';
+import type { Tab, Day } from '../reducers/navigation';
 import ProfileScreen from './profile/containers/ProfileScreen';
 
 class F8TabsView extends React.Component {
@@ -67,10 +66,10 @@ class F8TabsView extends React.Component {
   }
 
   render() {
-    var scheduleIcon = this.props.day === 1
+    const scheduleIcon = this.props.day === 1
       ? require('./schedule/img/schedule-icon-1.png')
       : require('./schedule/img/schedule-icon-2.png');
-    var scheduleIconSelected = this.props.day === 1
+    const scheduleIconSelected = this.props.day === 1
       ? require('./schedule/img/schedule-icon-1-active.png')
       : require('./schedule/img/schedule-icon-2-active.png');
       // <FollowerScreen userList={[{name: 'Art Nattapat'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}, {name: 'Art Art Art'}]}/>
@@ -81,7 +80,8 @@ class F8TabsView extends React.Component {
           selected={this.props.tab === 'schedule'}
           onPress={this.onTabSelect.bind(this, 'schedule')}
           icon={scheduleIcon}
-          selectedIcon={scheduleIconSelected}>
+          selectedIcon={scheduleIconSelected}
+        >
           <GeneralScheduleView
             navigator={this.props.navigator}
             onDayChange={this.handleDayChange}
@@ -92,7 +92,8 @@ class F8TabsView extends React.Component {
           selected={this.props.tab === 'my-schedule'}
           onPress={this.onTabSelect.bind(this, 'my-schedule')}
           icon={require('./schedule/img/my-schedule-icon.png')}
-          selectedIcon={require('./schedule/img/my-schedule-icon-active.png')}>
+          selectedIcon={require('./schedule/img/my-schedule-icon-active.png')}
+        >
           <MyScheduleView
             navigator={this.props.navigator}
             onJumpToSchedule={() => this.props.onTabSelect('schedule')}
@@ -103,8 +104,9 @@ class F8TabsView extends React.Component {
           selected={this.props.tab === 'map'}
           onPress={this.onTabSelect.bind(this, 'map')}
           icon={require('./maps/img/maps-icon.png')}
-          selectedIcon={require('./maps/img/maps-icon-active.png')}>
-          <ProfileScreen/>
+          selectedIcon={require('./maps/img/maps-icon-active.png')}
+        >
+          <ProfileScreen />
         </TabBarItemIOS>
         <TabBarItemIOS
           title="Notifications"
@@ -112,7 +114,8 @@ class F8TabsView extends React.Component {
           onPress={this.onTabSelect.bind(this, 'notifications')}
           badge={this.props.notificationsBadge || null}
           icon={require('./notifications/img/notifications-icon.png')}
-          selectedIcon={require('./notifications/img/notifications-icon-active.png')}>
+          selectedIcon={require('./notifications/img/notifications-icon-active.png')}
+        >
           <F8NotificationsView navigator={this.props.navigator} />
         </TabBarItemIOS>
         <TabBarItemIOS
@@ -120,7 +123,8 @@ class F8TabsView extends React.Component {
           selected={this.props.tab === 'info'}
           onPress={this.onTabSelect.bind(this, 'info')}
           icon={require('./info/img/info-icon.png')}
-          selectedIcon={require('./info/img/info-icon-active.png')}>
+          selectedIcon={require('./info/img/info-icon-active.png')}
+        >
           <F8InfoView navigator={this.props.navigator} />
         </TabBarItemIOS>
       </TabBarIOS>
@@ -128,7 +132,7 @@ class F8TabsView extends React.Component {
   }
 
   handleDayChange(day) {
-    this.setState({selectedDay: day});
+    this.setState({ selectedDay: day });
   }
 
 }
@@ -143,7 +147,7 @@ function select(store) {
 
 function actions(dispatch) {
   return {
-    onTabSelect: (tab) => dispatch(switchTab(tab)),
+    onTabSelect: tab => dispatch(switchTab(tab)),
   };
 }
 

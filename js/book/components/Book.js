@@ -6,35 +6,35 @@ import {
   StyleSheet,
   ScrollView,
   TouchableOpacity,
-  Dimensions
+  Dimensions,
 } from 'react-native';
 import moment from 'moment';
 import gql from 'graphql-tag';
 import ReadMore from '@exponent/react-native-read-more-text';
 
 import NavBar from '../../common/NavBar';
-import BorderButton, {styles as borderButtonStyles} from '../../common/BorderButton';
+import BorderButton, { styles as borderButtonStyles } from '../../common/BorderButton';
 import PureListView from '../../common/PureListView';
 import FixBugScrollView from '../../common/FixBugScrollView';
 import CircleImage from '../../common/CircleImage';
-import {toHumanNumber, mapSource} from '../../common/utils';
-import {colors, styles as commonStyles} from '../../common/styles';
+import { toHumanNumber, mapSource } from '../../common/utils';
+import { colors, styles as commonStyles } from '../../common/styles';
 
 const previewWidth = 60;
 const readLikeWidth = 180;
 const rowButtonWidth = 55;
 
-const MetaEpisode = (props) => (
+const MetaEpisode = props => (
   <View style={styles.metaEpisodeContainer}>
-    <View style={{width: previewWidth}}>
+    <View style={{ width: previewWidth }}>
       <CircleImage
         source={mapSource(props.preview)}
         size={50}
-        />
+      />
     </View>
-    <View style={{width: readLikeWidth}}>
-      <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
-        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+    <View style={{ width: readLikeWidth }}>
+      <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           <Text style={styles.textEpisodeNo}>ตอนที่ </Text>
           <Text style={styles.textEpisodeNo}>{props.no}</Text>
         </View>
@@ -42,73 +42,76 @@ const MetaEpisode = (props) => (
           <Text style={styles.textEpisodeUpdateAt}>{moment(props.createdAt).locale('en').format('MMMM D')}</Text>
         </View>
       </View>
-      <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
-        <View style={{flex: 3, flexDirection: 'row', alignItems: 'center'}}>
-          <Image source={require('../../common/img/icon/read.png')} style={{width: 20, height: 20, resizeMode: 'contain', borderRadius: 4}}/>
-          <Text style={{paddingLeft: 5, fontSize: 12, color: colors.textFadedGrey}}>ดู {toHumanNumber(props.viewCount || 0)} ครั้ง</Text>
+      <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
+        <View style={{ flex: 3, flexDirection: 'row', alignItems: 'center' }}>
+          <Image source={require('../../common/img/icon/read.png')} style={{ width: 20, height: 20, resizeMode: 'contain', borderRadius: 4 }} />
+          <Text style={{ paddingLeft: 5, fontSize: 12, color: colors.textFadedGrey }}>ดู {toHumanNumber(props.viewCount || 0)} ครั้ง</Text>
         </View>
-        <View style={{flex: 4, flexDirection: 'row', alignItems: 'center'}}>
-          <Image source={require('../../common/img/icon/heart.png')} style={{width: 15, height: 15, resizeMode: 'contain', borderRadius: 4, marginLeft: 20}}/>
-          <Text style={{paddingLeft: 5, fontSize: 12, color: colors.textFadedGrey}}>{toHumanNumber(props.likeCount || 0)} Like</Text>
+        <View style={{ flex: 4, flexDirection: 'row', alignItems: 'center' }}>
+          <Image source={require('../../common/img/icon/heart.png')} style={{ width: 15, height: 15, resizeMode: 'contain', borderRadius: 4, marginLeft: 20 }} />
+          <Text style={{ paddingLeft: 5, fontSize: 12, color: colors.textFadedGrey }}>{toHumanNumber(props.likeCount || 0)} Like</Text>
         </View>
       </View>
     </View>
-    <View style={{flex: 1, alignItems: 'flex-end', paddingRight: (Dimensions.get('window').width - (previewWidth + readLikeWidth + rowButtonWidth)) / 10}}>
+    <View style={{ flex: 1, alignItems: 'flex-end', paddingRight: (Dimensions.get('window').width - (previewWidth + readLikeWidth + rowButtonWidth)) / 10 }}>
       {
         !props.lock ?
-        <BorderButton
-          containerStyle={styles.metaEpisodeButton}
-          type="borderFadedBlack"
-          caption="อ่าน"
-          onPress={props.onReadPress ? props.onReadPress.bind(null, props.id) : null}/>
+          <BorderButton
+            containerStyle={styles.metaEpisodeButton}
+            type="borderFadedBlack"
+            caption="อ่าน"
+            onPress={props.onReadPress ? props.onReadPress.bind(null, props.id) : null}
+          />
         :
-        <BorderButton containerStyle={styles.metaEpisodeButton} textStyle={styles.unlockEpisodeText} type="lightGreen" caption="jelly"
-          renderBeforeText={() => <LockImg/>}/>
+            <BorderButton
+              containerStyle={styles.metaEpisodeButton} textStyle={styles.unlockEpisodeText} type="lightGreen" caption="jelly"
+              renderBeforeText={() => <LockImg />}
+            />
       }
     </View>
   </View>
 );
 
 const LockImg = () => (
-  <View style={{flexDirection: 'row', marginRight: 2, alignItems: 'center', justifyContent: 'center'}}>
-    <Image style={{height: 10, width: 8, resizeMode: 'stretch', marginRight: 2}} source={require('../img/lock.png')}/>
-    <Text style={[{fontSize: 12, fontWeight: 'bold', lineHeight: 12}, borderButtonStyles.lightGreenText]}>20</Text>
+  <View style={{ flexDirection: 'row', marginRight: 2, alignItems: 'center', justifyContent: 'center' }}>
+    <Image style={{ height: 10, width: 8, resizeMode: 'stretch', marginRight: 2 }} source={require('../img/lock.png')} />
+    <Text style={[{ fontSize: 12, fontWeight: 'bold', lineHeight: 12 }, borderButtonStyles.lightGreenText]}>20</Text>
   </View>
 );
 
-const ReadMoreRender = (handlePress) => (
+const ReadMoreRender = handlePress => (
   <TouchableOpacity
     style={{
-      alignItems: 'flex-end'
+      alignItems: 'flex-end',
     }}
     onPress={handlePress}
-    >
-    <Text style={{color: colors.textFadedGrey, fontSize: 12, padding: 5}}>Read more</Text>
+  >
+    <Text style={{ color: colors.textFadedGrey, fontSize: 12, padding: 5 }}>Read more</Text>
   </TouchableOpacity>
 );
 
-const ShowLessRender = (handlePress) => (
+const ShowLessRender = handlePress => (
   <TouchableOpacity
     style={{
-      alignItems: 'flex-end'
+      alignItems: 'flex-end',
     }}
     onPress={handlePress}
-    >
-    <Text style={{color: colors.textFadedGrey, fontSize: 12, padding: 5}}>Show less</Text>
+  >
+    <Text style={{ color: colors.textFadedGrey, fontSize: 12, padding: 5 }}>Show less</Text>
   </TouchableOpacity>
 );
 
 const SubDetail = ({ title, author, review, episodes, onReadPress }) => (
   <View style={styles.subDetailContainer}>
-    <View style={{flexDirection: 'row', paddingVertical: 10}}>
-      <View style={{flex: 3}}>
+    <View style={{ flexDirection: 'row', paddingVertical: 10 }}>
+      <View style={{ flex: 3 }}>
         <View>
           <Text style={styles.titleText}>{title}</Text>
           <Text style={styles.authorText}>{author.name}</Text>
         </View>
       </View>
-      <View style={{paddingHorizontal: 5}}>
-        <BorderButton type="lightGreen" caption="ติดตาม"/>
+      <View style={{ paddingHorizontal: 5 }}>
+        <BorderButton type="lightGreen" caption="ติดตาม" />
       </View>
     </View>
     <View>
@@ -118,7 +121,7 @@ const SubDetail = ({ title, author, review, episodes, onReadPress }) => (
           style={styles.reviewText}
           renderTruncatedFooter={ReadMoreRender}
           renderRevealedFooter={ShowLessRender}
-          >
+        >
           {review}
         </ReadMore>
       </View>
@@ -126,21 +129,21 @@ const SubDetail = ({ title, author, review, episodes, onReadPress }) => (
     <View>
       {
         episodes.length > 0 ?
-        <View style={styles.startReadButtonContainer}>
-          <BorderButton
-            type="borderFadedBlack"
-            onPress={onReadPress ? onReadPress.bind(null, episodes[episodes.length - 1].id) : null}
-            caption={`เริ่มอ่านตอนที่ ${episodes[episodes.length - 1].no}`}
-            textStyle={{
-              fontSize: 25
-            }}
-            containerStyle={{
-              paddingVertical: 5,
-              justifyContent: 'center',
-              alignItems: 'center'
-            }}
+          <View style={styles.startReadButtonContainer}>
+            <BorderButton
+              type="borderFadedBlack"
+              onPress={onReadPress ? onReadPress.bind(null, episodes[episodes.length - 1].id) : null}
+              caption={`เริ่มอ่านตอนที่ ${episodes[episodes.length - 1].no}`}
+              textStyle={{
+                fontSize: 25,
+              }}
+              containerStyle={{
+                paddingVertical: 5,
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
             />
-        </View> : null
+          </View> : null
       }
     </View>
   </View>
@@ -153,17 +156,18 @@ class Book extends React.Component {
     }
     const clog = this.props.clog;
     return (
-      <View style={{flex: 1, backgroundColor: 'white'}}>
+      <View style={{ flex: 1, backgroundColor: 'white' }}>
         <Image source={mapSource(clog.cover)} style={styles.cover}>
           <TouchableOpacity style={styles.backButtonContainer} onPress={this.props.onBackPress}>
-            <Image source={require('../../common/img/icon/backButton.png')} style={commonStyles.navBarIcon}/>
+            <Image source={require('../../common/img/icon/backButton.png')} style={commonStyles.navBarIcon} />
           </TouchableOpacity>
         </Image>
         <FixBugScrollView
-          style={styles.detailContainer}>
-          <SubDetail {...clog} onReadPress={this.props.goToPlayer}/>
+          style={styles.detailContainer}
+        >
+          <SubDetail {...clog} onReadPress={this.props.goToPlayer} />
           <View style={styles.episodeContainer}>
-            <View style={{height: 1, backgroundColor: colors.greyBorder}}/>
+            <View style={{ height: 1, backgroundColor: colors.greyBorder }} />
             {
               clog.episodes.map(this.renderEpisode.bind(this))
             }
@@ -176,8 +180,8 @@ class Book extends React.Component {
   renderEpisode(data) {
     return (
       <View key={data.id}>
-        <MetaEpisode {...data} onReadPress={this.props.goToPlayer}/>
-        <View style={{height: 1, backgroundColor: colors.greyBorder}}/>
+        <MetaEpisode {...data} onReadPress={this.props.goToPlayer} />
+        <View style={{ height: 1, backgroundColor: colors.greyBorder }} />
       </View>
     );
   }
@@ -201,69 +205,69 @@ Book.fragments = {
         createdAt
       }
     }
-  `
+  `,
 };
 
 const styles = StyleSheet.create({
   cover: {
     height: 200,
     width: undefined,
-    resizeMode: 'cover'
+    resizeMode: 'cover',
   },
   backButtonContainer: {
     top: 20,
-    left: 10
+    left: 10,
   },
   detailContainer: {
     flex: 1,
     paddingVertical: 15,
-    paddingHorizontal: 10
+    paddingHorizontal: 10,
   },
   subDetailContainer: {
-    width: undefined
+    width: undefined,
   },
   titleText: {
-    fontSize: 18
+    fontSize: 18,
   },
   authorText: {
     fontSize: 12,
-    color: colors.textFadedGrey
+    color: colors.textFadedGrey,
   },
   reviewContainer: {},
   reviewText: {
     fontSize: 14,
-    color: colors.textGrey
+    color: colors.textGrey,
   },
   startReadButtonContainer: {
     paddingVertical: 15,
-    paddingHorizontal: 40
+    paddingHorizontal: 40,
   },
   episodeContainer: {
-    paddingVertical: 10
+    paddingVertical: 10,
   },
   metaEpisodeContainer: {
     paddingVertical: 8,
     paddingLeft: 5,
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   metaEpisodeButton: {
     paddingVertical: 1,
     width: rowButtonWidth,
-    alignItems: 'center'
+    alignItems: 'center',
   },
   textEpisodeNo: {
     fontSize: 16,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
   textEpisodeUpdateAt: {
     fontSize: 10,
     paddingLeft: 5,
-    color: colors.textFadedGrey
+    color: colors.textFadedGrey,
   },
   unlockEpisodeText: {
-    fontSize: 10
-  }
+    fontSize: 10,
+  },
 });
 
 export default Book;

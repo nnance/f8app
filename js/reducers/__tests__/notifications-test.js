@@ -22,7 +22,6 @@
  * @flow
  */
 
-'use strict';
 
 const Parse = require('parse');
 
@@ -30,21 +29,20 @@ jest.dontMock('../notifications');
 const notifications = require('../notifications');
 
 const emptyAction: any = {};
-const empty = {server: [], push: [], enabled: null, registered: false, seen: {}};
+const empty = { server: [], push: [], enabled: null, registered: false, seen: {} };
 
 describe.skip('notifications reducer', () => {
-
   it('is empty by default', () => {
     expect(notifications(undefined, emptyAction)).toEqual(empty);
   });
 
   it('populates notifications from server', () => {
-    let list = [
-      new Parse.Object({text: 'hello', url: 'https://fbf8.com'}),
-      new Parse.Object({text: 'bye', url: null}),
+    const list = [
+      new Parse.Object({ text: 'hello', url: 'https://fbf8.com' }),
+      new Parse.Object({ text: 'bye', url: null }),
     ];
 
-    let {server} = notifications(empty, {type: 'LOADED_NOTIFICATIONS', list});
+    const { server } = notifications(empty, { type: 'LOADED_NOTIFICATIONS', list });
 
     expect(server).toEqual([{
       id: jasmine.any(String),
@@ -68,18 +66,17 @@ describe.skip('notifications reducer', () => {
 
     const action1 = {
       type: 'RECEIVED_PUSH_NOTIFICATION',
-      notification: {...notification},
+      notification: { ...notification },
     };
     const action2 = {
       type: 'RECEIVED_PUSH_NOTIFICATION',
-      notification: {...notification},
+      notification: { ...notification },
     };
 
-    const {push} = notifications(notifications(empty, action1), action2);
+    const { push } = notifications(notifications(empty, action1), action2);
     expect(push).toEqual([{
       id: jasmine.any(String),
-      ...notification
+      ...notification,
     }]);
   });
-
 });

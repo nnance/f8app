@@ -21,15 +21,15 @@
  *
  * @flow
  */
-'use strict';
 
-var F8Button = require('F8Button');
-var F8Colors = require('F8Colors');
-var Image = require('Image');
-var React = require('React');
-var StyleSheet = require('StyleSheet');
-var View = require('View');
-var { Heading1, Paragraph } = require('F8Text');
+
+const F8Button = require('F8Button');
+const F8Colors = require('F8Colors');
+const Image = require('Image');
+const React = require('React');
+const StyleSheet = require('StyleSheet');
+const View = require('View');
+const { Heading1, Paragraph } = require('F8Text');
 
 class PushNUXModal extends React.Component {
   props: {

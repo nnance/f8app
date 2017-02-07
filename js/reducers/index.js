@@ -22,9 +22,8 @@
  * @flow
  */
 
-'use strict';
 
-var { combineReducers } = require('redux');
+const { combineReducers } = require('redux');
 
 module.exports = combineReducers({
   config: require('./config'),
@@ -40,5 +39,5 @@ module.exports = combineReducers({
   navigation: require('./navigation'),
   friendsSchedules: require('./friendsSchedules'),
   surveys: require('./surveys'),
-  mockBadges: require('./mockBadges')
+  mockBadges: require('./mockBadges'),
 });

@@ -1,7 +1,7 @@
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
-import {changePublicProfile} from '../../../actions/changeProfile';
-import {linkFacebook, unlinkFacebook} from '../../../actions/login';
+import { changePublicProfile } from '../../../actions/changeProfile';
+import { linkFacebook, unlinkFacebook } from '../../../actions/login';
 
 import ProfileEditorScreen from '../components/ProfileEditorScreen';
 
@@ -11,13 +11,13 @@ const select = state => ({
   sex: state.user.sex,
   birthDayDate: state.user.birthDayDate,
   saved: state.user.savedProfile,
-  facebookLinked: state.user.facebookLinked
+  facebookLinked: state.user.facebookLinked,
 });
 
 const actionsMaping = {
   changePublicProfile,
   linkFacebook,
-  unlinkFacebook
+  unlinkFacebook,
 };
 
 export default connect(select, actionsMaping)(ProfileEditorScreen);

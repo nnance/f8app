@@ -6,7 +6,7 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
-  StyleSheet
+  StyleSheet,
 } from 'react-native';
 import gql from 'graphql-tag';
 
@@ -28,44 +28,44 @@ class Home extends React.Component {
 
   render() {
     return (
-      <View style={{flex: 1, backgroundColor: 'rgb(81, 20, 64)'}}>
+      <View style={{ flex: 1, backgroundColor: 'rgb(81, 20, 64)' }}>
         <NavBar
           renderLeftMenu={() => (
-            <TouchableOpacity onPress={this.props.onOpenShelfMenu}><Image style={{height: 20, resizeMode: 'contain'}} source={require('../img/menu.png')}/></TouchableOpacity>
+            <TouchableOpacity onPress={this.props.onOpenShelfMenu}><Image style={{ height: 20, resizeMode: 'contain' }} source={require('../img/menu.png')} /></TouchableOpacity>
           )}
           renderRightMenu={() => (
-            <TouchableOpacity><Image style={{height: 20, resizeMode: 'contain'}} source={require('../img/search.png')}/></TouchableOpacity>
+            <TouchableOpacity><Image style={{ height: 20, resizeMode: 'contain' }} source={require('../img/search.png')} /></TouchableOpacity>
           )}
           renderTitle={() => (
-            <Image style={{width: 80, height: 30, resizeMode: 'contain'}} source={require('../img/title.png')}/>
+            <Image style={{ width: 80, height: 30, resizeMode: 'contain' }} source={require('../img/title.png')} />
           )}
           titleStyle={{
             flex: 1,
-            alignItems: 'flex-start'
+            alignItems: 'flex-start',
           }}
-          />
+        />
         <FixBugScrollView>
-          <Image source={require('../img/home-bg-1.png')} style={{width: undefined, height: 700, resizeMode: 'stretch', backgroundColor: 'transparent'}}>
-            <View style={{flex: 2}}>
-              <HeroBanner goToBook={this.props.goToBook} clogs={this.props.heroBanners}/>
+          <Image source={require('../img/home-bg-1.png')} style={{ width: undefined, height: 700, resizeMode: 'stretch', backgroundColor: 'transparent' }}>
+            <View style={{ flex: 2 }}>
+              <HeroBanner goToBook={this.props.goToBook} clogs={this.props.heroBanners} />
             </View>
-            <View style={{flex: 1, paddingLeft: 10}}>
-              <MetaClogListView goToBook={this.props.goToBook} header="TRENDING" clogs={this.props.trendingClogs} renderButton={this.renderTrendingButton.bind(this)}/>
+            <View style={{ flex: 1, paddingLeft: 10 }}>
+              <MetaClogListView goToBook={this.props.goToBook} header="TRENDING" clogs={this.props.trendingClogs} renderButton={this.renderTrendingButton.bind(this)} />
             </View>
-            <View style={{flex: 1.6}}>
-              <RecommendedClog clog={this.props.recommendedClog} goToBook={this.props.goToBook}/>
+            <View style={{ flex: 1.6 }}>
+              <RecommendedClog clog={this.props.recommendedClog} goToBook={this.props.goToBook} />
             </View>
           </Image>
-          <Image source={require('../img/home-bg-1.5.png')} style={{resizeMode: 'stretch', backgroundColor: 'transparent', width: undefined, height: undefined, paddingTop: 20}}>
+          <Image source={require('../img/home-bg-1.5.png')} style={{ resizeMode: 'stretch', backgroundColor: 'transparent', width: undefined, height: undefined, paddingTop: 20 }}>
             {
               this.props.favoriteTags.map((tag, idx) => (
-                <View key={idx} style={{paddingLeft: 10, paddingTop: 10}}>
-                  <MetaClogListView goToBook={this.props.goToBook} header={tag.name.toUpperCase()} clogs={tag.trendingClogs} renderButton={!tag.following ? this.renderFollowButton.bind(this) : this.renderUnfollowButton.bind(this)}/>
+                <View key={idx} style={{ paddingLeft: 10, paddingTop: 10 }}>
+                  <MetaClogListView goToBook={this.props.goToBook} header={tag.name.toUpperCase()} clogs={tag.trendingClogs} renderButton={!tag.following ? this.renderFollowButton.bind(this) : this.renderUnfollowButton.bind(this)} />
                 </View>
               ))
             }
           </Image>
-          <ExploreCategory onPress={(category) => this.props.goToClogCategory(category)}/>
+          <ExploreCategory onPress={category => this.props.goToClogCategory(category)} />
         </FixBugScrollView>
       </View>
     );
@@ -73,21 +73,22 @@ class Home extends React.Component {
 
   renderFollowButton() {
     return (
-      <BorderButton caption="ติดตาม" type="fadedWhite" containerStyle={styles.clogListButton}/>
+      <BorderButton caption="ติดตาม" type="fadedWhite" containerStyle={styles.clogListButton} />
     );
   }
 
   renderUnfollowButton() {
     return (
-      <BorderButton caption="เลิกติดตาม" type="fadedGrey" containerStyle={styles.clogListButton}/>
+      <BorderButton caption="เลิกติดตาม" type="fadedGrey" containerStyle={styles.clogListButton} />
     );
   }
 
   renderTrendingButton() {
     return (
-      <BorderButton caption="ทั้งหมด" type="fadedWhite" containerStyle={styles.clogListButton}
-        onPress={() => this.props.goToClogListView({page: 'clog-list-view', title: 'ยอดนิยม', orderBy: 'TRENDING'})}
-        />
+      <BorderButton
+        caption="ทั้งหมด" type="fadedWhite" containerStyle={styles.clogListButton}
+        onPress={() => this.props.goToClogListView({ page: 'clog-list-view', title: 'ยอดนิยม', orderBy: 'TRENDING' })}
+      />
     );
   }
 }
@@ -103,7 +104,7 @@ Home.fragments = {
         ...MetaClogListView
       }
     }
-  `
+  `,
 };
 
 const styles = StyleSheet.create({
@@ -111,8 +112,8 @@ const styles = StyleSheet.create({
     flex: 1,
     width: 80,
     paddingHorizontal: 0,
-    alignItems: 'center'
-  }
+    alignItems: 'center',
+  },
 });
 
 export default Home;

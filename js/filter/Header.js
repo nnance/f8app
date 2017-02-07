@@ -22,11 +22,10 @@
  * @flow
  */
 
-'use strict';
 
-var React = require('React');
-var StyleSheet = require('StyleSheet');
-var { Text } = require('F8Text');
+const React = require('React');
+const StyleSheet = require('StyleSheet');
+const { Text } = require('F8Text');
 const TouchableOpacity = require('TouchableOpacity');
 const View = require('View');
 
@@ -64,8 +63,8 @@ class Header extends React.Component {
   }
 }
 
-var STATUS_BAR_HEIGHT = 20;
-var HEADER_HEIGHT = STATUS_BAR_HEIGHT + /* toolbar */ 44;
+const STATUS_BAR_HEIGHT = 20;
+const HEADER_HEIGHT = STATUS_BAR_HEIGHT + /* toolbar */ 44;
 
 var styles = StyleSheet.create({
   header: {

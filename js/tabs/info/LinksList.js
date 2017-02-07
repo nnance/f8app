@@ -21,18 +21,18 @@
  *
  * @flow
  */
-'use strict';
 
-var F8Colors = require('F8Colors');
-var Image = require('Image');
-var ItemsWithSeparator = require('../../common/ItemsWithSeparator');
-var Linking = require('Linking');
-var React = require('React');
-var Section = require('./Section');
-var StyleSheet = require('StyleSheet');
-var F8Touchable = require('F8Touchable');
-var { Text } = require('F8Text');
-var View = require('View');
+
+const F8Colors = require('F8Colors');
+const Image = require('Image');
+const ItemsWithSeparator = require('../../common/ItemsWithSeparator');
+const Linking = require('Linking');
+const React = require('React');
+const Section = require('./Section');
+const StyleSheet = require('StyleSheet');
+const F8Touchable = require('F8Touchable');
+const { Text } = require('F8Text');
+const View = require('View');
 
 class LinksList extends React.Component {
   props: {
@@ -46,8 +46,8 @@ class LinksList extends React.Component {
   };
 
   render() {
-    let content = this.props.links.map(
-      (link) => <Row link={link} key={link.title} />
+    const content = this.props.links.map(
+      link => <Row link={link} key={link.title} />,
     );
     return (
       <Section title={this.props.title}>
@@ -70,8 +70,8 @@ class Row extends React.Component {
   };
 
   render() {
-    var {logo, title} = this.props.link;
-    var image = logo && <Image style={styles.picture} source={{uri: logo}} />;
+    const { logo, title } = this.props.link;
+    const image = logo && <Image style={styles.picture} source={{ uri: logo }} />;
     return (
       <F8Touchable onPress={this.handlePress.bind(this)}>
         <View style={styles.row}>
@@ -86,7 +86,7 @@ class Row extends React.Component {
   }
 
   handlePress() {
-    var {url, onPress} = this.props.link;
+    const { url, onPress } = this.props.link;
     if (onPress) {
       onPress();
     }

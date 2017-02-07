@@ -22,14 +22,14 @@
  * @flow
  * @providesModule F8SegmentedControl
  */
-'use strict';
 
-var React = require('React');
-var StyleSheet = require('F8StyleSheet');
-var { Text } = require('F8Text');
-var TouchableOpacity = require('TouchableOpacity');
-var View = require('View');
-var Platform = require('Platform');
+
+const React = require('React');
+const StyleSheet = require('F8StyleSheet');
+const { Text } = require('F8Text');
+const TouchableOpacity = require('TouchableOpacity');
+const View = require('View');
+const Platform = require('Platform');
 
 class F8SegmentedControl extends React.Component {
   props: {
@@ -41,7 +41,7 @@ class F8SegmentedControl extends React.Component {
   };
 
   render() {
-    var segments = this.props.values.map(
+    const segments = this.props.values.map(
       (value, index) => (
         <Segment
           key={value}
@@ -50,7 +50,7 @@ class F8SegmentedControl extends React.Component {
           selectionColor={this.props.selectionColor || 'white'}
           onPress={() => this.props.onChange(index)}
         />
-      )
+      ),
     );
     return (
       <View style={[styles.container, this.props.style]}>
@@ -69,17 +69,17 @@ class Segment extends React.Component {
   };
 
   render() {
-    var selectedButtonStyle;
+    let selectedButtonStyle;
     if (this.props.isSelected) {
       selectedButtonStyle = { borderColor: this.props.selectionColor };
     }
-    var deselectedLabelStyle;
+    let deselectedLabelStyle;
     if (!this.props.isSelected && Platform.OS === 'android') {
       deselectedLabelStyle = styles.deselectedLabel;
     }
-    var title = this.props.value && this.props.value.toUpperCase();
+    const title = this.props.value && this.props.value.toUpperCase();
 
-    var accessibilityTraits = ['button'];
+    const accessibilityTraits = ['button'];
     if (this.props.isSelected) {
       accessibilityTraits.push('selected');
     }
@@ -89,7 +89,8 @@ class Segment extends React.Component {
         accessibilityTraits={accessibilityTraits}
         activeOpacity={0.8}
         onPress={this.props.onPress}
-        style={[styles.button, selectedButtonStyle]}>
+        style={[styles.button, selectedButtonStyle]}
+      >
         <Text style={[styles.label, deselectedLabelStyle]}>
           {title}
         </Text>

@@ -20,7 +20,6 @@
  * DEALINGS IN THE SOFTWARE
  */
 
-'use strict';
 
 function warn(error) {
   console.warn(error.message || error);

@@ -21,19 +21,19 @@
  *
  * @flow
  */
-'use strict';
 
-var Clipboard = require('Clipboard');
-var F8Button = require('F8Button');
-var ToastAndroid = require('ToastAndroid');
-var Platform = require('Platform');
-var ItemsWithSeparator = require('../../common/ItemsWithSeparator');
-var React = require('React');
-var Section = require('./Section');
-var StyleSheet = require('StyleSheet');
-var { Text } = require('F8Text');
-var View = require('View');
-var F8Colors = require('F8Colors');
+
+const Clipboard = require('Clipboard');
+const F8Button = require('F8Button');
+const ToastAndroid = require('ToastAndroid');
+const Platform = require('Platform');
+const ItemsWithSeparator = require('../../common/ItemsWithSeparator');
+const React = require('React');
+const Section = require('./Section');
+const StyleSheet = require('StyleSheet');
+const { Text } = require('F8Text');
+const View = require('View');
+const F8Colors = require('F8Colors');
 
 type Props = {
   network: string;
@@ -72,8 +72,8 @@ class WiFiDetails extends React.Component {
     if (Platform.OS === 'android') {
       ToastAndroid.show('Copied!', ToastAndroid.SHORT);
     } else {
-      this.setState({copied: true});
-      setTimeout(() => this.setState({copied: false}), 800);
+      this.setState({ copied: true });
+      setTimeout(() => this.setState({ copied: false }), 800);
     }
   }
 }

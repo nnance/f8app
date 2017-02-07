@@ -22,10 +22,9 @@
  * @flow
  */
 
-'use strict';
 
-var React = require('react');
-var {
+const React = require('react');
+const {
   Image,
   StyleSheet,
   Text,
@@ -56,12 +55,12 @@ class FriendsList extends React.Component {
     }
     return (
       <View style={styles.container}>
-        {this.props.friends.map((friend) =>
+        {this.props.friends.map(friend =>
           <UserPog
             user={friend}
             key={friend.id}
             onPress={() => this.props.onPress(friend)}
-          />
+          />,
         )}
       </View>
     );
@@ -75,13 +74,13 @@ class UserPog extends React.Component {
   };
 
   render() {
-    var {id, name} = this.props.user;
-    var firstName = name.split(' ')[0]; // TODO: problems with i18n
+    const { id, name } = this.props.user;
+    const firstName = name.split(' ')[0]; // TODO: problems with i18n
     return (
       <TouchableOpacity style={styles.pog} onPress={this.props.onPress}>
         <Image
           style={styles.profilePic}
-          source={{uri: `http://graph.facebook.com/${id}/picture`}}
+          source={{ uri: `http://graph.facebook.com/${id}/picture` }}
         />
         <Text style={styles.text}>
           {firstName}
@@ -118,7 +117,7 @@ var styles = StyleSheet.create({
     color: 'white',
     fontSize: 12,
     textAlign: 'center',
-  }
+  },
 });
 
 module.exports = FriendsList;
