@@ -66,7 +66,7 @@ export default class EmailLoginScreen extends React.Component {
           />
         </View>
         <View style={styles.buttonSession}>
-          <TouchableOpacity onPress={pushPage.bind(null, 'forgotPassword')}>
+          <TouchableOpacity onPress={() => pushPage('forgotPassword')}>
             <Text
               style={styles.forgotPasswordText}
             >
@@ -74,7 +74,7 @@ export default class EmailLoginScreen extends React.Component {
             </Text>
           </TouchableOpacity>
         </View>
-        <DashButtonWithContainer caption="สร้างบัญชีใหม่" onPress={pushPage.bind(null, 'signup')} style={{ margin: 20 }} />
+        <DashButtonWithContainer caption="สร้างบัญชีใหม่" onPress={() => pushPage('signup')} style={{ margin: 20 }} />
       </Image>
     );
   }

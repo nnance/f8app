@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import SignupScreen from '../SignupScreen';
 
 describe('SignupScreen', () => {
-  function api(email, password) {
+  function api(email) {
     if (email === 'fail@a.a') {
       return Promise.reject(new Error('something error'));
     }
@@ -28,13 +28,15 @@ describe('SignupScreen', () => {
   });
 
   it('state loading', async () => {
-    let _resolve;
-    const signUp = jest.fn(() => new Promise(resolve => _resolve = resolve));
+    let gResolve;
+    const signUp = jest.fn(() => new Promise((resolve) => {
+      gResolve = resolve;
+    }));
     const wrapper = shallow(<SignupScreen signUp={signUp} />);
     expect(wrapper.state().loading).toBe(false);
     const task = wrapper.find('[caption="สร้างบัญชี"]').props().onPress();
     expect(wrapper.state().loading).toBe(true);
-    _resolve();
+    gResolve();
     await task;
     expect(wrapper.state().loading).toBe(false);
   });

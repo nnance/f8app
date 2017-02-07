@@ -30,10 +30,6 @@ class Index extends React.Component {
     }
   }
 
-  componentWillUnmount() {
-    BackAndroid.removeEventListener('hardwareBackPress', this.handleBackButton);
-  }
-
   componentWillReceiveProps(nextProps) {
     if (nextProps.isLoggedIn) {
       if (this.props.onExit && !this.isExited) {
@@ -52,34 +48,12 @@ class Index extends React.Component {
     }
   }
 
-  render() {
-    return (
-      <Navigator
-        ref="navigator"
-        initialRoute={{ page: 'login' }}
-        renderScene={this.renderScene}
-      />
-    );
-  }
-
-  renderScene(route, navigator) {
-    if (route.page === 'login') {
-      return <LoginScreen error={this.props.error} logIn={this.props.logIn} pushPage={this.pushPage} />;
-    }
-    if (route.page === 'signup') {
-      return <SignupScreen error={this.props.error} signUp={this.props.signUp} pushPage={this.pushPage} goBack={this.goBack} />;
-    }
-    if (route.page === 'forgotPassword') {
-      return <ForgotPasswordScreen error={this.props.error} forgotPassword={this.props.forgotPassword} pushPage={this.pushPage} goBack={this.goBack} />;
-    }
-    if (route.page === 'success') {
-      return <SuccessScreen successText={route.payload.successText} goToLogin={this.goToLogin} />;
-    }
-    return <Text>Page not found</Text>;
+  componentWillUnmount() {
+    BackAndroid.removeEventListener('hardwareBackPress', this.handleBackButton);
   }
 
   handleBackButton() {
-    const navigator = this.refs.navigator;
+    const navigator = this.navigator;
     if (navigator && navigator.getCurrentRoutes().length > 1) {
       navigator.pop();
       return true;
@@ -93,9 +67,10 @@ class Index extends React.Component {
 
   goToLogin() {
     this.props.clearError();
-    const navigator = this.refs.navigator;
+    const navigator = this.navigator;
     let N = navigator.getCurrentRoutes().length;
-    while (N-- > 1) {
+    while (N > 1) {
+      N -= 1;
       navigator.pop();
     }
   }
@@ -104,12 +79,62 @@ class Index extends React.Component {
     this.props.clearError();
     this.props.clearIsReqedForgotPassword();
     this.props.clearSignedUp();
-    this.refs.navigator.push({ page, payload });
+    this.navigator.push({ page, payload });
   }
 
   goBack() {
     this.props.clearError();
-    this.refs.navigator.pop();
+    this.navigator.pop();
+  }
+
+  renderScene(route) {
+    if (route.page === 'login') {
+      return (
+        <LoginScreen
+          error={this.props.error}
+          logIn={this.props.logIn}
+          pushPage={this.pushPage}
+        />
+      );
+    }
+    if (route.page === 'signup') {
+      return (
+        <SignupScreen
+          error={this.props.error}
+          signUp={this.props.signUp}
+          pushPage={this.pushPage}
+          goBack={this.goBack}
+        />
+      );
+    }
+    if (route.page === 'forgotPassword') {
+      return (
+        <ForgotPasswordScreen
+          error={this.props.error}
+          forgotPassword={this.props.forgotPassword}
+          pushPage={this.pushPage}
+          goBack={this.goBack}
+        />
+      );
+    }
+    if (route.page === 'success') {
+      return <SuccessScreen successText={route.payload.successText} goToLogin={this.goToLogin} />;
+    }
+    return <Text>Page not found</Text>;
+  }
+
+  render() {
+    return (
+      <Navigator
+        ref={
+          (node) => {
+            this.navigator = node;
+          }
+        }
+        initialRoute={{ page: 'login' }}
+        renderScene={this.renderScene}
+      />
+    );
   }
 }
 

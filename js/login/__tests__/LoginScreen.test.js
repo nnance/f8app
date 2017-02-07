@@ -1,5 +1,6 @@
 jest.mock('BackAndroid');
 
+/* eslint import/first: off */
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
@@ -45,7 +46,15 @@ describe('LoginScreen', () => {
 
   it('renderScene', () => {
     const dump = shallow(<LoginScreenComponent />).instance();
-    const routes = [{ page: 'index' }, { page: 'email-login' }, { page: 'signup' }, { page: 'forgotPassword' }, { page: 'success', payload: 'test' }, {}];
+    const routes = [
+      { page: 'index' },
+      { page: 'email-login' },
+      { page: 'signup' },
+      { page: 'forgotPassword' },
+      { page: 'success',
+        payload: 'test' },
+      {},
+    ];
     routes.forEach((route) => {
       const tree = shallow(<View>{dump.renderScene(route)}</View>);
       expect(toJSON(tree)).toMatchSnapshot();
@@ -63,7 +72,12 @@ describe('LoginScreen', () => {
   it('addBackButtonListener alwayFalse', () => {
     const addSpy = jest.fn();
     const removeSpy = jest.fn();
-    const wrapper = shallow(<LoginScreenComponent addBackButtonListener={addSpy} removeBackButtonListener={removeSpy} />);
+    const wrapper = shallow(
+      <LoginScreenComponent
+        addBackButtonListener={addSpy}
+        removeBackButtonListener={removeSpy}
+      />,
+    );
     wrapper.instance().componentDidMount();
     expect(addSpy).toBeCalledWith(wrapper.instance().alwaysFalse);
     wrapper.instance().componentWillUnmount();
@@ -81,11 +95,9 @@ describe('LoginScreen', () => {
     const wrapper = shallow(<LoginScreenComponent />);
     const spy = jest.fn();
     const inst = wrapper.instance();
-    inst.refs = {
-      navigator: {
-        getCurrentRoutes: jest.fn(() => [1, 1, 1]),
-        pop: spy,
-      },
+    inst.navigator = {
+      getCurrentRoutes: jest.fn(() => [1, 1, 1]),
+      pop: spy,
     };
     inst.goBack();
     expect(spy).toBeCalled();
@@ -95,11 +107,9 @@ describe('LoginScreen', () => {
     const spy = jest.fn();
     const wrapper = shallow(<LoginScreenComponent onExit={spy} />);
     const inst = wrapper.instance();
-    inst.refs = {
-      navigator: {
-        getCurrentRoutes: jest.fn(() => [1]),
-        pop: jest.fn(),
-      },
+    inst.navigator = {
+      getCurrentRoutes: jest.fn(() => [1]),
+      pop: jest.fn(),
     };
     inst.goBack();
     expect(spy).toBeCalled();
@@ -111,14 +121,14 @@ describe('LoginScreen', () => {
     const pages = [{ page: 'email-login' }, { page: 'fake-1' }, { page: 'fake-2' }];
     const spy = jest.fn(pages.pop);
     pages.pop = spy;
-    inst.refs = {
-      navigator: {
-        getCurrentRoutes: jest.fn(() => pages),
-        popN: (n) => {
-          while (n--) {
-            pages.pop();
-          }
-        },
+    inst.navigator = {
+      getCurrentRoutes: jest.fn(() => pages),
+      popN: (n) => {
+        let N = n;
+        while (N) {
+          N -= 1;
+          pages.pop();
+        }
       },
     };
     inst.goToLogin();
@@ -129,9 +139,9 @@ describe('LoginScreen', () => {
 
   describe('logInWithFacebook', () => {
     let onLoggedIn;
-    let alertSpy,
-      preAlert,
-      preWarn;
+    let alertSpy;
+    let preAlert;
+    let preWarn;
 
     beforeAll(() => {
       preAlert = global.alert;
@@ -155,8 +165,15 @@ describe('LoginScreen', () => {
     });
 
     it('call onLoggedIn if success', async () => {
-      actions.logInWithFacebook.mockImplementationOnce(() => Promise.resolve());
-      const wrapper = shallow(<LoginScreenComponent onLoggedIn={onLoggedIn} dispatch={jest.fn(a => a)} />);
+      actions.logInWithFacebook.mockImplementationOnce(
+        () => Promise.resolve(),
+      );
+      const wrapper = shallow(
+        <LoginScreenComponent
+          onLoggedIn={onLoggedIn}
+          dispatch={jest.fn(a => a)}
+        />,
+      );
       const inst = wrapper.instance();
       await inst.logInWithFacebook();
       expect(actions.logInWithFacebook).toBeCalled();
@@ -164,8 +181,15 @@ describe('LoginScreen', () => {
     });
 
     it('call alert if fail', async () => {
-      actions.logInWithFacebook.mockImplementationOnce(() => Promise.reject(new Error('something wrong')));
-      const wrapper = shallow(<LoginScreenComponent onLoggedIn={onLoggedIn} dispatch={jest.fn(a => a)} />);
+      actions.logInWithFacebook.mockImplementationOnce(
+        () => Promise.reject(new Error('something wrong')),
+      );
+      const wrapper = shallow(
+        <LoginScreenComponent
+          onLoggedIn={onLoggedIn}
+          dispatch={jest.fn(a => a)}
+        />,
+      );
       const inst = wrapper.instance();
       await inst.logInWithFacebook();
       expect(onLoggedIn).not.toBeCalled();

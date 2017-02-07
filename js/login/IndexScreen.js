@@ -24,73 +24,22 @@
 
 
 import ClogiiButton from 'ClogiiButton';
-import { DashButtonWithContainer } from './DashButton';
-
 import {
-  Animated,
   StatusBar,
   View,
   Image,
 } from 'react-native';
 
+import { DashButtonWithContainer } from './DashButton';
+
 const F8Colors = require('F8Colors');
 const React = require('React');
 const StyleSheet = require('StyleSheet');
 const { Text } = require('F8Text');
+const { connect } = require('react-redux');
 const LoginButton = require('../common/LoginButton');
 
-const { connect } = require('react-redux');
-
-class IndexScreen extends React.Component {
-  constructor(props) {
-    super(props);
-    // this.state = {
-    //   anim: new Animated.Value(0),
-    // };
-  }
-
-  componentDidMount() {
-    StatusBar && StatusBar.setBarStyle('default');
-    // Animated.timing(this.state.anim, {toValue: 3000, duration: 3000}).start();
-  }
-
-  render() {
-    return (
-      <Image
-        style={styles.container}
-        source={require('./img/bg.png')}
-      >
-        <View style={{ flex: 7, alignItems: 'center', justifyContent: 'center' }}>
-          <View style={{ flex: 4 }} />
-          <View style={{ flex: 3, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-            <View style={{ flex: 1 }}>
-              <Image
-                style={{ flex: 1, resizeMode: 'contain', width: undefined, height: undefined }}
-                source={require('./img/header.png')}
-              />
-            </View>
-          </View>
-          <Text style={{ flex: 4, fontSize: 12, color: 'white' }}>ที่ที่จักวาลของคุณ จะอยู่ง่าย... แค่ปลายนิ้ว</Text>
-        </View>
-        <View style={{ flex: 4, alignItems: 'center', justifyContent: 'center' }}>
-          <LoginButton source="First screen" style={styles.button} />
-          <ClogiiButton
-            type="bordered"
-            style={styles.button}
-            onPress={this.props.pushPage.bind(null, 'email-login')}
-            caption="ลงชื่อเข้าใช้ผ่านอีเมล"
-          />
-          <DashButtonWithContainer caption="สร้างบัญชีใหม่" onPress={this.props.pushPage.bind(null, 'signup')} />
-        </View>
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-end' }}>
-          <Text style={{ color: F8Colors.fadedLightText, fontSize: 10 }}>By signing up you agree to our Terms & Privacy policy</Text>
-        </View>
-      </Image>
-    );
-  }
-}
-
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'transparent',
@@ -126,6 +75,51 @@ var styles = StyleSheet.create({
     padding: 15,
   },
 });
+
+class IndexScreen extends React.Component {
+  componentDidMount() {
+    if (StatusBar) {
+      StatusBar.setBarStyle('default');
+    }
+  }
+
+  render() {
+    return (
+      <Image
+        style={styles.container}
+        source={require('./img/bg.png')}
+      >
+        <View style={{ flex: 7, alignItems: 'center', justifyContent: 'center' }}>
+          <View style={{ flex: 4 }} />
+          <View style={{ flex: 3, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+            <View style={{ flex: 1 }}>
+              <Image
+                style={{ flex: 1, resizeMode: 'contain', width: undefined, height: undefined }}
+                source={require('./img/header.png')}
+              />
+            </View>
+          </View>
+          <Text style={{ flex: 4, fontSize: 12, color: 'white' }}>ที่ที่จักวาลของคุณ จะอยู่ง่าย... แค่ปลายนิ้ว</Text>
+        </View>
+        <View style={{ flex: 4, alignItems: 'center', justifyContent: 'center' }}>
+          <LoginButton source="First screen" style={styles.button} />
+          <ClogiiButton
+            type="bordered"
+            style={styles.button}
+            onPress={() => this.props.pushPage('email-login')}
+            caption="ลงชื่อเข้าใช้ผ่านอีเมล"
+          />
+          <DashButtonWithContainer caption="สร้างบัญชีใหม่" onPress={() => this.props.pushPage('signup')} />
+        </View>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-end' }}>
+          <Text style={{ color: F8Colors.fadedLightText, fontSize: 10 }}>
+            By signing up you agree to our Terms & Privacy policy
+          </Text>
+        </View>
+      </Image>
+    );
+  }
+}
 
 export default connect()(IndexScreen);
 export {

@@ -55,6 +55,7 @@
     "react/prefer-stateless-function": "off", // test with jest --coverage and no --coverage will gen different snapshot
     "import/no-extraneous-dependencies": "off", // react-native can use @providesModule
     "import/no-unresolved": "off",
-    "import/extensions": "off"
+    "import/extensions": "off",
+    "class-methods-use-this": "off"
   }
 }

@@ -29,12 +29,22 @@ class LoginScreen extends React.Component {
     this.goBack = this.goBack.bind(this);
     this.renderScene = this.renderScene.bind(this);
     this.logInWithFacebook = this.logInWithFacebook.bind(this);
+    this.renderLeftButton = this.renderLeftButton.bind(this);
+    this.renderTitle = this.renderTitle.bind(this);
+    this.renderRightButton = this.renderRightButton.bind(this);
+    this.renderScene = this.renderScene.bind(this);
   }
 
   componentDidMount() {
     BackAndroid.addEventListener('hardwareBackPress', this.goBack);
     if (this.props.addBackButtonListener) {
       this.props.addBackButtonListener(this.alwaysFalse);
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.isLoggedIn && this.props.onExit) {
+      this.props.onExit();
     }
   }
 
@@ -45,39 +55,67 @@ class LoginScreen extends React.Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.isLoggedIn) {
-      this.props.onExit && this.props.onExit();
+  alwaysFalse() {
+    return false;
+  }
+
+  goToLogin() {
+    const navigator = this.navigator;
+    const currentRoutes = navigator.getCurrentRoutes();
+    let N = navigator.getCurrentRoutes().length;
+    while (N) {
+      if (currentRoutes[N - 1].page === 'email-login') {
+        break;
+      }
+      N -= 1;
+    }
+    if (N <= 0) {
+      throw Error('email-login route not found');
+    }
+    navigator.popN(navigator.getCurrentRoutes().length - N);
+  }
+
+  pushPage(page, payload) {
+    this.navigator.push({ page, payload });
+  }
+
+  goBack() {
+    if (this.navigator.getCurrentRoutes().length > 1) {
+      this.navigator.pop();
+      return true;
+    } else if (this.props.onExit) {
+      this.props.onExit();
+      return true;
+    }
+    return false;
+  }
+
+  async logInWithFacebook() {
+    const { dispatch, onLoggedIn } = this.props;
+
+    try {
+      await dispatch(actions.logInWithFacebook());
+    } catch (e) {
+      const message = e.message || e;
+      if (message !== 'Timed out' && message !== 'Canceled by user') {
+        alert(message);
+        console.warn(e);
+      }
+      return;
+    }
+
+    if (onLoggedIn) {
+      onLoggedIn();
     }
   }
 
-  render() {
-    return (
-      <Navigator
-        ref="navigator"
-        initialRoute={{ page: this.props.withEmail ? 'email-login' : 'index' }}
-        renderScene={this.renderScene}
-        navigationBar={
-          <Navigator.NavigationBar
-            navigationStyles={Navigator.NavigationBar.StylesIOS}
-            routeMapper={{
-              LeftButton: this.renderLeftButton.bind(this),
-              RightButton: this.renderRightButton.bind(this),
-              Title: this.renderTitle.bind(this),
-            }}
-          />
-        }
-      />
-    );
-  }
-
-  renderTitle(route, navigator, index, navState) {
+  renderTitle(route) {
     let title = '';
     title = titles[route.page];
     return (<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}><Text style={styles.titleNavBar}>{title}</Text></View>);
   }
 
-  renderLeftButton(route, navigator, index, navState) {
+  renderLeftButton(route) {
     if (route.page === 'index') {
       return null;
     }
@@ -90,7 +128,7 @@ class LoginScreen extends React.Component {
     );
   }
 
-  renderRightButton(route, navigator, index, navState) {
+  renderRightButton(route) {
     if (route.page !== 'index') {
       return null;
     }
@@ -108,12 +146,18 @@ class LoginScreen extends React.Component {
     );
   }
 
-  renderScene(route, navigator) {
+  renderScene(route) {
     if (route.page === 'index') {
       return <IndexScreen {...this.props} pushPage={this.pushPage} />;
     }
     if (route.page === 'email-login') {
-      return <EmailLoginScreen error={this.props.error} logIn={this.props.logIn} pushPage={this.pushPage} />;
+      return (
+        <EmailLoginScreen
+          error={this.props.error}
+          logIn={this.props.logIn}
+          pushPage={this.pushPage}
+        />
+      );
     }
     if (route.page === 'signup') {
       return (<SignupScreen
@@ -138,60 +182,29 @@ class LoginScreen extends React.Component {
     return <Text>Page not found</Text>;
   }
 
-  alwaysFalse() {
-    return false;
+  render() {
+    return (
+      <Navigator
+        ref={
+          (node) => {
+            this.navigator = node;
+          }
+        }
+        initialRoute={{ page: this.props.withEmail ? 'email-login' : 'index' }}
+        renderScene={this.renderScene}
+        navigationBar={
+          <Navigator.NavigationBar
+            navigationStyles={Navigator.NavigationBar.StylesIOS}
+            routeMapper={{
+              LeftButton: this.renderLeftButton,
+              RightButton: this.renderRightButton,
+              Title: this.renderTitle,
+            }}
+          />
+        }
+      />
+    );
   }
-
-  goToLogin() {
-    const navigator = this.refs.navigator;
-    const currentRoutes = navigator.getCurrentRoutes();
-    let N = navigator.getCurrentRoutes().length;
-    while (N) {
-      if (currentRoutes[N - 1].page === 'email-login') {
-        break;
-      }
-      N--;
-    }
-    if (N <= 0) {
-      throw Error('email-login route not found');
-    }
-    navigator.popN(navigator.getCurrentRoutes().length - N);
-  }
-
-  pushPage(page, payload) {
-    this.refs.navigator.push({ page, payload });
-  }
-
-  goBack() {
-    if (this.refs.navigator.getCurrentRoutes().length > 1) {
-      this.refs.navigator.pop();
-      return true;
-    } else if (this.props.onExit) {
-      this.props.onExit();
-      return true;
-    }
-    return false;
-  }
-
-  async logInWithFacebook() {
-    const { dispatch, onLoggedIn } = this.props;
-
-    try {
-      await dispatch(actions.logInWithFacebook());
-    } catch (e) {
-      const message = e.message || e;
-      if (message !== 'Timed out' && message !== 'Canceled by user') {
-        alert(message);
-        console.warn(e);
-      }
-      return;
-    } finally {
-
-    }
-
-    onLoggedIn && onLoggedIn();
-  }
-
 }
 
 const select = state => ({

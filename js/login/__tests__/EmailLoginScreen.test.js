@@ -20,13 +20,15 @@ describe('EmailLoginScreen', () => {
   });
 
   it('state loading', async () => {
-    let _resolve;
-    const logIn = jest.fn(() => new Promise(resolve => _resolve = resolve));
+    let gResolve;
+    const logIn = jest.fn(() => new Promise((resolve) => {
+      gResolve = resolve;
+    }));
     const wrapper = shallow(<EmailLoginScreen logIn={logIn} pushPage={jest.fn()} />);
     expect(wrapper.state().loading).toBe(false);
     const task = wrapper.find('[caption="เข้าสู่ระบบ"]').props().onPress();
     expect(wrapper.state().loading).toBe(true);
-    _resolve();
+    gResolve();
     await task;
     expect(wrapper.state().loading).toBe(false);
   });

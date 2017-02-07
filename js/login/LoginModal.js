@@ -22,8 +22,6 @@
  * @flow
  */
 
-
-const LoginButton = require('../common/LoginButton');
 const F8Colors = require('F8Colors');
 const Image = require('Image');
 const React = require('React');
@@ -32,45 +30,9 @@ const { Text } = require('F8Text');
 const View = require('View');
 const F8Button = require('F8Button');
 const Navigator = require('Navigator');
+const LoginButton = require('../common/LoginButton');
 
-class LoginModal extends React.Component {
-  props: {
-    navigator: Navigator;
-    onLogin: () => void;
-  };
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <Image
-          style={styles.content}
-          source={require('./img/bg.png')}
-        >
-          <Text style={styles.h1}>
-            Log in with Facebook
-          </Text>
-          <Text style={styles.h2}>
-            to save sessions to{'\n'}your schedule.
-          </Text>
-          <LoginButton onLoggedIn={() => this.loggedIn()} />
-          <F8Button
-            type="secondary"
-            caption="Not Now"
-            source="Modal"
-            onPress={() => this.props.navigator.pop()}
-          />
-        </Image>
-      </View>
-    );
-  }
-
-  loggedIn() {
-    this.props.navigator.pop();
-    this.props.onLogin();
-  }
-}
-
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'rgba(0, 0, 0, 0.2)',
@@ -108,5 +70,42 @@ var styles = StyleSheet.create({
     color: F8Colors.lightText,
   },
 });
+
+class LoginModal extends React.Component {
+  props: {
+    navigator: Navigator;
+    onLogin: () => void;
+  };
+
+  loggedIn() {
+    this.props.navigator.pop();
+    this.props.onLogin();
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <Image
+          style={styles.content}
+          source={require('./img/bg.png')}
+        >
+          <Text style={styles.h1}>
+            Log in with Facebook
+          </Text>
+          <Text style={styles.h2}>
+            to save sessions to{'\n'}your schedule.
+          </Text>
+          <LoginButton onLoggedIn={() => this.loggedIn()} />
+          <F8Button
+            type="secondary"
+            caption="Not Now"
+            source="Modal"
+            onPress={() => this.props.navigator.pop()}
+          />
+        </Image>
+      </View>
+    );
+  }
+}
 
 module.exports = LoginModal;

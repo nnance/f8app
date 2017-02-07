@@ -3,6 +3,8 @@ import { View, Text, TouchableOpacity } from 'react-native';
 
 import F8Colors from 'F8Colors';
 
+/* eslint react/no-multi-comp: off */
+
 export default class DashButton extends React.Component {
   render() {
     return (
