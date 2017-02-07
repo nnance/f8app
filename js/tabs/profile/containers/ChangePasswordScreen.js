@@ -18,6 +18,20 @@ import { colors as commonColors } from '../../../common/styles';
 import { changePassword } from '../../../actions/changeProfile';
 import ModalSpinner from '../../../common/ModalSpinner';
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: commonColors.greyBackground,
+  },
+  editorContainer: {
+    backgroundColor: 'white',
+    marginTop: 10,
+  },
+  button: {
+    margin: 50,
+  },
+});
+
 class ChangePasswordScreen extends React.Component {
   constructor(...args) {
     super(...args);
@@ -27,6 +41,35 @@ class ChangePasswordScreen extends React.Component {
       error: null,
       saving: false,
     };
+  }
+
+  onChangePassword() {
+    const password = this.state.password;
+    const confirmPassword = this.state.confirmPassword;
+    this.setState({
+      error: null,
+      saving: true,
+    });
+    if (password !== confirmPassword) {
+      this.setState({
+        error: 'password not match',
+        saving: false,
+      });
+      return Promise.resolve();
+    }
+    return this.props.changePassword(password).then(() => {
+      this.setState({
+        saving: false,
+      });
+      if (this.props.onBackPress) {
+        this.props.onBackPress();
+      }
+    }).catch((error) => {
+      this.setState({
+        saving: false,
+        error: error.message,
+      });
+    });
   }
 
   render() {
@@ -78,48 +121,7 @@ class ChangePasswordScreen extends React.Component {
       </SecureContainer>
     </View>);
   }
-
-  onChangePassword() {
-    const password = this.state.password;
-    const confirmPassword = this.state.confirmPassword;
-    this.setState({
-      error: null,
-      saving: true,
-    });
-    if (password !== confirmPassword) {
-      this.setState({
-        error: 'password not match',
-        saving: false,
-      });
-      return Promise.resolve();
-    }
-    return this.props.changePassword(password).then(() => {
-      this.setState({
-        saving: false,
-      });
-      this.props.onBackPress && this.props.onBackPress();
-    }).catch((error) => {
-      this.setState({
-        saving: false,
-        error: error.message,
-      });
-    });
-  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: commonColors.greyBackground,
-  },
-  editorContainer: {
-    backgroundColor: 'white',
-    marginTop: 10,
-  },
-  button: {
-    margin: 50,
-  },
-});
 
 const actionsMaping = {
   changePassword,

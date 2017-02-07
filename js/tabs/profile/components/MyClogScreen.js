@@ -1,15 +1,8 @@
 import React from 'react';
 
 import {
-  Image,
-  Text,
   View,
-  StyleSheet,
-  TouchableOpacity,
 } from 'react-native';
-import moment from 'moment';
-
-import PureListView from '../../../common/PureListView';
 
 import NavBar from './NavBar';
 import { styles as commonStyles } from '../common';

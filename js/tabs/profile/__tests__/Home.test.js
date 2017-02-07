@@ -1,7 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
-import toJSON from 'enzyme-to-json';
 import { View, TouchableOpacity } from 'react-native';
 
 import ProfileHeader from '../components/ProfileHeader';

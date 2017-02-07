@@ -18,6 +18,18 @@ import { colors } from '../../../common/styles';
 
 const rightArrow = require('../img/icons/rightGreyArrow.png');
 
+const styles = StyleSheet.create({
+  rowContainer: {
+    padding: 13,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  eachBookmarkContainer: {
+    alignItems: 'center',
+    paddingRight: 5,
+  },
+});
+
 const BookmarkRow = props => (<TouchableOpacity style={styles.rowContainer}>
   <CircleImageWithCategory
     source={mapSource(props.preview)}
@@ -75,17 +87,5 @@ class BookmarkScreen extends React.Component {
     </View>);
   }
 }
-
-const styles = StyleSheet.create({
-  rowContainer: {
-    padding: 13,
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  eachBookmarkContainer: {
-    alignItems: 'center',
-    paddingRight: 5,
-  },
-});
 
 export default BookmarkScreen;

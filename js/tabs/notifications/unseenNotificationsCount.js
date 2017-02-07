@@ -23,10 +23,10 @@
  */
 
 
-const allNotifications = require('./allNotifications');
 const { createSelector } = require('reselect');
 
 import type { Notification, SeenNotifications } from '../../reducers/notifications';
+const allNotifications = require('./allNotifications');
 
 function unseenNotificationsCount(notifications: Array<Notification>, seen: SeenNotifications): number {
   return notifications.filter(notification => !seen[notification.id]).length;

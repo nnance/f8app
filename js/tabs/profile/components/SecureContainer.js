@@ -9,6 +9,45 @@ import F8Button from 'F8Button';
 
 import { colors as commonColors } from '../../../common/styles';
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    backgroundColor: commonColors.greyBackground,
+  },
+  spaceFlex: {
+    flex: 1,
+  },
+  error: {
+    margin: 10,
+    alignSelf: 'center',
+    color: 'red',
+  },
+  innerContainer: {
+    flex: 8,
+  },
+  input: {
+    flex: 1,
+    height: 40,
+  },
+  inputBox: {
+    height: 80,
+    width: 300,
+    padding: 20,
+    borderRadius: 10,
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+    borderWidth: 0.5,
+    borderColor: commonColors.greyBorder,
+  },
+  submitBox: {
+    flex: 1,
+    backgroundColor: 'blue',
+  },
+  buttonBox: {
+    padding: 60,
+  },
+});
+
 class SecureContainer extends React.Component {
   constructor(...args) {
     super(...args);
@@ -53,44 +92,5 @@ class SecureContainer extends React.Component {
     </View>);
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    backgroundColor: commonColors.greyBackground,
-  },
-  spaceFlex: {
-    flex: 1,
-  },
-  error: {
-    margin: 10,
-    alignSelf: 'center',
-    color: 'red',
-  },
-  innerContainer: {
-    flex: 8,
-  },
-  input: {
-    flex: 1,
-    height: 40,
-  },
-  inputBox: {
-    height: 80,
-    width: 300,
-    padding: 20,
-    borderRadius: 10,
-    backgroundColor: 'rgba(255, 255, 255, 0.8)',
-    borderWidth: 0.5,
-    borderColor: commonColors.greyBorder,
-  },
-  submitBox: {
-    flex: 1,
-    backgroundColor: 'blue',
-  },
-  buttonBox: {
-    padding: 60,
-  },
-});
 
 export default SecureContainer;

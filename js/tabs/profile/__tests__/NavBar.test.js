@@ -24,7 +24,13 @@ describe('<NavBar/>', () => {
   it('handle onPress', () => {
     const leftFn = jest.fn();
     const rightFn = jest.fn();
-    const dump = shallow(<NavBar renderRightMenu={() => <Text>RButton</Text>} onLeftPress={leftFn} onRightPress={rightFn} />);
+    const dump = shallow(
+      <NavBar
+        renderRightMenu={() => <Text>RButton</Text>}
+        onLeftPress={leftFn}
+        onRightPress={rightFn}
+      />,
+    );
     const wrapper = shallow(<View>{dump.instance().renderRightMenu()}</View>);
     const touchables = wrapper.find(TouchableOpacity);
     expect(touchables.length).toBeGreaterThan(0);

@@ -38,7 +38,12 @@ describe('ChangeEmailScreen', () => {
   it('call onBackPress if changed email', async () => {
     const changeEmail = jest.fn(api);
     const onBackPress = jest.fn();
-    const wrapper = shallow(<ChangeEmailScreenComponent changeEmail={changeEmail} onBackPress={onBackPress} />);
+    const wrapper = shallow(
+      <ChangeEmailScreenComponent
+        changeEmail={changeEmail}
+        onBackPress={onBackPress}
+      />,
+    );
     wrapper.find('[placeholder="email"]').simulate('changeText', 'a@a.a');
     wrapper.find('[placeholder="confirm email"]').simulate('changeText', 'a@a.a');
     await wrapper.find(F8Button).props().onPress();
@@ -48,7 +53,12 @@ describe('ChangeEmailScreen', () => {
   it('set state error if api reject', async () => {
     const changeEmail = jest.fn(api);
     const onBackPress = jest.fn();
-    const wrapper = shallow(<ChangeEmailScreenComponent changeEmail={changeEmail} onBackPress={onBackPress} />);
+    const wrapper = shallow(
+      <ChangeEmailScreenComponent
+        changeEmail={changeEmail}
+        onBackPress={onBackPress}
+      />,
+    );
     wrapper.find('[placeholder="email"]').simulate('changeText', 'fail@a.a');
     wrapper.find('[placeholder="confirm email"]').simulate('changeText', 'fail@a.a');
     await wrapper.find(F8Button).props().onPress();

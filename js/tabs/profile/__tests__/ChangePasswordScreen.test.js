@@ -38,7 +38,12 @@ describe('ChangePasswordScreen', () => {
   it('call onBackPress if changed password', async () => {
     const changePassword = jest.fn(api);
     const onBackPress = jest.fn();
-    const wrapper = shallow(<ChangePasswordScreenComponent changePassword={changePassword} onBackPress={onBackPress} />);
+    const wrapper = shallow(
+      <ChangePasswordScreenComponent
+        changePassword={changePassword}
+        onBackPress={onBackPress}
+      />,
+    );
     wrapper.find('[placeholder="password"]').simulate('changeText', 'ok');
     wrapper.find('[placeholder="confirm password"]').simulate('changeText', 'ok');
     await wrapper.find(F8Button).props().onPress();
@@ -48,7 +53,12 @@ describe('ChangePasswordScreen', () => {
   it('set state error if api reject', async () => {
     const changePassword = jest.fn(api);
     const onBackPress = jest.fn();
-    const wrapper = shallow(<ChangePasswordScreenComponent changePassword={changePassword} onBackPress={onBackPress} />);
+    const wrapper = shallow(
+      <ChangePasswordScreenComponent
+        changePassword={changePassword}
+        onBackPress={onBackPress}
+      />,
+    );
     wrapper.find('[placeholder="password"]').simulate('changeText', 'fail');
     wrapper.find('[placeholder="confirm password"]').simulate('changeText', 'fail');
     await wrapper.find(F8Button).props().onPress();

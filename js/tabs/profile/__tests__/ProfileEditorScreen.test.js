@@ -11,6 +11,7 @@ import TextInput from '../../../common/TextInput';
 jest.mock('react-native-picker');
 jest.mock('react-native-image-picker');
 
+/* eslint import/first: off */
 import ImagePicker from 'react-native-image-picker';
 
 import NavBar from '../components/NavBar';
@@ -19,7 +20,7 @@ import ProfileEditorScreenComponent, { OKButton } from '../components/ProfileEdi
 describe('ProfileEditorScreen', () => {
   const expectImage = { image: 'expect.png' };
 
-  function api(name, birthDayDate, sex, changedProfilePicture, changedProfileCover) {
+  function api(name) {
     if (name === 'fail') {
       return Promise.reject(new Error('something wrong'));
     }
@@ -32,14 +33,18 @@ describe('ProfileEditorScreen', () => {
   });
 
   it('call api changePublicProfile', async () => {
-    let _resolve;
-    const changePublicProfile = jest.fn(() => new Promise(resolve => _resolve = resolve));
-    const wrapper = shallow(<ProfileEditorScreenComponent changePublicProfile={changePublicProfile} />);
+    let gResolve;
+    const changePublicProfile = jest.fn(() => new Promise((resolve) => {
+      gResolve = resolve;
+    }));
+    const wrapper = shallow(
+      <ProfileEditorScreenComponent changePublicProfile={changePublicProfile} />,
+    );
     wrapper.find(TextInput).simulate('changeText', 'AAA');
     expect(wrapper.state().savingProfile).toBe(false);
     const task = wrapper.find(NavBar).props().onRightPress();
     expect(wrapper.state().savingProfile).toBe(true);
-    _resolve();
+    gResolve();
     await task;
     expect(wrapper.state().savingProfile).toBe(false);
     expect(changePublicProfile).toBeCalled();
@@ -49,29 +54,38 @@ describe('ProfileEditorScreen', () => {
   it('call onBackPress if changed profile', async () => {
     const changePublicProfile = jest.fn(api);
     const onBackPress = jest.fn();
-    const wrapper = shallow(<ProfileEditorScreenComponent changePublicProfile={changePublicProfile} onBackPress={onBackPress} />);
+    const wrapper = shallow(
+      <ProfileEditorScreenComponent
+        changePublicProfile={changePublicProfile}
+        onBackPress={onBackPress}
+      />,
+    );
     await wrapper.find(NavBar).props().onRightPress();
     expect(onBackPress).toBeCalled();
   });
 
   it('call api linkFacebook', async () => {
-    let _resolve;
+    let gResolve;
     const linkFacebook = jest.fn(() => new Promise((resolve) => {
-      _resolve = resolve;
+      gResolve = resolve;
     }));
-    const wrapper = shallow(<ProfileEditorScreenComponent linkFacebook={linkFacebook} facebookLinked={false} />);
+    const wrapper = shallow(
+      <ProfileEditorScreenComponent linkFacebook={linkFacebook} facebookLinked={false} />,
+    );
     expect(wrapper.state().linkingFacebook).toBe(false);
     const linkingPromise = wrapper.find(Switch).props().onValueChange();
     expect(linkFacebook).toBeCalled();
     expect(wrapper.state().linkingFacebook).toBe(true);
-    _resolve();
+    gResolve();
     await linkingPromise;
     expect(wrapper.state().linkingFacebook).toBe(false);
   });
 
   it('call api unlinkFacebook', async () => {
     const unlinkFacebook = jest.fn(() => Promise.resolve());
-    const wrapper = shallow(<ProfileEditorScreenComponent unlinkFacebook={unlinkFacebook} facebookLinked />);
+    const wrapper = shallow(
+      <ProfileEditorScreenComponent unlinkFacebook={unlinkFacebook} facebookLinked />,
+    );
     await wrapper.find(Switch).props().onValueChange();
     expect(unlinkFacebook).toBeCalled();
   });
@@ -80,10 +94,8 @@ describe('ProfileEditorScreen', () => {
     const wrapper = shallow(<ProfileEditorScreenComponent />);
     const expectDate = new Date(1993, 5, 12);
     const spy = jest.fn(() => Promise.resolve(expectDate));
-    wrapper.instance().refs = {
-      datePicker: {
-        open: spy,
-      },
+    wrapper.instance().datePicker = {
+      open: spy,
     };
     await wrapper.find('[name="birthDayInput"]').props().onPress();
     expect(spy).toBeCalled();

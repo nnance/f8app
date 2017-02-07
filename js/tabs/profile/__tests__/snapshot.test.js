@@ -2,13 +2,12 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import toJSON from 'enzyme-to-json';
-import { bookmark as mockBookmark, myClogs as mockMyClogs, user as mockUser } from '../mockData';
 import * as mockData from '../mockData';
 
 describe('BookmarkScreen', () => {
   const BookmarkScreen = require('../components/BookmarkScreen').default;
   it('render BookmarkScreen', () => {
-    const tree = renderer.create(<BookmarkScreen bookmark={mockBookmark} />);
+    const tree = renderer.create(<BookmarkScreen bookmark={mockData.bookmark} />);
     expect(tree.toJSON()).toMatchSnapshot();
   });
 });
@@ -24,7 +23,7 @@ describe('JellyShopScreen', () => {
 describe('MyClogScreen', () => {
   const MyClogScreen = require('../components/MyClogScreen').default;
   it('render MyClogScreen', () => {
-    const tree = renderer.create(<MyClogScreen clogs={mockMyClogs} />);
+    const tree = renderer.create(<MyClogScreen clogs={mockData.myClogs} />);
     expect(tree.toJSON()).toMatchSnapshot();
   });
 });
@@ -43,7 +42,13 @@ describe('ProfileCover', () => {
   });
 
   it('render user cover with children', () => {
-    const tree = renderer.create(<ProfileCover user={mockUser}><Text>User Cover</Text></ProfileCover>);
+    const tree = renderer.create(
+      <ProfileCover
+        user={mockData.user}
+      >
+        <Text>User Cover</Text>
+      </ProfileCover>,
+    );
     expect(tree.toJSON()).toMatchSnapshot();
   });
 });
@@ -51,7 +56,7 @@ describe('ProfileCover', () => {
 describe('ProfileHeader', () => {
   const ProfileHeader = require('../components/ProfileHeader').default;
   it('render', () => {
-    const tree = renderer.create(<ProfileHeader user={mockUser} />);
+    const tree = renderer.create(<ProfileHeader user={mockData.user} />);
     expect(tree.toJSON()).toMatchSnapshot();
   });
 });

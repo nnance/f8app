@@ -18,6 +18,20 @@ import { colors as commonColors } from '../../../common/styles';
 import { changeEmail } from '../../../actions/changeProfile';
 import ModalSpinner from '../../../common/ModalSpinner';
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: commonColors.greyBackground,
+  },
+  editorContainer: {
+    backgroundColor: 'white',
+    marginTop: 10,
+  },
+  button: {
+    margin: 50,
+  },
+});
+
 class ChangeEmailScreen extends React.Component {
   constructor(...args) {
     super(...args);
@@ -27,6 +41,35 @@ class ChangeEmailScreen extends React.Component {
       error: null,
       saving: false,
     };
+  }
+
+  onChangeEmail() {
+    const email = this.state.email;
+    const confirmEmail = this.state.confirmEmail;
+    this.setState({
+      error: null,
+      saving: true,
+    });
+    if (email !== confirmEmail) {
+      this.setState({
+        error: 'email not match',
+        saving: false,
+      });
+      return Promise.resolve();
+    }
+    return this.props.changeEmail(email).then(() => {
+      this.setState({
+        svaing: false,
+      });
+      if (this.props.onBackPress) {
+        this.props.onBackPress();
+      }
+    }).catch((error) => {
+      this.setState({
+        saving: false,
+        error: error.message,
+      });
+    });
   }
 
   render() {
@@ -76,48 +119,7 @@ class ChangeEmailScreen extends React.Component {
       </SecureContainer>
     </View>);
   }
-
-  onChangeEmail() {
-    const email = this.state.email;
-    const confirmEmail = this.state.confirmEmail;
-    this.setState({
-      error: null,
-      saving: true,
-    });
-    if (email !== confirmEmail) {
-      this.setState({
-        error: 'email not match',
-        saving: false,
-      });
-      return Promise.resolve();
-    }
-    return this.props.changeEmail(email).then(() => {
-      this.setState({
-        svaing: false,
-      });
-      this.props.onBackPress && this.props.onBackPress();
-    }).catch((error) => {
-      this.setState({
-        saving: false,
-        error: error.message,
-      });
-    });
-  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: commonColors.greyBackground,
-  },
-  editorContainer: {
-    backgroundColor: 'white',
-    marginTop: 10,
-  },
-  button: {
-    margin: 50,
-  },
-});
 
 const actionsMaping = {
   changeEmail,

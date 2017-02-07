@@ -8,6 +8,7 @@ import {
   Button,
 } from 'react-native';
 
+/* eslint import/first: off */
 jest.mock('DatePickerAndroid');
 import DatePickerAndroid from 'DatePickerAndroid';
 import DatePickerDialog from '../components/DatePickerDialog';
@@ -15,11 +16,17 @@ import DatePickerDialog from '../components/DatePickerDialog';
 describe('DatePickerDialog', () => {
   let oldPlatform;
 
-  beforeAll(() => oldPlatform = Platform.OS);
-  afterAll(() => Platform.OS = oldPlatform);
+  beforeAll(() => {
+    oldPlatform = Platform.OS;
+  });
+  afterAll(() => {
+    Platform.OS = oldPlatform;
+  });
 
   describe('android', () => {
-    beforeAll(() => Platform.OS = 'android');
+    beforeAll(() => {
+      Platform.OS = 'android';
+    });
 
     it('render', () => {
       const tree = renderer.create(<DatePickerDialog currentDate={new Date(2016, 5, 12)} />);
@@ -27,21 +34,23 @@ describe('DatePickerDialog', () => {
     });
 
     it('return picked date', async () => {
-      let _resolve;
+      let gResolve;
       const expectDate = new Date(2016, 5, 12);
       const openDate = new Promise((resolve) => {
-        _resolve = resolve;
+        gResolve = resolve;
       });
       DatePickerAndroid.open.mockImplementation(() => openDate);
       const datePickerDialog = shallow(<DatePickerDialog />);
-      _resolve({ action: undefined, year: 2016, month: 5, day: 12 });
+      gResolve({ action: undefined, year: 2016, month: 5, day: 12 });
       const date = await datePickerDialog.instance().open();
       expect(date.toString()).toBe(expectDate.toString());
     });
   });
 
   describe('ios', () => {
-    beforeAll(() => Platform.OS = 'ios');
+    beforeAll(() => {
+      Platform.OS = 'ios';
+    });
 
     it('render', () => {
       const tree = renderer.create(<DatePickerDialog currentDate={new Date(2016, 5, 12)} />);
@@ -68,7 +77,7 @@ describe('DatePickerDialog', () => {
       const successFn = jest.fn();
       const wrapper = shallow(<DatePickerDialog />);
       const result = wrapper.instance().open();
-      result.then(successFn).catch((error) => {
+      result.then(successFn).catch(() => {
         expect(successFn).not.toBeCalled();
         done();
       });

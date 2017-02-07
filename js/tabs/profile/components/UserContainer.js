@@ -15,118 +15,10 @@ import { toHumanNumber } from '../../../common/utils';
 import NavBar from './NavBar';
 import { styles as commonStyles } from '../common';
 
+/* eslint react/no-multi-comp: off */
+
 const addIcon = require('../img/icons/add.png');
 const blockIcon = require('../img/icons/block.png');
-
-const UnfollowButton = props => (<TouchableOpacity style={styles.unfollowButton}>
-  <Text style={styles.unfollowText}>
-    เลิกติดตาม
-  </Text>
-</TouchableOpacity>);
-
-const FollowButton = props => (<TouchableOpacity style={styles.followButton}>
-  <Text style={styles.followText}>
-    ติดตาม
-  </Text>
-</TouchableOpacity>);
-
-const FollowerDetail = props => (<View style={styles.followerDetail}>
-  {
-    props.addButton ?
-      <Image style={styles.followerIconDetail} source={addIcon} /> :
-      <Image style={styles.followerIconDetail} source={blockIcon} />
-  }
-  <View>
-    {
-      !props.following ?
-        <FollowButton /> :
-        <UnfollowButton />
-    }
-  </View>
-</View>);
-
-const crownIconLevel = {
-  1: require('../img/icons/crown-1.png'),
-  2: require('../img/icons/crown-2.png'),
-  3: require('../img/icons/crown-3.png'),
-};
-
-const CandyPointDetail = props => (<View style={styles.candyPointDetail}>
-  {
-    props.icon !== null ?
-      <Image style={styles.candyPointIconLevel} source={crownIconLevel[props.icon]} />
-    : null
-  }
-  <View style={styles.candyPointBox}>
-    <Text style={[styles.candyPoint, props.highLight ? styles.candyPointHighLight : null]}>
-      {toHumanNumber(props.candys)}
-    </Text>
-    <Text style={styles.candyPointText}>
-      Candys Point
-    </Text>
-  </View>
-</View>);
-
-export default class UserContainer extends React.Component {
-  render() {
-    return (
-      <View style={commonStyles.listViewContainer}>
-        <NavBar title={this.props.title} onBackPress={() => this.props.onBackPress && this.props.onBackPress()} />
-        <FixBugScrollView>
-          <PureListView
-            data={this.props.userList}
-            renderRow={(user, i, idx) => (<View style={styles.rowContainer}>
-              <View style={styles.profile}>
-                <ProfilePicture size={40} />
-              </View>
-              <Text style={styles.name}>
-                {Number(idx) + 1}. {user.name}
-              </Text>
-              <View style={styles.detail}>
-                {
-                    this.props.renderDetail(user, idx)
-                  }
-              </View>
-            </View>)}
-          />
-        </FixBugScrollView>
-      </View>
-    );
-  }
-}
-
-export class FollowingScreen extends React.Component {
-  render() {
-    return (
-      <UserContainer
-        {...this.props} title={'กำลังติดตาม'}
-        renderDetail={(user, idx) => <UnfollowButton />}
-      />
-    );
-  }
-}
-
-export class MyFanScreen extends React.Component {
-  render() {
-    return (
-      <UserContainer
-        {...this.props} title={'แฟนคลับของฉัน'}
-        renderDetail={(user, idx) => <CandyPointDetail icon={idx < 3 ? Number(idx) + 1 : null} candys={user.candys} highLight={idx < 3} />}
-      />
-    );
-  }
-}
-
-export class FollowerScreen extends React.Component {
-  render() {
-    return (
-      <UserContainer
-        {...this.props} title={'ผู้ติดตาม'}
-        renderDetail={(user, idx) => <FollowerDetail addButton={user.following} following={user.following} />}
-      />
-    );
-  }
-}
 
 const styles = StyleSheet.create({
   detail: {
@@ -209,3 +101,130 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
 });
+
+const UnfollowButton = () => (<TouchableOpacity style={styles.unfollowButton}>
+  <Text style={styles.unfollowText}>
+    เลิกติดตาม
+  </Text>
+</TouchableOpacity>);
+
+const FollowButton = () => (<TouchableOpacity style={styles.followButton}>
+  <Text style={styles.followText}>
+    ติดตาม
+  </Text>
+</TouchableOpacity>);
+
+const FollowerDetail = props => (<View style={styles.followerDetail}>
+  {
+    props.addButton ?
+      <Image style={styles.followerIconDetail} source={addIcon} /> :
+      <Image style={styles.followerIconDetail} source={blockIcon} />
+  }
+  <View>
+    {
+      !props.following ?
+        <FollowButton /> :
+        <UnfollowButton />
+    }
+  </View>
+</View>);
+
+const crownIconLevel = {
+  1: require('../img/icons/crown-1.png'),
+  2: require('../img/icons/crown-2.png'),
+  3: require('../img/icons/crown-3.png'),
+};
+
+const CandyPointDetail = props => (<View style={styles.candyPointDetail}>
+  {
+    props.icon !== null ?
+      <Image style={styles.candyPointIconLevel} source={crownIconLevel[props.icon]} />
+    : null
+  }
+  <View style={styles.candyPointBox}>
+    <Text style={[styles.candyPoint, props.highLight ? styles.candyPointHighLight : null]}>
+      {toHumanNumber(props.candys)}
+    </Text>
+    <Text style={styles.candyPointText}>
+      Candys Point
+    </Text>
+  </View>
+</View>);
+
+export default class UserContainer extends React.Component {
+  render() {
+    return (
+      <View style={commonStyles.listViewContainer}>
+        <NavBar
+          title={this.props.title}
+          onBackPress={this.props.onBackPress}
+        />
+        <FixBugScrollView>
+          <PureListView
+            data={this.props.userList}
+            renderRow={(user, i, idx) => (<View style={styles.rowContainer}>
+              <View style={styles.profile}>
+                <ProfilePicture size={40} />
+              </View>
+              <Text style={styles.name}>
+                {Number(idx) + 1}. {user.name}
+              </Text>
+              <View style={styles.detail}>
+                {
+                    this.props.renderDetail(user, idx)
+                  }
+              </View>
+            </View>)}
+          />
+        </FixBugScrollView>
+      </View>
+    );
+  }
+}
+
+export class FollowingScreen extends React.Component {
+  render() {
+    return (
+      <UserContainer
+        {...this.props} title={'กำลังติดตาม'}
+        renderDetail={() => <UnfollowButton />}
+      />
+    );
+  }
+}
+
+export class MyFanScreen extends React.Component {
+  render() {
+    return (
+      <UserContainer
+        {...this.props} title={'แฟนคลับของฉัน'}
+        renderDetail={
+          (user, idx) =>
+            <CandyPointDetail
+              icon={idx < 3 ? Number(idx) + 1 : null}
+              candys={user.candys}
+              highLight={idx < 3}
+            />
+        }
+      />
+    );
+  }
+}
+
+export class FollowerScreen extends React.Component {
+  render() {
+    return (
+      <UserContainer
+        {...this.props}
+        title={'ผู้ติดตาม'}
+        renderDetail={
+          user =>
+            <FollowerDetail
+              addButton={user.following}
+              following={user.following}
+            />
+        }
+      />
+    );
+  }
+}

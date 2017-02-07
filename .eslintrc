@@ -52,6 +52,9 @@
     "global-require": "off",
     "react/prop-types": "off",
     "react/jsx-filename-extension": "off",
-    "react/prefer-stateless-function": "off" // test with jest --coverage and no --coverage will gen different snapshot
+    "react/prefer-stateless-function": "off", // test with jest --coverage and no --coverage will gen different snapshot
+    "import/no-extraneous-dependencies": "off", // react-native can use @providesModule
+    "import/no-unresolved": "off",
+    "import/extensions": "off"
   }
 }

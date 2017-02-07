@@ -19,6 +19,12 @@ import { colors } from '../../../common/styles';
 const likeIcon = require('../img/icons/heart.png');
 const readIcon = require('../img/icons/read.png');
 
+const styles = StyleSheet.create({
+  rowContainer: {
+    padding: 13,
+  },
+});
+
 const ActivityRow = props => (<TouchableOpacity style={styles.rowContainer}>
   <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
     <View
@@ -92,12 +98,6 @@ class ActivityScreen extends React.Component {
     </View>);
   }
 }
-
-const styles = StyleSheet.create({
-  rowContainer: {
-    padding: 13,
-  },
-});
 
 export default ActivityScreen;
 export {

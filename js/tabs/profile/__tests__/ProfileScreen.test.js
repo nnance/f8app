@@ -1,12 +1,9 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import toJSON from 'enzyme-to-json';
-import { View, TouchableOpacity } from 'react-native';
+import { View } from 'react-native';
 
-import ProfileHeader from '../components/ProfileHeader';
 import ProfileNavigator from '../components/ProfileNavigator';
-import Home from '../components/Home';
 import * as mockData from '../mockData';
 
 describe('ProfileNavigator', () => {
@@ -25,10 +22,8 @@ describe('ProfileNavigator', () => {
     const menues = ['myfan', 'activity', 'myclog', 'bookmark', 'jellyShop'];
     menues.forEach((menu) => {
       const spy = jest.fn();
-      dump.instance().refs = {
-        navigator: {
-          push: spy,
-        },
+      dump.instance().navigator = {
+        push: spy,
       };
       dump.instance().onMenuPress(menu);
       expect(spy).toBeCalledWith({ page: menu });
@@ -38,17 +33,18 @@ describe('ProfileNavigator', () => {
   it('onBack', () => {
     const spy = jest.fn();
     const dump = shallow(<ProfileNavigator {...mockData} />);
-    dump.instance().onBack({ pop: spy });
+    dump.instance().navigator = {
+      pop: spy,
+    };
+    dump.instance().onBack();
     expect(spy).toBeCalled();
   });
 
   it('pushPage', () => {
     const spy = jest.fn();
     const dump = shallow(<ProfileNavigator {...mockData} />);
-    dump.instance().refs = {
-      navigator: {
-        push: spy,
-      },
+    dump.instance().navigator = {
+      push: spy,
     };
     dump.instance().pushPage('test');
     expect(spy).toBeCalledWith({ page: 'test' });

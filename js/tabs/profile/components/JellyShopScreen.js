@@ -14,6 +14,36 @@ import { toHumanNumber } from '../../../common/utils';
 import NavBar from './NavBar';
 import { styles as commonStyles } from '../common';
 
+const colors = {
+  lightGreen: 'rgb(134, 246, 226)',
+};
+
+const styles = StyleSheet.create({
+  jellyCountBoxContainer: {
+    borderColor: colors.lightGreen,
+    borderWidth: 1.5,
+    borderRadius: 5,
+  },
+  jellyCountBox: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    minWidth: 65,
+    paddingVertical: 3,
+  },
+  coinCountText: {
+    fontSize: 12,
+    fontWeight: 'bold',
+    color: colors.lightGreen,
+  },
+  coinIcon: {
+    width: 15,
+    height: 15,
+    resizeMode: 'contain',
+    marginLeft: 5,
+  },
+});
+
 const Coin = props => (<TouchableOpacity style={styles.jellyCountBoxContainer}>
   <View style={styles.jellyCountBox}>
     <Image
@@ -73,35 +103,5 @@ class JellyShopScreen extends React.Component {
     </View>);
   }
 }
-
-const colors = {
-  lightGreen: 'rgb(134, 246, 226)',
-};
-
-const styles = StyleSheet.create({
-  jellyCountBoxContainer: {
-    borderColor: colors.lightGreen,
-    borderWidth: 1.5,
-    borderRadius: 5,
-  },
-  jellyCountBox: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    minWidth: 65,
-    paddingVertical: 3,
-  },
-  coinCountText: {
-    fontSize: 12,
-    fontWeight: 'bold',
-    color: colors.lightGreen,
-  },
-  coinIcon: {
-    width: 15,
-    height: 15,
-    resizeMode: 'contain',
-    marginLeft: 5,
-  },
-});
 
 export default JellyShopScreen;

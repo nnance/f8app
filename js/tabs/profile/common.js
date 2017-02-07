@@ -1,7 +1,7 @@
 import StyleSheet from 'StyleSheet';
 import { colors } from '../../common/styles';
 
-export const styles = StyleSheet.create({
+const styles = StyleSheet.create({
   listViewContainer: {
     flex: 1,
     backgroundColor: colors.greyBackground,
@@ -33,3 +33,8 @@ export const styles = StyleSheet.create({
     color: 'red',
   },
 });
+
+export {
+  colors,
+  styles,
+};
