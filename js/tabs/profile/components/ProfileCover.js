@@ -3,7 +3,7 @@ import {
   Image,
 } from 'react-native';
 
-const defaultCover = require('../../maps/img/maps-background.png');
+const defaultCover = require('../../img/maps-background.png');
 // const defaultCover = require('./img/v.png');
 
 class ProfileCover extends React.Component {
