@@ -22,12 +22,11 @@
  * @flow
  */
 
+import { View } from 'react-native';
 
 const Image = require('Image');
 const React = require('React');
 const PixelRatio = require('PixelRatio');
-
-import { View } from 'react-native';
 
 class ProfilePicture extends React.Component {
   props: {

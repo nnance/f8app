@@ -22,6 +22,7 @@
  * @flow
  */
 
+/* eslint-disable */
 
 const React = require('react');
 

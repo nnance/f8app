@@ -22,6 +22,7 @@
  * @flow
  */
 
+/* eslint-disable */
 
 const Image = require('Image');
 const PixelRatio = require('PixelRatio');

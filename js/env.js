@@ -24,6 +24,7 @@
 
 
 import Config from 'react-native-config';
+
 let config = Config;
 
 if (process.env.NODE_ENV === 'test') {

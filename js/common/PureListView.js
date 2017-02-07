@@ -49,9 +49,24 @@ type Props = {
 // will make it go reverse. Temporary fix - pre-render more rows
 const LIST_VIEW_PAGE_SIZE = Platform.OS === 'android' ? 20 : 1;
 
-class PureListView extends React.Component {
-  props: Props;
+function cloneWithData(dataSource: ListView.DataSource, data: ?Data) {
+  if (!data) {
+    return dataSource.cloneWithRows([]);
+  }
+  if (Array.isArray(data)) {
+    return dataSource.cloneWithRows(data);
+  }
+  return dataSource.cloneWithRowsAndSections(data);
+}
 
+const styles = StyleSheet.create({
+  separator: {
+    backgroundColor: '#eeeeee',
+    height: 1,
+  },
+});
+
+class PureListView extends React.Component {
   constructor(props: Props) {
     super(props);
     const dataSource = new ListView.DataSource({
@@ -78,6 +93,29 @@ class PureListView extends React.Component {
     }
   }
 
+  onContentSizeChange(contentWidth: number, contentHeight: number) {
+    if (contentHeight !== this.state.contentHeight) {
+      this.setState({ contentHeight });
+    }
+  }
+  getScrollResponder(): any {
+    return this.listview.getScrollResponder();
+  }
+
+  scrollTo(...args: Array<any>) {
+    this.listview.scrollTo(...args);
+  }
+
+  props: Props;
+
+  renderFooter(): ?ReactElement {
+    if (this.state.dataSource.getRowCount() === 0) {
+      return this.props.renderEmptyList && this.props.renderEmptyList();
+    }
+
+    return this.props.renderFooter && this.props.renderFooter();
+  }
+
   render() {
     const { contentInset } = this.props;
     const bottom = contentInset.bottom +
@@ -87,35 +125,17 @@ class PureListView extends React.Component {
         initialListSize={10}
         pageSize={LIST_VIEW_PAGE_SIZE}
         {...this.props}
-        ref="listview"
+        ref={
+          (node) => {
+            this.listView = node;
+          }
+        }
         dataSource={this.state.dataSource}
         renderFooter={this.renderFooter}
         contentInset={{ bottom, top: contentInset.top }}
         onContentSizeChange={this.onContentSizeChange}
       />
     );
-  }
-
-  onContentSizeChange(contentWidth: number, contentHeight: number) {
-    if (contentHeight !== this.state.contentHeight) {
-      this.setState({ contentHeight });
-    }
-  }
-
-  scrollTo(...args: Array<any>) {
-    this.refs.listview.scrollTo(...args);
-  }
-
-  getScrollResponder(): any {
-    return this.refs.listview.getScrollResponder();
-  }
-
-  renderFooter(): ?ReactElement {
-    if (this.state.dataSource.getRowCount() === 0) {
-      return this.props.renderEmptyList && this.props.renderEmptyList();
-    }
-
-    return this.props.renderFooter && this.props.renderFooter();
   }
 }
 
@@ -125,23 +145,7 @@ PureListView.defaultProps = {
   // TODO: This has to be scrollview height + fake header
   minContentHeight: Dimensions.get('window').height + 20,
   renderSeparator: (sectionID, rowID) => <View style={styles.separator} key={rowID} />,
+  renderEmptyList: null,
 };
-
-function cloneWithData(dataSource: ListView.DataSource, data: ?Data) {
-  if (!data) {
-    return dataSource.cloneWithRows([]);
-  }
-  if (Array.isArray(data)) {
-    return dataSource.cloneWithRows(data);
-  }
-  return dataSource.cloneWithRowsAndSections(data);
-}
-
-var styles = StyleSheet.create({
-  separator: {
-    backgroundColor: '#eeeeee',
-    height: 1,
-  },
-});
 
 module.exports = PureListView;
