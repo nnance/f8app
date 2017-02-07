@@ -20,6 +20,7 @@
  * DEALINGS IN THE SOFTWARE
  */
 
+/* eslint no-unused-vars: off */
 
 const track = require('./track');
 

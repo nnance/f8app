@@ -20,13 +20,16 @@
  * DEALINGS IN THE SOFTWARE
  */
 
+/* eslint no-unused-vars: off */
 
 function warn(error) {
   console.warn(error.message || error);
   throw error; // To let the caller handle the rejection
 }
 
-module.exports = store => next => action =>
-  typeof action.then === 'function'
-    ? Promise.resolve(action).then(next, warn)
-    : next(action);
+module.exports = store => next => (action) => {
+  if (typeof action.then === 'function') {
+    return Promise.resolve(action).then(next, warn);
+  }
+  return next(action);
+};

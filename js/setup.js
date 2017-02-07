@@ -24,23 +24,19 @@
 
 
 import { ApolloProvider } from 'react-apollo';
-import client from './store/apollo';
+import moment from 'moment';
+import 'moment/locale/th';
 
 const App = require('App');
 const FacebookSDK = require('FacebookSDK');
 const Parse = require('parse/react-native');
 const React = require('React');
 
-const { Provider } = require('react-redux');
-
 const apollo = require('./store/apollo');
 const configureStore = require('./store/configureStore');
-
 const env = require('./env');
-const { serverURL } = env;
 
-import moment from 'moment';
-import 'moment/locale/th';
+const { serverURL } = env;
 
 function setup(): React.Component {
   console.disableYellowBox = true;

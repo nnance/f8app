@@ -22,9 +22,9 @@
  * @flow
  */
 
+import { REHYDRATE } from 'redux-persist/constants';
 
 import type { Action } from '../actions/types';
-import { REHYDRATE } from 'redux-persist/constants';
 
 export type State = {
   isLoggedIn: boolean;
@@ -86,7 +86,16 @@ function authen(state: State = initialState, action: Action): State {
     };
   }
   if (action.type === 'LOGGED_IN') {
-    let { id, name, sex, email, birthDayDate, profilePicture, profileCover, sharedSchedule, facebookLinked } = action.data;
+    const {
+      id,
+      name,
+      sex,
+      email,
+      birthDayDate,
+      profilePicture,
+      profileCover,
+      facebookLinked } = action.data;
+    let { sharedSchedule } = action.data;
     if (sharedSchedule === undefined) {
       sharedSchedule = null;
     }
@@ -120,13 +129,14 @@ function authen(state: State = initialState, action: Action): State {
 }
 
 function user(state: State = initialState, action: Action): State {
-  state = changeProfile(state, action);
-  state = authen(state, action);
+  let nState = state;
+  nState = changeProfile(nState, action);
+  nState = authen(nState, action);
   if (action.type === REHYDRATE) {
     const incoming = action.payload;
     if (incoming && incoming.birthDayDate) {
       return {
-        ...state,
+        ...nState,
         ...incoming,
         birthDayDate: new Date(incoming.birthDayDate),
       };
@@ -134,14 +144,14 @@ function user(state: State = initialState, action: Action): State {
   }
   if (action.type === 'SET_SHARING') {
     return {
-      ...state,
+      ...nState,
       sharedSchedule: action.enabled,
     };
   }
   if (action.type === 'RESET_NUXES') {
-    return { ...state, sharedSchedule: null };
+    return { ...nState, sharedSchedule: null };
   }
-  return state;
+  return nState;
 }
 
 module.exports = user;

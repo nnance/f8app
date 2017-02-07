@@ -22,9 +22,11 @@
  * @flow
  */
 
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'remote-redux-devtools';
 
 const { applyMiddleware, createStore } = require('redux');
-import thunk from 'redux-thunk';
+
 // var thunk = require('redux-thunk');
 const promise = require('./promise');
 const array = require('./array');
@@ -35,10 +37,9 @@ const { persistStore, autoRehydrate } = require('redux-persist');
 const { AsyncStorage } = require('react-native');
 
 const isDebuggingInChrome = __DEV__ && !!window.navigator.userAgent;
-import { composeWithDevTools } from 'remote-redux-devtools';
 
 const logger = createLogger({
-  predicate: (getState, action) => isDebuggingInChrome,
+  predicate: () => isDebuggingInChrome,
   collapsed: true,
   duration: true,
 });

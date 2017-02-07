@@ -22,6 +22,7 @@
  * @flow
  */
 
+/* eslint no-underscore-dangle: off */
 
 class ParseObjectMock {
   id: string;
