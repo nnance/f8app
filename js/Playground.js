@@ -22,6 +22,8 @@
  * @flow
  */
 
+/* eslint no-underscore-dangle: off */
+/* eslint react/no-multi-comp: off */
 
 const React = require('React');
 const View = require('View');

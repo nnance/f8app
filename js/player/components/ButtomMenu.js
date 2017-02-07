@@ -18,32 +18,6 @@ const menuIcon = {
   share: require('../img/share.png'),
 };
 
-const Menu = ({ name, style, children, onPress }) => (
-  <TouchableOpacity onPress={onPress} style={[styles.buttonMenuContainer, style]}>
-    {children}
-  </TouchableOpacity>
-);
-
-class ButtomMenu extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Menu onPress={this.props.onMenuPress}><Image style={styles.icon} source={menuIcon.menu} /></Menu>
-        <Menu onPress={this.props.onLikePress} style={{ flex: 1.6, flexDirection: 'row', justifyContent: 'center' }}>
-          <Image style={styles.icon} source={menuIcon.like} />
-          <Text style={styles.menuText}>{toHumanNumber(this.props.likeCount)}</Text>
-        </Menu>
-        <Menu onPress={this.props.onCommentPress} style={{ flex: 1.6, flexDirection: 'row', justifyContent: 'center' }}>
-          <Image style={styles.icon} source={menuIcon.read} />
-          <Text style={styles.menuText}>{toHumanNumber(this.props.commentCount)}</Text>
-        </Menu>
-        <Menu onPress={this.props.onSubBookmarkPress}><Image style={styles.icon} source={menuIcon.subBookmark} /></Menu>
-        <Menu onPress={this.props.onSharePress}><Image style={styles.icon} source={menuIcon.share} /></Menu>
-      </View>
-    );
-  }
-}
-
 const styles = StyleSheet.create({
   container: {
     height: BUTTOM_TAB_HEIGHT,
@@ -62,5 +36,40 @@ const styles = StyleSheet.create({
     color: colors.textFadedGrey,
   },
 });
+
+const Menu = ({ style, children, onPress }) => (
+  <TouchableOpacity onPress={onPress} style={[styles.buttonMenuContainer, style]}>
+    {children}
+  </TouchableOpacity>
+);
+
+class ButtomMenu extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Menu onPress={this.props.onMenuPress}>
+          <Image style={styles.icon} source={menuIcon.menu} />
+        </Menu>
+        <Menu onPress={this.props.onLikePress} style={{ flex: 1.6, flexDirection: 'row', justifyContent: 'center' }}>
+          <Image style={styles.icon} source={menuIcon.like} />
+          <Text style={styles.menuText}>{toHumanNumber(this.props.likeCount)}</Text>
+        </Menu>
+        <Menu
+          onPress={this.props.onCommentPress}
+          style={{ flex: 1.6, flexDirection: 'row', justifyContent: 'center' }}
+        >
+          <Image style={styles.icon} source={menuIcon.read} />
+          <Text style={styles.menuText}>{toHumanNumber(this.props.commentCount)}</Text>
+        </Menu>
+        <Menu onPress={this.props.onSubBookmarkPress}>
+          <Image style={styles.icon} source={menuIcon.subBookmark} />
+        </Menu>
+        <Menu onPress={this.props.onSharePress}>
+          <Image style={styles.icon} source={menuIcon.share} />
+        </Menu>
+      </View>
+    );
+  }
+}
 
 export default ButtomMenu;

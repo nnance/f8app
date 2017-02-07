@@ -22,7 +22,7 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   emailButton: {
-    width: 0.6 * width + 20,
+    width: (0.6 * width) + 20,
     height: 40,
     marginVertical: 5,
   },

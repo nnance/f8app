@@ -22,6 +22,7 @@
  * @flow
  */
 
+import type { Dispatch } from './actions/types';
 
 const React = require('react');
 const AppState = require('AppState');
@@ -39,8 +40,6 @@ const {
   markAllNotificationsAsSeen,
 } = require('./actions');
 
-import type { Dispatch } from './actions/types';
-
 const PARSE_CLOUD_GCD_SENDER_ID = '1076345567071';
 
 class AppBadgeController extends React.Component {
@@ -55,15 +54,6 @@ class AppBadgeController extends React.Component {
     super();
 
     (this: any).handleAppStateChange = this.handleAppStateChange.bind(this);
-  }
-
-  handleAppStateChange(appState) {
-    if (appState === 'active') {
-      this.updateAppBadge();
-      if (this.props.tab === 'notifications') {
-        this.eventuallyMarkNotificationsAsSeen();
-      }
-    }
   }
 
   componentDidMount() {
@@ -93,6 +83,15 @@ class AppBadgeController extends React.Component {
     }
     if (this.props.tab === 'notifications' && prevProps.tab !== 'notifications') {
       this.eventuallyMarkNotificationsAsSeen();
+    }
+  }
+
+  handleAppStateChange(appState) {
+    if (appState === 'active') {
+      this.updateAppBadge();
+      if (this.props.tab === 'notifications') {
+        this.eventuallyMarkNotificationsAsSeen();
+      }
     }
   }
 

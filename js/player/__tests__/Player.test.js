@@ -1,6 +1,5 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
 
 import graphql from '../../libs/mockGraphQL';
 import { query, mapQueryToProps, mapPropsToOptions } from '../containers/Player';

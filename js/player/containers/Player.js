@@ -1,6 +1,7 @@
-import Player from '../components/Player';
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
+
+import Player from '../components/Player';
 
 export const query = gql`
   query PlayerQuery($id: ID!){

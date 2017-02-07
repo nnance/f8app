@@ -7,18 +7,37 @@ import {
   TouchableOpacity,
   StyleSheet,
   Share,
-  Linking,
   Platform,
 } from 'react-native';
 
 import gql from 'graphql-tag';
 import WKWebView from 'react-native-wkwebview-reborn';
-import NavBar, { NavBarWithPinkButton } from '../../common/NavBar';
+import { NavBarWithPinkButton } from '../../common/NavBar';
 import { colors } from '../../common/styles';
 import { toHumanNumber } from '../../common/utils';
 import ModalSpinner from '../../common/ModalSpinner';
 
 import ButtomMenu from './ButtomMenu';
+
+const styles = StyleSheet.create({
+  navButton: {
+    width: 25,
+    height: 25,
+    marginRight: 10,
+    resizeMode: 'contain',
+  },
+  titleText: {
+    fontSize: 14,
+    color: colors.textPink,
+  },
+  viewCountText: {
+    fontSize: 10,
+    color: colors.textFadedPink,
+  },
+  textContainer: {
+    marginRight: 50,
+  },
+});
 
 class Player extends React.Component {
   constructor(...args) {
@@ -26,47 +45,21 @@ class Player extends React.Component {
     this.state = {
       loading: true,
     };
+
+    this.onSharePress = this.onSharePress.bind(this);
+    this.renderNavBarButton = this.renderNavBarButton.bind(this);
+    this.renderTitle = this.renderTitle.bind(this);
   }
 
-  render() {
-    if (this.props.loading) {
-      return null;
-    }
-    let playerView;
-    if (Platform.OS === 'android') {
-      playerView = <WebView style={{ flex: 1 }} source={{ uri: 'http://localhost:8080/static/demo-episode/clog.html' }} onLoadEnd={() => this.setState({ loading: false })} />;
-    } else {
-      playerView = <WKWebView style={{ flex: 1 }} source={{ uri: 'http://localhost:8080/static/demo-episode/clog.html' }} onLoadEnd={() => this.setState({ loading: false })} />;
-    }
-    return (
-      <View style={{ flex: 1 }}>
-        <NavBarWithPinkButton
-          onBackPress={this.props.onBackPress}
-          renderRightMenu={this.renderNavBarButton.bind(this)}
-          renderTitle={this.renderTitle.bind(this)}
-          titleStyle={{
-            justifyContent: 'center',
-            alignItems: 'flex-start',
-          }}
-          leftMenuStyle={{
-            flex: 0,
-            paddingRight: 10,
-          }}
-        />
-        <View style={{ flex: 1 }}>
-          <ModalSpinner visible={this.state.loading} />
-          {playerView}
-        </View>
-        <ButtomMenu
-          onSharePress={this.onSharePress.bind(this)}
-          likeCount={this.props.episode.likeCount}
-          commentCount={this.props.episode.commentCount}
-        />
-      </View>
-    );
+  onSharePress() {
+    Share.share({
+      title: `EP.${this.props.episode.no} ${this.props.episode.title}`,
+      message: 'http://139.59.253.62/mock-deep-link/',
+    });
   }
 
   renderNavBarButton() {
+    /* eslint class-methods-use-this: warn */
     return (
       <View style={{ flexDirection: 'row' }}>
         <TouchableOpacity>
@@ -90,11 +83,42 @@ class Player extends React.Component {
     </View>);
   }
 
-  onSharePress() {
-    Share.share({
-      title: `EP.${this.props.episode.no} ${this.props.episode.title}`,
-      message: 'http://139.59.253.62/mock-deep-link/',
-    });
+  render() {
+    if (this.props.loading) {
+      return null;
+    }
+    let playerView;
+    if (Platform.OS === 'android') {
+      playerView = <WebView style={{ flex: 1 }} source={{ uri: 'http://localhost:8080/static/demo-episode/clog.html' }} onLoadEnd={() => this.setState({ loading: false })} />;
+    } else {
+      playerView = <WKWebView style={{ flex: 1 }} source={{ uri: 'http://localhost:8080/static/demo-episode/clog.html' }} onLoadEnd={() => this.setState({ loading: false })} />;
+    }
+    return (
+      <View style={{ flex: 1 }}>
+        <NavBarWithPinkButton
+          onBackPress={this.props.onBackPress}
+          renderRightMenu={this.renderNavBarButton}
+          renderTitle={this.renderTitle}
+          titleStyle={{
+            justifyContent: 'center',
+            alignItems: 'flex-start',
+          }}
+          leftMenuStyle={{
+            flex: 0,
+            paddingRight: 10,
+          }}
+        />
+        <View style={{ flex: 1 }}>
+          <ModalSpinner visible={this.state.loading} />
+          {playerView}
+        </View>
+        <ButtomMenu
+          onSharePress={this.onSharePress}
+          likeCount={this.props.episode.likeCount}
+          commentCount={this.props.episode.commentCount}
+        />
+      </View>
+    );
   }
 }
 
@@ -110,25 +134,5 @@ Player.fragments = {
     }
   `,
 };
-
-const styles = StyleSheet.create({
-  navButton: {
-    width: 25,
-    height: 25,
-    marginRight: 10,
-    resizeMode: 'contain',
-  },
-  titleText: {
-    fontSize: 14,
-    color: colors.textPink,
-  },
-  viewCountText: {
-    fontSize: 10,
-    color: colors.textFadedPink,
-  },
-  textContainer: {
-    marginRight: 50,
-  },
-});
 
 export default Player;

@@ -1,5 +1,3 @@
-import gql from 'graphql-tag';
-
 const categoryImgs = {
   default: require('./img/category/icon/G.png'),
   D: require('./img/category/icon/D.png'),
