@@ -40,6 +40,8 @@ const styles = StyleSheet.create({
   },
 });
 
+/* eslint react/no-multi-comp: warn */
+
 class EditorAcivity extends React.Component {
   render() {
     const now = Date.now();
@@ -90,8 +92,13 @@ class FeedRow extends React.Component {
                 horizontal
                 showsHorizontalScrollIndicator={false}
                 dataSource={this.state.dataSource}
-                renderRow={data => <ClogList goToBook={this.props.goToBook} {...data} />}
-                renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
+                renderRow={
+                  data => <ClogList goToBook={this.props.goToBook} {...data} />
+                }
+                renderSeparator={
+                  (sectionId, rowId) =>
+                    <View key={rowId} style={styles.separator} />
+                }
               /> :
               <Clog clog={this.props.clogs[0]} goToBook={this.props.goToBook} />
           }

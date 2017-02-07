@@ -3,7 +3,6 @@ import {
   View,
   ListView,
   StyleSheet,
-  Text,
 } from 'react-native';
 import FeedRow from './FeedRow';
 
@@ -30,7 +29,14 @@ class FeedList extends React.Component {
       <ListView
         showsHorizontalScrollIndicator={false}
         dataSource={this.state.dataSource}
-        renderRow={data => <FeedRow navigator={this.props.navigator} goToBook={this.props.goToBook} {...data} />}
+        renderRow={
+          data =>
+            <FeedRow
+              navigator={this.props.navigator}
+              goToBook={this.props.goToBook}
+              {...data}
+            />
+        }
         renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
       />
     );

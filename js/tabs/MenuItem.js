@@ -31,6 +31,35 @@ const F8Touchable = require('F8Touchable');
 const Image = require('Image');
 const StyleSheet = require('StyleSheet');
 
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    height: 50,
+    alignItems: 'center',
+    paddingHorizontal: 20,
+  },
+  icon: {
+    marginRight: 20,
+  },
+  title: {
+    flex: 1,
+    fontSize: 17,
+    color: F8Colors.lightText,
+  },
+  selectedTitle: {
+    color: F8Colors.darkText,
+  },
+  badge: {
+    backgroundColor: '#DC3883',
+    paddingHorizontal: 10,
+    paddingVertical: 2,
+    borderRadius: 10,
+  },
+  badgeText: {
+    fontSize: 12,
+    color: 'white',
+  },
+});
 
 class MenuItem extends React.Component {
   props: {
@@ -68,35 +97,5 @@ class MenuItem extends React.Component {
     );
   }
 }
-
-var styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    height: 50,
-    alignItems: 'center',
-    paddingHorizontal: 20,
-  },
-  icon: {
-    marginRight: 20,
-  },
-  title: {
-    flex: 1,
-    fontSize: 17,
-    color: F8Colors.lightText,
-  },
-  selectedTitle: {
-    color: F8Colors.darkText,
-  },
-  badge: {
-    backgroundColor: '#DC3883',
-    paddingHorizontal: 10,
-    paddingVertical: 2,
-    borderRadius: 10,
-  },
-  badgeText: {
-    fontSize: 12,
-    color: 'white',
-  },
-});
 
 module.exports = MenuItem;

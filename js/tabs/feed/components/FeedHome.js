@@ -1,9 +1,7 @@
 import React from 'react';
 import {
   View,
-  Text,
   Image,
-  ScrollView,
   TouchableOpacity,
   RefreshControl,
 } from 'react-native';
@@ -22,7 +20,7 @@ class FeedHome extends React.Component {
   }
 
   // Pull to refresh handler
-  _onRefresh = () => {
+  onRefresh = () => {
     this.setState({ isRefreshing: true });
     setTimeout(() => {
       console.log('Feeds loading....');
@@ -49,7 +47,7 @@ class FeedHome extends React.Component {
           refreshControl={
             <RefreshControl
               refreshing={this.state.isRefreshing}
-              onRefresh={this._onRefresh}
+              onRefresh={this.onRefresh}
               tintColor="#ff0000"
               title="..."
               titleColor="#000"
@@ -57,7 +55,11 @@ class FeedHome extends React.Component {
           }
         >
           <View style={{ backgroundColor: '#7d7d7d' }}>
-            <FeedList data={this.state.data} goToBook={this.props.goToBook} navigator={this.props.navigator} />
+            <FeedList
+              data={this.state.data}
+              goToBook={this.props.goToBook}
+              navigator={this.props.navigator}
+            />
           </View>
         </FixBugScrollView>
 
