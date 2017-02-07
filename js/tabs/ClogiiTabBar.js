@@ -28,6 +28,23 @@ const icons = {
   },
 };
 
+const styles = StyleSheet.create({
+  tab: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  tabs: {
+    height: BUTTOM_TAB_HEIGHT,
+    flexDirection: 'row',
+    borderWidth: 1,
+    borderBottomWidth: 0,
+    borderLeftWidth: 0,
+    borderRightWidth: 0,
+    borderTopColor: 'rgba(0, 0, 0, 0.05)',
+  },
+});
+
 const IconWithBadge = ({ badge, tab, active }) => (
   <View style={{ padding: 2 }}>
     <Image
@@ -66,31 +83,24 @@ const IconWithBadge = ({ badge, tab, active }) => (
   </View>
 );
 
-const ClogiiTabBar = React.createClass({
+class ClogiiTabBar extends React.Component {
   render() {
-    return (<View style={[styles.tabs, this.props.style,]}>
-      {this.props.tabs.map((tab, i) => <TouchableOpacity key={tab} onPress={() => this.props.goToPage(i)} style={styles.tab}>
-        <IconWithBadge active={this.props.activeTab === i} tab={tab} badge={this.props.badges[tab] || 0} />
-      </TouchableOpacity>)}
-    </View>);
-  },
-});
-
-const styles = StyleSheet.create({
-  tab: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  tabs: {
-    height: BUTTOM_TAB_HEIGHT,
-    flexDirection: 'row',
-    borderWidth: 1,
-    borderBottomWidth: 0,
-    borderLeftWidth: 0,
-    borderRightWidth: 0,
-    borderTopColor: 'rgba(0, 0, 0, 0.05)',
-  },
-});
+    return (
+      <View style={[styles.tabs, this.props.style]}>
+        {
+          this.props.tabs.map((tab, i) =>
+            <TouchableOpacity key={tab} onPress={() => this.props.goToPage(i)} style={styles.tab}>
+              <IconWithBadge
+                active={this.props.activeTab === i}
+                tab={tab}
+                badge={this.props.badges[tab] || 0}
+              />
+            </TouchableOpacity>,
+          )
+        }
+      </View>
+    );
+  }
+}
 
 export default ClogiiTabBar;

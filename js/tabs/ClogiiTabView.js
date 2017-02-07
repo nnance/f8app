@@ -4,14 +4,12 @@ import {
   View,
   StyleSheet,
   Platform,
-  InteractionManager,
   Linking,
 } from 'react-native';
 
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 import Drawer from 'react-native-drawer';
-
-import { STATUS_BAR_HEIGHT, NAV_BAR_HEIGHT } from '../common/styles';
+import { connect } from 'react-redux';
 
 import ProfileScreen from './profile';
 import ShelfScreen from './shelf';
@@ -19,7 +17,16 @@ import FeedScreen from './feed';
 import ShelfMenu from './ShelfMenu';
 import ClogiiTabBar from './ClogiiTabBar';
 
-import { connect } from 'react-redux';
+const styles = StyleSheet.create({
+  mockScreen: {
+    flex: 1,
+    resizeMode: 'stretch',
+    height: undefined,
+    width: require('Dimensions').get('window').width,
+  },
+});
+
+/* eslint react/no-multi-comp: warn */
 
 class ClogiiTabView extends React.Component {
   constructor(...args) {
@@ -27,65 +34,21 @@ class ClogiiTabView extends React.Component {
     this.state = {
       activeTab: 0,
     };
+
+    this.goToClogCategory = this.goToClogCategory.bind(this);
+    this.closeShelfMenu = this.closeShelfMenu.bind(this);
+    this.goToProfile = this.goToProfile.bind(this);
+    this.goToFacebook = this.goToFacebook.bind(this);
+    this.goToLine = this.goToLine.bind(this);
+    this.goToInstagram = this.goToInstagram.bind(this);
+    this.openShelfMenu = this.openShelfMenu.bind(this);
   }
 
   componentDidMount() {
     this.props.init();
   }
 
-  render() {
-    // <TestBadges tabLabel="Clogii" isActive={this.state.activeTab === 0 ? true : false}><Image style={styles.mockScreen} source={require('./img/mock/clog.png')}/></TestBadges>
-    return (
-      <Drawer
-        ref="shelfMenu"
-        type="overlay"
-        content={<ShelfMenu
-          onClose={this.closeShelfMenu.bind(this)}
-          onGagClogPress={this.goToClogCategory.bind(this, 'G')}
-          onDiaryClogPress={this.goToClogCategory.bind(this, 'D')}
-          onNovelClogPress={this.goToClogCategory.bind(this, 'N')}
-          onMythClogPress={this.goToClogCategory.bind(this, 'M')}
-          onProfilePress={this.goToProfile.bind(this)}
-          onFacebookPress={this.goToFacebook.bind(this)}
-          onLinePress={this.goToLine.bind(this)}
-          onInstagramPress={this.goToInstagram.bind(this)}
-        />}
-        openDrawerOffset={0}
-      >
-        <ScrollableTabView
-          ref="tabView"
-          tabBarPosition={'bottom'}
-          style={{}}
-          renderTabBar={() => <ClogiiTabBar badges={this.props.badges} />
-          }
-          onChangeTab={({ i }) => {
-            this.setState({
-              activeTab: i,
-            });
-          }
-          }
-          locked={Platform.OS === 'android'}
-        >
-          <ShelfScreen ref="shelf" goToBook={this.props.goToBook} onOpenShelfMenu={this.openShelfMenu.bind(this)} navigator={this.props.navigator} tabLabel="Clogii" />
-          <FeedScreen ref="feed" goToBook={this.props.goToBook} navigator={this.props.navigator} tabLabel="Feed" />
-          <TestBadges navigator={this.props.navigator} tabLabel="Notifications" isActive={this.state.activeTab === 2}><Image style={styles.mockScreen} source={require('./img/mock/notification.png')} /></TestBadges>
-          <ProfileScreen navigator={this.props.navigator} tabLabel="Profile" isActive={this.state.activeTab === 3} />
-        </ScrollableTabView>
-      </Drawer>
-    );
-  }
-
-  goToClogCategory(category) {
-    this.refs.shelf.goToClogCategory(category);
-    this.closeShelfMenu();
-    // InteractionManager.runAfterInteractions(() => this.closeShelfMenu());
-  }
-
-  goToProfile() {
-    this.refs.tabView.goToPage(3);
-    this.closeShelfMenu();
-  }
-
+  /* eslint class-methods-use-this: warn */
   openAppOrWeb(appUrl, webUrl) {
     Linking.canOpenURL(appUrl).then((can) => {
       if (can) {
@@ -94,6 +57,17 @@ class ClogiiTabView extends React.Component {
         Linking.openURL(webUrl);
       }
     });
+  }
+
+  goToClogCategory(category) {
+    this.shelf.goToClogCategory(category);
+    this.closeShelfMenu();
+    // InteractionManager.runAfterInteractions(() => this.closeShelfMenu());
+  }
+
+  goToProfile() {
+    this.tabView.goToPage(3);
+    this.closeShelfMenu();
   }
 
   goToFacebook() {
@@ -109,24 +83,84 @@ class ClogiiTabView extends React.Component {
   }
 
   openShelfMenu() {
-    this.refs.shelfMenu.open();
+    this.shelfMenu.open();
   }
 
   closeShelfMenu() {
-    this.refs.shelfMenu.close();
+    this.shelfMenu.close();
+  }
+
+  render() {
+    return (
+      <Drawer
+        ref={
+          (node) => {
+            this.shelfMenu = node;
+          }
+        }
+        type="overlay"
+        content={<ShelfMenu
+          onClose={this.closeShelfMenu}
+          onGagClogPress={() => this.goToClogCategory('G')}
+          onDiaryClogPress={() => this.goToClogCategory('D')}
+          onNovelClogPress={() => this.goToClogCategory('N')}
+          onMythClogPress={() => this.goToClogCategory('M')}
+          onProfilePress={this.goToProfile}
+          onFacebookPress={this.goToFacebook}
+          onLinePress={this.goToLine}
+          onInstagramPress={this.goToInstagram}
+        />}
+        openDrawerOffset={0}
+      >
+        <ScrollableTabView
+          ref={
+            (node) => {
+              this.tabView = node;
+            }
+          }
+          tabBarPosition={'bottom'}
+          style={{}}
+          renderTabBar={() => <ClogiiTabBar badges={this.props.badges} />
+          }
+          onChangeTab={({ i }) => {
+            this.setState({
+              activeTab: i,
+            });
+          }
+          }
+          locked={Platform.OS === 'android'}
+        >
+          <ShelfScreen
+            ref={
+              (node) => {
+                this.shelf = node;
+              }
+            }
+            goToBook={this.props.goToBook}
+            onOpenShelfMenu={this.openShelfMenu}
+            navigator={this.props.navigator}
+            tabLabel="Clogii"
+          />
+          <FeedScreen
+            goToBook={this.props.goToBook}
+            navigator={this.props.navigator}
+            tabLabel="Feed"
+          />
+          <TestBadges
+            navigator={this.props.navigator}
+            tabLabel="Notifications"
+            isActive={this.state.activeTab === 2}
+          >
+            <Image style={styles.mockScreen} source={require('./img/mock/notification.png')} />
+          </TestBadges>
+          <ProfileScreen navigator={this.props.navigator} tabLabel="Profile" isActive={this.state.activeTab === 3} />
+        </ScrollableTabView>
+      </Drawer>
+    );
   }
 }
 
 // require('Dimensions').get('window').width
-
-const styles = StyleSheet.create({
-  mockScreen: {
-    flex: 1,
-    resizeMode: 'stretch',
-    height: undefined,
-    width: require('Dimensions').get('window').width,
-  },
-});
 
 class _TestBadges extends React.Component {
   constructor(...args) {
@@ -141,8 +175,8 @@ class _TestBadges extends React.Component {
   }
 
   clearBadge(props) {
-    if (props.isActive) {
-      props.clearBadge && props.clearBadge();
+    if (props.isActive && props.clearBadge) {
+      props.clearBadge();
     }
   }
 
