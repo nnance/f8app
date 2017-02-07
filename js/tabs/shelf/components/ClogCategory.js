@@ -4,7 +4,6 @@ import {
   TouchableOpacity,
   Image,
   Text,
-  ScrollView,
   StyleSheet,
   Dimensions,
 } from 'react-native';
@@ -20,6 +19,34 @@ import { getCategoryLogo } from '../../../models/clog';
 import NavBar, { HEIGHT } from './NavBar';
 import WriterList from './WriterList';
 import MetaClogListView from './MetaClogListView';
+
+/* eslint react/no-multi-comp: off */
+
+const styles = StyleSheet.create({
+  centerItems: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  followerNumber: {
+    fontWeight: 'bold',
+    fontSize: 11,
+    color: 'white',
+  },
+  followingWord: {
+    fontSize: 10,
+    color: 'white',
+  },
+  bannerTitleText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'white',
+  },
+  bannerAuthorText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: colors.textFadedWhite,
+  },
+});
 
 const clogThemes = {
   D: {
@@ -167,28 +194,16 @@ export class RecommendClogs extends React.Component {
     this.state = {
       currentClogBanner: 0,
     };
-  }
 
-  render() {
-    return (<HorizontalListView
-      data={this.props.clogs}
-      pagingEnabled
-      showsHorizontalScrollIndicator={false}
-      renderRow={this.renderClogBanner.bind(this)}
-      onScroll={this.onScroll.bind(this)}
-    />);
-  }
-
-  renderClogBanner(data) {
-    return (
-      <TouchableOpacity onPress={this.onPress.bind(this, data.id)} style={{ flex: 1, width: RecommendClogWidth, marginHorizontal: (Dimensions.get('window').width - RecommendClogWidth - 20) / 2 }}>
-        <ClogBanner category={this.props.category} clog={data} />
-      </TouchableOpacity>
-    );
+    this.onPress = this.onPress.bind(this);
+    this.onScroll = this.onScroll.bind(this);
+    this.renderClogBanner = this.renderClogBanner.bind(this);
   }
 
   onPress(id) {
-    this.props.goToBook && this.props.goToBook(id);
+    if (this.props.goToBook) {
+      this.props.goToBook(id);
+    }
   }
 
   onScroll(e) {
@@ -200,9 +215,27 @@ export class RecommendClogs extends React.Component {
     this.setState({
       currentClogBanner: idx,
     });
-    if (oldIdx !== idx) {
-      this.props.onIndexChange && this.props.onIndexChange(idx);
+    if (oldIdx !== idx && this.props.onIndexChange) {
+      this.props.onIndexChange(idx);
     }
+  }
+
+  renderClogBanner(data) {
+    return (
+      <TouchableOpacity onPress={() => this.onPress(data.id)} style={{ flex: 1, width: RecommendClogWidth, marginHorizontal: (Dimensions.get('window').width - RecommendClogWidth - 20) / 2 }}>
+        <ClogBanner category={this.props.category} clog={data} />
+      </TouchableOpacity>
+    );
+  }
+
+  render() {
+    return (<HorizontalListView
+      data={this.props.clogs}
+      pagingEnabled
+      showsHorizontalScrollIndicator={false}
+      renderRow={this.renderClogBanner}
+      onScroll={this.onScroll}
+    />);
   }
 }
 
@@ -212,6 +245,22 @@ class ClogCategory extends React.Component {
     this.state = {
       currentClogBanner: 0,
     };
+
+    this.renderButtonViewAllClog = this.renderButtonViewAllClog.bind(this);
+    this.onRecommendClogChange = this.onRecommendClogChange.bind(this);
+  }
+
+  onRecommendClogChange(idx) {
+    this.setState({
+      currentClogBanner: idx,
+    });
+  }
+
+  renderButtonViewAllClog(pushOption = {}) {
+    return (<BorderButton
+      type="fadedWhite" caption="ทั้งหมด" containerStyle={{ flex: 1 }}
+      onPress={() => this.props.goToClogListView({ category: this.props.category, ...pushOption })}
+    />);
   }
 
   render() {
@@ -235,7 +284,11 @@ class ClogCategory extends React.Component {
                 <View style={{ height: HEIGHT }} />
                 <View style={{ height: 50, width: undefined, flexDirection: 'row', padding: 5, alignItems: 'center' }}>
                   <View style={{ flex: 1 }}>
-                    <WriterList editors={currentClogBanner ? this.props.recommendedClogs[this.state.currentClogBanner].followersYouKnow : []} />
+                    <WriterList
+                      editors={currentClogBanner ?
+                        this.props.recommendedClogs[this.state.currentClogBanner].followersYouKnow
+                      : []}
+                    />
                   </View>
                   <View style={{ flex: 1, alignItems: 'flex-end', justifyContent: 'center' }}>
                     <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
@@ -257,12 +310,17 @@ class ClogCategory extends React.Component {
                   <ClogLogo category={this.props.category} />
                 </View>
                 <View style={{ height: 150, padding: 10, justifyContent: 'center', alignItems: 'center' }}>
-                  <RecommendClogs goToBook={this.props.goToBook} category={this.props.category} clogs={this.props.recommendedClogs} onIndexChange={this.onRecommendClogChange.bind(this)} />
+                  <RecommendClogs
+                    goToBook={this.props.goToBook}
+                    category={this.props.category}
+                    clogs={this.props.recommendedClogs}
+                    onIndexChange={this.onRecommendClogChange}
+                  />
                 </View>
                 <View style={{ padding: 5 }}>
                   <MetaClogListView
                     goToBook={this.props.goToBook} header="What's New" clogs={this.props.recentlyClogs}
-                    renderButton={this.renderButtonViewAllClog.bind(this, { title: 'What\'s new', orderBy: 'RECENTLY' })}
+                    renderButton={() => this.renderButtonViewAllClog({ title: 'What\'s new', orderBy: 'RECENTLY' })}
                   />
                 </View>
               </View>
@@ -272,7 +330,7 @@ class ClogCategory extends React.Component {
             <View style={{ height: 180, padding: 5 }}>
               <MetaClogListView
                 goToBook={this.props.goToBook} header="Top Chart" clogs={this.props.trendingClogs}
-                renderButton={this.renderButtonViewAllClog.bind(this, { title: 'ยอดนิยม', orderBy: 'TRENDING' })}
+                renderButton={() => this.renderButtonViewAllClog({ title: 'ยอดนิยม', orderBy: 'TRENDING' })}
               />
             </View>
             <View style={{ height: 180, padding: 5 }}>
@@ -308,19 +366,6 @@ class ClogCategory extends React.Component {
       </LinearGradient>
     );
   }
-
-  onRecommendClogChange(idx) {
-    this.setState({
-      currentClogBanner: idx,
-    });
-  }
-
-  renderButtonViewAllClog(pushOption = {}) {
-    return (<BorderButton
-      type="fadedWhite" caption="ทั้งหมด" containerStyle={{ flex: 1 }}
-      onPress={() => this.props.goToClogListView({ category: this.props.category, ...pushOption })}
-    />);
-  }
 }
 
 ClogCategory.fragments = {
@@ -345,31 +390,5 @@ ClogCategory.fragments = {
   `,
   MetaClogListView: MetaClogListView.fragments.clog,
 };
-
-const styles = StyleSheet.create({
-  centerItems: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  followerNumber: {
-    fontWeight: 'bold',
-    fontSize: 11,
-    color: 'white',
-  },
-  followingWord: {
-    fontSize: 10,
-    color: 'white',
-  },
-  bannerTitleText: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: 'white',
-  },
-  bannerAuthorText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: colors.textFadedWhite,
-  },
-});
 
 export default ClogCategory;

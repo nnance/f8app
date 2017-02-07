@@ -1,4 +1,3 @@
-import React from 'react';
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 
@@ -33,7 +32,7 @@ export const mapPropsToOptions = ({ category }) => ({
   },
 });
 
-export const mapQueryToProps = ({ ownProps, data }) => {
+export const mapQueryToProps = ({ data }) => {
   const { loading, categoryDetail, trendingClogs, recentlyClogs, error } = data;
   if (error) {
     console.error('graphql error: ', error);

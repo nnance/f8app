@@ -7,7 +7,7 @@
     "start:watch": "nodemon --watch server --exec babel-node ./server/server.js",
     "import-data": "babel-node ./scripts/import-data-from-parse.js",
     "test": "jest",
-    "lint": "eslint .",
+    "lint": "eslint js server",
     "compile:server": "babel server --out-dir build-server",
     "dev": "npm run dev:db && npm run start:watch",
     "dev:db": ". ./scripts/dev-db"

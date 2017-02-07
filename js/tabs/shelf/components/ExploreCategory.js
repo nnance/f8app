@@ -4,7 +4,6 @@ import {
   View,
   Image,
   TouchableOpacity,
-  Dimensions,
 } from 'react-native';
 
 import { getCategoryIcon } from '../../../models/clog';
@@ -53,24 +52,16 @@ const categories = [
 ];
 
 class ExploreCategory extends React.Component {
-  render() {
-    return (
-      <Image source={require('../img/home-bg-2.png')} style={{ width: undefined, height: 450, resizeMode: 'stretch', backgroundColor: 'transparent' }}>
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-          <View style={{ flex: 1, width: 205 + 85 }}>
-            {
-            categories.map(this.renderCategory.bind(this))
-          }
-          </View>
-        </View>
-      </Image>
-    );
+  constructor(...args) {
+    super(...args);
+
+    this.renderCategory = this.renderCategory.bind(this);
   }
 
   renderCategory(categoryDetail, idx) {
     return (
       <TouchableOpacity
-        onPress={this.props.onPress.bind(null, categoryDetail.category)} key={idx} style={{
+        onPress={() => this.props.onPress(categoryDetail.category)} key={idx} style={{
           position: 'absolute',
           top: categoryDetail.pos.y,
           left: categoryDetail.pos.x,
@@ -78,11 +69,28 @@ class ExploreCategory extends React.Component {
           alignItems: 'center',
         }}
       >
-        <Image source={categoryDetail.img} style={{ width: categoryDetail.size, height: categoryDetail.size }} />
+        <Image
+          source={categoryDetail.img}
+          style={{ width: categoryDetail.size, height: categoryDetail.size }}
+        />
         <View style={{ padding: 5 }}>
           <Text style={{ fontWeight: 'bold', color: 'white' }}>{categoryDetail.title}</Text>
         </View>
       </TouchableOpacity>
+    );
+  }
+
+  render() {
+    return (
+      <Image source={require('../img/home-bg-2.png')} style={{ width: undefined, height: 450, resizeMode: 'stretch', backgroundColor: 'transparent' }}>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+          <View style={{ flex: 1, width: 205 + 85 }}>
+            {
+            categories.map(this.renderCategory)
+          }
+          </View>
+        </View>
+      </Image>
     );
   }
 }

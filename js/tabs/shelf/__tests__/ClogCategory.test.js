@@ -5,7 +5,7 @@ import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 
 import graphql from '../../../libs/mockGraphQL';
-import ClogCategoryContainer, { query, mapQueryToProps, mapPropsToOptions } from '../containers/ClogCategory';
+import { query, mapQueryToProps, mapPropsToOptions } from '../containers/ClogCategory';
 import ClogCategoryComponent, { RecommendClogs } from '../components/ClogCategory';
 import HorizontalListView from '../../../common/HorizontalListView';
 

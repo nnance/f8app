@@ -3,7 +3,6 @@ import {
   View,
   Text,
   Image,
-  Dimensions,
 } from 'react-native';
 import gql from 'graphql-tag';
 
@@ -11,9 +10,20 @@ import { colors } from '../../../common/styles';
 import CircleImageWithCategory from '../../../common/CircleImageWithCategory';
 import BorderButton from '../../../common/BorderButton';
 import { mapSource } from '../../../common/utils';
-import { getCategoryIcon } from '../../../models/clog';
 
 class RecommendedClog extends React.Component {
+  constructor(...args) {
+    super(...args);
+    this.onReadPress = this.onReadPress.bind(this);
+  }
+
+  onReadPress() {
+    const clog = this.props.clog;
+    if (this.props.goToBook && clog) {
+      this.props.goToBook(clog.id);
+    }
+  }
+
   render() {
     const clog = this.props.clog || {};
     return (
@@ -39,23 +49,21 @@ class RecommendedClog extends React.Component {
                 </Text>
               </View>
               <View style={{ flex: 4, paddingTop: 10 }}>
-                <Text style={{ fontSize: 11, color: colors.textFadedWhite, lineHeight: 12 }} numberOfLines={4}>
+                <Text
+                  style={{ fontSize: 11, color: colors.textFadedWhite, lineHeight: 12 }}
+                  numberOfLines={4}
+                >
                   {clog.review}
                 </Text>
               </View>
               <View style={{ flex: 1, alignItems: 'flex-end' }}>
-                <BorderButton onPress={this.onReadPress.bind(this)} caption="อ่าน" containerStyle={{ height: 18 }} textStyle={{ color: 'rgba(60, 30, 90, 1)' }} />
+                <BorderButton onPress={this.onReadPress} caption="อ่าน" containerStyle={{ height: 18 }} textStyle={{ color: 'rgba(60, 30, 90, 1)' }} />
               </View>
             </View>
           </View>
         </Image>
       </View>
     );
-  }
-
-  onReadPress() {
-    const clog = this.props.clog;
-    this.props.goToBook && clog && this.props.goToBook(clog.id);
   }
 }
 

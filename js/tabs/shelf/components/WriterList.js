@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   View,
-  Image,
   Text,
 } from 'react-native';
 
@@ -24,7 +23,6 @@ const Row = props => (
           width: 30 + 2,
           height: 30 + 2,
           borderRadius: 15,
-          backgroundColor: 'red',
           justifyContent: 'center',
           alignItems: 'center',
           backgroundColor: 'white',
@@ -48,9 +46,17 @@ Row.defaultProps = {
 };
 
 class WriterList extends React.Component {
+  constructor(...args) {
+    super(...args);
+    this.renderRow = this.renderRow.bind(this);
+  }
+
+  renderRow(data) {
+    return <Row type={this.props.type} data={data} />;
+  }
+
   render() {
     const limit = 3;
-    const count = 0;
     const data = this.props.editors;
     let realData;
     if (this.props.type === 'big') {
@@ -77,15 +83,11 @@ class WriterList extends React.Component {
         }
         <HorizontalListView
           data={realData}
-          renderRow={this.renderRow.bind(this)}
+          renderRow={this.renderRow}
           showsHorizontalScrollIndicator={false}
         />
       </View>
     );
-  }
-
-  renderRow(data) {
-    return <Row type={this.props.type} data={data} />;
   }
 }
 

@@ -7,10 +7,18 @@ import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 
 import ClogListView from '../../../common/ClogListView';
-import { fragments } from '../../../models/clog';
 import { colors } from '../../../common/styles';
 
 import NavBar from '../components/NavBar';
+
+const styles = StyleSheet.create({
+  navBar: {
+    backgroundColor: 'rgb(0, 150, 253)',
+  },
+  titleText: {
+    color: 'white',
+  },
+});
 
 const query = gql`
   query ClogListView($filter: ClogFilterInput, $orderBy: CLOG_SORTING){
@@ -29,7 +37,13 @@ class Container extends React.Component {
         backgroundColor: colors.greyBackground,
       }}
     >
-      <NavBar backButton onBackPress={this.props.onBackPress} title={this.props.title} containerStyle={styles.navBar} titleTextStyle={styles.titleText} />
+      <NavBar
+        backButton
+        onBackPress={this.props.onBackPress}
+        title={this.props.title}
+        containerStyle={styles.navBar}
+        titleTextStyle={styles.titleText}
+      />
       <ClogListView
         clogs={this.props.clogs}
         onClogPress={this.props.goToBook}
@@ -38,15 +52,6 @@ class Container extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  navBar: {
-    backgroundColor: 'rgb(0, 150, 253)',
-  },
-  titleText: {
-    color: 'white',
-  },
-});
 
 export const mapPropsToOptions = ({ category, tag, orderBy }) => ({
   variables: {
@@ -58,7 +63,7 @@ export const mapPropsToOptions = ({ category, tag, orderBy }) => ({
   },
 });
 
-const mapQueryToProps = ({ ownProps, data }) => {
+const mapQueryToProps = ({ data }) => {
   const { loading, clogs, error } = data;
   if (error) {
     console.error('graphql error: ', error);

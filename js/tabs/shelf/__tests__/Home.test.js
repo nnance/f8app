@@ -5,7 +5,7 @@ import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 
 import graphql from '../../../libs/mockGraphQL';
-import HomeContainer, { query, mapQueryToProps } from '../containers/Home';
+import { query, mapQueryToProps } from '../containers/Home';
 import HomeComponent from '../components/Home';
 import ExploreCategory from '../components/ExploreCategory';
 
