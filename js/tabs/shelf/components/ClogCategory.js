@@ -11,6 +11,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import gql from 'graphql-tag';
 
 import { colors } from '../../../common/styles';
+import { beforeProps } from '../../../common/afterInteractions';
 import FixBugScrollView from '../../../common/FixBugScrollView';
 import BorderButton from '../../../common/BorderButton';
 import HorizontalListView from '../../../common/HorizontalListView';
@@ -392,4 +393,40 @@ ClogCategory.fragments = {
   MetaClogListView: MetaClogListView.fragments.clog,
 };
 
-export default ClogCategory;
+let EnhanceClogCategory = beforeProps(() => ({
+  trendingClogs: [],
+  recentlyClogs: [],
+  editors: [],
+  recommendedClogs: [],
+}))(ClogCategory);
+
+// const _ = require('lodash');
+// _.keys(ClogCategory).forEach((key) => {
+//   EnhanceClogCategory[key] = ClogCategory[key];
+// });
+
+// EnhanceClogCategory.fragments = {
+//   ClogCategoryEditor: gql`
+//     fragment ClogCategoryEditor on Editor {
+//       name
+//       profilePicture
+//     }
+//   `,
+//   RecommendClog: gql`
+//     fragment RecommendClog on Clog {
+//       id
+//       title
+//       author {
+//         name
+//       }
+//       followersYouKnow {
+//         name
+//         profilePicture
+//       }
+//       followerCount
+//     }
+//   `,
+//   MetaClogListView: MetaClogListView.fragments.clog,
+// };
+
+export default EnhanceClogCategory;
