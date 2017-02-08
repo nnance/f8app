@@ -1,9 +1,8 @@
 import React from 'react';
 import {
   View,
-  Text,
   Image,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 import Navbar from './NavBar';
 import NotificationsList from './NotificationsList';
@@ -12,25 +11,25 @@ import NotificationsList from './NotificationsList';
 class NotificationsHome extends React.Component {
   render() {
     return (
-      <View style={{flex: 1, backgroundColor: '#FFFFFF'}}>
+      <View style={{ flex: 1, backgroundColor: '#FFFFFF' }}>
         <Navbar
           renderRightMenu={() => (
-            <TouchableOpacity><Image style={{height: 20, resizeMode: 'contain'}} source={require('../img/search.png')}/></TouchableOpacity>
+            <TouchableOpacity><Image style={{ height: 20, resizeMode: 'contain' }} source={require('../img/search.png')} /></TouchableOpacity>
           )}
           renderTitle={() => (
-            <Image style={{width: 80, height: 30, resizeMode: 'contain'}} source={require('../img/title.png')}/>
+            <Image style={{ width: 80, height: 30, resizeMode: 'contain' }} source={require('../img/title.png')} />
           )}
           titleStyle={{
             flex: 1,
-            alignItems: 'flex-start'
+            alignItems: 'flex-start',
           }}
         />
         <NotificationsList
           goToBook={this.props.goToBook}
         />
       </View>
-    )
+    );
   }
 }
 
-export default NotificationsHome
+export default NotificationsHome;

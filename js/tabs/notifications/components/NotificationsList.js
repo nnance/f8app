@@ -5,7 +5,7 @@ import {
   ListView,
   StyleSheet,
   Text,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 import data from '../data';
 
@@ -20,44 +20,47 @@ const styles = StyleSheet.create({
 
 class NotificationsRow extends React.Component {
   render() {
-    const clogNumber = this.props.clogs.length
-    const typeActivity = this.props.activity.type
-    let now = Date.now();
-    let timeAdded = new Date(this.props.activity.time)
-    let diffMins = Math.round((((now - timeAdded) % 86400000) % 3600000) / 60000);
+    const clogNumber = this.props.clogs.length;
+    const typeActivity = this.props.activity.type;
+    const now = Date.now();
+    const timeAdded = new Date(this.props.activity.time);
+    const diffMins = Math.round((((now - timeAdded) % 86400000) % 3600000) / 60000);
 
-    let activityDetail
+    let activityDetail;
     if (clogNumber === 1) {
-      activityDetail = `${this.props.activity.action} a ${typeActivity}`
+      activityDetail = `${this.props.activity.action} a ${typeActivity}`;
     } else if (clogNumber > 1) {
-      activityDetail = `${this.props.activity.action} ${clogNumber} ${typeActivity}`
+      activityDetail = `${this.props.activity.action} ${clogNumber} ${typeActivity}`;
     }
 
     return (
-      <TouchableOpacity onPress={() => this.props.goToBook({id: 1})}>
-        <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', padding: 10, backgroundColor: '#fbfbfb'}}>
-          <Image style={{width: 40, height: 40, borderRadius: 20}} source={{ uri: this.props.picture.large}}/>
-          <View style={{flex: 1}}>
-            <Text numberOfLines={2} style={{marginLeft: 10, fontWeight: 'bold', fontSize: 15}}>
+      <TouchableOpacity onPress={() => this.props.goToBook({ id: 1 })}>
+        <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', padding: 10, backgroundColor: '#fbfbfb' }}>
+          <Image
+            style={{ width: 40, height: 40, borderRadius: 20 }}
+            source={{ uri: this.props.picture.large }}
+          />
+          <View style={{ flex: 1 }}>
+            <Text numberOfLines={2} style={{ marginLeft: 10, fontWeight: 'bold', fontSize: 15 }}>
               {`${this.props.name.first} ${this.props.name.last} `}
-              <Text style={{fontWeight: 'normal', fontSize: 12, color: '#929292'}}>{activityDetail}</Text>
+              <Text style={{ fontWeight: 'normal', fontSize: 12, color: '#929292' }}>{activityDetail}</Text>
             </Text>
-            <Text style={{marginLeft: 10, fontSize: 12, color: '#D3D3D3'}}>
+            <Text style={{ marginLeft: 10, fontSize: 12, color: '#D3D3D3' }}>
               {`${diffMins} mins ago`}
             </Text>
           </View>
         </View>
       </TouchableOpacity>
-    )
+    );
   }
 }
 
 class NotificationsList extends React.Component {
   constructor(props) {
     super(props);
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
     this.state = {
-      dataSource: ds.cloneWithRows(data)
+      dataSource: ds.cloneWithRows(data),
     };
   }
 
@@ -66,8 +69,8 @@ class NotificationsList extends React.Component {
       <ListView
         showsHorizontalScrollIndicator={false}
         dataSource={this.state.dataSource}
-        renderRow={(data) => <NotificationsRow goToBook={this.props.goToBook} {...data} />}
-        renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} /> }
+        renderRow={dataRow => <NotificationsRow goToBook={this.props.goToBook} {...dataRow} />}
+        renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
       />
     );
   }
