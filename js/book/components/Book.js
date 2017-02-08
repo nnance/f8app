@@ -14,6 +14,7 @@ import ReadMore from '@exponent/react-native-read-more-text';
 import BorderButton, { styles as borderButtonStyles } from '../../common/BorderButton';
 import FixBugScrollView from '../../common/FixBugScrollView';
 import CircleImage from '../../common/CircleImage';
+import PureListView from '../../common/PureListView';
 import { toHumanNumber, mapSource, bindFn } from '../../common/utils';
 import { colors, styles as commonStyles } from '../../common/styles';
 
@@ -227,7 +228,6 @@ class Book extends React.Component {
     return (
       <View key={data.id}>
         <MetaEpisode {...data} onReadPress={this.props.goToPlayer} />
-        <View style={{ height: 1, backgroundColor: colors.greyBorder }} />
       </View>
     );
   }
@@ -244,17 +244,17 @@ class Book extends React.Component {
             <Image source={require('../../common/img/icon/backButton.png')} style={commonStyles.navBarIcon} />
           </TouchableOpacity>
         </Image>
-        <FixBugScrollView
-          style={styles.detailContainer}
+        <View
+          style={{flex: 1}}
         >
-          <SubDetail {...clog} onReadPress={this.props.goToPlayer} />
-          <View style={styles.episodeContainer}>
-            <View style={{ height: 1, backgroundColor: colors.greyBorder }} />
-            {
-              clog.episodes.map(this.renderEpisode)
-            }
-          </View>
-        </FixBugScrollView>
+          <PureListView
+          style={styles.detailContainer}
+            data={clog.episodes}
+            renderRow={this.renderEpisode}
+            minContentHeight={0}
+            renderHeader={() => <SubDetail {...clog} onReadPress={this.props.goToPlayer} />}
+          />
+        </View>
       </View>
     );
   }
