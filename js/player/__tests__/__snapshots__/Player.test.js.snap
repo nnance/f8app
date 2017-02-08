@@ -94,9 +94,9 @@ exports[`Player render 1`] = `
             }
           }>
           EP.
-          5
+          10
            
-          Quisquam non alias
+          Non alias magni
         </Text>
         <Text
           accessible={true}
@@ -109,7 +109,7 @@ exports[`Player render 1`] = `
             }
           }>
           อ่านแล้ว 
-          1,282
+          3,024
            คน
         </Text>
       </View>
@@ -345,7 +345,7 @@ exports[`Player render 1`] = `
             "color": "rgba(0, 0, 0, 0.3)",
           }
         }>
-        30.2k
+        99.9k
       </Text>
     </View>
     <View
@@ -388,7 +388,7 @@ exports[`Player render 1`] = `
             "color": "rgba(0, 0, 0, 0.3)",
           }
         }>
-        999k
+        146k
       </Text>
     </View>
     <View

@@ -1731,85 +1731,90 @@ exports[`MyClogScreen render MyClogScreen 1`] = `
     </View>
   </View>
   <ScrollView
-    onScroll={[Function]}>
-    <ScrollView
-      contentInset={
+    contentInset={
+      Object {
+        "bottom": 1354,
+        "top": 0,
+      }
+    }
+    data={
+      Array [
         Object {
-          "bottom": 1354,
-          "top": 0,
+          "author": Object {
+            "name": "David Beckham",
+          },
+          "category": "M",
+          "createdAt": 2015-06-23T17:00:00.000Z,
+          "likeCount": 1500,
+          "preview": 1,
+          "title": "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
+          "viewCount": 12300,
+        },
+        Object {
+          "author": Object {
+            "name": "สุดสาครนอย ไทรโยค",
+          },
+          "category": "N",
+          "createdAt": 2016-11-07T17:00:00.000Z,
+          "likeCount": 55,
+          "preview": 1,
+          "title": "Money Honey คุณชายหน้าตายกับยัยขี้งก",
+          "viewCount": 100,
+        },
+      ]
+    }
+    dataSource={
+      ListViewDataSource {
+        "items": 2,
+      }
+    }
+    initialListSize={10}
+    minContentHeight={1354}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={1000}
+    onKeyboardDidHide={undefined}
+    onKeyboardDidShow={undefined}
+    onKeyboardWillHide={undefined}
+    onKeyboardWillShow={undefined}
+    onLayout={[Function]}
+    onScroll={[Function]}
+    pageSize={1}
+    removeClippedSubviews={true}
+    renderEmptyList={null}
+    renderFooter={[Function]}
+    renderRow={[Function]}
+    renderSeparator={[Function]}
+    scrollEventThrottle={50}
+    scrollRenderAheadDistance={1000}
+    stickyHeaderIndices={Array []}>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flexDirection": "row",
+          "opacity": 1,
+          "padding": 13,
         }
       }
-      data={
-        Array [
-          Object {
-            "author": Object {
-              "name": "David Beckham",
-            },
-            "category": "M",
-            "createdAt": 2015-06-23T17:00:00.000Z,
-            "likeCount": 1500,
-            "preview": 1,
-            "title": "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
-            "viewCount": 12300,
-          },
-          Object {
-            "author": Object {
-              "name": "สุดสาครนอย ไทรโยค",
-            },
-            "category": "N",
-            "createdAt": 2016-11-07T17:00:00.000Z,
-            "likeCount": 55,
-            "preview": 1,
-            "title": "Money Honey คุณชายหน้าตายกับยัยขี้งก",
-            "viewCount": 100,
-          },
-        ]
-      }
-      dataSource={
-        ListViewDataSource {
-          "items": 2,
-        }
-      }
-      initialListSize={10}
-      minContentHeight={1354}
-      onContentSizeChange={[Function]}
-      onEndReachedThreshold={1000}
-      onKeyboardDidHide={undefined}
-      onKeyboardDidShow={undefined}
-      onKeyboardWillHide={undefined}
-      onKeyboardWillShow={undefined}
-      onLayout={[Function]}
-      onScroll={[Function]}
-      pageSize={1}
-      removeClippedSubviews={true}
-      renderEmptyList={null}
-      renderFooter={[Function]}
-      renderRow={[Function]}
-      renderSeparator={[Function]}
-      scrollEventThrottle={50}
-      scrollRenderAheadDistance={1000}
-      stickyHeaderIndices={Array []}>
+      testID={undefined}>
       <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
-        accessible={true}
-        hitSlop={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "flexDirection": "row",
-            "opacity": 1,
-            "padding": 13,
+            "height": 100,
+            "width": 100,
           }
-        }
-        testID={undefined}>
+        }>
         <View
           style={
             Object {
@@ -1820,112 +1825,146 @@ exports[`MyClogScreen render MyClogScreen 1`] = `
           <View
             style={
               Object {
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "borderRadius": 50,
                 "height": 100,
+                "left": -0,
+                "position": "absolute",
+                "top": -0,
                 "width": 100,
               }
-            }>
-            <View
-              style={
-                Object {
-                  "backgroundColor": "rgba(0, 0, 0, 0)",
-                  "borderRadius": 50,
-                  "height": 100,
-                  "left": -0,
-                  "position": "absolute",
-                  "top": -0,
-                  "width": 100,
-                }
-              } />
-            <Image
-              category="M"
-              size={100}
-              source={1}
-              style={
-                Array [
-                  Object {
-                    "borderRadius": 50,
-                    "height": 100,
-                    "width": 100,
-                  },
-                  Array [
-                    undefined,
-                    Object {
-                      "backgroundColor": "transparent",
-                    },
-                  ],
-                ]
-              } />
-            <View
-              style={
-                Object {
-                  "height": 100,
-                  "left": 0,
-                  "position": "absolute",
-                  "top": 0,
-                  "width": 100,
-                }
-              } />
-          </View>
+            } />
           <Image
+            category="M"
+            size={100}
             source={1}
             style={
               Array [
                 Object {
-                  "bottom": 3.125,
-                  "height": 25,
-                  "position": "absolute",
-                  "right": 3.125,
-                  "width": 25,
+                  "borderRadius": 50,
+                  "height": 100,
+                  "width": 100,
                 },
-                undefined,
+                Array [
+                  undefined,
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                ],
               ]
             } />
+          <View
+            style={
+              Object {
+                "height": 100,
+                "left": 0,
+                "position": "absolute",
+                "top": 0,
+                "width": 100,
+              }
+            } />
         </View>
+        <Image
+          source={1}
+          style={
+            Array [
+              Object {
+                "bottom": 3.125,
+                "height": 25,
+                "position": "absolute",
+                "right": 3.125,
+                "width": 25,
+              },
+              undefined,
+            ]
+          } />
+      </View>
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "paddingLeft": 20,
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "alignSelf": "flex-end",
+              "color": "rgba(0, 0, 0, 0.3)",
+              "fontSize": 12,
+            }
+          }>
+          June 24
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontWeight": "bold",
+              "marginTop": 7,
+            }
+          }>
+          Richy Rich! รวยมากนะ! รู้ยังคะทุกคน
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "rgba(0, 0, 0, 0.5)",
+              "fontSize": 12,
+              "marginTop": 5,
+            }
+          }>
+          David Beckham
+        </Text>
         <View
           style={
             Object {
-              "flex": 1,
-              "paddingLeft": 20,
+              "alignItems": "center",
+              "flexDirection": "row",
             }
           }>
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+          <View
             style={
               Object {
-                "alignSelf": "flex-end",
-                "color": "rgba(0, 0, 0, 0.3)",
-                "fontSize": 12,
+                "alignItems": "center",
+                "flexDirection": "row",
+                "width": 80,
               }
             }>
-            June 24
-          </Text>
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "fontWeight": "bold",
-                "marginTop": 7,
-              }
-            }>
-            Richy Rich! รวยมากนะ! รู้ยังคะทุกคน
-          </Text>
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "rgba(0, 0, 0, 0.5)",
-                "fontSize": 12,
-                "marginTop": 5,
-              }
-            }>
-            David Beckham
-          </Text>
+            <Image
+              source={1}
+              style={
+                Object {
+                  "borderRadius": 4,
+                  "height": 15,
+                  "resizeMode": "contain",
+                  "width": 15,
+                }
+              } />
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "rgba(0, 0, 0, 0.3)",
+                  "fontSize": 11,
+                  "paddingLeft": 5,
+                }
+              }>
+              ดู 
+              12.3k
+               ครั้ง
+            </Text>
+          </View>
           <View
             style={
               Object {
@@ -1933,104 +1972,70 @@ exports[`MyClogScreen render MyClogScreen 1`] = `
                 "flexDirection": "row",
               }
             }>
-            <View
+            <Image
+              source={1}
               style={
                 Object {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "width": 80,
+                  "borderRadius": 4,
+                  "height": 15,
+                  "marginLeft": 20,
+                  "resizeMode": "contain",
+                  "width": 15,
                 }
-              }>
-              <Image
-                source={1}
-                style={
-                  Object {
-                    "borderRadius": 4,
-                    "height": 15,
-                    "resizeMode": "contain",
-                    "width": 15,
-                  }
-                } />
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Object {
-                    "color": "rgba(0, 0, 0, 0.3)",
-                    "fontSize": 11,
-                    "paddingLeft": 5,
-                  }
-                }>
-                ดู 
-                12.3k
-                 ครั้ง
-              </Text>
-            </View>
-            <View
+              } />
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
               style={
                 Object {
-                  "alignItems": "center",
-                  "flexDirection": "row",
+                  "color": "rgba(0, 0, 0, 0.3)",
+                  "fontSize": 11,
+                  "paddingLeft": 5,
                 }
               }>
-              <Image
-                source={1}
-                style={
-                  Object {
-                    "borderRadius": 4,
-                    "height": 15,
-                    "marginLeft": 20,
-                    "resizeMode": "contain",
-                    "width": 15,
-                  }
-                } />
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Object {
-                    "color": "rgba(0, 0, 0, 0.3)",
-                    "fontSize": 11,
-                    "paddingLeft": 5,
-                  }
-                }>
-                1,500
-                 Like
-              </Text>
-            </View>
+              1,500
+               Like
+            </Text>
           </View>
         </View>
       </View>
-      <View
-        style={
-          Object {
-            "backgroundColor": "#eeeeee",
-            "height": 1,
-          }
-        } />
-      <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
-        accessible={true}
-        hitSlop={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "flexDirection": "row",
-            "opacity": 1,
-            "padding": 13,
-          }
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "height": 1,
         }
-        testID={undefined}>
+      } />
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flexDirection": "row",
+          "opacity": 1,
+          "padding": 13,
+        }
+      }
+      testID={undefined}>
+      <View
+        style={
+          Object {
+            "height": 100,
+            "width": 100,
+          }
+        }>
         <View
           style={
             Object {
@@ -2041,112 +2046,146 @@ exports[`MyClogScreen render MyClogScreen 1`] = `
           <View
             style={
               Object {
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "borderRadius": 50,
                 "height": 100,
+                "left": -0,
+                "position": "absolute",
+                "top": -0,
                 "width": 100,
               }
-            }>
-            <View
-              style={
-                Object {
-                  "backgroundColor": "rgba(0, 0, 0, 0)",
-                  "borderRadius": 50,
-                  "height": 100,
-                  "left": -0,
-                  "position": "absolute",
-                  "top": -0,
-                  "width": 100,
-                }
-              } />
-            <Image
-              category="N"
-              size={100}
-              source={1}
-              style={
-                Array [
-                  Object {
-                    "borderRadius": 50,
-                    "height": 100,
-                    "width": 100,
-                  },
-                  Array [
-                    undefined,
-                    Object {
-                      "backgroundColor": "transparent",
-                    },
-                  ],
-                ]
-              } />
-            <View
-              style={
-                Object {
-                  "height": 100,
-                  "left": 0,
-                  "position": "absolute",
-                  "top": 0,
-                  "width": 100,
-                }
-              } />
-          </View>
+            } />
           <Image
+            category="N"
+            size={100}
             source={1}
             style={
               Array [
                 Object {
-                  "bottom": 3.125,
-                  "height": 25,
-                  "position": "absolute",
-                  "right": 3.125,
-                  "width": 25,
+                  "borderRadius": 50,
+                  "height": 100,
+                  "width": 100,
                 },
-                undefined,
+                Array [
+                  undefined,
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                ],
               ]
             } />
+          <View
+            style={
+              Object {
+                "height": 100,
+                "left": 0,
+                "position": "absolute",
+                "top": 0,
+                "width": 100,
+              }
+            } />
         </View>
+        <Image
+          source={1}
+          style={
+            Array [
+              Object {
+                "bottom": 3.125,
+                "height": 25,
+                "position": "absolute",
+                "right": 3.125,
+                "width": 25,
+              },
+              undefined,
+            ]
+          } />
+      </View>
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "paddingLeft": 20,
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "alignSelf": "flex-end",
+              "color": "rgba(0, 0, 0, 0.3)",
+              "fontSize": 12,
+            }
+          }>
+          November 8
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontWeight": "bold",
+              "marginTop": 7,
+            }
+          }>
+          Money Honey คุณชายหน้าตายกับยัยขี้งก
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "rgba(0, 0, 0, 0.5)",
+              "fontSize": 12,
+              "marginTop": 5,
+            }
+          }>
+          สุดสาครนอย ไทรโยค
+        </Text>
         <View
           style={
             Object {
-              "flex": 1,
-              "paddingLeft": 20,
+              "alignItems": "center",
+              "flexDirection": "row",
             }
           }>
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+          <View
             style={
               Object {
-                "alignSelf": "flex-end",
-                "color": "rgba(0, 0, 0, 0.3)",
-                "fontSize": 12,
+                "alignItems": "center",
+                "flexDirection": "row",
+                "width": 80,
               }
             }>
-            November 8
-          </Text>
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "fontWeight": "bold",
-                "marginTop": 7,
-              }
-            }>
-            Money Honey คุณชายหน้าตายกับยัยขี้งก
-          </Text>
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "rgba(0, 0, 0, 0.5)",
-                "fontSize": 12,
-                "marginTop": 5,
-              }
-            }>
-            สุดสาครนอย ไทรโยค
-          </Text>
+            <Image
+              source={1}
+              style={
+                Object {
+                  "borderRadius": 4,
+                  "height": 15,
+                  "resizeMode": "contain",
+                  "width": 15,
+                }
+              } />
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "rgba(0, 0, 0, 0.3)",
+                  "fontSize": 11,
+                  "paddingLeft": 5,
+                }
+              }>
+              ดู 
+              100
+               ครั้ง
+            </Text>
+          </View>
           <View
             style={
               Object {
@@ -2154,84 +2193,42 @@ exports[`MyClogScreen render MyClogScreen 1`] = `
                 "flexDirection": "row",
               }
             }>
-            <View
+            <Image
+              source={1}
               style={
                 Object {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "width": 80,
+                  "borderRadius": 4,
+                  "height": 15,
+                  "marginLeft": 20,
+                  "resizeMode": "contain",
+                  "width": 15,
                 }
-              }>
-              <Image
-                source={1}
-                style={
-                  Object {
-                    "borderRadius": 4,
-                    "height": 15,
-                    "resizeMode": "contain",
-                    "width": 15,
-                  }
-                } />
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Object {
-                    "color": "rgba(0, 0, 0, 0.3)",
-                    "fontSize": 11,
-                    "paddingLeft": 5,
-                  }
-                }>
-                ดู 
-                100
-                 ครั้ง
-              </Text>
-            </View>
-            <View
+              } />
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
               style={
                 Object {
-                  "alignItems": "center",
-                  "flexDirection": "row",
+                  "color": "rgba(0, 0, 0, 0.3)",
+                  "fontSize": 11,
+                  "paddingLeft": 5,
                 }
               }>
-              <Image
-                source={1}
-                style={
-                  Object {
-                    "borderRadius": 4,
-                    "height": 15,
-                    "marginLeft": 20,
-                    "resizeMode": "contain",
-                    "width": 15,
-                  }
-                } />
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Object {
-                    "color": "rgba(0, 0, 0, 0.3)",
-                    "fontSize": 11,
-                    "paddingLeft": 5,
-                  }
-                }>
-                55
-                 Like
-              </Text>
-            </View>
+              55
+               Like
+            </Text>
           </View>
         </View>
       </View>
-      <View
-        style={
-          Object {
-            "backgroundColor": "#eeeeee",
-            "height": 1,
-          }
-        } />
-    </ScrollView>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "height": 1,
+        }
+      } />
   </ScrollView>
 </View>
 `;

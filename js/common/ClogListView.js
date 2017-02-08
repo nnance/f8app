@@ -10,7 +10,7 @@ import gql from 'graphql-tag';
 import moment from 'moment';
 
 import { colors } from './styles';
-import PureListView from './PureListView';
+import FixBugPureListView from './FixBugPureListView';
 import FixBugScrollView from './FixBugScrollView';
 import CircleImageWithCategory from './CircleImageWithCategory';
 import { toHumanNumber, mapSource } from './utils';
@@ -88,12 +88,10 @@ class ClogListView extends React.Component {
 
   render() {
     return (
-      <FixBugScrollView>
-        <PureListView
-          data={this.props.clogs}
-          renderRow={clog => <ClogRow {...clog} onPress={this.onClogPress} />}
-        />
-      </FixBugScrollView>
+      <FixBugPureListView
+        data={this.props.clogs}
+        renderRow={clog => <ClogRow {...clog} onPress={this.onClogPress} />}
+      />
     );
   }
 }

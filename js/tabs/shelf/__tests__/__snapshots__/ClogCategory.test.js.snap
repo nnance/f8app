@@ -35,6 +35,7 @@ exports[`Shelf.ClogCategory RecommendClogs render 1`] = `
             "profilePicture": "http://localhost/static/preview/g4602.png",
           },
         ],
+        "id": "9971848",
         "title": "Ab nulla quod",
       },
       Object {
@@ -108,6 +109,7 @@ exports[`Shelf.ClogCategory RecommendClogs render 1`] = `
             "profilePicture": "http://localhost/static/preview/g3578.png",
           },
         ],
+        "id": "8833061",
         "title": "Dolores et",
       },
     ]
@@ -1050,6 +1052,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         "profilePicture": "http://localhost/static/preview/g4602.png",
                       },
                     ],
+                    "id": "9971848",
                     "title": "Ab nulla quod",
                   },
                   Object {
@@ -1123,6 +1126,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         "profilePicture": "http://localhost/static/preview/g3578.png",
                       },
                     ],
+                    "id": "8833061",
                     "title": "Dolores et",
                   },
                 ]

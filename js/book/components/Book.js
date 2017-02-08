@@ -248,7 +248,7 @@ class Book extends React.Component {
           style={{flex: 1}}
         >
           <PureListView
-          style={styles.detailContainer}
+            style={styles.detailContainer}
             data={clog.episodes}
             renderRow={this.renderEpisode}
             minContentHeight={0}
