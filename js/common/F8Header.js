@@ -23,6 +23,7 @@
  * @flow
  */
 
+/* eslint-disable */
 
 const F8Colors = require('F8Colors');
 const React = require('React');

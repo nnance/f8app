@@ -33,3 +33,7 @@ export function mapSource(source) {
   }
   return source;
 }
+
+export function bindFn(fn, ...args) {
+  return fn.bind(null, ...args);
+}

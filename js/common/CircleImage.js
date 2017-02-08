@@ -31,8 +31,10 @@ const CircleImage = (props) => {
         width: props.size,
         height: props.size,
         borderRadius: props.size / 2,
-      }, props.style]} children={null}
-    />
+      }, props.style]}
+    >
+      {null}
+    </Image>
     <View
       style={{
         width: props.size,

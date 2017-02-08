@@ -28,6 +28,13 @@ const React = require('React');
 const StyleSheet = require('StyleSheet');
 const View = require('View');
 
+const styles = StyleSheet.create({
+  separator: {
+    backgroundColor: '#0322500A',
+    height: 1 / PixelRatio.get(),
+  },
+});
+
 class ItemsWithSeparator extends React.Component {
   props: {
     style: any;
@@ -59,12 +66,5 @@ class ItemsWithSeparator extends React.Component {
     );
   }
 }
-
-var styles = StyleSheet.create({
-  separator: {
-    backgroundColor: '#0322500A',
-    height: 1 / PixelRatio.get(),
-  },
-});
 
 module.exports = ItemsWithSeparator;

@@ -59,6 +59,8 @@
     "import/extensions": "off",
     "class-methods-use-this": "off",
     "no-underscore-dangle": "off",
-    "react/no-multi-comp": "off"
+    "react/no-multi-comp": "off",
+    "react/require-default-props": "off",
+    "import/prefer-default-export": "off"
   }
 }

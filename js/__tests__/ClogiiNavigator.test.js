@@ -20,10 +20,8 @@ describe('ClogiiNavigator', () => {
   it('navigate to Book/Player', () => {
     const dump = getWrapper();
     const spy = jest.fn();
-    dump.instance().refs = {
-      navigator: {
-        push: spy,
-      },
+    dump.instance().navigator = {
+      push: spy,
     };
     dump.instance().goToPlayer(5);
     expect(spy).toBeCalledWith({ id: 5, page: 'player' });
@@ -34,10 +32,8 @@ describe('ClogiiNavigator', () => {
   it('navigate back', () => {
     const dump = getWrapper();
     const spy = jest.fn();
-    dump.instance().refs = {
-      navigator: {
-        pop: spy,
-      },
+    dump.instance().navigator = {
+      pop: spy,
     };
     dump.instance().goBack(5);
     expect(spy).toBeCalled();
@@ -54,10 +50,8 @@ describe('ClogiiNavigator', () => {
   it('fromURL will navigate to player on `clogii://player?id=123`', () => {
     const dump = getWrapper();
     const spy = jest.fn();
-    dump.instance().refs = {
-      navigator: {
-        push: spy,
-      },
+    dump.instance().navigator = {
+      push: spy,
     };
     dump.instance().fromURL('clogii://player?id=123');
     expect(spy).toBeCalledWith({ page: 'player', id: '123' });

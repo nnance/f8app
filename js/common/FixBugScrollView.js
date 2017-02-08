@@ -16,38 +16,48 @@ class FixBugScrollView extends React.Component {
   }
 
   componentDidMount() {
-    this.context && this.context.addFixBugListener && this.context.addFixBugListener(this.fixScrollBug);
+    if (this.context && this.context.addFixBugListener) {
+      this.context.addFixBugListener(this.fixScrollBug);
+    }
     InteractionManager.runAfterInteractions(() => {
       this.fixScrollBug();
     });
   }
 
   componentWillUnmount() {
-    this.context && this.context.removeFixBugListener && this.context.removeFixBugListener(this.fixScrollBug);
+    if (this.context && this.context.removeFixBugListener) {
+      this.context.removeFixBugListener(this.fixScrollBug);
+    }
+  }
+
+  fixScrollBug() {
+    const x = this.state.mainScrollX;
+    const y = this.state.mainScrollY;
+    this.mainScrollView.scrollTo({
+      x,
+      y: y + 1,
+    });
+    this.mainScrollView.scrollTo({
+      x,
+      y,
+    });
   }
 
   render() {
     return (<ScrollView
-      {...this.props} ref="mainScrollView" onScroll={(e) => {
+      {...this.props}
+      ref={
+        (node) => {
+          this.mainScrollView = node;
+        }
+      }
+      onScroll={(e) => {
         this.setState({
           mainScrollX: e.nativeEvent.contentOffset.x,
           mainScrollY: e.nativeEvent.contentOffset.y,
         });
       }}
     />);
-  }
-
-  fixScrollBug() {
-    const x = this.state.mainScrollX;
-    const y = this.state.mainScrollY;
-    this.refs.mainScrollView.scrollTo({
-      x,
-      y: y + 1,
-    });
-    this.refs.mainScrollView.scrollTo({
-      x,
-      y,
-    });
   }
 }
 

@@ -25,11 +25,13 @@
 
 
 import { StyleSheet, Platform } from 'react-native';
+import _ from 'lodash';
 
 export function create(styles: Object): {[name: string]: number} {
   const platformStyles = {};
   Object.keys(styles).forEach((name) => {
-    const { ios, android, ...style } = { ...styles[name] };
+    const { ios, android } = { ...styles[name] };
+    let style = _.omit(styles[name], 'ios', 'android');
     if (ios && Platform.OS === 'ios') {
       style = { ...style, ...ios };
     }

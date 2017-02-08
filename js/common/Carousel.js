@@ -35,6 +35,16 @@ type Props = {
   style?: any;
 };
 
+const styles = StyleSheet.create({
+  carousel: {
+    ios: {
+      margin: 10,
+      overflow: 'visible',
+      backgroundColor: 'black',
+    },
+  },
+});
+
 class Carousel extends React.Component {
   props: Props;
 
@@ -42,7 +52,7 @@ class Carousel extends React.Component {
     const cards = [];
     const { count, selectedIndex, renderCard } = this.props;
 
-    for (let i = 0; i < count; i++) {
+    for (let i = 0; i < count; i += 1) {
       let content = null;
       if (Math.abs(i - selectedIndex) < 2) {
         content = renderCard(i);
@@ -56,15 +66,5 @@ class Carousel extends React.Component {
     );
   }
 }
-
-var styles = StyleSheet.create({
-  carousel: {
-    ios: {
-      margin: 10,
-      overflow: 'visible',
-      backgroundColor: 'black',
-    },
-  },
-});
 
 module.exports = Carousel;

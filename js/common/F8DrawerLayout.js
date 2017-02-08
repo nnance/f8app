@@ -24,6 +24,7 @@
  * @providesModule F8DrawerLayout
  */
 
+/* eslint-disable */
 
 const React = require('React');
 const DrawerLayoutAndroid = require('DrawerLayoutAndroid');

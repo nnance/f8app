@@ -23,6 +23,7 @@
  * @flow
  */
 
+/* eslint-disable */
 
 const React = require('React');
 const StyleSheet = require('StyleSheet');
@@ -39,7 +40,7 @@ const F8PageControl = React.createClass({
 
   render() {
     const images = [];
-    for (let i = 0; i < this.props.count; i++) {
+    for (let i = 0; i < this.props.count; i += 1) {
       const isSelected = this.props.selectedIndex === i;
       images.push(<Circle key={i} isSelected={isSelected} />);
     }

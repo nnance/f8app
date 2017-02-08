@@ -23,14 +23,65 @@
  * @flow
  */
 
+import LinearGradient from 'react-native-linear-gradient';
 
 const Image = require('Image');
-import LinearGradient from 'react-native-linear-gradient';
 const React = require('React');
 const StyleSheet = require('StyleSheet');
 const { Text } = require('F8Text');
 const TouchableOpacity = require('TouchableOpacity');
 const View = require('View');
+
+const HEIGHT = 50;
+
+const styles = StyleSheet.create({
+  container: {
+    height: HEIGHT,
+    // borderRadius: HEIGHT / 2,
+    // borderWidth: 1 / PixelRatio.get(),
+  },
+  button: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 40,
+  },
+  whiteButton: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 40,
+    backgroundColor: 'white',
+    borderRadius: HEIGHT / 2,
+  },
+  border: {
+    borderWidth: 1,
+    borderColor: 'white',
+    borderRadius: HEIGHT / 2,
+  },
+  primaryButton: {
+    borderRadius: HEIGHT / 2,
+    backgroundColor: 'transparent',
+  },
+  icon: {
+    marginRight: 12,
+  },
+  caption: {
+    letterSpacing: 1,
+    fontSize: 12,
+  },
+  primaryCaption: {
+    color: 'white',
+  },
+  secondaryCaption: {
+    color: 'white',
+  },
+  purpleCaption: {
+    color: 'rgb(161, 40, 128)',
+  },
+});
 
 class ClogiiButton extends React.Component {
   render() {
@@ -85,56 +136,5 @@ class ClogiiButton extends React.Component {
     );
   }
 }
-
-const HEIGHT = 50;
-
-var styles = StyleSheet.create({
-  container: {
-    height: HEIGHT,
-    // borderRadius: HEIGHT / 2,
-    // borderWidth: 1 / PixelRatio.get(),
-  },
-  button: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal: 40,
-  },
-  whiteButton: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal: 40,
-    backgroundColor: 'white',
-    borderRadius: HEIGHT / 2,
-  },
-  border: {
-    borderWidth: 1,
-    borderColor: 'white',
-    borderRadius: HEIGHT / 2,
-  },
-  primaryButton: {
-    borderRadius: HEIGHT / 2,
-    backgroundColor: 'transparent',
-  },
-  icon: {
-    marginRight: 12,
-  },
-  caption: {
-    letterSpacing: 1,
-    fontSize: 12,
-  },
-  primaryCaption: {
-    color: 'white',
-  },
-  secondaryCaption: {
-    color: 'white',
-  },
-  purpleCaption: {
-    color: 'rgb(161, 40, 128)',
-  },
-});
 
 module.exports = ClogiiButton;
