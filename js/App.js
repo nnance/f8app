@@ -25,30 +25,18 @@
 
 
 import React from 'react';
+
 import LoginScreen from './login/LoginScreen';
+import ClogiiNavigator from './ClogiiNavigator';
 
 const AppState = require('AppState');
-// var PushNotificationsController = require('./PushNotificationsController');
-// var StyleSheet = require('StyleSheet');
-// var F8Navigator = require('F8Navigator');
 const CodePush = require('react-native-code-push');
-// var View = require('View');
-// var StatusBar = require('StatusBar');
-const {
-  loadConfig,
-  loadViewer,
-  loadNotifications,
-  loadSessions,
-  loadFriendsSchedules,
-  loadSurveys,
-} = require('./actions');
 const { updateInstallation } = require('./actions/installation');
 const { connect } = require('react-redux');
 
 const { version } = require('./env.js');
-import ClogiiNavigator from './ClogiiNavigator';
 
-const App = React.createClass({
+class App extends React.Component {
   componentDidMount() {
     AppState.addEventListener('change', this.handleAppStateChange);
 
@@ -61,11 +49,11 @@ const App = React.createClass({
 
     updateInstallation({ version });
     CodePush.sync({ installMode: CodePush.InstallMode.ON_NEXT_RESUME });
-  },
+  }
 
   componentWillUnmount() {
     AppState.removeEventListener('change', this.handleAppStateChange);
-  },
+  }
 
   handleAppStateChange(appState) {
     if (appState === 'active') {
@@ -74,16 +62,15 @@ const App = React.createClass({
       // this.props.dispatch(loadSurveys());
       CodePush.sync({ installMode: CodePush.InstallMode.ON_NEXT_RESUME });
     }
-  },
+  }
 
   render() {
     if (!this.props.isLoggedIn) {
       return <LoginScreen />;
     }
     return <ClogiiNavigator />;
-  },
-
-});
+  }
+}
 
 function select(store) {
   return {

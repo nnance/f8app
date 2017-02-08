@@ -2,6 +2,7 @@
 
 
 import Parse from 'parse/react-native';
+import _ from 'lodash';
 
 import type { Action } from './types';
 
@@ -26,18 +27,15 @@ async function _changeEmail(newEmail) {
   await user.save();
 }
 
-export const changeEmail = newEmail => dispatch => _changeEmail(newEmail).then(() => {
-  dispatch(changedEmail(newEmail));
-});
-
-function changedEmail() {
+function changedEmail(email): Action {
   return {
     type: 'CHANGED_EMAIL',
+    payload: email,
   };
 }
 
-export const changePassword = newPassword => dispatch => _changePassword(newPassword).then(() => {
-  dispatch(changedPassword());
+export const changeEmail = newEmail => dispatch => _changeEmail(newEmail).then(() => {
+  dispatch(changedEmail(newEmail));
 });
 
 function changedPassword() {
@@ -45,6 +43,10 @@ function changedPassword() {
     type: 'CHANGED_PASSWORD',
   };
 }
+
+export const changePassword = newPassword => dispatch => _changePassword(newPassword).then(() => {
+  dispatch(changedPassword());
+});
 
 async function _changeProfile(data) {
   const user = await getUser();
@@ -60,35 +62,17 @@ async function _changeProfile(data) {
     await file.save();
     user.set('profileCover', file);
   }
-  delete data.profileCover;
-  delete data.profilePicture;
-  Object.keys(data).forEach((key) => {
-    user.set(key, data[key]);
+  const setData = _.omit(data, 'profileCover', 'profilePicture');
+  Object.keys(setData).forEach((key) => {
+    user.set(key, setData[key]);
   });
   // await new Promise(resolve => {
   //   setTimeout(() => resolve(), 2000);
   // })
   await user.save();
-  return await user.fetch();
+  const refetchUser = await user.fetch();
+  return refetchUser;
 }
-
-export const changePublicProfile = (name, birthDayDate, sex, profilePicture, profileCover) => dispatch => _changeProfile({
-  name,
-  birthDayDate,
-  sex,
-  profilePicture,
-  profileCover,
-}).then(
-    (user) => {
-      dispatch(changedPublicProfile({
-        name: user.get('name'),
-        sex: user.get('sex'),
-        birthDayDate: user.get('birthDayDate'),
-        profilePicture: user.get('profilePicture') ? user.get('profilePicture').url() : null,
-        profileCover: user.get('profileCover') ? user.get('profileCover').url() : null,
-      }));
-    },
-  );
 
 export function changedPublicProfile(data) {
   return {
@@ -97,9 +81,22 @@ export function changedPublicProfile(data) {
   };
 }
 
-function changedEmail(email): Action {
-  return {
-    type: 'CHANGED_EMAIL',
-    payload: email,
-  };
-}
+export const changePublicProfile = (name, birthDayDate, sex, profilePicture, profileCover) =>
+  dispatch =>
+    _changeProfile({
+      name,
+      birthDayDate,
+      sex,
+      profilePicture,
+      profileCover,
+    }).then(
+      (user) => {
+        dispatch(changedPublicProfile({
+          name: user.get('name'),
+          sex: user.get('sex'),
+          birthDayDate: user.get('birthDayDate'),
+          profilePicture: user.get('profilePicture') ? user.get('profilePicture').url() : null,
+          profileCover: user.get('profileCover') ? user.get('profileCover').url() : null,
+        }));
+      },
+    );

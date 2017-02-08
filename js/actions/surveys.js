@@ -22,10 +22,9 @@
  * @flow
  */
 
+import type { Action } from './types';
 
 const Parse = require('parse/react-native');
-
-import type { Action } from './types';
 
 async function loadSurveys(): Promise<Action> {
   const list = await Parse.Cloud.run('surveys');

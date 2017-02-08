@@ -1,8 +1,11 @@
 import * as actions from '../changeProfile';
 
+/* eslint import/first: off */
+
 jest.mock('parse/react-native');
 
 import thunk from 'redux-thunk';
+
 const promise = require('../../store/promise');
 const array = require('../../store/array');
 

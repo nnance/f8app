@@ -1,5 +1,7 @@
 import * as loginAction from '../login';
 
+/* eslint import/first: off */
+
 jest.mock('parse/react-native');
 jest.mock('FacebookSDK', () => ({
   api: jest.fn((...args) => {
@@ -13,6 +15,7 @@ jest.mock('../schedule', () => ({
 }));
 
 import thunk from 'redux-thunk';
+
 const promise = require('../../store/promise');
 const array = require('../../store/array');
 
@@ -135,8 +138,6 @@ describe('Login Action', () => {
 
   it('signUp dispatch SIGNED_UP if success', async () => {
     const store = mockStore({});
-    const setSpy = jest.fn();
-    const saveSpy = jest.fn(() => Promise.resolve());
     Parse.User.prototype.save.mockImplementationOnce(() => Promise.resolve());
     await store.dispatch(loginAction.signUp('a@a.a', '1'));
     expect(store.getActions().filter(action => action && action.type === 'SIGNED_UP').length).toBe(1);
@@ -144,8 +145,6 @@ describe('Login Action', () => {
 
   it('signUp dont dispatch SIGNED_UP if fail', async () => {
     const store = mockStore({});
-    const setSpy = jest.fn();
-    const saveSpy = jest.fn(() => Promise.resolve());
     const error = jest.fn();
     Parse.User.prototype.save.mockImplementationOnce(() => Promise.reject(new Error('something error')));
     await store.dispatch(loginAction.signUp('a@a.a', '1')).catch(error);

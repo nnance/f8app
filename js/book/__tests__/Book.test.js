@@ -1,6 +1,5 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
 
 import graphql from '../../libs/mockGraphQL';
 
@@ -8,7 +7,8 @@ import Book from '../components/Book';
 import { query, mapQueryToProps, mapPropsToOptions } from '../containers/Book';
 
 function getBookProps(props) {
-  return graphql(query, mapPropsToOptions(props)).then(result => mapQueryToProps({ data: result.data }));
+  return graphql(query, mapPropsToOptions(props))
+    .then(result => mapQueryToProps({ data: result.data }));
 }
 
 describe('Book', () => {

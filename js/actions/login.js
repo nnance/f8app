@@ -22,6 +22,9 @@
  * @flow
  */
 
+/* eslint no-unused-vars: warn */
+
+import type { Action, ThunkAction } from './types';
 
 const Parse = require('parse/react-native');
 const FacebookSDK = require('FacebookSDK');
@@ -32,13 +35,11 @@ const { restoreSchedule, loadFriendsSchedules } = require('./schedule');
 const { updateInstallation } = require('./installation');
 const { loadSurveys } = require('./surveys');
 
-import type { Action, ThunkAction } from './types';
-
 async function ParseFacebookLogin(scope): Promise {
   return new Promise((resolve, reject) => {
     Parse.FacebookUtils.logIn(scope, {
       success: resolve,
-      error: (user, error) => reject(error && error.error || error),
+      error: (user, error) => reject(error),
     });
   });
 }
@@ -87,6 +88,12 @@ async function _logInWithFacebook(source: ?string): Promise<Array<Action>> {
   ]);
 }
 
+function signedUp(): Action {
+  return {
+    type: 'SIGNED_UP',
+  };
+}
+
 const signUp = (email: string, password: string) => (dispatch) => {
   const user = new Parse.User();
   user.set('username', email);
@@ -99,17 +106,11 @@ const signUp = (email: string, password: string) => (dispatch) => {
   });
 };
 
-function signedUp(): Action {
-  return {
-    type: 'SIGNED_UP',
-  };
-}
-
 async function _linkFacebook(user) {
   await new Promise((resolve, reject) => {
     Parse.FacebookUtils.link(user, null, {
       success: () => resolve(),
-      error: (user, error) => reject(error.error),
+      error: (u, error) => reject(error.error),
     });
   });
   await user.save();
@@ -135,6 +136,18 @@ async function _unlinkFacebook(user) {
   return user;
 }
 
+const facebookLinked = (id, name) => ({
+  type: 'FACEBOOK_LINKED',
+  data: {
+    id,
+    name,
+  },
+});
+
+const facebookUnlinked = () => ({
+  type: 'FACEBOOK_UNLINKED',
+});
+
 const linkFacebook = () => async (dispatch) => {
   const user = await Parse.User.currentAsync();
   return _linkFacebook(user).then((_user) => {
@@ -144,24 +157,13 @@ const linkFacebook = () => async (dispatch) => {
 
 const unlinkFacebook = () => async (dispatch) => {
   const user = await Parse.User.currentAsync();
-  return _unlinkFacebook(user).then((_user) => {
+  return _unlinkFacebook(user).then(() => {
     dispatch(facebookUnlinked());
   });
 };
 
-const facebookUnlinked = () => ({
-  type: 'FACEBOOK_UNLINKED',
-});
-
-const facebookLinked = (id, name) => ({
-  type: 'FACEBOOK_LINKED',
-  data: {
-    id,
-    name,
-  },
-});
-
-const logIn = (email: string, password: string) => dispatch => Parse.User.logIn(email, password).then(
+const logIn = (email: string, password: string) => dispatch =>
+  Parse.User.logIn(email, password).then(
     async () => {
       const user = await Parse.User.currentAsync();
       await updateInstallation({ user });

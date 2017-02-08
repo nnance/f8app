@@ -20,7 +20,7 @@
  * DEALINGS IN THE SOFTWARE
  */
 
-/* eslint no-unused-vars: off */
+/* eslint no-unused-vars: warn */
 
 function warn(error) {
   console.warn(error.message || error);

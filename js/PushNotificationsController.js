@@ -43,13 +43,6 @@ const {
 const PARSE_CLOUD_GCD_SENDER_ID = '1076345567071';
 
 class AppBadgeController extends React.Component {
-  props: {
-    tab: string;
-    enabled: boolean;
-    badge: number;
-    dispatch: Dispatch;
-  };
-
   constructor() {
     super();
 
@@ -70,10 +63,6 @@ class AppBadgeController extends React.Component {
     this.updateAppBadge();
   }
 
-  componentWillUnmount() {
-    AppState.removeEventListener('change', this.handleAppStateChange);
-  }
-
   componentDidUpdate(prevProps) {
     if (!prevProps.enabled && this.props.enabled) {
       PushNotification.requestPermissions();
@@ -85,6 +74,17 @@ class AppBadgeController extends React.Component {
       this.eventuallyMarkNotificationsAsSeen();
     }
   }
+
+  componentWillUnmount() {
+    AppState.removeEventListener('change', this.handleAppStateChange);
+  }
+
+  props: {
+    tab: string;
+    enabled: boolean;
+    badge: number;
+    dispatch: Dispatch;
+  };
 
   handleAppStateChange(appState) {
     if (appState === 'active') {

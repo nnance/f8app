@@ -22,13 +22,12 @@
  * @flow
  */
 
+import type { Action, ThunkAction } from './types';
 
 const Parse = require('parse/react-native');
 const ActionSheetIOS = require('ActionSheetIOS');
 const Platform = require('Platform');
 const { version } = require('../env');
-
-import type { Action, ThunkAction } from './types';
 
 function testPlainPush(): ThunkAction {
   return () => Parse.Cloud.run('test_push');

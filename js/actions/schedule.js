@@ -22,6 +22,8 @@
  * @flow
  */
 
+import type { ThunkAction, PromiseAction, Dispatch } from './types';
+import type { Session } from '../reducers/sessions';
 
 const Parse = require('parse/react-native');
 const { AppEventsLogger } = require('react-native-fbsdk');
@@ -30,11 +32,18 @@ const InteractionManager = require('InteractionManager');
 const ActionSheetIOS = require('ActionSheetIOS');
 const Alert = require('Alert');
 const Share = require('react-native-share');
+
 const Agenda = Parse.Object.extend('Agenda');
 const { currentInstallation, updateInstallation } = require('./installation');
 
-import type { ThunkAction, PromiseAction, Dispatch } from './types';
-import type { Session } from '../reducers/sessions';
+function logShare(id, completed, activity) {
+  AppEventsLogger.logEvent('Share Session', 1, { id });
+  Parse.Analytics.track('share', {
+    id,
+    completed: completed ? 'yes' : 'no',
+    activity: activity || '?',
+  });
+}
 
 function addToSchedule(id: string): ThunkAction {
   return (dispatch: Dispatch) => {
@@ -146,18 +155,9 @@ function shareSession(session: Session): ThunkAction {
         share_text: session.title,
         share_URL: url,
         title: `Share Link to ${session.title}`,
-      }, e => logShare(session.id, true, null));
+      }, () => logShare(session.id, true, null));
     }
   };
-}
-
-function logShare(id, completed, activity) {
-  AppEventsLogger.logEvent('Share Session', 1, { id });
-  Parse.Analytics.track('share', {
-    id,
-    completed: completed ? 'yes' : 'no',
-    activity: activity || '?',
-  });
 }
 
 module.exports = {
