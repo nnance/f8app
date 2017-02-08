@@ -10,7 +10,10 @@ class NotiNavigator extends React.Component {
   renderScene(route, navigator) {
     if (route.page === 'notificationsHome') {
       return (
-        <NotificationsHome navigator={navigator}/>
+        <NotificationsHome
+          goToBook={this.props.goToBook}
+          navigator={navigator}
+        />
       )
     }
   }

@@ -148,9 +148,9 @@ class ClogiiTabView extends React.Component {
             tabLabel="Feed"
           />
           <NotificationsScreen
+            goToBook={this.props.goToBook}
             navigator={this.props.navigator}
             tabLabel="Notifications"
-            isActive={this.state.activeTab === 2 ? true : false}
           />
           <TestBadges
             navigator={this.props.navigator}

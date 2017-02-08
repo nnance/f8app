@@ -4,7 +4,8 @@ import {
   Image,
   ListView,
   StyleSheet,
-  Text
+  Text,
+  TouchableOpacity
 } from 'react-native';
 import data from '../data';
 
@@ -33,18 +34,20 @@ class NotificationsRow extends React.Component {
     }
 
     return (
-      <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', padding: 10, backgroundColor: '#fbfbfb'}}>
-        <Image style={{width: 40, height: 40, borderRadius: 20}} source={{ uri: this.props.picture.large}}/>
-        <View style={{flex: 1}}>
-          <Text numberOfLines={2} style={{marginLeft: 10, fontWeight: 'bold', fontSize: 15}}>
-            {`${this.props.name.first} ${this.props.name.last} `}
-            <Text style={{fontWeight: 'normal', fontSize: 12, color: '#929292'}}>{activityDetail}</Text>
-          </Text>
-          <Text style={{marginLeft: 10, fontSize: 12, color: '#D3D3D3'}}>
-            {`${diffMins} mins ago`}
-          </Text>
+      <TouchableOpacity onPress={() => this.props.goToBook({id: 1})}>
+        <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', padding: 10, backgroundColor: '#fbfbfb'}}>
+          <Image style={{width: 40, height: 40, borderRadius: 20}} source={{ uri: this.props.picture.large}}/>
+          <View style={{flex: 1}}>
+            <Text numberOfLines={2} style={{marginLeft: 10, fontWeight: 'bold', fontSize: 15}}>
+              {`${this.props.name.first} ${this.props.name.last} `}
+              <Text style={{fontWeight: 'normal', fontSize: 12, color: '#929292'}}>{activityDetail}</Text>
+            </Text>
+            <Text style={{marginLeft: 10, fontSize: 12, color: '#D3D3D3'}}>
+              {`${diffMins} mins ago`}
+            </Text>
+          </View>
         </View>
-      </View>
+      </TouchableOpacity>
     )
   }
 }
@@ -63,7 +66,7 @@ class NotificationsList extends React.Component {
       <ListView
         showsHorizontalScrollIndicator={false}
         dataSource={this.state.dataSource}
-        renderRow={(data) => <NotificationsRow {...data} />}
+        renderRow={(data) => <NotificationsRow goToBook={this.props.goToBook} {...data} />}
         renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} /> }
       />
     );

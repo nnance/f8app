@@ -25,7 +25,9 @@ class NotificationsHome extends React.Component {
             alignItems: 'flex-start'
           }}
         />
-        <NotificationsList />
+        <NotificationsList
+          goToBook={this.props.goToBook}
+        />
       </View>
     )
   }
