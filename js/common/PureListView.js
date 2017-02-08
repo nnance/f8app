@@ -22,7 +22,6 @@
  * @flow
  */
 
-
 const ListView = require('ListView');
 const Dimensions = require('Dimensions');
 const Platform = require('Platform');
@@ -99,11 +98,11 @@ class PureListView extends React.Component {
     }
   }
   getScrollResponder(): any {
-    return this.listview.getScrollResponder();
+    return this.listView.getScrollResponder();
   }
 
   scrollTo(...args: Array<any>) {
-    this.listview.scrollTo(...args);
+    this.listView.scrollTo(...args);
   }
 
   props: Props;
