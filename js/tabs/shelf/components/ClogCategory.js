@@ -375,8 +375,9 @@ ClogCategory.fragments = {
       profilePicture
     }
   `,
-  ClogCategoryClog: gql`
-    fragment ClogCategoryClog on Clog {
+  RecommendClog: gql`
+    fragment RecommendClog on Clog {
+      id
       title
       author {
         name

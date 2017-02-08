@@ -101,6 +101,7 @@ class ClogListView extends React.Component {
 ClogListView.fragments = {
   clog: gql`
     fragment ClogListView on Clog {
+      id
       title
       preview
       category

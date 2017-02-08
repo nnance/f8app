@@ -8,7 +8,7 @@ export const query = gql`
   query CategoryDetail($category: CATEGORY!){
     categoryDetail(category: $category) {
       recommendedClogs {
-        ...ClogCategoryClog
+        ...RecommendClog
       }
       editors {
         ...ClogCategoryEditor
@@ -23,7 +23,7 @@ export const query = gql`
   }
   ${ClogCategory.fragments.MetaClogListView}
   ${ClogCategory.fragments.ClogCategoryEditor}
-  ${ClogCategory.fragments.ClogCategoryClog}
+  ${ClogCategory.fragments.RecommendClog}
 `;
 
 export const mapPropsToOptions = ({ category }) => ({
