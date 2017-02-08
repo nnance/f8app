@@ -121,7 +121,7 @@ class PureListView extends React.Component {
       Math.max(0, this.props.minContentHeight - this.state.contentHeight);
     return (
       <ListView
-        initialListSize={10}
+        initialListSize={1}
         pageSize={LIST_VIEW_PAGE_SIZE}
         {...this.props}
         ref={
