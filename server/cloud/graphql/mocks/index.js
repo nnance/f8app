@@ -12,7 +12,7 @@ const preview = async (rootValue, args, { request }) => {
 };
 
 const mocks = {
-  Date: () => new Date(casual.moment),
+  Date: () => casual.date,
   User: () => ({
     name: casual.full_name,
     async profilePicture(rootValue, args, { request }) {
@@ -55,13 +55,13 @@ const mocks = {
     episodes: () => new MockList(20),
   }),
   Episode: () => ({
+    id: casual.positive_int(10000000),
     no: casual.positive_int(10),
     title: casual.title,
     preview,
     viewCount: casual.positive_int(10000),
     likeCount: casual.positive_int(100000),
     commentCount: casual.positive_int(1000000),
-    createdAt: () => new Date(casual.moment),
   }),
   CategoryDetail: () => ({
     category: casual.clog_category,

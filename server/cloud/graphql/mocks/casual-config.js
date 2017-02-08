@@ -51,3 +51,8 @@ casual.define('arrayN', (max) => {
   }
   return result;
 });
+
+casual.define('date', () => {
+  const date = new Date(casual.integer(0, 1486548112329));
+  return date;
+});
