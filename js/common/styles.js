@@ -1,4 +1,4 @@
-import {StyleSheet, Platform} from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 
 export const colors = {
   greyBackground: 'rgb(250, 250, 250)',
@@ -11,14 +11,14 @@ export const colors = {
   textWhite: 'rgba(255, 255, 255, 1)',
   textPink: 'rgb(249, 65, 92)',
   textFadedPink: 'rgba(249, 65, 92, 0.6)',
-  textFadedWhite: 'rgba(255, 255, 255, 0.6)'
+  textFadedWhite: 'rgba(255, 255, 255, 0.6)',
 };
 
 export const styles = StyleSheet.create({
   navBarIcon: {
     height: 20,
-    resizeMode: 'contain'
-  }
+    resizeMode: 'contain',
+  },
 });
 
 export const NAV_BAR_HEIGHT = 60;

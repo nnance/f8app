@@ -22,7 +22,9 @@
 
 import fetch from 'isomorphic-fetch';
 import Parse from 'parse/node';
-import env from '../js/env.js';
+import _ from 'lodash';
+
+import env from '../js/env';
 
 Parse.initialize(env.parse.appID, env.parse.javascriptKey);
 Parse.serverURL = `${env.serverURL}/parse`;
@@ -31,24 +33,25 @@ const BLACKLISTED_KEYS = new Set(['objectId', 'createdAt', 'updatedAt']);
 const ID_MAP = new Map();
 
 function convertPointer(pointer) {
+  /* eslint no-underscore-dangle: "off"*/
   if (pointer.__type === 'Pointer') {
-    return {...pointer, objectId: ID_MAP.get(pointer.objectId) || pointer.objectId};
+    return { ...pointer, objectId: ID_MAP.get(pointer.objectId) || pointer.objectId };
   }
   return pointer;
 }
 
 async function importObject(ClassType, attributes) {
   let obj = new ClassType();
-  for (let key in attributes) {
+  _.keys(attributes).forEach((key) => {
     if (BLACKLISTED_KEYS.has(key)) {
-      continue;
+      return;
     }
     let value = attributes[key];
     if (Array.isArray(value)) {
       value = value.map(convertPointer);
     }
     obj.set(key, value);
-  }
+  });
   obj = await obj.save();
   ID_MAP.set(attributes.objectId, obj.id);
   return obj;
@@ -61,10 +64,10 @@ async function importClass(className) {
     headers: {
       'X-Parse-Application-Id': 'R0yDMIKCUyEke2UiadcTBBGd1L5hMBTGJSdBNL3W',
       'X-Parse-JavaScript-Key': 'BJ5V0APFMlvmCBPDXl9Mgh3q3dFrs18XkQz6A2bO',
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
   });
-  const {results} = await response.json();
+  const { results } = await response.json();
   const ClassType = Parse.Object.extend(className);
   console.log('Cleaning old', className, 'data');
   await new Parse.Query(ClassType)
@@ -73,11 +76,11 @@ async function importClass(className) {
   return Promise.all(results.map(attrs => importObject(ClassType, attrs)));
 }
 
-var Survey = Parse.Object.extend('Survey');
+const Survey = Parse.Object.extend('Survey');
 
-async function createSurvey(session) {
-  return await new Survey({
-    session: session,
+function createSurvey(session) {
+  return new Survey({
+    session,
     q1: 'How useful did you find the content from this session?',
     q2: 'How likely are you to implement the products/techniques covered in this session?',
   }).save();
@@ -85,12 +88,17 @@ async function createSurvey(session) {
 
 async function main() {
   await importClass('Speakers');
-  var sessions = await importClass('Agenda');
+  const sessions = await importClass('Agenda');
 
   console.log('Generating sample survey questions');
   await new Parse.Query(Survey)
     .each(record => record.destroy());
-  await sessions.map(s => s.get('hasDetails') ? createSurvey(s) : Promise.resolve(null));
+  await sessions.map((s) => {
+    if (s.get('hasDetails')) {
+      return createSurvey(s);
+    }
+    return Promise.resolve(null);
+  });
 
   await Promise.all([
     importClass('FAQ'),

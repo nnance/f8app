@@ -22,9 +22,8 @@
  * @flow
  */
 
-'use strict';
 
-import type {Action} from '../actions/types';
+import type { Action } from '../actions/types';
 
 export type FriendsSchedule = {
   id: string;

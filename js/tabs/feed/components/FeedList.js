@@ -3,7 +3,6 @@ import {
   View,
   ListView,
   StyleSheet,
-  Text
 } from 'react-native';
 import FeedRow from './FeedRow';
 
@@ -19,9 +18,9 @@ const styles = StyleSheet.create({
 class FeedList extends React.Component {
   constructor(props) {
     super(props);
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
     this.state = {
-      dataSource: ds.cloneWithRows(this.props.data)
+      dataSource: ds.cloneWithRows(this.props.data),
     };
   }
 
@@ -30,8 +29,15 @@ class FeedList extends React.Component {
       <ListView
         showsHorizontalScrollIndicator={false}
         dataSource={this.state.dataSource}
-        renderRow={(data) => <FeedRow navigator={this.props.navigator} goToBook={this.props.goToBook} {...data} />}
-        renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} /> }
+        renderRow={
+          data =>
+            <FeedRow
+              navigator={this.props.navigator}
+              goToBook={this.props.goToBook}
+              {...data}
+            />
+        }
+        renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
       />
     );
   }

@@ -22,22 +22,17 @@
  * @flow
  */
 
-'use strict';
+import gql from 'graphql-tag';
+
+import type { Action, ThunkAction } from './types';
+import apollo from '../store/apollo';
+import loadApolloQuery from './apollo';
 
 const Platform = require('Platform');
 const VibrationIOS = require('VibrationIOS');
 const { updateInstallation } = require('./installation');
 const { loadSurveys } = require('./surveys');
 const { switchTab } = require('./navigation');
-
-import type { Action, ThunkAction } from './types';
-
-import gql from 'graphql-tag';
-import apollo from '../store/apollo';
-
-import loadApolloQuery from './apollo';
-
-
 
 type PushNotification = {
   foreground: boolean;
@@ -84,9 +79,29 @@ function skipPushNotifications(): Action {
   };
 }
 
+function loadNotifications() : ThunkAction {
+  const query = apollo.query({
+    query: gql`
+      query viewer {
+        viewer {
+          notifications {
+            id
+            text
+            url
+            time
+          }
+        }
+      }
+    `,
+    forceFetch: false,
+  });
+
+  return loadApolloQuery('LOADED_NOTIFICATIONS', query);
+}
+
 function receivePushNotification(notification: PushNotification): ThunkAction {
   return (dispatch) => {
-    const {foreground, message } = notification;
+    const { foreground, message } = notification;
     const data = normalizeData(notification.data);
 
     if (!foreground) {
@@ -122,26 +137,6 @@ function markAllNotificationsAsSeen(): Action {
   return {
     type: 'SEEN_ALL_NOTIFICATIONS',
   };
-}
-
-function loadNotifications() : ThunkAction {
-  const query = apollo.query({
-    query: gql`
-      query viewer {
-        viewer {
-          notifications {
-            id
-            text
-            url
-            time
-          }
-        }
-      }
-    `,
-    forceFetch: false
-  });
-
-  return loadApolloQuery('LOADED_NOTIFICATIONS', query);
 }
 
 module.exports = {

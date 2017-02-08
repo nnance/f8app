@@ -1,11 +1,8 @@
-import React from 'react';
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 
 import Home from '../components/Home';
-import {CLOG_PREVIEW_LIMIT} from '../constants';
-
-import {fragments} from '../../../models/clog';
+import { CLOG_PREVIEW_LIMIT } from '../constants';
 
 export const query = gql`
   query {
@@ -28,19 +25,19 @@ export const query = gql`
   ${Home.fragments.FavoritTag}
 `;
 
-export const mapQueryToProps = ({ ownProps, data }) => {
+export const mapQueryToProps = ({ data }) => {
   const { loading, trendingClogs, recommendedClog, favoriteTags, heroBanners, error } = data;
   if (error) {
     console.error('graphql error: ', error);
   }
   return ({
     trendingClogs: loading || !!error ? [] : trendingClogs,
-    recommendedClog: recommendedClog,
+    recommendedClog,
     heroBanners: loading || !!error ? [] : heroBanners,
-    favoriteTags: loading || !!error ? [] : favoriteTags
+    favoriteTags: loading || !!error ? [] : favoriteTags,
   });
 };
 
 export default graphql(query, {
-  props: mapQueryToProps
+  props: mapQueryToProps,
 })(Home);

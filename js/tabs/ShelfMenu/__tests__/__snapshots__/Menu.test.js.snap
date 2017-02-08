@@ -53,13 +53,11 @@ exports[`Menu render 1`] = `
     <View>
       <View
         style={
-          Array [
-            Object {
-              "backgroundColor": "rgba(0, 0, 0, 0.2)",
-              "paddingLeft": 10,
-              "paddingVertical": 4,
-            },
-          ]
+          Object {
+            "backgroundColor": "rgba(0, 0, 0, 0.2)",
+            "paddingLeft": 10,
+            "paddingVertical": 4,
+          }
         }>
         <Text
           accessible={true}
@@ -591,13 +589,11 @@ exports[`Menu render 1`] = `
     <View>
       <View
         style={
-          Array [
-            Object {
-              "backgroundColor": "rgba(0, 0, 0, 0.2)",
-              "paddingLeft": 10,
-              "paddingVertical": 4,
-            },
-          ]
+          Object {
+            "backgroundColor": "rgba(0, 0, 0, 0.2)",
+            "paddingLeft": 10,
+            "paddingVertical": 4,
+          }
         }>
         <Text
           accessible={true}
@@ -710,13 +706,11 @@ exports[`Menu render 1`] = `
     <View>
       <View
         style={
-          Array [
-            Object {
-              "backgroundColor": "rgba(0, 0, 0, 0.2)",
-              "paddingLeft": 10,
-              "paddingVertical": 4,
-            },
-          ]
+          Object {
+            "backgroundColor": "rgba(0, 0, 0, 0.2)",
+            "paddingLeft": 10,
+            "paddingVertical": 4,
+          }
         }>
         <Text
           accessible={true}
@@ -862,13 +856,11 @@ exports[`Menu render 1`] = `
     <View>
       <View
         style={
-          Array [
-            Object {
-              "backgroundColor": "rgba(0, 0, 0, 0.2)",
-              "paddingLeft": 10,
-              "paddingVertical": 4,
-            },
-          ]
+          Object {
+            "backgroundColor": "rgba(0, 0, 0, 0.2)",
+            "paddingLeft": 10,
+            "paddingVertical": 4,
+          }
         }>
         <Text
           accessible={true}

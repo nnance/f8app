@@ -1,4 +1,4 @@
-'use strict';
+
 
 import gql from 'graphql-tag';
 import apollo from '../store/apollo';
@@ -37,12 +37,12 @@ function loadSessions() : ThunkAction {
         }
       }
     `,
-    forceFetch: false
+    forceFetch: false,
   });
 
   return loadApolloQuery('LOADED_SESSIONS', query);
 }
 
 module.exports = {
-  loadSessions
+  loadSessions,
 };

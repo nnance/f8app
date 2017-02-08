@@ -22,7 +22,6 @@
  * @flow
  */
 
-'use strict';
 
 const viewerActions = require('./viewer');
 const sessionActions = require('./session');
@@ -49,5 +48,5 @@ module.exports = {
   ...sessionActions,
   ...navigationActions,
   ...installationActions,
-  ...changeProfile
+  ...changeProfile,
 };

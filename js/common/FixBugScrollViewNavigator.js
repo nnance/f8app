@@ -1,14 +1,15 @@
 import React from 'react';
 import {
   Navigator,
-  Text
 } from 'react-native';
+
+import { bindFn } from './utils';
 
 class Provider extends React.Component {
   getChildContext() {
     return {
       addFixBugListener: this.props.addFixBugListener,
-      removeFixBugListener: this.props.removeFixBugListener
+      removeFixBugListener: this.props.removeFixBugListener,
     };
   }
 
@@ -19,7 +20,7 @@ class Provider extends React.Component {
 
 Provider.childContextTypes = {
   addFixBugListener: React.PropTypes.func,
-  removeFixBugListener: React.PropTypes.func
+  removeFixBugListener: React.PropTypes.func,
 };
 
 class FixBugScrollViewNavigator extends React.Component {
@@ -27,26 +28,9 @@ class FixBugScrollViewNavigator extends React.Component {
     super(...args);
     this.addFixBugListener = this.addFixBugListener.bind(this);
     this.removeFixBugListener = this.removeFixBugListener.bind(this);
-  }
-
-  render() {
-    return (
-      <Navigator
-        ref="navigator"
-        onWillFocus={this.onWillFocus.bind(this)}
-        {...this.props}
-        renderScene={this.renderScene.bind(this)}
-      />
-    );
-  }
-
-  renderScene(route, navigator) {
-    return <Provider
-      addFixBugListener={this.addFixBugListener.bind(this, route.page)}
-      removeFixBugListener={this.removeFixBugListener.bind(this, route.page)}
-      >
-        {this.props.renderScene(route, navigator)}
-    </Provider>;
+    this.onWillFocus = this.onWillFocus.bind(this);
+    this.emitFixBugListener = this.emitFixBugListener.bind(this);
+    this.renderScene = this.renderScene.bind(this);
   }
 
   onWillFocus(route) {
@@ -75,11 +59,33 @@ class FixBugScrollViewNavigator extends React.Component {
   }
 
   push(route) {
-    this.refs.navigator.push(route);
+    this.navigator.push(route);
   }
 
   pop(route) {
-    this.refs.navigator.pop(route);
+    this.navigator.pop(route);
+  }
+
+  renderScene(route, navigator) {
+    return (<Provider
+      addFixBugListener={bindFn(this.addFixBugListener, route.page)}
+      removeFixBugListener={bindFn(this.removeFixBugListener, route.page)}
+    >
+      {this.props.renderScene(route, navigator)}
+    </Provider>);
+  }
+
+  render() {
+    return (
+      <Navigator
+        ref={(node) => {
+          this.navigator = node;
+        }}
+        onWillFocus={this.onWillFocus}
+        {...this.props}
+        renderScene={this.renderScene}
+      />
+    );
   }
 }
 

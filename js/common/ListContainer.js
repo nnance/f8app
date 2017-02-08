@@ -23,23 +23,22 @@
  * @flow
  * @providesModule ListContainer
  */
-'use strict';
 
-var Animated = require('Animated');
-var NativeModules = require('NativeModules');
-var Dimensions = require('Dimensions');
-var F8Header = require('F8Header');
-var F8SegmentedControl = require('F8SegmentedControl');
-var ParallaxBackground = require('ParallaxBackground');
-var React = require('React');
-var ReactNative = require('react-native');
-var StyleSheet = require('F8StyleSheet');
-var View = require('View');
-var { Text } = require('F8Text');
-var ViewPager = require('./ViewPager');
-var Platform = require('Platform');
+import type { Item as HeaderItem } from 'F8Header';
 
-import type {Item as HeaderItem} from 'F8Header';
+const Animated = require('Animated');
+const NativeModules = require('NativeModules');
+const Dimensions = require('Dimensions');
+const F8Header = require('F8Header');
+const F8SegmentedControl = require('F8SegmentedControl');
+const ParallaxBackground = require('ParallaxBackground');
+const React = require('React');
+const ReactNative = require('react-native');
+const StyleSheet = require('F8StyleSheet');
+const View = require('View');
+const { Text } = require('F8Text');
+const ViewPager = require('./ViewPager');
+const Platform = require('Platform');
 
 type Props = {
   title: string;
@@ -64,12 +63,50 @@ type State = {
 
 const EMPTY_CELL_HEIGHT = Dimensions.get('window').height > 600 ? 200 : 150;
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
+  headerWrapper: {
+    android: {
+      elevation: 2,
+      backgroundColor: 'transparent',
+      // FIXME: elevation doesn't seem to work without setting border
+      borderRightWidth: 1,
+      marginRight: -1,
+      borderRightColor: 'transparent',
+    },
+  },
+  listView: {
+    ios: {
+      backgroundColor: 'transparent',
+    },
+    android: {
+      backgroundColor: 'white',
+    },
+  },
+  headerTitle: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 20,
+  },
+  parallaxText: {
+    color: 'white',
+    fontSize: 42,
+    fontWeight: 'bold',
+    letterSpacing: -1,
+  },
+  stickyHeader: {
+    position: 'absolute',
+    top: F8Header.height,
+    left: 0,
+    right: 0,
+  },
+});
+
 
 class ListContainer extends React.Component {
-  props: Props;
-  _refs: Array<any>;
-  _pinned: any;
-
   constructor(props: Props) {
     super(props);
 
@@ -86,8 +123,162 @@ class ListContainer extends React.Component {
     this._refs = [];
   }
 
+  componentWillReceiveProps(nextProps: Props) {
+    if (typeof nextProps.selectedSegment === 'number' &&
+        nextProps.selectedSegment !== this.state.idx) {
+      this.setState({ idx: nextProps.selectedSegment });
+    }
+  }
+
+  componentDidUpdate(prevProps: Props, prevState: State) {
+    if (!NativeModules.F8Scrolling) {
+      return;
+    }
+
+    if (this.state.idx !== prevState.idx ||
+        this.state.stickyHeaderHeight !== prevState.stickyHeaderHeight) {
+      const distance = EMPTY_CELL_HEIGHT - this.state.stickyHeaderHeight;
+
+      if (this._refs[prevState.idx] && this._refs[prevState.idx].getScrollResponder) {
+        const oldScrollViewTag = ReactNative.findNodeHandle(
+          this._refs[prevState.idx].getScrollResponder(),
+        );
+        NativeModules.F8Scrolling.unpin(oldScrollViewTag);
+      }
+
+      if (this._refs[this.state.idx] && this._refs[this.state.idx].getScrollResponder) {
+        const newScrollViewTag = ReactNative.findNodeHandle(
+          this._refs[this.state.idx].getScrollResponder(),
+        );
+        const pinnedViewTag = ReactNative.findNodeHandle(this._pinned);
+        NativeModules.F8Scrolling.pin(newScrollViewTag, pinnedViewTag, distance);
+      }
+    }
+  }
+
+  props: Props;
+  _refs: Array<any>;
+  _pinned: any;
+
+  handleScroll(idx: number, e: any) {
+    if (idx !== this.state.idx) {
+      return;
+    }
+    let y = 0;
+    if (Platform.OS === 'ios') {
+      this.state.anim.setValue(e.nativeEvent.contentOffset.y);
+      const height = EMPTY_CELL_HEIGHT - this.state.stickyHeaderHeight;
+      y = Math.min(e.nativeEvent.contentOffset.y, height);
+    }
+    this._refs.forEach((ref, ii) => {
+      if (ii !== idx && ref) {
+        if (ref.scrollTo) {
+          ref.scrollTo({ y, animated: false });
+        }
+      }
+    });
+  }
+
+  handleStickyHeaderLayout({ nativeEvent: { layout } }: any) {
+    this.setState({ stickyHeaderHeight: layout.height });
+  }
+
+  handleSelectSegment(idx: number) {
+    if (this.state.idx !== idx) {
+      const { onSegmentChange } = this.props;
+      this.setState({ idx }, () => onSegmentChange && onSegmentChange(idx));
+    }
+  }
+
+  handleShowMenu() {
+    this.context.openDrawer();
+  }
+
+  renderParallaxContent() {
+    if (Platform.OS === 'android') {
+      return <View />;
+    }
+    if (this.props.parallaxContent) {
+      return this.props.parallaxContent;
+    }
+    return (
+      <Text style={styles.parallaxText}>
+        {this.props.title}
+      </Text>
+    );
+  }
+
+  renderHeaderTitle(): ?ReactElement {
+    if (Platform.OS === 'android') {
+      return null;
+    }
+    let transform;
+    if (!this.props.parallaxContent) {
+      const distance = EMPTY_CELL_HEIGHT - this.state.stickyHeaderHeight;
+      transform = {
+        opacity: this.state.anim.interpolate({
+          inputRange: [distance - 20, distance],
+          outputRange: [0, 1],
+          extrapolate: 'clamp',
+        }),
+      };
+    }
+    return (
+      <Animated.Text style={[styles.headerTitle, transform]}>
+        {this.props.title}
+      </Animated.Text>
+    );
+  }
+
+  renderFakeHeader() {
+    if (Platform.OS === 'ios') {
+      const height = EMPTY_CELL_HEIGHT - this.state.stickyHeaderHeight;
+      return (
+        <View style={{ height }} />
+      );
+    }
+    return null;
+  }
+
+  renderFixedStickyHeader(stickyHeader: ?ReactElement) {
+    return Platform.OS === 'ios'
+      ? <View style={{ height: this.state.stickyHeaderHeight }} />
+      : stickyHeader;
+  }
+
+  renderFloatingStickyHeader(stickyHeader: ?ReactElement) {
+    if (!stickyHeader || Platform.OS !== 'ios') {
+      return null;
+    }
+    const opacity = this.state.stickyHeaderHeight === 0 ? 0 : 1;
+    let transform;
+
+    // If native pinning is not available, fallback to Animated
+    if (!NativeModules.F8Scrolling) {
+      const distance = EMPTY_CELL_HEIGHT - this.state.stickyHeaderHeight;
+      const translateY = 0; this.state.anim.interpolate({
+        inputRange: [0, distance],
+        outputRange: [distance, 0],
+        extrapolateRight: 'clamp',
+      });
+      transform = [{ translateY }];
+    }
+
+    return (
+      <Animated.View
+        ref={(ref) => {
+          this._pinned = ref;
+        }}
+        onLayout={this.handleStickyHeaderLayout}
+        style={[styles.stickyHeader, { opacity }, { transform }]}
+      >
+        {stickyHeader}
+      </Animated.View>
+    );
+  }
+
   render() {
-    var leftItem = this.props.leftItem;
+    let leftItem = this.props.leftItem;
     if (!leftItem && Platform.OS === 'android') {
       leftItem = {
         title: 'Menu',
@@ -102,19 +293,21 @@ class ListContainer extends React.Component {
     const content = React.Children.map(this.props.children, (child, idx) => {
       segments.push(child.props.title);
       return React.cloneElement(child, {
-        ref: (ref) => this._refs[idx] = ref,
-        onScroll: (e) => this.handleScroll(idx, e),
+        ref: (ref) => {
+          this._refs[idx] = ref;
+        },
+        onScroll: e => this.handleScroll(idx, e),
         style: styles.listView,
         showsVerticalScrollIndicator: false,
         scrollEventThrottle: 16,
-        contentInset: {bottom: 49, top: 0},
+        contentInset: { bottom: 49, top: 0 },
         automaticallyAdjustContentInsets: false,
         renderHeader: this.renderFakeHeader,
         scrollsToTop: idx === this.state.idx,
       });
     });
 
-    let {stickyHeader} = this.props;
+    let { stickyHeader } = this.props;
     if (segments.length > 1) {
       stickyHeader = (
         <View>
@@ -142,14 +335,16 @@ class ListContainer extends React.Component {
             offset={this.state.anim}
             backgroundImage={this.props.backgroundImage}
             backgroundShift={backgroundShift}
-            backgroundColor={this.props.backgroundColor}>
+            backgroundColor={this.props.backgroundColor}
+          >
             {this.renderParallaxContent()}
           </ParallaxBackground>
           <F8Header
             title={this.props.title}
             leftItem={leftItem}
             rightItem={this.props.rightItem}
-            extraItems={this.props.extraItems}>
+            extraItems={this.props.extraItems}
+          >
             {this.renderHeaderTitle()}
           </F8Header>
           {this.renderFixedStickyHeader(stickyHeader)}
@@ -157,157 +352,13 @@ class ListContainer extends React.Component {
         <ViewPager
           count={segments.length}
           selectedIndex={this.state.idx}
-          onSelectedIndexChange={this.handleSelectSegment}>
+          onSelectedIndexChange={this.handleSelectSegment}
+        >
           {content}
         </ViewPager>
         {this.renderFloatingStickyHeader(stickyHeader)}
       </View>
     );
-  }
-
-  renderParallaxContent() {
-    if (Platform.OS === 'android') {
-      return <View />;
-    }
-    if (this.props.parallaxContent) {
-      return this.props.parallaxContent;
-    }
-    return (
-      <Text style={styles.parallaxText}>
-        {this.props.title}
-      </Text>
-    );
-  }
-
-  renderHeaderTitle(): ?ReactElement {
-    if (Platform.OS === 'android') {
-      return null;
-    }
-    var transform;
-    if (!this.props.parallaxContent) {
-      var distance = EMPTY_CELL_HEIGHT - this.state.stickyHeaderHeight;
-      transform = {
-        opacity: this.state.anim.interpolate({
-          inputRange: [distance - 20, distance],
-          outputRange: [0, 1],
-          extrapolate: 'clamp',
-        })
-      };
-    }
-    return (
-      <Animated.Text style={[styles.headerTitle, transform]}>
-        {this.props.title}
-      </Animated.Text>
-    );
-  }
-
-  handleScroll(idx: number, e: any) {
-    if (idx !== this.state.idx) {
-      return;
-    }
-    let y = 0;
-    if (Platform.OS === 'ios') {
-      this.state.anim.setValue(e.nativeEvent.contentOffset.y);
-      const height = EMPTY_CELL_HEIGHT - this.state.stickyHeaderHeight;
-      y = Math.min(e.nativeEvent.contentOffset.y, height);
-    }
-    this._refs.forEach((ref, ii) => {
-      if (ii !== idx && ref) {
-        ref.scrollTo && ref.scrollTo({y, animated: false});
-      }
-    });
-
-  }
-
-  renderFakeHeader() {
-    if (Platform.OS === 'ios') {
-      const height = EMPTY_CELL_HEIGHT - this.state.stickyHeaderHeight;
-      return (
-        <View style={{height}} />
-      );
-    }
-  }
-
-  renderFixedStickyHeader(stickyHeader: ?ReactElement) {
-    return Platform.OS === 'ios'
-      ? <View style={{height: this.state.stickyHeaderHeight}} />
-      : stickyHeader;
-  }
-
-  renderFloatingStickyHeader(stickyHeader: ?ReactElement) {
-    if (!stickyHeader || Platform.OS !== 'ios') {
-      return;
-    }
-    var opacity = this.state.stickyHeaderHeight === 0 ? 0 : 1;
-    var transform;
-
-    // If native pinning is not available, fallback to Animated
-    if (!NativeModules.F8Scrolling) {
-      var distance = EMPTY_CELL_HEIGHT - this.state.stickyHeaderHeight;
-      var translateY = 0; this.state.anim.interpolate({
-        inputRange: [0, distance],
-        outputRange: [distance, 0],
-        extrapolateRight: 'clamp',
-      });
-      transform = [{translateY}];
-    }
-
-    return (
-      <Animated.View
-        ref={(ref) => this._pinned = ref}
-        onLayout={this.handleStickyHeaderLayout}
-        style={[styles.stickyHeader, {opacity}, {transform}]}>
-        {stickyHeader}
-      </Animated.View>
-    );
-  }
-
-  handleStickyHeaderLayout({nativeEvent: { layout, target }}: any) {
-    this.setState({stickyHeaderHeight: layout.height});
-  }
-
-  componentWillReceiveProps(nextProps: Props) {
-    if (typeof nextProps.selectedSegment === 'number' &&
-        nextProps.selectedSegment !== this.state.idx) {
-      this.setState({idx: nextProps.selectedSegment});
-    }
-  }
-
-  componentDidUpdate(prevProps: Props, prevState: State) {
-    if (!NativeModules.F8Scrolling) {
-      return;
-    }
-
-    if (this.state.idx !== prevState.idx ||
-        this.state.stickyHeaderHeight !== prevState.stickyHeaderHeight) {
-      var distance = EMPTY_CELL_HEIGHT - this.state.stickyHeaderHeight;
-
-      if (this._refs[prevState.idx] && this._refs[prevState.idx].getScrollResponder) {
-        const oldScrollViewTag = ReactNative.findNodeHandle(
-          this._refs[prevState.idx].getScrollResponder()
-        );
-        NativeModules.F8Scrolling.unpin(oldScrollViewTag);
-      }
-
-      if (this._refs[this.state.idx] && this._refs[this.state.idx].getScrollResponder) {
-        const newScrollViewTag = ReactNative.findNodeHandle(
-          this._refs[this.state.idx].getScrollResponder()
-        );
-        const pinnedViewTag = ReactNative.findNodeHandle(this._pinned);
-        NativeModules.F8Scrolling.pin(newScrollViewTag, pinnedViewTag, distance);
-      }
-    }
-  }
-
-  handleSelectSegment(idx: number) {
-    if (this.state.idx !== idx) {
-      const {onSegmentChange} = this.props;
-      this.setState({idx}, () => onSegmentChange && onSegmentChange(idx));
-    }
-  }
-
-  handleShowMenu() {
-    this.context.openDrawer();
   }
 }
 
@@ -319,47 +370,5 @@ ListContainer.contextTypes = {
   openDrawer: React.PropTypes.func,
   hasUnreadNotifications: React.PropTypes.number,
 };
-
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white',
-  },
-  headerWrapper: {
-    android: {
-      elevation: 2,
-      backgroundColor: 'transparent',
-      // FIXME: elevation doesn't seem to work without setting border
-      borderRightWidth: 1,
-      marginRight: -1,
-      borderRightColor: 'transparent',
-    }
-  },
-  listView: {
-    ios: {
-      backgroundColor: 'transparent',
-    },
-    android: {
-      backgroundColor: 'white',
-    }
-  },
-  headerTitle: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 20,
-  },
-  parallaxText: {
-    color: 'white',
-    fontSize: 42,
-    fontWeight: 'bold',
-    letterSpacing: -1,
-  },
-  stickyHeader: {
-    position: 'absolute',
-    top: F8Header.height,
-    left: 0,
-    right: 0,
-  },
-});
 
 module.exports = ListContainer;

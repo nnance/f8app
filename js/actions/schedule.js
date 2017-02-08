@@ -22,25 +22,33 @@
  * @flow
  */
 
-'use strict';
+import type { ThunkAction, PromiseAction, Dispatch } from './types';
+import type { Session } from '../reducers/sessions';
 
 const Parse = require('parse/react-native');
-const {AppEventsLogger} = require('react-native-fbsdk');
+const { AppEventsLogger } = require('react-native-fbsdk');
 const Platform = require('Platform');
 const InteractionManager = require('InteractionManager');
 const ActionSheetIOS = require('ActionSheetIOS');
 const Alert = require('Alert');
 const Share = require('react-native-share');
-const Agenda = Parse.Object.extend('Agenda');
-const {currentInstallation, updateInstallation} = require('./installation');
 
-import type { ThunkAction, PromiseAction, Dispatch } from './types';
-import type { Session } from '../reducers/sessions';
+const Agenda = Parse.Object.extend('Agenda');
+const { currentInstallation, updateInstallation } = require('./installation');
+
+function logShare(id, completed, activity) {
+  AppEventsLogger.logEvent('Share Session', 1, { id });
+  Parse.Analytics.track('share', {
+    id,
+    completed: completed ? 'yes' : 'no',
+    activity: activity || '?',
+  });
+}
 
 function addToSchedule(id: string): ThunkAction {
   return (dispatch: Dispatch) => {
     if (Parse.User.current()) {
-      Parse.User.current().relation('mySchedule').add(new Agenda({id}));
+      Parse.User.current().relation('mySchedule').add(new Agenda({ id }));
       Parse.User.current().save();
       currentInstallation().then((installation) => {
         installation.addUnique('channels', `session_${id}`);
@@ -57,7 +65,7 @@ function addToSchedule(id: string): ThunkAction {
 function removeFromSchedule(id: string): ThunkAction {
   return (dispatch: Dispatch) => {
     if (Parse.User.current()) {
-      Parse.User.current().relation('mySchedule').remove(new Agenda({id}));
+      Parse.User.current().relation('mySchedule').remove(new Agenda({ id }));
       Parse.User.current().save();
       currentInstallation().then((installation) => {
         installation.remove('channels', `session_${id}`);
@@ -88,12 +96,12 @@ function removeFromScheduleWithPrompt(session: Session): ThunkAction {
         'Remove From Your Schedule',
         `Would you like to remove "${session.title}" from your schedule?`,
         [
-          {text: 'Cancel'},
+          { text: 'Cancel' },
           {
             text: 'Remove',
-            onPress: () => dispatch(removeFromSchedule(session.id))
+            onPress: () => dispatch(removeFromSchedule(session.id)),
           },
-        ]
+        ],
       );
     }
   };
@@ -101,8 +109,8 @@ function removeFromScheduleWithPrompt(session: Session): ThunkAction {
 
 async function restoreSchedule(): PromiseAction {
   const list = await Parse.User.current().relation('mySchedule').query().find();
-  const channels = list.map(({id}) => `session_${id}`);
-  updateInstallation({channels});
+  const channels = list.map(({ id }) => `session_${id}`);
+  updateInstallation({ channels });
 
   return {
     type: 'RESTORED_SCHEDULE',
@@ -132,7 +140,7 @@ function setSharingEnabled(enabled: boolean): ThunkAction {
 
 function shareSession(session: Session): ThunkAction {
   return (dispatch, getState) => {
-    const {sessionURLTemplate} = getState().config;
+    const { sessionURLTemplate } = getState().config;
     const url = sessionURLTemplate
       .replace('{slug}', session.slug)
       .replace('{id}', session.id);
@@ -141,24 +149,15 @@ function shareSession(session: Session): ThunkAction {
       ActionSheetIOS.showShareActionSheetWithOptions({
         message: session.title,
         url,
-      }, (e) => console.error(e), logShare.bind(null, session.id));
+      }, e => console.error(e), logShare.bind(null, session.id));
     } else {
       Share.open({
         share_text: session.title,
         share_URL: url,
-        title: 'Share Link to ' + session.title,
-      }, (e) => logShare(session.id, true, null));
+        title: `Share Link to ${session.title}`,
+      }, () => logShare(session.id, true, null));
     }
   };
-}
-
-function logShare(id, completed, activity) {
-  AppEventsLogger.logEvent('Share Session', 1, {id});
-  Parse.Analytics.track('share', {
-    id,
-    completed: completed ? 'yes' : 'no',
-    activity: activity || '?'
-  });
 }
 
 module.exports = {

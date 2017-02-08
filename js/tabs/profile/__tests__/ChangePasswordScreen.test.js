@@ -1,9 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {shallow} from 'enzyme';
+import { shallow } from 'enzyme';
 import F8Button from 'F8Button';
 
-import {Component as ChangePasswordScreenComponent} from '../containers/ChangePasswordScreen';
+import { Component as ChangePasswordScreenComponent } from '../containers/ChangePasswordScreen';
 
 describe('ChangePasswordScreen', () => {
   function api(password) {
@@ -14,12 +14,12 @@ describe('ChangePasswordScreen', () => {
   }
 
   it('render authen', () => {
-    const tree = renderer.create(<ChangePasswordScreenComponent/>);
+    const tree = renderer.create(<ChangePasswordScreenComponent />);
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
   it('error if password not match', async () => {
-    const wrapper = shallow(<ChangePasswordScreenComponent/>);
+    const wrapper = shallow(<ChangePasswordScreenComponent />);
     wrapper.find('[placeholder="password"]').simulate('changeText', 'ok');
     wrapper.find('[placeholder="confirm password"]').simulate('changeText', 'bb');
     wrapper.find(F8Button).simulate('press');
@@ -27,8 +27,8 @@ describe('ChangePasswordScreen', () => {
   });
 
   it('call api', async () => {
-    let changePassword = jest.fn(api);
-    const wrapper = shallow(<ChangePasswordScreenComponent changePassword={changePassword}/>);
+    const changePassword = jest.fn(api);
+    const wrapper = shallow(<ChangePasswordScreenComponent changePassword={changePassword} />);
     wrapper.find('[placeholder="password"]').simulate('changeText', 'ok');
     wrapper.find('[placeholder="confirm password"]').simulate('changeText', 'ok');
     wrapper.find(F8Button).simulate('press');
@@ -36,9 +36,14 @@ describe('ChangePasswordScreen', () => {
   });
 
   it('call onBackPress if changed password', async () => {
-    let changePassword = jest.fn(api);
-    let onBackPress = jest.fn();
-    const wrapper = shallow(<ChangePasswordScreenComponent changePassword={changePassword} onBackPress={onBackPress}/>);
+    const changePassword = jest.fn(api);
+    const onBackPress = jest.fn();
+    const wrapper = shallow(
+      <ChangePasswordScreenComponent
+        changePassword={changePassword}
+        onBackPress={onBackPress}
+      />,
+    );
     wrapper.find('[placeholder="password"]').simulate('changeText', 'ok');
     wrapper.find('[placeholder="confirm password"]').simulate('changeText', 'ok');
     await wrapper.find(F8Button).props().onPress();
@@ -46,9 +51,14 @@ describe('ChangePasswordScreen', () => {
   });
 
   it('set state error if api reject', async () => {
-    let changePassword = jest.fn(api);
-    let onBackPress = jest.fn();
-    const wrapper = shallow(<ChangePasswordScreenComponent changePassword={changePassword} onBackPress={onBackPress}/>);
+    const changePassword = jest.fn(api);
+    const onBackPress = jest.fn();
+    const wrapper = shallow(
+      <ChangePasswordScreenComponent
+        changePassword={changePassword}
+        onBackPress={onBackPress}
+      />,
+    );
     wrapper.find('[placeholder="password"]').simulate('changeText', 'fail');
     wrapper.find('[placeholder="confirm password"]').simulate('changeText', 'fail');
     await wrapper.find(F8Button).props().onPress();

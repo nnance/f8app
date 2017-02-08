@@ -1,8 +1,8 @@
 /* @flow */
 
-'use strict';
 
 import Parse from 'parse/react-native';
+import _ from 'lodash';
 
 import type { Action } from './types';
 
@@ -27,86 +27,76 @@ async function _changeEmail(newEmail) {
   await user.save();
 }
 
-export const changeEmail = (newEmail) => dispatch => {
-  return _changeEmail(newEmail).then(() => {
-    dispatch(changedEmail(newEmail));
-  });
-};
-
-function changedEmail() {
+function changedEmail(email): Action {
   return {
-    type: 'CHANGED_EMAIL'
+    type: 'CHANGED_EMAIL',
+    payload: email,
   };
 }
 
-export const changePassword = (newPassword) => dispatch => {
-  return _changePassword(newPassword).then(() => {
-    dispatch(changedPassword());
-  });
-};
+export const changeEmail = newEmail => dispatch => _changeEmail(newEmail).then(() => {
+  dispatch(changedEmail(newEmail));
+});
 
 function changedPassword() {
   return {
-    type: 'CHANGED_PASSWORD'
+    type: 'CHANGED_PASSWORD',
   };
 }
+
+export const changePassword = newPassword => dispatch => _changePassword(newPassword).then(() => {
+  dispatch(changedPassword());
+});
 
 async function _changeProfile(data) {
   const user = await getUser();
   if (data.profilePicture) {
     const base64 = data.profilePicture.data;
-    const file = new Parse.File(data.profilePicture.fileName, { base64: base64 });
+    const file = new Parse.File(data.profilePicture.fileName, { base64 });
     await file.save();
     user.set('profilePicture', file);
   }
   if (data.profileCover) {
     const base64 = data.profileCover.data;
-    const file = new Parse.File(data.profileCover.fileName, { base64: base64 });
+    const file = new Parse.File(data.profileCover.fileName, { base64 });
     await file.save();
     user.set('profileCover', file);
   }
-  delete data.profileCover;
-  delete data.profilePicture;
-  Object.keys(data).forEach(key => {
-    user.set(key, data[key]);
+  const setData = _.omit(data, 'profileCover', 'profilePicture');
+  Object.keys(setData).forEach((key) => {
+    user.set(key, setData[key]);
   });
   // await new Promise(resolve => {
   //   setTimeout(() => resolve(), 2000);
   // })
   await user.save();
-  return await user.fetch();
+  const refetchUser = await user.fetch();
+  return refetchUser;
 }
-
-export const changePublicProfile = (name, birthDayDate, sex, profilePicture, profileCover) => dispatch => {
-  return _changeProfile({
-    name,
-    birthDayDate,
-    sex,
-    profilePicture,
-    profileCover
-  }).then(
-    (user) => {
-      dispatch(changedPublicProfile({
-        name: user.get('name'),
-        sex: user.get('sex'),
-        birthDayDate: user.get('birthDayDate'),
-        profilePicture: user.get('profilePicture') ? user.get('profilePicture').url() : null,
-        profileCover: user.get('profileCover') ? user.get('profileCover').url() : null
-      }));
-    }
-  );
-};
 
 export function changedPublicProfile(data) {
   return {
     type: 'CHANGED_PUBLIC_PROFILE',
-    payload: data
+    payload: data,
   };
 }
 
-function changedEmail(email): Action {
-  return {
-    type: 'CHANGED_EMAIL',
-    payload: email
-  };
-}
+export const changePublicProfile = (name, birthDayDate, sex, profilePicture, profileCover) =>
+  dispatch =>
+    _changeProfile({
+      name,
+      birthDayDate,
+      sex,
+      profilePicture,
+      profileCover,
+    }).then(
+      (user) => {
+        dispatch(changedPublicProfile({
+          name: user.get('name'),
+          sex: user.get('sex'),
+          birthDayDate: user.get('birthDayDate'),
+          profilePicture: user.get('profilePicture') ? user.get('profilePicture').url() : null,
+          profileCover: user.get('profileCover') ? user.get('profileCover').url() : null,
+        }));
+      },
+    );

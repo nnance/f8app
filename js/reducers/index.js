@@ -22,23 +22,20 @@
  * @flow
  */
 
-'use strict';
 
-var { combineReducers } = require('redux');
+const { combineReducers } = require('redux');
 
 module.exports = combineReducers({
   config: require('./config'),
-  notifications: require('./notifications'),
   faqs: require('./faqs'),
   pages: require('./pages'),
   maps: require('./maps'),
   sessions: require('./sessions'),
   user: require('./user'),
-  schedule: require('./schedule'),
   topics: require('./topics'),
   filter: require('./filter'),
   navigation: require('./navigation'),
   friendsSchedules: require('./friendsSchedules'),
   surveys: require('./surveys'),
-  mockBadges: require('./mockBadges')
+  mockBadges: require('./mockBadges'),
 });

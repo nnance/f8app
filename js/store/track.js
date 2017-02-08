@@ -22,17 +22,15 @@
  * @flow
  */
 
-'use strict';
+import type { Action } from '../actions/types';
 
 const Parse = require('parse/react-native');
-const {AppEventsLogger} = require('react-native-fbsdk');
-
-import type {Action} from '../actions/types';
+const { AppEventsLogger } = require('react-native-fbsdk');
 
 function track(action: Action): void {
   switch (action.type) {
     case 'LOGGED_IN':
-      AppEventsLogger.logEvent('Login', 1, {source: action.source || ''});
+      AppEventsLogger.logEvent('Login', 1, { source: action.source || '' });
       break;
 
     case 'LOGGED_OUT':
@@ -44,13 +42,13 @@ function track(action: Action): void {
       break;
 
     case 'SESSION_ADDED':
-      Parse.Analytics.track('addToSchedule', {id: action.id});
-      AppEventsLogger.logEvent('Added To Schedule', 1, {id: action.id});
+      Parse.Analytics.track('addToSchedule', { id: action.id });
+      AppEventsLogger.logEvent('Added To Schedule', 1, { id: action.id });
       break;
 
     case 'SESSION_REMOVED':
-      Parse.Analytics.track('removeFromSchedule', {id: action.id});
-      AppEventsLogger.logEvent('Removed From Schedule', 1, {id: action.id});
+      Parse.Analytics.track('removeFromSchedule', { id: action.id });
+      AppEventsLogger.logEvent('Removed From Schedule', 1, { id: action.id });
       break;
 
     case 'TURNED_ON_PUSH_NOTIFICATIONS':
@@ -67,6 +65,9 @@ function track(action: Action): void {
 
     case 'APPLY_TOPICS_FILTER':
       AppEventsLogger.logEvent('Filtered', 1);
+      break;
+
+    default:
       break;
   }
 }

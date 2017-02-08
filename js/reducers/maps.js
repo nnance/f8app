@@ -22,7 +22,6 @@
  * @flow
  */
 
-'use strict';
 
 const createApolloReducer = require('./createApolloReducer');
 

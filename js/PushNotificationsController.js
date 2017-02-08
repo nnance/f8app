@@ -22,67 +22,45 @@
  * @flow
  */
 
-'use strict';
+import type { Dispatch } from './actions/types';
 
-var React = require('react');
-var AppState = require('AppState');
-var Platform = require('Platform');
-var unseenNotificationsCount = require('./tabs/notifications/unseenNotificationsCount');
-var PushNotificationIOS = require('PushNotificationIOS');
+const React = require('react');
+const AppState = require('AppState');
+const Platform = require('Platform');
+const unseenNotificationsCount = require('./tabs/notifications/unseenNotificationsCount');
+const PushNotificationIOS = require('PushNotificationIOS');
 // $FlowIssue
-var PushNotification = require('react-native-push-notification');
+const PushNotification = require('react-native-push-notification');
 
-var { connect } = require('react-redux');
-var {
+const { connect } = require('react-redux');
+const {
   storeDeviceToken,
   receivePushNotification,
   updateInstallation,
   markAllNotificationsAsSeen,
 } = require('./actions');
 
-import type {Dispatch} from './actions/types';
-
 const PARSE_CLOUD_GCD_SENDER_ID = '1076345567071';
 
 class AppBadgeController extends React.Component {
-  props: {
-    tab: string;
-    enabled: boolean;
-    badge: number;
-    dispatch: Dispatch;
-  };
-
   constructor() {
     super();
 
     (this: any).handleAppStateChange = this.handleAppStateChange.bind(this);
   }
 
-  handleAppStateChange(appState) {
-    if (appState === 'active') {
-      this.updateAppBadge();
-      if (this.props.tab === 'notifications') {
-        this.eventuallyMarkNotificationsAsSeen();
-      }
-    }
-  }
-
   componentDidMount() {
     AppState.addEventListener('change', this.handleAppStateChange);
 
-    const {dispatch} = this.props;
+    const { dispatch } = this.props;
     PushNotification.configure({
-      onRegister: ({token}) => dispatch(storeDeviceToken(token)),
-      onNotification: (notif) => dispatch(receivePushNotification(notif)),
+      onRegister: ({ token }) => dispatch(storeDeviceToken(token)),
+      onNotification: notif => dispatch(receivePushNotification(notif)),
       senderID: PARSE_CLOUD_GCD_SENDER_ID,
       requestPermissions: this.props.enabled,
     });
 
     this.updateAppBadge();
-  }
-
-  componentWillUnmount() {
-    AppState.removeEventListener('change', this.handleAppStateChange);
   }
 
   componentDidUpdate(prevProps) {
@@ -97,15 +75,35 @@ class AppBadgeController extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    AppState.removeEventListener('change', this.handleAppStateChange);
+  }
+
+  props: {
+    tab: string;
+    enabled: boolean;
+    badge: number;
+    dispatch: Dispatch;
+  };
+
+  handleAppStateChange(appState) {
+    if (appState === 'active') {
+      this.updateAppBadge();
+      if (this.props.tab === 'notifications') {
+        this.eventuallyMarkNotificationsAsSeen();
+      }
+    }
+  }
+
   updateAppBadge() {
     if (this.props.enabled && Platform.OS === 'ios') {
       PushNotificationIOS.setApplicationIconBadgeNumber(this.props.badge);
-      updateInstallation({badge: this.props.badge});
+      updateInstallation({ badge: this.props.badge });
     }
   }
 
   eventuallyMarkNotificationsAsSeen() {
-    const {dispatch} = this.props;
+    const { dispatch } = this.props;
     setTimeout(() => dispatch(markAllNotificationsAsSeen()), 1000);
   }
 

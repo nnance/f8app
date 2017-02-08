@@ -20,11 +20,11 @@
  * DEALINGS IN THE SOFTWARE
  */
 
-'use strict';
+/* eslint no-unused-vars: warn */
 
 const track = require('./track');
 
-module.exports = store => next => action => {
+module.exports = store => next => (action) => {
   track(action);
   return next(action);
 };

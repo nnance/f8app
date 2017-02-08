@@ -1,12 +1,10 @@
 import React from 'react';
 
 import {
-  Text,
   View,
   Image,
-  ScrollView,
   TouchableOpacity,
-  StyleSheet
+  StyleSheet,
 } from 'react-native';
 import gql from 'graphql-tag';
 
@@ -19,75 +17,100 @@ import RecommendedClog from './RecommendedClog';
 import ExploreCategory from './ExploreCategory';
 import HeroBanner from './HeroBanner';
 
-import mockData from '../mockData';
+const styles = StyleSheet.create({
+  clogListButton: {
+    flex: 1,
+    width: 80,
+    paddingHorizontal: 0,
+    alignItems: 'center',
+  },
+});
 
 class Home extends React.Component {
   constructor(...args) {
     super(...args);
-  }
 
-  render() {
-    return (
-      <View style={{flex: 1, backgroundColor: 'rgb(81, 20, 64)'}}>
-        <NavBar
-          renderLeftMenu={() => (
-            <TouchableOpacity onPress={this.props.onOpenShelfMenu}><Image style={{height: 20, resizeMode: 'contain'}} source={require('../img/menu.png')}/></TouchableOpacity>
-          )}
-          renderRightMenu={() => (
-            <TouchableOpacity><Image style={{height: 20, resizeMode: 'contain'}} source={require('../img/search.png')}/></TouchableOpacity>
-          )}
-          renderTitle={() => (
-            <Image style={{width: 80, height: 30, resizeMode: 'contain'}} source={require('../img/title.png')}/>
-          )}
-          titleStyle={{
-            flex: 1,
-            alignItems: 'flex-start'
-          }}
-          />
-        <FixBugScrollView>
-          <Image source={require('../img/home-bg-1.png')} style={{width: undefined, height: 700, resizeMode: 'stretch', backgroundColor: 'transparent'}}>
-            <View style={{flex: 2}}>
-              <HeroBanner goToBook={this.props.goToBook} clogs={this.props.heroBanners}/>
-            </View>
-            <View style={{flex: 1, paddingLeft: 10}}>
-              <MetaClogListView goToBook={this.props.goToBook} header="TRENDING" clogs={this.props.trendingClogs} renderButton={this.renderTrendingButton.bind(this)}/>
-            </View>
-            <View style={{flex: 1.6}}>
-              <RecommendedClog clog={this.props.recommendedClog} goToBook={this.props.goToBook}/>
-            </View>
-          </Image>
-          <Image source={require('../img/home-bg-1.5.png')} style={{resizeMode: 'stretch', backgroundColor: 'transparent', width: undefined, height: undefined, paddingTop: 20}}>
-            {
-              this.props.favoriteTags.map((tag, idx) => (
-                <View key={idx} style={{paddingLeft: 10, paddingTop: 10}}>
-                  <MetaClogListView goToBook={this.props.goToBook} header={tag.name.toUpperCase()} clogs={tag.trendingClogs} renderButton={!tag.following ? this.renderFollowButton.bind(this) : this.renderUnfollowButton.bind(this)}/>
-                </View>
-              ))
-            }
-          </Image>
-          <ExploreCategory onPress={(category) => this.props.goToClogCategory(category)}/>
-        </FixBugScrollView>
-      </View>
-    );
+    this.renderFollowButton = this.renderFollowButton.bind(this);
+    this.renderUnfollowButton = this.renderUnfollowButton.bind(this);
+    this.renderTrendingButton = this.renderTrendingButton.bind(this);
   }
 
   renderFollowButton() {
+    // remove when implement
+    /* eslint class-methods-use-this: off */
     return (
-      <BorderButton caption="ติดตาม" type="fadedWhite" containerStyle={styles.clogListButton}/>
+      <BorderButton caption="ติดตาม" type="fadedWhite" containerStyle={styles.clogListButton} />
     );
   }
 
   renderUnfollowButton() {
+    // remove when implement
+    /* eslint class-methods-use-this: off */
     return (
-      <BorderButton caption="เลิกติดตาม" type="fadedGrey" containerStyle={styles.clogListButton}/>
+      <BorderButton caption="เลิกติดตาม" type="fadedGrey" containerStyle={styles.clogListButton} />
     );
   }
 
   renderTrendingButton() {
     return (
-      <BorderButton caption="ทั้งหมด" type="fadedWhite" containerStyle={styles.clogListButton}
-        onPress={() => this.props.goToClogListView({page: 'clog-list-view', title: 'ยอดนิยม', orderBy: 'TRENDING'})}
+      <BorderButton
+        caption="ทั้งหมด" type="fadedWhite" containerStyle={styles.clogListButton}
+        onPress={() => this.props.goToClogListView({ page: 'clog-list-view', title: 'ยอดนิยม', orderBy: 'TRENDING' })}
+      />
+    );
+  }
+
+  render() {
+    return (
+      <View style={{ flex: 1, backgroundColor: 'rgb(81, 20, 64)' }}>
+        <NavBar
+          renderLeftMenu={() => (
+            <TouchableOpacity onPress={this.props.onOpenShelfMenu}><Image style={{ height: 20, resizeMode: 'contain' }} source={require('../img/menu.png')} /></TouchableOpacity>
+          )}
+          renderRightMenu={() => (
+            <TouchableOpacity><Image style={{ height: 20, resizeMode: 'contain' }} source={require('../img/search.png')} /></TouchableOpacity>
+          )}
+          renderTitle={() => (
+            <Image style={{ width: 80, height: 30, resizeMode: 'contain' }} source={require('../img/title.png')} />
+          )}
+          titleStyle={{
+            flex: 1,
+            alignItems: 'flex-start',
+          }}
         />
+        <FixBugScrollView>
+          <Image source={require('../img/home-bg-1.png')} style={{ width: undefined, height: 700, resizeMode: 'stretch', backgroundColor: 'transparent' }}>
+            <View style={{ flex: 2 }}>
+              <HeroBanner goToBook={this.props.goToBook} clogs={this.props.heroBanners} />
+            </View>
+            <View style={{ flex: 1, paddingLeft: 10 }}>
+              <MetaClogListView goToBook={this.props.goToBook} header="TRENDING" clogs={this.props.trendingClogs} renderButton={this.renderTrendingButton} />
+            </View>
+            <View style={{ flex: 1.6 }}>
+              <RecommendedClog clog={this.props.recommendedClog} goToBook={this.props.goToBook} />
+            </View>
+          </Image>
+          <Image source={require('../img/home-bg-1.5.png')} style={{ resizeMode: 'stretch', backgroundColor: 'transparent', width: undefined, height: undefined, paddingTop: 20 }}>
+            {
+              this.props.favoriteTags.map(tag => (
+                <View key={tag.id} style={{ paddingLeft: 10, paddingTop: 10 }}>
+                  <MetaClogListView
+                    goToBook={this.props.goToBook}
+                    header={tag.name.toUpperCase()}
+                    clogs={tag.trendingClogs}
+                    renderButton={
+                      !tag.following ?
+                          this.renderFollowButton
+                        : this.renderUnfollowButton
+                    }
+                  />
+                </View>
+              ))
+            }
+          </Image>
+          <ExploreCategory onPress={category => this.props.goToClogCategory(category)} />
+        </FixBugScrollView>
+      </View>
     );
   }
 }
@@ -98,21 +121,13 @@ Home.fragments = {
   MetaClogListView: MetaClogListView.fragments.clog,
   FavoritTag: gql`
     fragment FavoritTag on Tag {
+      id
       name
       trendingClogs {
         ...MetaClogListView
       }
     }
-  `
+  `,
 };
-
-const styles = StyleSheet.create({
-  clogListButton: {
-    flex: 1,
-    width: 80,
-    paddingHorizontal: 0,
-    alignItems: 'center'
-  }
-});
 
 export default Home;

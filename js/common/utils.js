@@ -1,36 +1,39 @@
-export const toHumanNumber = number => {
+export const toHumanNumber = (fNumber) => {
+  let number = fNumber;
   let tail = '';
-  let s_float_point = '';
+  let sFloatPoint = '';
   if (number >= 10000) {
     tail = 'k';
-    let float_point = Math.floor(number / 100) % 10;
-    s_float_point = float_point === 0 ? '' : `.${float_point}`;
+    const floatPoint = Math.floor(number / 100) % 10;
+    sFloatPoint = floatPoint === 0 ? '' : `.${floatPoint}`;
     number = Math.floor(number / 1000);
     if (number >= 100) {
-      s_float_point = '';
+      sFloatPoint = '';
     }
   }
-  const stringNumber = number + '';
+  const stringNumber = `${number}`;
   let result = '';
   const slen = stringNumber.length;
-  for (let i = slen - 1; i >= 0; i--){
+  for (let i = slen - 1; i >= 0; i -= 1) {
     if (i !== slen - 1 && (slen - i - 1) % 3 === 0) {
-      result = ',' + result;
+      result = `,${result}`;
     }
     result = stringNumber[i] + result;
   }
-  return result + s_float_point + tail;
+  return result + sFloatPoint + tail;
 };
 
-export const random = to => {
-  return Math.floor(Math.random() * to);
-};
+export const random = to => Math.floor(Math.random() * to);
 
 export function mapSource(source) {
   if (typeof source === 'string') {
     return {
-      uri: source
+      uri: source,
     };
   }
   return source;
+}
+
+export function bindFn(fn, ...args) {
+  return fn.bind(null, ...args);
 }

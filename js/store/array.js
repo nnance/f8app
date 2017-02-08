@@ -20,9 +20,11 @@
  * DEALINGS IN THE SOFTWARE
  */
 
-'use strict';
+/* eslint no-unused-vars: warn */
 
-module.exports = store => next => action =>
-  Array.isArray(action)
-    ? action.map(next)
-    : next(action);
+module.exports = store => next => (action) => {
+  if (Array.isArray(action)) {
+    return action.map(next);
+  }
+  return next(action);
+};

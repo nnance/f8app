@@ -21,31 +21,37 @@
  *
  * @flow
  */
-'use strict';
 
-const React = require('react');
-const {StyleSheet} = require('react-native');
 import ClogiiButton from 'ClogiiButton';
 
+const React = require('react');
+const { StyleSheet } = require('react-native');
+const { connect } = require('react-redux');
+
 const { logInWithFacebook } = require('../actions');
-const {connect} = require('react-redux');
+
+async function timeout(ms: number): Promise {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => reject(new Error('Timed out')), ms);
+  });
+}
+
+const styles = StyleSheet.create({
+  button: {
+    alignSelf: 'center',
+    width: 270,
+  },
+});
 
 class LoginButton extends React.Component {
-  props: {
-    style: any;
-    source?: string; // For Analytics
-    dispatch: (action: any) => Promise;
-    onLoggedIn: ?() => void;
-  };
-  state: {
-    isLoading: boolean;
-  };
-  _isMounted: boolean;
-
   constructor() {
     super();
     this.state = { isLoading: false };
   }
+
+  state: {
+    isLoading: boolean;
+  };
 
   componentDidMount() {
     this._isMounted = true;
@@ -53,6 +59,42 @@ class LoginButton extends React.Component {
 
   componentWillUnmount() {
     this._isMounted = false;
+  }
+
+  props: {
+    style: any;
+    source?: string; // For Analytics
+    dispatch: (action: any) => Promise;
+    onLoggedIn: ?() => void;
+  };
+
+  _isMounted: boolean;
+
+  async logIn() {
+    const { dispatch, onLoggedIn } = this.props;
+
+    this.setState({ isLoading: true });
+    try {
+      await Promise.race([
+        dispatch(logInWithFacebook(this.props.source)),
+        timeout(15000),
+      ]);
+    } catch (e) {
+      const message = e.message || e;
+      if (message !== 'Timed out' && message !== 'Canceled by user') {
+        alert(message);
+        console.warn(e);
+      }
+      return;
+    } finally {
+      if (this._isMounted) {
+        this.setState({ isLoading: false });
+      }
+    }
+
+    if (onLoggedIn) {
+      onLoggedIn();
+    }
   }
 
   render() {
@@ -73,42 +115,10 @@ class LoginButton extends React.Component {
       />
     );
   }
-
-  async logIn() {
-    const {dispatch, onLoggedIn} = this.props;
-
-    this.setState({isLoading: true});
-    try {
-      await Promise.race([
-        dispatch(logInWithFacebook(this.props.source)),
-        timeout(15000),
-      ]);
-    } catch (e) {
-      const message = e.message || e;
-      if (message !== 'Timed out' && message !== 'Canceled by user') {
-        alert(message);
-        console.warn(e);
-      }
-      return;
-    } finally {
-      this._isMounted && this.setState({isLoading: false});
-    }
-
-    onLoggedIn && onLoggedIn();
-  }
 }
 
-async function timeout(ms: number): Promise {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => reject(new Error('Timed out')), ms);
-  });
-}
-
-var styles = StyleSheet.create({
-  button: {
-    alignSelf: 'center',
-    width: 270
-  },
-});
+LoginButton.defaultProps = {
+  source: null,
+};
 
 module.exports = connect()(LoginButton);

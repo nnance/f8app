@@ -1,29 +1,35 @@
-'use strict';
+
 
 import React from 'react';
 import {
-  Text,
-  View,
   StyleSheet,
   TouchableOpacity,
-  Image
 } from 'react-native';
 
-import {NavBarWithPinkButton} from '../../../common/NavBar';
+import { NavBarWithPinkButton } from '../../../common/NavBar';
 
-import {colors} from '../../../common/styles';
+import { colors } from '../../../common/styles';
+
+const styles = StyleSheet.create({
+  container: {
+    borderBottomWidth: 1,
+    borderColor: colors.greyBorder,
+  },
+  backButton: {
+    height: 20,
+    resizeMode: 'contain',
+  },
+  titleText: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: colors.textPink,
+  },
+});
 
 export default class NavBar extends React.Component {
-  render() {
-    return (
-      <NavBarWithPinkButton
-        {...this.props}
-        containerStyle={styles.container}
-        renderRightMenu={this.renderRightMenu.bind(this)}
-        title={this.props.title}
-        titleTextStyle={styles.titleText}
-        />
-    );
+  constructor(...args) {
+    super(...args);
+    this.renderRightMenu = this.renderRightMenu.bind(this);
   }
 
   renderRightMenu() {
@@ -35,20 +41,16 @@ export default class NavBar extends React.Component {
       </TouchableOpacity>
     );
   }
-}
 
-const styles = StyleSheet.create({
-  container: {
-    borderBottomWidth: 1,
-    borderColor: colors.greyBorder
-  },
-  backButton: {
-    height: 20,
-    resizeMode: 'contain'
-  },
-  titleText: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    color: colors.textPink
+  render() {
+    return (
+      <NavBarWithPinkButton
+        {...this.props}
+        containerStyle={styles.container}
+        renderRightMenu={this.renderRightMenu}
+        title={this.props.title}
+        titleTextStyle={styles.titleText}
+      />
+    );
   }
-});
+}

@@ -22,26 +22,21 @@
  * @flow
  */
 
-'use strict';
 
 import { ApolloProvider } from 'react-apollo';
-import client from './store/apollo';
-
-var App = require('App');
-var FacebookSDK = require('FacebookSDK');
-var Parse = require('parse/react-native');
-var React = require('React');
-
-var { Provider } = require('react-redux');
-
-var apollo = require('./store/apollo');
-var configureStore = require('./store/configureStore');
-
-const env = require('./env');
-let {serverURL} = env;
-
 import moment from 'moment';
 import 'moment/locale/th';
+
+const App = require('App');
+const FacebookSDK = require('FacebookSDK');
+const Parse = require('parse/react-native');
+const React = require('React');
+
+const apollo = require('./store/apollo');
+const configureStore = require('./store/configureStore');
+const env = require('./env');
+
+const { serverURL } = env;
 
 function setup(): React.Component {
   console.disableYellowBox = true;
@@ -58,7 +53,7 @@ function setup(): React.Component {
       super();
       this.state = {
         isLoading: true,
-        store: configureStore(() => this.setState({isLoading: false})),
+        store: configureStore(() => this.setState({ isLoading: false })),
         client: apollo,
       };
     }
@@ -68,7 +63,7 @@ function setup(): React.Component {
       }
       return (
         <ApolloProvider store={this.state.store} client={this.state.client}>
-          <App/>
+          <App />
         </ApolloProvider>
       );
     }

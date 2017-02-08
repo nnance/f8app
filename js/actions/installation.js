@@ -22,7 +22,6 @@
  * @flow
  */
 
-'use strict';
 
 const Platform = require('Platform');
 const Parse = require('parse/react-native');

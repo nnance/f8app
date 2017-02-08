@@ -1,4 +1,4 @@
-import {REHYDRATE} from 'redux-persist/constants';
+import { REHYDRATE } from 'redux-persist/constants';
 
 import userReducer from '../user';
 import * as actions from '../../actions';
@@ -6,17 +6,17 @@ import * as actions from '../../actions';
 describe('Reducer User', () => {
   it('CHANGED_PUBLIC_PROFILE should set new name', () => {
     const oldState = {
-      name: 'test'
+      name: 'test',
     };
     const newState = userReducer(oldState, actions.changedPublicProfile({
-      name: 'new test'
+      name: 'new test',
     }));
     expect(newState.name).toBe('new test');
   });
 
   it('FACEBOOK_LINKED, linked to true', () => {
     const oldState = {
-      name: 'test'
+      name: 'test',
     };
     const newState = userReducer(oldState, actions.facebookLinked());
     expect(newState.facebookLinked).toBe(true);
@@ -24,7 +24,7 @@ describe('Reducer User', () => {
 
   it('FACEBOOK_UNLINKED, linked to false', () => {
     const oldState = {
-      name: 'test'
+      name: 'test',
     };
     const newState = userReducer(oldState, actions.facebookUnlinked());
     expect(newState.facebookLinked).toBe(false);
@@ -34,9 +34,9 @@ describe('Reducer User', () => {
     const expectDate = new Date();
     const oldState = {
       name: 'test',
-      birthDayDate: expectDate.toString()
+      birthDayDate: expectDate.toString(),
     };
-    const newState = userReducer(oldState, {type: REHYDRATE, payload: oldState});
+    const newState = userReducer(oldState, { type: REHYDRATE, payload: oldState });
     expect(typeof newState.birthDayDate.getTime).toBe('function');
     expect(newState.birthDayDate.toString()).toBe(expectDate.toString());
   });

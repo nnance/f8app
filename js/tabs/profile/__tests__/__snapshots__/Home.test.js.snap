@@ -374,6 +374,7 @@ exports[`Home render 1`] = `
         onScroll={[Function]}
         pageSize={1}
         removeClippedSubviews={true}
+        renderEmptyList={null}
         renderFooter={[Function]}
         renderRow={[Function]}
         renderSeparator={[Function]}

@@ -1,50 +1,50 @@
 export const topClog = {
   title: 'แมค เดมอน ตะลุยอวกาศ',
   author: 'Steve Jobs',
-  review: 'The martin กำลัง บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ'
+  review: 'The martin กำลัง บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ บลาๆๆๆๆๆ',
 };
 
 export const fakeMetaClog = [
   {
     title: 'Mr.Smith Goes to somewhere',
-    author: 'David Beckham'
+    author: 'David Beckham',
   },
   {
     title: 'Mr.Smith Goes to somewhere',
-    author: 'David Beckham2'
+    author: 'David Beckham2',
   },
   {
     title: 'Mr.Smith Goes to somewhere',
-    author: 'David Beckham3'
+    author: 'David Beckham3',
   },
   {
     title: 'Mr.Smith Goes to somewhere',
-    author: 'David Beckham4'
+    author: 'David Beckham4',
   },
   {
     title: 'Mr.Smith Goes to somewhere',
-    author: 'David Beckham5'
+    author: 'David Beckham5',
   },
   {
     title: 'Mr.Smith Goes to somewhere',
-    author: 'David Beckham6'
-  }
+    author: 'David Beckham6',
+  },
 ];
 
 export const highlightCategory = [
   {
     title: 'DRAMATIC SERIES',
     following: false,
-    clogs: fakeMetaClog
+    clogs: fakeMetaClog,
   },
   {
     title: 'NEW FUNNY CLOG',
     following: false,
-    clogs: fakeMetaClog
+    clogs: fakeMetaClog,
   },
   {
     title: 'FANTASY SCI-FI',
     following: true,
-    clogs: fakeMetaClog
-  }
+    clogs: fakeMetaClog,
+  },
 ];

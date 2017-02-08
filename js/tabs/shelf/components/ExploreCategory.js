@@ -4,10 +4,9 @@ import {
   View,
   Image,
   TouchableOpacity,
-  Dimensions
 } from 'react-native';
 
-import {getCategoryIcon} from '../../../models/clog';
+import { getCategoryIcon } from '../../../models/clog';
 
 const categories = [
   {
@@ -17,8 +16,8 @@ const categories = [
     size: 90,
     pos: {
       x: 0,
-      y: 120
-    }
+      y: 120,
+    },
   },
   {
     category: 'M',
@@ -27,8 +26,8 @@ const categories = [
     size: 80,
     pos: {
       x: 175,
-      y: 105
-    }
+      y: 105,
+    },
   },
   {
     category: 'G',
@@ -37,8 +36,8 @@ const categories = [
     size: 100,
     pos: {
       x: 35,
-      y: 280
-    }
+      y: 280,
+    },
   },
   {
     category: 'N',
@@ -47,46 +46,57 @@ const categories = [
     size: 80,
     pos: {
       x: 205,
-      y: 235
-    }
-  }
+      y: 235,
+    },
+  },
 ];
 
 class ExploreCategory extends React.Component {
+  constructor(...args) {
+    super(...args);
+
+    this.renderCategory = this.renderCategory.bind(this);
+  }
+
+  renderCategory(categoryDetail, idx) {
+    return (
+      <TouchableOpacity
+        onPress={() => this.props.onPress(categoryDetail.category)} key={idx} style={{
+          position: 'absolute',
+          top: categoryDetail.pos.y,
+          left: categoryDetail.pos.x,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Image
+          source={categoryDetail.img}
+          style={{ width: categoryDetail.size, height: categoryDetail.size }}
+        />
+        <View style={{ padding: 5 }}>
+          <Text style={{ fontWeight: 'bold', color: 'white' }}>{categoryDetail.title}</Text>
+        </View>
+      </TouchableOpacity>
+    );
+  }
+
   render() {
     return (
-      <Image source={require('../img/home-bg-2.png')} style={{width: undefined, height: 450, resizeMode: 'stretch', backgroundColor: 'transparent'}}>
-        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-          <View style={{flex: 1, width: 205 + 85}}>
-          {
-            categories.map(this.renderCategory.bind(this))
+      <Image source={require('../img/home-bg-2.png')} style={{ width: undefined, height: 450, resizeMode: 'stretch', backgroundColor: 'transparent' }}>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+          <View style={{ flex: 1, width: 205 + 85 }}>
+            {
+            categories.map(this.renderCategory)
           }
           </View>
         </View>
       </Image>
     );
   }
-
-  renderCategory(categoryDetail, idx) {
-    return (
-      <TouchableOpacity onPress={this.props.onPress.bind(null, categoryDetail.category)} key={idx} style={{
-        position: 'absolute',
-        top: categoryDetail.pos.y,
-        left: categoryDetail.pos.x,
-        justifyContent: 'center',
-        alignItems: 'center'
-      }}>
-        <Image source={categoryDetail.img} style={{width: categoryDetail.size, height: categoryDetail.size}}/>
-        <View style={{padding: 5}}>
-          <Text style={{fontWeight: 'bold', color: 'white'}}>{categoryDetail.title}</Text>
-        </View>
-      </TouchableOpacity>
-    );
-  }
 }
 
 ExploreCategory.defaultProps = {
-  onPress: () => {}
+  onPress: () => {},
 };
 
 export default ExploreCategory;

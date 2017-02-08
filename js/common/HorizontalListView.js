@@ -6,7 +6,7 @@ class HorizontalListView extends React.Component {
     return (
       <PureListView
         {...this.props}
-        horizontal={true}
+        horizontal
         minContentHeight={0}
       />
     );

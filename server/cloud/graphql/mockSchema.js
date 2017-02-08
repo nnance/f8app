@@ -1,13 +1,13 @@
-import {addMockFunctionsToSchema, makeExecutableSchema} from 'graphql-tools';
+import { addMockFunctionsToSchema, makeExecutableSchema } from 'graphql-tools';
 import typeDefs from './typeDefs';
 import mocks from './mocks';
 import scalars from './scalars';
 
-let MockSchema = makeExecutableSchema({
+const MockSchema = makeExecutableSchema({
   typeDefs,
-  resolvers: scalars
+  resolvers: scalars,
 });
 
-addMockFunctionsToSchema({schema: MockSchema, preserveResolvers: true, mocks});
+addMockFunctionsToSchema({ schema: MockSchema, preserveResolvers: true, mocks });
 
 module.exports = MockSchema;
