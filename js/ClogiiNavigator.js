@@ -1,9 +1,10 @@
 import React from 'react';
 import {
-  Navigator,
   Linking,
 } from 'react-native';
 import { parse } from 'query-string';
+
+import FixBugScrollViewNavigator from './common/FixBugScrollViewNavigator';
 
 import ClogiiTabView from './tabs/ClogiiTabView';
 import Player from './player';
@@ -96,7 +97,7 @@ class ClogiiNavigator extends React.Component {
 
   render() {
     return (
-      <Navigator
+      <FixBugScrollViewNavigator
         ref={
           (node) => {
             this.navigator = node;

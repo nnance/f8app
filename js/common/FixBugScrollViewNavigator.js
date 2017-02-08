@@ -26,11 +26,31 @@ Provider.childContextTypes = {
 class FixBugScrollViewNavigator extends React.Component {
   constructor(...args) {
     super(...args);
+
     this.addFixBugListener = this.addFixBugListener.bind(this);
     this.removeFixBugListener = this.removeFixBugListener.bind(this);
     this.onWillFocus = this.onWillFocus.bind(this);
     this.emitFixBugListener = this.emitFixBugListener.bind(this);
     this.renderScene = this.renderScene.bind(this);
+    this.onFocus = this.onFocus.bind(this);
+  }
+
+  componentDidMount() {
+    if (this.context && this.context.addFixBugListener) {
+      this.context.addFixBugListener(this.onFocus);
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.context && this.context.removeFixBugListener) {
+      this.context.removeFixBugListener(this.onFocus);
+    }
+  }
+
+  onFocus() {
+    const allRoutes = this.navigator.getCurrentRoutes();
+    const currentRoute = allRoutes[allRoutes.length - 1];
+    this.onWillFocus(currentRoute);
   }
 
   onWillFocus(route) {
@@ -88,5 +108,10 @@ class FixBugScrollViewNavigator extends React.Component {
     );
   }
 }
+
+FixBugScrollViewNavigator.contextTypes = {
+  addFixBugListener: React.PropTypes.func,
+  removeFixBugListener: React.PropTypes.func,
+};
 
 export default FixBugScrollViewNavigator;
