@@ -39,6 +39,6 @@ const editors = [
   },
 ];
 
-const Dump = () => <EditorListView editors={editors}/>;
+const Dump = () => <EditorListView category="D" editors={editors}/>;
 
 export default Dump;

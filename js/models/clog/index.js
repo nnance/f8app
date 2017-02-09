@@ -14,6 +14,14 @@ const categoryLogo = {
   N: require('./img/category/logo/novel.png'),
 };
 
+const categoryFullName = {
+  default: 'Unknow Clog',
+  D: 'Diary Clog',
+  G: 'Gag Clog',
+  M: 'Myth Clog',
+  N: 'Novel Clog',
+};
+
 export function getCategoryIcon(category) {
   if (categoryImgs[category] === undefined) {
     return categoryImgs.default;
@@ -26,4 +34,11 @@ export function getCategoryLogo(category) {
     return categoryLogo.default;
   }
   return categoryLogo[category];
+}
+
+export function getCategoryFullName(category) {
+  if (categoryFullName[category] === undefined) {
+    return categoryFullName.default;
+  }
+  return categoryFullName[category];
 }

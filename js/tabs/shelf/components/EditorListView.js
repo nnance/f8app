@@ -17,6 +17,7 @@ import HorizontalListView from '../../../common/HorizontalListView';
 import { colors } from '../../../common/styles';
 import { mapSource, toHumanNumber, bindFn } from '../../../common/utils';
 import { FollowButton, UnfollowButton } from '../../../common/BasicButton';
+import { getCategoryFullName } from '../../../models/clog';
 
 import NavBar from '../components/NavBar';
 
@@ -152,7 +153,7 @@ class EditorListView extends React.Component {
       <NavBar
         withSearch
         onBackPress={this.props.onBackPress}
-        title="Editor Myth Clog"
+        title={`Editor ${getCategoryFullName(this.props.category)}`}
         containerStyle={styles.navBar}
         titleTextStyle={styles.titleText}
       />
