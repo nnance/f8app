@@ -11,25 +11,24 @@ function cloneProps(a, b) {
   return a;
 }
 
-export const beforeProps = (mapBeforeProps) => element => 
+export const beforeProps = (overrideProps = {}) => element => 
   cloneProps(compose(
-    withState('__finish', '__setFinish', false),
+    withState('finishInteraction', '__setFinishInteraction', false),
     lifecycle({
       componentDidMount() {
         InteractionManager.runAfterInteractions(() => {
-          this.props.__setFinish(true);
+          this.props.__setFinishInteraction(true);
         });
       }
     }),
     mapProps(ownerProps => {
-      if (ownerProps.__finish) {
-        return {
-          ..._.omit(ownerProps, '__finish', '__setFinish')
-        };
+      const pureProps = _.omit(ownerProps, '__setFinishInteraction')
+      if (pureProps.finishInteraction) {
+        return pureProps;
       }
       return {
-        ...ownerProps,
-        ...mapBeforeProps()
+        ...pureProps,
+        ...(_.isFunction(overrideProps) ? overrideProps(pureProps) : overrideProps)
       };
     }),
   )(element), element);
