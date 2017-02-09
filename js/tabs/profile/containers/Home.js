@@ -1,4 +1,7 @@
 import { connect } from 'react-redux';
+
+import {logOutWithPrompt} from '../../../actions';
+
 import Home from '../components/Home';
 
 export default connect(
@@ -8,4 +11,7 @@ export default connect(
       followerCount: 1800,
       candys: 100,
     }),
+    {
+      logOutWithPrompt,
+    },
 )(Home);

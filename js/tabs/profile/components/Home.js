@@ -163,6 +163,11 @@ class Home extends React.Component {
   constructor(...args) {
     super(...args);
     this.renderMenu = this.renderMenu.bind(this);
+    this.onLogout = this.onLogout.bind(this);
+  }
+
+  onLogout() {
+    this.props.logOutWithPrompt();
   }
 
   renderMenu(menu) {
@@ -170,7 +175,9 @@ class Home extends React.Component {
       <TouchableOpacity
         title={menu.name}
         onPress={() => {
-          if (this.props.onMenuPress) {
+          if (menu.name === 'logout') {
+            this.onLogout();
+          } else if (this.props.onMenuPress) {
             this.props.onMenuPress(menu.name);
           }
         }}
