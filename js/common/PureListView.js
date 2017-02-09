@@ -46,7 +46,7 @@ type Props = {
 
 // FIXME: Android has a bug when scrolling ListView the view insertions
 // will make it go reverse. Temporary fix - pre-render more rows
-const LIST_VIEW_PAGE_SIZE = Platform.OS === 'android' ? 20 : 1;
+const LIST_VIEW_PAGE_SIZE = Platform.OS === 'android' ? 1 : 1;
 
 function cloneWithData(dataSource: ListView.DataSource, data: ?Data) {
   if (!data) {
