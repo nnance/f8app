@@ -393,40 +393,11 @@ ClogCategory.fragments = {
   MetaClogListView: MetaClogListView.fragments.clog,
 };
 
-let EnhanceClogCategory = beforeProps(() => ({
-  trendingClogs: [],
-  recentlyClogs: [],
-  editors: [],
-  recommendedClogs: [],
+let EnhanceClogCategory = beforeProps(props => ({
+  trendingClogs: props.trendingClogs.slice(0, 5),
+  recentlyClogs: props.recentlyClogs.slice(0, 5),
+  editors: props.editors.slice(0, 5),
+  recommendedClogs: props.recommendedClogs.slice(0, 5),
 }))(ClogCategory);
-
-// const _ = require('lodash');
-// _.keys(ClogCategory).forEach((key) => {
-//   EnhanceClogCategory[key] = ClogCategory[key];
-// });
-
-// EnhanceClogCategory.fragments = {
-//   ClogCategoryEditor: gql`
-//     fragment ClogCategoryEditor on Editor {
-//       name
-//       profilePicture
-//     }
-//   `,
-//   RecommendClog: gql`
-//     fragment RecommendClog on Clog {
-//       id
-//       title
-//       author {
-//         name
-//       }
-//       followersYouKnow {
-//         name
-//         profilePicture
-//       }
-//       followerCount
-//     }
-//   `,
-//   MetaClogListView: MetaClogListView.fragments.clog,
-// };
 
 export default EnhanceClogCategory;
