@@ -11,7 +11,7 @@ function cloneProps(a, b) {
   return a;
 }
 
-export const beforeProps = (overrideProps = {}) => element => 
+export const connect = (overrideProps = {}) => element => 
   cloneProps(compose(
     withState('finishInteraction', '__setFinishInteraction', false),
     lifecycle({
