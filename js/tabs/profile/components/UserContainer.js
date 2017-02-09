@@ -11,6 +11,7 @@ import PureListView from '../../../common/PureListView';
 import ProfilePicture from '../../../common/ProfilePicture';
 import FixBugScrollView from '../../../common/FixBugScrollView';
 import { toHumanNumber } from '../../../common/utils';
+import { FollowButton, UnfollowButton } from '../../../common/BasicButton';
 
 import NavBar from './NavBar';
 import { styles as commonStyles } from '../common';
@@ -102,17 +103,17 @@ const styles = StyleSheet.create({
   },
 });
 
-const UnfollowButton = () => (<TouchableOpacity style={styles.unfollowButton}>
-  <Text style={styles.unfollowText}>
-    เลิกติดตาม
-  </Text>
-</TouchableOpacity>);
+// const UnfollowButton = () => (<TouchableOpacity style={styles.unfollowButton}>
+//   <Text style={styles.unfollowText}>
+//     เลิกติดตาม
+//   </Text>
+// </TouchableOpacity>);
 
-const FollowButton = () => (<TouchableOpacity style={styles.followButton}>
-  <Text style={styles.followText}>
-    ติดตาม
-  </Text>
-</TouchableOpacity>);
+// const FollowButton = () => (<TouchableOpacity style={styles.followButton}>
+//   <Text style={styles.followText}>
+//     ติดตาม
+//   </Text>
+// </TouchableOpacity>);
 
 const FollowerDetail = props => (<View style={styles.followerDetail}>
   {

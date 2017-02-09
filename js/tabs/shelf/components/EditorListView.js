@@ -14,9 +14,9 @@ import CircleImageWithCategory from '../../../common/CircleImageWithCategory';
 import CircleImage from '../../../common/CircleImage';
 import FixBugPureListView from '../../../common/FixBugPureListView';
 import HorizontalListView from '../../../common/HorizontalListView';
-import BorderButton from '../../../common/BorderButton';
 import { colors } from '../../../common/styles';
 import { mapSource, toHumanNumber } from '../../../common/utils';
+import { FollowButton, UnfollowButton } from '../../../common/BasicButton';
 
 import NavBar from '../components/NavBar';
 
@@ -53,26 +53,6 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
 });
-
-const FollowButton = () => (
-    <BorderButton caption="ติดตาม" type="lightGreen" containerStyle={{
-        height: 20,
-        width: 70,
-        paddingHorizontal: 0,
-        alignItems: 'center',
-      }}
-    />
-);
-
-const UnfollowButton = () => (
-    <BorderButton caption="เลิกติดตาม" type="fadedGrey" containerStyle={{
-        height: 20,
-        width: 80,
-        paddingHorizontal: 0,
-        alignItems: 'center',
-      }}
-    />
-);
 
 class ClogMeta extends React.Component {
   constructor(...args) {
