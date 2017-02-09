@@ -4,6 +4,8 @@ import {
 import { compose, mapProps, lifecycle, withState } from 'recompose';
 import _ from 'lodash';
 
+/* eslint no-param-reassign: off */
+
 function cloneProps(a, b) {
   _.keys(b).forEach((key) => {
     a[key] = b[key];
@@ -11,7 +13,7 @@ function cloneProps(a, b) {
   return a;
 }
 
-export const connect = (overrideProps = {}) => element => 
+export const connect = (overrideProps = {}) => element =>
   cloneProps(compose(
     withState('finishInteraction', '__setFinishInteraction', false),
     lifecycle({
@@ -19,16 +21,16 @@ export const connect = (overrideProps = {}) => element =>
         InteractionManager.runAfterInteractions(() => {
           this.props.__setFinishInteraction(true);
         });
-      }
+      },
     }),
-    mapProps(ownerProps => {
-      const pureProps = _.omit(ownerProps, '__setFinishInteraction')
+    mapProps((ownerProps) => {
+      const pureProps = _.omit(ownerProps, '__setFinishInteraction');
       if (pureProps.finishInteraction) {
         return pureProps;
       }
       return {
         ...pureProps,
-        ...(_.isFunction(overrideProps) ? overrideProps(pureProps) : overrideProps)
+        ...(_.isFunction(overrideProps) ? overrideProps(pureProps) : overrideProps),
       };
     }),
   )(element), element);

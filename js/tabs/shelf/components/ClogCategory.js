@@ -11,7 +11,6 @@ import LinearGradient from 'react-native-linear-gradient';
 import gql from 'graphql-tag';
 
 import { colors } from '../../../common/styles';
-import { beforeProps } from '../../../common/afterInteractions';
 import FixBugScrollView from '../../../common/FixBugScrollView';
 import BorderButton from '../../../common/BorderButton';
 import HorizontalListView from '../../../common/HorizontalListView';

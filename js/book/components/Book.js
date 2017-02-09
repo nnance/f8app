@@ -12,9 +12,8 @@ import gql from 'graphql-tag';
 import ReadMore from '@exponent/react-native-read-more-text';
 
 import BorderButton, { styles as borderButtonStyles } from '../../common/BorderButton';
-import FixBugScrollView from '../../common/FixBugScrollView';
 import CircleImage from '../../common/CircleImage';
-import PureListView from '../../common/PureListView';
+import FixBugPureListView from '../../common/FixBugPureListView';
 import { toHumanNumber, mapSource, bindFn } from '../../common/utils';
 import { colors, styles as commonStyles } from '../../common/styles';
 
@@ -245,9 +244,9 @@ class Book extends React.Component {
           </TouchableOpacity>
         </Image>
         <View
-          style={{flex: 1}}
+          style={{ flex: 1 }}
         >
-          <PureListView
+          <FixBugPureListView
             style={styles.detailContainer}
             data={clog.episodes}
             renderRow={this.renderEpisode}

@@ -11,7 +11,6 @@ import moment from 'moment';
 
 import { colors } from './styles';
 import FixBugPureListView from './FixBugPureListView';
-import FixBugScrollView from './FixBugScrollView';
 import CircleImageWithCategory from './CircleImageWithCategory';
 import { toHumanNumber, mapSource } from './utils';
 
