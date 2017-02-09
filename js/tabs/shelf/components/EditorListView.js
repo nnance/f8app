@@ -157,6 +157,7 @@ class EditorListView extends React.Component {
         titleTextStyle={styles.titleText}
       />
       <FixBugPureListView
+        minContentHeight={0}
         data={this.props.editors}
         renderRow={this.renderRow}
       />
