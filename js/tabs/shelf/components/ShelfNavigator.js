@@ -6,6 +6,7 @@ import {
 import Home from '../containers/Home';
 import ClogCategory from '../containers/ClogCategory';
 import ClogListView from '../containers/ClogListView';
+import EditorListView from '../containers/EditorListView';
 import FixBugScrollViewNavigator from '../../../common/FixBugScrollViewNavigator';
 
 const NotFound = () => <Text>not found</Text>;
@@ -61,6 +62,9 @@ class ShelfNavigator extends React.Component {
         tag={route.tag}
       />);
     }
+    if (route.page === 'editor-list-view') {
+      return (<EditorListView category={route.category}/>);
+    }
     return <NotFound />;
   }
 
@@ -70,7 +74,7 @@ class ShelfNavigator extends React.Component {
         ref={(node) => {
           this.navigator = node;
         }}
-        initialRoute={{ page: 'home' }}
+        initialRoute={{ page: 'editor-list-view' }}
         renderScene={this.renderScene}
       />
     );
