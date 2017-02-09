@@ -52,6 +52,7 @@ const mocks = {
     followersYouKnow: () => new MockList(casual.integer(0, 25)),
     likeCount: casual.positive_int(10000),
     viewCount: casual.positive_int(10000),
+    commentCount: casual.positive_int(1000000),
     episodes: () => new MockList(20),
   }),
   Episode: () => ({

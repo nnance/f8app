@@ -7,15 +7,15 @@ import {
   Text,
 } from 'react-native';
 
-import { BUTTOM_TAB_HEIGHT, colors } from '../../common/styles';
-import { toHumanNumber } from '../../common/utils';
+import { BUTTOM_TAB_HEIGHT, colors } from './styles';
+import { toHumanNumber } from './utils';
 
 const menuIcon = {
-  menu: require('../img/menu.png'),
-  like: require('../img/like.png'),
-  read: require('../img/read.png'),
-  subBookmark: require('../img/sub-bookmark.png'),
-  share: require('../img/share.png'),
+  menu: require('./img/icon/menu.png'),
+  like: require('./img/icon/like.png'),
+  read: require('./img/icon/read-button.png'),
+  subBookmark: require('./img/icon/sub-bookmark.png'),
+  share: require('./img/icon/share.png'),
 };
 
 const styles = StyleSheet.create({

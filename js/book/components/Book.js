@@ -16,6 +16,7 @@ import CircleImage from '../../common/CircleImage';
 import FixBugPureListView from '../../common/FixBugPureListView';
 import { toHumanNumber, mapSource, bindFn } from '../../common/utils';
 import { colors, styles as commonStyles } from '../../common/styles';
+import BookAndPlayerTabBar from '../../common/BookAndPlayerTabBar';
 
 const previewWidth = 60;
 const readLikeWidth = 180;
@@ -254,6 +255,10 @@ class Book extends React.Component {
             renderHeader={() => <SubDetail {...clog} onReadPress={this.props.goToPlayer} />}
           />
         </View>
+        <BookAndPlayerTabBar
+          likeCount={clog.likeCount}
+          commentCount={clog.commentCount}
+        />
       </View>
     );
   }
@@ -265,6 +270,8 @@ Book.fragments = {
       title
       cover
       review
+      likeCount
+      commentCount
       author {
         name
       }
