@@ -15,7 +15,7 @@ import CircleImage from '../../../common/CircleImage';
 import FixBugPureListView from '../../../common/FixBugPureListView';
 import HorizontalListView from '../../../common/HorizontalListView';
 import { colors } from '../../../common/styles';
-import { mapSource, toHumanNumber } from '../../../common/utils';
+import { mapSource, toHumanNumber, bindFn } from '../../../common/utils';
 import { FollowButton, UnfollowButton } from '../../../common/BasicButton';
 
 import NavBar from '../components/NavBar';
@@ -55,22 +55,11 @@ const styles = StyleSheet.create({
 });
 
 class ClogMeta extends React.Component {
-  constructor(...args) {
-    super(...args);
-    this.onClogPress = this.onClogPress.bind(this);
-  }
-
-  onClogPress(id) {
-    if (this.props.onPress && !!id) {
-      this.props.onPress(id);
-    }
-  }
-
   render() {
     const clog = this.props.clog || {};
     return (
       <TouchableOpacity
-        onPress={() => this.onClogPress(clog.id)}
+        onPress={bindFn(this.props.onPress, clog.id)}
         style={{ flex: 1, paddingHorizontal: 5, width: 55 }}
       >
         <View style={{ height: 45 }}>
@@ -97,9 +86,9 @@ class ClogMeta extends React.Component {
 
 const MetaEditorRow = props => (
   <View style={styles.rowContainer}>
-    <TouchableOpacity>
+    <TouchableOpacity onPress={bindFn(props.onEditorPress, props.editor.id)}>
       <CircleImage
-        source={mapSource(props.profilePicture)}
+        source={mapSource(props.editor.profilePicture)}
         size={100}
         shadowRadius={5}
         shadowColor='rgba(255, 255, 255, 1)'
@@ -108,17 +97,17 @@ const MetaEditorRow = props => (
     <View style={{ flex: 1, paddingLeft: 20, height: 130 }}>
       <View style={{ flex: 1, flexDirection: 'row' }}>
         <View style={{ flex: 1 }}>
-          <Text style={styles.nameText} numberOfLines={1}>{props.name}</Text>
+          <Text style={styles.nameText} numberOfLines={1}>{props.editor.name}</Text>
           <Text style={styles.clogCountText} numberOfLines={1}>
-            {toHumanNumber(props.clogCount)} Clogs
+            {toHumanNumber(props.editor.clogCount)} Clogs
           </Text>
           <Text style={styles.followingCountText} numberOfLines={1}>
-            {toHumanNumber(props.followingCount)} คน กำลังติดตาม
+            {toHumanNumber(props.editor.followingCount)} คน กำลังติดตาม
           </Text>
         </View>
         <View style={{ width: 80, alignItems: 'flex-end' }}>
             {
-              props.isFollowing ?
+              props.editor.isFollowing ?
                 <UnfollowButton/>
               : <FollowButton/>
             }
@@ -126,9 +115,9 @@ const MetaEditorRow = props => (
       </View>
       <View style={{ height: 80 }}>
         <HorizontalListView
-          data={props.clogs}
+          data={props.editor.clogs}
           style={styles.metaClogContainer}
-          renderRow={clog => <ClogMeta clog={clog}/>}
+          renderRow={clog => <ClogMeta onPress={props.onClogPress} clog={clog}/>}
           showsHorizontalScrollIndicator={false}
         />
       </View>
@@ -144,7 +133,13 @@ class EditorListView extends React.Component {
   }
 
   renderRow(editor) {
-    return <MetaEditorRow {...editor}/>;
+    return (
+      <MetaEditorRow
+        onEditorPress={this.props.onEditorPress}
+        onClogPress={this.props.onClogPress}
+        editor={editor}
+      />
+    );
   }
 
   render() {
@@ -173,6 +168,7 @@ class EditorListView extends React.Component {
 EditorListView.fragments = {
   editor: gql`
     fragment EditorListView on Editor {
+      id
       profilePicture
       name
       followingCount
