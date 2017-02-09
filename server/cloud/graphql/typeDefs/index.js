@@ -61,6 +61,8 @@ const schema = `
     likes: [User!]!
     likeCount: Int!
     viewCount: Int!
+    comments: [Comment!]!
+    commentCount: Int!
     tags: [Tag!]!
     createdAt: Date!
   }

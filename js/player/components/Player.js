@@ -16,8 +16,7 @@ import { NavBarWithPinkButton } from '../../common/NavBar';
 import { colors } from '../../common/styles';
 import { toHumanNumber } from '../../common/utils';
 import ModalSpinner from '../../common/ModalSpinner';
-
-import ButtomMenu from './ButtomMenu';
+import BookAndPlayerTabBar from '../../common/BookAndPlayerTabBar';
 
 const styles = StyleSheet.create({
   navButton: {
@@ -54,7 +53,7 @@ class Player extends React.Component {
   onSharePress() {
     Share.share({
       title: `EP.${this.props.episode.no} ${this.props.episode.title}`,
-      message: 'http://139.59.253.62/mock-deep-link/',
+      message: 'http://139.59.253.62/mock-deep-link/player.html',
     });
   }
 
@@ -112,7 +111,7 @@ class Player extends React.Component {
           <ModalSpinner visible={this.state.loading} />
           {playerView}
         </View>
-        <ButtomMenu
+        <BookAndPlayerTabBar
           onSharePress={this.onSharePress}
           likeCount={this.props.episode.likeCount}
           commentCount={this.props.episode.commentCount}

@@ -4,6 +4,7 @@ import {
   Image,
   Text,
   StyleSheet,
+  Share,
   TouchableOpacity,
   Dimensions,
 } from 'react-native';
@@ -16,6 +17,7 @@ import CircleImage from '../../common/CircleImage';
 import FixBugPureListView from '../../common/FixBugPureListView';
 import { toHumanNumber, mapSource, bindFn } from '../../common/utils';
 import { colors, styles as commonStyles } from '../../common/styles';
+import BookAndPlayerTabBar from '../../common/BookAndPlayerTabBar';
 
 const previewWidth = 60;
 const readLikeWidth = 180;
@@ -216,11 +218,21 @@ const SubDetail = ({ title, author, review, episodes, onReadPress }) => (
   </View>
 );
 
+const Separator = (sectionID, rowID) => <View style={{height: 1, backgroundColor: colors.greyBorder}} key={rowID}/>;
+
 class Book extends React.Component {
   constructor(...args) {
     super(...args);
 
     this.renderEpisode = this.renderEpisode.bind(this);
+    this.onSharePress = this.onSharePress.bind(this);
+  }
+
+  onSharePress() {
+    Share.share({
+      title: `${this.props.clog.title}`,
+      message: 'http://139.59.253.62/mock-deep-link/book.html',
+    });
   }
 
   renderEpisode(data) {
@@ -251,9 +263,20 @@ class Book extends React.Component {
             data={clog.episodes}
             renderRow={this.renderEpisode}
             minContentHeight={0}
-            renderHeader={() => <SubDetail {...clog} onReadPress={this.props.goToPlayer} />}
+            renderHeader={() => {
+              return (<View>
+                <SubDetail {...clog} onReadPress={this.props.goToPlayer} />
+                <Separator/>
+              </View>);
+            }}
+            renderSeparator={Separator}
           />
         </View>
+        <BookAndPlayerTabBar
+          onSharePress={this.onSharePress}
+          likeCount={clog.likeCount}
+          commentCount={clog.commentCount}
+        />
       </View>
     );
   }
@@ -265,6 +288,8 @@ Book.fragments = {
       title
       cover
       review
+      likeCount
+      commentCount
       author {
         name
       }
