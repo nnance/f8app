@@ -53,7 +53,7 @@ class Player extends React.Component {
   onSharePress() {
     Share.share({
       title: `EP.${this.props.episode.no} ${this.props.episode.title}`,
-      message: 'http://139.59.253.62/mock-deep-link/',
+      message: 'http://139.59.253.62/mock-deep-link/player.html',
     });
   }
 

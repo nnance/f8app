@@ -4,6 +4,7 @@ import {
   Image,
   Text,
   StyleSheet,
+  Share,
   TouchableOpacity,
   Dimensions,
 } from 'react-native';
@@ -224,6 +225,14 @@ class Book extends React.Component {
     super(...args);
 
     this.renderEpisode = this.renderEpisode.bind(this);
+    this.onSharePress = this.onSharePress.bind(this);
+  }
+
+  onSharePress() {
+    Share.share({
+      title: `${this.props.clog.title}`,
+      message: 'http://139.59.253.62/mock-deep-link/book.html',
+    });
   }
 
   renderEpisode(data) {
@@ -264,6 +273,7 @@ class Book extends React.Component {
           />
         </View>
         <BookAndPlayerTabBar
+          onSharePress={this.onSharePress}
           likeCount={clog.likeCount}
           commentCount={clog.commentCount}
         />

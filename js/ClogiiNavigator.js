@@ -46,6 +46,9 @@ class ClogiiNavigator extends React.Component {
     if (method === 'player' && query.id) {
       this.goToPlayer(query.id);
     }
+    if (method === 'book' && query.id) {
+      this.goToBook(query.id);
+    }
   }
 
   parseURL(fUrl) {
