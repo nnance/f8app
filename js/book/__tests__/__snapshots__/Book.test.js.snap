@@ -259,174 +259,183 @@ exports[`Book render 1`] = `
           "paddingVertical": 15,
         }
       }>
-      <View
-        style={
-          Object {
-            "width": undefined,
-          }
-        }>
+      <View>
         <View
           style={
             Object {
-              "flexDirection": "row",
-              "paddingVertical": 10,
+              "width": undefined,
             }
           }>
           <View
             style={
               Object {
-                "flex": 3,
-              }
-            }>
-            <View>
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Object {
-                    "fontSize": 18,
-                  }
-                }>
-                Fuga est placeat
-              </Text>
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Object {
-                    "color": "rgba(0, 0, 0, 0.3)",
-                    "fontSize": 12,
-                  }
-                }>
-                Favian Runolfsson
-              </Text>
-            </View>
-          </View>
-          <View
-            style={
-              Object {
-                "paddingHorizontal": 5,
+                "flexDirection": "row",
+                "paddingVertical": 10,
               }
             }>
             <View
-              accessibilityComponentType={undefined}
-              accessibilityLabel={undefined}
-              accessibilityTraits={undefined}
-              accessible={true}
-              hitSlop={undefined}
-              onLayout={undefined}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "alignItems": "center",
-                  "backgroundColor": "transparent",
-                  "borderColor": "rgb(141, 227, 188)",
-                  "borderRadius": 4,
-                  "borderWidth": 1,
-                  "flexDirection": "row",
-                  "justifyContent": "center",
-                  "opacity": 1,
-                  "paddingHorizontal": 15,
+                  "flex": 3,
                 }
-              }
-              testID={undefined}>
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Array [
+              }>
+              <View>
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
                     Object {
+                      "fontSize": 18,
+                    }
+                  }>
+                  Fuga est placeat
+                </Text>
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.3)",
                       "fontSize": 12,
-                    },
-                    Object {
-                      "color": "rgb(141, 227, 188)",
-                    },
-                    undefined,
-                  ]
-                }>
-                ติดตาม
-              </Text>
+                    }
+                  }>
+                  Favian Runolfsson
+                </Text>
+              </View>
             </View>
-          </View>
-        </View>
-        <View>
-          <View
-            style={Object {}}>
-            <View>
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                numberOfLines={0}>
-                Non alias magni corporis repellat ratione labore explicabo. Amet iure ut libero qui recusandae. Nulla quam ipsam nobis cupiditate quia dignissimos. Incidunt doloremque sed libero repudiandae esse blanditiis natus et. Itaque velit omnis et. Delectus et ipsam explicabo eligendi occaecati officiis et. Eum dicta eum ipsa ad ipsum veritatis debitis libero. Deserunt quam tempore a. Provident velit eligendi nostrum ipsam qui. Dolor fugiat velit voluptatem aperiam placeat fuga maiores. Placeat ullam veniam ducimus temporibus modi odit architecto. Totam et aspernatur exercitationem ut quis. Magni cupiditate voluptatem dicta. Repudiandae non voluptates ut ullam quos qui illo. Sunt laborum ratione tenetur officia voluptatem cumque. Aut provident esse hic eligendi. Esse ut ab voluptas sed quae. Qui sint autem earum doloremque qui aut ut. Eos ducimus qui necessitatibus aut vel in. Dolorem et molestiae commodi ut sunt placeat.
-              </Text>
-            </View>
-          </View>
-        </View>
-        <View>
-          <View
-            style={
-              Object {
-                "paddingHorizontal": 40,
-                "paddingVertical": 15,
-              }
-            }>
             <View
-              accessibilityComponentType={undefined}
-              accessibilityLabel={undefined}
-              accessibilityTraits={undefined}
-              accessible={true}
-              hitSlop={undefined}
-              onLayout={undefined}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "alignItems": "center",
-                  "backgroundColor": "rgba(0, 0, 0, 0.8)",
-                  "borderRadius": 4,
-                  "flexDirection": "row",
-                  "justifyContent": "center",
-                  "opacity": 1,
-                  "paddingHorizontal": 15,
-                  "paddingVertical": 5,
+                  "paddingHorizontal": 5,
                 }
-              }
-              testID={undefined}>
-              <Text
+              }>
+              <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
                 accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
-                  Array [
-                    Object {
-                      "fontSize": 12,
-                    },
-                    Object {
-                      "color": "white",
-                    },
-                    Object {
-                      "fontSize": 25,
-                    },
-                  ]
-                }>
-                เริ่มอ่านตอนที่ 1
-              </Text>
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "transparent",
+                    "borderColor": "rgb(141, 227, 188)",
+                    "borderRadius": 4,
+                    "borderWidth": 1,
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "paddingHorizontal": 15,
+                  }
+                }
+                testID={undefined}>
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 12,
+                      },
+                      Object {
+                        "color": "rgb(141, 227, 188)",
+                      },
+                      undefined,
+                    ]
+                  }>
+                  ติดตาม
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View>
+            <View
+              style={Object {}}>
+              <View>
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  numberOfLines={0}>
+                  Non alias magni corporis repellat ratione labore explicabo. Amet iure ut libero qui recusandae. Nulla quam ipsam nobis cupiditate quia dignissimos. Incidunt doloremque sed libero repudiandae esse blanditiis natus et. Itaque velit omnis et. Delectus et ipsam explicabo eligendi occaecati officiis et. Eum dicta eum ipsa ad ipsum veritatis debitis libero. Deserunt quam tempore a. Provident velit eligendi nostrum ipsam qui. Dolor fugiat velit voluptatem aperiam placeat fuga maiores. Placeat ullam veniam ducimus temporibus modi odit architecto. Totam et aspernatur exercitationem ut quis. Magni cupiditate voluptatem dicta. Repudiandae non voluptates ut ullam quos qui illo. Sunt laborum ratione tenetur officia voluptatem cumque. Aut provident esse hic eligendi. Esse ut ab voluptas sed quae. Qui sint autem earum doloremque qui aut ut. Eos ducimus qui necessitatibus aut vel in. Dolorem et molestiae commodi ut sunt placeat.
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View>
+            <View
+              style={
+                Object {
+                  "paddingHorizontal": 40,
+                  "paddingVertical": 15,
+                }
+              }>
+              <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "rgba(0, 0, 0, 0.8)",
+                    "borderRadius": 4,
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "paddingHorizontal": 15,
+                    "paddingVertical": 5,
+                  }
+                }
+                testID={undefined}>
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 12,
+                      },
+                      Object {
+                        "color": "white",
+                      },
+                      Object {
+                        "fontSize": 25,
+                      },
+                    ]
+                  }>
+                  เริ่มอ่านตอนที่ 1
+                </Text>
+              </View>
             </View>
           </View>
         </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#eeeeee",
+              "height": 1,
+            }
+          } />
       </View>
       <View>
         <View
