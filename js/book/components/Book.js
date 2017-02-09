@@ -218,7 +218,9 @@ const SubDetail = ({ title, author, review, episodes, onReadPress }) => (
   </View>
 );
 
-const Separator = (sectionID, rowID) => <View style={{height: 1, backgroundColor: colors.greyBorder}} key={rowID}/>;
+const Separator = (sectionID, rowID) => (
+  <View style={{ height: 1, backgroundColor: colors.greyBorder }} key={rowID} />
+);
 
 class Book extends React.Component {
   constructor(...args) {
@@ -263,12 +265,10 @@ class Book extends React.Component {
             data={clog.episodes}
             renderRow={this.renderEpisode}
             minContentHeight={0}
-            renderHeader={() => {
-              return (<View>
-                <SubDetail {...clog} onReadPress={this.props.goToPlayer} />
-                <Separator/>
-              </View>);
-            }}
+            renderHeader={() => (<View>
+              <SubDetail {...clog} onReadPress={this.props.goToPlayer} />
+              <Separator />
+            </View>)}
             renderSeparator={Separator}
           />
         </View>

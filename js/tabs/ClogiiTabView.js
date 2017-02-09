@@ -9,7 +9,7 @@ import {
 
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 import Drawer from 'react-native-drawer';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 import ProfileScreen from './profile';
 import ShelfScreen from './shelf';
@@ -157,9 +157,9 @@ class ClogiiTabView extends React.Component {
             tabLabel="Notifications"
             isActive={this.state.activeTab === 2}
           >
-            <Image style={styles.mockScreen} source={require('./img/mock/notification.png')}/>
+            <Image style={styles.mockScreen} source={require('./img/mock/notification.png')} />
           </TestBadges>
-          <ProfileScreen navigator={this.props.navigator} tabLabel="Profile" isActive={this.state.activeTab === 3}/>
+          <ProfileScreen navigator={this.props.navigator} tabLabel="Profile" isActive={this.state.activeTab === 3} />
         </ScrollableTabView>
       </Drawer>
     );
@@ -196,7 +196,7 @@ class _TestBadges extends React.Component {
 }
 
 const TestBadges = connect(null, (dispatch, ownProps) => ({
-  clearBadge: () => dispatch({type: 'CLEAR_MOCK_BADGE', payload: ownProps.tabLabel}),
+  clearBadge: () => dispatch({ type: 'CLEAR_MOCK_BADGE', payload: ownProps.tabLabel }),
 }))(_TestBadges);
 
 const select = state => ({
@@ -204,8 +204,8 @@ const select = state => ({
 });
 
 const actions = ({
-  clear: iden => ({type: 'CLEAR_MOCK_BADGE', payload: iden}),
-  init: () => ({type: 'INIT_MOCK_BADGES'}),
+  clear: iden => ({ type: 'CLEAR_MOCK_BADGE', payload: iden }),
+  init: () => ({ type: 'INIT_MOCK_BADGES' }),
 });
 
 export default connect(select, actions)(ClogiiTabView);
