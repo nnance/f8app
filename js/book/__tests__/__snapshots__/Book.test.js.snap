@@ -66,164 +66,164 @@ exports[`Book render 1`] = `
       data={
         Array [
           Object {
-            "createdAt": "2005-05-01T10:30:37.595Z",
-            "id": "5528220",
-            "likeCount": 9157,
-            "no": 10,
-            "preview": "http://localhost/static/preview/g3658.png",
-            "viewCount": 2793,
-          },
-          Object {
-            "createdAt": "1973-07-09T15:44:21.855Z",
-            "id": "5700667",
-            "likeCount": 81300,
-            "no": 10,
-            "preview": "http://localhost/static/preview/g3578.png",
-            "viewCount": 187,
-          },
-          Object {
-            "createdAt": "2012-06-02T23:16:51.821Z",
-            "id": "1954296",
-            "likeCount": 74096,
+            "createdAt": "2010-06-07T15:33:35.694Z",
+            "id": "2085684",
+            "likeCount": 17229,
             "no": 9,
-            "preview": "http://localhost/static/preview/g4842.png",
-            "viewCount": 8468,
+            "preview": "http://localhost/static/preview/g3376.png",
+            "viewCount": 1244,
           },
           Object {
-            "createdAt": "1979-11-14T09:54:06.575Z",
-            "id": "4981091",
-            "likeCount": 6408,
-            "no": 7,
-            "preview": "http://localhost/static/preview/g4642.png",
-            "viewCount": 9495,
-          },
-          Object {
-            "createdAt": "1997-08-23T17:06:30.194Z",
-            "id": "493043",
-            "likeCount": 2622,
-            "no": 7,
-            "preview": "http://localhost/static/preview/g1878.png",
-            "viewCount": 3964,
-          },
-          Object {
-            "createdAt": "2007-03-09T22:54:04.009Z",
-            "id": "5597170",
-            "likeCount": 96728,
-            "no": 7,
-            "preview": "http://localhost/static/preview/g3618.png",
-            "viewCount": 2944,
-          },
-          Object {
-            "createdAt": "1997-01-27T03:38:27.180Z",
-            "id": "3553104",
-            "likeCount": 90338,
-            "no": 6,
-            "preview": "http://localhost/static/preview/g3658.png",
-            "viewCount": 7629,
-          },
-          Object {
-            "createdAt": "2002-11-09T22:37:04.275Z",
-            "id": "283066",
-            "likeCount": 53884,
-            "no": 6,
-            "preview": "http://localhost/static/preview/g3618.png",
-            "viewCount": 2888,
-          },
-          Object {
-            "createdAt": "1971-09-20T11:26:06.878Z",
-            "id": "7471217",
-            "likeCount": 15335,
-            "no": 5,
-            "preview": "http://localhost/static/preview/g4602.png",
-            "viewCount": 600,
-          },
-          Object {
-            "createdAt": "2010-09-21T17:31:09.689Z",
-            "id": "2986803",
-            "likeCount": 89302,
-            "no": 5,
-            "preview": "http://localhost/static/preview/g3618.png",
-            "viewCount": 8290,
-          },
-          Object {
-            "createdAt": "2009-01-16T15:19:33.791Z",
-            "id": "2699280",
-            "likeCount": 1168,
-            "no": 4,
+            "createdAt": "2001-08-07T04:50:11.078Z",
+            "id": "500182",
+            "likeCount": 61996,
+            "no": 9,
             "preview": "http://localhost/static/preview/g3456.png",
-            "viewCount": 9648,
+            "viewCount": 2044,
           },
           Object {
-            "createdAt": "1989-08-30T05:53:23.798Z",
-            "id": "5736795",
-            "likeCount": 32665,
-            "no": 4,
+            "createdAt": "1992-01-07T10:07:30.193Z",
+            "id": "8289809",
+            "likeCount": 7003,
+            "no": 9,
             "preview": "http://localhost/static/preview/g3618.png",
-            "viewCount": 1530,
+            "viewCount": 6512,
           },
           Object {
             "createdAt": "1983-06-15T11:01:15.767Z",
-            "id": "700816",
-            "likeCount": 19196,
-            "no": 3,
+            "id": "1147461",
+            "likeCount": 94184,
+            "no": 8,
             "preview": "http://localhost/static/preview/g3456.png",
-            "viewCount": 9326,
+            "viewCount": 5784,
           },
           Object {
-            "createdAt": "2010-06-07T15:33:35.694Z",
-            "id": "2897601",
-            "likeCount": 86354,
-            "no": 3,
+            "createdAt": "1982-06-12T17:28:43.118Z",
+            "id": "1521372",
+            "likeCount": 37114,
+            "no": 8,
             "preview": "http://localhost/static/preview/g3376.png",
-            "viewCount": 4270,
+            "viewCount": 5814,
           },
           Object {
-            "createdAt": "2002-11-19T08:48:05.733Z",
-            "id": "5681005",
-            "likeCount": 74383,
-            "no": 3,
-            "preview": "http://localhost/static/preview/g3376.png",
-            "viewCount": 1522,
+            "createdAt": "1991-03-29T11:23:16.819Z",
+            "id": "4863452",
+            "likeCount": 53183,
+            "no": 8,
+            "preview": "http://localhost/static/preview/g1878.png",
+            "viewCount": 3174,
           },
           Object {
-            "createdAt": "2002-12-20T19:08:04.046Z",
-            "id": "4643116",
-            "likeCount": 20858,
-            "no": 2,
-            "preview": "http://localhost/static/preview/g3618.png",
-            "viewCount": 7539,
-          },
-          Object {
-            "createdAt": "1999-08-03T07:31:32.833Z",
-            "id": "5270582",
-            "likeCount": 76459,
-            "no": 1,
-            "preview": "http://localhost/static/preview/g3578.png",
-            "viewCount": 9085,
-          },
-          Object {
-            "createdAt": "1986-05-19T03:38:57.699Z",
-            "id": "4673927",
-            "likeCount": 55133,
-            "no": 1,
-            "preview": "http://localhost/static/preview/g3618.png",
-            "viewCount": 6909,
+            "createdAt": "2005-05-01T10:30:37.595Z",
+            "id": "8316926",
+            "likeCount": 13714,
+            "no": 7,
+            "preview": "http://localhost/static/preview/g3658.png",
+            "viewCount": 4725,
           },
           Object {
             "createdAt": "2005-07-27T12:06:33.523Z",
-            "id": "9371903",
-            "likeCount": 71299,
-            "no": 1,
+            "id": "2887179",
+            "likeCount": 27833,
+            "no": 6,
             "preview": "http://localhost/static/preview/g4602.png",
-            "viewCount": 6164,
+            "viewCount": 8420,
+          },
+          Object {
+            "createdAt": "1986-05-19T03:38:57.699Z",
+            "id": "7527884",
+            "likeCount": 62170,
+            "no": 5,
+            "preview": "http://localhost/static/preview/g3618.png",
+            "viewCount": 4982,
+          },
+          Object {
+            "createdAt": "2002-11-09T22:37:04.275Z",
+            "id": "3572698",
+            "likeCount": 26901,
+            "no": 5,
+            "preview": "http://localhost/static/preview/g3618.png",
+            "viewCount": 159,
+          },
+          Object {
+            "createdAt": "2012-06-02T23:16:51.821Z",
+            "id": "3878607",
+            "likeCount": 42839,
+            "no": 5,
+            "preview": "http://localhost/static/preview/g4842.png",
+            "viewCount": 5563,
+          },
+          Object {
+            "createdAt": "2007-03-09T22:54:04.009Z",
+            "id": "2336226",
+            "likeCount": 41793,
+            "no": 4,
+            "preview": "http://localhost/static/preview/g3618.png",
+            "viewCount": 9696,
+          },
+          Object {
+            "createdAt": "1985-03-14T20:40:32.459Z",
+            "id": "719744",
+            "likeCount": 7398,
+            "no": 4,
+            "preview": "http://localhost/static/preview/g4642.png",
+            "viewCount": 2034,
+          },
+          Object {
+            "createdAt": "2002-12-20T19:08:04.046Z",
+            "id": "3798034",
+            "likeCount": 288,
+            "no": 3,
+            "preview": "http://localhost/static/preview/g3618.png",
+            "viewCount": 3014,
+          },
+          Object {
+            "createdAt": "1973-07-09T15:44:21.855Z",
+            "id": "9325955",
+            "likeCount": 50825,
+            "no": 3,
+            "preview": "http://localhost/static/preview/g3578.png",
+            "viewCount": 7555,
           },
           Object {
             "createdAt": "1970-03-22T05:37:18.851Z",
-            "id": "7593488",
-            "likeCount": 60633,
-            "no": 1,
+            "id": "7819585",
+            "likeCount": 1257,
+            "no": 3,
             "preview": "http://localhost/static/preview/g4642.png",
-            "viewCount": 8139,
+            "viewCount": 6544,
+          },
+          Object {
+            "createdAt": "1997-08-23T17:06:30.194Z",
+            "id": "6171450",
+            "likeCount": 88594,
+            "no": 2,
+            "preview": "http://localhost/static/preview/g1878.png",
+            "viewCount": 91,
+          },
+          Object {
+            "createdAt": "2010-09-21T17:31:09.689Z",
+            "id": "3619045",
+            "likeCount": 91641,
+            "no": 2,
+            "preview": "http://localhost/static/preview/g3618.png",
+            "viewCount": 446,
+          },
+          Object {
+            "createdAt": "1971-09-20T11:26:06.878Z",
+            "id": "3963133",
+            "likeCount": 10214,
+            "no": 1,
+            "preview": "http://localhost/static/preview/g4602.png",
+            "viewCount": 2463,
+          },
+          Object {
+            "createdAt": "2002-11-19T08:48:05.733Z",
+            "id": "3678433",
+            "likeCount": 80711,
+            "no": 1,
+            "preview": "http://localhost/static/preview/g3376.png",
+            "viewCount": 7174,
           },
         ]
       }
@@ -476,7 +476,7 @@ exports[`Book render 1`] = `
                 size={50}
                 source={
                   Object {
-                    "uri": "http://localhost/static/preview/g3658.png",
+                    "uri": "http://localhost/static/preview/g3376.png",
                   }
                 }
                 style={
@@ -544,7 +544,7 @@ exports[`Book render 1`] = `
                       "fontWeight": "bold",
                     }
                   }>
-                  10
+                  9
                 </Text>
               </View>
               <View
@@ -560,7 +560,7 @@ exports[`Book render 1`] = `
                       "paddingLeft": 5,
                     }
                   }>
-                  May 1
+                  June 7
                 </Text>
               </View>
             </View>
@@ -602,7 +602,7 @@ exports[`Book render 1`] = `
                     }
                   }>
                   ดู 
-                  2,793
+                  1,244
                    ครั้ง
                 </Text>
               </View>
@@ -636,7 +636,7 @@ exports[`Book render 1`] = `
                       "paddingLeft": 5,
                     }
                   }>
-                  9,157
+                  17.2k
                    Like
                 </Text>
               </View>

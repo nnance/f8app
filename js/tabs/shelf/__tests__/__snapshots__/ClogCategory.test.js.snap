@@ -15,16 +15,12 @@ exports[`Shelf.ClogCategory RecommendClogs render 1`] = `
         "followerCount": 6378,
         "followersYouKnow": Array [
           Object {
-            "name": "William Simonis",
-            "profilePicture": "http://localhost/static/preview/g1878.png",
-          },
-          Object {
             "name": "Carlo Ruecker",
-            "profilePicture": "http://localhost/static/preview/g4802.png",
+            "profilePicture": "http://localhost/static/preview/g4762.png",
           },
           Object {
             "name": "Macey Bernier",
-            "profilePicture": "http://localhost/static/preview/g4842.png",
+            "profilePicture": "http://localhost/static/preview/g3456.png",
           },
           Object {
             "name": "Jeanie Schultz",
@@ -32,7 +28,75 @@ exports[`Shelf.ClogCategory RecommendClogs render 1`] = `
           },
           Object {
             "name": "Nora Macejkovic",
+            "profilePicture": "http://localhost/static/preview/g4722.png",
+          },
+          Object {
+            "name": "Emilie Ledner",
+            "profilePicture": "http://localhost/static/preview/g4762.png",
+          },
+          Object {
+            "name": "Bernhard Marquardt",
+            "profilePicture": "http://localhost/static/preview/g3578.png",
+          },
+          Object {
+            "name": "Genoveva Kutch",
+            "profilePicture": "http://localhost/static/preview/g4722.png",
+          },
+          Object {
+            "name": "Crystal Rogahn",
+            "profilePicture": "http://localhost/static/preview/g4722.png",
+          },
+          Object {
+            "name": "Marcelle Kling",
+            "profilePicture": "http://localhost/static/preview/g3618.png",
+          },
+          Object {
+            "name": "Brenna Bergstrom",
+            "profilePicture": "http://localhost/static/preview/g3658.png",
+          },
+          Object {
+            "name": "Furman Effertz",
+            "profilePicture": "http://localhost/static/preview/g3578.png",
+          },
+          Object {
+            "name": "Ara Ebert",
             "profilePicture": "http://localhost/static/preview/g4642.png",
+          },
+          Object {
+            "name": "Nicholas Crooks",
+            "profilePicture": "http://localhost/static/preview/g4762.png",
+          },
+          Object {
+            "name": "Fletcher Gerhold",
+            "profilePicture": "http://localhost/static/preview/g3618.png",
+          },
+          Object {
+            "name": "Quincy Conroy",
+            "profilePicture": "http://localhost/static/preview/g4802.png",
+          },
+          Object {
+            "name": "Tomasa Murray",
+            "profilePicture": "http://localhost/static/preview/g3618.png",
+          },
+          Object {
+            "name": "Judson Spencer",
+            "profilePicture": "http://localhost/static/preview/g3336.png",
+          },
+          Object {
+            "name": "Lincoln Gibson",
+            "profilePicture": "http://localhost/static/preview/g4642.png",
+          },
+          Object {
+            "name": "Annabel Renner",
+            "profilePicture": "http://localhost/static/preview/g4722.png",
+          },
+          Object {
+            "name": "Juana Ryan",
+            "profilePicture": "http://localhost/static/preview/g4602.png",
+          },
+          Object {
+            "name": "Sydney Cruickshank",
+            "profilePicture": "http://localhost/static/preview/g4842.png",
           },
         ],
         "id": "9971848",
@@ -40,77 +104,49 @@ exports[`Shelf.ClogCategory RecommendClogs render 1`] = `
       },
       Object {
         "author": Object {
-          "name": "Furman Effertz",
+          "name": "Susana Wintheiser",
         },
         "followerCount": 9387,
         "followersYouKnow": Array [
           Object {
-            "name": "Corrine Botsford",
-            "profilePicture": "http://localhost/static/preview/g3578.png",
-          },
-          Object {
-            "name": "Carrie Bergstrom",
-            "profilePicture": "http://localhost/static/preview/g4802.png",
-          },
-          Object {
-            "name": "Deven Botsford",
-            "profilePicture": "http://localhost/static/preview/g3456.png",
-          },
-          Object {
-            "name": "Bud Dickinson",
-            "profilePicture": "http://localhost/static/preview/g3658.png",
-          },
-          Object {
-            "name": "Luciano Marks",
-            "profilePicture": "http://localhost/static/preview/g3578.png",
-          },
-          Object {
-            "name": "Rogers Walsh",
-            "profilePicture": "http://localhost/static/preview/g3336.png",
-          },
-          Object {
-            "name": "Diana Hammes",
-            "profilePicture": "http://localhost/static/preview/g4762.png",
-          },
-          Object {
-            "name": "Monroe Ritchie",
-            "profilePicture": "http://localhost/static/preview/g4762.png",
-          },
-          Object {
-            "name": "Olga Ritchie",
-            "profilePicture": "http://localhost/static/preview/g3578.png",
-          },
-          Object {
-            "name": "Cassandra Waters",
+            "name": "Kirstin Grady",
             "profilePicture": "http://localhost/static/preview/g3618.png",
           },
           Object {
-            "name": "Adriana Johnston",
-            "profilePicture": "http://localhost/static/preview/g4602.png",
+            "name": "Jennie Wiegand",
+            "profilePicture": "http://localhost/static/preview/g4842.png",
           },
           Object {
-            "name": "Monserrat Mohr",
-            "profilePicture": "http://localhost/static/preview/g3376.png",
+            "name": "Emanuel Armstrong",
+            "profilePicture": "http://localhost/static/preview/g3578.png",
           },
           Object {
-            "name": "Uriel Huel",
+            "name": "Laura Emmerich",
             "profilePicture": "http://localhost/static/preview/g4642.png",
           },
           Object {
-            "name": "Tia Lockman",
-            "profilePicture": "http://localhost/static/preview/g3578.png",
-          },
-          Object {
-            "name": "Taylor Altenwerth",
+            "name": "Delpha Schowalter",
             "profilePicture": "http://localhost/static/preview/g3376.png",
           },
           Object {
-            "name": "Tierra Howe",
-            "profilePicture": "http://localhost/static/preview/g3618.png",
+            "name": "Emerson Feest",
+            "profilePicture": "http://localhost/static/preview/g4802.png",
+          },
+          Object {
+            "name": "Rasheed Marks",
+            "profilePicture": "http://localhost/static/preview/g4642.png",
+          },
+          Object {
+            "name": "Christiana Dicki",
+            "profilePicture": "http://localhost/static/preview/g4722.png",
+          },
+          Object {
+            "name": "Lafayette Mitchell",
+            "profilePicture": "http://localhost/static/preview/g4602.png",
           },
         ],
         "id": "6902046",
-        "title": "Dolores et",
+        "title": "Debitis et voluptas",
       },
     ]
   }
@@ -375,19 +411,19 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   data={
                     Array [
                       Object {
-                        "name": "William Simonis",
-                        "profilePicture": "http://localhost/static/preview/g1878.png",
-                      },
-                      Object {
                         "name": "Carlo Ruecker",
-                        "profilePicture": "http://localhost/static/preview/g4802.png",
+                        "profilePicture": "http://localhost/static/preview/g4762.png",
                       },
                       Object {
                         "name": "Macey Bernier",
-                        "profilePicture": "http://localhost/static/preview/g4842.png",
+                        "profilePicture": "http://localhost/static/preview/g3456.png",
                       },
                       Object {
-                        "remaining": 2,
+                        "name": "Jeanie Schultz",
+                        "profilePicture": "http://localhost/static/preview/g3456.png",
+                      },
+                      Object {
+                        "remaining": 18,
                       },
                     ]
                   }
@@ -450,7 +486,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         size={30}
                         source={
                           Object {
-                            "uri": "http://localhost/static/preview/g1878.png",
+                            "uri": "http://localhost/static/preview/g4762.png",
                           }
                         }
                         style={
@@ -727,16 +763,12 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     "followerCount": 6378,
                     "followersYouKnow": Array [
                       Object {
-                        "name": "William Simonis",
-                        "profilePicture": "http://localhost/static/preview/g1878.png",
-                      },
-                      Object {
                         "name": "Carlo Ruecker",
-                        "profilePicture": "http://localhost/static/preview/g4802.png",
+                        "profilePicture": "http://localhost/static/preview/g4762.png",
                       },
                       Object {
                         "name": "Macey Bernier",
-                        "profilePicture": "http://localhost/static/preview/g4842.png",
+                        "profilePicture": "http://localhost/static/preview/g3456.png",
                       },
                       Object {
                         "name": "Jeanie Schultz",
@@ -744,7 +776,75 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       },
                       Object {
                         "name": "Nora Macejkovic",
+                        "profilePicture": "http://localhost/static/preview/g4722.png",
+                      },
+                      Object {
+                        "name": "Emilie Ledner",
+                        "profilePicture": "http://localhost/static/preview/g4762.png",
+                      },
+                      Object {
+                        "name": "Bernhard Marquardt",
+                        "profilePicture": "http://localhost/static/preview/g3578.png",
+                      },
+                      Object {
+                        "name": "Genoveva Kutch",
+                        "profilePicture": "http://localhost/static/preview/g4722.png",
+                      },
+                      Object {
+                        "name": "Crystal Rogahn",
+                        "profilePicture": "http://localhost/static/preview/g4722.png",
+                      },
+                      Object {
+                        "name": "Marcelle Kling",
+                        "profilePicture": "http://localhost/static/preview/g3618.png",
+                      },
+                      Object {
+                        "name": "Brenna Bergstrom",
+                        "profilePicture": "http://localhost/static/preview/g3658.png",
+                      },
+                      Object {
+                        "name": "Furman Effertz",
+                        "profilePicture": "http://localhost/static/preview/g3578.png",
+                      },
+                      Object {
+                        "name": "Ara Ebert",
                         "profilePicture": "http://localhost/static/preview/g4642.png",
+                      },
+                      Object {
+                        "name": "Nicholas Crooks",
+                        "profilePicture": "http://localhost/static/preview/g4762.png",
+                      },
+                      Object {
+                        "name": "Fletcher Gerhold",
+                        "profilePicture": "http://localhost/static/preview/g3618.png",
+                      },
+                      Object {
+                        "name": "Quincy Conroy",
+                        "profilePicture": "http://localhost/static/preview/g4802.png",
+                      },
+                      Object {
+                        "name": "Tomasa Murray",
+                        "profilePicture": "http://localhost/static/preview/g3618.png",
+                      },
+                      Object {
+                        "name": "Judson Spencer",
+                        "profilePicture": "http://localhost/static/preview/g3336.png",
+                      },
+                      Object {
+                        "name": "Lincoln Gibson",
+                        "profilePicture": "http://localhost/static/preview/g4642.png",
+                      },
+                      Object {
+                        "name": "Annabel Renner",
+                        "profilePicture": "http://localhost/static/preview/g4722.png",
+                      },
+                      Object {
+                        "name": "Juana Ryan",
+                        "profilePicture": "http://localhost/static/preview/g4602.png",
+                      },
+                      Object {
+                        "name": "Sydney Cruickshank",
+                        "profilePicture": "http://localhost/static/preview/g4842.png",
                       },
                     ],
                     "id": "9971848",
@@ -752,77 +852,49 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   },
                   Object {
                     "author": Object {
-                      "name": "Furman Effertz",
+                      "name": "Susana Wintheiser",
                     },
                     "followerCount": 9387,
                     "followersYouKnow": Array [
                       Object {
-                        "name": "Corrine Botsford",
-                        "profilePicture": "http://localhost/static/preview/g3578.png",
-                      },
-                      Object {
-                        "name": "Carrie Bergstrom",
-                        "profilePicture": "http://localhost/static/preview/g4802.png",
-                      },
-                      Object {
-                        "name": "Deven Botsford",
-                        "profilePicture": "http://localhost/static/preview/g3456.png",
-                      },
-                      Object {
-                        "name": "Bud Dickinson",
-                        "profilePicture": "http://localhost/static/preview/g3658.png",
-                      },
-                      Object {
-                        "name": "Luciano Marks",
-                        "profilePicture": "http://localhost/static/preview/g3578.png",
-                      },
-                      Object {
-                        "name": "Rogers Walsh",
-                        "profilePicture": "http://localhost/static/preview/g3336.png",
-                      },
-                      Object {
-                        "name": "Diana Hammes",
-                        "profilePicture": "http://localhost/static/preview/g4762.png",
-                      },
-                      Object {
-                        "name": "Monroe Ritchie",
-                        "profilePicture": "http://localhost/static/preview/g4762.png",
-                      },
-                      Object {
-                        "name": "Olga Ritchie",
-                        "profilePicture": "http://localhost/static/preview/g3578.png",
-                      },
-                      Object {
-                        "name": "Cassandra Waters",
+                        "name": "Kirstin Grady",
                         "profilePicture": "http://localhost/static/preview/g3618.png",
                       },
                       Object {
-                        "name": "Adriana Johnston",
-                        "profilePicture": "http://localhost/static/preview/g4602.png",
+                        "name": "Jennie Wiegand",
+                        "profilePicture": "http://localhost/static/preview/g4842.png",
                       },
                       Object {
-                        "name": "Monserrat Mohr",
-                        "profilePicture": "http://localhost/static/preview/g3376.png",
+                        "name": "Emanuel Armstrong",
+                        "profilePicture": "http://localhost/static/preview/g3578.png",
                       },
                       Object {
-                        "name": "Uriel Huel",
+                        "name": "Laura Emmerich",
                         "profilePicture": "http://localhost/static/preview/g4642.png",
                       },
                       Object {
-                        "name": "Tia Lockman",
-                        "profilePicture": "http://localhost/static/preview/g3578.png",
-                      },
-                      Object {
-                        "name": "Taylor Altenwerth",
+                        "name": "Delpha Schowalter",
                         "profilePicture": "http://localhost/static/preview/g3376.png",
                       },
                       Object {
-                        "name": "Tierra Howe",
-                        "profilePicture": "http://localhost/static/preview/g3618.png",
+                        "name": "Emerson Feest",
+                        "profilePicture": "http://localhost/static/preview/g4802.png",
+                      },
+                      Object {
+                        "name": "Rasheed Marks",
+                        "profilePicture": "http://localhost/static/preview/g4642.png",
+                      },
+                      Object {
+                        "name": "Christiana Dicki",
+                        "profilePicture": "http://localhost/static/preview/g4722.png",
+                      },
+                      Object {
+                        "name": "Lafayette Mitchell",
+                        "profilePicture": "http://localhost/static/preview/g4602.png",
                       },
                     ],
                     "id": "6902046",
-                    "title": "Dolores et",
+                    "title": "Debitis et voluptas",
                   },
                 ]
               }
@@ -1099,453 +1171,453 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                     Array [
                       Object {
                         "author": Object {
-                          "name": "Stacy Daniel",
-                        },
-                        "category": "G",
-                        "id": "9417516",
-                        "preview": "http://localhost/static/preview/g4642.png",
-                        "title": "Nisi cum maxime",
-                      },
-                      Object {
-                        "author": Object {
-                          "name": "Rosalia Sipes",
-                        },
-                        "category": "M",
-                        "id": "1215466",
-                        "preview": "http://localhost/static/preview/g3336.png",
-                        "title": "Delectus harum",
-                      },
-                      Object {
-                        "author": Object {
-                          "name": "Paula VonRueden",
-                        },
-                        "category": "D",
-                        "id": "956051",
-                        "preview": "http://localhost/static/preview/g4802.png",
-                        "title": "Adipisci eos",
-                      },
-                      Object {
-                        "author": Object {
-                          "name": "Kip Heaney",
-                        },
-                        "category": "M",
-                        "id": "7843552",
-                        "preview": "http://localhost/static/preview/g3618.png",
-                        "title": "Dolores veniam",
-                      },
-                      Object {
-                        "author": Object {
-                          "name": "Molly Hayes",
+                          "name": "Lilian Bernier",
                         },
                         "category": "N",
-                        "id": "59700",
-                        "preview": "http://localhost/static/preview/g4722.png",
-                        "title": "Voluptatem delectus qui",
-                      },
-                      Object {
-                        "author": Object {
-                          "name": "Therese Balistreri",
-                        },
-                        "category": "G",
-                        "id": "7692716",
-                        "preview": "http://localhost/static/preview/g3658.png",
-                        "title": "Fugiat est qui",
-                      },
-                      Object {
-                        "author": Object {
-                          "name": "Holden Ferry",
-                        },
-                        "category": "G",
-                        "id": "482488",
-                        "preview": "http://localhost/static/preview/g3658.png",
-                        "title": "Assumenda in",
-                      },
-                      Object {
-                        "author": Object {
-                          "name": "Okey Hane",
-                        },
-                        "category": "G",
-                        "id": "8640917",
-                        "preview": "http://localhost/static/preview/g3336.png",
-                        "title": "Recusandae neque",
-                      },
-                      Object {
-                        "author": Object {
-                          "name": "Berniece Heller",
-                        },
-                        "category": "N",
-                        "id": "4860351",
-                        "preview": "http://localhost/static/preview/g3618.png",
-                        "title": "Ipsam quo quia",
-                      },
-                      Object {
-                        "author": Object {
-                          "name": "Alexander Ankunding",
-                        },
-                        "category": "D",
-                        "id": "897374",
-                        "preview": "http://localhost/static/preview/g3578.png",
-                        "title": "Porro quis",
-                      },
-                      Object {
-                        "author": Object {
-                          "name": "Letha Parisian",
-                        },
-                        "category": "G",
-                        "id": "3940459",
-                        "preview": "http://localhost/static/preview/g3456.png",
-                        "title": "Ea sunt sit",
-                      },
-                      Object {
-                        "author": Object {
-                          "name": "Amaya Konopelski",
-                        },
-                        "category": "N",
-                        "id": "762765",
-                        "preview": "http://localhost/static/preview/g3578.png",
-                        "title": "Libero dicta voluptatem",
-                      },
-                      Object {
-                        "author": Object {
-                          "name": "Melisa Reinger",
-                        },
-                        "category": "N",
-                        "id": "3171363",
-                        "preview": "http://localhost/static/preview/g3376.png",
-                        "title": "Nemo atque velit",
-                      },
-                      Object {
-                        "author": Object {
-                          "name": "Lulu Jacobi",
-                        },
-                        "category": "G",
-                        "id": "956464",
-                        "preview": "http://localhost/static/preview/g3658.png",
-                        "title": "Maxime temporibus",
-                      },
-                      Object {
-                        "author": Object {
-                          "name": "Marianne Trantow",
-                        },
-                        "category": "M",
-                        "id": "4995845",
-                        "preview": "http://localhost/static/preview/g4722.png",
-                        "title": "Omnis tempore",
-                      },
-                      Object {
-                        "author": Object {
-                          "name": "Lamont Bode",
-                        },
-                        "category": "D",
-                        "id": "9778716",
-                        "preview": "http://localhost/static/preview/g4722.png",
-                        "title": "Et odio",
-                      },
-                      Object {
-                        "author": Object {
-                          "name": "Coy Stanton",
-                        },
-                        "category": "G",
-                        "id": "1093955",
-                        "preview": "http://localhost/static/preview/g3376.png",
-                        "title": "Ut velit",
-                      },
-                      Object {
-                        "author": Object {
-                          "name": "Collin Kreiger",
-                        },
-                        "category": "M",
-                        "id": "2470787",
+                        "id": "8805357",
                         "preview": "http://localhost/static/preview/g4602.png",
-                        "title": "Et et",
+                        "title": "Aut atque quis",
                       },
                       Object {
                         "author": Object {
-                          "name": "Madisyn Rohan",
+                          "name": "Giovani Kessler",
+                        },
+                        "category": "G",
+                        "id": "5394226",
+                        "preview": "http://localhost/static/preview/g3578.png",
+                        "title": "Aut in ipsum",
+                      },
+                      Object {
+                        "author": Object {
+                          "name": "Casimir Connelly",
+                        },
+                        "category": "M",
+                        "id": "3323884",
+                        "preview": "http://localhost/static/preview/g3578.png",
+                        "title": "Harum totam",
+                      },
+                      Object {
+                        "author": Object {
+                          "name": "Madelynn Lueilwitz",
+                        },
+                        "category": "G",
+                        "id": "5434023",
+                        "preview": "http://localhost/static/preview/g4602.png",
+                        "title": "Ut non",
+                      },
+                      Object {
+                        "author": Object {
+                          "name": "Sim Schuster",
                         },
                         "category": "D",
-                        "id": "326292",
-                        "preview": "http://localhost/static/preview/g4842.png",
-                        "title": "Aliquid non",
+                        "id": "8205986",
+                        "preview": "http://localhost/static/preview/g4602.png",
+                        "title": "Consequuntur rerum",
                       },
                       Object {
                         "author": Object {
-                          "name": "Christina Hilpert",
+                          "name": "Cassidy Predovic",
+                        },
+                        "category": "M",
+                        "id": "2837617",
+                        "preview": "http://localhost/static/preview/g4762.png",
+                        "title": "Quibusdam et",
+                      },
+                      Object {
+                        "author": Object {
+                          "name": "Jacquelyn Bartell",
+                        },
+                        "category": "M",
+                        "id": "8961972",
+                        "preview": "http://localhost/static/preview/g4602.png",
+                        "title": "Recusandae quas rerum",
+                      },
+                      Object {
+                        "author": Object {
+                          "name": "Dora Wolf",
+                        },
+                        "category": "M",
+                        "id": "9248543",
+                        "preview": "http://localhost/static/preview/g1878.png",
+                        "title": "Iusto repudiandae",
+                      },
+                      Object {
+                        "author": Object {
+                          "name": "Christian Olson",
+                        },
+                        "category": "M",
+                        "id": "167276",
+                        "preview": "http://localhost/static/preview/g3456.png",
+                        "title": "Vitae vel qui",
+                      },
+                      Object {
+                        "author": Object {
+                          "name": "Zoie Homenick",
+                        },
+                        "category": "G",
+                        "id": "5093379",
+                        "preview": "http://localhost/static/preview/g3456.png",
+                        "title": "Et illo modi",
+                      },
+                      Object {
+                        "author": Object {
+                          "name": "Alvena Frami",
                         },
                         "category": "N",
-                        "id": "5928495",
+                        "id": "9262446",
                         "preview": "http://localhost/static/preview/g3376.png",
-                        "title": "Quia sapiente commodi",
+                        "title": "Quia voluptatum est",
                       },
                       Object {
                         "author": Object {
-                          "name": "Fletcher Heathcote",
+                          "name": "Mitchell Brakus",
+                        },
+                        "category": "D",
+                        "id": "5648626",
+                        "preview": "http://localhost/static/preview/g3658.png",
+                        "title": "Quis porro",
+                      },
+                      Object {
+                        "author": Object {
+                          "name": "Savion Deckow",
+                        },
+                        "category": "G",
+                        "id": "7846708",
+                        "preview": "http://localhost/static/preview/g3658.png",
+                        "title": "Consequatur doloremque",
+                      },
+                      Object {
+                        "author": Object {
+                          "name": "Tremaine Heller",
+                        },
+                        "category": "M",
+                        "id": "4871562",
+                        "preview": "http://localhost/static/preview/g3578.png",
+                        "title": "Quaerat aut ab",
+                      },
+                      Object {
+                        "author": Object {
+                          "name": "Jaiden Stokes",
+                        },
+                        "category": "G",
+                        "id": "2279159",
+                        "preview": "http://localhost/static/preview/g3618.png",
+                        "title": "Aut modi",
+                      },
+                      Object {
+                        "author": Object {
+                          "name": "May Parker",
+                        },
+                        "category": "D",
+                        "id": "466157",
+                        "preview": "http://localhost/static/preview/g4642.png",
+                        "title": "Magnam saepe eos",
+                      },
+                      Object {
+                        "author": Object {
+                          "name": "Judah Parisian",
+                        },
+                        "category": "D",
+                        "id": "752094",
+                        "preview": "http://localhost/static/preview/g4802.png",
+                        "title": "Exercitationem similique et",
+                      },
+                      Object {
+                        "author": Object {
+                          "name": "Ola Hintz",
                         },
                         "category": "M",
                         "id": "4564830",
                         "preview": "http://localhost/static/preview/g3376.png",
-                        "title": "Accusantium autem",
+                        "title": "Reprehenderit ab",
                       },
                       Object {
                         "author": Object {
-                          "name": "Lauryn Robel",
+                          "name": "Justine Schroeder",
                         },
                         "category": "G",
                         "id": "8495978",
-                        "preview": "http://localhost/static/preview/g4722.png",
-                        "title": "Rerum et aut",
+                        "preview": "http://localhost/static/preview/g3456.png",
+                        "title": "Quos dolores",
                       },
                       Object {
                         "author": Object {
-                          "name": "Ruby Brown",
+                          "name": "Hollis Thompson",
                         },
                         "category": "G",
                         "id": "4550717",
-                        "preview": "http://localhost/static/preview/g3456.png",
-                        "title": "Nam sit quo",
+                        "preview": "http://localhost/static/preview/g4762.png",
+                        "title": "In eum nihil",
                       },
                       Object {
                         "author": Object {
-                          "name": "Adolfo Champlin",
+                          "name": "Abdiel Strosin",
                         },
                         "category": "D",
                         "id": "4225239",
-                        "preview": "http://localhost/static/preview/g3658.png",
-                        "title": "Dolores eum",
+                        "preview": "http://localhost/static/preview/g4642.png",
+                        "title": "Aut reprehenderit",
                       },
                       Object {
                         "author": Object {
-                          "name": "Lilliana Kling",
+                          "name": "Ebony Ortiz",
                         },
                         "category": "N",
                         "id": "839424",
-                        "preview": "http://localhost/static/preview/g4642.png",
-                        "title": "Id ipsam sapiente",
+                        "preview": "http://localhost/static/preview/g3658.png",
+                        "title": "Voluptas officia",
                       },
                       Object {
                         "author": Object {
-                          "name": "Lydia Zemlak",
+                          "name": "Jeanne Ebert",
                         },
                         "category": "M",
                         "id": "7347862",
-                        "preview": "http://localhost/static/preview/g3376.png",
-                        "title": "Cum molestiae",
+                        "preview": "http://localhost/static/preview/g3618.png",
+                        "title": "Ut quo",
                       },
                       Object {
                         "author": Object {
-                          "name": "Karianne Dicki",
+                          "name": "Zachery Quitzon",
                         },
                         "category": "M",
                         "id": "5038724",
-                        "preview": "http://localhost/static/preview/g3618.png",
-                        "title": "Nihil ut",
+                        "preview": "http://localhost/static/preview/g4722.png",
+                        "title": "Eligendi ab",
                       },
                       Object {
                         "author": Object {
-                          "name": "Hassie Abernathy",
+                          "name": "Kara Stokes",
                         },
                         "category": "G",
                         "id": "8788671",
-                        "preview": "http://localhost/static/preview/g4762.png",
-                        "title": "Omnis ut recusandae",
+                        "preview": "http://localhost/static/preview/g3658.png",
+                        "title": "Distinctio ipsum",
                       },
                       Object {
                         "author": Object {
-                          "name": "Estell Kling",
+                          "name": "Reese Williamson",
                         },
                         "category": "G",
                         "id": "1813320",
-                        "preview": "http://localhost/static/preview/g3618.png",
-                        "title": "Hic officiis dolor",
+                        "preview": "http://localhost/static/preview/g3376.png",
+                        "title": "Modi nam",
                       },
                       Object {
                         "author": Object {
-                          "name": "Bernice Renner",
+                          "name": "Gregorio Nicolas",
                         },
                         "category": "M",
                         "id": "8374572",
-                        "preview": "http://localhost/static/preview/g4722.png",
-                        "title": "Est sint magni",
+                        "preview": "http://localhost/static/preview/g3658.png",
+                        "title": "Sit eos veritatis",
                       },
                       Object {
                         "author": Object {
-                          "name": "Howard Hoeger",
+                          "name": "Raquel Koelpin",
                         },
                         "category": "N",
                         "id": "9749081",
-                        "preview": "http://localhost/static/preview/g3336.png",
-                        "title": "Sed qui iure",
+                        "preview": "http://localhost/static/preview/g3456.png",
+                        "title": "Aut praesentium",
                       },
                       Object {
                         "author": Object {
-                          "name": "Benny Beier",
+                          "name": "Trace Harvey",
                         },
                         "category": "N",
                         "id": "2672063",
-                        "preview": "http://localhost/static/preview/g3618.png",
-                        "title": "Inventore quia repellat",
+                        "preview": "http://localhost/static/preview/g4802.png",
+                        "title": "Consectetur sed laborum",
                       },
                       Object {
                         "author": Object {
-                          "name": "Raul Heathcote",
+                          "name": "Creola Ward",
                         },
                         "category": "N",
                         "id": "7983518",
-                        "preview": "http://localhost/static/preview/g1878.png",
-                        "title": "Illo quis minus",
+                        "preview": "http://localhost/static/preview/g4802.png",
+                        "title": "Labore ipsam",
                       },
                       Object {
                         "author": Object {
-                          "name": "Abbie Jacobson",
+                          "name": "Eleonore Renner",
                         },
                         "category": "M",
                         "id": "1533516",
-                        "preview": "http://localhost/static/preview/g4802.png",
-                        "title": "Illo quas",
+                        "preview": "http://localhost/static/preview/g3376.png",
+                        "title": "Quia non",
                       },
                       Object {
                         "author": Object {
-                          "name": "Hobart Christiansen",
+                          "name": "Minerva Krajcik",
                         },
                         "category": "M",
                         "id": "5298879",
-                        "preview": "http://localhost/static/preview/g3456.png",
-                        "title": "Beatae eveniet",
+                        "preview": "http://localhost/static/preview/g4762.png",
+                        "title": "Et et",
                       },
                       Object {
                         "author": Object {
-                          "name": "Michael Hills",
+                          "name": "Lewis Goyette",
                         },
                         "category": "D",
                         "id": "9456612",
-                        "preview": "http://localhost/static/preview/g3376.png",
-                        "title": "Voluptas dolorem fugit",
+                        "preview": "http://localhost/static/preview/g3658.png",
+                        "title": "Itaque dolores eaque",
                       },
                       Object {
                         "author": Object {
-                          "name": "Alivia Kessler",
+                          "name": "Andreanne Kub",
                         },
                         "category": "D",
                         "id": "5819886",
-                        "preview": "http://localhost/static/preview/g4842.png",
-                        "title": "Maiores blanditiis",
+                        "preview": "http://localhost/static/preview/g3376.png",
+                        "title": "Eum asperiores",
                       },
                       Object {
                         "author": Object {
-                          "name": "Jakayla Stark",
+                          "name": "Kenny Kassulke",
                         },
                         "category": "N",
                         "id": "8923027",
-                        "preview": "http://localhost/static/preview/g4722.png",
-                        "title": "Pariatur non cupiditate",
+                        "preview": "http://localhost/static/preview/g3336.png",
+                        "title": "Fuga dolore labore",
                       },
                       Object {
                         "author": Object {
-                          "name": "Jabari Green",
+                          "name": "Yoshiko Cummings",
                         },
                         "category": "N",
                         "id": "891019",
-                        "preview": "http://localhost/static/preview/g3336.png",
-                        "title": "Voluptas accusamus dicta",
+                        "preview": "http://localhost/static/preview/g3658.png",
+                        "title": "Dolores animi",
                       },
                       Object {
                         "author": Object {
-                          "name": "Lisette Miller",
+                          "name": "Elliot Glover",
                         },
                         "category": "G",
                         "id": "7415305",
-                        "preview": "http://localhost/static/preview/g3336.png",
-                        "title": "Qui qui",
+                        "preview": "http://localhost/static/preview/g3578.png",
+                        "title": "Dolorum quis porro",
                       },
                       Object {
                         "author": Object {
-                          "name": "Howard Homenick",
+                          "name": "Alden Oberbrunner",
                         },
                         "category": "M",
                         "id": "5707493",
-                        "preview": "http://localhost/static/preview/g3578.png",
-                        "title": "Et qui",
+                        "preview": "http://localhost/static/preview/g1878.png",
+                        "title": "Beatae maiores quaerat",
                       },
                       Object {
                         "author": Object {
-                          "name": "Kallie Wiegand",
+                          "name": "Dorthy Yundt",
                         },
                         "category": "G",
                         "id": "2010280",
                         "preview": "http://localhost/static/preview/g4642.png",
-                        "title": "Unde libero est",
+                        "title": "Omnis laborum",
                       },
                       Object {
                         "author": Object {
-                          "name": "Ashton Schultz",
+                          "name": "Haylie Prohaska",
                         },
                         "category": "N",
                         "id": "7956713",
-                        "preview": "http://localhost/static/preview/g4602.png",
-                        "title": "Expedita dolorem quia",
+                        "preview": "http://localhost/static/preview/g4842.png",
+                        "title": "Tenetur odit",
                       },
                       Object {
                         "author": Object {
-                          "name": "Loraine Corwin",
+                          "name": "Elyse Gulgowski",
                         },
                         "category": "M",
                         "id": "8317305",
-                        "preview": "http://localhost/static/preview/g4762.png",
-                        "title": "Odit a ipsam",
+                        "preview": "http://localhost/static/preview/g4602.png",
+                        "title": "Doloremque voluptates reprehenderit",
                       },
                       Object {
                         "author": Object {
-                          "name": "Vidal Mills",
+                          "name": "Amparo Emmerich",
                         },
                         "category": "M",
                         "id": "5290864",
-                        "preview": "http://localhost/static/preview/g4642.png",
-                        "title": "Qui delectus porro",
+                        "preview": "http://localhost/static/preview/g4842.png",
+                        "title": "Consectetur quod",
                       },
                       Object {
                         "author": Object {
-                          "name": "Glen Feest",
+                          "name": "Eloise Windler",
                         },
                         "category": "M",
                         "id": "6388122",
-                        "preview": "http://localhost/static/preview/g4842.png",
-                        "title": "Dolor ullam molestiae",
+                        "preview": "http://localhost/static/preview/g3376.png",
+                        "title": "Libero et inventore",
                       },
                       Object {
                         "author": Object {
-                          "name": "Rossie Hermann",
+                          "name": "Issac Bogan",
                         },
                         "category": "D",
                         "id": "5830792",
-                        "preview": "http://localhost/static/preview/g3658.png",
-                        "title": "Consequatur aut",
+                        "preview": "http://localhost/static/preview/g3618.png",
+                        "title": "Harum vel",
                       },
                       Object {
                         "author": Object {
-                          "name": "Rebecca Gulgowski",
+                          "name": "Uriah Nolan",
                         },
                         "category": "G",
                         "id": "7649920",
-                        "preview": "http://localhost/static/preview/g3456.png",
-                        "title": "Et perspiciatis id",
+                        "preview": "http://localhost/static/preview/g4842.png",
+                        "title": "Facilis in",
                       },
                       Object {
                         "author": Object {
-                          "name": "Albina Mueller",
+                          "name": "Rogers Ullrich",
                         },
                         "category": "M",
                         "id": "1089729",
-                        "preview": "http://localhost/static/preview/g4842.png",
-                        "title": "Reiciendis enim",
+                        "preview": "http://localhost/static/preview/g3658.png",
+                        "title": "Dicta qui",
                       },
                       Object {
                         "author": Object {
-                          "name": "Maximilian Kuhic",
+                          "name": "Mertie Collins",
                         },
                         "category": "G",
                         "id": "9911275",
-                        "preview": "http://localhost/static/preview/g4602.png",
-                        "title": "Et itaque",
+                        "preview": "http://localhost/static/preview/g3618.png",
+                        "title": "Odit qui reiciendis",
+                      },
+                      Object {
+                        "author": Object {
+                          "name": "Gerda Paucek",
+                        },
+                        "category": "G",
+                        "id": "8871867",
+                        "preview": "http://localhost/static/preview/g4722.png",
+                        "title": "Qui dolorem quos",
+                      },
+                      Object {
+                        "author": Object {
+                          "name": "Piper Smith",
+                        },
+                        "category": "G",
+                        "id": "6177170",
+                        "preview": "http://localhost/static/preview/g3658.png",
+                        "title": "Veniam optio",
+                      },
+                      Object {
+                        "author": Object {
+                          "name": "Rod Stamm",
+                        },
+                        "category": "G",
+                        "id": "602532",
+                        "preview": "http://localhost/static/preview/g3376.png",
+                        "title": "Libero dolores",
                       },
                     ]
                   }
@@ -1631,13 +1703,13 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                               }
                             } />
                           <Image
-                            category="G"
+                            category="N"
                             shadowColor="rgba(255, 255, 255, 0.3)"
                             shadowRadius={5}
                             size={85}
                             source={
                               Object {
-                                "uri": "http://localhost/static/preview/g4642.png",
+                                "uri": "http://localhost/static/preview/g4602.png",
                               }
                             }
                             style={
@@ -1700,7 +1772,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                             "fontSize": 12,
                           }
                         }>
-                        Nisi cum maxime
+                        Aut atque quis
                       </Text>
                       <Text
                         accessible={true}
@@ -1713,7 +1785,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                             "fontSize": 10,
                           }
                         }>
-                        Stacy Daniel
+                        Lilian Bernier
                       </Text>
                     </View>
                   </View>
@@ -1852,453 +1924,453 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                 Array [
                   Object {
                     "author": Object {
-                      "name": "Tianna Conn",
-                    },
-                    "category": "M",
-                    "id": "835464",
-                    "preview": "http://localhost/static/preview/g3456.png",
-                    "title": "Ratione quidem",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Colt Vandervort",
-                    },
-                    "category": "M",
-                    "id": "9013084",
-                    "preview": "http://localhost/static/preview/g3376.png",
-                    "title": "Et magnam tenetur",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Savannah Herzog",
-                    },
-                    "category": "D",
-                    "id": "374280",
-                    "preview": "http://localhost/static/preview/g4602.png",
-                    "title": "Magnam dolor",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Destinee Wiza",
-                    },
-                    "category": "G",
-                    "id": "9759891",
-                    "preview": "http://localhost/static/preview/g3456.png",
-                    "title": "Et minus nulla",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Arnaldo Bosco",
-                    },
-                    "category": "G",
-                    "id": "266280",
-                    "preview": "http://localhost/static/preview/g3618.png",
-                    "title": "Et ullam",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Jeramie Carroll",
-                    },
-                    "category": "G",
-                    "id": "9339026",
-                    "preview": "http://localhost/static/preview/g1878.png",
-                    "title": "Explicabo laborum",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Sherwood Ankunding",
-                    },
-                    "category": "D",
-                    "id": "2181003",
-                    "preview": "http://localhost/static/preview/g3658.png",
-                    "title": "Nisi sint",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Hector Bernier",
-                    },
-                    "category": "D",
-                    "id": "5569377",
-                    "preview": "http://localhost/static/preview/g3336.png",
-                    "title": "Molestias aliquam sed",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Beaulah Barrows",
-                    },
-                    "category": "D",
-                    "id": "5711758",
-                    "preview": "http://localhost/static/preview/g3336.png",
-                    "title": "Quaerat qui",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Janessa Waelchi",
-                    },
-                    "category": "D",
-                    "id": "8741259",
-                    "preview": "http://localhost/static/preview/g3578.png",
-                    "title": "Quia dicta",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Maximillia Mueller",
-                    },
-                    "category": "M",
-                    "id": "6993737",
-                    "preview": "http://localhost/static/preview/g4722.png",
-                    "title": "Quisquam inventore",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Lila Runte",
-                    },
-                    "category": "G",
-                    "id": "6186008",
-                    "preview": "http://localhost/static/preview/g3456.png",
-                    "title": "Assumenda quasi dignissimos",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Elias Gibson",
-                    },
-                    "category": "N",
-                    "id": "6857569",
-                    "preview": "http://localhost/static/preview/g4642.png",
-                    "title": "Explicabo ut et",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Darrel Lakin",
-                    },
-                    "category": "G",
-                    "id": "1837614",
-                    "preview": "http://localhost/static/preview/g3618.png",
-                    "title": "Incidunt sed eligendi",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Caesar Gusikowski",
-                    },
-                    "category": "M",
-                    "id": "7256426",
-                    "preview": "http://localhost/static/preview/g3376.png",
-                    "title": "Fugiat aliquam et",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Kiana Halvorson",
-                    },
-                    "category": "N",
-                    "id": "475377",
-                    "preview": "http://localhost/static/preview/g3658.png",
-                    "title": "Nulla quasi incidunt",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Garth Rodriguez",
-                    },
-                    "category": "D",
-                    "id": "3301737",
-                    "preview": "http://localhost/static/preview/g4722.png",
-                    "title": "A quam",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Nick Stark",
-                    },
-                    "category": "M",
-                    "id": "8950868",
-                    "preview": "http://localhost/static/preview/g3618.png",
-                    "title": "Dolores magni",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Marcelo Romaguera",
-                    },
-                    "category": "N",
-                    "id": "2592182",
-                    "preview": "http://localhost/static/preview/g4722.png",
-                    "title": "Veniam et",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Valentina Veum",
-                    },
-                    "category": "N",
-                    "id": "4775555",
-                    "preview": "http://localhost/static/preview/g3618.png",
-                    "title": "Velit dolores",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Hilma Rolfson",
-                    },
-                    "category": "M",
-                    "id": "8392295",
-                    "preview": "http://localhost/static/preview/g4642.png",
-                    "title": "Illo atque voluptatem",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Odessa Trantow",
-                    },
-                    "category": "M",
-                    "id": "2952373",
-                    "preview": "http://localhost/static/preview/g3336.png",
-                    "title": "Excepturi nihil ducimus",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Ashley Carter",
-                    },
-                    "category": "G",
-                    "id": "5128752",
-                    "preview": "http://localhost/static/preview/g3336.png",
-                    "title": "Reprehenderit et",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Margarette Bernier",
-                    },
-                    "category": "M",
-                    "id": "9694666",
-                    "preview": "http://localhost/static/preview/g1878.png",
-                    "title": "Sint blanditiis minus",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Gerhard Rowe",
-                    },
-                    "category": "N",
-                    "id": "9894521",
-                    "preview": "http://localhost/static/preview/g4722.png",
-                    "title": "Non perferendis modi",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Kay Renner",
-                    },
-                    "category": "N",
-                    "id": "2147158",
-                    "preview": "http://localhost/static/preview/g3578.png",
-                    "title": "Soluta vel voluptatibus",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Antonietta Grant",
-                    },
-                    "category": "D",
-                    "id": "9741275",
-                    "preview": "http://localhost/static/preview/g3658.png",
-                    "title": "Quos rerum",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Krista Price",
-                    },
-                    "category": "M",
-                    "id": "2600190",
-                    "preview": "http://localhost/static/preview/g4602.png",
-                    "title": "Et eveniet architecto",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Caitlyn Swift",
-                    },
-                    "category": "M",
-                    "id": "5119423",
-                    "preview": "http://localhost/static/preview/g3658.png",
-                    "title": "Totam ut ipsum",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Josianne Kuhlman",
-                    },
-                    "category": "N",
-                    "id": "2147826",
-                    "preview": "http://localhost/static/preview/g4762.png",
-                    "title": "Aut earum",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Soledad Rosenbaum",
-                    },
-                    "category": "G",
-                    "id": "3839143",
-                    "preview": "http://localhost/static/preview/g3578.png",
-                    "title": "Nihil quia",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Green Schiller",
-                    },
-                    "category": "M",
-                    "id": "5917195",
-                    "preview": "http://localhost/static/preview/g4722.png",
-                    "title": "Hic aut",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Coralie Crona",
-                    },
-                    "category": "N",
-                    "id": "2610498",
-                    "preview": "http://localhost/static/preview/g4762.png",
-                    "title": "Suscipit odio error",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Judy Moore",
-                    },
-                    "category": "G",
-                    "id": "644478",
-                    "preview": "http://localhost/static/preview/g3456.png",
-                    "title": "Adipisci reiciendis laudantium",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Oleta Waters",
-                    },
-                    "category": "M",
-                    "id": "3578774",
-                    "preview": "http://localhost/static/preview/g4842.png",
-                    "title": "Quos laudantium",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Selina Murphy",
-                    },
-                    "category": "M",
-                    "id": "26319",
-                    "preview": "http://localhost/static/preview/g4802.png",
-                    "title": "Nesciunt et",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Angel Ratke",
-                    },
-                    "category": "M",
-                    "id": "5920762",
-                    "preview": "http://localhost/static/preview/g3658.png",
-                    "title": "Et asperiores",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Zackery Bode",
-                    },
-                    "category": "M",
-                    "id": "4626612",
-                    "preview": "http://localhost/static/preview/g4722.png",
-                    "title": "Aliquid qui",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Beulah Bartell",
-                    },
-                    "category": "N",
-                    "id": "5255978",
-                    "preview": "http://localhost/static/preview/g3456.png",
-                    "title": "Voluptas dolorum",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Tomas Kuhn",
-                    },
-                    "category": "M",
-                    "id": "3201429",
-                    "preview": "http://localhost/static/preview/g4762.png",
-                    "title": "Unde cupiditate",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Wilber Pfeffer",
-                    },
-                    "category": "D",
-                    "id": "7176690",
-                    "preview": "http://localhost/static/preview/g4602.png",
-                    "title": "Non unde",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Kian Stiedemann",
-                    },
-                    "category": "N",
-                    "id": "5353002",
-                    "preview": "http://localhost/static/preview/g3578.png",
-                    "title": "Rem velit",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Ari Grady",
-                    },
-                    "category": "N",
-                    "id": "4989582",
-                    "preview": "http://localhost/static/preview/g3578.png",
-                    "title": "Error quo repellat",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Gloria Cronin",
-                    },
-                    "category": "D",
-                    "id": "6725568",
-                    "preview": "http://localhost/static/preview/g4802.png",
-                    "title": "Amet corporis modi",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Marianna Huel",
-                    },
-                    "category": "G",
-                    "id": "563495",
-                    "preview": "http://localhost/static/preview/g3618.png",
-                    "title": "Alias magni dignissimos",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Malcolm Herzog",
-                    },
-                    "category": "N",
-                    "id": "3022488",
-                    "preview": "http://localhost/static/preview/g4802.png",
-                    "title": "Consectetur dolorum molestiae",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Casimer Bechtelar",
-                    },
-                    "category": "M",
-                    "id": "2958489",
-                    "preview": "http://localhost/static/preview/g3618.png",
-                    "title": "Omnis blanditiis sit",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Nicola Considine",
-                    },
-                    "category": "N",
-                    "id": "9719981",
-                    "preview": "http://localhost/static/preview/g3456.png",
-                    "title": "Nihil ipsa",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Roosevelt Herzog",
-                    },
-                    "category": "D",
-                    "id": "4886781",
-                    "preview": "http://localhost/static/preview/g4802.png",
-                    "title": "Quidem voluptas",
-                  },
-                  Object {
-                    "author": Object {
                       "name": "Yvette Kemmer",
                     },
-                    "category": "G",
-                    "id": "9607778",
-                    "preview": "http://localhost/static/preview/g4762.png",
+                    "category": "N",
+                    "id": "1886369",
+                    "preview": "http://localhost/static/preview/g4722.png",
                     "title": "Fugiat vero",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Maxie Haag",
+                    },
+                    "category": "D",
+                    "id": "8745103",
+                    "preview": "http://localhost/static/preview/g4722.png",
+                    "title": "Hic et sapiente",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Marisa Block",
+                    },
+                    "category": "N",
+                    "id": "131365",
+                    "preview": "http://localhost/static/preview/g3618.png",
+                    "title": "Doloribus consequatur dolore",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Mireya DuBuque",
+                    },
+                    "category": "G",
+                    "id": "4071307",
+                    "preview": "http://localhost/static/preview/g3336.png",
+                    "title": "Quam est",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Aubree Cole",
+                    },
+                    "category": "D",
+                    "id": "1383548",
+                    "preview": "http://localhost/static/preview/g4642.png",
+                    "title": "Doloremque in molestiae",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Bryce Boyle",
+                    },
+                    "category": "G",
+                    "id": "3750911",
+                    "preview": "http://localhost/static/preview/g3336.png",
+                    "title": "Maxime qui sapiente",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Joey Wilkinson",
+                    },
+                    "category": "N",
+                    "id": "635360",
+                    "preview": "http://localhost/static/preview/g3336.png",
+                    "title": "Est suscipit facere",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Elenora Donnelly",
+                    },
+                    "category": "D",
+                    "id": "7662187",
+                    "preview": "http://localhost/static/preview/g3658.png",
+                    "title": "Culpa est",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Richard Rempel",
+                    },
+                    "category": "N",
+                    "id": "6173590",
+                    "preview": "http://localhost/static/preview/g3336.png",
+                    "title": "Tenetur ex",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Donato Adams",
+                    },
+                    "category": "N",
+                    "id": "6504358",
+                    "preview": "http://localhost/static/preview/g1878.png",
+                    "title": "Aliquid quis dolores",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Bart Haag",
+                    },
+                    "category": "G",
+                    "id": "8256424",
+                    "preview": "http://localhost/static/preview/g1878.png",
+                    "title": "Est ex",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Pat Bednar",
+                    },
+                    "category": "D",
+                    "id": "1908700",
+                    "preview": "http://localhost/static/preview/g4642.png",
+                    "title": "Deleniti illum",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Tommie Gulgowski",
+                    },
+                    "category": "M",
+                    "id": "5012517",
+                    "preview": "http://localhost/static/preview/g4602.png",
+                    "title": "Voluptatem minima",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Reggie Gleason",
+                    },
+                    "category": "M",
+                    "id": "2782385",
+                    "preview": "http://localhost/static/preview/g4802.png",
+                    "title": "Ex dolorum mollitia",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Cynthia Pfannerstill",
+                    },
+                    "category": "D",
+                    "id": "9163516",
+                    "preview": "http://localhost/static/preview/g1878.png",
+                    "title": "Provident sapiente maxime",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Mack Balistreri",
+                    },
+                    "category": "M",
+                    "id": "61283",
+                    "preview": "http://localhost/static/preview/g4602.png",
+                    "title": "Minima et quas",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Brendan Harber",
+                    },
+                    "category": "G",
+                    "id": "5874201",
+                    "preview": "http://localhost/static/preview/g3456.png",
+                    "title": "Deserunt facere esse",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Providenci Cormier",
+                    },
+                    "category": "G",
+                    "id": "6280233",
+                    "preview": "http://localhost/static/preview/g3376.png",
+                    "title": "Aut est ipsa",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Annamarie Adams",
+                    },
+                    "category": "G",
+                    "id": "4056447",
+                    "preview": "http://localhost/static/preview/g4722.png",
+                    "title": "Qui dolor",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Rhett Tillman",
+                    },
+                    "category": "N",
+                    "id": "5801547",
+                    "preview": "http://localhost/static/preview/g4842.png",
+                    "title": "Minus nostrum delectus",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Pamela Toy",
+                    },
+                    "category": "D",
+                    "id": "7964889",
+                    "preview": "http://localhost/static/preview/g4722.png",
+                    "title": "Fugit voluptatem maiores",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Andre Von",
+                    },
+                    "category": "N",
+                    "id": "6763567",
+                    "preview": "http://localhost/static/preview/g4722.png",
+                    "title": "Voluptatem qui",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Wilbert Kozey",
+                    },
+                    "category": "G",
+                    "id": "1269436",
+                    "preview": "http://localhost/static/preview/g3336.png",
+                    "title": "Impedit sed",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Alfred Feil",
+                    },
+                    "category": "D",
+                    "id": "4354324",
+                    "preview": "http://localhost/static/preview/g3456.png",
+                    "title": "Sunt veniam nulla",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Minnie Donnelly",
+                    },
+                    "category": "M",
+                    "id": "6875106",
+                    "preview": "http://localhost/static/preview/g3618.png",
+                    "title": "Voluptate quia nihil",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Beaulah Thiel",
+                    },
+                    "category": "M",
+                    "id": "6262090",
+                    "preview": "http://localhost/static/preview/g4802.png",
+                    "title": "Et molestias non",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Rosalind Kertzmann",
+                    },
+                    "category": "M",
+                    "id": "7417544",
+                    "preview": "http://localhost/static/preview/g4842.png",
+                    "title": "Consequatur nisi",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Adah Lowe",
+                    },
+                    "category": "G",
+                    "id": "1986800",
+                    "preview": "http://localhost/static/preview/g4642.png",
+                    "title": "Sunt qui",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Vince Tremblay",
+                    },
+                    "category": "G",
+                    "id": "5217813",
+                    "preview": "http://localhost/static/preview/g3456.png",
+                    "title": "Tenetur ad excepturi",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Mariah Baumbach",
+                    },
+                    "category": "D",
+                    "id": "2514585",
+                    "preview": "http://localhost/static/preview/g3618.png",
+                    "title": "Maxime et",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Arely Gorczany",
+                    },
+                    "category": "N",
+                    "id": "2010900",
+                    "preview": "http://localhost/static/preview/g4762.png",
+                    "title": "Et aut officia",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Julien McLaughlin",
+                    },
+                    "category": "G",
+                    "id": "5098740",
+                    "preview": "http://localhost/static/preview/g1878.png",
+                    "title": "Voluptatum odio perspiciatis",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Chasity Turner",
+                    },
+                    "category": "G",
+                    "id": "6857166",
+                    "preview": "http://localhost/static/preview/g3456.png",
+                    "title": "Quia voluptas molestias",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Deanna Doyle",
+                    },
+                    "category": "G",
+                    "id": "4365628",
+                    "preview": "http://localhost/static/preview/g4602.png",
+                    "title": "Et iste",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Maia Hayes",
+                    },
+                    "category": "M",
+                    "id": "6808480",
+                    "preview": "http://localhost/static/preview/g3578.png",
+                    "title": "Ipsam ipsa nam",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Jewel Denesik",
+                    },
+                    "category": "M",
+                    "id": "7804570",
+                    "preview": "http://localhost/static/preview/g3618.png",
+                    "title": "Enim dolore est",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Kallie Crooks",
+                    },
+                    "category": "M",
+                    "id": "95198",
+                    "preview": "http://localhost/static/preview/g4762.png",
+                    "title": "Minima minima et",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Anastacio Franecki",
+                    },
+                    "category": "M",
+                    "id": "8330464",
+                    "preview": "http://localhost/static/preview/g3456.png",
+                    "title": "At est",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Nella Ritchie",
+                    },
+                    "category": "D",
+                    "id": "432903",
+                    "preview": "http://localhost/static/preview/g4802.png",
+                    "title": "Expedita repellat",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Henry Kris",
+                    },
+                    "category": "N",
+                    "id": "5975631",
+                    "preview": "http://localhost/static/preview/g4642.png",
+                    "title": "Libero consectetur qui",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Elyssa Cormier",
+                    },
+                    "category": "M",
+                    "id": "2653719",
+                    "preview": "http://localhost/static/preview/g3376.png",
+                    "title": "Esse odio eos",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Robyn Lemke",
+                    },
+                    "category": "G",
+                    "id": "2121052",
+                    "preview": "http://localhost/static/preview/g4802.png",
+                    "title": "Dolorem asperiores",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Emmett Volkman",
+                    },
+                    "category": "G",
+                    "id": "9286081",
+                    "preview": "http://localhost/static/preview/g3376.png",
+                    "title": "Perferendis voluptas",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Hiram Keeling",
+                    },
+                    "category": "G",
+                    "id": "5954557",
+                    "preview": "http://localhost/static/preview/g3376.png",
+                    "title": "Adipisci molestias",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Dessie Marks",
+                    },
+                    "category": "N",
+                    "id": "5261693",
+                    "preview": "http://localhost/static/preview/g3456.png",
+                    "title": "Sequi similique",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Aaron Von",
+                    },
+                    "category": "D",
+                    "id": "7135446",
+                    "preview": "http://localhost/static/preview/g3578.png",
+                    "title": "Et debitis quis",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Destany Schaefer",
+                    },
+                    "category": "N",
+                    "id": "8005276",
+                    "preview": "http://localhost/static/preview/g3578.png",
+                    "title": "Ea ad cum",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Rupert Brakus",
+                    },
+                    "category": "M",
+                    "id": "3207764",
+                    "preview": "http://localhost/static/preview/g3376.png",
+                    "title": "Rerum consequuntur",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Dan Gulgowski",
+                    },
+                    "category": "G",
+                    "id": "134553",
+                    "preview": "http://localhost/static/preview/g3376.png",
+                    "title": "Amet iusto quisquam",
+                  },
+                  Object {
+                    "author": Object {
+                      "name": "Rosario Morar",
+                    },
+                    "category": "M",
+                    "id": "2879447",
+                    "preview": "http://localhost/static/preview/g3456.png",
+                    "title": "Sint ducimus",
                   },
                 ]
               }
@@ -2384,13 +2456,13 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                           }
                         } />
                       <Image
-                        category="M"
+                        category="N"
                         shadowColor="rgba(255, 255, 255, 0.3)"
                         shadowRadius={5}
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/preview/g3456.png",
+                            "uri": "http://localhost/static/preview/g4722.png",
                           }
                         }
                         style={
@@ -2453,7 +2525,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         "fontSize": 12,
                       }
                     }>
-                    Ratione quidem
+                    Fugiat vero
                   </Text>
                   <Text
                     accessible={true}
@@ -2466,7 +2538,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                         "fontSize": 10,
                       }
                     }>
-                    Tianna Conn
+                    Yvette Kemmer
                   </Text>
                 </View>
               </View>
@@ -2588,84 +2660,84 @@ exports[`Shelf.ClogCategory render correct 1`] = `
             data={
               Array [
                 Object {
-                  "name": "Susana Wintheiser",
-                  "profilePicture": "http://localhost/static/preview/g4602.png",
-                },
-                Object {
-                  "name": "Hilma Lind",
-                  "profilePicture": "http://localhost/static/preview/g3578.png",
-                },
-                Object {
-                  "name": "Pietro Marks",
-                  "profilePicture": "http://localhost/static/preview/g4722.png",
-                },
-                Object {
-                  "name": "Brandon Kshlerin",
+                  "name": "Max Romaguera",
                   "profilePicture": "http://localhost/static/preview/g3456.png",
                 },
                 Object {
-                  "name": "Lavon Hagenes",
+                  "name": "Patience Prohaska",
+                  "profilePicture": "http://localhost/static/preview/g3336.png",
+                },
+                Object {
+                  "name": "Dillan Padberg",
+                  "profilePicture": "http://localhost/static/preview/g4762.png",
+                },
+                Object {
+                  "name": "Dayna Jakubowski",
+                  "profilePicture": "http://localhost/static/preview/g3336.png",
+                },
+                Object {
+                  "name": "Breanna Morar",
                   "profilePicture": "http://localhost/static/preview/g4802.png",
                 },
                 Object {
-                  "name": "Vaughn McGlynn",
-                  "profilePicture": "http://localhost/static/preview/g3578.png",
+                  "name": "Helena Parker",
+                  "profilePicture": "http://localhost/static/preview/g1878.png",
                 },
                 Object {
-                  "name": "Horacio Franecki",
-                  "profilePicture": "http://localhost/static/preview/g4642.png",
+                  "name": "Adeline Hayes",
+                  "profilePicture": "http://localhost/static/preview/g3456.png",
                 },
                 Object {
-                  "name": "Salvador Hahn",
-                  "profilePicture": "http://localhost/static/preview/g3578.png",
-                },
-                Object {
-                  "name": "Sincere Schumm",
+                  "name": "Tracy Turner",
                   "profilePicture": "http://localhost/static/preview/g3376.png",
                 },
                 Object {
-                  "name": "Karina Denesik",
-                  "profilePicture": "http://localhost/static/preview/g3336.png",
-                },
-                Object {
-                  "name": "Parker McClure",
-                  "profilePicture": "http://localhost/static/preview/g3336.png",
-                },
-                Object {
-                  "name": "Amalia Becker",
+                  "name": "Agnes Fritsch",
                   "profilePicture": "http://localhost/static/preview/g4602.png",
                 },
                 Object {
-                  "name": "Heidi Beatty",
-                  "profilePicture": "http://localhost/static/preview/g4722.png",
+                  "name": "Ryleigh Schneider",
+                  "profilePicture": "http://localhost/static/preview/g3336.png",
                 },
                 Object {
-                  "name": "Green VonRueden",
+                  "name": "Alvah Langosh",
+                  "profilePicture": "http://localhost/static/preview/g3336.png",
+                },
+                Object {
+                  "name": "Annalise Koch",
                   "profilePicture": "http://localhost/static/preview/g3578.png",
                 },
                 Object {
-                  "name": "Aaron Stroman",
+                  "name": "Oliver Hintz",
+                  "profilePicture": "http://localhost/static/preview/g4602.png",
+                },
+                Object {
+                  "name": "Alvah Deckow",
+                  "profilePicture": "http://localhost/static/preview/g4802.png",
+                },
+                Object {
+                  "name": "Antwon Pouros",
+                  "profilePicture": "http://localhost/static/preview/g3376.png",
+                },
+                Object {
+                  "name": "Joy Koelpin",
+                  "profilePicture": "http://localhost/static/preview/g3456.png",
+                },
+                Object {
+                  "name": "Rosella McDermott",
+                  "profilePicture": "http://localhost/static/preview/g4602.png",
+                },
+                Object {
+                  "name": "Kamron Vandervort",
                   "profilePicture": "http://localhost/static/preview/g3658.png",
                 },
                 Object {
-                  "name": "Paige Hilpert",
-                  "profilePicture": "http://localhost/static/preview/g4842.png",
-                },
-                Object {
-                  "name": "Waylon Bode",
+                  "name": "Ike Dickinson",
                   "profilePicture": "http://localhost/static/preview/g3578.png",
                 },
                 Object {
-                  "name": "Carmel Simonis",
-                  "profilePicture": "http://localhost/static/preview/g4802.png",
-                },
-                Object {
-                  "name": "Kim Jerde",
-                  "profilePicture": "http://localhost/static/preview/g4802.png",
-                },
-                Object {
-                  "name": "Fatima Grady",
-                  "profilePicture": "http://localhost/static/preview/g1878.png",
+                  "name": "Adelbert Durgan",
+                  "profilePicture": "http://localhost/static/preview/g4642.png",
                 },
               ]
             }
@@ -2728,7 +2800,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                   size={80}
                   source={
                     Object {
-                      "uri": "http://localhost/static/preview/g4602.png",
+                      "uri": "http://localhost/static/preview/g3456.png",
                     }
                   }
                   style={
@@ -2770,7 +2842,7 @@ exports[`Shelf.ClogCategory render correct 1`] = `
                       "color": "white",
                     }
                   }>
-                  Susana Wintheiser
+                  Max Romaguera
                 </Text>
               </View>
             </View>

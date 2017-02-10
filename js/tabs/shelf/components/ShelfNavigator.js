@@ -6,6 +6,7 @@ import {
 import Home from '../containers/Home';
 import ClogCategory from '../containers/ClogCategory';
 import ClogListView from '../containers/ClogListView';
+import EditorListView from '../containers/EditorListView';
 import FixBugScrollViewNavigator from '../../../common/FixBugScrollViewNavigator';
 
 const NotFound = () => <Text>not found</Text>;
@@ -16,6 +17,7 @@ class ShelfNavigator extends React.Component {
     this.goBack = this.goBack.bind(this);
     this.goToClogCategory = this.goToClogCategory.bind(this);
     this.goToClogListView = this.goToClogListView.bind(this);
+    this.goToEditorListView = this.goToEditorListView.bind(this);
     this.renderScene = this.renderScene.bind(this);
   }
 
@@ -29,6 +31,10 @@ class ShelfNavigator extends React.Component {
 
   goToClogListView(options) {
     this.navigator.push({ page: 'clog-list-view', ...options });
+  }
+
+  goToEditorListView(category) {
+    this.navigator.push({ page: 'editor-list-view', category });
   }
 
   renderScene(route) {
@@ -48,6 +54,7 @@ class ShelfNavigator extends React.Component {
         onBackPress={this.goBack}
         goToBook={this.props.goToBook}
         goToClogListView={this.goToClogListView}
+        goToEditorListView={this.goToEditorListView}
         category={route.category}
       />);
     }
@@ -60,6 +67,15 @@ class ShelfNavigator extends React.Component {
         goToBook={this.props.goToBook}
         tag={route.tag}
       />);
+    }
+    if (route.page === 'editor-list-view') {
+      return (
+        <EditorListView
+          category={route.category}
+          onBackPress={this.goBack}
+          onClogPress={this.props.goToBook}
+        />
+      );
     }
     return <NotFound />;
   }

@@ -42,6 +42,8 @@ casual.define('profilePicture', () => randomStatic('preview'));
 
 casual.define('positive_int', max => casual.integer(1, max));
 
+casual.define('id', () => String(casual.positive_int(10000000)));
+
 casual.define('arrayN', (max) => {
   let n = casual.integer(0, max);
   const result = [];

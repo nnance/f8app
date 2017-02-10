@@ -7,10 +7,11 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-import PureListView from '../../../common/PureListView';
+import FixBugPureListView from '../../../common/FixBugPureListView';
 import ProfilePicture from '../../../common/ProfilePicture';
 import FixBugScrollView from '../../../common/FixBugScrollView';
 import { toHumanNumber } from '../../../common/utils';
+import { FollowButton, UnfollowButton } from '../../../common/BasicButton';
 
 import NavBar from './NavBar';
 import { styles as commonStyles } from '../common';
@@ -102,17 +103,17 @@ const styles = StyleSheet.create({
   },
 });
 
-const UnfollowButton = () => (<TouchableOpacity style={styles.unfollowButton}>
-  <Text style={styles.unfollowText}>
-    เลิกติดตาม
-  </Text>
-</TouchableOpacity>);
+// const UnfollowButton = () => (<TouchableOpacity style={styles.unfollowButton}>
+//   <Text style={styles.unfollowText}>
+//     เลิกติดตาม
+//   </Text>
+// </TouchableOpacity>);
 
-const FollowButton = () => (<TouchableOpacity style={styles.followButton}>
-  <Text style={styles.followText}>
-    ติดตาม
-  </Text>
-</TouchableOpacity>);
+// const FollowButton = () => (<TouchableOpacity style={styles.followButton}>
+//   <Text style={styles.followText}>
+//     ติดตาม
+//   </Text>
+// </TouchableOpacity>);
 
 const FollowerDetail = props => (<View style={styles.followerDetail}>
   {
@@ -159,24 +160,22 @@ export default class UserContainer extends React.Component {
           title={this.props.title}
           onBackPress={this.props.onBackPress}
         />
-        <FixBugScrollView>
-          <PureListView
-            data={this.props.userList}
-            renderRow={(user, i, idx) => (<View style={styles.rowContainer}>
-              <View style={styles.profile}>
-                <ProfilePicture size={40} />
-              </View>
-              <Text style={styles.name}>
-                {Number(idx) + 1}. {user.name}
-              </Text>
-              <View style={styles.detail}>
-                {
-                    this.props.renderDetail(user, idx)
-                  }
-              </View>
-            </View>)}
-          />
-        </FixBugScrollView>
+        <FixBugPureListView
+          data={this.props.userList}
+          renderRow={(user, i, idx) => (<View style={styles.rowContainer}>
+            <View style={styles.profile}>
+              <ProfilePicture size={40} />
+            </View>
+            <Text style={styles.name}>
+              {Number(idx) + 1}. {user.name}
+            </Text>
+            <View style={styles.detail}>
+              {
+                  this.props.renderDetail(user, idx)
+                }
+            </View>
+          </View>)}
+        />
       </View>
     );
   }

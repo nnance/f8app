@@ -21,23 +21,24 @@ const mocks = {
     },
   }),
   Editor: () => ({
+    id: () => casual.id,
     name: casual.full_name,
     async profilePicture(rootValue, args, { request }) {
       const uri = await casual.profilePicture;
       return `http://${request.get('host')}${uri}`;
     },
+    clogCount: casual.positive_int(1000),
+    followingCount: casual.positive_int(10000),
+    clogs: () => new MockList(5),
+    isFollowing: casual.boolean,
   }),
   Tag: () => ({
     name: casual.word,
     trendingClogs: () => new MockList(30),
   }),
   Clog: () => ({
-    id: casual.positive_int(10000000),
-    title: async () =>
-      // await new Promise(resolve => {
-      //   setTimeout(resolve, 1000)
-      // })
-       casual.title,
+    id: casual.id,
+    title: async () => casual.title,
     async cover(rootValue, args, { request }) {
       const uri = await casual.clog_cover;
       if (!uri) {
@@ -56,7 +57,7 @@ const mocks = {
     episodes: () => new MockList(20),
   }),
   Episode: () => ({
-    id: casual.positive_int(10000000),
+    id: casual.id,
     no: casual.positive_int(10),
     title: casual.title,
     preview,
@@ -72,6 +73,7 @@ const mocks = {
     favoriteTags: () => new MockList(3),
     heroBanners: () => new MockList(5),
     clogs: () => new MockList(50),
+    editors: () => new MockList(20),
   }),
 };
 

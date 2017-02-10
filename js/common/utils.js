@@ -35,5 +35,8 @@ export function mapSource(source) {
 }
 
 export function bindFn(fn, ...args) {
+  if (!fn) {
+    return fn;
+  }
   return fn.bind(null, ...args);
 }
