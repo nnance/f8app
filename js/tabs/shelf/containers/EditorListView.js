@@ -1,4 +1,7 @@
 import React from 'react';
+import gql from 'graphql-tag';
+import { graphql } from 'react-apollo';
+
 import EditorListView from '../components/EditorListView';
 
 const clogs = [
@@ -41,4 +44,22 @@ const editors = [
 
 const Dump = () => <EditorListView category="D" editors={editors}/>;
 
-export default Dump;
+const query = gql`
+  query EditorListView {
+    editors {
+      ...EditorListView
+    }
+  }
+  ${EditorListView.fragments.editor}
+`;
+
+const mapQueryToProps = ({ data }) => {
+  const { loading } = data;
+  return {
+    editors: loading ? [] : data.editors,
+  };
+};
+
+export default graphql(query, {
+  props: mapQueryToProps,
+})(EditorListView);

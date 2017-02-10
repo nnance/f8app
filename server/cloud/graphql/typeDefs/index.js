@@ -20,13 +20,20 @@ const schema = `
   }
 
   type User {
+    id: ID!
     name: String!
     profilePicture: String
   }
 
   type Editor {
+    id: ID!
     name: String!
     profilePicture: String
+    followingCount: Int!
+    following: [User!]!
+    clogCount: Int!
+    isFollowing: Boolean!
+    clogs: [Clog!]!
   }
 
   type Episode {
@@ -73,6 +80,11 @@ const schema = `
     limit: Int
   }
 
+  input EditorFilterInput {
+    category: CATEGORY
+    limit: Int
+  }
+
   type CategoryDetail {
     category: CATEGORY!
     recommendedClogs: [Clog!]!
@@ -87,6 +99,8 @@ const schema = `
     clogs(filter: ClogFilterInput, orderBy: CLOG_SORTING): [Clog!]!
     clog(id: ID!): Clog!
     episode(id: ID!): Episode!
+    editor(id: ID!): Editor!
+    editors(filter: EditorFilterInput): [Editor!]!
   }
 `;
 
