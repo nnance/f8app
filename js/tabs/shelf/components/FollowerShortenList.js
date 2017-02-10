@@ -6,7 +6,6 @@ import {
 
 import CircleImage from '../../../common/CircleImage';
 import HorizontalListView from '../../../common/HorizontalListView';
-import BorderButton from '../../../common/BorderButton';
 import { colors } from '../../../common/styles';
 
 const Row = props => (
@@ -46,9 +45,8 @@ class FollowerShortenList extends React.Component {
 
   render() {
     const limit = 3;
-    const data = this.props.editors;
-    let realData;
-    realData = data.slice(0, limit);
+    const data = this.props.followers;
+    const realData = data.slice(0, limit);
     if (data.length > limit) {
       realData.push({ remaining: data.length - limit });
     }

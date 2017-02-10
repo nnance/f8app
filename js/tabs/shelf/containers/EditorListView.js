@@ -1,65 +1,34 @@
-import React from 'react';
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 
 import EditorListView from '../components/EditorListView';
 
-const clogs = [
-  {
-    title: 'abc',
-    preview: 'http://localhost:8080/static/preview/g3456.png',
-    category: 'D',
-  },
-  {
-    title: 'abc',
-    preview: 'http://localhost:8080/static/preview/g3456.png',
-    category: 'D',
-  },
-  {
-    title: 'abc',
-    preview: 'http://localhost:8080/static/preview/g3456.png',
-    category: 'D',
-  },
-  {
-    title: 'abc',
-    preview: 'http://localhost:8080/static/preview/g3456.png',
-    category: 'D',
-  },
-  {
-    title: 'abc',
-    preview: 'http://localhost:8080/static/preview/g3456.png',
-    category: 'D',
-  },
-];
-
-const editors = [
-  {
-    profilePicture: 'http://localhost:8080/static/preview/g3456.png',
-    name: 'im name',
-    followingCount: 1234,
-    clogCount: 1234,
-    clogs,
-  },
-];
-
-const Dump = () => <EditorListView category="D" editors={editors}/>;
-
-const query = gql`
-  query EditorListView {
-    editors {
+export const query = gql`
+  query EditorListView($category: CATEGORY!) {
+    editors(filter: {category: $category}) {
       ...EditorListView
     }
   }
   ${EditorListView.fragments.editor}
 `;
 
-const mapQueryToProps = ({ data }) => {
+export const mapQueryToProps = ({ data }) => {
   const { loading } = data;
+  if (data.error) {
+    console.error(data.error);
+  }
   return {
     editors: loading ? [] : data.editors,
   };
 };
 
+export const mapPropsToOptions = ({ category }) => ({
+  variables: {
+    category,
+  },
+});
+
 export default graphql(query, {
   props: mapQueryToProps,
+  options: mapPropsToOptions,
 })(EditorListView);

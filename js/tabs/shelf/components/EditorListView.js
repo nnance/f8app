@@ -7,9 +7,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import gql from 'graphql-tag';
-import moment from 'moment';
 
-import ClogListView from '../../../common/ClogListView';
 import CircleImageWithCategory from '../../../common/CircleImageWithCategory';
 import CircleImage from '../../../common/CircleImage';
 import FixBugPureListView from '../../../common/FixBugPureListView';
@@ -92,7 +90,7 @@ const MetaEditorRow = props => (
         source={mapSource(props.editor.profilePicture)}
         size={100}
         shadowRadius={5}
-        shadowColor='rgba(255, 255, 255, 1)'
+        shadowColor="rgba(255, 255, 255, 1)"
       />
     </TouchableOpacity>
     <View style={{ flex: 1, paddingLeft: 20, height: 130 }}>
@@ -107,10 +105,10 @@ const MetaEditorRow = props => (
           </Text>
         </View>
         <View style={{ width: 80, alignItems: 'flex-end' }}>
-            {
+          {
               props.editor.isFollowing ?
-                <UnfollowButton/>
-              : <FollowButton/>
+                <UnfollowButton />
+              : <FollowButton />
             }
         </View>
       </View>
@@ -118,7 +116,7 @@ const MetaEditorRow = props => (
         <HorizontalListView
           data={props.editor.clogs}
           style={styles.metaClogContainer}
-          renderRow={clog => <ClogMeta onPress={props.onClogPress} clog={clog}/>}
+          renderRow={clog => <ClogMeta onPress={props.onClogPress} clog={clog} />}
           showsHorizontalScrollIndicator={false}
         />
       </View>
@@ -151,11 +149,13 @@ class EditorListView extends React.Component {
       }}
     >
       <NavBar
-        withSearch
         onBackPress={this.props.onBackPress}
         title={`Editor ${getCategoryFullName(this.props.category)}`}
         containerStyle={styles.navBar}
         titleTextStyle={styles.titleText}
+        renderRightMenu={() => (
+          <TouchableOpacity><Image style={{ height: 20, resizeMode: 'contain' }} source={require('../img/white-search.png')} /></TouchableOpacity>
+        )}
       />
       <FixBugPureListView
         minContentHeight={0}

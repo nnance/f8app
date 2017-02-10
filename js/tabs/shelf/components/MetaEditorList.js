@@ -48,10 +48,7 @@ class WriterList extends React.Component {
   }
 
   render() {
-    const limit = 3;
     const data = this.props.editors;
-    let realData;
-    realData = data;
     return (
       <View>
         <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
@@ -64,7 +61,7 @@ class WriterList extends React.Component {
           </View>
         </View>
         <HorizontalListView
-          data={realData}
+          data={data}
           renderRow={this.renderRow}
           showsHorizontalScrollIndicator={false}
         />

@@ -286,7 +286,7 @@ class ClogCategory extends React.Component {
                 <View style={{ height: 50, width: undefined, flexDirection: 'row', padding: 5, alignItems: 'center' }}>
                   <View style={{ flex: 1 }}>
                     <FollowerShortenList
-                      editors={currentClogBanner ?
+                      followers={currentClogBanner ?
                         this.props.recommendedClogs[this.state.currentClogBanner].followersYouKnow
                       : []}
                     />
@@ -335,7 +335,10 @@ class ClogCategory extends React.Component {
               />
             </View>
             <View style={{ height: 180, padding: 5 }}>
-              <MetaEditorList editors={this.props.editors} onViewAllPress={bindFn(this.props.goToEditorListView, this.props.category)}/>
+              <MetaEditorList
+                editors={this.props.editors}
+                onViewAllPress={bindFn(this.props.goToEditorListView, this.props.category)}
+              />
             </View>
           </LinearGradient>
         </FixBugScrollView>
