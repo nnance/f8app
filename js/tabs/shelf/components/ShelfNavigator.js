@@ -17,6 +17,7 @@ class ShelfNavigator extends React.Component {
     this.goBack = this.goBack.bind(this);
     this.goToClogCategory = this.goToClogCategory.bind(this);
     this.goToClogListView = this.goToClogListView.bind(this);
+    this.goToEditorListView = this.goToEditorListView.bind(this);
     this.renderScene = this.renderScene.bind(this);
   }
 
@@ -30,6 +31,10 @@ class ShelfNavigator extends React.Component {
 
   goToClogListView(options) {
     this.navigator.push({ page: 'clog-list-view', ...options });
+  }
+
+  goToEditorListView(category) {
+    this.navigator.push({ page: 'editor-list-view', category });
   }
 
   renderScene(route) {
@@ -49,6 +54,7 @@ class ShelfNavigator extends React.Component {
         onBackPress={this.goBack}
         goToBook={this.props.goToBook}
         goToClogListView={this.goToClogListView}
+        goToEditorListView={this.goToEditorListView}
         category={route.category}
       />);
     }
@@ -63,7 +69,13 @@ class ShelfNavigator extends React.Component {
       />);
     }
     if (route.page === 'editor-list-view') {
-      return (<EditorListView category={route.category}/>);
+      return (
+        <EditorListView
+          category={route.category}
+          onBackPress={this.goBack}
+          onClogPress={this.props.goToBook}
+        />
+      );
     }
     return <NotFound />;
   }
@@ -74,7 +86,7 @@ class ShelfNavigator extends React.Component {
         ref={(node) => {
           this.navigator = node;
         }}
-        initialRoute={{ page: 'editor-list-view' }}
+        initialRoute={{ page: 'home' }}
         renderScene={this.renderScene}
       />
     );

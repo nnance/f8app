@@ -29,7 +29,7 @@ const mocks = {
     },
     clogCount: casual.positive_int(1000),
     followingCount: casual.positive_int(10000),
-    clogs: () => new MockList(20),
+    clogs: () => new MockList(5),
     isFollowing: casual.boolean,
   }),
   Tag: () => ({

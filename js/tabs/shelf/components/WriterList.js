@@ -77,7 +77,7 @@ class WriterList extends React.Component {
               </View>
               <View style={{ flex: 1 }} />
               <View style={{ alignItems: 'flex-end', justifyContent: 'center', paddingRight: 10 }}>
-                <BorderButton type="fadedWhite" caption="ทั้งหมด" />
+                <BorderButton onPress={this.props.onViewAllPress} type="fadedWhite" caption="ทั้งหมด" />
               </View>
             </View> : null
         }

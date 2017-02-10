@@ -177,6 +177,7 @@ EditorListView.fragments = {
       clogCount
       isFollowing
       clogs {
+        id
         title
         preview
         category

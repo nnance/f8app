@@ -14,7 +14,7 @@ import { colors } from '../../../common/styles';
 import FixBugScrollView from '../../../common/FixBugScrollView';
 import BorderButton from '../../../common/BorderButton';
 import HorizontalListView from '../../../common/HorizontalListView';
-import { toHumanNumber } from '../../../common/utils';
+import { bindFn, toHumanNumber } from '../../../common/utils';
 import { getCategoryLogo } from '../../../models/clog';
 import NavBar, { HEIGHT } from './NavBar';
 import WriterList from './WriterList';
@@ -334,7 +334,7 @@ class ClogCategory extends React.Component {
               />
             </View>
             <View style={{ height: 180, padding: 5 }}>
-              <WriterList type="big" editors={this.props.editors} />
+              <WriterList type="big" editors={this.props.editors} onViewAllPress={bindFn(this.props.goToEditorListView, this.props.category)}/>
             </View>
           </LinearGradient>
         </FixBugScrollView>
