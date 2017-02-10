@@ -151,11 +151,13 @@ class EditorListView extends React.Component {
       }}
     >
       <NavBar
-        withSearch
         onBackPress={this.props.onBackPress}
         title={`Editor ${getCategoryFullName(this.props.category)}`}
         containerStyle={styles.navBar}
         titleTextStyle={styles.titleText}
+        renderRightMenu={() => (
+          <TouchableOpacity><Image style={{ height: 20, resizeMode: 'contain' }} source={require('../img/white-search.png')} /></TouchableOpacity>
+        )}
       />
       <FixBugPureListView
         minContentHeight={0}
