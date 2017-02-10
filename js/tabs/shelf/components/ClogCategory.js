@@ -17,7 +17,8 @@ import HorizontalListView from '../../../common/HorizontalListView';
 import { bindFn, toHumanNumber } from '../../../common/utils';
 import { getCategoryLogo } from '../../../models/clog';
 import NavBar, { HEIGHT } from './NavBar';
-import WriterList from './WriterList';
+import FollowerShortenList from './FollowerShortenList';
+import MetaEditorList from './MetaEditorList';
 import MetaClogListView from './MetaClogListView';
 
 /* eslint react/no-multi-comp: off */
@@ -284,7 +285,7 @@ class ClogCategory extends React.Component {
                 <View style={{ height: HEIGHT }} />
                 <View style={{ height: 50, width: undefined, flexDirection: 'row', padding: 5, alignItems: 'center' }}>
                   <View style={{ flex: 1 }}>
-                    <WriterList
+                    <FollowerShortenList
                       editors={currentClogBanner ?
                         this.props.recommendedClogs[this.state.currentClogBanner].followersYouKnow
                       : []}
@@ -334,7 +335,7 @@ class ClogCategory extends React.Component {
               />
             </View>
             <View style={{ height: 180, padding: 5 }}>
-              <WriterList type="big" editors={this.props.editors} onViewAllPress={bindFn(this.props.goToEditorListView, this.props.category)}/>
+              <MetaEditorList editors={this.props.editors} onViewAllPress={bindFn(this.props.goToEditorListView, this.props.category)}/>
             </View>
           </LinearGradient>
         </FixBugScrollView>
