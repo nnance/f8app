@@ -1059,112 +1059,71 @@ exports[`Shelf.EditorListView render 1`] = `
           style={
             Object {
               "flex": 1,
-              "flexDirection": "row",
             }
           }>
           <View
             style={
               Object {
-                "flex": 1,
-              }
-            }>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              numberOfLines={1}
-              style={
-                Object {
-                  "fontSize": 16,
-                  "fontWeight": "bold",
-                }
-              }>
-              Zion Reilly
-            </Text>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              numberOfLines={1}
-              style={
-                Object {
-                  "color": "rgba(0, 0, 0, 0.3)",
-                  "fontSize": 12,
-                  "fontWeight": "bold",
-                }
-              }>
-              933
-               Clogs
-            </Text>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              numberOfLines={1}
-              style={
-                Object {
-                  "color": "rgba(0, 0, 0, 0.3)",
-                  "fontSize": 12,
-                  "fontWeight": "bold",
-                }
-              }>
-              2
-               คน กำลังติดตาม
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "alignItems": "flex-end",
-                "width": 80,
+                "flexDirection": "row",
               }
             }>
             <View
-              accessibilityComponentType={undefined}
-              accessibilityLabel={undefined}
-              accessibilityTraits={undefined}
-              accessible={true}
-              hitSlop={undefined}
-              onLayout={undefined}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "alignItems": "center",
-                  "backgroundColor": "rgba(0, 0, 0, 0.2)",
-                  "borderRadius": 4,
-                  "flexDirection": "row",
-                  "height": 25,
-                  "justifyContent": "center",
-                  "opacity": 1,
-                  "paddingHorizontal": 0,
-                  "width": 70,
+                  "flex": 1,
                 }
-              }
-              testID={undefined}>
+              }>
               <Text
                 accessible={true}
                 allowFontScaling={true}
                 ellipsizeMode="tail"
+                numberOfLines={1}
                 style={
-                  Array [
-                    Object {
-                      "fontSize": 12,
-                    },
-                    Object {
-                      "color": "rgba(255, 255, 255, 0.6)",
-                    },
-                    undefined,
-                  ]
+                  Object {
+                    "fontSize": 16,
+                    "fontWeight": "bold",
+                  }
                 }>
-                เลิกติดตาม
+                Zion Reilly
               </Text>
             </View>
+            <View
+              style={
+                Object {
+                  "width": 80,
+                }
+              } />
           </View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            numberOfLines={1}
+            style={
+              Object {
+                "color": "rgba(0, 0, 0, 0.3)",
+                "fontSize": 12,
+                "fontWeight": "bold",
+              }
+            }>
+            933
+             Clogs
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            numberOfLines={1}
+            style={
+              Object {
+                "color": "rgba(0, 0, 0, 0.3)",
+                "fontSize": 12,
+                "fontWeight": "bold",
+              }
+            }>
+            2
+             คน กำลังติดตาม
+          </Text>
         </View>
         <View
           style={
@@ -1380,6 +1339,60 @@ exports[`Shelf.EditorListView render 1`] = `
                 }
               } />
           </ScrollView>
+        </View>
+        <View
+          style={
+            Object {
+              "position": "absolute",
+              "right": 5,
+              "top": 5,
+            }
+          }>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "rgba(0, 0, 0, 0.2)",
+                "borderRadius": 4,
+                "flexDirection": "row",
+                "height": 25,
+                "justifyContent": "center",
+                "opacity": 1,
+                "paddingHorizontal": 0,
+                "width": 70,
+              }
+            }
+            testID={undefined}>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 12,
+                  },
+                  Object {
+                    "color": "rgba(255, 255, 255, 0.6)",
+                  },
+                  undefined,
+                ]
+              }>
+              เลิกติดตาม
+            </Text>
+          </View>
         </View>
       </View>
     </View>

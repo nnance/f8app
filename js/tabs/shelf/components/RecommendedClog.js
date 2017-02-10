@@ -29,7 +29,7 @@ class RecommendedClog extends React.Component {
     return (
       <View style={{ flex: 1 }}>
         <Image source={require('../img/top-clog-bg.png')} style={{ flex: 1, flexDirection: 'row', resizeMode: 'stretch', width: undefined, height: undefined }}>
-          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', paddingLeft: 10 }}>
+          <View style={{ width: 130, justifyContent: 'center', alignItems: 'center', paddingLeft: 10 }}>
             <CircleImageWithCategory
               source={mapSource(clog.preview)}
               category={clog.category}
@@ -38,8 +38,8 @@ class RecommendedClog extends React.Component {
               shadowColor={colors.fadedWhite}
             />
           </View>
-          <View style={{ flex: 2, justifyContent: 'center', alignItems: 'flex-start' }}>
-            <View style={{ height: 100, paddingHorizontal: 20, width: 250 }}>
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'flex-start' }}>
+            <View style={{ height: 100, paddingHorizontal: 20 }}>
               <View style={{ flex: 2 }}>
                 <Text style={{ fontSize: 14, color: 'white', fontWeight: 'bold', lineHeight: 14 }}>
                   {clog.title}
@@ -56,8 +56,8 @@ class RecommendedClog extends React.Component {
                   {clog.review}
                 </Text>
               </View>
-              <View style={{ flex: 1, alignItems: 'flex-end' }}>
-                <BorderButton onPress={this.onReadPress} caption="อ่าน" containerStyle={{ height: 18 }} textStyle={{ color: 'rgba(60, 30, 90, 1)' }} />
+              <View style={{ flex: 1, alignItems: 'flex-end', paddingTop: 10 }}>
+                <BorderButton onPress={this.onReadPress} caption="อ่าน" containerStyle={{ height: 18, width: 60 }} textStyle={{ color: 'rgba(60, 30, 90, 1)' }} />
               </View>
             </View>
           </View>

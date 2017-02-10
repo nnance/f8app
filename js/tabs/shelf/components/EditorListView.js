@@ -94,23 +94,19 @@ const MetaEditorRow = props => (
       />
     </TouchableOpacity>
     <View style={{ flex: 1, paddingLeft: 20, height: 130 }}>
-      <View style={{ flex: 1, flexDirection: 'row' }}>
-        <View style={{ flex: 1 }}>
-          <Text style={styles.nameText} numberOfLines={1}>{props.editor.name}</Text>
-          <Text style={styles.clogCountText} numberOfLines={1}>
-            {toHumanNumber(props.editor.clogCount)} Clogs
-          </Text>
-          <Text style={styles.followingCountText} numberOfLines={1}>
-            {toHumanNumber(props.editor.followingCount)} คน กำลังติดตาม
-          </Text>
+      <View style={{ flex: 1 }}>
+        <View style={{ flexDirection: 'row' }}>
+          <View style={{ flex: 1 }}>
+            <Text style={styles.nameText} numberOfLines={1}>{props.editor.name}</Text>
+          </View>
+          <View style={{ width: 80 }}/>
         </View>
-        <View style={{ width: 80, alignItems: 'flex-end' }}>
-          {
-              props.editor.isFollowing ?
-                <UnfollowButton />
-              : <FollowButton />
-            }
-        </View>
+        <Text style={styles.clogCountText} numberOfLines={1}>
+          {toHumanNumber(props.editor.clogCount)} Clogs
+        </Text>
+        <Text style={styles.followingCountText} numberOfLines={1}>
+          {toHumanNumber(props.editor.followingCount)} คน กำลังติดตาม
+        </Text>
       </View>
       <View style={{ height: 80 }}>
         <HorizontalListView
@@ -119,6 +115,13 @@ const MetaEditorRow = props => (
           renderRow={clog => <ClogMeta onPress={props.onClogPress} clog={clog} />}
           showsHorizontalScrollIndicator={false}
         />
+      </View>
+      <View style={{ position: 'absolute', right: 5, top: 5 }}>
+        {
+          props.editor.isFollowing ?
+            <UnfollowButton />
+          : <FollowButton />
+        }
       </View>
     </View>
   </View>
