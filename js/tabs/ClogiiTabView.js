@@ -152,13 +152,6 @@ class ClogiiTabView extends React.Component {
             navigator={this.props.navigator}
             tabLabel="Notifications"
           />
-          <TestBadges
-            navigator={this.props.navigator}
-            tabLabel="Notifications"
-            isActive={this.state.activeTab === 2}
-          >
-            <Image style={styles.mockScreen} source={require('./img/mock/notification.png')} />
-          </TestBadges>
           <ProfileScreen navigator={this.props.navigator} tabLabel="Profile" isActive={this.state.activeTab === 3} />
         </ScrollableTabView>
       </Drawer>
