@@ -22,13 +22,16 @@
  */
 
 import { makeExecutableSchema } from 'graphql-tools';
+import { getSchema } from '@risingstack/graffiti-mongoose';
 import typeDefs from './typeDefs';
 import resolvers from './resolvers';
 import scalars from './scalars';
+import { User } from './models';
 
 const Schema = makeExecutableSchema({
   typeDefs,
   resolvers: Object.assign(scalars, resolvers),
 });
 
-module.exports = Schema;
+// module.exports = Schema;
+module.exports = getSchema([User]);

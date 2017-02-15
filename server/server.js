@@ -27,6 +27,7 @@ import Parse from 'parse/node';
 import { ParseServer } from 'parse-server';
 import ParseDashboard from 'parse-dashboard';
 import { graphqlExpress, graphiqlExpress } from 'graphql-server-express';
+import graphqlHTTP from 'express-graphql';
 import bodyParser from 'body-parser';
 
 import appLink from './app-link';
@@ -50,8 +51,8 @@ Parse.serverURL = `${SERVER_URL}/parse`;
 Parse.masterKey = MASTER_KEY;
 Parse.Cloud.useMasterKey();
 
-function getSchema() {
-  if (!IS_DEVELOPMENT) {
+function getSchema(rebuild) {
+  if (!rebuild) {
     return MOCK_SERVER ? require('./cloud/graphql/mockSchema.js') : require('./cloud/graphql/schema.js');
   }
 
@@ -113,7 +114,7 @@ if (IS_DEVELOPMENT) {
 }
 
 server.use('/graphql', bodyParser.json(), graphqlExpress(request => ({
-  schema: getSchema(),
+  schema: getSchema(false),
   context: {
     request,
   },
@@ -124,6 +125,14 @@ if (IS_DEVELOPMENT) {
     endpointURL: '/graphql',
   }));
 }
+
+server.use('/ofc-graphql', graphqlHTTP(request => ({
+  schema: getSchema(false),
+  graphiql: IS_DEVELOPMENT,
+  context: {
+    request,
+  },
+})));
 
 server.use('/', (req, res) => res.redirect('/graphql'));
 
