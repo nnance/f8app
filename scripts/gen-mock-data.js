@@ -38,7 +38,13 @@ async function genAuthors() {
   return authors;
 }
 
-async function genClogs(authors) {
+function genTags() {
+  return Promise.all(_.range(20).map(() => models.Tag.create({
+    name: casual.title,
+  })));
+}
+
+async function genClogs(authors, tags) {
   const clogs = await Promise.all(_.range(100).map(async () => {
     return models.Clog.create({
       title: casual.title,
@@ -48,7 +54,7 @@ async function genClogs(authors) {
       authorId: authors[_.random(0, authors.length - 1)],
       followerIds: [],
       commentIds: [],
-      tagIds: [],
+      tagIds: _.range(_.random(0, 5)).map(() => tags[_.random(0, tags.length - 1)]),
       category: await casual.clog_category,
       review: casual.sentences(20),
       viewCount: casual.positive_int(10000),
@@ -59,8 +65,9 @@ async function genClogs(authors) {
 }
 
 async function gen() {
+  const tags = await genTags();
   const authors = await genAuthors();
-  const clogs = await genClogs(authors);
+  const clogs = await genClogs(authors, tags);
 }
 
 gen().then(() => {
