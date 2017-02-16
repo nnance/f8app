@@ -6,13 +6,9 @@ import { liftEdges } from '../../../common/utils';
 import ClogListView from '../components/ClogListView';
 
 const query = gql`
-  query ClogListView($filter: FilterFindManyClogInput, $sort: SortConnectionClogEnum = _ID_ASC){
-    clogs: clogConnection(filter: $filter, sort: $sort) {
-      edges {
-        node {
-          ...ClogListView
-        }
-      }
+  query ClogListView($filter: FilterFindManyClogInput, $sort: SortFindManyClogInput = _ID_ASC){
+    clogs: trendingClogs(filter: $filter, sort: $sort, limit: 50) {
+      ...ClogListView
     }
   }
   ${ClogListView.fragments.clog}
@@ -34,7 +30,7 @@ const mapQueryToProps = ({ data }) => {
     console.error('graphql error: ', error);
   }
   return {
-    clogs: loading || !!error ? [] : liftEdges(clogs.edges),
+    clogs: loading || !!error ? [] : clogs,
   };
 };
 

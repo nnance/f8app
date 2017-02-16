@@ -10,15 +10,20 @@ const clogSchema = Schema({
   episodeIds: [{ type: Schema.Types.ObjectId, ref: 'Episode', required: true }],
   preview: String,
   cover: String,
-  category: { type: String, enum: CATEGORY_ENUM },
+  category: { type: String, enum: CATEGORY_ENUM, index: true },
   authorId: { type: Schema.Types.ObjectId, ref: 'Editor', required: true },
   review: { type: String, required: true },
   followerIds: [{ type: Schema.Types.ObjectId, ref: 'User', required: true }],
   viewCount: { type: Number, default: 0 },
   commentIds: [{ type: Schema.Types.ObjectId, ref: 'Comment', required: true }],
-  tagIds: [{ type: Schema.Types.ObjectId, ref: 'Tag', required: true }],
-  createdAt: { type: Date, required: true },
+  tagIds: {
+    type: [{ type: Schema.Types.ObjectId, ref: 'Tag', required: true }],
+    index: true,
+  },
+  createdAt: { type: Date, required: true, index: true },
 });
+
+clogSchema.index({ category: 1, createdAt: 1 });
 
 const Clog = mongoose.model('Clog', clogSchema);
 const ClogTC = composeWithMongoose(Clog);

@@ -6,6 +6,7 @@ import {
 import Home from '../containers/Home';
 import ClogCategory from '../containers/ClogCategory';
 import ClogListView from '../containers/ClogListView';
+import TrendingListView from '../containers/TrendingListView';
 import EditorListView from '../containers/EditorListView';
 import FixBugScrollViewNavigator from '../../../common/FixBugScrollViewNavigator';
 
@@ -16,6 +17,7 @@ class ShelfNavigator extends React.Component {
     super(...args);
     this.goBack = this.goBack.bind(this);
     this.goToClogCategory = this.goToClogCategory.bind(this);
+    this.goToTrendingListView = this.goToTrendingListView.bind(this);
     this.goToClogListView = this.goToClogListView.bind(this);
     this.goToEditorListView = this.goToEditorListView.bind(this);
     this.renderScene = this.renderScene.bind(this);
@@ -33,6 +35,10 @@ class ShelfNavigator extends React.Component {
     this.navigator.push({ page: 'clog-list-view', ...options });
   }
 
+  goToTrendingListView(options) {
+    this.navigator.push({ page: 'trending-list-view', ...options });
+  }
+
   goToEditorListView(category) {
     this.navigator.push({ page: 'editor-list-view', category });
   }
@@ -47,6 +53,7 @@ class ShelfNavigator extends React.Component {
         goToBook={this.props.goToBook}
         goToClogCategory={this.goToClogCategory}
         goToClogListView={this.goToClogListView}
+        goToTrendingListView={this.goToTrendingListView}
       />);
     }
     if (route.page === 'clog-category') {
@@ -55,6 +62,7 @@ class ShelfNavigator extends React.Component {
         goToBook={this.props.goToBook}
         goToClogListView={this.goToClogListView}
         goToEditorListView={this.goToEditorListView}
+        goToTrendingListView={this.goToTrendingListView}
         category={route.category}
       />);
     }
@@ -63,7 +71,17 @@ class ShelfNavigator extends React.Component {
         onBackPress={this.goBack}
         title={route.title}
         category={route.category}
-        orderBy={route.orderBy}
+        sort={route.sort}
+        goToBook={this.props.goToBook}
+        tag={route.tag}
+      />);
+    }
+    if (route.page === 'trending-list-view') {
+      return (<TrendingListView
+        onBackPress={this.goBack}
+        title={route.title}
+        category={route.category}
+        sort={route.sort}
         goToBook={this.props.goToBook}
         tag={route.tag}
       />);

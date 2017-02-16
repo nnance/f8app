@@ -257,10 +257,10 @@ class ClogCategory extends React.Component {
     });
   }
 
-  renderButtonViewAllClog(pushOption = {}) {
+  renderButtonViewAllClog(onPress) {
     return (<BorderButton
       type="fadedWhite" caption="ทั้งหมด" containerStyle={{ flex: 1 }}
-      onPress={() => this.props.goToClogListView({ category: this.props.category, ...pushOption })}
+      onPress={onPress}
     />);
   }
 
@@ -321,7 +321,9 @@ class ClogCategory extends React.Component {
                 <View style={{ padding: 5 }}>
                   <MetaClogListView
                     goToBook={this.props.goToBook} header="What's New" clogs={this.props.recentlyClogs}
-                    renderButton={() => this.renderButtonViewAllClog({ title: 'What\'s new', orderBy: 'RECENTLY' })}
+                    renderButton={() => this.renderButtonViewAllClog(
+                      () => this.props.goToClogListView({ category: this.props.category, title: 'What\'s new', sort: 'CREATEDAT_DESC' })
+                    )}
                   />
                 </View>
               </View>
@@ -331,7 +333,9 @@ class ClogCategory extends React.Component {
             <View style={{ height: 180, padding: 5 }}>
               <MetaClogListView
                 goToBook={this.props.goToBook} header="Top Chart" clogs={this.props.trendingClogs}
-                renderButton={() => this.renderButtonViewAllClog({ title: 'ยอดนิยม', orderBy: 'TRENDING' })}
+                renderButton={() => this.renderButtonViewAllClog(
+                  () => this.props.goToTrendingListView({ category: this.props.category, title: 'ยอดนิยม' })
+                )}
               />
             </View>
             <View style={{ height: 180, padding: 5 }}>

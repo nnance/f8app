@@ -40,3 +40,7 @@ export function bindFn(fn, ...args) {
   }
   return fn.bind(null, ...args);
 }
+
+export function liftEdges(edges) {
+  return edges.map(edge => edge.node);
+}

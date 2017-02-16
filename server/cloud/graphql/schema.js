@@ -7,7 +7,10 @@ GQC.rootQuery().addFields({
   userConnection: modelTCs.User.get('$connection'),
   clog: modelTCs.Clog.get('$findOne'),
   clogConnection: modelTCs.Clog.get('$connection'),
+  clogs: modelTCs.Clog.get('$findMany'),
+  trendingClogs: modelTCs.Clog.get('$findMany'),
   tagConnection: modelTCs.Tag.get('$connection'),
+  tags: modelTCs.Tag.get('$findMany'),
   recommendedClog: {
     type: modelTCs.Clog.getType(),
     resolve: () => models.Clog.findOne({}),

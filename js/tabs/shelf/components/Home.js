@@ -55,7 +55,7 @@ class Home extends React.Component {
     return (
       <BorderButton
         caption="ทั้งหมด" type="fadedWhite" containerStyle={styles.clogListButton}
-        onPress={() => this.props.goToClogListView({ page: 'clog-list-view', title: 'ยอดนิยม', orderBy: 'TRENDING' })}
+        onPress={() => this.props.goToTrendingListView({ title: 'ยอดนิยม' })}
       />
     );
   }
