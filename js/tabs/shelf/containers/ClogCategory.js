@@ -5,7 +5,7 @@ import ClogCategory from '../components/ClogCategory';
 import { CLOG_PREVIEW_LIMIT } from '../constants';
 
 export const query = gql`
-  query CategoryDetail($category: CATEGORY!){
+  query CategoryDetail($category: EnumClogCategory!){
     categoryDetail(category: $category) {
       recommendedClogs {
         ...RecommendClog
@@ -14,10 +14,10 @@ export const query = gql`
         ...ClogCategoryEditor
       }
     }
-    trendingClogs: clogs(filter: {category: $category, limit: ${CLOG_PREVIEW_LIMIT}}, orderBy: TRENDING) {
+    trendingClogs: trendingClogs(filter: {category: $category}, limit: ${CLOG_PREVIEW_LIMIT}) {
       ...MetaClogListView
     }
-    recentlyClogs: clogs(filter: {category: $category, limit: ${CLOG_PREVIEW_LIMIT}}, orderBy: RECENTLY) {
+    recentlyClogs: clogs(filter: {category: $category}, limit: ${CLOG_PREVIEW_LIMIT}, sort: CREATEDAT_DESC) {
       ...MetaClogListView
     }
   }

@@ -29,7 +29,7 @@ import ParseDashboard from 'parse-dashboard';
 import { graphqlExpress, graphiqlExpress } from 'graphql-server-express';
 import graphqlHTTP from 'express-graphql';
 import bodyParser from 'body-parser';
-
+getSchema()
 import appLink from './app-link';
 
 const SERVER_PORT = process.env.SERVER_PORT || 8080;
