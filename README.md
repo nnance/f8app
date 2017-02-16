@@ -31,16 +31,21 @@
   ```
   $ npm run dev
   ```
+  
+4. **Generage Mock Data**
+
+  ```
+  $ npm run clean-db
+  $ npm run gen-mock
+  ```
 
   Make sure everything works by visiting:
 
   * Parse Dashboard: [http://localhost:8080/dashboard](http://localhost:8080/dashboard)
-  * Graph*i*QL: [http://localhost:8080/graphql](http://localhost:8080/graphql?query=query+%7B%0A++schedule+%7B%0A++++title%0A++++speakers+%7B%0A++++++name%0A++++++title%0A++++%7D%0A++++location+%7B%0A++++++name%0A++++%7D%0A++%7D%0A%7D)
-
-  <img src=".github/screenshot-server@2x.png" width="800">
+  * Graph*i*QL: [http://localhost:8080/graphql](http://localhost:8080)
 
 
-4. **Running on Android**:
+5. **Running on Android**:
 
   ```
   $ react-native run-android
@@ -49,7 +54,7 @@
   ```
 
 
-5. **Running on iOS:**
+6. **Running on iOS:**
 
   ```
   $ react-native run-ios
