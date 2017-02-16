@@ -34,3 +34,10 @@ export function countArray(TC, fieldName, field) {
     resolve: source => source[field] ? source[field].length : 0,
   });
 }
+
+export function addId(TC) {
+  TC.addField('id', {
+    type: 'String',
+    resolve: source => source._id,
+  });
+}

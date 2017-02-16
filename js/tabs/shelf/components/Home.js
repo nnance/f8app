@@ -123,7 +123,7 @@ Home.fragments = {
     fragment FavoritTag on Tag {
       id
       name
-      trendingClogs {
+      trendingClogs: clogs(limit: 10) {
         ...MetaClogListView
       }
     }

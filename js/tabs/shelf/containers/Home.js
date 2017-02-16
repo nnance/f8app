@@ -4,16 +4,28 @@ import { graphql } from 'react-apollo';
 import Home from '../components/Home';
 import { CLOG_PREVIEW_LIMIT } from '../constants';
 
+function liftEdges(edges) {
+  return edges.map(edge => edge.node);
+}
+
 export const query = gql`
   query {
-    trendingClogs: clogs(filter: {limit: ${CLOG_PREVIEW_LIMIT}}, orderBy: TRENDING) {
-      ...MetaClogListView
+    trendingClogs: clogConnection(first: ${CLOG_PREVIEW_LIMIT}) {
+      edges {
+        node {
+          ...MetaClogListView
+        }
+      }
     }
     recommendedClog {
       ...RecommendedClog
     }
-    favoriteTags {
-      ...FavoritTag
+    favoriteTags: tagConnection(first: 3) {
+      edges {
+        node {
+          ...FavoritTag
+        }
+      }
     }
     heroBanners {
       ...HeroBanner
@@ -31,10 +43,10 @@ export const mapQueryToProps = ({ data }) => {
     console.error('graphql error: ', error);
   }
   return ({
-    trendingClogs: loading || !!error ? [] : trendingClogs,
+    trendingClogs: loading || !!error ? [] : liftEdges(trendingClogs.edges),
     recommendedClog,
     heroBanners: loading || !!error ? [] : heroBanners,
-    favoriteTags: loading || !!error ? [] : favoriteTags,
+    favoriteTags: loading || !!error ? [] : liftEdges(favoriteTags.edges),
   });
 };
 

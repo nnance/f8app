@@ -7,6 +7,15 @@ GQC.rootQuery().addFields({
   userConnection: models.UserTC.get('$connection'),
   clog: models.ClogTC.get('$findOne'),
   clogConnection: models.ClogTC.get('$connection'),
+  tagConnection: models.TagTC.get('$connection'),
+  recommendedClog: {
+    type: models.ClogTC.getType(),
+    resolve: () => models.Clog.findOne({}),
+  },
+  heroBanners: {
+    type: [models.ClogTC.getType()],
+    resolve: () => models.Clog.find({}),
+  },
 });
 
 module.exports = GQC.buildSchema();
