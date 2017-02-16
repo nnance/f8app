@@ -1,21 +1,22 @@
 import { GQC } from 'graphql-compose';
 
-import * as models from './models';
+import { models, modelTCs } from './models';
 
 GQC.rootQuery().addFields({
-  user: models.UserTC.get('$findById'),
-  userConnection: models.UserTC.get('$connection'),
-  clog: models.ClogTC.get('$findOne'),
-  clogConnection: models.ClogTC.get('$connection'),
-  tagConnection: models.TagTC.get('$connection'),
+  user: modelTCs.User.get('$findById'),
+  userConnection: modelTCs.User.get('$connection'),
+  clog: modelTCs.Clog.get('$findOne'),
+  clogConnection: modelTCs.Clog.get('$connection'),
+  tagConnection: modelTCs.Tag.get('$connection'),
   recommendedClog: {
-    type: models.ClogTC.getType(),
+    type: modelTCs.Clog.getType(),
     resolve: () => models.Clog.findOne({}),
   },
   heroBanners: {
-    type: [models.ClogTC.getType()],
+    type: [modelTCs.Clog.getType()],
     resolve: () => models.Clog.find({}),
   },
+  editorConnection: modelTCs.Editor.get('$connection'),
 });
 
 module.exports = GQC.buildSchema();

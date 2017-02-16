@@ -7,15 +7,20 @@ mongoose.connect(process.env.DATABASE_URI);
 
 const ns = ['Clog', 'Comment', 'Episode', 'Editor', 'Tag', 'User'];
 
-const imported = ns.map(model => require(`./${model}`));
-const models = imported.reduce((acc, m) => _.assign(acc, _.omit(m, 'onReady')), {});
+const imported = ns.map(model => {
+  return _.assign({ name: model, ...require(`./${model}`) });
+});
+const models = imported.reduce((acc, m) => _.assign(acc, { [m.name]: m.Model }), {});
+const modelTCs = imported.reduce((acc, m) => _.assign(acc, { [m.name]: m.TC }), {});
 
-ns.forEach(model => helpers.addId(models[`${model}TC`]));
+const ex = { models, modelTCs };
+
+_.each(modelTCs, TC => helpers.addId(TC));
 
 imported.forEach(m => {
   if (m.onReady) {
-    m.onReady(models);
+    m.onReady(ex);
   }
 });
 
-module.exports = models;
+module.exports = ex;

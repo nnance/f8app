@@ -6,5 +6,10 @@ const userSchema = Schema({
   profilePicture: String,
 });
 
-export const User = mongoose.model('User', userSchema);
-export const UserTC = composeWithMongoose(User);
+const User = mongoose.model('User', userSchema);
+const UserTC = composeWithMongoose(User);
+
+export {
+  User as Model,
+  UserTC as TC,
+};

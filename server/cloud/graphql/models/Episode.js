@@ -9,8 +9,8 @@ const episodeSchema = Schema({
   createdAt: { type: Date, required: true },
 });
 
-export const Episode = mongoose.model('Episode', episodeSchema);
-export const EpisodeTC = composeWithMongoose(Episode);
+const Episode = mongoose.model('Episode', episodeSchema);
+const EpisodeTC = composeWithMongoose(Episode);
 
 EpisodeTC.addFields({
   likeCount: {
@@ -22,3 +22,8 @@ EpisodeTC.addFields({
     resolve: () => 0,
   },
 });
+
+export {
+  Episode as Model,
+  EpisodeTC as TC,
+};

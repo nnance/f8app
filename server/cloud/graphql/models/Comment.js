@@ -8,9 +8,14 @@ const commentSchema = Schema({
   comment: { type: String, required: true },
 });
 
-export const Comment = mongoose.model('Comment', commentSchema);
-export const CommentTC = composeWithMongoose(Comment);
+const Comment = mongoose.model('Comment', commentSchema);
+const CommentTC = composeWithMongoose(Comment);
 
-export function onReady(models) {  
-  helpers.relateObject(models.CommentTC, models.UserTC, 'user', 'userId');
+export function onReady({ modelTCs }) {  
+  helpers.relateObject(CommentTC, modelTCs.User, 'user', 'userId');
 }
+
+export {
+  Comment as Model,
+  CommentTC as TC,
+};

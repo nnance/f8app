@@ -10,7 +10,9 @@
     "lint": "eslint --ignore-pattern /server/static/**/*.js js server",
     "compile:server": "babel server --out-dir build-server",
     "dev": "npm run dev:db && npm run start:watch",
-    "dev:db": ". ./scripts/dev-db"
+    "dev:db": ". ./scripts/dev-db",
+    "gen-mock": "babel-node ./scripts/gen-mock-data.js",
+    "clean-db": "babel-node ./scripts/clean-db.js"
   },
   "dependencies": {
     "@exponent/react-native-read-more-text": "^1.0.0",

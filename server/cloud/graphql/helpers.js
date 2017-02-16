@@ -5,7 +5,7 @@ export function relateObject(TC, toTC, newField, field) {
       resolver: toTC.get('$findOne'),
       args: {
         filter: (source) => ({
-          _id: source[field]
+          _id: source[field].toString()
         }),
         sort: null,
         skip: null,
@@ -29,14 +29,14 @@ export function relateArray(TC, toTC, newField, field) {
 }
 
 export function countArray(TC, fieldName, field) {
-  TC.addField(fieldName, {
+  TC.setField(fieldName, {
     type: 'Int',
     resolve: source => source[field] ? source[field].length : 0,
   });
 }
 
 export function addId(TC) {
-  TC.addField('id', {
+  TC.setField('id', {
     type: 'String',
     resolve: source => source._id,
   });

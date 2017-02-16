@@ -13,28 +13,33 @@ const clogSchema = Schema({
   category: { type: String, enum: CATEGORY_ENUM },
   authorId: { type: Schema.Types.ObjectId, ref: 'Editor', required: true },
   review: { type: String, required: true },
-  followerIds: [{ type: [Schema.Types.ObjectId], ref: 'User', required: true }],
+  followerIds: [{ type: Schema.Types.ObjectId, ref: 'User', required: true }],
   viewCount: { type: Number, default: 0 },
-  commentIds: { type: [Schema.Types.ObjectId], ref: 'Comment', required: true },
-  tagIds: { type: [Schema.Types.ObjectId], ref: 'Tag', required: true },
+  commentIds: [{ type: Schema.Types.ObjectId, ref: 'Comment', required: true }],
+  tagIds: [{ type: Schema.Types.ObjectId, ref: 'Tag', required: true }],
   createdAt: { type: Date, required: true },
 });
 
-export const Clog = mongoose.model('Clog', clogSchema);
-export const ClogTC = composeWithMongoose(Clog);
+const Clog = mongoose.model('Clog', clogSchema);
+const ClogTC = composeWithMongoose(Clog);
 
-ClogTC.addField('likeCount', {
+ClogTC.setField('likeCount', {
   type: 'Int',
   resolve: () => 0,
 });
 helpers.countArray(ClogTC, 'followerCount', 'followerIds');
 helpers.countArray(ClogTC, 'commentCount', 'commentIds');
 
-export function onReady(models) {
-  helpers.relateObject(models.ClogTC, models.EditorTC, 'author', 'authorId');
-  helpers.relateArray(models.ClogTC, models.CommentTC, 'comments', 'commentIds');
-  helpers.relateArray(models.ClogTC, models.EpisodeTC, 'episodes', 'episodeIds');
-  helpers.relateArray(models.ClogTC, models.TagTC, 'tags', 'tagIds');
-  helpers.relateArray(models.ClogTC, models.UserTC, 'followers', 'followerIds');
-  helpers.relateArray(models.ClogTC, models.UserTC, 'followersYouKnow', 'followerIds');
+export function onReady({modelTCs}) {
+  helpers.relateObject(ClogTC, modelTCs.Editor, 'author', 'authorId');
+  helpers.relateArray(ClogTC, modelTCs.Comment, 'comments', 'commentIds');
+  helpers.relateArray(ClogTC, modelTCs.Episode, 'episodes', 'episodeIds');
+  helpers.relateArray(ClogTC, modelTCs.Tag, 'tags', 'tagIds');
+  helpers.relateArray(ClogTC, modelTCs.User, 'followers', 'followerIds');
+  helpers.relateArray(ClogTC, modelTCs.User, 'followersYouKnow', 'followerIds');
 }
+
+export {
+  Clog as Model,
+  ClogTC as TC,
+};

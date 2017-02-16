@@ -10,8 +10,8 @@ const editorSchema = Schema({
   clogIds: { type: [Schema.Types.ObjectId], ref: 'Clog' },
 });
 
-export const Editor = mongoose.model('Editor', editorSchema);
-export const EditorTC = composeWithMongoose(Editor);
+const Editor = mongoose.model('Editor', editorSchema);
+const EditorTC = composeWithMongoose(Editor);
 
 EditorTC.addFields({
   isFollowing: {
@@ -26,6 +26,11 @@ EditorTC.addFields({
 
 helpers.countArray(EditorTC, 'clogCount', 'clogs');
 
-export function onReady(models) {
-  helpers.relateArray(models.EditorTC, models.ClogTC, 'clogs', 'clogIds');
+export function onReady({ modelTCs }) {
+  helpers.relateArray(EditorTC, modelTCs.Clog, 'clogs', 'clogIds');
 }
+
+export {
+  Editor as Model,
+  EditorTC as TC,
+};
