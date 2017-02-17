@@ -8,12 +8,14 @@ import { models } from '../server/cloud/graphql/models';
 
 mongoose.connect(process.env.DATABASE_URI);
 
+const url = process.env.URL;
+
 const preview = async () => {
   const uri = await casual.clog_preview;
   if (!uri) {
     return null;
   }
-  return `http://localhost:8080${uri}`;
+  return `${url}${uri}`;
 };
 
 const cover = async () => {
@@ -21,7 +23,7 @@ const cover = async () => {
   if (!uri) {
     return null;
   }
-  return `http://localhost:8080${uri}`;
+  return `${url}${uri}`;
 };
 
 function genArray(array, maxSize) {
@@ -31,7 +33,7 @@ function genArray(array, maxSize) {
 function genUsers() {
   return Promise.all(_.range(2000).map(async () => models.User.create({
     name: casual.name,
-    profilePicture: `http://localhost:8080${await casual.profilePicture}`,
+    profilePicture: `${url}${await casual.profilePicture}`,
   })));
 }
 
@@ -39,7 +41,7 @@ function genAuthors() {
   return Promise.all(_.range(50).map(async () => {
    return models.Editor.create({
       name: casual.name,
-      profilePicture: `http://localhost:8080${await casual.profilePicture}`,
+      profilePicture: `${url}${await casual.profilePicture}`,
       followingCount: casual.positive_int(1000),
       clogIds: [],
     });
@@ -52,8 +54,26 @@ function genTags() {
   })));
 }
 
-function genClogs(users, authors, tags) {
-  return Promise.all(_.range(100).map(async () => {
+async function genClogs(users, authors, tags) {
+  const author = authors[_.random(0, authors.length - 1)];
+  const dumpClog = await models.Clog.create({
+    _id: "58a6e85138cbdaba481a7b59",
+    title: casual.title,
+    episodeIds: [],
+    thumbnailImage: await preview(),
+    coverImage: await cover(),
+    authorId: author,
+    followerIds: genArray(users, users.length),
+    commentIds: [],
+    tagIds: genArray(tags, 5),
+    category: await casual.clog_category,
+    synopsis: casual.sentences(20),
+    viewCount: casual.positive_int(10000),
+    createdAt: casual.date,
+  });
+  author.clogIds.push(dumpClog);
+  await author.save();
+  const clogs = await Promise.all(_.range(100).map(async () => {
       const author = authors[_.random(0, authors.length - 1)];
       return models.Clog.create({
         title: casual.title,
@@ -75,6 +95,7 @@ function genClogs(users, authors, tags) {
       })
     })
   );
+  return [].concat([dumpClog], clogs);
 }
 
 function genEpisodes(clogs) {

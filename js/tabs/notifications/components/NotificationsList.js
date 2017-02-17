@@ -34,7 +34,7 @@ class NotificationsRow extends React.Component {
     }
 
     return (
-      <TouchableOpacity onPress={() => this.props.goToBook({ id: 1 })}>
+      <TouchableOpacity onPress={() => this.props.goToBook("58a6e85138cbdaba481a7b59")}>
         <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', padding: 10, backgroundColor: '#fbfbfb' }}>
           <Image
             style={{ width: 40, height: 40, borderRadius: 20 }}

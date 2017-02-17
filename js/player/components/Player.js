@@ -17,6 +17,7 @@ import { colors } from '../../common/styles';
 import { toHumanNumber } from '../../common/utils';
 import ModalSpinner from '../../common/ModalSpinner';
 import BookAndPlayerTabBar from '../../common/BookAndPlayerTabBar';
+import { serverURL } from '../../env';
 
 const styles = StyleSheet.create({
   navButton: {
@@ -88,9 +89,9 @@ class Player extends React.Component {
     }
     let playerView;
     if (Platform.OS === 'android') {
-      playerView = <WebView style={{ flex: 1 }} source={{ uri: 'http://localhost:8080/static/demo-episode/clog.html' }} onLoadEnd={() => this.setState({ loading: false })} />;
+      playerView = <WebView style={{ flex: 1 }} source={{ uri: `${serverURL}/static/demo-episode/clog.html` }} onLoadEnd={() => this.setState({ loading: false })} />;
     } else {
-      playerView = <WKWebView style={{ flex: 1 }} source={{ uri: 'http://localhost:8080/static/demo-episode/clog.html' }} onLoadEnd={() => this.setState({ loading: false })} />;
+      playerView = <WKWebView style={{ flex: 1 }} source={{ uri: `${serverURL}/static/demo-episode/clog.html` }} onLoadEnd={() => this.setState({ loading: false })} />;
     }
     return (
       <View style={{ flex: 1 }}>

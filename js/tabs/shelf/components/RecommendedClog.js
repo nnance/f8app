@@ -41,7 +41,7 @@ class RecommendedClog extends React.Component {
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'flex-start' }}>
             <View style={{ height: 100, paddingHorizontal: 20 }}>
               <View style={{ flex: 2 }}>
-                <Text style={{ fontSize: 14, color: 'white', fontWeight: 'bold', lineHeight: 14 }}>
+                <Text style={{ fontSize: 14, color: 'white', fontWeight: 'bold', lineHeight: 14 }} numberOfLines={1}>
                   {clog.title}
                 </Text>
                 <Text style={{ fontSize: 11, color: colors.textFadedWhite }}>
