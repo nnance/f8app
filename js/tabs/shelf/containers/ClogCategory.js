@@ -7,7 +7,7 @@ import { CLOG_PREVIEW_LIMIT } from '../constants';
 export const query = gql`
   query CategoryDetail($category: EnumClogCategory!){
     categoryDetail(category: $category) {
-      recommendedClogs {
+      recommendedClogs(limit: 5) {
         ...RecommendClog
       }
       editors {

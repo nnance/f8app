@@ -21,13 +21,19 @@ const cover = async () => {
   return `http://localhost:8080${uri}`;
 };
 
-async function remove() {
-  await models.Clog.remove({});
-  await models.Editor.remove({});
+function genArray(array, maxSize) {
+  return _.range(_.random(0, maxSize)).map(() => array[_.random(0, array.length - 1)]);
 }
 
-async function genAuthors() {
-  const authors = await Promise.all(_.range(50).map(async () => {
+function genUsers() {
+  return Promise.all(_.range(2000).map(async () => models.User.create({
+    name: casual.name,
+    profilePicture: `http://localhost:8080${await casual.profilePicture}`,
+  })));
+}
+
+function genAuthors() {
+  return Promise.all(_.range(50).map(async () => {
    return models.Editor.create({
       name: casual.name,
       profilePicture: `http://localhost:8080${await casual.profilePicture}`,
@@ -35,7 +41,6 @@ async function genAuthors() {
       clogIds: [],
     });
   }));
-  return authors;
 }
 
 function genTags() {
@@ -44,30 +49,30 @@ function genTags() {
   })));
 }
 
-async function genClogs(authors, tags) {
-  const clogs = await Promise.all(_.range(100).map(async () => {
+function genClogs(users, authors, tags) {
+  return Promise.all(_.range(100).map(async () => {
     return models.Clog.create({
       title: casual.title,
       episodeIds: [],
-      preview: await preview(),
-      cover: await cover(),
+      thumbnailImage: await preview(),
+      coverImage: await cover(),
       authorId: authors[_.random(0, authors.length - 1)],
-      followerIds: [],
+      followerIds: genArray(users, users.length),
       commentIds: [],
-      tagIds: _.range(_.random(0, 5)).map(() => tags[_.random(0, tags.length - 1)]),
+      tagIds: genArray(tags, 5),
       category: await casual.clog_category,
-      review: casual.sentences(20),
+      synopsis: casual.sentences(20),
       viewCount: casual.positive_int(10000),
       createdAt: new Date(),
     });
   }));
-  return clogs;
 }
 
 async function gen() {
+  const users = await genUsers();
   const tags = await genTags();
   const authors = await genAuthors();
-  const clogs = await genClogs(authors, tags);
+  const clogs = await genClogs(users, authors, tags);
 }
 
 gen().then(() => {

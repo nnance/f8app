@@ -31,7 +31,7 @@ class RecommendedClog extends React.Component {
         <Image source={require('../img/top-clog-bg.png')} style={{ flex: 1, flexDirection: 'row', resizeMode: 'stretch', width: undefined, height: undefined }}>
           <View style={{ width: 130, justifyContent: 'center', alignItems: 'center', paddingLeft: 10 }}>
             <CircleImageWithCategory
-              source={mapSource(clog.preview)}
+              source={mapSource(clog.thumbnailImage)}
               category={clog.category}
               size={130}
               shadowRadius={5}
@@ -53,7 +53,7 @@ class RecommendedClog extends React.Component {
                   style={{ fontSize: 11, color: colors.textFadedWhite, lineHeight: 12 }}
                   numberOfLines={4}
                 >
-                  {clog.review}
+                  {clog.synopsis}
                 </Text>
               </View>
               <View style={{ flex: 1, alignItems: 'flex-end', paddingTop: 10 }}>
@@ -72,12 +72,12 @@ RecommendedClog.fragments = {
     fragment RecommendedClog on Clog {
       id
       title
-      preview
+      thumbnailImage
       category
       author {
         name
       }
-      review
+      synopsis
     }
   `,
 };

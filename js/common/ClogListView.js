@@ -36,7 +36,7 @@ const ClogRow = props => (
     style={styles.rowContainer}
   >
     <CircleImageWithCategory
-      source={mapSource(props.preview)}
+      source={mapSource(props.thumbnailImage)}
       category={props.category}
       size={100}
     />
@@ -100,7 +100,7 @@ ClogListView.fragments = {
     fragment ClogListView on Clog {
       id
       title
-      preview
+      thumbnailImage
       category
       viewCount
       likeCount

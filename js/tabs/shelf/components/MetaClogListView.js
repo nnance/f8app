@@ -35,7 +35,7 @@ class ClogMeta extends React.Component {
       >
         <View style={{ height: 90 }}>
           <CircleImageWithCategory
-            source={mapSource(clog.preview)}
+            source={mapSource(clog.thumbnailImage)}
             category={clog.category}
             size={85}
             shadowRadius={5}
@@ -102,7 +102,7 @@ MetaClogListView.fragments = {
     fragment MetaClogListView on Clog {
       id
       title
-      preview
+      thumbnailImage
       category
       author {
         name

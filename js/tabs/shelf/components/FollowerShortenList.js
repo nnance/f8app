@@ -46,9 +46,10 @@ class FollowerShortenList extends React.Component {
   render() {
     const limit = 3;
     const data = this.props.followers;
+    const count = data.length > 1002 ? 1002 : data.length;
     const realData = data.slice(0, limit);
-    if (data.length > limit) {
-      realData.push({ remaining: data.length - limit });
+    if (count > limit) {
+      realData.push({ remaining: count - limit });
     }
     return (
       <View>

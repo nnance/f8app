@@ -13,7 +13,7 @@ import { colors } from '../../../common/styles';
 
 const Row = ({ onPress, clog }) =>
   (<TouchableOpacity style={{ flex: 1, padding: 20 }} onPress={() => onPress(clog.id)}>
-    <CircleImage size={250} source={{ uri: clog.preview }}>
+    <CircleImage size={250} source={{ uri: clog.thumbnailImage }}>
       <CircleImage size={250} source={require('../img/faded-blue.png')}>
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', paddingTop: 180 }}>
           <View style={{ width: 150, alignItems: 'center' }}>
@@ -63,7 +63,7 @@ HeroBanner.fragments = {
     fragment HeroBanner on Clog {
       id
       title
-      preview
+      thumbnailImage
       author {
         name
       }

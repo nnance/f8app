@@ -6,7 +6,7 @@ import { liftEdges } from '../../../common/utils';
 import ClogListView from '../components/ClogListView';
 
 const query = gql`
-  query ClogListView($filter: FilterFindManyClogInput, $sort: SortConnectionClogEnum = _ID_ASC){
+  query ClogListView($filter: FilterFindManyClogInput, $sort: SortConnectionClogEnum){
     clogs: clogConnection(filter: $filter, sort: $sort) {
       edges {
         node {
