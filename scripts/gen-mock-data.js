@@ -54,21 +54,27 @@ function genTags() {
 
 function genClogs(users, authors, tags) {
   return Promise.all(_.range(100).map(async () => {
-    return models.Clog.create({
-      title: casual.title,
-      episodeIds: [],
-      thumbnailImage: await preview(),
-      coverImage: await cover(),
-      authorId: authors[_.random(0, authors.length - 1)],
-      followerIds: genArray(users, users.length),
-      commentIds: [],
-      tagIds: genArray(tags, 5),
-      category: await casual.clog_category,
-      synopsis: casual.sentences(20),
-      viewCount: casual.positive_int(10000),
-      createdAt: casual.date,
-    });
-  }));
+      const author = authors[_.random(0, authors.length - 1)];
+      return models.Clog.create({
+        title: casual.title,
+        episodeIds: [],
+        thumbnailImage: await preview(),
+        coverImage: await cover(),
+        authorId: author,
+        followerIds: genArray(users, users.length),
+        commentIds: [],
+        tagIds: genArray(tags, 5),
+        category: await casual.clog_category,
+        synopsis: casual.sentences(20),
+        viewCount: casual.positive_int(10000),
+        createdAt: casual.date,
+      })
+      .then(clog => {
+        author.clogIds.push(clog);
+        return author.save().then(() => clog);
+      })
+    })
+  );
 }
 
 function genEpisodes(clogs) {

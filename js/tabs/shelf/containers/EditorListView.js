@@ -4,9 +4,11 @@ import { graphql } from 'react-apollo';
 import EditorListView from '../components/EditorListView';
 
 export const query = gql`
-  query EditorListView($category: CATEGORY!) {
-    editors(filter: {category: $category}) {
-      ...EditorListView
+  query EditorListView($category: EnumClogCategory!) {
+    categoryDetail(category: $category) {
+      editors {
+        ...EditorListView
+      }
     }
   }
   ${EditorListView.fragments.editor}
@@ -18,7 +20,7 @@ export const mapQueryToProps = ({ data }) => {
     console.error(data.error);
   }
   return {
-    editors: loading ? [] : data.editors,
+    editors: loading ? [] : data.categoryDetail.editors,
   };
 };
 
