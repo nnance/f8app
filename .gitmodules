@@ -1,0 +1,3 @@
+[submodule "server/cloud/graphql"]
+	path = server/cloud/graphql
+	url = git@github.com:digithun/clogii-graphql.git
