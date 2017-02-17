@@ -89,7 +89,7 @@ const MetaEpisode = props => (
   <View style={styles.metaEpisodeContainer}>
     <View style={{ width: previewWidth }}>
       <CircleImage
-        source={mapSource(props.preview)}
+        source={mapSource(props.thumbnailImage)}
         size={50}
       />
     </View>
@@ -166,7 +166,7 @@ const ShowLessRender = handlePress => (
   </TouchableOpacity>
 );
 
-const SubDetail = ({ title, author, review, episodes, onReadPress }) => (
+const SubDetail = ({ title, author, synopsis, episodes, onReadPress }) => (
   <View style={styles.subDetailContainer}>
     <View style={{ flexDirection: 'row', paddingVertical: 10 }}>
       <View style={{ flex: 3 }}>
@@ -187,7 +187,7 @@ const SubDetail = ({ title, author, review, episodes, onReadPress }) => (
           renderTruncatedFooter={ReadMoreRender}
           renderRevealedFooter={ShowLessRender}
         >
-          {review}
+          {synopsis}
         </ReadMore>
       </View>
     </View>
@@ -252,7 +252,7 @@ class Book extends React.Component {
     const clog = this.props.clog;
     return (
       <View style={{ flex: 1, backgroundColor: 'white' }}>
-        <Image source={mapSource(clog.cover)} style={styles.cover}>
+        <Image source={mapSource(clog.coverImage)} style={styles.cover}>
           <TouchableOpacity style={styles.backButtonContainer} onPress={this.props.onBackPress}>
             <Image source={require('../../common/img/icon/backButton.png')} style={commonStyles.navBarIcon} />
           </TouchableOpacity>
@@ -286,8 +286,8 @@ Book.fragments = {
   clog: gql`
     fragment Book on Clog {
       title
-      cover
-      review
+      coverImage
+      synopsis
       likeCount
       commentCount
       author {
@@ -296,7 +296,7 @@ Book.fragments = {
       episodes {
         id
         no
-        preview
+        thumbnailImage
         viewCount
         likeCount
         createdAt

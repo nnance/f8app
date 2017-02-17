@@ -5,8 +5,8 @@ import _ from 'lodash';
 import Book from '../components/Book';
 
 export const query = gql`
-  query BookQuery($id: ID!){
-    clog(id: $id) {
+  query BookQuery($id: MongoID!){
+    clog(filter: { _id: $id }) {
       ...Book
     }
   }

@@ -1,9 +1,12 @@
 import 'dotenv/config';
 import casual from 'casual';
 import _ from 'lodash';
+import mongoose from 'mongoose';
 
 import '../server/cloud/graphql/mocks/casual-config';
 import { models } from '../server/cloud/graphql/models';
+
+mongoose.connect(process.env.DATABASE_URI);
 
 const preview = async () => {
   const uri = await casual.clog_preview;
@@ -63,9 +66,31 @@ function genClogs(users, authors, tags) {
       category: await casual.clog_category,
       synopsis: casual.sentences(20),
       viewCount: casual.positive_int(10000),
-      createdAt: new Date(),
+      createdAt: casual.date,
     });
   }));
+}
+
+function genEpisodes(clogs) {
+  return Promise.all(
+    clogs.map(clog => 
+      Promise.all(
+        _.range(_.random(0, 40)).map(async (idx) => 
+          models.Episode.create({
+            no: idx + 1,
+            title: casual.title,
+            thumbnailImage: await preview(),
+            viewCount: _.random(0, 3000),
+            createdAt: casual.date,
+          })
+          .then(ep => {
+            clog.episodeIds.push(ep._id);
+            return clog.save().then(() => ep);
+          })
+        )
+      )
+    )
+  ).then(Array.concat);
 }
 
 async function gen() {
@@ -73,6 +98,7 @@ async function gen() {
   const tags = await genTags();
   const authors = await genAuthors();
   const clogs = await genClogs(users, authors, tags);
+  await genEpisodes(clogs);
 }
 
 gen().then(() => {

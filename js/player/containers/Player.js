@@ -4,8 +4,8 @@ import { graphql } from 'react-apollo';
 import Player from '../components/Player';
 
 export const query = gql`
-  query PlayerQuery($id: ID!){
-    episode(id: $id) {
+  query PlayerQuery($id: MongoID!){
+    episode(filter: { _id: $id }) {
       ...Player
     }
   }

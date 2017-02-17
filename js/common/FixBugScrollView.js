@@ -19,9 +19,7 @@ class FixBugScrollView extends React.Component {
     if (this.context && this.context.addFixBugListener) {
       this.context.addFixBugListener(this.fixScrollBug);
     }
-    InteractionManager.runAfterInteractions(() => {
-      this.fixScrollBug();
-    });
+    this.fixScrollBug();
   }
 
   componentWillUnmount() {
@@ -33,13 +31,15 @@ class FixBugScrollView extends React.Component {
   fixScrollBug() {
     const x = this.state.mainScrollX;
     const y = this.state.mainScrollY;
-    this.mainScrollView.scrollTo({
-      x,
-      y: y + 1,
-    });
-    this.mainScrollView.scrollTo({
-      x,
-      y,
+    InteractionManager.runAfterInteractions(() => {
+      this.mainScrollView.scrollTo({
+        x,
+        y: y + 1,
+      });
+      this.mainScrollView.scrollTo({
+        x,
+        y,
+      });
     });
   }
 

@@ -21,6 +21,7 @@
  */
 
 import 'dotenv/config';
+import mongoose from 'mongoose';
 import path from 'path';
 import express from 'express';
 import Parse from 'parse/node';
@@ -45,6 +46,8 @@ const MAILGUN_FROM_ADDRESS = process.env.MAILGUN_FROM_ADDRESS || 'admin@localhos
 const MAILGUN_DOMAIN = process.env.MAILGUN_DOMAIN || '';
 const MAILGUN_KEY = process.env.MAILGUN_KEY || '';
 const MOCK_SERVER = !!+process.env.MOCK_SERVER;
+
+mongoose.connect(process.env.DATABASE_URI);
 
 Parse.initialize(APP_ID);
 Parse.serverURL = `${SERVER_URL}/parse`;
