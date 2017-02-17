@@ -9,6 +9,7 @@ import FixBugScrollViewNavigator from './common/FixBugScrollViewNavigator';
 import ClogiiTabView from './tabs/ClogiiTabView';
 import Player from './player';
 import Book from './book';
+import Comment from './comment';
 
 class ClogiiNavigator extends React.Component {
   constructor(...args) {
@@ -94,6 +95,14 @@ class ClogiiNavigator extends React.Component {
         goToPlayer={this.goToPlayer}
         id={route.id}
       />);
+    }
+    if (route.page === 'comment') {
+      return (
+        <Comment
+          onBackPress={this.goBack}
+          id={route.id}
+        />
+      );
     }
     return null;
   }
