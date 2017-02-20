@@ -27,7 +27,7 @@ const cover = async () => {
 };
 
 function genArray(array, maxSize) {
-  return _.range(_.random(0, maxSize)).map(() => array[_.random(0, array.length - 1)]);
+  return _.uniqWith(_.range(_.random(0, maxSize)).map(() => array[_.random(0, array.length - 1)]));
 }
 
 function genUsers() {
