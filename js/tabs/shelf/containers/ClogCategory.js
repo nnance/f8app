@@ -7,7 +7,7 @@ import { CLOG_PREVIEW_LIMIT } from '../constants';
 export const query = gql`
   query CategoryDetail($category: String!){
     categoryDetail(category: $category) {
-      recommendedClogs(limit: 5) {
+      recommendedClogs {
         ...RecommendClog
       }
       editors {

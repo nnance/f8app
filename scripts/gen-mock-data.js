@@ -30,6 +30,10 @@ function genArray(array, maxSize) {
   return _.uniqWith(_.range(_.random(0, maxSize)).map(() => array[_.random(0, array.length - 1)]));
 }
 
+function genFixArray(array, size) {
+  return _.uniqWith(_.range(size).map(() => array[_.random(0, array.length - 1)]));
+}
+
 function genUsers() {
   return Promise.all(_.range(2000).map(async () => models.User.create({
     name: casual.name,
@@ -133,6 +137,23 @@ function genTrendingClog(clogs) {
   })));
 }
 
+async function genRecommend(clogs) {
+  await Promise.all(['N', 'M', 'D', 'G'].map(c => 
+    models.RecommendClog.create({
+      type: `CATEGORY_${c}`,
+      clogIds: genFixArray(clogs, 10),
+    })
+  ));
+  await models.RecommendClog.create({
+    type: `shelf`,
+    clogIds: genFixArray(clogs, 1),
+  })
+  await models.RecommendClog.create({
+    type: `heroBanner`,
+    clogIds: genFixArray(clogs, 10),
+  })
+}
+
 async function gen() {
   const users = await genUsers();
   const tags = await genTags();
@@ -140,6 +161,7 @@ async function gen() {
   const clogs = await genClogs(users, authors, tags);
   await genTrendingClog(clogs);
   await genEpisodes(clogs);
+  await genRecommend(clogs);
 }
 
 gen().then(() => {
