@@ -6,7 +6,7 @@ import { liftEdges } from '../../../common/utils';
 import ClogListView from '../components/ClogListView';
 
 const query = gql`
-  query ClogListView($filter: FilterFindManyClogInput, $sort: SortFindManyClogInput = _ID_ASC){
+  query ClogListView($filter: FilterFindManyTrendingClogInput, $sort: SortFindManyTrendingClogInput = _ID_ASC){
     clogs: trendingClogs(filter: $filter, sort: $sort, limit: 50) {
       ...ClogListView
     }

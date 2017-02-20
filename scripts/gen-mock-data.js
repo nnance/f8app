@@ -126,11 +126,19 @@ function genEpisodes(clogs) {
   ).then(Array.concat);
 }
 
+function genTrendingClog(clogs) {
+  return Promise.all(genArray(clogs, clogs.length - 1).map(clog => models.TrendingClog.create({
+    clogId: clog,
+    category: clog.category,
+  })));
+}
+
 async function gen() {
   const users = await genUsers();
   const tags = await genTags();
   const authors = await genAuthors(users);
   const clogs = await genClogs(users, authors, tags);
+  await genTrendingClog(clogs);
   await genEpisodes(clogs);
 }
 

@@ -4,7 +4,7 @@ import { graphql } from 'react-apollo';
 import EditorListView from '../components/EditorListView';
 
 export const query = gql`
-  query EditorListView($category: EnumClogCategory!) {
+  query EditorListView($category: String!) {
     categoryDetail(category: $category) {
       editors {
         ...EditorListView
