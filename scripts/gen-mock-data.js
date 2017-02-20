@@ -37,14 +37,18 @@ function genUsers() {
   })));
 }
 
-function genAuthors() {
+function genAuthors(users) {
   return Promise.all(_.range(50).map(async () => {
-   return models.Editor.create({
+    const editor = await models.Editor.create({
       name: casual.name,
       profilePicture: `${url}${await casual.profilePicture}`,
       followingCount: casual.positive_int(1000),
-      clogIds: [],
     });
+    await Promise.all(genArray(users, 1000).map(user => models.EditorFollower.create({
+      userId: user,
+      editorId: editor,
+    })));
+    return editor;
   }));
 }
 
@@ -63,7 +67,6 @@ async function genClogs(users, authors, tags) {
     thumbnailImage: await preview(),
     coverImage: await cover(),
     authorId: author,
-    followerIds: genArray(users, users.length),
     commentIds: [],
     tagIds: genArray(tags, 5),
     category: await casual.clog_category,
@@ -71,8 +74,6 @@ async function genClogs(users, authors, tags) {
     viewCount: casual.positive_int(10000),
     createdAt: casual.date,
   });
-  author.clogIds.push(dumpClog);
-  await author.save();
   const clogs = await Promise.all(_.range(100).map(async () => {
       const author = authors[_.random(0, authors.length - 1)];
       return models.Clog.create({
@@ -81,7 +82,6 @@ async function genClogs(users, authors, tags) {
         thumbnailImage: await preview(),
         coverImage: await cover(),
         authorId: author,
-        followerIds: genArray(users, users.length),
         commentIds: [],
         tagIds: genArray(tags, 5),
         category: await casual.clog_category,
@@ -90,12 +90,18 @@ async function genClogs(users, authors, tags) {
         createdAt: casual.date,
       })
       .then(clog => {
-        author.clogIds.push(clog);
-        return author.save().then(() => clog);
-      })
+        return genClogFollower(users, clog).then(() => clog);
+      });
     })
   );
   return [].concat([dumpClog], clogs);
+}
+
+function genClogFollower(users, clog) {
+  return Promise.all(genArray(users, 1000).map(user => models.ClogFollower.create({
+    userId: user,
+    clogId: clog,
+  })));
 }
 
 function genEpisodes(clogs) {
@@ -123,7 +129,7 @@ function genEpisodes(clogs) {
 async function gen() {
   const users = await genUsers();
   const tags = await genTags();
-  const authors = await genAuthors();
+  const authors = await genAuthors(users);
   const clogs = await genClogs(users, authors, tags);
   await genEpisodes(clogs);
 }

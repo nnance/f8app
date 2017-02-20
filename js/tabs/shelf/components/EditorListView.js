@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     color: colors.textFadedGrey,
     fontWeight: 'bold',
   },
-  followingCountText: {
+  followerCountText: {
     fontSize: 12,
     color: colors.textFadedGrey,
     fontWeight: 'bold',
@@ -104,8 +104,8 @@ const MetaEditorRow = props => (
         <Text style={styles.clogCountText} numberOfLines={1}>
           {toHumanNumber(props.editor.clogCount)} Clogs
         </Text>
-        <Text style={styles.followingCountText} numberOfLines={1}>
-          {toHumanNumber(props.editor.followingCount)} คน กำลังติดตาม
+        <Text style={styles.followerCountText} numberOfLines={1}>
+          {toHumanNumber(props.editor.followerCount)} คน กำลังติดตาม
         </Text>
       </View>
       <View style={{ height: 80 }}>
@@ -176,7 +176,7 @@ EditorListView.fragments = {
       id
       profilePicture
       name
-      followingCount
+      followerCount
       clogCount
       isFollowing
       clogs {
