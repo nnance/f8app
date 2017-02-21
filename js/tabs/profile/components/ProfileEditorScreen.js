@@ -11,8 +11,8 @@ import {
   Modal
 } from 'react-native';
 import moment from 'moment';
-import Picker from 'react-native-picker';
 import ImagePicker from 'react-native-image-picker';
+import ModalPicker from 'react-native-modal-picker';
 
 import NavBar from './NavBar';
 import { styles as commonStyles } from '../common';
@@ -22,6 +22,12 @@ import ProfileHeader from './ProfileHeader';
 import DatePickerDialog from './DatePickerDialog';
 import ModalSpinner from '../../../common/ModalSpinner';
 import TextInput from '../../../common/TextInput';
+
+const sexPickerData = [
+    { key: 0, label: 'ชาย', value: 'M' },
+    { key: 1, label: 'หญิง', value: 'F' },
+    { key: 2, label: 'ไม่ระบุ', value: null },
+];
 
 const styles = StyleSheet.create({
   rowDirection: {
@@ -195,63 +201,9 @@ class ProfileEditorScreen extends React.Component {
     });
   }
 
-  openSexPicker() {
-    return new Promise((resolve) => {
-      Picker.init({
-        pickerData: [
-          'ไม่ระบุ',
-          'ชาย',
-          'หญิง',
-        ],
-        selectedValue: [this.sexSelected()],
-        pickerConfirmBtnText: 'OK',
-        pickerCancelBtnText: 'CANCEL',
-        pickerTitleText: 'เพศ',
-        onPickerConfirm: (data) => {
-          let sex;
-          if (data[0] === 'ชาย') {
-            sex = 'M';
-          }
-          if (data[0] === 'หญิง') {
-            sex = 'F';
-          }
-          if (data[0] === 'ไม่ระบุ') {
-            sex = null;
-          }
-          this.setState({
-            visibleSexPicker: false,
-            sex,
-          });
-          resolve();
-        },
-        onPickerCancel: () => {
-          this.setState({
-            visibleSexPicker: false,
-          });
-        },
-      });
-      Picker.show();
-      this.setState({
-        visibleSexPicker: true,
-      });
-    });
-  }
-
-  hideSexPicler() {
-    this.setState({
-      visibleSexPicker: false,
-    });
-    Picker.hide();
-  }
-
   render() {
     return (<View style={commonStyles.listViewContainer}>
       <ModalSpinner visible={this.state.savingProfile || this.state.linkingFacebook} />
-      <Modal transparent visible={this.state.visibleSexPicker}>
-        <TouchableWithoutFeedback onPress={() => this.hideSexPicler()}>
-          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(255, 255, 255, 0.6)' }}/>
-        </TouchableWithoutFeedback>
-      </Modal>
       <DatePickerDialog
         ref={(node) => {
           this.datePicker = node;
@@ -319,9 +271,18 @@ class ProfileEditorScreen extends React.Component {
             <View style={styles.labelContainer}>
               <Text style={styles.label}>เพศ</Text>
             </View>
-            <TouchableOpacity name="sexInput" style={[styles.input, styles.bottomBorderGrey]} onPress={() => this.openSexPicker()}>
-              <Text style={styles.textGrey}>{this.sexSelected()}</Text>
-            </TouchableOpacity>
+            <View style={[styles.input, styles.bottomBorderGrey]}>
+              <ModalPicker
+                optionContainerStyle={{
+                  height: undefined,
+                  paddingVertical: 30,
+                }}
+                data={sexPickerData}
+                onChange={(option) => { this.setState({ sex: option.value }); }}
+              >
+                <Text style={styles.textGrey}>{this.sexSelected()}</Text>
+              </ModalPicker>
+            </View>
           </View>
           <View style={styles.row}>
             <View style={styles.labelContainer}>
