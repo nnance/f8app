@@ -6,6 +6,7 @@ import { linkFacebook, unlinkFacebook } from '../../../actions/login';
 import ProfileEditorScreen from '../components/ProfileEditorScreen';
 
 const select = state => ({
+  user: state.user,
   name: state.user.name,
   email: state.user.email,
   sex: state.user.sex,

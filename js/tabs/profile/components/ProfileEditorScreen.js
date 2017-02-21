@@ -23,6 +23,11 @@ import DatePickerDialog from './DatePickerDialog';
 import ModalSpinner from '../../../common/ModalSpinner';
 import TextInput from '../../../common/TextInput';
 
+const imagePickerOptions = {
+  maxWidth: 500,
+  maxHeight: 500,
+};
+
 const sexPickerData = [
     { key: 0, label: 'ชาย', value: 'M' },
     { key: 1, label: 'หญิง', value: 'F' },
@@ -163,7 +168,7 @@ class ProfileEditorScreen extends React.Component {
 
   openProfilePicker() {
     return new Promise((resolve) => {
-      ImagePicker.showImagePicker((response) => {
+      ImagePicker.showImagePicker(imagePickerOptions, (response) => {
         if (!response.error && !response.didCancel) {
           this.setState({
             changedProfilePicture: response,
@@ -179,7 +184,7 @@ class ProfileEditorScreen extends React.Component {
 
   openProfileCoverPicker() {
     return new Promise((resolve) => {
-      ImagePicker.showImagePicker((response) => {
+      ImagePicker.showImagePicker(imagePickerOptions, (response) => {
         if (!response.error && !response.didCancel) {
           this.setState({
             changedProfileCover: response,
@@ -239,8 +244,8 @@ class ProfileEditorScreen extends React.Component {
       />
       <ProfileHeader
         user={this.props.user}
-        customCoverSource={this.state.changedProfileCover ? { uri: `data:image/jpeg;base64,${this.state.changedProfileCover.data}`, isStatic: true } : null}
-        customSource={this.state.changedProfilePicture ? { uri: `data:image/jpeg;base64,${this.state.changedProfilePicture.data}`, isStatic: true } : null}
+        customCoverSource={this.state.changedProfileCover ? { uri: this.state.changedProfileCover.uri, isStatic: true } : null}
+        customSource={this.state.changedProfilePicture ? { uri: this.state.changedProfilePicture.uri, isStatic: true } : null}
       >
         <View style={styles.rowDirection}>
           <TouchableOpacity name="profileImageInput" style={styles.whiteBorder} onPress={() => this.openProfilePicker()}>

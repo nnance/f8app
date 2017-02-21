@@ -51,6 +51,7 @@ export const changePassword = newPassword => dispatch => _changePassword(newPass
 async function _changeProfile(data) {
   const user = await getUser();
   if (data.profilePicture) {
+    // const base64 = `data:image/jpeg;base64,${data.profilePicture.data}`
     const base64 = data.profilePicture.data;
     const file = new Parse.File(data.profilePicture.fileName, { base64 });
     await file.save();
