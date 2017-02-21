@@ -5,8 +5,10 @@ import {
   View,
   StyleSheet,
   TouchableOpacity,
+  TouchableWithoutFeedback,
   Switch,
   Alert,
+  Modal
 } from 'react-native';
 import moment from 'moment';
 import Picker from 'react-native-picker';
@@ -108,6 +110,7 @@ class ProfileEditorScreen extends React.Component {
       changedProfileCover: null,
       savingProfile: false,
       linkingFacebook: false,
+      visibleSexPicker: false,
     };
 
     this.onToggleFacebookLink = this.onToggleFacebookLink.bind(this);
@@ -200,7 +203,7 @@ class ProfileEditorScreen extends React.Component {
           'ชาย',
           'หญิง',
         ],
-        selectedValue: this.sexSelected(),
+        selectedValue: [this.sexSelected()],
         pickerConfirmBtnText: 'OK',
         pickerCancelBtnText: 'CANCEL',
         pickerTitleText: 'เพศ',
@@ -216,18 +219,39 @@ class ProfileEditorScreen extends React.Component {
             sex = null;
           }
           this.setState({
+            visibleSexPicker: false,
             sex,
           });
           resolve();
         },
+        onPickerCancel: () => {
+          this.setState({
+            visibleSexPicker: false,
+          });
+        },
       });
       Picker.show();
+      this.setState({
+        visibleSexPicker: true,
+      });
     });
+  }
+
+  hideSexPicler() {
+    this.setState({
+      visibleSexPicker: false,
+    });
+    Picker.hide();
   }
 
   render() {
     return (<View style={commonStyles.listViewContainer}>
       <ModalSpinner visible={this.state.savingProfile || this.state.linkingFacebook} />
+      <Modal transparent visible={this.state.visibleSexPicker}>
+        <TouchableWithoutFeedback onPress={() => this.hideSexPicler()}>
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(255, 255, 255, 0.6)' }}/>
+        </TouchableWithoutFeedback>
+      </Modal>
       <DatePickerDialog
         ref={(node) => {
           this.datePicker = node;
