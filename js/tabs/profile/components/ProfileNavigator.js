@@ -1,6 +1,7 @@
 import React from 'react';
 import FixBugScrollViewNavigator from '../../../common/FixBugScrollViewNavigator';
 
+import ClogBookmark from '../components/ClogBookmark';
 import FollowerScreen from '../containers/FollowerScreen';
 import FollowingScreen from '../containers/FollowingScreen';
 import MyFanScreen from '../containers/MyFanScreen';
@@ -95,6 +96,11 @@ class ProfileNavigator extends React.Component {
     if (route.page === 'change-password') {
       return <ChangePasswordScreen onBackPress={this.onBack} />;
     }
+    if (route.page === 'clog-bookmark') {
+      return (
+        <ClogBookmark/>
+      );
+    }
     return (<Home
       onMenuPress={this.onMenuPress}
       onFollowingPress={() => this.pushPage('following')}
@@ -109,7 +115,7 @@ class ProfileNavigator extends React.Component {
         ref={(node) => {
           this.navigator = node;
         }}
-        initialRoute={{ page: 'profile' }}
+        initialRoute={{ page: 'clog-bookmark' }}
         renderScene={this.renderScene}
       />
     );
