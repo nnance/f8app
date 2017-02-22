@@ -5,12 +5,14 @@ import {
   View,
   StyleSheet,
   TouchableOpacity,
+  TouchableWithoutFeedback,
   Switch,
   Alert,
+  Modal
 } from 'react-native';
 import moment from 'moment';
-import Picker from 'react-native-picker';
 import ImagePicker from 'react-native-image-picker';
+import ModalPicker from 'react-native-modal-picker';
 
 import NavBar from './NavBar';
 import { styles as commonStyles } from '../common';
@@ -20,6 +22,17 @@ import ProfileHeader from './ProfileHeader';
 import DatePickerDialog from './DatePickerDialog';
 import ModalSpinner from '../../../common/ModalSpinner';
 import TextInput from '../../../common/TextInput';
+
+const imagePickerOptions = {
+  maxWidth: 500,
+  maxHeight: 500,
+};
+
+const sexPickerData = [
+    { key: 0, label: 'ชาย', value: 'M' },
+    { key: 1, label: 'หญิง', value: 'F' },
+    { key: 2, label: 'ไม่ระบุ', value: null },
+];
 
 const styles = StyleSheet.create({
   rowDirection: {
@@ -108,6 +121,7 @@ class ProfileEditorScreen extends React.Component {
       changedProfileCover: null,
       savingProfile: false,
       linkingFacebook: false,
+      visibleSexPicker: false,
     };
 
     this.onToggleFacebookLink = this.onToggleFacebookLink.bind(this);
@@ -154,7 +168,7 @@ class ProfileEditorScreen extends React.Component {
 
   openProfilePicker() {
     return new Promise((resolve) => {
-      ImagePicker.showImagePicker((response) => {
+      ImagePicker.showImagePicker(imagePickerOptions, (response) => {
         if (!response.error && !response.didCancel) {
           this.setState({
             changedProfilePicture: response,
@@ -170,7 +184,7 @@ class ProfileEditorScreen extends React.Component {
 
   openProfileCoverPicker() {
     return new Promise((resolve) => {
-      ImagePicker.showImagePicker((response) => {
+      ImagePicker.showImagePicker(imagePickerOptions, (response) => {
         if (!response.error && !response.didCancel) {
           this.setState({
             changedProfileCover: response,
@@ -189,39 +203,6 @@ class ProfileEditorScreen extends React.Component {
       this.setState({
         birthDayDate: date,
       });
-    });
-  }
-
-  openSexPicker() {
-    return new Promise((resolve) => {
-      Picker.init({
-        pickerData: [
-          'ไม่ระบุ',
-          'ชาย',
-          'หญิง',
-        ],
-        selectedValue: this.sexSelected(),
-        pickerConfirmBtnText: 'OK',
-        pickerCancelBtnText: 'CANCEL',
-        pickerTitleText: 'เพศ',
-        onPickerConfirm: (data) => {
-          let sex;
-          if (data[0] === 'ชาย') {
-            sex = 'M';
-          }
-          if (data[0] === 'หญิง') {
-            sex = 'F';
-          }
-          if (data[0] === 'ไม่ระบุ') {
-            sex = null;
-          }
-          this.setState({
-            sex,
-          });
-          resolve();
-        },
-      });
-      Picker.show();
     });
   }
 
@@ -263,8 +244,8 @@ class ProfileEditorScreen extends React.Component {
       />
       <ProfileHeader
         user={this.props.user}
-        customCoverSource={this.state.changedProfileCover ? { uri: `data:image/jpeg;base64,${this.state.changedProfileCover.data}`, isStatic: true } : null}
-        customSource={this.state.changedProfilePicture ? { uri: `data:image/jpeg;base64,${this.state.changedProfilePicture.data}`, isStatic: true } : null}
+        customCoverSource={this.state.changedProfileCover ? { uri: this.state.changedProfileCover.uri, isStatic: true } : null}
+        customSource={this.state.changedProfilePicture ? { uri: this.state.changedProfilePicture.uri, isStatic: true } : null}
       >
         <View style={styles.rowDirection}>
           <TouchableOpacity name="profileImageInput" style={styles.whiteBorder} onPress={() => this.openProfilePicker()}>
@@ -295,9 +276,18 @@ class ProfileEditorScreen extends React.Component {
             <View style={styles.labelContainer}>
               <Text style={styles.label}>เพศ</Text>
             </View>
-            <TouchableOpacity name="sexInput" style={[styles.input, styles.bottomBorderGrey]} onPress={() => this.openSexPicker()}>
-              <Text style={styles.textGrey}>{this.sexSelected()}</Text>
-            </TouchableOpacity>
+            <View style={[styles.input, styles.bottomBorderGrey]}>
+              <ModalPicker
+                optionContainerStyle={{
+                  height: undefined,
+                  paddingVertical: 30,
+                }}
+                data={sexPickerData}
+                onChange={(option) => { this.setState({ sex: option.value }); }}
+              >
+                <Text style={styles.textGrey}>{this.sexSelected()}</Text>
+              </ModalPicker>
+            </View>
           </View>
           <View style={styles.row}>
             <View style={styles.labelContainer}>

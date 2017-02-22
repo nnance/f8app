@@ -6,7 +6,6 @@ import android.util.Log;
 import com.facebook.react.ReactApplication;
 import com.lugg.ReactNativeConfig.ReactNativeConfigPackage;
 import com.imagepicker.ImagePickerPackage;
-import com.beefe.picker.PickerViewPackage;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -59,7 +58,6 @@ public class MainApplication extends Application implements ReactApplication {
       new MainReactPackage(),
             new ReactNativeConfigPackage(),
             new ImagePickerPackage(),
-            new PickerViewPackage(),
       new FBSDKPackage(mCallbackManager),
       new LinearGradientPackage(),
       new RNSharePackage(),
