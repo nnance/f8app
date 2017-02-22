@@ -3,6 +3,7 @@ import {
   View,
   Image,
   Text,
+  TouchableOpacity,
   StyleSheet,
 } from 'react-native';
 
@@ -10,9 +11,10 @@ import _ from 'lodash';
 
 import FixBugScrollView from '../../../common/FixBugScrollView';
 import CircleImageWithCategory from '../../../common/CircleImageWithCategory';
+import CircleImageWithSubImage from '../../../common/CircleImageWithSubImage';
 import CircleImage from '../../../common/CircleImage';
-import { toHumanNumber, mapSource } from '../../../common/utils';
-import { colors } from '../../../common/styles';
+import { toHumanNumber, mapSource, bindFn } from '../../../common/utils';
+import { styles as commonStyles, colors, NAV_BAR_ICON_HEIGHT } from '../../../common/styles';
 
 import NavBar from './NavBar';
 
@@ -74,6 +76,8 @@ const Header = (props) => (<View style={styles.headerContainer}>
       size={headerThumbnailSize}
       source={mapSource(props.clog.thumbnailImage)}
       category={props.clog.category}
+      shadowRadius={5}
+      shadowColor="rgba(255, 255, 255, 0.5)"
     />
   </View>
   <View style={styles.headerDetailContainer}>
@@ -87,19 +91,22 @@ class BookmarkList extends React.Component {
     super(...args);
   }
 
-  renderBookmark(bookmark, idx) {
+  renderBookmark(bookmark) {
     return (
-      <View key={idx} style={styles.bookmarkContainer}>
+      <TouchableOpacity onPress={bindFn(this.props.onBookmarkPress, bookmark.id)} key={bookmark.id} style={styles.bookmarkContainer}>
         <View>
-          <CircleImage
+          <CircleImageWithSubImage
             source={mapSource(bookmark.episode.thumbnailImage)}
             size={bookmarkThumbnailSize}
+            shadowRadius={5}
+            shadowColor="rgba(255, 255, 255, 0.5)"
+            subSource={this.props.checkedBookmarkIds.indexOf(bookmark.id) !== -1 ? require('../img/icons/checked.png') : null}
           />
           <View style={styles.bookmarkDetailContainer}>
             <Text style={styles.bookmarkText}>Bookmark {bookmark.episode.no}</Text>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   }
 
@@ -139,6 +146,7 @@ class BookmarkList extends React.Component {
 let idx = 1;
 function getMockBookmark() {
   const mockBookmark = {
+    id: idx,
     episode: {
       no: idx,
       thumbnailImage: require('../img/A.png'),
@@ -156,6 +164,70 @@ const mockClog = {
 };
 
 class ClogBookmark extends React.Component {
+  constructor(...args) {
+    super(...args);
+
+    this.state = {
+      selecting: false,
+      checkedBookmarkIds: [],
+    };
+    
+    this.onWillCheckBookmark = this.onWillCheckBookmark.bind(this);
+    this.onDeleteBookmark = this.onDeleteBookmark.bind(this);
+    this.onBookmarkPress = this.onBookmarkPress.bind(this);
+    this.renderOptionButton = this.renderOptionButton.bind(this);
+  }
+
+  onWillCheckBookmark() {
+    this.setState({
+      selecting: true,
+      checkedBookmarkIds: [],
+    });
+  }
+
+  onDeleteBookmark() {
+    this.setState({
+      selecting: false,
+      checkedBookmarkIds: [],
+    });
+  }
+
+  onBookmarkPress(id) {
+    if (this.state.selecting) {
+      if (this.state.checkedBookmarkIds.indexOf(id) === -1) {
+        this.setState({
+          checkedBookmarkIds: [...this.state.checkedBookmarkIds, id],
+        });
+      }
+      else {
+        this.setState({
+          checkedBookmarkIds: _.pull(this.state.checkedBookmarkIds, id),
+        });
+      }
+    }
+  }
+
+  renderOptionButton() {
+    if (this.state.selecting) {
+      return (
+        <TouchableOpacity onPress={this.onDeleteBookmark}>
+          <Image
+            style={commonStyles.navBarIcon}
+            source={require('../../../common/img/icon/trash.png')}
+          />
+        </TouchableOpacity>
+      );
+    }
+    return (
+      <TouchableOpacity onPress={this.onWillCheckBookmark}>
+        <Image
+          style={commonStyles.navBarIcon}
+          source={require('../../../common/img/icon/check-list-menu.png')}
+        />
+      </TouchableOpacity>
+    );
+  }
+
   render() {
     const props = {};
     props.clog = mockClog;
@@ -163,10 +235,13 @@ class ClogBookmark extends React.Component {
       <NavBar
         title="Bookmark"
         onBackPress={this.props.onBackPress}
+        renderRightMenu={this.renderOptionButton}
       />
       <Header clog={props.clog}/>
       <FixBugScrollView style={styles.bookmarkListContainer}>
         <BookmarkList
+          onBookmarkPress={this.onBookmarkPress}
+          checkedBookmarkIds={this.state.checkedBookmarkIds}
           bookmarks={props.clog.myBookmarks}
         />
       </FixBugScrollView>
@@ -178,6 +253,7 @@ ClogBookmark.fragments = {
   clog: `
     fragment ClogBookmark on Clog {
       myBookmarks {
+        id
         episode {
           no
           thumbnailImage

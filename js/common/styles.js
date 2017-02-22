@@ -14,13 +14,14 @@ export const colors = {
   textFadedWhite: 'rgba(255, 255, 255, 0.6)',
 };
 
-export const styles = StyleSheet.create({
-  navBarIcon: {
-    height: 20,
-    resizeMode: 'contain',
-  },
-});
-
 export const NAV_BAR_HEIGHT = 60;
 export const BUTTOM_TAB_HEIGHT = 45;
 export const STATUS_BAR_HEIGHT = Platform.OS === 'ios' ? 15 : 0;
+export const NAV_BAR_ICON_HEIGHT = 20;
+
+export const styles = StyleSheet.create({
+  navBarIcon: {
+    height: NAV_BAR_ICON_HEIGHT,
+    resizeMode: 'contain',
+  },
+});
