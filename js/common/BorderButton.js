@@ -43,7 +43,7 @@ export const styles = StyleSheet.create({
     borderColor: 'white',
   },
   greyButton: {
-    backgroundColor: colors.fadedGreyBackground,
+    backgroundColor: colors.greyBackground,
   },
   borderFadedBlack: {
     backgroundColor: 'rgba(0, 0, 0, 0.8)',

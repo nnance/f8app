@@ -4,11 +4,11 @@ import { colors } from '../../common/styles';
 const styles = StyleSheet.create({
   listViewContainer: {
     flex: 1,
-    backgroundColor: colors.greyBackground,
+    backgroundColor: colors.nearlyWhiteBackground,
   },
   greyContainer: {
     flex: 1,
-    backgroundColor: colors.greyBackground,
+    backgroundColor: colors.nearlyWhiteBackground,
   },
   whiteContainer: {
     flex: 1,
