@@ -32,6 +32,7 @@ import graphqlHTTP from 'express-graphql';
 import bodyParser from 'body-parser';
 getSchema()
 import appLink from './app-link';
+import clogHandler from './clogHandler';
 
 const SERVER_PORT = process.env.SERVER_PORT || 8080;
 const SERVER_URL = process.env.URL;
@@ -136,6 +137,8 @@ server.use('/ofc-graphql', graphqlHTTP(request => ({
     request,
   },
 })));
+
+server.use(clogHandler);
 
 server.use('/', (req, res) => res.redirect('/graphql'));
 
