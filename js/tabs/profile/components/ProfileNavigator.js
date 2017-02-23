@@ -1,7 +1,7 @@
 import React from 'react';
 import FixBugScrollViewNavigator from '../../../common/FixBugScrollViewNavigator';
 
-import ClogBookmark from '../components/ClogBookmark';
+import BookmarkDetail from '../components/BookmarkDetail';
 import FollowerScreen from '../containers/FollowerScreen';
 import FollowingScreen from '../containers/FollowingScreen';
 import MyFanScreen from '../containers/MyFanScreen';
@@ -21,6 +21,7 @@ class ProfileNavigator extends React.Component {
     this.onMenuPress = this.onMenuPress.bind(this);
     this.goToChangeEmail = this.goToChangeEmail.bind(this);
     this.goToChangePassword = this.goToChangePassword.bind(this);
+    this.goToBookmarkDetail = this.goToBookmarkDetail.bind(this);
     this.pushPage = this.pushPage.bind(this);
     this.onBack = this.onBack.bind(this);
   }
@@ -61,6 +62,10 @@ class ProfileNavigator extends React.Component {
     this.navigator.push({ page });
   }
 
+  goToBookmarkDetail() {
+    this.navigator.push({ page: 'bookmark-detail' });
+  }
+
   renderScene(route) {
     if (route.page === 'following') {
       return <FollowingScreen onBackPress={this.onBack} />;
@@ -78,7 +83,7 @@ class ProfileNavigator extends React.Component {
       return <MyClogScreen onBackPress={this.onBack} />;
     }
     if (route.page === 'bookmark') {
-      return <BookmarkScreen onBackPress={this.onBack} />;
+      return <BookmarkScreen onBackPress={this.onBack} goToBookmarkDetail={this.goToBookmarkDetail} />;
     }
     if (route.page === 'jellyShop') {
       return <JellyShopScreen onBackPress={this.onBack} />;
@@ -96,9 +101,9 @@ class ProfileNavigator extends React.Component {
     if (route.page === 'change-password') {
       return <ChangePasswordScreen onBackPress={this.onBack} />;
     }
-    if (route.page === 'clog-bookmark') {
+    if (route.page === 'bookmark-detail') {
       return (
-        <ClogBookmark/>
+        <BookmarkDetail onBackPress={this.onBack}/>
       );
     }
     return (<Home
@@ -115,7 +120,7 @@ class ProfileNavigator extends React.Component {
         ref={(node) => {
           this.navigator = node;
         }}
-        initialRoute={{ page: 'clog-bookmark' }}
+        initialRoute={{ page: 'home' }}
         renderScene={this.renderScene}
       />
     );

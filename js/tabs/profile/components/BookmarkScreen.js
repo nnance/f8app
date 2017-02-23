@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const BookmarkRow = props => (<TouchableOpacity style={styles.rowContainer}>
+const BookmarkRow = props => (<TouchableOpacity onPress={props.onPress} style={styles.rowContainer}>
   <CircleImageWithCategory
     source={mapSource(props.preview)}
     category={props.category}
@@ -46,7 +46,7 @@ const BookmarkRow = props => (<TouchableOpacity style={styles.rowContainer}>
       </Text>
     </View>
   </View>
-  <TouchableOpacity style={{ alignItems: 'flex-end' }}>
+  <View style={{ alignItems: 'flex-end' }}>
     <Image
       style={{
         height: 25,
@@ -54,7 +54,7 @@ const BookmarkRow = props => (<TouchableOpacity style={styles.rowContainer}>
       }}
       source={rightArrow}
     />
-  </TouchableOpacity>
+  </View>
 </TouchableOpacity>);
 
 class BookmarkScreen extends React.Component {
@@ -81,7 +81,7 @@ class BookmarkScreen extends React.Component {
               }),
             )}
         renderRow={
-            bookmark => <BookmarkRow {...bookmark} />
+            bookmark => <BookmarkRow {...bookmark} onPress={this.props.goToBookmarkDetail} />
           }
       />
     </View>);
