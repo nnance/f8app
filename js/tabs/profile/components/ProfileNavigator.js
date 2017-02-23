@@ -1,7 +1,7 @@
 import React from 'react';
 import FixBugScrollViewNavigator from '../../../common/FixBugScrollViewNavigator';
 
-import BookmarkDetail from '../components/BookmarkDetail';
+import BookmarkDetail from '../containers/BookmarkDetail';
 import FollowerScreen from '../containers/FollowerScreen';
 import FollowingScreen from '../containers/FollowingScreen';
 import MyFanScreen from '../containers/MyFanScreen';
@@ -62,8 +62,8 @@ class ProfileNavigator extends React.Component {
     this.navigator.push({ page });
   }
 
-  goToBookmarkDetail() {
-    this.navigator.push({ page: 'bookmark-detail' });
+  goToBookmarkDetail(clogId) {
+    this.navigator.push({ page: 'bookmark-detail', id: clogId });
   }
 
   renderScene(route) {
@@ -103,7 +103,7 @@ class ProfileNavigator extends React.Component {
     }
     if (route.page === 'bookmark-detail') {
       return (
-        <BookmarkDetail onBackPress={this.onBack}/>
+        <BookmarkDetail id={route.id} onBackPress={this.onBack}/>
       );
     }
     return (<Home

@@ -1,5 +1,29 @@
-import { connect } from 'react-redux';
+import { graphql } from 'react-apollo';
+import gql from 'graphql-tag';
+
 import BookmarkScreen from '../components/BookmarkScreen';
 import * as mockData from '../mockData';
 
-export default connect(() => ({ bookmark: mockData.bookmark }))(BookmarkScreen);
+const query = gql`
+  query {
+    me {
+      summaryBookmarks {
+        ...BookmarkScreen
+      }
+    }
+  }
+  ${BookmarkScreen.fragments.summaryBookmark}
+`;
+
+const mapQueryToProps = ({ data }) => {
+  return {
+    summaryBookmarks: !data.me || !data.me.summaryBookmarks ? [] : data.me.summaryBookmarks,
+  };
+};
+
+export default graphql(
+  query,
+  {
+    props: mapQueryToProps
+  }
+)(BookmarkScreen);

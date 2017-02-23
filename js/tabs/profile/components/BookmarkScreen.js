@@ -1,4 +1,5 @@
 import React from 'react';
+import gql from 'graphql-tag';
 
 import {
   Image,
@@ -9,7 +10,7 @@ import {
 } from 'react-native';
 
 import PureListView from '../../../common/PureListView';
-import { mapSource } from '../../../common/utils';
+import { bindFn, mapSource } from '../../../common/utils';
 
 import CircleImageWithCategory from '../../../common/CircleImageWithCategory';
 import NavBar from './NavBar';
@@ -32,17 +33,17 @@ const styles = StyleSheet.create({
 
 const BookmarkRow = props => (<TouchableOpacity onPress={props.onPress} style={styles.rowContainer}>
   <CircleImageWithCategory
-    source={mapSource(props.preview)}
-    category={props.category}
+    source={mapSource(props.clog.thumbnailImage)}
+    category={props.clog.category}
     size={100}
   />
   <View style={{ flex: 1, paddingLeft: 10 }}>
     <View style={{ marginTop: 5, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-      <Text style={{ fontWeight: 'bold', fontSize: 16 }}>{props.title}</Text>
+      <Text style={{ fontWeight: 'bold', fontSize: 16 }}>{props.clog.title}</Text>
     </View>
     <View style={{ paddingTop: 10, flexDirection: 'row', justifyContent: 'space-between' }}>
       <Text style={{ fontSize: 16, fontWeight: 'bold', color: colors.textGrey }}>
-        {props.bookmarkCount || 0} Bookmarks
+        {props.episodeBookmarkCount || 0} Bookmarks
       </Text>
     </View>
   </View>
@@ -73,19 +74,32 @@ class BookmarkScreen extends React.Component {
         onBackPress={this.props.onBackPress}
       />
       <PureListView
-        data={this.props.bookmark.map(
+        data={this.props.summaryBookmarks.map(
               (bookmark, i) => ({
                 ...bookmark,
-                willDelete: this.state.deleteIndexs.indexOf(i) !== -1,
                 index: i,
               }),
             )}
         renderRow={
-            bookmark => <BookmarkRow {...bookmark} onPress={this.props.goToBookmarkDetail} />
+            bookmark => <BookmarkRow {...bookmark} onPress={bindFn(this.props.goToBookmarkDetail, bookmark.clog.id)} />
           }
       />
     </View>);
   }
+}
+
+BookmarkScreen.fragments = {
+  summaryBookmark: gql`
+    fragment BookmarkScreen on SummaryBookmark {
+      clog {
+        id
+        title
+        category
+        thumbnailImage
+      }
+      episodeBookmarkCount
+    }
+  `,
 }
 
 export default BookmarkScreen;

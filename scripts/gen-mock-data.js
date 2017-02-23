@@ -38,6 +38,7 @@ function genUsers() {
   return Promise.all(_.range(2000).map(async () => models.User.create({
     name: casual.name,
     profilePicture: `${url}${await casual.profilePicture}`,
+    bookmarks: [],
   })));
 }
 
@@ -114,6 +115,7 @@ function genEpisodes(clogs) {
       Promise.all(
         _.range(_.random(0, 40)).map(async (idx) => 
           models.Episode.create({
+            clogId: clog._id,
             no: idx + 1,
             title: casual.title,
             thumbnailImage: await preview(),
@@ -127,7 +129,7 @@ function genEpisodes(clogs) {
         )
       )
     )
-  ).then(Array.concat);
+  ).then(result => [].concat(...result));
 }
 
 function genTrendingClog(clogs) {
@@ -154,14 +156,32 @@ async function genRecommend(clogs) {
   })
 }
 
+function genBookmars(users, clogs) {
+  return Promise.all(
+    users.map(user => {
+        genArray(clogs, 5).map(clog => {
+          genArray(clog.episodeIds, 10).map(ep => {
+            user.bookmarks.push({
+              clogId: clog._id,
+              episodeId: ep,
+            });
+          })
+        });
+        return user.save();
+      }
+    )
+  )
+}
+
 async function gen() {
   const users = await genUsers();
   const tags = await genTags();
   const authors = await genAuthors(users);
   const clogs = await genClogs(users, authors, tags);
   await genTrendingClog(clogs);
-  await genEpisodes(clogs);
+  const episodes = await genEpisodes(clogs);
   await genRecommend(clogs);
+  await genBookmars(users, clogs);
 }
 
 gen().then(() => {

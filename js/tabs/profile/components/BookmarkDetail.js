@@ -82,7 +82,7 @@ const Header = (props) => (<View style={styles.headerContainer}>
   </View>
   <View style={styles.headerDetailContainer}>
     <Text style={styles.titleText} numberOfLines={2}>{props.clog.title}</Text>
-    <Text style={styles.bookmarkCountText} numberOfLines={1}>{toHumanNumber(props.clog.myBookmarks.length)} Bookmarks</Text>
+    <Text style={styles.bookmarkCountText} numberOfLines={1}>{toHumanNumber(!props.clog.myBookmarks ? 0 : props.clog.myBookmarks.length)} Bookmarks</Text>
   </View>
 </View>);
 
@@ -163,7 +163,7 @@ const mockClog = {
   myBookmarks: [getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark()],
 };
 
-class ClogBookmark extends React.Component {
+class BookmarkDetail extends React.Component {
   constructor(...args) {
     super(...args);
 
@@ -229,29 +229,32 @@ class ClogBookmark extends React.Component {
   }
 
   render() {
-    const props = {};
-    props.clog = mockClog;
+    const props = this.props;
+    // props.clog = mockClog;
     return (<View style={{flex: 1}}>
       <NavBar
         title="Bookmark"
         onBackPress={this.props.onBackPress}
         renderRightMenu={this.renderOptionButton}
       />
-      <Header clog={props.clog}/>
+      <Header clog={!props.clog ? {} : props.clog}/>
       <FixBugScrollView style={styles.bookmarkListContainer}>
         <BookmarkList
           onBookmarkPress={this.onBookmarkPress}
           checkedBookmarkIds={this.state.checkedBookmarkIds}
-          bookmarks={props.clog.myBookmarks}
+          bookmarks={!props.clog ? [] : props.clog.myBookmarks}
         />
       </FixBugScrollView>
     </View>);
   }
 }
 
-ClogBookmark.fragments = {
+BookmarkDetail.fragments = {
   clog: `
-    fragment ClogBookmark on Clog {
+    fragment BookmarkDetail on Clog {
+      title
+      category
+      thumbnailImage
       myBookmarks {
         id
         episode {
@@ -263,4 +266,4 @@ ClogBookmark.fragments = {
   `,
 };
 
-export default ClogBookmark;
+export default BookmarkDetail;
