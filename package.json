@@ -12,12 +12,13 @@
     "dev": "npm run dev:db && npm run start:watch",
     "dev:db": ". ./scripts/dev-db",
     "gen-mock": "babel-node ./scripts/gen-mock-data.js",
-    "clean-db": "babel-node ./scripts/clean-db.js"
+    "clean-db": "babel-node ./scripts/clean-db.js",
+    "re-mock": "npm run clean-db && npm run gen-mock"
   },
   "dependencies": {
     "@exponent/react-native-read-more-text": "^1.0.0",
     "@risingstack/graffiti-mongoose": "^6.0.0",
-    "apollo-client": "^0.7.1",
+    "apollo-client": "^0.8.7",
     "apollo-server": "^0.3.3",
     "art": "~0.10.1",
     "babel-cli": "~6.6.5",

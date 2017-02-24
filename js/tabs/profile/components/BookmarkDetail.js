@@ -186,6 +186,7 @@ class BookmarkDetail extends React.Component {
   }
 
   onDeleteBookmark() {
+    this.props.removeBookmarks(this.state.checkedBookmarkIds);
     this.setState({
       selecting: false,
       checkedBookmarkIds: [],

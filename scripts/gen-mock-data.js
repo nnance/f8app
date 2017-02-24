@@ -174,7 +174,7 @@ async function genRecommend(clogs) {
 function genBookmars(users, clogs) {
   return Promise.all(
     users.map(user => {
-        genArray(clogs, 5).map(clog => {
+        genArray(clogs, 10).map(clog => {
           genArray(clog.episodeIds, 10).map(ep => {
             user.bookmarks.push({
               clogId: clog._id,
@@ -196,7 +196,7 @@ async function gen() {
   await genTrendingClog(clogs);
   const episodes = await genEpisodes(clogs);
   await genRecommend(clogs);
-  await genBookmars(users, clogs);
+  await genBookmars([users[0]], clogs);
 }
 
 gen().then(() => {

@@ -4,7 +4,7 @@ import gql from 'graphql-tag';
 import BookmarkScreen from '../components/BookmarkScreen';
 import * as mockData from '../mockData';
 
-const query = gql`
+export const query = gql`
   query {
     me {
       summaryBookmarks {
