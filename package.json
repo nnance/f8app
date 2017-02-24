@@ -57,6 +57,7 @@
     "react-native-config": "0.2.1",
     "react-native-drawer": "^2.3.0",
     "react-native-fbsdk": "^0.4.0",
+    "react-native-fs": "2.0.1-rc.2",
     "react-native-image-picker": "^0.24.1",
     "react-native-linear-gradient": "^1.6.2",
     "react-native-modal-picker": "git+ssh://git@github.com/atennapel/react-native-modal-picker.git",
