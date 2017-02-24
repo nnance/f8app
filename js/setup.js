@@ -40,6 +40,7 @@ const { serverURL } = env;
 
 function setup(): React.Component {
   console.disableYellowBox = true;
+  console.log(env);
   Parse.initialize(env.parse.appID, env.parse.javascriptKey);
   Parse.serverURL = `${serverURL}/parse`;
 
