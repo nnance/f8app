@@ -82,7 +82,7 @@ const Header = (props) => (<View style={styles.headerContainer}>
   </View>
   <View style={styles.headerDetailContainer}>
     <Text style={styles.titleText} numberOfLines={2}>{props.clog.title}</Text>
-    <Text style={styles.bookmarkCountText} numberOfLines={1}>{toHumanNumber(!props.clog.myBookmarks ? 0 : props.clog.myBookmarks.length)} Bookmarks</Text>
+    <Text style={styles.bookmarkCountText} numberOfLines={1}>{toHumanNumber(!props.clog.myEpisodeBookmarks ? 0 : props.clog.myEpisodeBookmarks.length)} Bookmarks</Text>
   </View>
 </View>);
 
@@ -160,7 +160,7 @@ const mockClog = {
   title: 'Richer Richer manss',
   thumbnailImage: require('../img/B.png'),
   category: 'N',
-  myBookmarks: [getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark()],
+  myEpisodeBookmarks: [getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark()],
 };
 
 class BookmarkDetail extends React.Component {
@@ -243,7 +243,7 @@ class BookmarkDetail extends React.Component {
         <BookmarkList
           onBookmarkPress={this.onBookmarkPress}
           checkedBookmarkIds={this.state.checkedBookmarkIds}
-          bookmarks={!props.clog ? [] : props.clog.myBookmarks}
+          bookmarks={!props.clog ? [] : props.clog.myEpisodeBookmarks}
         />
       </FixBugScrollView>
     </View>);
@@ -256,7 +256,7 @@ BookmarkDetail.fragments = {
       title
       category
       thumbnailImage
-      myBookmarks {
+      myEpisodeBookmarks {
         id
         episode {
           no

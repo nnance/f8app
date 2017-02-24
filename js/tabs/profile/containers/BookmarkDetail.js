@@ -6,7 +6,7 @@ import BookmarkDetail from '../components/BookmarkDetail';
 import { query as BookmarkScreenQuery } from '../containers/BookmarkScreen';
 import * as mockData from '../mockData';
 
-const query = gql`
+export const query = gql`
   query BookmarkDetail($id: MongoID!){
     clog(filter: { _id: $id }) {
       ...BookmarkDetail
@@ -49,7 +49,7 @@ const withMutations = graphql(
                 ...prev,
                 clog: {
                   ...prev.clog,
-                  myBookmarks: prev.clog.myBookmarks.filter(bookmark => !_.find(removedBookmarks, _bookmark => _bookmark.id === bookmark.id)),
+                  myEpisodeBookmarks: prev.clog.myEpisodeBookmarks.filter(bookmark => !_.find(removedBookmarks, _bookmark => _bookmark.id === bookmark.id)),
                 },
               };
             },
