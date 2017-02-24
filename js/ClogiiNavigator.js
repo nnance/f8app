@@ -7,7 +7,7 @@ import { parse } from 'query-string';
 import FixBugScrollViewNavigator from './common/FixBugScrollViewNavigator';
 
 import ClogiiTabView from './tabs/ClogiiTabView';
-import Player from './player';
+import Reader from './reader';
 import Book from './book';
 import Comment from './comment';
 
@@ -87,7 +87,7 @@ class ClogiiNavigator extends React.Component {
       return <ClogiiTabView goToBook={this.goToBook} />;
     }
     if (route.page === 'player') {
-      return <Player onBackPress={this.goBack} id={route.id} />;
+      return <Reader onBackPress={this.goBack} id={route.id} />;
     }
     if (route.page === 'book') {
       return (<Book

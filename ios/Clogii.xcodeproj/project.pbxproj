@@ -5,12 +5,14 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		002BD47E1CA7399D00E80F7A /* F8Scrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 002BD47D1CA7399D00E80F7A /* F8Scrolling.m */; };
 		0086BC3A1C90DDE500EC8D24 /* Splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0086BC391C90DDE500EC8D24 /* Splash@2x.png */; };
 		0095423B1C175AB600433EAF /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0095423A1C175AA200433EAF /* libBVLinearGradient.a */; };
 		00AE9D3C1C44464400514148 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AE9D3B1C44464400514148 /* Default-568h@2x.png */; };
 		00D006A71CA9D08A001C592C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00D006A61CA9D08A001C592C /* Settings.bundle */; };
+		054129ACE363476F96778AB9 /* libRNFS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8139D48E3459454AA4C8A73D /* libRNFS.a */; };
 		10FCE7A9A52226D9590B3007 /* libPods-Clogii.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD29199FBC152A9490D954E4 /* libPods-Clogii.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
@@ -57,6 +59,13 @@
 			remoteGlobalIDString = 0974579A1D2A440A000D9368;
 			remoteInfo = RCTWKWebView;
 		};
+		D77FA6C21E603593005DA89C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 58D5F01D0B36403482BCB54C /* RNFS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F12AFB9B1ADAF8F800E0535D;
+			remoteInfo = RNFS;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +86,8 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Clogii/main.m; sourceTree = "<group>"; };
 		20110195779342859F0F459B /* RCTWKWebView.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTWKWebView.xcodeproj; path = "../node_modules/react-native-wkwebview-reborn/ios/RCTWKWebView.xcodeproj"; sourceTree = "<group>"; };
 		4E6F25AB81F34B7F80B6BB39 /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNImagePicker.xcodeproj; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; };
+		58D5F01D0B36403482BCB54C /* RNFS.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNFS.xcodeproj; path = "../node_modules/react-native-fs/RNFS.xcodeproj"; sourceTree = "<group>"; };
+		8139D48E3459454AA4C8A73D /* libRNFS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNFS.a; sourceTree = "<group>"; };
 		8BC4BB28AB1F4897843DBDB2 /* libRNImagePicker.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNImagePicker.a; sourceTree = "<group>"; };
 		A4DA2D3B46304F80B7F87885 /* libReactNativeConfig.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libReactNativeConfig.a; sourceTree = "<group>"; };
 		BD29199FBC152A9490D954E4 /* libPods-Clogii.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Clogii.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +114,7 @@
 				1562C3DCBCA3483FBCD53FB7 /* libRNImagePicker.a in Frameworks */,
 				692A9BA7867847B8A04B4229 /* libReactNativeConfig.a in Frameworks */,
 				5A6A5C7983F24E1097677829 /* libRCTWKWebView.a in Frameworks */,
+				054129ACE363476F96778AB9 /* libRNFS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +187,7 @@
 				4E6F25AB81F34B7F80B6BB39 /* RNImagePicker.xcodeproj */,
 				E898435571C44E8A8C0394E6 /* ReactNativeConfig.xcodeproj */,
 				20110195779342859F0F459B /* RCTWKWebView.xcodeproj */,
+				58D5F01D0B36403482BCB54C /* RNFS.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -222,6 +235,14 @@
 			isa = PBXGroup;
 			children = (
 				B0C23B481E38BAE6009FAC47 /* libRCTWKWebView.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D77FA6BC1E603593005DA89C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D77FA6C31E603593005DA89C /* libRNFS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -316,6 +337,10 @@
 					ProjectRef = E898435571C44E8A8C0394E6 /* ReactNativeConfig.xcodeproj */;
 				},
 				{
+					ProductGroup = D77FA6BC1E603593005DA89C /* Products */;
+					ProjectRef = 58D5F01D0B36403482BCB54C /* RNFS.xcodeproj */;
+				},
+				{
 					ProductGroup = B09D60071E1E6B2F00DFE92F /* Products */;
 					ProjectRef = 4E6F25AB81F34B7F80B6BB39 /* RNImagePicker.xcodeproj */;
 				},
@@ -355,6 +380,13 @@
 			fileType = archive.ar;
 			path = libRCTWKWebView.a;
 			remoteRef = B0C23B471E38BAE6009FAC47 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D77FA6C31E603593005DA89C /* libRNFS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNFS.a;
+			remoteRef = D77FA6C21E603593005DA89C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -501,6 +533,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Clogii.app/Clogii";
@@ -521,6 +554,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Clogii.app/Clogii";
@@ -543,6 +577,7 @@
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-config/ios/ReactNativeConfig",
 					"$(SRCROOT)/../node_modules/react-native-wkwebview-reborn/ios/RCTWKWebView",
+					"$(SRCROOT)/../node_modules/react-native-fs/**",
 				);
 				INFOPLIST_FILE = Clogii/Info.plist;
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-traditional";
@@ -574,6 +609,7 @@
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-config/ios/ReactNativeConfig",
 					"$(SRCROOT)/../node_modules/react-native-wkwebview-reborn/ios/RCTWKWebView",
+					"$(SRCROOT)/../node_modules/react-native-fs/**",
 				);
 				INFOPLIST_FILE = Clogii/Info.plist;
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-traditional";
@@ -631,6 +667,7 @@
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-config/ios/ReactNativeConfig",
 					"$(SRCROOT)/../node_modules/react-native-wkwebview-reborn/ios/RCTWKWebView",
+					"$(SRCROOT)/../node_modules/react-native-fs/**",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -674,6 +711,7 @@
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-config/ios/ReactNativeConfig",
 					"$(SRCROOT)/../node_modules/react-native-wkwebview-reborn/ios/RCTWKWebView",
+					"$(SRCROOT)/../node_modules/react-native-fs/**",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;

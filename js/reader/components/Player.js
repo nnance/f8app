@@ -19,6 +19,13 @@ import ModalSpinner from '../../common/ModalSpinner';
 import BookAndPlayerTabBar from '../../common/BookAndPlayerTabBar';
 import { serverURL } from '../../env';
 
+// Import ClogPlayer component from submodule
+// if any error occur please check if submodule is outdated
+// note: please run `yarn install` inside player
+// note2: react-native-fs require manual link `react-native link react-native-fs`
+import ClogPlayer from '../../player/components/ClogPlayer';
+
+
 const styles = StyleSheet.create({
   navButton: {
     width: 25,
@@ -87,12 +94,7 @@ class Player extends React.Component {
     if (this.props.loading) {
       return null;
     }
-    let playerView;
-    if (Platform.OS === 'android') {
-      playerView = <WebView style={{ flex: 1 }} source={{ uri: `${serverURL}/static/demo-episode/clog.html` }} onLoadEnd={() => this.setState({ loading: false })} />;
-    } else {
-      playerView = <WKWebView style={{ flex: 1 }} source={{ uri: `${serverURL}/static/demo-episode/clog.html` }} onLoadEnd={() => this.setState({ loading: false })} />;
-    }
+
     return (
       <View style={{ flex: 1 }}>
         <NavBarWithPinkButton
@@ -110,7 +112,12 @@ class Player extends React.Component {
         />
         <View style={{ flex: 1 }}>
           <ModalSpinner visible={this.state.loading} />
-          {playerView}
+          <ClogPlayer
+            source={{ uri: `${serverURL}/clog/${this.props.episode.id}` }}
+            style={{ flex: 1 }}
+            onMessage={() => console.log('')}
+            onLoad={() => this.setState({ loading: false })}
+          />
         </View>
         <BookAndPlayerTabBar
           onSharePress={this.onSharePress}
