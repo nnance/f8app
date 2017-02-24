@@ -21,7 +21,7 @@ import ModalSpinner from '../../../common/ModalSpinner';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: commonColors.greyBackground,
+    backgroundColor: commonColors.nearlyWhiteBackground,
   },
   editorContainer: {
     backgroundColor: 'white',

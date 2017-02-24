@@ -26,7 +26,7 @@ const Topic = ({ title, children, style }) => (
   <View>
     <View
       style={{
-        backgroundColor: colors.fadedGreyBackground,
+        backgroundColor: colors.greyBackground,
         paddingVertical: 4,
         paddingLeft: 10,
       }}

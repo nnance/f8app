@@ -22,7 +22,7 @@ class ClogListView extends React.Component {
     return (<View
       style={{
         flex: 1,
-        backgroundColor: colors.greyBackground,
+        backgroundColor: colors.nearlyWhiteBackground,
       }}
     >
       <NavBar

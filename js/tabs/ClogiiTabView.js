@@ -47,6 +47,7 @@ class ClogiiTabView extends React.Component {
 
   componentDidMount() {
     this.props.init();
+    // this.tabView.goToPage(3);
   }
 
   /* eslint class-methods-use-this: warn */

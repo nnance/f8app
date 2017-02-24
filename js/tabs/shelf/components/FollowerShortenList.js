@@ -7,12 +7,13 @@ import {
 import CircleImage from '../../../common/CircleImage';
 import HorizontalListView from '../../../common/HorizontalListView';
 import { colors } from '../../../common/styles';
+import { mapSource } from '../../../common/utils';
 
 const Row = props => (
   <View style={{ paddingVertical: 1.5, paddingHorizontal: 1.5, alignItems: 'center' }}>
     { !props.data.remaining ?
       <CircleImage
-        source={{ uri: props.data.profilePicture }}
+        source={mapSource(props.data.profilePicture)}
         size={30}
         shadowRadius={2}
         shadowColor="white"
