@@ -54,11 +54,11 @@ class Player extends React.Component {
   }
 
   onBookmarkPress() {
-    this.props.addBookmark(this.props.episode.clogId, this.props.episode.id);
+    this.props.addEpisodeBookmark(this.props.episode.clogId, this.props.episode.id);
   }
 
   onRemoveBookmarkPress() {
-    this.props.removeBookmark(this.props.episode);
+    this.props.removeEpisodeBookmarks([this.props.episodeBookmark.id]);
   }
 
   onSharePress() {
@@ -73,7 +73,7 @@ class Player extends React.Component {
     return (
       <View style={{ flexDirection: 'row' }}>
         {
-          !this.props.episode.episodeBookmark ?
+          !this.props.episodeBookmark ?
           <TouchableOpacity onPress={this.onBookmarkPress}>
             <Image style={styles.navButton} source={require('../img/bookmark-button.png')} />
           </TouchableOpacity> :
@@ -140,17 +140,21 @@ class Player extends React.Component {
 
 Player.fragments = {
   episode: gql`
-    fragment Player on Episode {
-      clogId
+    fragment PlayerEpisode on Episode {
       id
+      clogId
       no
       title
       likeCount
       commentCount
       viewCount
-      episodeBookmark {
-        id
-      }
+    }
+  `,
+  bookmark: gql`
+    fragment PlayerBookmark on EpisodeBookmark {
+      id
+      clogId
+      episodeId
     }
   `,
 };

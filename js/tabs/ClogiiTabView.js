@@ -153,7 +153,13 @@ class ClogiiTabView extends React.Component {
             navigator={this.props.navigator}
             tabLabel="Notifications"
           />
-          <ProfileScreen navigator={this.props.navigator} tabLabel="Profile" isActive={this.state.activeTab === 3} />
+          <ProfileScreen
+            navigator={this.props.navigator}
+            goToPlayer={this.props.goToPlayer}
+            goToBook={this.props.goToBook}
+            tabLabel="Profile"
+            isActive={this.state.activeTab === 3}
+          />
         </ScrollableTabView>
       </Drawer>
     );

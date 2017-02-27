@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  bookmarkListContainer: {
+  episodeBookmarkListContainer: {
     flex: 1,
     backgroundColor: 'rgb(230, 230, 230)',
   },
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
 });
 
 const Header = (props) => (<View style={styles.headerContainer}>
-  <View style={styles.headerThumbnailContainer}>
+  <TouchableOpacity onPress={props.onClogPress} style={styles.headerThumbnailContainer}>
     <CircleImageWithCategory
       size={headerThumbnailSize}
       source={mapSource(props.clog.thumbnailImage)}
@@ -79,10 +79,10 @@ const Header = (props) => (<View style={styles.headerContainer}>
       shadowRadius={5}
       shadowColor="rgba(255, 255, 255, 0.5)"
     />
-  </View>
+  </TouchableOpacity>
   <View style={styles.headerDetailContainer}>
     <Text style={styles.titleText} numberOfLines={2}>{props.clog.title}</Text>
-    <Text style={styles.bookmarkCountText} numberOfLines={1}>{toHumanNumber(!props.clog.myEpisodeBookmarks ? 0 : props.clog.myEpisodeBookmarks.length)} Bookmarks</Text>
+    <Text style={styles.bookmarkCountText} numberOfLines={1}>{toHumanNumber(!props.bookmarks ? 0 : props.bookmarks.length)} Bookmarks</Text>
   </View>
 </View>);
 
@@ -93,7 +93,7 @@ class BookmarkList extends React.Component {
 
   renderBookmark(bookmark) {
     return (
-      <TouchableOpacity onPress={bindFn(this.props.onBookmarkPress, bookmark.id)} key={bookmark.id} style={styles.bookmarkContainer}>
+      <TouchableOpacity onPress={bindFn(this.props.onBookmarkPress, bookmark)} key={bookmark.id} style={styles.bookmarkContainer}>
         <View>
           <CircleImageWithSubImage
             source={mapSource(bookmark.episode.thumbnailImage)}
@@ -143,26 +143,6 @@ class BookmarkList extends React.Component {
   }
 }
 
-let idx = 1;
-function getMockBookmark() {
-  const mockBookmark = {
-    id: idx,
-    episode: {
-      no: idx,
-      thumbnailImage: require('../img/A.png'),
-    },
-  };
-  idx = idx + 1;
-  return mockBookmark;
-}
-
-const mockClog = {
-  title: 'Richer Richer manss',
-  thumbnailImage: require('../img/B.png'),
-  category: 'N',
-  myEpisodeBookmarks: [getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark(), getMockBookmark()],
-};
-
 class BookmarkDetail extends React.Component {
   constructor(...args) {
     super(...args);
@@ -175,6 +155,7 @@ class BookmarkDetail extends React.Component {
     this.onWillCheckBookmark = this.onWillCheckBookmark.bind(this);
     this.onDeleteBookmark = this.onDeleteBookmark.bind(this);
     this.onBookmarkPress = this.onBookmarkPress.bind(this);
+    this.onClogPress = this.onClogPress.bind(this);
     this.renderOptionButton = this.renderOptionButton.bind(this);
   }
 
@@ -186,14 +167,19 @@ class BookmarkDetail extends React.Component {
   }
 
   onDeleteBookmark() {
-    this.props.removeBookmarks(this.state.checkedBookmarkIds);
+    this.props.removeEpisodeBookmarks(this.state.checkedBookmarkIds);
     this.setState({
       selecting: false,
       checkedBookmarkIds: [],
     });
   }
 
-  onBookmarkPress(id) {
+  onClogPress() {
+    this.props.goToBook(this.props.clog.id);
+  }
+
+  onBookmarkPress(bookmark) {
+    const id = bookmark.id;
     if (this.state.selecting) {
       if (this.state.checkedBookmarkIds.indexOf(id) === -1) {
         this.setState({
@@ -205,6 +191,9 @@ class BookmarkDetail extends React.Component {
           checkedBookmarkIds: _.pull(this.state.checkedBookmarkIds, id),
         });
       }
+    }
+    else {
+      this.props.goToPlayer(bookmark.episode.id);
     }
   }
 
@@ -238,12 +227,16 @@ class BookmarkDetail extends React.Component {
         onBackPress={this.props.onBackPress}
         renderRightMenu={this.renderOptionButton}
       />
-      <Header clog={!props.clog ? {} : props.clog}/>
-      <FixBugScrollView style={styles.bookmarkListContainer}>
+      <Header
+        onClogPress={this.onClogPress}
+        clog={!props.clog ? {} : props.clog}
+        bookmarks={!props.clog ? [] : props.episodeBookmarks}
+      />
+      <FixBugScrollView style={styles.episodeBookmarkListContainer}>
         <BookmarkList
           onBookmarkPress={this.onBookmarkPress}
           checkedBookmarkIds={this.state.checkedBookmarkIds}
-          bookmarks={!props.clog ? [] : props.clog.myEpisodeBookmarks}
+          bookmarks={!props.clog ? [] : props.episodeBookmarks}
         />
       </FixBugScrollView>
     </View>);
@@ -252,19 +245,24 @@ class BookmarkDetail extends React.Component {
 
 BookmarkDetail.fragments = {
   clog: `
-    fragment BookmarkDetail on Clog {
+    fragment BookmarkDetailClog on Clog {
+      id
       title
       category
       thumbnailImage
-      myEpisodeBookmarks {
-        id
-        episode {
-          no
-          thumbnailImage
-        }
-      }
     }
   `,
+  episodeBookmark: `
+    fragment BookmarkDetailEpisodeBookmark on EpisodeBookmark {
+      id
+      clogId
+      episode {
+        id
+        no
+        thumbnailImage
+      }
+    }
+  `
 };
 
 export default BookmarkDetail;

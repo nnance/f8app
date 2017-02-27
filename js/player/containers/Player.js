@@ -1,6 +1,8 @@
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
+import _ from 'lodash';
 
+import { filterClogId, filterEpisodeId, withAddEpisodeBookmark, withRemoveEpisodeBookmarks } from '../../models/bookmark';
 import Player from '../components/Player';
 import { query as BookmarkScreenQuery } from '../../tabs/profile/containers/BookmarkScreen';
 import { query as BookmarkDetailQuery } from '../../tabs/profile/containers/BookmarkDetail';
@@ -8,20 +10,33 @@ import { query as BookmarkDetailQuery } from '../../tabs/profile/containers/Book
 export const query = gql`
   query PlayerQuery($id: MongoID!){
     episode(filter: { _id: $id }) {
-      ...Player
+      ...PlayerEpisode
+    }
+    me {
+      id
+      episodeBookmarks {
+        ...PlayerBookmark
+      }
     }
   }
   ${Player.fragments.episode}
+  ${Player.fragments.bookmark}
 `;
 
 export const mapQueryToProps = ({ data }) => {
-  const { episode, error, loading } = data;
+  const { episode, error, loading, me } = data;
   if (error) {
     console.error('graphql error: ', error);
   }
+  let episodeBookmarks;
+  if (episode && me) {
+    episodeBookmarks = filterEpisodeId(filterClogId(me.episodeBookmarks, episode.clogId), episode.id);
+  }
+
   return {
     loading,
     episode: episode || {},
+    episodeBookmark: episodeBookmarks ? episodeBookmarks[0] : null,
   };
 };
 export const mapPropsToOptions = ({ id }) => ({
@@ -30,103 +45,7 @@ export const mapPropsToOptions = ({ id }) => ({
   },
 });
 
-const withAddMutations = graphql(
-  gql`
-    mutation addBookmark($clogId: MongoID!, $episodeId: MongoID!){
-      addBookmark(clogId: $clogId, episodeId: $episodeId) {
-        id
-      }
-    }
-  `,
-  {
-    props: ({ ownProps, mutate }) => ({
-      addBookmark: (clogId, episodeId) => {
-        return mutate({
-          variables: {
-            clogId,
-            episodeId,
-          },
-          updateQueries: {
-            PlayerQuery: (prev, { mutationResult }) => {
-              const bookmark = mutationResult.data.addBookmark;
-              return {
-                ...prev,
-                episode: {
-                  ...prev.episode,
-                  episodeBookmark: bookmark,
-                },
-              };
-            },
-          },
-          refetchQueries: [
-            { query: BookmarkScreenQuery },
-            {
-              query: BookmarkDetailQuery,
-              variables: {
-                id: clogId,
-              } 
-            },
-          ],
-        });
-      },
-    }),
-  },
-);
-
-const withRemoveMutations = graphql(
-  gql`
-    mutation removeBookmarks($id: MongoID!){
-      removeBookmarks(_ids: [$id]) {
-        removedBookmarks {
-          id
-        }
-      }
-    }
-  `,
-  {
-    props: ({ ownProps, mutate }) => ({
-      removeBookmark: (episode) => {
-        return mutate({
-          variables: {
-            id: episode.episodeBookmark.id,
-          },
-          // optimisticResponse: {
-          //   __typename: 'Mutation',
-          //   removeBookmarks: {
-          //     __typename: 'RemoveBookmarksResult',
-          //     removedBookmarks: {
-          //       __typename: 'Bookmark',
-          //       id: null,
-          //     },
-          //   },
-          // },
-          updateQueries: {
-            PlayerQuery: (prev) => {
-              return {
-                ...prev,
-                episode: {
-                  ...prev.episode,
-                  episodeBookmark: null,
-                },
-              };
-            },
-          },
-          refetchQueries: [
-            { query: BookmarkScreenQuery },
-            {
-              query: BookmarkDetailQuery,
-              variables: {
-                id: episode.clogId,
-              } 
-            },
-          ],
-        });
-      },
-    }),
-  },
-);
-
-export default withRemoveMutations(withAddMutations(graphql(query, {
+export default withRemoveEpisodeBookmarks(withAddEpisodeBookmark(graphql(query, {
   props: mapQueryToProps,
   options: mapPropsToOptions,
 })(Player)));

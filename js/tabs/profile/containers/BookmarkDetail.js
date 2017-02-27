@@ -2,85 +2,62 @@ import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import _ from 'lodash';
 
+import { withRemoveEpisodeBookmarks, filterClogId } from '../../../models/bookmark';
+
 import BookmarkDetail from '../components/BookmarkDetail';
 import { query as BookmarkScreenQuery } from '../containers/BookmarkScreen';
-import * as mockData from '../mockData';
 
 export const query = gql`
   query BookmarkDetail($id: MongoID!){
     clog(filter: { _id: $id }) {
-      ...BookmarkDetail
+      ...BookmarkDetailClog
+    }
+    me {
+      id
+      episodeBookmarks {
+        ...BookmarkDetailEpisodeBookmark
+      }
     }
   }
   ${BookmarkDetail.fragments.clog}
+  ${BookmarkDetail.fragments.episodeBookmark}
 `;
-
-const withMutations = graphql(
-  gql`
-    mutation removeBookmarks($ids: [MongoID!]!){
-      removeBookmarks(_ids: $ids) {
-        removedBookmarks {
-          id
-        }
-      }
-    }  
-  `,
-  {
-    props: ({ ownProps, mutate }) => ({
-      removeBookmarks: (ids) => {
-        return mutate({
-          variables: {
-            ids,
-          },
-          optimisticResponse: {
-            __typename: 'Mutation',
-            removeBookmarks: {
-              __typename: 'RemoveBookmarksResult',
-              removedBookmarks: ids.map(id => ({
-                __typename: 'Bookmark',
-                id,
-              })),
-            },
-          },
-          updateQueries: {
-            BookmarkDetail: (prev, { mutationResult }) => {
-              const removedBookmarks = mutationResult.data.removeBookmarks.removedBookmarks;
-              return {
-                ...prev,
-                clog: {
-                  ...prev.clog,
-                  myEpisodeBookmarks: prev.clog.myEpisodeBookmarks.filter(bookmark => !_.find(removedBookmarks, _bookmark => _bookmark.id === bookmark.id)),
-                },
-              };
-            },
-          },
-          refetchQueries: [
-            { query: BookmarkScreenQuery }
-          ],
-        });
-      },
-    }),
-  },
-);
 
 const mapQueryToProps = ({ data }) => {
   return {
     clog: data.clog,
+    episodeBookmarks: data.loading || data.error ? [] : filterClogId(data.me.episodeBookmarks, data.clog.id),
   };
 };
 
-export const mapPropsToOptions = ({ id }) => ({
-  variables: {
-    id,
-  },
-});
+// export const mapPropsToOptions = ({ id }) => ({
+//   variables: {
+//     id,
+//   },
+//   reducer: (previousResult, action, variables) => {
+//     if (action.type === 'APOLLO_MUTATION_RESULT' && action.operationName === 'removeEpisodeBookmarks'){
+//       if (action.result.data.removeEpisodeBookmarks && previousResult) {
+//         const removeEpisodeBookmarks = action.result.data.removeEpisodeBookmarks;
+//         const removedEpisodeBookmarks = removeEpisodeBookmarks.removedEpisodeBookmarks;
+//         return {
+//           ...previousResult,
+//           me: {
+//             ...previousResult.me,
+//             episodeBookmarks: previousResult.me.episodeBookmarks.filter(bookmark => !_.find(removedEpisodeBookmarks, _bookmark => _bookmark.id === bookmark.id)),
+//           }
+//         };
+//       }
+//     }
+//     return previousResult;
+//   },
+// });
 
 const withData = graphql(
   query,
   {
     props: mapQueryToProps,
-    options: mapPropsToOptions,
+    // options: mapPropsToOptions,
   },
 );
 
-export default withMutations(withData(BookmarkDetail));
+export default withRemoveEpisodeBookmarks(withData(BookmarkDetail));

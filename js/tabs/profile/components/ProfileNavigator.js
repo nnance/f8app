@@ -103,7 +103,12 @@ class ProfileNavigator extends React.Component {
     }
     if (route.page === 'bookmark-detail') {
       return (
-        <BookmarkDetail id={route.id} onBackPress={this.onBack}/>
+        <BookmarkDetail
+          id={route.id}
+          onBackPress={this.onBack}
+          goToPlayer={this.props.goToPlayer}
+          goToBook={this.props.goToBook}
+        />
       );
     }
     return (<Home
