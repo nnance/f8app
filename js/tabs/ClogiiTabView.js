@@ -34,6 +34,7 @@ class ClogiiTabView extends React.Component {
     super(...args);
     this.state = {
       activeTab: 0,
+      canScroll: true,
     };
 
     this.goToClogCategory = this.goToClogCategory.bind(this);
@@ -130,7 +131,7 @@ class ClogiiTabView extends React.Component {
             });
           }
           }
-          locked={Platform.OS === 'android'}
+          locked={Platform.OS === 'android' ? true : !this.state.canScroll}
         >
           <ShelfScreen
             ref={
@@ -160,6 +161,7 @@ class ClogiiTabView extends React.Component {
             redirectTo={this.props.redirectTo}
             tabLabel="Profile"
             isActive={this.state.activeTab === 3}
+            setTabViewScrollable={can => this.setState({canScroll: can})}
           />
         </ScrollableTabView>
       </Drawer>

@@ -1,7 +1,7 @@
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 
-import { updateMeBookmarksReduer } from '../../../models/bookmark';
+import { updateMeBookmarksReduer, withRemoveBookmarks } from '../../../models/bookmark';
 
 import BookmarkScreen from '../components/BookmarkScreen';
 
@@ -26,12 +26,12 @@ const mapQueryToProps = ({ data }) => {
   };
 };
 
-export default graphql(
+export default withRemoveBookmarks(graphql(
   query,
   {
     props: mapQueryToProps,
     options: () => ({
-      reduer: updateMeBookmarksReduer,
+      reducer: updateMeBookmarksReduer,
     }),
   }
-)(BookmarkScreen);
+)(BookmarkScreen));

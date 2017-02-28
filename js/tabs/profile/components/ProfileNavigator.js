@@ -77,7 +77,7 @@ class ProfileNavigator extends React.Component {
       return <MyClogScreen onBackPress={this.onBack} />;
     }
     if (route.page === 'bookmark') {
-      return <BookmarkScreen onBackPress={this.onBack} redirectTo={this.props.redirectTo} />;
+      return <BookmarkScreen onBackPress={this.onBack} redirectTo={this.props.redirectTo} setTabViewScrollable={this.props.setTabViewScrollable}/>;
     }
     if (route.page === 'jellyShop') {
       return <JellyShopScreen onBackPress={this.onBack} />;
@@ -94,16 +94,6 @@ class ProfileNavigator extends React.Component {
     }
     if (route.page === 'change-password') {
       return <ChangePasswordScreen onBackPress={this.onBack} />;
-    }
-    if (route.page === 'bookmark-detail') {
-      return (
-        <BookmarkDetail
-          id={route.id}
-          onBackPress={this.onBack}
-          goToPlayer={this.props.goToPlayer}
-          goToBook={this.props.goToBook}
-        />
-      );
     }
     return (<Home
       onMenuPress={this.onMenuPress}
