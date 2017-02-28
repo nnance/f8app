@@ -1,37 +1,45 @@
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
-
-import { query as BookmarkScreenQuery } from '../../tabs/profile/containers/BookmarkScreen';
+import _ from 'lodash';
 
 export const filterClogId = (bookmarks, clogId) => bookmarks.filter(bookmark => bookmark.clogId === clogId);
 export const filterEpisodeId = (bookmarks, episodeId) => bookmarks.filter(bookmark => bookmark.episodeId === episodeId);
 
-const updateCacheQuery = gql`
-  query updateCache {
-    me {
-      id
-      episodeBookmarks {
-        id
-        clogId
-        episodeId
-        episode {
-          id
-        }
-        clog {
-          id
-        }
-      }
+export const updateMeBookmarksReduer = function (previousResult, action, variables) {
+  if (action.type === 'APOLLO_MUTATION_RESULT' && action.operationName === 'removeBookmarks'){
+    if (!previousResult.me || !action.result || !action.result.data || !action.result.data.removeBookmarks) {
+      return previousResult;
+    }
+    const removeBookmarks = action.result.data.removeBookmarks;
+    return {
+      ...previousResult,
+      me: {
+        ...previousResult.me,
+        bookmarks: previousResult.me.bookmarks.filter(bookmark => !_.find(removeBookmarks.removedBookmarks, removedBookmark => removedBookmark.id === bookmark.id)),
+      },
     }
   }
-`;
+  if (action.type === 'APOLLO_MUTATION_RESULT' && action.operationName === 'addEpisodeBookmark'){
+    if (!previousResult.me || !action.result || !action.result.data || !action.result.data.addEpisodeBookmark) {
+      return previousResult;
+    }
+    const addEpisodeBookmark = action.result.data.addEpisodeBookmark;
+    return {
+      ...previousResult,
+      me: {
+        ...previousResult.me,
+        bookmarks: [...previousResult.me.bookmarks, addEpisodeBookmark.addedBookmark],
+      },
+    }
+  }
+  return previousResult;
+};
 
-const refetchs = [{ query: updateCacheQuery }, { query: BookmarkScreenQuery }]
-
-export const withRemoveEpisodeBookmarks = graphql(
+export const withRemoveBookmarks = graphql(
   gql`
-    mutation removeEpisodeBookmarks($ids: [MongoID!]!){
-      removeEpisodeBookmarks(_ids: $ids) {
-        removedEpisodeBookmarks {
+    mutation removeBookmarks($ids: [MongoID!]!){
+      removeBookmarks(_ids: $ids) {
+        removedBookmarks {
           id
         }
       }
@@ -39,22 +47,21 @@ export const withRemoveEpisodeBookmarks = graphql(
   `,
   {
     props: ({ ownProps, mutate }) => ({
-      removeEpisodeBookmarks: (ids) => {
+      removeBookmarks: (ids) => {
         return mutate({
           variables: {
             ids,
           },
           optimisticResponse: {
             __typename: 'Mutation',
-            removeEpisodeBookmarks: {
-              __typename: 'RemoveEpisodeBookmarksResult',
-              removedEpisodeBookmarks: ids.map(id => ({
-                __typename: 'EpisodeBookmark',
+            removeBookmarks: {
+              __typename: 'RemoveBookmarksResult',
+              removedBookmarks: ids.map(id => ({
+                __typename: 'Bookmark',
                 id,
               })),
             },
           },
-          refetchQueries: refetchs,
         });
       },
     }),
@@ -63,21 +70,51 @@ export const withRemoveEpisodeBookmarks = graphql(
 
 export const withAddEpisodeBookmark = graphql(
   gql`
-    mutation addEpisodeBookmark($clogId: MongoID!, $episodeId: MongoID!){
-      addEpisodeBookmark(clogId: $clogId, episodeId: $episodeId) {
-        id
+    mutation addEpisodeBookmark($episodeId: MongoID!){
+      addEpisodeBookmark(episodeId: $episodeId) {
+        addedBookmark {
+          id
+          url
+          clogId
+          episodeId
+          clog {
+            id
+          }
+          episode {
+            id
+          }
+        }
       }
     }
   `,
   {
     props: ({ ownProps, mutate }) => ({
-      addEpisodeBookmark: (clogId, episodeId) => {
+      addEpisodeBookmark: (episode) => {
         return mutate({
           variables: {
-            clogId,
-            episodeId,
+            episodeId: episode.id,
           },
-          refetchQueries: refetchs,
+          optimisticResponse: {
+            __typename: 'Mutation',
+            addEpisodeBookmark: {
+              __typename: 'AddBookmarksResult',
+              addedBookmark: {
+                __typename: 'Bookmark',
+                url: `player?id=${episode.id}`,
+                id: `player?id=${episode.id}`,
+                clogId: episode.clogId,
+                episodeId: episode.id,
+                episode: {
+                  __typename: 'Episode',
+                  id: episode.id,
+                },
+                clog: {
+                  __typename: 'Clog',
+                  id: episode.clogId,
+                },
+              },
+            },
+          },
         });
       },
     }),

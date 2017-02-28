@@ -1,7 +1,6 @@
 import React from 'react';
 import FixBugScrollViewNavigator from '../../../common/FixBugScrollViewNavigator';
 
-import BookmarkDetail from '../containers/BookmarkDetail';
 import FollowerScreen from '../containers/FollowerScreen';
 import FollowingScreen from '../containers/FollowingScreen';
 import MyFanScreen from '../containers/MyFanScreen';
@@ -21,7 +20,6 @@ class ProfileNavigator extends React.Component {
     this.onMenuPress = this.onMenuPress.bind(this);
     this.goToChangeEmail = this.goToChangeEmail.bind(this);
     this.goToChangePassword = this.goToChangePassword.bind(this);
-    this.goToBookmarkDetail = this.goToBookmarkDetail.bind(this);
     this.pushPage = this.pushPage.bind(this);
     this.onBack = this.onBack.bind(this);
   }
@@ -62,10 +60,6 @@ class ProfileNavigator extends React.Component {
     this.navigator.push({ page });
   }
 
-  goToBookmarkDetail(clogId) {
-    this.navigator.push({ page: 'bookmark-detail', id: clogId });
-  }
-
   renderScene(route) {
     if (route.page === 'following') {
       return <FollowingScreen onBackPress={this.onBack} />;
@@ -83,7 +77,7 @@ class ProfileNavigator extends React.Component {
       return <MyClogScreen onBackPress={this.onBack} />;
     }
     if (route.page === 'bookmark') {
-      return <BookmarkScreen onBackPress={this.onBack} goToBookmarkDetail={this.goToBookmarkDetail} />;
+      return <BookmarkScreen onBackPress={this.onBack} redirectTo={this.props.redirectTo} setTabViewScrollable={this.props.setTabViewScrollable}/>;
     }
     if (route.page === 'jellyShop') {
       return <JellyShopScreen onBackPress={this.onBack} />;
@@ -100,16 +94,6 @@ class ProfileNavigator extends React.Component {
     }
     if (route.page === 'change-password') {
       return <ChangePasswordScreen onBackPress={this.onBack} />;
-    }
-    if (route.page === 'bookmark-detail') {
-      return (
-        <BookmarkDetail
-          id={route.id}
-          onBackPress={this.onBack}
-          goToPlayer={this.props.goToPlayer}
-          goToBook={this.props.goToBook}
-        />
-      );
     }
     return (<Home
       onMenuPress={this.onMenuPress}

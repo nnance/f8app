@@ -34,6 +34,7 @@ class ClogiiTabView extends React.Component {
     super(...args);
     this.state = {
       activeTab: 0,
+      canScroll: true,
     };
 
     this.goToClogCategory = this.goToClogCategory.bind(this);
@@ -47,7 +48,7 @@ class ClogiiTabView extends React.Component {
 
   componentDidMount() {
     this.props.init();
-    // this.tabView.goToPage(3);
+    this.tabView.goToPage(3);
   }
 
   /* eslint class-methods-use-this: warn */
@@ -130,7 +131,7 @@ class ClogiiTabView extends React.Component {
             });
           }
           }
-          locked={Platform.OS === 'android'}
+          locked={Platform.OS === 'android' ? true : !this.state.canScroll}
         >
           <ShelfScreen
             ref={
@@ -157,8 +158,10 @@ class ClogiiTabView extends React.Component {
             navigator={this.props.navigator}
             goToPlayer={this.props.goToPlayer}
             goToBook={this.props.goToBook}
+            redirectTo={this.props.redirectTo}
             tabLabel="Profile"
             isActive={this.state.activeTab === 3}
+            setTabViewScrollable={can => this.setState({canScroll: can})}
           />
         </ScrollableTabView>
       </Drawer>

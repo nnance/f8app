@@ -7,7 +7,10 @@ import {
   View,
   StyleSheet,
   TouchableOpacity,
+  ScrollView,
 } from 'react-native';
+
+var Swipeout = require('react-native-swipe-out').default
 
 import FixBugPureListView from '../../../common/FixBugPureListView';
 import { bindFn, mapSource } from '../../../common/utils';
@@ -17,10 +20,11 @@ import NavBar from './NavBar';
 import { styles as commonStyles } from '../common';
 import { colors } from '../../../common/styles';
 
-const rightArrow = require('../img/icons/rightGreyArrow.png');
+const ScreenWidth = require('Dimensions').get('window').width;
 
 const styles = StyleSheet.create({
   rowContainer: {
+    width: ScreenWidth+1,
     padding: 13,
     flexDirection: 'row',
     alignItems: 'center',
@@ -31,32 +35,45 @@ const styles = StyleSheet.create({
   },
 });
 
-const BookmarkRow = props => (<TouchableOpacity onPress={props.onPress} style={styles.rowContainer}>
-  <CircleImageWithCategory
-    source={mapSource(props.clog.thumbnailImage)}
-    category={props.clog.category}
-    size={100}
-  />
-  <View style={{ flex: 1, paddingLeft: 10 }}>
-    <View style={{ marginTop: 5, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-      <Text style={{ fontWeight: 'bold', fontSize: 16 }}>{props.clog.title}</Text>
-    </View>
-    <View style={{ paddingTop: 10, flexDirection: 'row', justifyContent: 'space-between' }}>
-      <Text style={{ fontSize: 16, fontWeight: 'bold', color: colors.textGrey }}>
-        {props.episodeBookmarkCount || 0} Bookmarks
-      </Text>
-    </View>
-  </View>
-  <View style={{ alignItems: 'flex-end' }}>
-    <Image
-      style={{
-        height: 25,
-        resizeMode: 'contain',
-      }}
-      source={rightArrow}
-    />
-  </View>
-</TouchableOpacity>);
+var swipeoutBtns = [
+  {
+    text: 'Delete'
+  }
+];
+
+const BookmarkRow = props => (<ScrollView horizontal bounces={false} showsHorizontalScrollIndicator={false}>
+  <Swipeout
+    style={{flex: 1, backgroundColor: 'transparent'}}
+    right={[{
+      text: 'DELETE',
+      onPress: props.onDeleteBookmarkPress,
+    }]}
+    autoClose={true}
+  >
+    <TouchableOpacity onPress={props.onPress} style={styles.rowContainer}>
+      <CircleImageWithCategory
+        source={mapSource(props.clog.thumbnailImage)}
+        category={props.clog.category}
+        size={100}
+      />
+      <View style={{ flex: 1, paddingLeft: 10 }}>
+        <View style={{ marginTop: 5, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+          <Text style={{ fontWeight: 'bold', fontSize: 16 }}>{props.clog.title}</Text>
+        </View>
+        {
+          props.episode ?
+          <View style={{ paddingTop: 10, flexDirection: 'row', justifyContent: 'space-between' }}>
+            <Text style={{ fontSize: 16, fontWeight: 'bold', color: colors.textGrey }} numberOfLines={2}>
+              Ep.{props.episode.no} {props.episode.title || 0}asdasdasdasdasdasdasdasdasdasd
+            </Text>
+          </View>
+          : null
+        }
+      </View>
+    </TouchableOpacity>
+  </Swipeout>
+</ScrollView>
+);
 
 class BookmarkScreen extends React.Component {
   constructor(...args) {
@@ -65,6 +82,12 @@ class BookmarkScreen extends React.Component {
       onDelete: false,
       deleteIndexs: [],
     };
+
+    this.onDeleteBookmarkPress = this.onDeleteBookmarkPress.bind(this);
+  }
+
+  onDeleteBookmarkPress(id) {
+    this.props.removeBookmarks([id]);
   }
 
   render() {
@@ -74,14 +97,9 @@ class BookmarkScreen extends React.Component {
         onBackPress={this.props.onBackPress}
       />
       <FixBugPureListView
-        data={this.props.summaryBookmarks.map(
-              (bookmark, i) => ({
-                ...bookmark,
-                index: i,
-              }),
-            )}
+        data={this.props.bookmarks}
         renderRow={
-            bookmark => <BookmarkRow {...bookmark} onPress={bindFn(this.props.goToBookmarkDetail, bookmark.clog.id)} />
+            bookmark => <BookmarkRow {...bookmark} onDeleteBookmarkPress={bindFn(this.onDeleteBookmarkPress, bookmark.id)} onPress={bindFn(this.props.redirectTo, bookmark.url)} setCanScroll={this.props.setTabViewScrollable}/>
           }
       />
     </View>);
@@ -89,15 +107,22 @@ class BookmarkScreen extends React.Component {
 }
 
 BookmarkScreen.fragments = {
-  summaryBookmark: gql`
-    fragment BookmarkScreen on SummaryBookmark {
+  bookmark: gql`
+    fragment BookmarkScreen on Bookmark {
+      id
+      url
       clog {
         id
         title
         category
         thumbnailImage
       }
-      episodeBookmarkCount
+      episode {
+        id
+        no
+        title
+        thumbnailImage
+      }
     }
   `,
 }

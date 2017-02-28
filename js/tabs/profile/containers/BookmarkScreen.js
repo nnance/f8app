@@ -1,30 +1,37 @@
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 
+import { updateMeBookmarksReduer, withRemoveBookmarks } from '../../../models/bookmark';
+
 import BookmarkScreen from '../components/BookmarkScreen';
-import * as mockData from '../mockData';
 
 export const query = gql`
   query {
     me {
       id
-      summaryBookmarks {
+      bookmarks {
         ...BookmarkScreen
       }
     }
   }
-  ${BookmarkScreen.fragments.summaryBookmark}
+  ${BookmarkScreen.fragments.bookmark}
 `;
 
 const mapQueryToProps = ({ data }) => {
+  if (data.error) {
+    console.error(data.error);
+  }
   return {
-    summaryBookmarks: !data.me || !data.me.summaryBookmarks ? [] : data.me.summaryBookmarks,
+    bookmarks: !data.me || !data.me.bookmarks ? [] : data.me.bookmarks,
   };
 };
 
-export default graphql(
+export default withRemoveBookmarks(graphql(
   query,
   {
     props: mapQueryToProps,
+    options: () => ({
+      reducer: updateMeBookmarksReduer,
+    }),
   }
-)(BookmarkScreen);
+)(BookmarkScreen));
