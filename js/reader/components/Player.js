@@ -54,8 +54,18 @@ class Player extends React.Component {
     };
 
     this.onSharePress = this.onSharePress.bind(this);
+    this.onBookmarkPress = this.onBookmarkPress.bind(this);
+    this.onRemoveBookmarkPress = this.onRemoveBookmarkPress.bind(this);
     this.renderNavBarButton = this.renderNavBarButton.bind(this);
     this.renderTitle = this.renderTitle.bind(this);
+  }
+
+  onBookmarkPress() {
+    this.props.addEpisodeBookmark(this.props.episode.clogId, this.props.episode.id);
+  }
+
+  onRemoveBookmarkPress() {
+    this.props.removeEpisodeBookmarks([this.props.episodeBookmark.id]);
   }
 
   onSharePress() {
@@ -69,9 +79,15 @@ class Player extends React.Component {
     /* eslint class-methods-use-this: warn */
     return (
       <View style={{ flexDirection: 'row' }}>
-        <TouchableOpacity>
-          <Image style={styles.navButton} source={require('../img/bookmark-button.png')} />
-        </TouchableOpacity>
+        {
+          !this.props.episodeBookmark ?
+          <TouchableOpacity onPress={this.onBookmarkPress}>
+            <Image style={styles.navButton} source={require('../img/bookmark-button.png')} />
+          </TouchableOpacity> :
+          <TouchableOpacity onPress={this.onRemoveBookmarkPress}>
+            <Image style={styles.navButton} source={require('../img/bookmarked-button.png')} />
+          </TouchableOpacity>
+        }
         <TouchableOpacity>
           <Image style={styles.navButton} source={require('../img/follow-button.png')} />
         </TouchableOpacity>
@@ -131,13 +147,21 @@ class Player extends React.Component {
 
 Player.fragments = {
   episode: gql`
-    fragment Player on Episode {
+    fragment PlayerEpisode on Episode {
       id
+      clogId
       no
       title
       likeCount
       commentCount
       viewCount
+    }
+  `,
+  bookmark: gql`
+    fragment PlayerBookmark on EpisodeBookmark {
+      id
+      clogId
+      episodeId
     }
   `,
 };

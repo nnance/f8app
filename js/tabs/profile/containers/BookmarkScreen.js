@@ -4,9 +4,10 @@ import gql from 'graphql-tag';
 import BookmarkScreen from '../components/BookmarkScreen';
 import * as mockData from '../mockData';
 
-const query = gql`
+export const query = gql`
   query {
     me {
+      id
       summaryBookmarks {
         ...BookmarkScreen
       }
@@ -24,6 +25,6 @@ const mapQueryToProps = ({ data }) => {
 export default graphql(
   query,
   {
-    props: mapQueryToProps
+    props: mapQueryToProps,
   }
 )(BookmarkScreen);

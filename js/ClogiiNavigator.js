@@ -84,10 +84,10 @@ class ClogiiNavigator extends React.Component {
 
   renderScene(route) {
     if (route.page === 'main-tab') {
-      return <ClogiiTabView goToBook={this.goToBook} />;
+      return <ClogiiTabView goToPlayer={this.goToPlayer} goToBook={this.goToBook}/>;
     }
     if (route.page === 'player') {
-      return <Reader onBackPress={this.goBack} id={route.id} />;
+      return <Reader onBackPress={this.goBack} id={route.id}/>;
     }
     if (route.page === 'book') {
       return (<Book

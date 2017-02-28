@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-import PureListView from '../../../common/PureListView';
+import FixBugPureListView from '../../../common/FixBugPureListView';
 import { bindFn, mapSource } from '../../../common/utils';
 
 import CircleImageWithCategory from '../../../common/CircleImageWithCategory';
@@ -73,7 +73,7 @@ class BookmarkScreen extends React.Component {
         title="Bookmark"
         onBackPress={this.props.onBackPress}
       />
-      <PureListView
+      <FixBugPureListView
         data={this.props.summaryBookmarks.map(
               (bookmark, i) => ({
                 ...bookmark,
