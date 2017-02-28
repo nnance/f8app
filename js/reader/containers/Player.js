@@ -2,7 +2,7 @@ import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 import _ from 'lodash';
 
-import { filterClogId, filterEpisodeId, withAddEpisodeBookmark, withRemoveBookmarks } from '../../models/bookmark';
+import { filterClogId, filterEpisodeId, withAddEpisodeBookmark, withRemoveBookmarks, updateMeBookmarksReduer } from '../../models/bookmark';
 import Player from '../components/Player';
 
 export const query = gql`
@@ -41,9 +41,12 @@ export const mapPropsToOptions = ({ id }) => ({
   variables: {
     id,
   },
+  reducer: updateMeBookmarksReduer,
 });
 
-export default withRemoveBookmarks(withAddEpisodeBookmark(graphql(query, {
+const withData = graphql(query, {
   props: mapQueryToProps,
   options: mapPropsToOptions,
-})(Player)));
+});
+
+export default withData(withRemoveBookmarks(withAddEpisodeBookmark(Player)));

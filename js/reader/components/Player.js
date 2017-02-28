@@ -61,7 +61,7 @@ class Player extends React.Component {
   }
 
   onBookmarkPress() {
-    this.props.addEpisodeBookmark(this.props.episode.id);
+    this.props.addEpisodeBookmark(this.props.episode);
   }
 
   onRemoveBookmarkPress() {

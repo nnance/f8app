@@ -17,8 +17,6 @@ import NavBar from './NavBar';
 import { styles as commonStyles } from '../common';
 import { colors } from '../../../common/styles';
 
-const rightArrow = require('../img/icons/rightGreyArrow.png');
-
 const styles = StyleSheet.create({
   rowContainer: {
     padding: 13,
@@ -50,15 +48,6 @@ const BookmarkRow = props => (<TouchableOpacity onPress={props.onPress} style={s
       </View>
       : null
     }
-  </View>
-  <View style={{ alignItems: 'flex-end' }}>
-    <Image
-      style={{
-        height: 25,
-        resizeMode: 'contain',
-      }}
-      source={rightArrow}
-    />
   </View>
 </TouchableOpacity>);
 
