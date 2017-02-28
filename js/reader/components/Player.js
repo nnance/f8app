@@ -61,11 +61,11 @@ class Player extends React.Component {
   }
 
   onBookmarkPress() {
-    this.props.addEpisodeBookmark(this.props.episode.clogId, this.props.episode.id);
+    this.props.addEpisodeBookmark(this.props.episode.id);
   }
 
   onRemoveBookmarkPress() {
-    this.props.removeEpisodeBookmarks([this.props.episodeBookmark.id]);
+    this.props.removeBookmarks([this.props.episodeBookmark.id]);
   }
 
   onSharePress() {
@@ -158,7 +158,7 @@ Player.fragments = {
     }
   `,
   bookmark: gql`
-    fragment PlayerBookmark on EpisodeBookmark {
+    fragment PlayerBookmark on Bookmark {
       id
       clogId
       episodeId

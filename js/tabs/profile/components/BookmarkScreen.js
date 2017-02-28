@@ -41,11 +41,15 @@ const BookmarkRow = props => (<TouchableOpacity onPress={props.onPress} style={s
     <View style={{ marginTop: 5, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
       <Text style={{ fontWeight: 'bold', fontSize: 16 }}>{props.clog.title}</Text>
     </View>
-    <View style={{ paddingTop: 10, flexDirection: 'row', justifyContent: 'space-between' }}>
-      <Text style={{ fontSize: 16, fontWeight: 'bold', color: colors.textGrey }}>
-        {props.episodeBookmarkCount || 0} Bookmarks
-      </Text>
-    </View>
+    {
+      props.episode ?
+      <View style={{ paddingTop: 10, flexDirection: 'row', justifyContent: 'space-between' }}>
+        <Text style={{ fontSize: 16, fontWeight: 'bold', color: colors.textGrey }} numberOfLines={3}>
+          Ep.{props.episode.no} {props.episode.title || 0}
+        </Text>
+      </View>
+      : null
+    }
   </View>
   <View style={{ alignItems: 'flex-end' }}>
     <Image
@@ -74,14 +78,9 @@ class BookmarkScreen extends React.Component {
         onBackPress={this.props.onBackPress}
       />
       <FixBugPureListView
-        data={this.props.summaryBookmarks.map(
-              (bookmark, i) => ({
-                ...bookmark,
-                index: i,
-              }),
-            )}
+        data={this.props.bookmarks}
         renderRow={
-            bookmark => <BookmarkRow {...bookmark} onPress={bindFn(this.props.goToBookmarkDetail, bookmark.clog.id)} />
+            bookmark => <BookmarkRow {...bookmark} onPress={bindFn(this.props.redirectTo, bookmark.url)}/>
           }
       />
     </View>);
@@ -89,15 +88,22 @@ class BookmarkScreen extends React.Component {
 }
 
 BookmarkScreen.fragments = {
-  summaryBookmark: gql`
-    fragment BookmarkScreen on SummaryBookmark {
+  bookmark: gql`
+    fragment BookmarkScreen on Bookmark {
+      id
+      url
       clog {
         id
         title
         category
         thumbnailImage
       }
-      episodeBookmarkCount
+      episode {
+        id
+        no
+        title
+        thumbnailImage
+      }
     }
   `,
 }

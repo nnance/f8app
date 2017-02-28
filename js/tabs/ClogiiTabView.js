@@ -47,7 +47,7 @@ class ClogiiTabView extends React.Component {
 
   componentDidMount() {
     this.props.init();
-    // this.tabView.goToPage(3);
+    this.tabView.goToPage(3);
   }
 
   /* eslint class-methods-use-this: warn */
@@ -157,6 +157,7 @@ class ClogiiTabView extends React.Component {
             navigator={this.props.navigator}
             goToPlayer={this.props.goToPlayer}
             goToBook={this.props.goToBook}
+            redirectTo={this.props.redirectTo}
             tabLabel="Profile"
             isActive={this.state.activeTab === 3}
           />

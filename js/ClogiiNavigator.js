@@ -15,7 +15,7 @@ class ClogiiNavigator extends React.Component {
   constructor(...args) {
     super(...args);
     this.onOpenURL = this.onOpenURL.bind(this);
-    this.fromURL = this.fromURL.bind(this);
+    this.redirectTo = this.redirectTo.bind(this);
     this.parseURL = this.parseURL.bind(this);
     this.goToPlayer = this.goToPlayer.bind(this);
     this.goToBook = this.goToBook.bind(this);
@@ -26,7 +26,7 @@ class ClogiiNavigator extends React.Component {
   componentDidMount() {
     Linking.getInitialURL().then((url) => {
       if (url) {
-        this.fromURL(url);
+        this.redirectTo(url);
       }
     }).catch((error) => {
       console.error('initial url error: ', error);
@@ -39,10 +39,10 @@ class ClogiiNavigator extends React.Component {
   }
 
   onOpenURL(event) {
-    this.fromURL(event.url);
+    this.redirectTo(event.url);
   }
 
-  fromURL(url) {
+  redirectTo(url) {
     const { method, query } = this.parseURL(url);
     if (method === 'player' && query.id) {
       this.goToPlayer(query.id);
@@ -55,8 +55,8 @@ class ClogiiNavigator extends React.Component {
   parseURL(fUrl) {
     let url = fUrl;
     try {
-      url = url.split(':')[1];
-      const splited = url.split('?');
+      const liftedHost = url.split(':').length > 1 ? url.split(':')[1] : url.split(':')[0];
+      const splited = liftedHost.split('?');
       let method = splited[0];
       const queryS = splited[1];
       const query = parse(queryS);
@@ -84,7 +84,7 @@ class ClogiiNavigator extends React.Component {
 
   renderScene(route) {
     if (route.page === 'main-tab') {
-      return <ClogiiTabView goToPlayer={this.goToPlayer} goToBook={this.goToBook}/>;
+      return <ClogiiTabView goToPlayer={this.goToPlayer} goToBook={this.goToBook} redirectTo={this.redirectTo}/>;
     }
     if (route.page === 'player') {
       return <Reader onBackPress={this.goBack} id={route.id}/>;

@@ -176,7 +176,8 @@ function genEpisodeBookmarks(users, clogs) {
     users.map(user => {
         genArray(clogs, 10).map(clog => {
           genArray(clog.episodeIds, 10).map(ep => {
-            user.episodeBookmarks.push({
+            user.bookmarks.push({
+              url: `player?id=${ep}`,
               clogId: clog._id,
               episodeId: ep,
             });

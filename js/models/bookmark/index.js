@@ -10,7 +10,7 @@ const updateCacheQuery = gql`
   query updateCache {
     me {
       id
-      episodeBookmarks {
+      bookmarks {
         id
         clogId
         episodeId
@@ -27,11 +27,11 @@ const updateCacheQuery = gql`
 
 const refetchs = [{ query: updateCacheQuery }, { query: BookmarkScreenQuery }]
 
-export const withRemoveEpisodeBookmarks = graphql(
+export const withRemoveBookmarks = graphql(
   gql`
-    mutation removeEpisodeBookmarks($ids: [MongoID!]!){
-      removeEpisodeBookmarks(_ids: $ids) {
-        removedEpisodeBookmarks {
+    mutation removeBookmarks($ids: [MongoID!]!){
+      removeBookmarks(_ids: $ids) {
+        removedBookmarks {
           id
         }
       }
@@ -39,17 +39,17 @@ export const withRemoveEpisodeBookmarks = graphql(
   `,
   {
     props: ({ ownProps, mutate }) => ({
-      removeEpisodeBookmarks: (ids) => {
+      removeBookmarks: (ids) => {
         return mutate({
           variables: {
             ids,
           },
           optimisticResponse: {
             __typename: 'Mutation',
-            removeEpisodeBookmarks: {
-              __typename: 'RemoveEpisodeBookmarksResult',
-              removedEpisodeBookmarks: ids.map(id => ({
-                __typename: 'EpisodeBookmark',
+            removeBookmarks: {
+              __typename: 'RemoveBookmarksResult',
+              removedBookmarks: ids.map(id => ({
+                __typename: 'Bookmark',
                 id,
               })),
             },
@@ -63,18 +63,17 @@ export const withRemoveEpisodeBookmarks = graphql(
 
 export const withAddEpisodeBookmark = graphql(
   gql`
-    mutation addEpisodeBookmark($clogId: MongoID!, $episodeId: MongoID!){
-      addEpisodeBookmark(clogId: $clogId, episodeId: $episodeId) {
+    mutation addEpisodeBookmark($episodeId: MongoID!){
+      addEpisodeBookmark(episodeId: $episodeId) {
         id
       }
     }
   `,
   {
     props: ({ ownProps, mutate }) => ({
-      addEpisodeBookmark: (clogId, episodeId) => {
+      addEpisodeBookmark: (episodeId) => {
         return mutate({
           variables: {
-            clogId,
             episodeId,
           },
           refetchQueries: refetchs,

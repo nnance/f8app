@@ -8,17 +8,20 @@ export const query = gql`
   query {
     me {
       id
-      summaryBookmarks {
+      bookmarks {
         ...BookmarkScreen
       }
     }
   }
-  ${BookmarkScreen.fragments.summaryBookmark}
+  ${BookmarkScreen.fragments.bookmark}
 `;
 
 const mapQueryToProps = ({ data }) => {
+  if (data.error) {
+    console.error(data.error);
+  }
   return {
-    summaryBookmarks: !data.me || !data.me.summaryBookmarks ? [] : data.me.summaryBookmarks,
+    bookmarks: !data.me || !data.me.bookmarks ? [] : data.me.bookmarks,
   };
 };
 
