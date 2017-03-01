@@ -202,6 +202,19 @@ function genClogBookmarks(users, clogs) {
   )
 }
 
+function genFeedClog(clogs) {
+  return Promise.all(
+    clogs.map(clog =>
+        // console.log(clog.authorId._id, clog._id, clog.createdAt)
+      models.FeedClog.create({
+        authorId: clog.authorId._id,
+        clogId: clog._id,
+        createdAt: clog.createdAt,
+      })
+    )
+  )
+}
+
 async function gen() {
   const users = await genUsers();
   const tags = await genTags();
@@ -212,6 +225,7 @@ async function gen() {
   await genRecommend(clogs);
   await genEpisodeBookmarks([users[0]], episodes);
   await genClogBookmarks([users[0]], clogs);
+  await genFeedClog(clogs);
 }
 
 gen().then(() => {

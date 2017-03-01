@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   View,
+  Text,
   Image,
   TouchableOpacity,
   RefreshControl,
@@ -29,6 +30,29 @@ class FeedHome extends React.Component {
   }
 
   render() {
+    const { loading, feed } = this.props;
+    if (loading) {
+      return (
+        <View><Text>Loading</Text></View>
+      );
+    }
+
+    const feedList = [];
+    feed.map((value) => {
+      value.clog.map((clog) => {
+        feedList.push({
+          author: value.author,
+          clog: clog.clog,
+          createdAt: new Date(clog.createdAt),
+        });
+      });
+    });
+
+    feedList.sort((a, b) => {
+      return b.createdAt - a.createdAt;
+    });
+
+
     return (
       <View style={{ flex: 1, backgroundColor: '#F0F0F0' }}>
         <NavBar
@@ -56,13 +80,13 @@ class FeedHome extends React.Component {
         >
           <View style={{ backgroundColor: '#7d7d7d' }}>
             <FeedList
-              data={this.state.data}
+              data={data}
+              feed={feedList}
               goToBook={this.props.goToBook}
               navigator={this.props.navigator}
             />
           </View>
         </FixBugScrollView>
-
       </View>
     );
   }

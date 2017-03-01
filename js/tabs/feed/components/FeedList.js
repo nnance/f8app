@@ -20,11 +20,13 @@ class FeedList extends React.Component {
     super(props);
     const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
     this.state = {
-      dataSource: ds.cloneWithRows(this.props.data),
+      dataSource: ds.cloneWithRows(props.feed),
     };
   }
 
   render() {
+    console.log(this.state.dataSource)
+  
     return (
       <ListView
         showsHorizontalScrollIndicator={false}

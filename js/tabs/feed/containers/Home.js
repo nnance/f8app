@@ -2,40 +2,32 @@ import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 
 import FeedHome from '../components/FeedHome';
-// import {CLOG_PREVIEW_LIMIT} from '../constants';
-
-import { fragments } from '../../../models/clog';
 
 export const query = gql`
-    query {
-        trendingClogs: clogs(filter: {limit: 20}, orderBy: TRENDING) {
-            ...clogMetaData
-        }
-        recommendedClog {
-            ...clogMetaData
-            review
-        }
-        favoriteTags {
-            name
-            trendingClogs {
-                ...clogMetaData
-            }
-        }
-        heroBanners {
-            ...clogMetaData
-            review
-        }
+{
+  feed: feedEditor(filter: {userId: "58b62c5fda82d62bae708b3b"}) {
+    author {
+      name
+      profilePicture
     }
-    ${fragments.clogMetaData}
+    clog {
+      createdAt
+      clog {
+        id
+        title
+        coverImage
+        category
+        synopsis
+      }
+    }
+  }
+}
 `;
 
-export const mapQueryToProps = ({ data }) => {
-  const { loading, trendingClogs, recommendedClog, favoriteTags, heroBanners } = data;
+const mapQueryToProps = ({ data }) => {
+  const { loading, feed } = data;
   return ({
-    trendingClogs: loading ? [] : trendingClogs,
-    recommendedClog,
-    heroBanners: loading ? [] : heroBanners,
-    favoriteTags: loading ? [] : favoriteTags,
+    feed: loading ? [] : feed,
     loading,
   });
 };

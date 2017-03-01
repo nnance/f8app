@@ -44,23 +44,24 @@ const styles = StyleSheet.create({
 
 class EditorAcivity extends React.Component {
   render() {
+    const { author, clog, createdAt } = this.props;
     const now = Date.now();
-    const timeAdded = new Date(this.props.activity.time);
+    const timeAdded = new Date(createdAt);
     const diffMins = Math.round((((now - timeAdded) % 86400000) % 3600000) / 60000);
     return (
       <View style={styles.container}>
         <View style={styles.containerProfile}>
-          <Image style={styles.photo} source={{ uri: this.props.picture.large }} />
+          <Image style={styles.photo} source={{ uri: author.profilePicture }} />
           <Text style={{ marginLeft: 12, fontWeight: 'bold', fontSize: 16 }}>
-            {`${this.props.name.first} ${this.props.name.last} `}
+            {`${author.name} `}
             {
-              this.props.clogs.length === 1 ?
-                <Text style={{ fontSize: 12, fontWeight: 'normal' }}>{`${this.props.activity.action} `}<Text
+              clog.length !== 1 ?
+                <Text style={{ fontSize: 12, fontWeight: 'normal' }}>{`${'added'} `}<Text
                   style={{ fontSize: 16, fontWeight: 'bold' }}
-                >{this.props.clogs[0].title}</Text></Text>
+                >{clog.title}</Text></Text>
                 : <Text
                   style={{ fontSize: 12, fontWeight: 'normal' }}
-                >{`${this.props.activity.action} ${this.props.clogs.length} ${this.props.activity.type}`}</Text>
+                >{`${'added'} ${clog.length} ${'new clogs'}`}</Text>
             }
           </Text>
           <Text style={{ fontSize: 12, color: '#dfdfdf' }}> {diffMins} min ago</Text>
@@ -75,19 +76,17 @@ class FeedRow extends React.Component {
     super(props);
     const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
     this.state = {
-      dataSource: ds.cloneWithRows(props.clogs),
+      dataSource: ds.cloneWithRows(props.clog),
     };
   }
 
   render() {
-    console.log(this.props.goToBook);
-
     return (
       <View style={styles.container}>
         <EditorAcivity {...this.props} />
         <View style={styles.containerProfile}>
           {
-            this.props.clogs.length > 1 ?
+            this.props.clog.length > 1 ?
               <ListView
                 horizontal
                 showsHorizontalScrollIndicator={false}
@@ -100,7 +99,7 @@ class FeedRow extends React.Component {
                     <View key={rowId} style={styles.separator} />
                 }
               /> :
-              <Clog clog={this.props.clogs[0]} goToBook={this.props.goToBook} />
+              <Clog clog={this.props.clog} goToBook={this.props.goToBook} />
           }
         </View>
       </View>
@@ -111,15 +110,16 @@ class FeedRow extends React.Component {
 class Clog extends React.Component {
   render() {
     const { clog, goToBook } = this.props;
+    console.log(clog)
     return (
       <View style={styles.container}>
-        <TouchableOpacity onPress={() => goToBook('58a6e85138cbdaba481a7b59')}>
-          <Image style={styles.photoClog} source={{ uri: clog.picture.thumbnail }} />
+        <TouchableOpacity onPress={() => goToBook(clog.id)}>
+          <Image style={styles.photoClog} source={{ uri: clog.coverImage }} />
           <Text style={{ fontWeight: 'bold' }}>
             {`${clog.title}`}
           </Text>
           <Text numberOfLines={2} style={{ lineHeight: 12 }}>
-            {`${clog.review}`}
+            {`${clog.synopsis}`}
           </Text>
         </TouchableOpacity>
       </View>
