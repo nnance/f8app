@@ -13,7 +13,7 @@ export const query = gql`
   ${Book.fragments.clog}
 `;
 
-export const mapQueryToProps = ({ ownProps, data }) => {
+export const mapQueryToProps = ({ data }) => {
   const { clog, error, loading } = data;
   if (error) {
     console.error('graphql error: ', error);

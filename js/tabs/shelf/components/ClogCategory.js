@@ -322,7 +322,7 @@ class ClogCategory extends React.Component {
                   <MetaClogListView
                     goToBook={this.props.goToBook} header="What's New" clogs={this.props.recentlyClogs}
                     renderButton={() => this.renderButtonViewAllClog(
-                      () => this.props.goToClogListView({ category: this.props.category, title: 'What\'s new', sort: 'CREATEDAT_DESC' })
+                      () => this.props.goToClogListView({ category: this.props.category, title: 'What\'s new', sort: 'CREATEDAT_DESC' }),
                     )}
                   />
                 </View>
@@ -334,7 +334,7 @@ class ClogCategory extends React.Component {
               <MetaClogListView
                 goToBook={this.props.goToBook} header="Top Chart" clogs={this.props.trendingClogs}
                 renderButton={() => this.renderButtonViewAllClog(
-                  () => this.props.goToTrendingListView({ category: this.props.category, title: 'ยอดนิยม' })
+                  () => this.props.goToTrendingListView({ category: this.props.category, title: 'ยอดนิยม' }),
                 )}
               />
             </View>

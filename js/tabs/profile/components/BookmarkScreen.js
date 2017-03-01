@@ -2,7 +2,6 @@ import React from 'react';
 import gql from 'graphql-tag';
 
 import {
-  Image,
   Text,
   View,
   StyleSheet,
@@ -10,7 +9,7 @@ import {
   ScrollView,
 } from 'react-native';
 
-var Swipeout = require('react-native-swipe-out').default
+import Swipeout from 'react-native-swipe-out';
 
 import FixBugPureListView from '../../../common/FixBugPureListView';
 import { bindFn, mapSource } from '../../../common/utils';
@@ -24,7 +23,7 @@ const ScreenWidth = require('Dimensions').get('window').width;
 
 const styles = StyleSheet.create({
   rowContainer: {
-    width: ScreenWidth+1,
+    width: ScreenWidth + 1,
     padding: 13,
     flexDirection: 'row',
     alignItems: 'center',
@@ -35,44 +34,39 @@ const styles = StyleSheet.create({
   },
 });
 
-var swipeoutBtns = [
-  {
-    text: 'Delete'
-  }
-];
-
-const BookmarkRow = props => (<ScrollView horizontal bounces={false} showsHorizontalScrollIndicator={false}>
-  <Swipeout
-    style={{flex: 1, backgroundColor: 'transparent'}}
-    right={[{
-      text: 'DELETE',
-      onPress: props.onDeleteBookmarkPress,
-    }]}
-    autoClose={true}
-  >
-    <TouchableOpacity onPress={props.onPress} style={styles.rowContainer}>
-      <CircleImageWithCategory
-        source={mapSource(props.clog.thumbnailImage)}
-        category={props.clog.category}
-        size={100}
-      />
-      <View style={{ flex: 1, paddingLeft: 10 }}>
-        <View style={{ marginTop: 5, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-          <Text style={{ fontWeight: 'bold', fontSize: 16 }}>{props.clog.title}</Text>
-        </View>
-        {
-          props.episode ?
-          <View style={{ paddingTop: 10, flexDirection: 'row', justifyContent: 'space-between' }}>
-            <Text style={{ fontSize: 16, fontWeight: 'bold', color: colors.textGrey }} numberOfLines={2}>
-              Ep.{props.episode.no} {props.episode.title || 0}asdasdasdasdasdasdasdasdasdasd
-            </Text>
+const BookmarkRow = props => (
+  <ScrollView horizontal bounces={false} showsHorizontalScrollIndicator={false}>
+    <Swipeout
+      style={{ flex: 1, backgroundColor: 'transparent' }}
+      right={[{
+        text: 'DELETE',
+        onPress: props.onDeleteBookmarkPress,
+      }]}
+      autoClose
+    >
+      <TouchableOpacity onPress={props.onPress} style={styles.rowContainer}>
+        <CircleImageWithCategory
+          source={mapSource(props.clog.thumbnailImage)}
+          category={props.clog.category}
+          size={100}
+        />
+        <View style={{ flex: 1, paddingLeft: 10 }}>
+          <View style={{ marginTop: 5, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+            <Text style={{ fontWeight: 'bold', fontSize: 16 }}>{props.clog.title}</Text>
           </View>
-          : null
-        }
-      </View>
-    </TouchableOpacity>
-  </Swipeout>
-</ScrollView>
+          {
+            props.episode ?
+              <View style={{ paddingTop: 10, flexDirection: 'row', justifyContent: 'space-between' }}>
+                <Text style={{ fontSize: 16, fontWeight: 'bold', color: colors.textGrey }} numberOfLines={2}>
+                Ep.{props.episode.no} {props.episode.title || 0}asdasdasdasdasdasdasdasdasdasd
+              </Text>
+              </View>
+            : null
+          }
+        </View>
+      </TouchableOpacity>
+    </Swipeout>
+  </ScrollView>
 );
 
 class BookmarkScreen extends React.Component {
@@ -99,7 +93,12 @@ class BookmarkScreen extends React.Component {
       <FixBugPureListView
         data={this.props.bookmarks}
         renderRow={
-            bookmark => <BookmarkRow {...bookmark} onDeleteBookmarkPress={bindFn(this.onDeleteBookmarkPress, bookmark.id)} onPress={bindFn(this.props.redirectTo, bookmark.url)} setCanScroll={this.props.setTabViewScrollable}/>
+            bookmark => <BookmarkRow
+              {...bookmark}
+              onDeleteBookmarkPress={bindFn(this.onDeleteBookmarkPress, bookmark.id)}
+              onPress={bindFn(this.props.redirectTo, bookmark.url)}
+              setCanScroll={this.props.setTabViewScrollable}
+            />
           }
       />
     </View>);
@@ -125,6 +124,6 @@ BookmarkScreen.fragments = {
       }
     }
   `,
-}
+};
 
 export default BookmarkScreen;

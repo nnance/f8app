@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {
   View,
   Text,
@@ -10,25 +10,25 @@ import {
   Image,
   Dimensions,
   Platform,
-} from 'react-native'
-import KeyboardAvoidingViewCustom from '../KeyboardAvoidingViewCustom'
-import Comment from './Comment'
+} from 'react-native';
+import KeyboardAvoidingViewCustom from '../KeyboardAvoidingViewCustom';
+import Comment from './Comment';
 
-const {height, width} = Dimensions.get('window')
+const { height, width } = Dimensions.get('window');
 const style = StyleSheet.create({
   scrollView: {
     paddingTop: 10,
     backgroundColor: '#F9FAFB',
   },
-})
+});
 
 class CommentList extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       scrollViewHeight: height - 20 - 40 - 46, // marginTop: 20, header: 40, TextInput: 46
       contentHeight: 0,
-    }
+    };
   }
 
   componentWillMount() {
@@ -45,58 +45,56 @@ class CommentList extends React.Component {
     }
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     // Remove keyboard change listener
-    this.subscriptions.forEach((sub) => sub.remove());
+    this.subscriptions.forEach(sub => sub.remove());
   }
 
   onKeyboardChange = (e) => {
-    const {startCoordinates, endCoordinates} = e
-    const keyboardHeight = startCoordinates.screenY - endCoordinates.screenY
-    const scrollViewHeight = this.state.scrollViewHeight - keyboardHeight
+    const { startCoordinates, endCoordinates } = e;
+    const keyboardHeight = startCoordinates.screenY - endCoordinates.screenY;
+    const scrollViewHeight = this.state.scrollViewHeight - keyboardHeight;
     this.setState({
-      scrollViewHeight: scrollViewHeight
-    })
+      scrollViewHeight,
+    });
 
     if (scrollViewHeight < this.contentHeight && keyboardHeight < 0 && this.props.isPosting) {
-      this.scrollView.scrollTo({x: 0, y: this.contentHeight - scrollViewHeight + 10, animate: true})
+      this.scrollView.scrollTo({ x: 0, y: this.contentHeight - scrollViewHeight + 10, animate: true });
     }
-    
-    this.props.onPostSuccess()
+
+    this.props.onPostSuccess();
   }
 
   onContentSizeChange = (contentHeight) => {
-    this.contentHeight = contentHeight
+    this.contentHeight = contentHeight;
   }
 
   render() {
-    const {data} = this.props
+    const { data } = this.props;
     // Create comment list component from bind data
-    const Comments = data.map((comment, key) => {
-      return (
-        <Comment
-          key={key}
-          author={comment.author}
-          text={comment.text}
-          posted={comment.posted}
-          liked={comment.liked}
-          />
-      )
-    })
+    const Comments = data.map((comment, key) => (
+      <Comment
+        key={key}
+        author={comment.author}
+        text={comment.text}
+        posted={comment.posted}
+        liked={comment.liked}
+      />
+      ));
 
     return (
       <View>
-          <ScrollView
-            ref={(scrollView) => { this.scrollView = scrollView} }
-            style={[style.scrollView, {height: this.state.scrollViewHeight}]}
-            onContentSizeChange={(contentWidth, contentHeight) => this.onContentSizeChange(contentHeight) }
-            >
+        <ScrollView
+          ref={(scrollView) => { this.scrollView = scrollView; }}
+          style={[style.scrollView, { height: this.state.scrollViewHeight }]}
+          onContentSizeChange={(contentWidth, contentHeight) => this.onContentSizeChange(contentHeight)}
+        >
 
-            {Comments}
-          </ScrollView>
+          {Comments}
+        </ScrollView>
       </View>
-    )
+    );
   }
 }
 
-export default CommentList
+export default CommentList;

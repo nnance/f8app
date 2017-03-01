@@ -77,7 +77,11 @@ class ProfileNavigator extends React.Component {
       return <MyClogScreen onBackPress={this.onBack} />;
     }
     if (route.page === 'bookmark') {
-      return <BookmarkScreen onBackPress={this.onBack} redirectTo={this.props.redirectTo} setTabViewScrollable={this.props.setTabViewScrollable}/>;
+      return (<BookmarkScreen
+        onBackPress={this.onBack}
+        redirectTo={this.props.redirectTo}
+        setTabViewScrollable={this.props.setTabViewScrollable}
+      />);
     }
     if (route.page === 'jellyShop') {
       return <JellyShopScreen onBackPress={this.onBack} />;

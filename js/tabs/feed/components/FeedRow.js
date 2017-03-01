@@ -113,7 +113,7 @@ class Clog extends React.Component {
     const { clog, goToBook } = this.props;
     return (
       <View style={styles.container}>
-        <TouchableOpacity onPress={() => goToBook("58a6e85138cbdaba481a7b59")}>
+        <TouchableOpacity onPress={() => goToBook('58a6e85138cbdaba481a7b59')}>
           <Image style={styles.photoClog} source={{ uri: clog.picture.thumbnail }} />
           <Text style={{ fontWeight: 'bold' }}>
             {`${clog.title}`}

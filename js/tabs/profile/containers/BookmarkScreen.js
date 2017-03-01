@@ -33,5 +33,5 @@ export default withRemoveBookmarks(graphql(
     options: () => ({
       reducer: updateMeBookmarksReduer,
     }),
-  }
+  },
 )(BookmarkScreen));

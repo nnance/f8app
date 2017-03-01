@@ -1,6 +1,5 @@
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
-import _ from 'lodash';
 
 import { filterClogId, filterEpisodeId, withAddEpisodeBookmark, withRemoveBookmarks, updateMeBookmarksReduer } from '../../models/bookmark';
 import Player from '../components/Player';

@@ -4,7 +4,7 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import { default as BaseClogListView } from '../../../common/ClogListView';
+import BaseClogListView from '../../../common/ClogListView';
 import { colors } from '../../../common/styles';
 import NavBar from '../components/NavBar';
 

@@ -53,7 +53,7 @@ class ClogiiNavigator extends React.Component {
   }
 
   parseURL(fUrl) {
-    let url = fUrl;
+    const url = fUrl;
     try {
       const liftedHost = url.split(':').length > 1 ? url.split(':')[1] : url.split(':')[0];
       const splited = liftedHost.split('?');
@@ -84,10 +84,14 @@ class ClogiiNavigator extends React.Component {
 
   renderScene(route) {
     if (route.page === 'main-tab') {
-      return <ClogiiTabView goToPlayer={this.goToPlayer} goToBook={this.goToBook} redirectTo={this.redirectTo}/>;
+      return (<ClogiiTabView
+        goToPlayer={this.goToPlayer}
+        goToBook={this.goToBook}
+        redirectTo={this.redirectTo}
+      />);
     }
     if (route.page === 'player') {
-      return <Reader onBackPress={this.goBack} id={route.id}/>;
+      return <Reader onBackPress={this.goBack} id={route.id} />;
     }
     if (route.page === 'book') {
       return (<Book

@@ -3,15 +3,12 @@ import {
   Image,
   View,
   Text,
-  WebView,
   TouchableOpacity,
   StyleSheet,
   Share,
-  Platform,
 } from 'react-native';
 
 import gql from 'graphql-tag';
-import WKWebView from 'react-native-wkwebview-reborn';
 import { NavBarWithPinkButton } from '../../common/NavBar';
 import { colors } from '../../common/styles';
 import { toHumanNumber } from '../../common/utils';
@@ -81,12 +78,12 @@ class Player extends React.Component {
       <View style={{ flexDirection: 'row' }}>
         {
           !this.props.episodeBookmark ?
-          <TouchableOpacity onPress={this.onBookmarkPress}>
-            <Image style={styles.navButton} source={require('../img/bookmark-button.png')} />
-          </TouchableOpacity> :
-          <TouchableOpacity onPress={this.onRemoveBookmarkPress}>
-            <Image style={styles.navButton} source={require('../img/bookmarked-button.png')} />
-          </TouchableOpacity>
+            <TouchableOpacity onPress={this.onBookmarkPress}>
+              <Image style={styles.navButton} source={require('../img/bookmark-button.png')} />
+            </TouchableOpacity> :
+            <TouchableOpacity onPress={this.onRemoveBookmarkPress}>
+              <Image style={styles.navButton} source={require('../img/bookmarked-button.png')} />
+            </TouchableOpacity>
         }
         <TouchableOpacity>
           <Image style={styles.navButton} source={require('../img/follow-button.png')} />

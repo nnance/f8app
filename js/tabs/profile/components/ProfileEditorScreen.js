@@ -5,10 +5,8 @@ import {
   View,
   StyleSheet,
   TouchableOpacity,
-  TouchableWithoutFeedback,
   Switch,
   Alert,
-  Modal
 } from 'react-native';
 import moment from 'moment';
 import ImagePicker from 'react-native-image-picker';
@@ -244,8 +242,12 @@ class ProfileEditorScreen extends React.Component {
       />
       <ProfileHeader
         user={this.props.user}
-        customCoverSource={this.state.changedProfileCover ? { uri: this.state.changedProfileCover.uri, isStatic: true } : null}
-        customSource={this.state.changedProfilePicture ? { uri: this.state.changedProfilePicture.uri, isStatic: true } : null}
+        customCoverSource={
+          this.state.changedProfileCover ?
+            { uri: this.state.changedProfileCover.uri, isStatic: true } : null}
+        customSource={
+          this.state.changedProfilePicture ?
+            { uri: this.state.changedProfilePicture.uri, isStatic: true } : null}
       >
         <View style={styles.rowDirection}>
           <TouchableOpacity name="profileImageInput" style={styles.whiteBorder} onPress={() => this.openProfilePicker()}>
