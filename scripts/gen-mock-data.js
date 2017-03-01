@@ -10,15 +10,15 @@ mongoose.connect(process.env.DATABASE_URI);
 
 const url = process.env.URL;
 
-function urlToImageObj(url) {
+function urlToImageObj(fromUrl) {
   return {
     id: null,
-    secure_url: url,
-    url,
+    secure_url: fromUrl,
+    url: fromUrl,
     public_id: null,
     width: 100,
     height: 100,
-  }
+  };
 }
 
 const profile = async () => {
@@ -171,17 +171,30 @@ async function genRecommend(clogs) {
   })
 }
 
-function genEpisodeBookmarks(users, clogs) {
+function genEpisodeBookmarks(users, episodes) {
   return Promise.all(
     users.map(user => {
-        genArray(clogs, 10).map(clog => {
-          genArray(clog.episodeIds, 10).map(ep => {
-            user.bookmarks.push({
-              url: `player?id=${ep}`,
-              clogId: clog._id,
-              episodeId: ep,
-            });
-          })
+        genArray(episodes, 30).map(ep => {
+          user.bookmarks.push({
+            url: `player?id=${ep._id}`,
+            clogId: ep.clogId,
+            episodeId: ep._id,
+          });
+        });
+        return user.save();
+      }
+    )
+  )
+}
+
+function genClogBookmarks(users, clogs) {
+  return Promise.all(
+    users.map(user => {
+        genArray(clogs, 5).map(clog => {
+          user.bookmarks.push({
+            url: `book?id=${clog._id}`,
+            clogId: clog._id,
+          });
         });
         return user.save();
       }
@@ -197,7 +210,8 @@ async function gen() {
   await genTrendingClog(clogs);
   const episodes = await genEpisodes(clogs);
   await genRecommend(clogs);
-  await genEpisodeBookmarks([users[0]], clogs);
+  await genEpisodeBookmarks([users[0]], episodes);
+  await genClogBookmarks([users[0]], clogs);
 }
 
 gen().then(() => {
