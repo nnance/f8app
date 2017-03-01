@@ -58,7 +58,7 @@ const BookmarkRow = props => (
             props.episode ?
               <View style={{ paddingTop: 10, flexDirection: 'row', justifyContent: 'space-between' }}>
                 <Text style={{ fontSize: 16, fontWeight: 'bold', color: colors.textGrey }} numberOfLines={2}>
-                Ep.{props.episode.no} {props.episode.title || 0}asdasdasdasdasdasdasdasdasdasd
+                Ep.{props.episode.no} {props.episode.title || 0}
               </Text>
               </View>
             : null
