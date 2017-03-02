@@ -52,6 +52,7 @@ class Player extends React.Component {
 
     this.onSharePress = this.onSharePress.bind(this);
     this.onBookmarkPress = this.onBookmarkPress.bind(this);
+    this.onNextEpisode = this.onNextEpisode.bind(this);
     this.onRemoveBookmarkPress = this.onRemoveBookmarkPress.bind(this);
     this.renderNavBarButton = this.renderNavBarButton.bind(this);
     this.renderTitle = this.renderTitle.bind(this);
@@ -70,6 +71,14 @@ class Player extends React.Component {
       title: `EP.${this.props.episode.no} ${this.props.episode.title}`,
       message: 'http://139.59.253.62/mock-deep-link/player.html',
     });
+  }
+
+  onNextEpisode() {
+    if (this.props.episode.nextEpisode) {
+      this.props.refetch({
+        id: this.props.episode.nextEpisode.id,
+      });
+    }
   }
 
   renderNavBarButton() {
@@ -152,6 +161,9 @@ Player.fragments = {
       likeCount
       commentCount
       viewCount
+      nextEpisode {
+        id
+      }
     }
   `,
   bookmark: gql`

@@ -142,12 +142,13 @@ function genEpisodes(clogs) {
               binary: clogHTML,
             },
           })
-          .then(ep => {
-            clog.episodeIds.push(ep._id);
-            return clog.save().then(() => ep);
-          })
         )
-      )
+      ).then(eps => {
+        eps.sort((a, b) => Number(a.no) - Number(b.no)).forEach(ep => {
+          clog.episodeIds.push(ep._id);
+        });
+        return clog.save().then(() => eps);
+      })
     )
   ).then(result => [].concat(...result));
 }

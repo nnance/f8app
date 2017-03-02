@@ -34,6 +34,7 @@ export const mapQueryToProps = ({ data }) => {
     loading,
     episode: episode || {},
     episodeBookmark: episodeBookmarks ? episodeBookmarks[0] : null,
+    refetch: data.refetch,
   };
 };
 export const mapPropsToOptions = ({ id }) => ({
