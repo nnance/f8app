@@ -2,6 +2,7 @@ import 'dotenv/config';
 import casual from 'casual';
 import _ from 'lodash';
 import mongoose from 'mongoose';
+import fs from 'fs';
 
 import '../server/cloud/graphql/mocks/casual-config';
 import { models } from '../server/cloud/graphql/models';
@@ -9,6 +10,7 @@ import { models } from '../server/cloud/graphql/models';
 mongoose.connect(process.env.DATABASE_URI);
 
 const url = process.env.URL;
+const clogHTML = fs.readFileSync(__dirname + '/mock-clog.html');
 
 function urlToImageObj(fromUrl) {
   return {
@@ -136,6 +138,9 @@ function genEpisodes(clogs) {
             thumbnailImage: await preview(),
             viewCount: _.random(0, 3000),
             createdAt: casual.date,
+            data: {
+              binary: clogHTML,
+            },
           })
           .then(ep => {
             clog.episodeIds.push(ep._id);
