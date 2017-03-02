@@ -6,9 +6,14 @@ import {
   TouchableOpacity,
   StyleSheet,
   Share,
+  PanResponder,
+  ActivityIndicator,
+  Dimensions,
 } from 'react-native';
 
 import gql from 'graphql-tag';
+import PercentageCircle from 'react-native-percentage-circle';
+
 import { NavBarWithPinkButton } from '../../common/NavBar';
 import { colors } from '../../common/styles';
 import { toHumanNumber } from '../../common/utils';
@@ -22,6 +27,7 @@ import { serverURL } from '../../env';
 // note2: react-native-fs require manual link `react-native link react-native-fs`
 import ClogPlayer from '../../player/components/ClogPlayer';
 
+const screenWidth = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
   navButton: {
@@ -43,19 +49,53 @@ const styles = StyleSheet.create({
   },
 });
 
+const MAX_HEIGHT_INDICATOR = 70;
+
 class Player extends React.Component {
   constructor(...args) {
     super(...args);
     this.state = {
       loading: true,
+      dyPanResponder: 0,
+      endedScrollView: false,
     };
 
     this.onSharePress = this.onSharePress.bind(this);
+    this.onProgress = this.onProgress.bind(this);
     this.onBookmarkPress = this.onBookmarkPress.bind(this);
     this.onNextEpisode = this.onNextEpisode.bind(this);
     this.onRemoveBookmarkPress = this.onRemoveBookmarkPress.bind(this);
     this.renderNavBarButton = this.renderNavBarButton.bind(this);
     this.renderTitle = this.renderTitle.bind(this);
+
+    this._panResponder = PanResponder.create({
+      onStartShouldSetPanResponder: () => true,
+      onStartShouldSetPanResponderCapture: () => true,
+      onMoveShouldSetPanResponder: () => true,
+      onMoveShouldSetPanResponderCapture: () => true,
+      onPanResponderMove: (evt, gestureState) => {
+        this.setState({
+          dyPanResponder: gestureState.dy,
+        });
+      },
+      onPanResponderRelease: () => {
+        if (this.nextEpisodeRatio() >= 1) {
+          this.onNextEpisode();
+        }
+        this.setState({
+          dyPanResponder: 0,
+        });
+      },
+    });
+  }
+
+  componentDidMount() {
+    // MOCK PROGESS
+    this.onProgress(1);
+  }
+
+  onNextEpisode() {
+    console.log('onNextEpisode');
   }
 
   onBookmarkPress() {
@@ -79,6 +119,31 @@ class Player extends React.Component {
         id: this.props.episode.nextEpisode.id,
       });
     }
+  }
+
+  onProgress(ratio) {
+    if (ratio >= 1 && !this.state.endedScrollView) {
+      this.setState({
+        endedScrollView: true,
+      });
+    }
+    if (ratio < 1 && this.state.endedScrollView) {
+      this.setState({
+        endedScrollView: false,
+      });
+    }
+  }
+
+  nextEpisodeRatio() {
+    const diffDy = -this.state.dyPanResponder / 3;
+    let ratio = diffDy / MAX_HEIGHT_INDICATOR;
+    if (ratio > 1) {
+      ratio = 1;
+    }
+    if (ratio < 0) {
+      ratio = 0;
+    }
+    return ratio;
   }
 
   renderNavBarButton() {
@@ -132,14 +197,33 @@ class Player extends React.Component {
             paddingRight: 10,
           }}
         />
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1 }} {...this._panResponder.panHandlers}>
           <ModalSpinner visible={this.state.loading} />
           <ClogPlayer
             source={{ uri: `${serverURL}/clog/${this.props.episode.id}` }}
             style={{ flex: 1 }}
             onMessage={() => console.log('')}
             onLoad={() => this.setState({ loading: false })}
+            onProgress={this.onProgress}
           />
+          {
+            this.state.endedScrollView && this.nextEpisodeRatio() > 0 ?
+              <View
+                style={{
+                  position: 'absolute',
+                  bottom: (this.nextEpisodeRatio() * MAX_HEIGHT_INDICATOR) - 20,
+                  left: (screenWidth / 2) - 15,
+                }}
+              >
+                <PercentageCircle
+                  radius={20}
+                  percent={Math.floor(this.nextEpisodeRatio() * 100)}
+                  color="#3498db"
+                >
+                </PercentageCircle>
+              </View>
+               : null
+          }
         </View>
         <BookAndPlayerTabBar
           onSharePress={this.onSharePress}
