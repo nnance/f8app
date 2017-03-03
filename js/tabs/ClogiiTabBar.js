@@ -10,7 +10,7 @@ import {
 import { BUTTOM_TAB_HEIGHT } from '../common/styles';
 
 const icons = {
-  Clogii: {
+  Shelf: {
     active: require('./img/icons/clogii-active.png'),
     inactive: require('./img/icons/clogii-inactive.png'),
   },

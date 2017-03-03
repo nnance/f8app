@@ -14,6 +14,7 @@ import FeedScreen from './feed';
 import ShelfMenu from './ShelfMenu';
 import NotificationsScreen from './notifications';
 import ClogiiTabBar from './ClogiiTabBar';
+import { withTracking } from '../common/navigateTracking';
 
 /* eslint react/no-multi-comp: warn */
 
@@ -36,6 +37,7 @@ class ClogiiTabView extends React.Component {
 
   componentDidMount() {
     this.props.init();
+    this.props.navigate('shelf');
     // this.tabView.goToPage(3);
   }
 
@@ -113,10 +115,11 @@ class ClogiiTabView extends React.Component {
           style={{}}
           renderTabBar={() => <ClogiiTabBar badges={this.props.badges} />
           }
-          onChangeTab={({ i }) => {
+          onChangeTab={({ i, ref }) => {
             this.setState({
               activeTab: i,
             });
+            this.props.navigate(ref.props.tabLabel);
           }
           }
           locked={Platform.OS === 'android' ? true : !this.state.canScroll}
@@ -130,7 +133,7 @@ class ClogiiTabView extends React.Component {
             goToBook={this.props.goToBook}
             onOpenShelfMenu={this.openShelfMenu}
             navigator={this.props.navigator}
-            tabLabel="Clogii"
+            tabLabel="Shelf"
           />
           <FeedScreen
             goToBook={this.props.goToBook}
@@ -166,4 +169,4 @@ const actions = ({
   init: () => ({ type: 'INIT_MOCK_BADGES' }),
 });
 
-export default connect(select, actions)(ClogiiTabView);
+export default withTracking(connect(select, actions)(ClogiiTabView));

@@ -5,6 +5,7 @@ import {
 import { parse } from 'query-string';
 
 import FixBugScrollViewNavigator from './common/FixBugScrollViewNavigator';
+import { withTracking } from './common/navigateTracking';
 
 import ClogiiTabView from './tabs/ClogiiTabView';
 import Reader from './reader';
@@ -72,14 +73,17 @@ class ClogiiNavigator extends React.Component {
 
   goToPlayer(id) {
     this.navigator.push({ page: 'player', id });
+    this.props.navigate(`player?id=${id}`);
   }
 
   goToBook(id) {
     this.navigator.push({ page: 'book', id });
+    this.props.navigate(`book?id=${id}`);
   }
 
   goBack() {
     this.navigator.pop();
+    this.props.navigateBack();
   }
 
   renderScene(route) {
@@ -126,4 +130,4 @@ class ClogiiNavigator extends React.Component {
   }
 }
 
-export default ClogiiNavigator;
+export default withTracking(ClogiiNavigator);
