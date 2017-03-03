@@ -18,21 +18,23 @@ describe('Shelf.ClogCategory', () => {
     expect(result.errors).toBeUndefined();
   });
 
-  it('render correct', async () => {
+  it.only('render correct', async () => {
     const result = await graphql(query, mapPropsToOptions({ category: 'D' }));
     const props = mapQueryToProps({ data: result.data });
     const tree = renderer.create(<ClogCategoryComponent category="D" {...props} />);
-    expect(tree).toMatchSnapshot();
+    // console.log(tree.toJSON())
+    expect(tree.toJSON()).toMatchSnapshot();
   });
 
   it('navigate to ClogListView onPress viewAll', async () => {
     const result = await graphql(query, mapPropsToOptions({ category: 'D' }));
     const props = mapQueryToProps({ data: result.data });
     const goToClogListView = jest.fn();
+    const onPress = jest.fn();
     const dump = shallow(<ClogCategoryComponent {...{ ...props, goToClogListView, category: 'D' }} />);
-    const wrapper = shallow(dump.instance().renderButtonViewAllClog({ orderBy: 'TRENDING' }));
+    const wrapper = shallow(dump.instance().renderButtonViewAllClog(onPress));
     wrapper.simulate('press');
-    expect(goToClogListView).toBeCalledWith({ category: 'D', orderBy: 'TRENDING' });
+    expect(onPress).toBeCalled();
   });
 
   it('onRecommendClogChange should set currentClogBanner', async () => {

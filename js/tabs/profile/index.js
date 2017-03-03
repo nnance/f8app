@@ -1,3 +1,3 @@
-import ProfileNavigator from './components/ProfileNavigator';
+import ProfileNavigator from './containers/ProfileNavigator';
 
 export default ProfileNavigator;

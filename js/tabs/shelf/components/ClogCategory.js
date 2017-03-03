@@ -390,7 +390,7 @@ ClogCategory.fragments = {
       author {
         name
       }
-      followersYouKnow(limit: 0) {
+      followersYouKnow(limit: 20) {
         name
         profilePicture
       }

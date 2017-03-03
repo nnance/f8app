@@ -9,7 +9,7 @@ exports[`Book render 1`] = `
   <Image
     source={
       Object {
-        "uri": "http://localhost/static/cover/mockCover.png",
+        "uri": "http://localhost:8080/static/cover/mockCover.png",
       }
     }
     style={
@@ -66,170 +66,120 @@ exports[`Book render 1`] = `
       data={
         Array [
           Object {
-            "createdAt": "2010-06-07T15:33:35.694Z",
-            "id": "2085684",
-            "likeCount": 17229,
+            "__typename": "Episode",
+            "createdAt": "2005-10-26T06:56:32.695Z",
+            "id": "185866782554276124377636",
+            "likeCount": 100,
+            "no": 11,
+            "thumbnailImage": "http://localhost:8080/static/preview/g4722.png",
+            "viewCount": 1258,
+            Symbol(id): "Episode185866782554276124377636",
+          },
+          Object {
+            "__typename": "Episode",
+            "createdAt": "1979-12-15T07:25:31.435Z",
+            "id": "739617331384591268883859",
+            "likeCount": 100,
+            "no": 10,
+            "thumbnailImage": "http://localhost:8080/static/preview/g3618.png",
+            "viewCount": 546,
+            Symbol(id): "Episode739617331384591268883859",
+          },
+          Object {
+            "__typename": "Episode",
+            "createdAt": "1981-10-17T06:32:19.457Z",
+            "id": "821682781513984683828379",
+            "likeCount": 100,
             "no": 9,
-            "preview": "http://localhost/static/preview/g3376.png",
-            "viewCount": 1244,
+            "thumbnailImage": "http://localhost:8080/static/preview/g3578.png",
+            "viewCount": 825,
+            Symbol(id): "Episode821682781513984683828379",
           },
           Object {
-            "createdAt": "2001-08-07T04:50:11.078Z",
-            "id": "500182",
-            "likeCount": 61996,
-            "no": 9,
-            "preview": "http://localhost/static/preview/g3456.png",
-            "viewCount": 2044,
-          },
-          Object {
-            "createdAt": "1992-01-07T10:07:30.193Z",
-            "id": "8289809",
-            "likeCount": 7003,
-            "no": 9,
-            "preview": "http://localhost/static/preview/g3618.png",
-            "viewCount": 6512,
-          },
-          Object {
-            "createdAt": "1983-06-15T11:01:15.767Z",
-            "id": "1147461",
-            "likeCount": 94184,
+            "__typename": "Episode",
+            "createdAt": "2016-10-14T19:27:19.075Z",
+            "id": "588349258616913463578285",
+            "likeCount": 100,
             "no": 8,
-            "preview": "http://localhost/static/preview/g3456.png",
-            "viewCount": 5784,
+            "thumbnailImage": "http://localhost:8080/static/preview/g4762.png",
+            "viewCount": 1153,
+            Symbol(id): "Episode588349258616913463578285",
           },
           Object {
-            "createdAt": "1982-06-12T17:28:43.118Z",
-            "id": "1521372",
-            "likeCount": 37114,
-            "no": 8,
-            "preview": "http://localhost/static/preview/g3376.png",
-            "viewCount": 5814,
-          },
-          Object {
-            "createdAt": "1991-03-29T11:23:16.819Z",
-            "id": "4863452",
-            "likeCount": 53183,
-            "no": 8,
-            "preview": "http://localhost/static/preview/g1878.png",
-            "viewCount": 3174,
-          },
-          Object {
-            "createdAt": "2005-05-01T10:30:37.595Z",
-            "id": "8316926",
-            "likeCount": 13714,
+            "__typename": "Episode",
+            "createdAt": "2013-02-10T20:01:37.113Z",
+            "id": "371958189726321388659115",
+            "likeCount": 100,
             "no": 7,
-            "preview": "http://localhost/static/preview/g3658.png",
-            "viewCount": 4725,
+            "thumbnailImage": "http://localhost:8080/static/preview/g3618.png",
+            "viewCount": 2994,
+            Symbol(id): "Episode371958189726321388659115",
           },
           Object {
-            "createdAt": "2005-07-27T12:06:33.523Z",
-            "id": "2887179",
-            "likeCount": 27833,
+            "__typename": "Episode",
+            "createdAt": "2012-05-07T20:43:27.951Z",
+            "id": "583747425875566218122443",
+            "likeCount": 100,
             "no": 6,
-            "preview": "http://localhost/static/preview/g4602.png",
-            "viewCount": 8420,
+            "thumbnailImage": "http://localhost:8080/static/preview/g3618.png",
+            "viewCount": 319,
+            Symbol(id): "Episode583747425875566218122443",
           },
           Object {
-            "createdAt": "1986-05-19T03:38:57.699Z",
-            "id": "7527884",
-            "likeCount": 62170,
+            "__typename": "Episode",
+            "createdAt": "1971-05-29T06:10:12.845Z",
+            "id": "113328316263021647243388",
+            "likeCount": 100,
             "no": 5,
-            "preview": "http://localhost/static/preview/g3618.png",
-            "viewCount": 4982,
+            "thumbnailImage": "http://localhost:8080/static/preview/g3618.png",
+            "viewCount": 2785,
+            Symbol(id): "Episode113328316263021647243388",
           },
           Object {
-            "createdAt": "2002-11-09T22:37:04.275Z",
-            "id": "3572698",
-            "likeCount": 26901,
-            "no": 5,
-            "preview": "http://localhost/static/preview/g3618.png",
-            "viewCount": 159,
-          },
-          Object {
-            "createdAt": "2012-06-02T23:16:51.821Z",
-            "id": "3878607",
-            "likeCount": 42839,
-            "no": 5,
-            "preview": "http://localhost/static/preview/g4842.png",
-            "viewCount": 5563,
-          },
-          Object {
-            "createdAt": "2007-03-09T22:54:04.009Z",
-            "id": "2336226",
-            "likeCount": 41793,
+            "__typename": "Episode",
+            "createdAt": "1977-02-19T10:44:23.932Z",
+            "id": "035528932341474245766169",
+            "likeCount": 100,
             "no": 4,
-            "preview": "http://localhost/static/preview/g3618.png",
-            "viewCount": 9696,
+            "thumbnailImage": "http://localhost:8080/static/preview/g4602.png",
+            "viewCount": 2458,
+            Symbol(id): "Episode035528932341474245766169",
           },
           Object {
-            "createdAt": "1985-03-14T20:40:32.459Z",
-            "id": "719744",
-            "likeCount": 7398,
-            "no": 4,
-            "preview": "http://localhost/static/preview/g4642.png",
-            "viewCount": 2034,
-          },
-          Object {
-            "createdAt": "2002-12-20T19:08:04.046Z",
-            "id": "3798034",
-            "likeCount": 288,
+            "__typename": "Episode",
+            "createdAt": "1994-05-02T15:21:13.246Z",
+            "id": "818143150096814770571155",
+            "likeCount": 100,
             "no": 3,
-            "preview": "http://localhost/static/preview/g3618.png",
-            "viewCount": 3014,
+            "thumbnailImage": "http://localhost:8080/static/preview/g4642.png",
+            "viewCount": 2340,
+            Symbol(id): "Episode818143150096814770571155",
           },
           Object {
-            "createdAt": "1973-07-09T15:44:21.855Z",
-            "id": "9325955",
-            "likeCount": 50825,
-            "no": 3,
-            "preview": "http://localhost/static/preview/g3578.png",
-            "viewCount": 7555,
-          },
-          Object {
-            "createdAt": "1970-03-22T05:37:18.851Z",
-            "id": "7819585",
-            "likeCount": 1257,
-            "no": 3,
-            "preview": "http://localhost/static/preview/g4642.png",
-            "viewCount": 6544,
-          },
-          Object {
-            "createdAt": "1997-08-23T17:06:30.194Z",
-            "id": "6171450",
-            "likeCount": 88594,
+            "__typename": "Episode",
+            "createdAt": "1998-08-10T18:37:12.677Z",
+            "id": "052548234969651762031017",
+            "likeCount": 100,
             "no": 2,
-            "preview": "http://localhost/static/preview/g1878.png",
-            "viewCount": 91,
+            "thumbnailImage": "http://localhost:8080/static/preview/g3578.png",
+            "viewCount": 2801,
+            Symbol(id): "Episode052548234969651762031017",
           },
           Object {
-            "createdAt": "2010-09-21T17:31:09.689Z",
-            "id": "3619045",
-            "likeCount": 91641,
-            "no": 2,
-            "preview": "http://localhost/static/preview/g3618.png",
-            "viewCount": 446,
-          },
-          Object {
-            "createdAt": "1971-09-20T11:26:06.878Z",
-            "id": "3963133",
-            "likeCount": 10214,
+            "__typename": "Episode",
+            "createdAt": "2007-08-24T23:54:36.100Z",
+            "id": "262969383465034245756718",
+            "likeCount": 100,
             "no": 1,
-            "preview": "http://localhost/static/preview/g4602.png",
-            "viewCount": 2463,
-          },
-          Object {
-            "createdAt": "2002-11-19T08:48:05.733Z",
-            "id": "3678433",
-            "likeCount": 80711,
-            "no": 1,
-            "preview": "http://localhost/static/preview/g3376.png",
-            "viewCount": 7174,
+            "thumbnailImage": "http://localhost:8080/static/preview/g3336.png",
+            "viewCount": 1431,
+            Symbol(id): "Episode262969383465034245756718",
           },
         ]
       }
       dataSource={
         ListViewDataSource {
-          "items": 20,
+          "items": 11,
         }
       }
       initialListSize={1}
@@ -289,7 +239,7 @@ exports[`Book render 1`] = `
                       "fontSize": 18,
                     }
                   }>
-                  Fuga est placeat
+                  Non itaque quia
                 </Text>
                 <Text
                   accessible={true}
@@ -301,7 +251,7 @@ exports[`Book render 1`] = `
                       "fontSize": 12,
                     }
                   }>
-                  Favian Runolfsson
+                  Ms. Shirley Mayer
                 </Text>
               </View>
             </View>
@@ -367,7 +317,7 @@ exports[`Book render 1`] = `
                   allowFontScaling={true}
                   ellipsizeMode="tail"
                   numberOfLines={0}>
-                  Non alias magni corporis repellat ratione labore explicabo. Amet iure ut libero qui recusandae. Nulla quam ipsam nobis cupiditate quia dignissimos. Incidunt doloremque sed libero repudiandae esse blanditiis natus et. Itaque velit omnis et. Delectus et ipsam explicabo eligendi occaecati officiis et. Eum dicta eum ipsa ad ipsum veritatis debitis libero. Deserunt quam tempore a. Provident velit eligendi nostrum ipsam qui. Dolor fugiat velit voluptatem aperiam placeat fuga maiores. Placeat ullam veniam ducimus temporibus modi odit architecto. Totam et aspernatur exercitationem ut quis. Magni cupiditate voluptatem dicta. Repudiandae non voluptates ut ullam quos qui illo. Sunt laborum ratione tenetur officia voluptatem cumque. Aut provident esse hic eligendi. Esse ut ab voluptas sed quae. Qui sint autem earum doloremque qui aut ut. Eos ducimus qui necessitatibus aut vel in. Dolorem et molestiae commodi ut sunt placeat.
+                  Aperiam quia mollitia hic. Quia illum ullam in tempora soluta reiciendis. Hic sed molestiae sed dicta reiciendis voluptatem. Amet distinctio quo corporis. Assumenda omnis accusantium possimus. Voluptatum est ratione fugiat nam. Quidem assumenda quis repudiandae est eaque consequatur. Iure molestiae aut dolores laudantium occaecati aliquam voluptatem veniam quia. Illo ipsam qui enim autem sunt aperiam. Occaecati et itaque voluptatibus voluptas voluptatum doloremque sed sequi vitae. Doloribus recusandae odit iusto quisquam laboriosam reprehenderit. Ullam nulla corrupti quo itaque voluptatem aut. Eius qui nesciunt doloribus ipsam ut dolor facilis et. Adipisci eveniet similique explicabo et minus eius ut enim optio. Qui ipsa magni est aut pariatur laudantium velit inventore quibusdam. Consequatur doloribus harum et. Delectus quia debitis quod iste omnis dolores. Id debitis sed sit adipisci nihil est dolorem. Inventore rem pariatur est eum. Dolores voluptatem omnis recusandae quo voluptatum laudantium sed qui.
                 </Text>
               </View>
             </View>
@@ -476,7 +426,7 @@ exports[`Book render 1`] = `
                 size={50}
                 source={
                   Object {
-                    "uri": "http://localhost/static/preview/g3376.png",
+                    "uri": "http://localhost:8080/static/preview/g4722.png",
                   }
                 }
                 style={
@@ -544,7 +494,7 @@ exports[`Book render 1`] = `
                       "fontWeight": "bold",
                     }
                   }>
-                  9
+                  11
                 </Text>
               </View>
               <View
@@ -560,7 +510,7 @@ exports[`Book render 1`] = `
                       "paddingLeft": 5,
                     }
                   }>
-                  June 7
+                  October 26
                 </Text>
               </View>
             </View>
@@ -602,7 +552,7 @@ exports[`Book render 1`] = `
                     }
                   }>
                   ดู 
-                  1,244
+                  1,258
                    ครั้ง
                 </Text>
               </View>
@@ -636,7 +586,7 @@ exports[`Book render 1`] = `
                       "paddingLeft": 5,
                     }
                   }>
-                  17.2k
+                  100
                    Like
                 </Text>
               </View>
@@ -785,7 +735,7 @@ exports[`Book render 1`] = `
             "color": "rgba(0, 0, 0, 0.3)",
           }
         }>
-        7,260
+        100
       </Text>
     </View>
     <View
@@ -828,7 +778,7 @@ exports[`Book render 1`] = `
             "color": "rgba(0, 0, 0, 0.3)",
           }
         }>
-        883k
+        0
       </Text>
     </View>
     <View

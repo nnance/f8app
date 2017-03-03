@@ -20,14 +20,16 @@ exports[`ClogiiNavigator renderScene book 1`] = `
 
 exports[`ClogiiNavigator renderScene main-tab 1`] = `
 <View>
-  <Connect(ClogiiTabView)
-    goToBook={[Function]} />
+  <Connect(Connect(ClogiiTabView))
+    goToBook={[Function]}
+    goToPlayer={[Function]}
+    redirectTo={[Function]} />
 </View>
 `;
 
 exports[`ClogiiNavigator renderScene player 1`] = `
 <View>
-  <Apollo(Player)
+  <Apollo(Apollo(Apollo(Player)))
     id={1}
     onBackPress={[Function]} />
 </View>

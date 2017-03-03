@@ -62,7 +62,7 @@ describe('LoginScreen', () => {
   });
 
   it('listen to BackAndroid for handleBackButton', () => {
-    const wrapper = shallow(<LoginScreenComponent />);
+    const wrapper = shallow(<LoginScreenComponent navigate={jest.fn()} />);
     wrapper.instance().componentDidMount();
     expect(BackAndroid.addEventListener).toBeCalledWith('hardwareBackPress', wrapper.instance().goBack);
     wrapper.instance().componentWillUnmount();
@@ -76,6 +76,7 @@ describe('LoginScreen', () => {
       <LoginScreenComponent
         addBackButtonListener={addSpy}
         removeBackButtonListener={removeSpy}
+        navigate={jest.fn()}
       />,
     );
     wrapper.instance().componentDidMount();
@@ -92,7 +93,7 @@ describe('LoginScreen', () => {
   });
 
   it('goBack will pop navigator', () => {
-    const wrapper = shallow(<LoginScreenComponent />);
+    const wrapper = shallow(<LoginScreenComponent navigateBack={jest.fn()} />);
     const spy = jest.fn();
     const inst = wrapper.instance();
     inst.navigator = {
@@ -105,7 +106,7 @@ describe('LoginScreen', () => {
 
   it('goBack will call onExit if on LastPage', () => {
     const spy = jest.fn();
-    const wrapper = shallow(<LoginScreenComponent onExit={spy} />);
+    const wrapper = shallow(<LoginScreenComponent onExit={spy} navigateBack={jest.fn()} />);
     const inst = wrapper.instance();
     inst.navigator = {
       getCurrentRoutes: jest.fn(() => [1]),
@@ -116,7 +117,7 @@ describe('LoginScreen', () => {
   });
 
   it('goToLogin pop untill login-page', () => {
-    const wrapper = shallow(<LoginScreenComponent />);
+    const wrapper = shallow(<LoginScreenComponent navigate={jest.fn()} navigateBack={jest.fn()} />);
     const inst = wrapper.instance();
     const pages = [{ page: 'email-login' }, { page: 'fake-1' }, { page: 'fake-2' }];
     const spy = jest.fn(pages.pop);

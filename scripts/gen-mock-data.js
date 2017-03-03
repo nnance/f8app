@@ -7,7 +7,11 @@ import fs from 'fs';
 import '../server/cloud/graphql/mocks/casual-config';
 import { models } from '../server/cloud/graphql/models';
 
+const sequential = require('promise-sequential');
+
 mongoose.connect(process.env.DATABASE_URI);
+
+casual.seed(123);
 
 const url = process.env.URL;
 const clogHTML = fs.readFileSync(__dirname + '/mock-clog.html');
@@ -44,15 +48,16 @@ const cover = async () => {
 };
 
 function genArray(array, maxSize) {
-  return _.uniqWith(_.range(_.random(0, maxSize)).map(() => array[_.random(0, array.length - 1)]));
+  return _.uniqWith(_.range(casual.integer(0, maxSize)).map(() => array[casual.integer(0, array.length - 1)]));
 }
 
 function genFixArray(array, size) {
-  return _.uniqWith(_.range(size).map(() => array[_.random(0, array.length - 1)]));
+  return _.uniqWith(_.range(size).map(() => array[casual.integer(0, array.length - 1)]));
 }
 
 function genUsers() {
-  return Promise.all(_.range(2000).map(async () => models.User.create({
+  return sequential(_.range(2000).map(() => async () => models.User.create({
+    _id: casual.objectId,
     name: casual.name,
     profilePicture: await profile(),
     bookmarks: [],
@@ -60,13 +65,15 @@ function genUsers() {
 }
 
 function genAuthors(users) {
-  return Promise.all(_.range(50).map(async () => {
+  return sequential(_.range(50).map(() => async () => {
     const editor = await models.Editor.create({
+      _id: casual.objectId,
       name: casual.name,
       profilePicture: await profile(),
       followingCount: casual.positive_int(1000),
     });
-    await Promise.all(genArray(users, 1000).map(user => models.EditorFollower.create({
+    await sequential(genArray(users, 1000).map(user => () => models.EditorFollower.create({
+      _id: casual.objectId,
       userId: user,
       editorId: editor,
     })));
@@ -75,15 +82,16 @@ function genAuthors(users) {
 }
 
 function genTags() {
-  return Promise.all(_.range(20).map(() => models.Tag.create({
+  return sequential(_.range(20).map(() => () => models.Tag.create({
+    _id: casual.objectId,
     name: casual.title,
   })));
 }
 
 async function genClogs(users, authors, tags) {
-  const author = authors[_.random(0, authors.length - 1)];
+  const author = authors[casual.integer(0, authors.length - 1)];
   const dumpClog = await models.Clog.create({
-    _id: "58a6e85138cbdaba481a7b59",
+    _id: '58a6e85138cbdaba481a7b59',
     title: casual.title,
     episodeIds: [],
     thumbnailImage: await preview(),
@@ -96,9 +104,10 @@ async function genClogs(users, authors, tags) {
     viewCount: casual.positive_int(10000),
     createdAt: casual.date,
   });
-  const clogs = await Promise.all(_.range(100).map(async () => {
-      const author = authors[_.random(0, authors.length - 1)];
+  const clogs = await sequential(_.range(100).map(() => async () => {
+      const author = authors[casual.integer(0, authors.length - 1)];
       return models.Clog.create({
+        _id: casual.objectId,
         title: casual.title,
         episodeIds: [],
         thumbnailImage: await preview(),
@@ -120,23 +129,37 @@ async function genClogs(users, authors, tags) {
 }
 
 function genClogFollower(users, clog) {
-  return Promise.all(genArray(users, 1000).map(user => models.ClogFollower.create({
+  return sequential(genArray(users, 1000).map(user => () => models.ClogFollower.create({
     userId: user,
     clogId: clog,
   })));
 }
 
-function genEpisodes(clogs) {
-  return Promise.all(
-    clogs.map(clog => 
-      Promise.all(
-        _.range(_.random(0, 40)).map(async (idx) => 
+async function genEpisodes(clogs) {
+  const dumpClog = clogs[0];
+  const dumpEpisode = await models.Episode.create({
+    _id: '58b95c905923032426ceb6ce',
+    clogId: dumpClog._id,
+    no: 99,
+    title: casual.title,
+    thumbnailImage: await preview(),
+    viewCount: casual.integer(0, 3000),
+    createdAt: casual.date,
+    data: {
+      binary: clogHTML,
+    },
+  });
+  return [dumpEpisode, ...await sequential(
+    clogs.map(clog => () => 
+      sequential(
+        _.range(casual.integer(0, 40)).map((idx) => async () => 
           models.Episode.create({
+            _id: casual.objectId,
             clogId: clog._id,
             no: idx + 1,
             title: casual.title,
             thumbnailImage: await preview(),
-            viewCount: _.random(0, 3000),
+            viewCount: casual.integer(0, 3000),
             createdAt: casual.date,
             data: {
               binary: clogHTML,
@@ -150,37 +173,40 @@ function genEpisodes(clogs) {
         return clog.save().then(() => eps);
       })
     )
-  ).then(result => [].concat(...result));
+  ).then(result => [].concat(...result))];
 }
 
 function genTrendingClog(clogs) {
-  return Promise.all(genArray(clogs, clogs.length - 1).map(clog => models.TrendingClog.create({
+  return sequential(genArray(clogs, clogs.length - 1).map(clog => () => models.TrendingClog.create({
     clogId: clog,
     category: clog.category,
   })));
 }
 
 async function genRecommend(clogs) {
-  await Promise.all(['N', 'M', 'D', 'G'].map(c => 
+  await sequential(['N', 'M', 'D', 'G'].map(c => () => 
     models.RecommendClog.create({
+      _id: casual.objectId,
       type: `CATEGORY_${c}`,
       clogIds: genFixArray(clogs, 10),
     })
   ));
   await models.RecommendClog.create({
+    _id: casual.objectId,
     type: `shelf`,
     clogIds: genFixArray(clogs, 1),
   })
   await models.RecommendClog.create({
+    _id: casual.objectId,
     type: `heroBanner`,
     clogIds: genFixArray(clogs, 10),
   })
 }
 
 function genEpisodeBookmarks(users, episodes) {
-  return Promise.all(
-    users.map(user => {
-        genArray(episodes, 30).map(ep => {
+  return sequential(
+    users.map(user => () => {
+        genArray(episodes, 30).map(ep => () => {
           user.bookmarks.push({
             url: `player?id=${ep._id}`,
             clogId: ep.clogId,
@@ -194,9 +220,9 @@ function genEpisodeBookmarks(users, episodes) {
 }
 
 function genClogBookmarks(users, clogs) {
-  return Promise.all(
-    users.map(user => {
-        genArray(clogs, 5).map(clog => {
+  return sequential(
+    users.map(user => () => {
+        genArray(clogs, 5).map(clog => () => {
           user.bookmarks.push({
             url: `book?id=${clog._id}`,
             clogId: clog._id,
@@ -209,10 +235,11 @@ function genClogBookmarks(users, clogs) {
 }
 
 function genFeedClog(clogs) {
-  return Promise.all(
-    clogs.map(clog =>
+  return sequential(
+    clogs.map(clog => () =>
         // console.log(clog.authorId._id, clog._id, clog.createdAt)
       models.FeedClog.create({
+        _id: casual.objectId,
         authorId: clog.authorId._id,
         clogId: clog._id,
         createdAt: clog.createdAt,

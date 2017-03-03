@@ -159,50 +159,118 @@ exports[`Shelf.Home render correct 1`] = `
             data={
               Array [
                 Object {
+                  "__typename": "Clog",
                   "author": Object {
-                    "name": "Candelario Bayer",
+                    "__typename": "Editor",
+                    "name": "Mr. Deja Morar",
+                    Symbol(id): "$Clog262536154260880274583468.author",
                   },
-                  "id": "1427730",
-                  "preview": "http://localhost/static/preview/g3336.png",
-                  "title": "Doloribus corporis nemo",
+                  "id": "262536154260880274583468",
+                  "thumbnailImage": "http://localhost:8080/static/preview/g1878.png",
+                  "title": "Nulla nesciunt et",
+                  Symbol(id): "Clog262536154260880274583468",
                 },
                 Object {
+                  "__typename": "Clog",
                   "author": Object {
-                    "name": "Kristoffer Smitham",
+                    "__typename": "Editor",
+                    "name": "Mr. Deja Morar",
+                    Symbol(id): "$Clog316154724912522774748864.author",
                   },
-                  "id": "4603755",
-                  "preview": "http://localhost/static/preview/g4842.png",
-                  "title": "Velit quo sint",
+                  "id": "316154724912522774748864",
+                  "thumbnailImage": "http://localhost:8080/static/preview/g4762.png",
+                  "title": "Officiis cumque",
+                  Symbol(id): "Clog316154724912522774748864",
                 },
                 Object {
+                  "__typename": "Clog",
                   "author": Object {
-                    "name": "Benjamin Frami",
+                    "__typename": "Editor",
+                    "name": "Mrs. Ana Williamson",
+                    Symbol(id): "$Clog345234616786697743397758.author",
                   },
-                  "id": "2016483",
-                  "preview": "http://localhost/static/preview/g4602.png",
-                  "title": "Dolorum animi",
+                  "id": "345234616786697743397758",
+                  "thumbnailImage": "http://localhost:8080/static/preview/g3336.png",
+                  "title": "Est sit est",
+                  Symbol(id): "Clog345234616786697743397758",
                 },
                 Object {
+                  "__typename": "Clog",
                   "author": Object {
-                    "name": "Meredith Bayer",
+                    "__typename": "Editor",
+                    "name": "Dr. Maeve Farrell",
+                    Symbol(id): "$Clog414571352517835831917511.author",
                   },
-                  "id": "8820861",
-                  "preview": "http://localhost/static/preview/g4642.png",
-                  "title": "Impedit qui qui",
+                  "id": "414571352517835831917511",
+                  "thumbnailImage": "http://localhost:8080/static/preview/g4602.png",
+                  "title": "Quia non sunt",
+                  Symbol(id): "Clog414571352517835831917511",
                 },
                 Object {
+                  "__typename": "Clog",
                   "author": Object {
-                    "name": "Jesus Johns",
+                    "__typename": "Editor",
+                    "name": "Dr. Allie Kerluke",
+                    Symbol(id): "$Clog588135756607214177195557.author",
                   },
-                  "id": "5023504",
-                  "preview": "http://localhost/static/preview/g4802.png",
-                  "title": "Sed voluptatem architecto",
+                  "id": "588135756607214177195557",
+                  "thumbnailImage": "http://localhost:8080/static/preview/g4602.png",
+                  "title": "Enim laboriosam quia",
+                  Symbol(id): "Clog588135756607214177195557",
+                },
+                Object {
+                  "__typename": "Clog",
+                  "author": Object {
+                    "__typename": "Editor",
+                    "name": "Mrs. Haskell Runolfsdottir",
+                    Symbol(id): "$Clog712483458061529231059368.author",
+                  },
+                  "id": "712483458061529231059368",
+                  "thumbnailImage": "http://localhost:8080/static/preview/g3578.png",
+                  "title": "Nam ut",
+                  Symbol(id): "Clog712483458061529231059368",
+                },
+                Object {
+                  "__typename": "Clog",
+                  "author": Object {
+                    "__typename": "Editor",
+                    "name": "Miss Nestor Gottlieb",
+                    Symbol(id): "$Clog751168347621231556322523.author",
+                  },
+                  "id": "751168347621231556322523",
+                  "thumbnailImage": "http://localhost:8080/static/preview/g3618.png",
+                  "title": "Aut est",
+                  Symbol(id): "Clog751168347621231556322523",
+                },
+                Object {
+                  "__typename": "Clog",
+                  "author": Object {
+                    "__typename": "Editor",
+                    "name": "Ms. Joey Donnelly",
+                    Symbol(id): "$Clog806877248521300176838775.author",
+                  },
+                  "id": "806877248521300176838775",
+                  "thumbnailImage": "http://localhost:8080/static/preview/g3376.png",
+                  "title": "Aut illum omnis",
+                  Symbol(id): "Clog806877248521300176838775",
+                },
+                Object {
+                  "__typename": "Clog",
+                  "author": Object {
+                    "__typename": "Editor",
+                    "name": "Dr. Lucile Feeney",
+                    Symbol(id): "$Clog829396594947576272264128.author",
+                  },
+                  "id": "829396594947576272264128",
+                  "thumbnailImage": "http://localhost:8080/static/preview/g4602.png",
+                  "title": "In eius",
+                  Symbol(id): "Clog829396594947576272264128",
                 },
               ]
             }
             dataSource={
               ListViewDataSource {
-                "items": 5,
+                "items": 9,
               }
             }
             horizontal={true}
@@ -270,7 +338,7 @@ exports[`Shelf.Home render correct 1`] = `
                   size={250}
                   source={
                     Object {
-                      "uri": "http://localhost/static/preview/g3336.png",
+                      "uri": "http://localhost:8080/static/preview/g1878.png",
                     }
                   }
                   style={
@@ -362,7 +430,7 @@ exports[`Shelf.Home render correct 1`] = `
                                 "fontWeight": "bold",
                               }
                             }>
-                            Doloribus corporis nemo
+                            Nulla nesciunt et
                           </Text>
                         </View>
                         <View
@@ -383,7 +451,7 @@ exports[`Shelf.Home render correct 1`] = `
                                 "fontWeight": "bold",
                               }
                             }>
-                            Candelario Bayer
+                            Mr. Deja Morar
                           </Text>
                         </View>
                       </View>
@@ -426,20 +494,16 @@ exports[`Shelf.Home render correct 1`] = `
               accessible={true}
               allowFontScaling={true}
               ellipsizeMode="tail"
+              numberOfLines={1}
               style={
                 Object {
                   "color": "white",
+                  "flex": 1,
                   "fontWeight": "bold",
                 }
               }>
               TRENDING
             </Text>
-            <View
-              style={
-                Object {
-                  "flex": 1,
-                }
-              } />
             <View
               style={
                 Object {
@@ -513,460 +577,335 @@ exports[`Shelf.Home render correct 1`] = `
               data={
                 Array [
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Gordon Blanda",
-                    },
-                    "category": "N",
-                    "id": "4170221",
-                    "preview": "http://localhost/static/preview/g4722.png",
-                    "title": "Sed est unde",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Winston Gusikowski",
+                      "__typename": "Editor",
+                      "name": "Ms. Jannie Harber",
+                      Symbol(id): "$Clog025126856253374789857394.author",
                     },
                     "category": "M",
-                    "id": "6902046",
-                    "preview": "http://localhost/static/preview/g3336.png",
-                    "title": "Velit nostrum qui",
+                    "id": "025126856253374789857394",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g4642.png",
+                    "title": "Unde sed ullam",
+                    Symbol(id): "Clog025126856253374789857394",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Vada Murray",
-                    },
-                    "category": "N",
-                    "id": "500182",
-                    "preview": "http://localhost/static/preview/g4762.png",
-                    "title": "Eos error",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Taryn Thompson",
-                    },
-                    "category": "N",
-                    "id": "155334",
-                    "preview": "http://localhost/static/preview/g3336.png",
-                    "title": "Assumenda accusantium qui",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Randi Rodriguez",
-                    },
-                    "category": "G",
-                    "id": "2571184",
-                    "preview": "http://localhost/static/preview/g3376.png",
-                    "title": "In cupiditate magnam",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Nicholas Metz",
-                    },
-                    "category": "G",
-                    "id": "2039063",
-                    "preview": "http://localhost/static/preview/g3336.png",
-                    "title": "Aliquid repellendus",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Geoffrey Jacobs",
-                    },
-                    "category": "M",
-                    "id": "5336534",
-                    "preview": "http://localhost/static/preview/g4602.png",
-                    "title": "Perspiciatis quod ullam",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Ally Batz",
-                    },
-                    "category": "G",
-                    "id": "4397881",
-                    "preview": "http://localhost/static/preview/g3376.png",
-                    "title": "Ut et",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Aubrey Stark",
-                    },
-                    "category": "G",
-                    "id": "1467516",
-                    "preview": "http://localhost/static/preview/g3456.png",
-                    "title": "Eum rerum quisquam",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Asia Konopelski",
+                      "__typename": "Editor",
+                      "name": "Dr. Reese Ernser",
+                      Symbol(id): "$Clog116747542495834623666030.author",
                     },
                     "category": "D",
-                    "id": "5269746",
-                    "preview": "http://localhost/static/preview/g4842.png",
-                    "title": "Tempore illum",
+                    "id": "116747542495834623666030",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g3578.png",
+                    "title": "Nam nemo porro",
+                    Symbol(id): "Clog116747542495834623666030",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Arjun Grant",
-                    },
-                    "category": "G",
-                    "id": "8485473",
-                    "preview": "http://localhost/static/preview/g4762.png",
-                    "title": "Rerum libero nulla",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Della Dach",
-                    },
-                    "category": "M",
-                    "id": "6391269",
-                    "preview": "http://localhost/static/preview/g4762.png",
-                    "title": "Natus officiis",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Helene Bosco",
-                    },
-                    "category": "G",
-                    "id": "3992187",
-                    "preview": "http://localhost/static/preview/g3658.png",
-                    "title": "Officia sint",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Bailey Herzog",
-                    },
-                    "category": "D",
-                    "id": "7677890",
-                    "preview": "http://localhost/static/preview/g3376.png",
-                    "title": "Ea tenetur suscipit",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Noemy Zemlak",
-                    },
-                    "category": "G",
-                    "id": "9635671",
-                    "preview": "http://localhost/static/preview/g4642.png",
-                    "title": "Perferendis eos",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Johan Konopelski",
-                    },
-                    "category": "G",
-                    "id": "2996273",
-                    "preview": "http://localhost/static/preview/g4642.png",
-                    "title": "Consequatur libero ad",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Kaleigh Strosin",
+                      "__typename": "Editor",
+                      "name": "Mr. Anya Kuvalis",
+                      Symbol(id): "$Clog124869844176584102317518.author",
                     },
                     "category": "N",
-                    "id": "9247408",
-                    "preview": "http://localhost/static/preview/g4602.png",
-                    "title": "Quod consequuntur consequatur",
+                    "id": "124869844176584102317518",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g4762.png",
+                    "title": "Non quia",
+                    Symbol(id): "Clog124869844176584102317518",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Lilliana West",
+                      "__typename": "Editor",
+                      "name": "Ms. Joey Donnelly",
+                      Symbol(id): "$Clog136667410450901788837555.author",
                     },
                     "category": "N",
-                    "id": "1049538",
-                    "preview": "http://localhost/static/preview/g4762.png",
-                    "title": "Sit consequatur similique",
+                    "id": "136667410450901788837555",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g3578.png",
+                    "title": "Expedita libero architecto",
+                    Symbol(id): "Clog136667410450901788837555",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Christophe Cruickshank",
+                      "__typename": "Editor",
+                      "name": "Miss Daphnee Jerde",
+                      Symbol(id): "$Clog161608567951239737382753.author",
                     },
-                    "category": "N",
-                    "id": "4171025",
-                    "preview": "http://localhost/static/preview/g3578.png",
-                    "title": "Natus illo libero",
+                    "category": "M",
+                    "id": "161608567951239737382753",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g3658.png",
+                    "title": "Mollitia voluptate",
+                    Symbol(id): "Clog161608567951239737382753",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Landen Okuneva",
+                      "__typename": "Editor",
+                      "name": "Ms. Joey Donnelly",
+                      Symbol(id): "$Clog238761762368298262364247.author",
                     },
                     "category": "G",
-                    "id": "1853177",
-                    "preview": "http://localhost/static/preview/g3376.png",
-                    "title": "Rerum quia",
+                    "id": "238761762368298262364247",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g4802.png",
+                    "title": "Est facere",
+                    Symbol(id): "Clog238761762368298262364247",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Cristopher Luettgen",
+                      "__typename": "Editor",
+                      "name": "Miss Helen Moore",
+                      Symbol(id): "$Clog273427498665256338162082.author",
                     },
                     "category": "M",
-                    "id": "842831",
-                    "preview": "http://localhost/static/preview/g4842.png",
-                    "title": "Alias mollitia",
+                    "id": "273427498665256338162082",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g3578.png",
+                    "title": "Ut dolor",
+                    Symbol(id): "Clog273427498665256338162082",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Velma Kris",
+                      "__typename": "Editor",
+                      "name": "Miss Isabell Hilpert",
+                      Symbol(id): "$Clog274244875115454873153656.author",
+                    },
+                    "category": "N",
+                    "id": "274244875115454873153656",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g1878.png",
+                    "title": "Modi quos saepe",
+                    Symbol(id): "Clog274244875115454873153656",
+                  },
+                  Object {
+                    "__typename": "Clog",
+                    "author": Object {
+                      "__typename": "Editor",
+                      "name": "Mr. Leone Mayer",
+                      Symbol(id): "$Clog354614131664781770611037.author",
+                    },
+                    "category": "D",
+                    "id": "354614131664781770611037",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g1878.png",
+                    "title": "Ullam laboriosam",
+                    Symbol(id): "Clog354614131664781770611037",
+                  },
+                  Object {
+                    "__typename": "Clog",
+                    "author": Object {
+                      "__typename": "Editor",
+                      "name": "Miss Emilie Marks",
+                      Symbol(id): "$Clog357579387724166743133955.author",
+                    },
+                    "category": "D",
+                    "id": "357579387724166743133955",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g4602.png",
+                    "title": "Ipsa accusantium",
+                    Symbol(id): "Clog357579387724166743133955",
+                  },
+                  Object {
+                    "__typename": "Clog",
+                    "author": Object {
+                      "__typename": "Editor",
+                      "name": "Dr. Jessyca Bogan",
+                      Symbol(id): "$Clog463883267551477495901776.author",
                     },
                     "category": "G",
-                    "id": "9394189",
-                    "preview": "http://localhost/static/preview/g4602.png",
-                    "title": "Beatae nisi",
+                    "id": "463883267551477495901776",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g3336.png",
+                    "title": "Iure tempora",
+                    Symbol(id): "Clog463883267551477495901776",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Eveline Stroman",
+                      "__typename": "Editor",
+                      "name": "Dr. Maeve Farrell",
+                      Symbol(id): "$Clog480065185137667461794988.author",
                     },
                     "category": "M",
-                    "id": "9897070",
-                    "preview": "http://localhost/static/preview/g3376.png",
-                    "title": "Modi a",
+                    "id": "480065185137667461794988",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g4722.png",
+                    "title": "Ea praesentium sed",
+                    Symbol(id): "Clog480065185137667461794988",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Dock Pollich",
-                    },
-                    "category": "M",
-                    "id": "5355222",
-                    "preview": "http://localhost/static/preview/g1878.png",
-                    "title": "Quisquam sequi",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Cathy Yundt",
-                    },
-                    "category": "D",
-                    "id": "9650256",
-                    "preview": "http://localhost/static/preview/g1878.png",
-                    "title": "Animi iusto dolorem",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Clovis Kihn",
-                    },
-                    "category": "D",
-                    "id": "1753327",
-                    "preview": "http://localhost/static/preview/g3376.png",
-                    "title": "Perspiciatis recusandae soluta",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Kaya Flatley",
-                    },
-                    "category": "M",
-                    "id": "4954950",
-                    "preview": "http://localhost/static/preview/g4762.png",
-                    "title": "Cupiditate aliquid repellat",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Marc Rolfson",
-                    },
-                    "category": "N",
-                    "id": "5909006",
-                    "preview": "http://localhost/static/preview/g4842.png",
-                    "title": "Id consequuntur",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Verda Farrell",
+                      "__typename": "Editor",
+                      "name": "Mr. Chesley Okuneva",
+                      Symbol(id): "$Clog553810697967343742677234.author",
                     },
                     "category": "G",
-                    "id": "2161309",
-                    "preview": "http://localhost/static/preview/g4642.png",
-                    "title": "Sed quis",
+                    "id": "553810697967343742677234",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g3658.png",
+                    "title": "Et suscipit",
+                    Symbol(id): "Clog553810697967343742677234",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Milford Ryan",
-                    },
-                    "category": "D",
-                    "id": "8542582",
-                    "preview": "http://localhost/static/preview/g3456.png",
-                    "title": "Esse vel dolor",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Nat Lindgren",
-                    },
-                    "category": "M",
-                    "id": "7127506",
-                    "preview": "http://localhost/static/preview/g3456.png",
-                    "title": "Temporibus doloribus et",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Johan Wisoky",
-                    },
-                    "category": "D",
-                    "id": "361000",
-                    "preview": "http://localhost/static/preview/g4642.png",
-                    "title": "Quia incidunt vel",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Audrey Schumm",
-                    },
-                    "category": "M",
-                    "id": "8769776",
-                    "preview": "http://localhost/static/preview/g4602.png",
-                    "title": "Sit accusantium et",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Kay Bergstrom",
+                      "__typename": "Editor",
+                      "name": "Dr. Allie Kerluke",
+                      Symbol(id): "$Clog588135756607214177195557.author",
                     },
                     "category": "N",
-                    "id": "8471129",
-                    "preview": "http://localhost/static/preview/g4802.png",
-                    "title": "Error est",
+                    "id": "588135756607214177195557",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g4602.png",
+                    "title": "Enim laboriosam quia",
+                    Symbol(id): "Clog588135756607214177195557",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Darlene Leuschke",
-                    },
-                    "category": "N",
-                    "id": "328653",
-                    "preview": "http://localhost/static/preview/g3658.png",
-                    "title": "Rem et",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Remington Kemmer",
+                      "__typename": "Editor",
+                      "name": "Dr. Ryleigh Zemlak",
+                      Symbol(id): "$Clog622542263309190537163865.author",
                     },
                     "category": "G",
-                    "id": "7955027",
-                    "preview": "http://localhost/static/preview/g4642.png",
-                    "title": "Pariatur quae voluptas",
+                    "id": "622542263309190537163865",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g3618.png",
+                    "title": "Quisquam quia",
+                    Symbol(id): "Clog622542263309190537163865",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Tia Doyle",
-                    },
-                    "category": "D",
-                    "id": "3450627",
-                    "preview": "http://localhost/static/preview/g4642.png",
-                    "title": "Quod repudiandae eaque",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Taurean Boehm",
-                    },
-                    "category": "D",
-                    "id": "5696536",
-                    "preview": "http://localhost/static/preview/g3578.png",
-                    "title": "Ut illo cumque",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Nina Leffler",
-                    },
-                    "category": "M",
-                    "id": "1488685",
-                    "preview": "http://localhost/static/preview/g4842.png",
-                    "title": "Assumenda omnis beatae",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Katharina Huels",
-                    },
-                    "category": "D",
-                    "id": "8692294",
-                    "preview": "http://localhost/static/preview/g3376.png",
-                    "title": "Nesciunt illum iure",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Margarette Legros",
-                    },
-                    "category": "M",
-                    "id": "7719272",
-                    "preview": "http://localhost/static/preview/g4642.png",
-                    "title": "Corporis est est",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Myrtle Dooley",
-                    },
-                    "category": "M",
-                    "id": "7271655",
-                    "preview": "http://localhost/static/preview/g1878.png",
-                    "title": "Voluptates nulla fuga",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Guillermo Pagac",
+                      "__typename": "Editor",
+                      "name": "Ms. Vena Wintheiser",
+                      Symbol(id): "$Clog627506797491647771880136.author",
                     },
                     "category": "N",
-                    "id": "5069304",
-                    "preview": "http://localhost/static/preview/g3456.png",
-                    "title": "Eveniet enim aut",
+                    "id": "627506797491647771880136",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g4762.png",
+                    "title": "Laudantium atque qui",
+                    Symbol(id): "Clog627506797491647771880136",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Genesis Little",
+                      "__typename": "Editor",
+                      "name": "Mr. Natalia Greenholt",
+                      Symbol(id): "$Clog636364552302641465839720.author",
+                    },
+                    "category": "D",
+                    "id": "636364552302641465839720",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g3456.png",
+                    "title": "Est voluptatum",
+                    Symbol(id): "Clog636364552302641465839720",
+                  },
+                  Object {
+                    "__typename": "Clog",
+                    "author": Object {
+                      "__typename": "Editor",
+                      "name": "Mrs. Haskell Runolfsdottir",
+                      Symbol(id): "$Clog681215288475425126868762.author",
                     },
                     "category": "N",
-                    "id": "6517928",
-                    "preview": "http://localhost/static/preview/g3456.png",
-                    "title": "Quo commodi quaerat",
+                    "id": "681215288475425126868762",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g1878.png",
+                    "title": "Non magnam quia",
+                    Symbol(id): "Clog681215288475425126868762",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Angelina Veum",
+                      "__typename": "Editor",
+                      "name": "Dr. Lucile Feeney",
+                      Symbol(id): "$Clog836637828536872035379753.author",
+                    },
+                    "category": "N",
+                    "id": "836637828536872035379753",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g4762.png",
+                    "title": "Inventore cumque",
+                    Symbol(id): "Clog836637828536872035379753",
+                  },
+                  Object {
+                    "__typename": "Clog",
+                    "author": Object {
+                      "__typename": "Editor",
+                      "name": "Mr. Leone Mayer",
+                      Symbol(id): "$Clog861638003310281704621485.author",
+                    },
+                    "category": "N",
+                    "id": "861638003310281704621485",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g3618.png",
+                    "title": "Et asperiores",
+                    Symbol(id): "Clog861638003310281704621485",
+                  },
+                  Object {
+                    "__typename": "Clog",
+                    "author": Object {
+                      "__typename": "Editor",
+                      "name": "Dr. Lucile Feeney",
+                      Symbol(id): "$Clog883818451005231134868557.author",
                     },
                     "category": "G",
-                    "id": "7133818",
-                    "preview": "http://localhost/static/preview/g4642.png",
-                    "title": "Eius laborum",
+                    "id": "883818451005231134868557",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g3658.png",
+                    "title": "Vel omnis",
+                    Symbol(id): "Clog883818451005231134868557",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Lora Koelpin",
-                    },
-                    "category": "D",
-                    "id": "3073481",
-                    "preview": "http://localhost/static/preview/g3578.png",
-                    "title": "Dolorem dolores",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Alexa McClure",
-                    },
-                    "category": "N",
-                    "id": "7597730",
-                    "preview": "http://localhost/static/preview/g3578.png",
-                    "title": "Quam tempore",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Martin Conn",
-                    },
-                    "category": "M",
-                    "id": "9123535",
-                    "preview": "http://localhost/static/preview/g3578.png",
-                    "title": "Deleniti enim quisquam",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Eleazar Larson",
+                      "__typename": "Editor",
+                      "name": "Mr. Chesley Okuneva",
+                      Symbol(id): "$Clog924533186456637524295320.author",
                     },
                     "category": "G",
-                    "id": "9515716",
-                    "preview": "http://localhost/static/preview/g4762.png",
-                    "title": "Ipsa impedit",
+                    "id": "924533186456637524295320",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g4802.png",
+                    "title": "Quam inventore",
+                    Symbol(id): "Clog924533186456637524295320",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Reynold Orn",
+                      "__typename": "Editor",
+                      "name": "Mrs. Mariam Keebler",
+                      Symbol(id): "$Clog948405919778417148787413.author",
                     },
-                    "category": "D",
-                    "id": "6295737",
-                    "preview": "http://localhost/static/preview/g4762.png",
-                    "title": "Praesentium exercitationem maiores",
+                    "category": "M",
+                    "id": "948405919778417148787413",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g4802.png",
+                    "title": "Et molestias",
+                    Symbol(id): "Clog948405919778417148787413",
+                  },
+                  Object {
+                    "__typename": "Clog",
+                    "author": Object {
+                      "__typename": "Editor",
+                      "name": "Ms. Floy Mertz",
+                      Symbol(id): "$Clog957717495553022815418128.author",
+                    },
+                    "category": "N",
+                    "id": "957717495553022815418128",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g4642.png",
+                    "title": "Doloremque commodi",
+                    Symbol(id): "Clog957717495553022815418128",
+                  },
+                  Object {
+                    "__typename": "Clog",
+                    "author": Object {
+                      "__typename": "Editor",
+                      "name": "Mr. Stewart Lueilwitz",
+                      Symbol(id): "$Clog988649064178562194046193.author",
+                    },
+                    "category": "M",
+                    "id": "988649064178562194046193",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g4762.png",
+                    "title": "Et vero",
+                    Symbol(id): "Clog988649064178562194046193",
                   },
                 ]
               }
               dataSource={
                 ListViewDataSource {
-                  "items": 50,
+                  "items": 25,
                 }
               }
               horizontal={true}
@@ -1046,13 +985,13 @@ exports[`Shelf.Home render correct 1`] = `
                           }
                         } />
                       <Image
-                        category="N"
+                        category="M"
                         shadowColor="rgba(255, 255, 255, 0.3)"
                         shadowRadius={5}
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/preview/g4722.png",
+                            "uri": "http://localhost:8080/static/preview/g4642.png",
                           }
                         }
                         style={
@@ -1069,7 +1008,8 @@ exports[`Shelf.Home render correct 1`] = `
                               },
                             ],
                           ]
-                        } />
+                        }
+                        subSource={1} />
                       <View
                         style={
                           Object {
@@ -1115,7 +1055,7 @@ exports[`Shelf.Home render correct 1`] = `
                         "fontSize": 12,
                       }
                     }>
-                    Sed est unde
+                    Unde sed ullam
                   </Text>
                   <Text
                     accessible={true}
@@ -1128,7 +1068,7 @@ exports[`Shelf.Home render correct 1`] = `
                         "fontSize": 10,
                       }
                     }>
-                    Gordon Blanda
+                    Ms. Jannie Harber
                   </Text>
                 </View>
               </View>
@@ -1202,13 +1142,13 @@ exports[`Shelf.Home render correct 1`] = `
                       }
                     } />
                   <Image
-                    category="G"
+                    category="N"
                     shadowColor="rgba(255, 255, 255, 0.3)"
                     shadowRadius={5}
                     size={130}
                     source={
                       Object {
-                        "uri": "http://localhost/static/preview/g3578.png",
+                        "uri": "http://localhost:8080/static/preview/g4762.png",
                       }
                     }
                     style={
@@ -1225,7 +1165,8 @@ exports[`Shelf.Home render correct 1`] = `
                           },
                         ],
                       ]
-                    } />
+                    }
+                    subSource={1} />
                   <View
                     style={
                       Object {
@@ -1278,6 +1219,7 @@ exports[`Shelf.Home render correct 1`] = `
                     accessible={true}
                     allowFontScaling={true}
                     ellipsizeMode="tail"
+                    numberOfLines={1}
                     style={
                       Object {
                         "color": "white",
@@ -1286,7 +1228,7 @@ exports[`Shelf.Home render correct 1`] = `
                         "lineHeight": 14,
                       }
                     }>
-                    Quibusdam et culpa
+                    Quos inventore
                   </Text>
                   <Text
                     accessible={true}
@@ -1298,7 +1240,7 @@ exports[`Shelf.Home render correct 1`] = `
                         "fontSize": 11,
                       }
                     }>
-                    Kurt Lemke
+                    Ms. Mose Jast
                   </Text>
                 </View>
                 <View
@@ -1320,7 +1262,7 @@ exports[`Shelf.Home render correct 1`] = `
                         "lineHeight": 12,
                       }
                     }>
-                    Magni doloribus dolor fugiat repellendus. Voluptatibus ipsa nam doloremque nihil corrupti non aperiam. Aut rerum error nesciunt molestiae repellendus temporibus deserunt. Deserunt ad dolores voluptate quia. Sit reiciendis qui in labore maxime et at. Tempore pariatur omnis soluta consequatur assumenda mollitia et. Occaecati ipsum dolorem dolor at adipisci. Repellat tempora perspiciatis. Aut autem quam totam et dicta. Dicta porro voluptas. Officia qui officiis voluptas tempora. Asperiores quo autem. Veniam omnis voluptas magnam. Ea recusandae aut nesciunt expedita omnis vitae praesentium dolores amet. Aspernatur voluptatibus et. Laboriosam odit sunt. Quia illo placeat nostrum esse cum. Ab animi praesentium quia. Dolore velit assumenda amet quod aut quia. Autem ipsum accusantium.
+                    Impedit aut rerum earum labore sit debitis cum ex id. Dolorum provident recusandae sunt esse facere tenetur. Voluptatem asperiores et facere sit sapiente mollitia neque. Iste voluptates molestias est ut reiciendis ducimus consequuntur est. Ullam perspiciatis ea. Nostrum et tempora recusandae perspiciatis. Deleniti quia debitis libero omnis odio aspernatur. Eligendi minus nemo dolor ut. Vero dolores dolores optio et. Omnis quia voluptatibus reprehenderit non. Explicabo quas ipsam. Maiores quis blanditiis reprehenderit ut. Est recusandae molestiae totam rerum. Vitae ut beatae magni. In harum aut in dolor. Ab a quia laudantium. A at et inventore vel distinctio nihil accusantium recusandae non. Corporis ut facilis aspernatur ut. Rem nulla ea dignissimos eaque aut quas minus explicabo quia. Perferendis enim quia labore non.
                   </Text>
                 </View>
                 <View
@@ -1420,20 +1362,16 @@ exports[`Shelf.Home render correct 1`] = `
               accessible={true}
               allowFontScaling={true}
               ellipsizeMode="tail"
+              numberOfLines={1}
               style={
                 Object {
                   "color": "white",
+                  "flex": 1,
                   "fontWeight": "bold",
                 }
               }>
-              A
+              NON DOLOREM CONSEQUUNTUR
             </Text>
-            <View
-              style={
-                Object {
-                  "flex": 1,
-                }
-              } />
             <View
               style={
                 Object {
@@ -1507,280 +1445,114 @@ exports[`Shelf.Home render correct 1`] = `
               data={
                 Array [
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Breana Anderson",
-                    },
-                    "category": "M",
-                    "id": "5753415",
-                    "preview": "http://localhost/static/preview/g4722.png",
-                    "title": "Possimus rerum",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Morris Abshire",
-                    },
-                    "category": "M",
-                    "id": "3903275",
-                    "preview": "http://localhost/static/preview/g3456.png",
-                    "title": "Ex placeat",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Erling Swaniawski",
-                    },
-                    "category": "M",
-                    "id": "1066946",
-                    "preview": "http://localhost/static/preview/g3336.png",
-                    "title": "Eum omnis et",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Selina Moore",
+                      "__typename": "Editor",
+                      "name": "Ms. Shirley Mayer",
+                      Symbol(id): "$Clog724429712141366457671521.author",
                     },
                     "category": "G",
-                    "id": "4139261",
-                    "preview": "http://localhost/static/preview/g4642.png",
-                    "title": "Voluptas et mollitia",
+                    "id": "724429712141366457671521",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g4802.png",
+                    "title": "Error error quia",
+                    Symbol(id): "Clog724429712141366457671521",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Antonietta Casper",
+                      "__typename": "Editor",
+                      "name": "Mr. Natalia Greenholt",
+                      Symbol(id): "$Clog385811328257894426087586.author",
+                    },
+                    "category": "G",
+                    "id": "385811328257894426087586",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g3456.png",
+                    "title": "Ut non",
+                    Symbol(id): "Clog385811328257894426087586",
+                  },
+                  Object {
+                    "__typename": "Clog",
+                    "author": Object {
+                      "__typename": "Editor",
+                      "name": "Mr. Stewart Lueilwitz",
+                      Symbol(id): "$Clog988649064178562194046193.author",
                     },
                     "category": "M",
-                    "id": "7651354",
-                    "preview": "http://localhost/static/preview/g4762.png",
-                    "title": "Sit omnis aut",
+                    "id": "988649064178562194046193",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g4762.png",
+                    "title": "Et vero",
+                    Symbol(id): "Clog988649064178562194046193",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Mathilde McDermott",
+                      "__typename": "Editor",
+                      "name": "Mrs. Mariam Keebler",
+                      Symbol(id): "$Clog948405919778417148787413.author",
                     },
                     "category": "M",
-                    "id": "7843552",
-                    "preview": "http://localhost/static/preview/g3376.png",
-                    "title": "Error suscipit voluptates",
+                    "id": "948405919778417148787413",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g4802.png",
+                    "title": "Et molestias",
+                    Symbol(id): "Clog948405919778417148787413",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Nichole Waters",
-                    },
-                    "category": "N",
-                    "id": "59700",
-                    "preview": "http://localhost/static/preview/g4722.png",
-                    "title": "Reprehenderit doloribus",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Rasheed Trantow",
-                    },
-                    "category": "G",
-                    "id": "7692716",
-                    "preview": "http://localhost/static/preview/g3578.png",
-                    "title": "Consequatur nemo",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Jaylin Ebert",
-                    },
-                    "category": "G",
-                    "id": "482488",
-                    "preview": "http://localhost/static/preview/g3336.png",
-                    "title": "Sed architecto",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Alexandra Ortiz",
-                    },
-                    "category": "G",
-                    "id": "8640917",
-                    "preview": "http://localhost/static/preview/g4602.png",
-                    "title": "Sit sed",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Garrick Satterfield",
-                    },
-                    "category": "N",
-                    "id": "4860351",
-                    "preview": "http://localhost/static/preview/g4642.png",
-                    "title": "Facilis quis",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Kimberly Gerlach",
+                      "__typename": "Editor",
+                      "name": "Mr. Kane Schowalter",
+                      Symbol(id): "$Clog407897313529488730859677.author",
                     },
                     "category": "D",
-                    "id": "897374",
-                    "preview": "http://localhost/static/preview/g1878.png",
-                    "title": "Est molestias dolorem",
+                    "id": "407897313529488730859677",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g3618.png",
+                    "title": "Odit qui quis",
+                    Symbol(id): "Clog407897313529488730859677",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Lois West",
-                    },
-                    "category": "G",
-                    "id": "3940459",
-                    "preview": "http://localhost/static/preview/g4842.png",
-                    "title": "Facere eum",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Jannie Nolan",
-                    },
-                    "category": "N",
-                    "id": "762765",
-                    "preview": "http://localhost/static/preview/g4762.png",
-                    "title": "Voluptatem quibusdam tempore",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Ulices Daniel",
-                    },
-                    "category": "N",
-                    "id": "3171363",
-                    "preview": "http://localhost/static/preview/g3456.png",
-                    "title": "Harum ut quo",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Abbigail Raynor",
-                    },
-                    "category": "G",
-                    "id": "956464",
-                    "preview": "http://localhost/static/preview/g4602.png",
-                    "title": "Non saepe",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Dewitt Kunde",
+                      "__typename": "Editor",
+                      "name": "Dr. Lucile Feeney",
+                      Symbol(id): "$Clog227257446611183848333653.author",
                     },
                     "category": "M",
-                    "id": "4995845",
-                    "preview": "http://localhost/static/preview/g3618.png",
-                    "title": "Hic quam incidunt",
+                    "id": "227257446611183848333653",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g3578.png",
+                    "title": "Sit illum ut",
+                    Symbol(id): "Clog227257446611183848333653",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Josianne Boehm",
-                    },
-                    "category": "D",
-                    "id": "9778716",
-                    "preview": "http://localhost/static/preview/g4762.png",
-                    "title": "Dolore tempore est",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Cordie Shanahan",
+                      "__typename": "Editor",
+                      "name": "Dr. Ryleigh Zemlak",
+                      Symbol(id): "$Clog552115943272954364215317.author",
                     },
                     "category": "G",
-                    "id": "1093955",
-                    "preview": "http://localhost/static/preview/g4722.png",
-                    "title": "Delectus est et",
+                    "id": "552115943272954364215317",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g4642.png",
+                    "title": "Assumenda vero molestiae",
+                    Symbol(id): "Clog552115943272954364215317",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Guadalupe Dibbert",
-                    },
-                    "category": "M",
-                    "id": "2470787",
-                    "preview": "http://localhost/static/preview/g3578.png",
-                    "title": "Ipsam fuga quae",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Rhiannon Rodriguez",
-                    },
-                    "category": "D",
-                    "id": "326292",
-                    "preview": "http://localhost/static/preview/g4802.png",
-                    "title": "Nihil totam",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Mafalda Nader",
-                    },
-                    "category": "N",
-                    "id": "5928495",
-                    "preview": "http://localhost/static/preview/g3618.png",
-                    "title": "Atque ea",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Prudence Stroman",
-                    },
-                    "category": "M",
-                    "id": "4564830",
-                    "preview": "http://localhost/static/preview/g4722.png",
-                    "title": "Eveniet est beatae",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Giles Kub",
+                      "__typename": "Editor",
+                      "name": "Mrs. Haskell Runolfsdottir",
+                      Symbol(id): "$Clog880891557860793174429072.author",
                     },
                     "category": "G",
-                    "id": "8495978",
-                    "preview": "http://localhost/static/preview/g3456.png",
-                    "title": "Neque laboriosam aut",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Abbigail Larkin",
-                    },
-                    "category": "G",
-                    "id": "4550717",
-                    "preview": "http://localhost/static/preview/g3578.png",
-                    "title": "Natus incidunt rerum",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Alysa Hand",
-                    },
-                    "category": "D",
-                    "id": "4225239",
-                    "preview": "http://localhost/static/preview/g3456.png",
-                    "title": "Voluptas nostrum non",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Marcella Monahan",
-                    },
-                    "category": "N",
-                    "id": "839424",
-                    "preview": "http://localhost/static/preview/g4762.png",
-                    "title": "Vel expedita aut",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Naomi Moore",
-                    },
-                    "category": "M",
-                    "id": "7347862",
-                    "preview": "http://localhost/static/preview/g3336.png",
-                    "title": "Est incidunt",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Emmanuel Robel",
-                    },
-                    "category": "M",
-                    "id": "5038724",
-                    "preview": "http://localhost/static/preview/g3336.png",
-                    "title": "Commodi eum",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Edwina Kerluke",
-                    },
-                    "category": "G",
-                    "id": "8788671",
-                    "preview": "http://localhost/static/preview/g3336.png",
-                    "title": "Et ea quos",
+                    "id": "880891557860793174429072",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g4602.png",
+                    "title": "Eos et rem",
+                    Symbol(id): "Clog880891557860793174429072",
                   },
                 ]
               }
               dataSource={
                 ListViewDataSource {
-                  "items": 30,
+                  "items": 8,
                 }
               }
               horizontal={true}
@@ -1860,13 +1632,13 @@ exports[`Shelf.Home render correct 1`] = `
                           }
                         } />
                       <Image
-                        category="M"
+                        category="G"
                         shadowColor="rgba(255, 255, 255, 0.3)"
                         shadowRadius={5}
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/preview/g4722.png",
+                            "uri": "http://localhost:8080/static/preview/g4802.png",
                           }
                         }
                         style={
@@ -1883,7 +1655,8 @@ exports[`Shelf.Home render correct 1`] = `
                               },
                             ],
                           ]
-                        } />
+                        }
+                        subSource={1} />
                       <View
                         style={
                           Object {
@@ -1929,7 +1702,7 @@ exports[`Shelf.Home render correct 1`] = `
                         "fontSize": 12,
                       }
                     }>
-                    Possimus rerum
+                    Error error quia
                   </Text>
                   <Text
                     accessible={true}
@@ -1942,7 +1715,7 @@ exports[`Shelf.Home render correct 1`] = `
                         "fontSize": 10,
                       }
                     }>
-                    Breana Anderson
+                    Ms. Shirley Mayer
                   </Text>
                 </View>
               </View>
@@ -1981,20 +1754,16 @@ exports[`Shelf.Home render correct 1`] = `
               accessible={true}
               allowFontScaling={true}
               ellipsizeMode="tail"
+              numberOfLines={1}
               style={
                 Object {
                   "color": "white",
+                  "flex": 1,
                   "fontWeight": "bold",
                 }
               }>
-              NIHIL
+              REPELLAT UT ILLO
             </Text>
-            <View
-              style={
-                Object {
-                  "flex": 1,
-                }
-              } />
             <View
               style={
                 Object {
@@ -2068,280 +1837,140 @@ exports[`Shelf.Home render correct 1`] = `
               data={
                 Array [
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Maribel Lubowitz",
+                      "__typename": "Editor",
+                      "name": "Mr. Leone Mayer",
+                      Symbol(id): "$Clog861638003310281704621485.author",
+                    },
+                    "category": "N",
+                    "id": "861638003310281704621485",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g3618.png",
+                    "title": "Et asperiores",
+                    Symbol(id): "Clog861638003310281704621485",
+                  },
+                  Object {
+                    "__typename": "Clog",
+                    "author": Object {
+                      "__typename": "Editor",
+                      "name": "Mr. Chesley Okuneva",
+                      Symbol(id): "$Clog924533186456637524295320.author",
+                    },
+                    "category": "G",
+                    "id": "924533186456637524295320",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g4802.png",
+                    "title": "Quam inventore",
+                    Symbol(id): "Clog924533186456637524295320",
+                  },
+                  Object {
+                    "__typename": "Clog",
+                    "author": Object {
+                      "__typename": "Editor",
+                      "name": "Miss Emilie Marks",
+                      Symbol(id): "$Clog062358134981485753453758.author",
                     },
                     "category": "D",
-                    "id": "9079370",
-                    "preview": "http://localhost/static/preview/g3658.png",
-                    "title": "Asperiores dolores optio",
+                    "id": "062358134981485753453758",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g3456.png",
+                    "title": "Aspernatur beatae enim",
+                    Symbol(id): "Clog062358134981485753453758",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Hannah Gutkowski",
-                    },
-                    "category": "N",
-                    "id": "8367754",
-                    "preview": "http://localhost/static/preview/g1878.png",
-                    "title": "Rem reiciendis",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Thalia Herzog",
-                    },
-                    "category": "M",
-                    "id": "5513775",
-                    "preview": "http://localhost/static/preview/g3658.png",
-                    "title": "Ut ut",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Abbey Huel",
+                      "__typename": "Editor",
+                      "name": "Mr. Chesley Okuneva",
+                      Symbol(id): "$Clog212250578555528828830976.author",
                     },
                     "category": "D",
-                    "id": "3962228",
-                    "preview": "http://localhost/static/preview/g3578.png",
-                    "title": "Nemo rerum",
+                    "id": "212250578555528828830976",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g4722.png",
+                    "title": "Corrupti at odio",
+                    Symbol(id): "Clog212250578555528828830976",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Berry Bode",
+                      "__typename": "Editor",
+                      "name": "Dr. Maeve Farrell",
+                      Symbol(id): "$Clog480065185137667461794988.author",
                     },
                     "category": "M",
-                    "id": "1332170",
-                    "preview": "http://localhost/static/preview/g4602.png",
-                    "title": "Qui adipisci ea",
+                    "id": "480065185137667461794988",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g4722.png",
+                    "title": "Ea praesentium sed",
+                    Symbol(id): "Clog480065185137667461794988",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Tremaine Christiansen",
-                    },
-                    "category": "N",
-                    "id": "5486430",
-                    "preview": "http://localhost/static/preview/g4642.png",
-                    "title": "Modi odit officiis",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Nicholaus Hermiston",
-                    },
-                    "category": "G",
-                    "id": "2403516",
-                    "preview": "http://localhost/static/preview/g3658.png",
-                    "title": "Possimus qui ut",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Cheyenne Balistreri",
-                    },
-                    "category": "N",
-                    "id": "7660229",
-                    "preview": "http://localhost/static/preview/g4762.png",
-                    "title": "Aut deserunt dolor",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Manuel Willms",
-                    },
-                    "category": "G",
-                    "id": "2277347",
-                    "preview": "http://localhost/static/preview/g3456.png",
-                    "title": "Sed eos ad",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Payton Altenwerth",
-                    },
-                    "category": "N",
-                    "id": "3815191",
-                    "preview": "http://localhost/static/preview/g3658.png",
-                    "title": "Maxime nam ab",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Jalon McLaughlin",
+                      "__typename": "Editor",
+                      "name": "Mr. Israel Haag",
+                      Symbol(id): "$Clog323758362937670196418731.author",
                     },
                     "category": "D",
-                    "id": "2991071",
-                    "preview": "http://localhost/static/preview/g3456.png",
-                    "title": "Inventore sunt",
+                    "id": "323758362937670196418731",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g3456.png",
+                    "title": "Illum enim",
+                    Symbol(id): "Clog323758362937670196418731",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Clara Wilkinson",
-                    },
-                    "category": "D",
-                    "id": "2784916",
-                    "preview": "http://localhost/static/preview/g3456.png",
-                    "title": "Vitae fuga",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Colt Huel",
+                      "__typename": "Editor",
+                      "name": "Ms. Vern Harber",
+                      Symbol(id): "$Clog426968127264355949155667.author",
                     },
                     "category": "M",
-                    "id": "4063985",
-                    "preview": "http://localhost/static/preview/g3578.png",
-                    "title": "Saepe aliquam",
+                    "id": "426968127264355949155667",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g4762.png",
+                    "title": "Recusandae est",
+                    Symbol(id): "Clog426968127264355949155667",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Zaria Greenfelder",
-                    },
-                    "category": "M",
-                    "id": "1673242",
-                    "preview": "http://localhost/static/preview/g3336.png",
-                    "title": "Cumque aut omnis",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Queen Feest",
-                    },
-                    "category": "G",
-                    "id": "9613329",
-                    "preview": "http://localhost/static/preview/g3658.png",
-                    "title": "Quia quas eos",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Vada Kuhlman",
-                    },
-                    "category": "M",
-                    "id": "7844489",
-                    "preview": "http://localhost/static/preview/g4722.png",
-                    "title": "Fugiat reprehenderit ex",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Ottilie Robel",
-                    },
-                    "category": "G",
-                    "id": "9426408",
-                    "preview": "http://localhost/static/preview/g4802.png",
-                    "title": "Fugit eum",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Mekhi Miller",
-                    },
-                    "category": "M",
-                    "id": "954907",
-                    "preview": "http://localhost/static/preview/g3456.png",
-                    "title": "Dolorem nisi",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Duncan Pacocha",
+                      "__typename": "Editor",
+                      "name": "Ms. Floy Mertz",
+                      Symbol(id): "$Clog957717495553022815418128.author",
                     },
                     "category": "N",
-                    "id": "6863407",
-                    "preview": "http://localhost/static/preview/g4642.png",
-                    "title": "Consequatur ut",
+                    "id": "957717495553022815418128",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g4642.png",
+                    "title": "Doloremque commodi",
+                    Symbol(id): "Clog957717495553022815418128",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Kelli Hickle",
+                      "__typename": "Editor",
+                      "name": "Dr. Amaya Morissette",
+                      Symbol(id): "$Clog422308328619423875155247.author",
                     },
                     "category": "N",
-                    "id": "4607008",
-                    "preview": "http://localhost/static/preview/g3578.png",
-                    "title": "Natus sint",
+                    "id": "422308328619423875155247",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g3578.png",
+                    "title": "Ut reiciendis voluptas",
+                    Symbol(id): "Clog422308328619423875155247",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Kacey Beahan",
-                    },
-                    "category": "N",
-                    "id": "890605",
-                    "preview": "http://localhost/static/preview/g3376.png",
-                    "title": "Qui ipsum",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Jessica VonRueden",
+                      "__typename": "Editor",
+                      "name": "Mr. Leone Mayer",
+                      Symbol(id): "$Clog110261586454356567296674.author",
                     },
                     "category": "G",
-                    "id": "8791175",
-                    "preview": "http://localhost/static/preview/g3618.png",
-                    "title": "Voluptas odit ad",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Elyssa Schroeder",
-                    },
-                    "category": "G",
-                    "id": "3647898",
-                    "preview": "http://localhost/static/preview/g3376.png",
-                    "title": "Temporibus assumenda aut",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Earl Becker",
-                    },
-                    "category": "G",
-                    "id": "1765090",
-                    "preview": "http://localhost/static/preview/g4642.png",
-                    "title": "Debitis voluptate corrupti",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Zena Armstrong",
-                    },
-                    "category": "D",
-                    "id": "3774237",
-                    "preview": "http://localhost/static/preview/g3618.png",
-                    "title": "Et eligendi",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Clotilde Legros",
-                    },
-                    "category": "M",
-                    "id": "981492",
-                    "preview": "http://localhost/static/preview/g4802.png",
-                    "title": "Laborum voluptatibus",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Alf Altenwerth",
-                    },
-                    "category": "N",
-                    "id": "7577496",
-                    "preview": "http://localhost/static/preview/g3658.png",
-                    "title": "Officia odio",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Carey Kautzer",
-                    },
-                    "category": "G",
-                    "id": "3385955",
-                    "preview": "http://localhost/static/preview/g4642.png",
-                    "title": "Et nulla",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Eleanora Labadie",
-                    },
-                    "category": "G",
-                    "id": "6215297",
-                    "preview": "http://localhost/static/preview/g3618.png",
-                    "title": "Esse et",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Pietro Jast",
-                    },
-                    "category": "G",
-                    "id": "2297150",
-                    "preview": "http://localhost/static/preview/g3618.png",
-                    "title": "Accusamus eum",
+                    "id": "110261586454356567296674",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g4722.png",
+                    "title": "Debitis voluptatibus sed",
+                    Symbol(id): "Clog110261586454356567296674",
                   },
                 ]
               }
               dataSource={
                 ListViewDataSource {
-                  "items": 30,
+                  "items": 10,
                 }
               }
               horizontal={true}
@@ -2421,13 +2050,13 @@ exports[`Shelf.Home render correct 1`] = `
                           }
                         } />
                       <Image
-                        category="D"
+                        category="N"
                         shadowColor="rgba(255, 255, 255, 0.3)"
                         shadowRadius={5}
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/preview/g3658.png",
+                            "uri": "http://localhost:8080/static/preview/g3618.png",
                           }
                         }
                         style={
@@ -2444,7 +2073,8 @@ exports[`Shelf.Home render correct 1`] = `
                               },
                             ],
                           ]
-                        } />
+                        }
+                        subSource={1} />
                       <View
                         style={
                           Object {
@@ -2490,7 +2120,7 @@ exports[`Shelf.Home render correct 1`] = `
                         "fontSize": 12,
                       }
                     }>
-                    Asperiores dolores optio
+                    Et asperiores
                   </Text>
                   <Text
                     accessible={true}
@@ -2503,7 +2133,7 @@ exports[`Shelf.Home render correct 1`] = `
                         "fontSize": 10,
                       }
                     }>
-                    Maribel Lubowitz
+                    Mr. Leone Mayer
                   </Text>
                 </View>
               </View>
@@ -2542,20 +2172,16 @@ exports[`Shelf.Home render correct 1`] = `
               accessible={true}
               allowFontScaling={true}
               ellipsizeMode="tail"
+              numberOfLines={1}
               style={
                 Object {
                   "color": "white",
+                  "flex": 1,
                   "fontWeight": "bold",
                 }
               }>
-              NOSTRUM
+              ET VEL
             </Text>
-            <View
-              style={
-                Object {
-                  "flex": 1,
-                }
-              } />
             <View
               style={
                 Object {
@@ -2629,280 +2255,101 @@ exports[`Shelf.Home render correct 1`] = `
               data={
                 Array [
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Arturo Hintz",
-                    },
-                    "category": "D",
-                    "id": "9886501",
-                    "preview": "http://localhost/static/preview/g3336.png",
-                    "title": "Sed id",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Cecilia Cassin",
-                    },
-                    "category": "M",
-                    "id": "1782205",
-                    "preview": "http://localhost/static/preview/g4802.png",
-                    "title": "Fugiat excepturi",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Antone Heller",
-                    },
-                    "category": "M",
-                    "id": "1739665",
-                    "preview": "http://localhost/static/preview/g3456.png",
-                    "title": "Saepe magni fugit",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Edythe Okuneva",
+                      "__typename": "Editor",
+                      "name": "Miss Helen Moore",
+                      Symbol(id): "$Clog184561766708481870513497.author",
                     },
                     "category": "G",
-                    "id": "1229385",
-                    "preview": "http://localhost/static/preview/g3618.png",
-                    "title": "Provident eum",
+                    "id": "184561766708481870513497",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g3376.png",
+                    "title": "Sequi rem omnis",
+                    Symbol(id): "Clog184561766708481870513497",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Arielle Beatty",
+                      "__typename": "Editor",
+                      "name": "Ms. Shirley Mayer",
+                      Symbol(id): "$Clog724429712141366457671521.author",
                     },
                     "category": "G",
-                    "id": "6525256",
-                    "preview": "http://localhost/static/preview/g3336.png",
-                    "title": "Et corrupti",
+                    "id": "724429712141366457671521",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g4802.png",
+                    "title": "Error error quia",
+                    Symbol(id): "Clog724429712141366457671521",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Dewayne Botsford",
-                    },
-                    "category": "M",
-                    "id": "5214934",
-                    "preview": "http://localhost/static/preview/g3376.png",
-                    "title": "Omnis eos mollitia",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Blanca Stiedemann",
-                    },
-                    "category": "G",
-                    "id": "7574881",
-                    "preview": "http://localhost/static/preview/g4602.png",
-                    "title": "Iusto modi",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Tina Conroy",
-                    },
-                    "category": "M",
-                    "id": "7588329",
-                    "preview": "http://localhost/static/preview/g3578.png",
-                    "title": "Labore et",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Tara Jacobson",
-                    },
-                    "category": "G",
-                    "id": "7934707",
-                    "preview": "http://localhost/static/preview/g3336.png",
-                    "title": "Sint minus",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Myrtis Zemlak",
+                      "__typename": "Editor",
+                      "name": "Mr. Stewart Lueilwitz",
+                      Symbol(id): "$Clog638571323101638387197764.author",
                     },
                     "category": "N",
-                    "id": "9849421",
-                    "preview": "http://localhost/static/preview/g4802.png",
-                    "title": "Dolores nostrum",
+                    "id": "638571323101638387197764",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g3578.png",
+                    "title": "Et perspiciatis",
+                    Symbol(id): "Clog638571323101638387197764",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Emilie Gutkowski",
-                    },
-                    "category": "G",
-                    "id": "8181651",
-                    "preview": "http://localhost/static/preview/g3336.png",
-                    "title": "Ipsa voluptatem",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Kailyn Reynolds",
-                    },
-                    "category": "G",
-                    "id": "7248451",
-                    "preview": "http://localhost/static/preview/g3658.png",
-                    "title": "Numquam aut et",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Don Mayert",
-                    },
-                    "category": "M",
-                    "id": "6968331",
-                    "preview": "http://localhost/static/preview/g3456.png",
-                    "title": "Accusantium unde tempora",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Alysha Volkman",
-                    },
-                    "category": "M",
-                    "id": "2448696",
-                    "preview": "http://localhost/static/preview/g4722.png",
-                    "title": "Laboriosam quia dolorem",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Kay Prosacco",
-                    },
-                    "category": "M",
-                    "id": "4311968",
-                    "preview": "http://localhost/static/preview/g4802.png",
-                    "title": "Sit consectetur",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Olga Mraz",
-                    },
-                    "category": "G",
-                    "id": "7925662",
-                    "preview": "http://localhost/static/preview/g4802.png",
-                    "title": "Aspernatur ex qui",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Maurine Ryan",
-                    },
-                    "category": "M",
-                    "id": "9391323",
-                    "preview": "http://localhost/static/preview/g1878.png",
-                    "title": "Consequuntur eos",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Wilson Gislason",
+                      "__typename": "Editor",
+                      "name": "Mr. Anya Kuvalis",
+                      Symbol(id): "$Clog426570187173367354898730.author",
                     },
                     "category": "N",
-                    "id": "4373159",
-                    "preview": "http://localhost/static/preview/g3658.png",
-                    "title": "Quibusdam a",
+                    "id": "426570187173367354898730",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g4602.png",
+                    "title": "Blanditiis ipsa",
+                    Symbol(id): "Clog426570187173367354898730",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Jaquelin Hansen",
+                      "__typename": "Editor",
+                      "name": "Mr. Stewart Lueilwitz",
+                      Symbol(id): "$Clog988649064178562194046193.author",
                     },
                     "category": "M",
-                    "id": "2363096",
-                    "preview": "http://localhost/static/preview/g3336.png",
-                    "title": "Vero aliquam odio",
+                    "id": "988649064178562194046193",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g4762.png",
+                    "title": "Et vero",
+                    Symbol(id): "Clog988649064178562194046193",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Mavis Fritsch",
-                    },
-                    "category": "G",
-                    "id": "4853840",
-                    "preview": "http://localhost/static/preview/g3618.png",
-                    "title": "Aut quas sunt",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Loy Swaniawski",
-                    },
-                    "category": "D",
-                    "id": "6394027",
-                    "preview": "http://localhost/static/preview/g4642.png",
-                    "title": "Nostrum eius voluptates",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Larry Runolfsson",
-                    },
-                    "category": "N",
-                    "id": "4659337",
-                    "preview": "http://localhost/static/preview/g3456.png",
-                    "title": "Qui itaque ut",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Oleta Ondricka",
-                    },
-                    "category": "N",
-                    "id": "5175976",
-                    "preview": "http://localhost/static/preview/g4762.png",
-                    "title": "Voluptatem earum fugiat",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Nikko Willms",
+                      "__typename": "Editor",
+                      "name": "Ms. Joey Donnelly",
+                      Symbol(id): "$Clog806877248521300176838775.author",
                     },
                     "category": "M",
-                    "id": "7698876",
-                    "preview": "http://localhost/static/preview/g4802.png",
-                    "title": "Aut et doloribus",
+                    "id": "806877248521300176838775",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g3376.png",
+                    "title": "Aut illum omnis",
+                    Symbol(id): "Clog806877248521300176838775",
                   },
                   Object {
+                    "__typename": "Clog",
                     "author": Object {
-                      "name": "Stanton Hermiston",
-                    },
-                    "category": "D",
-                    "id": "9169259",
-                    "preview": "http://localhost/static/preview/g3456.png",
-                    "title": "Aut sit",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Doyle Aufderhar",
+                      "__typename": "Editor",
+                      "name": "Mr. Leone Mayer",
+                      Symbol(id): "$Clog110261586454356567296674.author",
                     },
                     "category": "G",
-                    "id": "6247087",
-                    "preview": "http://localhost/static/preview/g4602.png",
-                    "title": "Porro molestiae",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Nash Langworth",
-                    },
-                    "category": "D",
-                    "id": "96795",
-                    "preview": "http://localhost/static/preview/g3456.png",
-                    "title": "Quos omnis hic",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Jarrod Yundt",
-                    },
-                    "category": "G",
-                    "id": "3735135",
-                    "preview": "http://localhost/static/preview/g4722.png",
-                    "title": "Non distinctio dolores",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Elta Feeney",
-                    },
-                    "category": "M",
-                    "id": "5299876",
-                    "preview": "http://localhost/static/preview/g3336.png",
-                    "title": "Quis quasi qui",
-                  },
-                  Object {
-                    "author": Object {
-                      "name": "Florian Graham",
-                    },
-                    "category": "N",
-                    "id": "2558728",
-                    "preview": "http://localhost/static/preview/g3658.png",
-                    "title": "Ea quia",
+                    "id": "110261586454356567296674",
+                    "thumbnailImage": "http://localhost:8080/static/preview/g4722.png",
+                    "title": "Debitis voluptatibus sed",
+                    Symbol(id): "Clog110261586454356567296674",
                   },
                 ]
               }
               dataSource={
                 ListViewDataSource {
-                  "items": 30,
+                  "items": 7,
                 }
               }
               horizontal={true}
@@ -2982,13 +2429,13 @@ exports[`Shelf.Home render correct 1`] = `
                           }
                         } />
                       <Image
-                        category="D"
+                        category="G"
                         shadowColor="rgba(255, 255, 255, 0.3)"
                         shadowRadius={5}
                         size={85}
                         source={
                           Object {
-                            "uri": "http://localhost/static/preview/g3336.png",
+                            "uri": "http://localhost:8080/static/preview/g3376.png",
                           }
                         }
                         style={
@@ -3005,7 +2452,8 @@ exports[`Shelf.Home render correct 1`] = `
                               },
                             ],
                           ]
-                        } />
+                        }
+                        subSource={1} />
                       <View
                         style={
                           Object {
@@ -3051,7 +2499,7 @@ exports[`Shelf.Home render correct 1`] = `
                         "fontSize": 12,
                       }
                     }>
-                    Sed id
+                    Sequi rem omnis
                   </Text>
                   <Text
                     accessible={true}
@@ -3064,7 +2512,7 @@ exports[`Shelf.Home render correct 1`] = `
                         "fontSize": 10,
                       }
                     }>
-                    Arturo Hintz
+                    Miss Helen Moore
                   </Text>
                 </View>
               </View>
