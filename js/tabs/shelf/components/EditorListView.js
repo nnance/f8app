@@ -182,9 +182,7 @@ EditorListView.fragments = {
       clogs {
         id
         title
-        thumbnailImage {
-          url
-        }
+        thumbnailImage
         category
       }
     }
