@@ -1,8 +1,5 @@
 import React from 'react';
 import {
-  Image,
-  View,
-  StyleSheet,
   Platform,
   Linking,
 } from 'react-native';
@@ -17,15 +14,7 @@ import FeedScreen from './feed';
 import ShelfMenu from './ShelfMenu';
 import NotificationsScreen from './notifications';
 import ClogiiTabBar from './ClogiiTabBar';
-
-const styles = StyleSheet.create({
-  mockScreen: {
-    flex: 1,
-    resizeMode: 'stretch',
-    height: undefined,
-    width: require('Dimensions').get('window').width,
-  },
-});
+import { withTracking } from '../common/navigateTracking';
 
 /* eslint react/no-multi-comp: warn */
 
@@ -34,6 +23,7 @@ class ClogiiTabView extends React.Component {
     super(...args);
     this.state = {
       activeTab: 0,
+      canScroll: true,
     };
 
     this.goToClogCategory = this.goToClogCategory.bind(this);
@@ -47,6 +37,7 @@ class ClogiiTabView extends React.Component {
 
   componentDidMount() {
     this.props.init();
+    this.props.navigate('shelf');
     // this.tabView.goToPage(3);
   }
 
@@ -124,13 +115,14 @@ class ClogiiTabView extends React.Component {
           style={{}}
           renderTabBar={() => <ClogiiTabBar badges={this.props.badges} />
           }
-          onChangeTab={({ i }) => {
+          onChangeTab={({ i, ref }) => {
             this.setState({
               activeTab: i,
             });
+            this.props.navigate(ref.props.tabLabel);
           }
           }
-          locked={Platform.OS === 'android'}
+          locked={Platform.OS === 'android' ? true : !this.state.canScroll}
         >
           <ShelfScreen
             ref={
@@ -141,7 +133,7 @@ class ClogiiTabView extends React.Component {
             goToBook={this.props.goToBook}
             onOpenShelfMenu={this.openShelfMenu}
             navigator={this.props.navigator}
-            tabLabel="Clogii"
+            tabLabel="Shelf"
           />
           <FeedScreen
             goToBook={this.props.goToBook}
@@ -153,45 +145,20 @@ class ClogiiTabView extends React.Component {
             navigator={this.props.navigator}
             tabLabel="Notifications"
           />
-          <ProfileScreen navigator={this.props.navigator} tabLabel="Profile" isActive={this.state.activeTab === 3} />
+          <ProfileScreen
+            navigator={this.props.navigator}
+            goToPlayer={this.props.goToPlayer}
+            goToBook={this.props.goToBook}
+            redirectTo={this.props.redirectTo}
+            tabLabel="Profile"
+            isActive={this.state.activeTab === 3}
+            setTabViewScrollable={can => this.setState({ canScroll: can })}
+          />
         </ScrollableTabView>
       </Drawer>
     );
   }
 }
-
-// require('Dimensions').get('window').width
-
-class _TestBadges extends React.Component {
-  constructor(...args) {
-    super(...args);
-    this.clearBadge(this.props);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (!this.props.isActive && nextProps.isActive) {
-      this.clearBadge(nextProps);
-    }
-  }
-
-  clearBadge(props) {
-    if (props.isActive && props.clearBadge) {
-      props.clearBadge();
-    }
-  }
-
-  render() {
-    // {this.props.children}
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', width: undefined, height: undefined }}>
-        {this.props.children}
-      </View>);
-  }
-}
-
-const TestBadges = connect(null, (dispatch, ownProps) => ({
-  clearBadge: () => dispatch({ type: 'CLEAR_MOCK_BADGE', payload: ownProps.tabLabel }),
-}))(_TestBadges);
 
 const select = state => ({
   badges: state.mockBadges ? state.mockBadges.badges : {},
@@ -202,4 +169,4 @@ const actions = ({
   init: () => ({ type: 'INIT_MOCK_BADGES' }),
 });
 
-export default connect(select, actions)(ClogiiTabView);
+export default withTracking(connect(select, actions)(ClogiiTabView));

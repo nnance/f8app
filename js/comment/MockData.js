@@ -21,6 +21,6 @@ const CommentMockData = [
     text: 'มุกนี้ร้ายกาจมาก ก.ไก่ล้านตัว ชอบ',
     liked: 1250,
   },
-]
+];
 
-export default CommentMockData
+export default CommentMockData;

@@ -285,6 +285,7 @@ class Book extends React.Component {
 Book.fragments = {
   clog: gql`
     fragment Book on Clog {
+      id
       title
       coverImage
       synopsis

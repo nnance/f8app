@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 import {
   View,
   Text,
   Image,
   StyleSheet,
-} from 'react-native'
+} from 'react-native';
 
 const style = StyleSheet.create({
   container: {
@@ -26,18 +26,18 @@ const style = StyleSheet.create({
     color: '#F33B56',
     fontWeight: 'bold',
     fontSize: 20,
-  }
-})
+  },
+});
 
 class CommentHeader extends React.Component {
-  render () {
+  render() {
     return (
       <View style={style.container}>
         <Image style={style.backButton} source={require('../img/back-button.png')} />
         <Text style={style.text}>Comment</Text>
       </View>
-    )
+    );
   }
 }
 
-export default CommentHeader
+export default CommentHeader;

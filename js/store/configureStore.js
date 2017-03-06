@@ -24,6 +24,7 @@
 
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'remote-redux-devtools';
+import screenTracking from './screenTracking';
 
 const { applyMiddleware, createStore } = require('redux');
 
@@ -53,7 +54,7 @@ function configureStore(onComplete: ?() => void) {
   const store = autoRehydrate()(createStore)(
     reducers,
     undefined,
-    composeEnhancers(applyMiddleware(thunk, promise, array, analytics, logger)),
+    composeEnhancers(applyMiddleware(thunk, promise, array, analytics, logger, screenTracking)),
   );
   persistStore(store, { storage: AsyncStorage }, onComplete);
   if (isDebuggingInChrome) {

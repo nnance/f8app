@@ -35,6 +35,7 @@ const surveyActions = require('./surveys');
 const testActions = require('./testActions');
 const installationActions = require('./installation');
 const changeProfile = require('./changeProfile');
+const navigate = require('./navigate');
 
 module.exports = {
   ...loginActions,
@@ -49,4 +50,5 @@ module.exports = {
   ...navigationActions,
   ...installationActions,
   ...changeProfile,
+  ...navigate,
 };

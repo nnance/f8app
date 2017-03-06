@@ -2,6 +2,7 @@ import 'dotenv/config';
 import casual from 'casual';
 import _ from 'lodash';
 import mongoose from 'mongoose';
+import fs from 'fs';
 
 import '../server/cloud/graphql/mocks/casual-config';
 import { models } from '../server/cloud/graphql/models';
@@ -9,16 +10,17 @@ import { models } from '../server/cloud/graphql/models';
 mongoose.connect(process.env.DATABASE_URI);
 
 const url = process.env.URL;
+const clogHTML = fs.readFileSync(__dirname + '/mock-clog.html');
 
-function urlToImageObj(url) {
+function urlToImageObj(fromUrl) {
   return {
     id: null,
-    secure_url: url,
-    url,
+    secure_url: fromUrl,
+    url: fromUrl,
     public_id: null,
     width: 100,
     height: 100,
-  }
+  };
 }
 
 const profile = async () => {
@@ -136,13 +138,17 @@ function genEpisodes(clogs) {
             thumbnailImage: await preview(),
             viewCount: _.random(0, 3000),
             createdAt: casual.date,
-          })
-          .then(ep => {
-            clog.episodeIds.push(ep._id);
-            return clog.save().then(() => ep);
+            data: {
+              binary: clogHTML,
+            },
           })
         )
-      )
+      ).then(eps => {
+        eps.sort((a, b) => Number(a.no) - Number(b.no)).forEach(ep => {
+          clog.episodeIds.push(ep._id);
+        });
+        return clog.save().then(() => eps);
+      })
     )
   ).then(result => [].concat(...result));
 }
@@ -171,19 +177,46 @@ async function genRecommend(clogs) {
   })
 }
 
-function genBookmars(users, clogs) {
+function genEpisodeBookmarks(users, episodes) {
   return Promise.all(
     users.map(user => {
-        genArray(clogs, 5).map(clog => {
-          genArray(clog.episodeIds, 10).map(ep => {
-            user.bookmarks.push({
-              clogId: clog._id,
-              episodeId: ep,
-            });
-          })
+        genArray(episodes, 30).map(ep => {
+          user.bookmarks.push({
+            url: `player?id=${ep._id}`,
+            clogId: ep.clogId,
+            episodeId: ep._id,
+          });
         });
         return user.save();
       }
+    )
+  )
+}
+
+function genClogBookmarks(users, clogs) {
+  return Promise.all(
+    users.map(user => {
+        genArray(clogs, 5).map(clog => {
+          user.bookmarks.push({
+            url: `book?id=${clog._id}`,
+            clogId: clog._id,
+          });
+        });
+        return user.save();
+      }
+    )
+  )
+}
+
+function genFeedClog(clogs) {
+  return Promise.all(
+    clogs.map(clog =>
+        // console.log(clog.authorId._id, clog._id, clog.createdAt)
+      models.FeedClog.create({
+        authorId: clog.authorId._id,
+        clogId: clog._id,
+        createdAt: clog.createdAt,
+      })
     )
   )
 }
@@ -196,7 +229,9 @@ async function gen() {
   await genTrendingClog(clogs);
   const episodes = await genEpisodes(clogs);
   await genRecommend(clogs);
-  await genBookmars(users, clogs);
+  await genEpisodeBookmarks([users[0]], episodes);
+  await genClogBookmarks([users[0]], clogs);
+  await genFeedClog(clogs);
 }
 
 gen().then(() => {

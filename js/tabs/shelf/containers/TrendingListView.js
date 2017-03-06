@@ -1,8 +1,6 @@
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 
-import { liftEdges } from '../../../common/utils';
-
 import ClogListView from '../components/ClogListView';
 
 const query = gql`

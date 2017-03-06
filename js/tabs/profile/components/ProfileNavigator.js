@@ -1,7 +1,7 @@
 import React from 'react';
 import FixBugScrollViewNavigator from '../../../common/FixBugScrollViewNavigator';
+import { withTracking } from '../../../common/navigateTracking';
 
-import BookmarkDetail from '../containers/BookmarkDetail';
 import FollowerScreen from '../containers/FollowerScreen';
 import FollowingScreen from '../containers/FollowingScreen';
 import MyFanScreen from '../containers/MyFanScreen';
@@ -21,7 +21,6 @@ class ProfileNavigator extends React.Component {
     this.onMenuPress = this.onMenuPress.bind(this);
     this.goToChangeEmail = this.goToChangeEmail.bind(this);
     this.goToChangePassword = this.goToChangePassword.bind(this);
-    this.goToBookmarkDetail = this.goToBookmarkDetail.bind(this);
     this.pushPage = this.pushPage.bind(this);
     this.onBack = this.onBack.bind(this);
   }
@@ -30,40 +29,45 @@ class ProfileNavigator extends React.Component {
     const navigator = this.navigator;
     if (name === 'myfan') {
       navigator.push({ page: 'myfan' });
+      this.props.navigate('profile/myfan');
     }
     if (name === 'activity') {
       navigator.push({ page: 'activity' });
+      this.props.navigate('profile/activity');
     }
     if (name === 'myclog') {
       navigator.push({ page: 'myclog' });
+      this.props.navigate('profile/myclog');
     }
     if (name === 'bookmark') {
       navigator.push({ page: 'bookmark' });
+      this.props.navigate('profile/bookmark');
     }
     if (name === 'jellyShop') {
       navigator.push({ page: 'jellyShop' });
+      this.props.navigate('profile/jellyShop');
     }
   }
 
   onBack() {
     const navigator = this.navigator;
+    this.props.navigateBack();
     navigator.pop();
   }
 
   goToChangeEmail() {
     this.navigator.push({ page: 'change-email' });
+    this.props.navigate('profile/change-email');
   }
 
   goToChangePassword() {
     this.navigator.push({ page: 'change-password' });
+    this.props.navigate('profile/change-password');
   }
 
   pushPage(page) {
     this.navigator.push({ page });
-  }
-
-  goToBookmarkDetail(clogId) {
-    this.navigator.push({ page: 'bookmark-detail', id: clogId });
+    this.props.navigate(`profile/${page}`);
   }
 
   renderScene(route) {
@@ -83,7 +87,11 @@ class ProfileNavigator extends React.Component {
       return <MyClogScreen onBackPress={this.onBack} />;
     }
     if (route.page === 'bookmark') {
-      return <BookmarkScreen onBackPress={this.onBack} goToBookmarkDetail={this.goToBookmarkDetail} />;
+      return (<BookmarkScreen
+        onBackPress={this.onBack}
+        redirectTo={this.props.redirectTo}
+        setTabViewScrollable={this.props.setTabViewScrollable}
+      />);
     }
     if (route.page === 'jellyShop') {
       return <JellyShopScreen onBackPress={this.onBack} />;
@@ -100,11 +108,6 @@ class ProfileNavigator extends React.Component {
     }
     if (route.page === 'change-password') {
       return <ChangePasswordScreen onBackPress={this.onBack} />;
-    }
-    if (route.page === 'bookmark-detail') {
-      return (
-        <BookmarkDetail id={route.id} onBackPress={this.onBack}/>
-      );
     }
     return (<Home
       onMenuPress={this.onMenuPress}
@@ -127,4 +130,4 @@ class ProfileNavigator extends React.Component {
   }
 }
 
-export default ProfileNavigator;
+export default withTracking(ProfileNavigator);

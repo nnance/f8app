@@ -99,7 +99,7 @@ const MetaEditorRow = props => (
           <View style={{ flex: 1 }}>
             <Text style={styles.nameText} numberOfLines={1}>{props.editor.name}</Text>
           </View>
-          <View style={{ width: 80 }}/>
+          <View style={{ width: 80 }} />
         </View>
         <Text style={styles.clogCountText} numberOfLines={1}>
           {toHumanNumber(props.editor.clogCount)} Clogs
@@ -182,9 +182,7 @@ EditorListView.fragments = {
       clogs {
         id
         title
-        thumbnailImage {
-          url
-        }
+        thumbnailImage
         category
       }
     }

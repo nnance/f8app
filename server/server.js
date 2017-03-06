@@ -30,7 +30,7 @@ import ParseDashboard from 'parse-dashboard';
 import { graphqlExpress, graphiqlExpress } from 'graphql-server-express';
 import graphqlHTTP from 'express-graphql';
 import bodyParser from 'body-parser';
-getSchema()
+
 import appLink from './app-link';
 import clogHandler from './clogHandler';
 
@@ -141,6 +141,8 @@ server.use('/ofc-graphql', graphqlHTTP(request => ({
 server.use(clogHandler);
 
 server.use('/', (req, res) => res.redirect('/graphql'));
+
+getSchema();
 
 server.listen(SERVER_PORT, () => console.log(
   `Server is now running in ${process.env.NODE_ENV || 'development'} mode on http://localhost:${SERVER_PORT}`,

@@ -72,7 +72,7 @@
     "react/no-multi-comp": "off",
     "react/require-default-props": "off",
     "import/prefer-default-export": "off",
-    "flow-vars/define-flow-type": 1,
-    "flow-vars/use-flow-type": 1
+    "no-param-reassign": "off",
+    "no-confusing-arrow": "off"
   }
 }

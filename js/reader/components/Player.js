@@ -3,15 +3,12 @@ import {
   Image,
   View,
   Text,
-  WebView,
   TouchableOpacity,
   StyleSheet,
   Share,
-  Platform,
 } from 'react-native';
 
 import gql from 'graphql-tag';
-import WKWebView from 'react-native-wkwebview-reborn';
 import { NavBarWithPinkButton } from '../../common/NavBar';
 import { colors } from '../../common/styles';
 import { toHumanNumber } from '../../common/utils';
@@ -54,8 +51,19 @@ class Player extends React.Component {
     };
 
     this.onSharePress = this.onSharePress.bind(this);
+    this.onBookmarkPress = this.onBookmarkPress.bind(this);
+    this.onNextEpisode = this.onNextEpisode.bind(this);
+    this.onRemoveBookmarkPress = this.onRemoveBookmarkPress.bind(this);
     this.renderNavBarButton = this.renderNavBarButton.bind(this);
     this.renderTitle = this.renderTitle.bind(this);
+  }
+
+  onBookmarkPress() {
+    this.props.addEpisodeBookmark(this.props.episode);
+  }
+
+  onRemoveBookmarkPress() {
+    this.props.removeBookmarks([this.props.episodeBookmark.id]);
   }
 
   onSharePress() {
@@ -65,13 +73,27 @@ class Player extends React.Component {
     });
   }
 
+  onNextEpisode() {
+    if (this.props.episode.nextEpisode) {
+      this.props.refetch({
+        id: this.props.episode.nextEpisode.id,
+      });
+    }
+  }
+
   renderNavBarButton() {
     /* eslint class-methods-use-this: warn */
     return (
       <View style={{ flexDirection: 'row' }}>
-        <TouchableOpacity>
-          <Image style={styles.navButton} source={require('../img/bookmark-button.png')} />
-        </TouchableOpacity>
+        {
+          !this.props.episodeBookmark ?
+            <TouchableOpacity onPress={this.onBookmarkPress}>
+              <Image style={styles.navButton} source={require('../img/bookmark-button.png')} />
+            </TouchableOpacity> :
+            <TouchableOpacity onPress={this.onRemoveBookmarkPress}>
+              <Image style={styles.navButton} source={require('../img/bookmarked-button.png')} />
+            </TouchableOpacity>
+        }
         <TouchableOpacity>
           <Image style={styles.navButton} source={require('../img/follow-button.png')} />
         </TouchableOpacity>
@@ -131,13 +153,24 @@ class Player extends React.Component {
 
 Player.fragments = {
   episode: gql`
-    fragment Player on Episode {
+    fragment PlayerEpisode on Episode {
       id
+      clogId
       no
       title
       likeCount
       commentCount
       viewCount
+      nextEpisode {
+        id
+      }
+    }
+  `,
+  bookmark: gql`
+    fragment PlayerBookmark on Bookmark {
+      id
+      clogId
+      episodeId
     }
   `,
 };

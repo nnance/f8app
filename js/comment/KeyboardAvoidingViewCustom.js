@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {
 	View,
 	Keyboard,
@@ -7,71 +7,71 @@ import {
 	Text,
 	StyleSheet,
 	Dimensions,
-} from 'react-native'
+} from 'react-native';
 
 const styles = StyleSheet.create({
-	start: {
-		position: 'absolute',
-		bottom: 0
-	},
-	end: {
-		position: 'absolute',
-		bottom: 300
-	}
-})
+  start: {
+    position: 'absolute',
+    bottom: 0,
+  },
+  end: {
+    position: 'absolute',
+    bottom: 300,
+  },
+});
 
 class KeyboardAvoidingViewCustom extends React.Component {
-	constructor(props) {
-		super(props)
-		this.state = {
-			containerStyle: styles.start,
-			bottom: 0
-		}
-	}
-
-	componentWillMount () {
-    this.onKeyboardChangeListener = Keyboard.addListener('keyboardWillChangeFrame', this._onKeyboardChange)
+  constructor(props) {
+    super(props);
+    this.state = {
+      containerStyle: styles.start,
+      bottom: 0,
+    };
   }
 
-	_onKeyboardChange = (e) => {
-		const {duration, easing, endCoordinates} = e
+  componentWillMount() {
+    this.onKeyboardChangeListener = Keyboard.addListener('keyboardWillChangeFrame', this._onKeyboardChange);
+  }
+
+  _onKeyboardChange = (e) => {
+    const { duration, easing, endCoordinates } = e;
 		// const height = this.relativeKeyboardHeight(endCoordinates)
-		const keyboardFrame = {
-			start: e.startCoordinates,
-			end: e.endCoordinates,
-			duration: e.duration,
-		}
+    const keyboardFrame = {
+      start: e.startCoordinates,
+      end: e.endCoordinates,
+      duration: e.duration,
+    };
 
-		const offsetY = keyboardFrame.start.screenY - keyboardFrame.end.screenY
-		this.setState({
-			bottom: this.state.bottom + offsetY
-		})
-	}
-
-	componentWillUnmount () {
-    this._onKeyboardChange.remove()
+    const offsetY = keyboardFrame.start.screenY - keyboardFrame.end.screenY;
+    this.setState({
+      bottom: this.state.bottom + offsetY,
+    });
   }
 
-	componentWillUpdate() {
-    LayoutAnimation.easeInEaseOut()
+  componentWillUnmount() {
+    this._onKeyboardChange.remove();
   }
 
-	_onPress() {
-		this.setState({
-			bottom: 300,
-		})
-	}
+  componentWillUpdate() {
+    LayoutAnimation.easeInEaseOut();
+  }
 
-	render() {
+  _onPress() {
+    this.setState({
+      bottom: 300,
+    });
+  }
+
+  render() {
 		// this.frame = event.nativeEvent.layout
-		
-		const positionStyle = {bottom: this.state.bottom};
-		return (
-			<View style={[{position: 'absolute'},positionStyle]}>
-				{this.props.children}
-			</View>
-		)
-	}
+
+    const positionStyle = { bottom: this.state.bottom };
+    return (
+      <View style={[{ position: 'absolute' }, positionStyle]}>
+        {this.props.children}
+      </View>
+    );
+  }
 }
 
-export default KeyboardAvoidingViewCustom
+export default KeyboardAvoidingViewCustom;

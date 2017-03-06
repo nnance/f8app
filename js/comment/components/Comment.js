@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {
   View,
   Text,
@@ -7,8 +7,8 @@ import {
   TouchableOpacity,
   Image,
   TouchableHighlight,
-} from 'react-native'
-import moment from 'moment'
+} from 'react-native';
+import moment from 'moment';
 
 const style = StyleSheet.create({
   container: {
@@ -23,7 +23,7 @@ const style = StyleSheet.create({
   },
   authorContainer: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   authorThumbnail: {
     width: 30,
@@ -43,7 +43,7 @@ const style = StyleSheet.create({
     paddingTop: 10,
     marginTop: 10,
     borderTopWidth: 1,
-    borderTopColor: '#F4F5F6'
+    borderTopColor: '#F4F5F6',
   },
   likedIcon: {
     marginLeft: 40,
@@ -58,39 +58,39 @@ const style = StyleSheet.create({
   timeText: {
     position: 'absolute',
     right: 0,
-    color: '#ADAEAF'
-  }
-})
+    color: '#ADAEAF',
+  },
+});
 
 class CommentEditor extends React.Component {
   render() {
     return (
-      <View style={{position: 'absolute', marginLeft: 40, zIndex: 100, borderWidth: 1, padding: 10, backgroundColor: '#FFFFFF', borderColor: '#FF0000'}}>
+      <View style={{ position: 'absolute', marginLeft: 40, zIndex: 100, borderWidth: 1, padding: 10, backgroundColor: '#FFFFFF', borderColor: '#FF0000' }}>
         <Text>Edit</Text>
         <Text>Delete</Text>
       </View>
-    )
+    );
   }
 }
 
 class Comment extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      showEdit: false
-    }
+      showEdit: false,
+    };
   }
 
   onEditComment = () => {
     this.setState({
-      showEdit: true
-    })
+      showEdit: true,
+    });
   }
 
   render() {
-    const {posted, author, text, liked} = this.props
-    const relativePostedTime = moment(new Date(posted)).fromNow()
-    
+    const { posted, author, text, liked } = this.props;
+    const relativePostedTime = moment(new Date(posted)).fromNow();
+
     return (
       <TouchableHighlight underlayColor="#D9D9D9" onLongPress={() => this.onEditComment()}>
         <View style={style.container}>
@@ -109,8 +109,8 @@ class Comment extends React.Component {
           </View>
         </View>
       </TouchableHighlight>
-    )
+    );
   }
 }
 
-export default Comment
+export default Comment;

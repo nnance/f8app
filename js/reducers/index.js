@@ -38,4 +38,5 @@ module.exports = combineReducers({
   friendsSchedules: require('./friendsSchedules'),
   surveys: require('./surveys'),
   mockBadges: require('./mockBadges'),
+  navigateTracking: require('./navigateTracking'),
 });

@@ -9,6 +9,7 @@ import ClogListView from '../containers/ClogListView';
 import TrendingListView from '../containers/TrendingListView';
 import EditorListView from '../containers/EditorListView';
 import FixBugScrollViewNavigator from '../../../common/FixBugScrollViewNavigator';
+import { withTracking } from '../../../common/navigateTracking';
 
 const NotFound = () => <Text>not found</Text>;
 
@@ -25,22 +26,27 @@ class ShelfNavigator extends React.Component {
 
   goBack() {
     this.navigator.pop();
+    this.props.navigateBack();
   }
 
   goToClogCategory(category) {
     this.navigator.push({ page: 'clog-category', category });
+    this.props.navigate(`shelf/clog-category/${category}`);
   }
 
   goToClogListView(options) {
     this.navigator.push({ page: 'clog-list-view', ...options });
+    this.props.navigate('shelf/clog-list-view');
   }
 
   goToTrendingListView(options) {
     this.navigator.push({ page: 'trending-list-view', ...options });
+    this.props.navigate('shelf/trending-list-view');
   }
 
   goToEditorListView(category) {
     this.navigator.push({ page: 'editor-list-view', category });
+    this.props.navigate(`shelf/editor-list-view?category=${category}`);
   }
 
   renderScene(route) {
@@ -111,4 +117,4 @@ class ShelfNavigator extends React.Component {
   }
 }
 
-export default ShelfNavigator;
+export default withTracking(ShelfNavigator);

@@ -5,6 +5,7 @@ import { BackAndroid, Text, TouchableOpacity, Navigator, Image, View } from 'rea
 import { connect } from 'react-redux';
 
 import * as actions from '../actions';
+import { withTracking } from '../common/navigateTracking';
 
 import IndexScreen from './IndexScreen';
 import EmailLoginScreen from './EmailLoginScreen';
@@ -40,6 +41,7 @@ class LoginScreen extends React.Component {
     if (this.props.addBackButtonListener) {
       this.props.addBackButtonListener(this.alwaysFalse);
     }
+    this.props.navigate('login');
   }
 
   componentWillReceiveProps(nextProps) {
@@ -73,13 +75,16 @@ class LoginScreen extends React.Component {
       throw Error('email-login route not found');
     }
     navigator.popN(navigator.getCurrentRoutes().length - N);
+    this.props.navigate('login');
   }
 
   pushPage(page, payload) {
     this.navigator.push({ page, payload });
+    this.props.navigate(`login/${page}`);
   }
 
   goBack() {
+    this.props.navigateBack();
     if (this.navigator.getCurrentRoutes().length > 1) {
       this.navigator.pop();
       return true;
@@ -220,7 +225,7 @@ const actionsMaping = {
   forgotPassword: actions.forgotPassword,
 };
 
-export default connect()(connect(select, actionsMaping)(LoginScreen));
+export default withTracking(connect()(connect(select, actionsMaping)(LoginScreen)));
 export {
   LoginScreen as Component,
 };
