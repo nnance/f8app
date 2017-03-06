@@ -35,7 +35,7 @@ prog
       modelMapping[type].schema.add({
         isSeed: Boolean,
       });
-      await Promise.all(result.map(obj => modelMapping[type].findOneAndUpdate({ _id: obj._id }, {
+      await sequential(result.map(obj => () => modelMapping[type].findOneAndUpdate({ _id: obj._id }, {
         ...obj,
         isSeed: true,
       }, {

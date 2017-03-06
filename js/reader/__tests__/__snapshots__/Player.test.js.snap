@@ -96,7 +96,7 @@ exports[`Player render 1`] = `
           EP.
           99
            
-          Quis esse pariatur
+          Asperiores quisquam
         </Text>
         <Text
           accessible={true}
@@ -109,7 +109,7 @@ exports[`Player render 1`] = `
             }
           }>
           อ่านแล้ว 
-          475
+          0
            คน
         </Text>
       </View>
