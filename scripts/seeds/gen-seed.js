@@ -8,7 +8,7 @@ import { casual } from './helpers';
 const prog = require('caporal');
 const sequential = require('promise-sequential');
 
-const defaultTypes = ['author', 'tag', 'user', 'clog', 'episode', 'feed', 'bookmark'].join(',');
+const defaultTypes = ['author', 'tag', 'user', 'clog', 'episode', 'feed', 'bookmark', 'recommend', 'trending', 'clog-follower', 'editor-follower'].join(',');
 
 prog
   .version('1.0.0')
@@ -16,6 +16,10 @@ prog
   .option('--types <types>', prog.LIST)
   .action((args, options) => {
     const types = (options.types || defaultTypes).split(',');
+    const dataDir = path.resolve(__dirname, 'data');
+    if (!fs.existsSync(dataDir)) {
+      fs.mkdirSync(dataDir);
+    }
     return sequential(types.map(type => async () => {
       if (fs.existsSync(path.resolve(__dirname, 'seed-generator', `${type}.js`))) {
         const { generate } = require(`./seed-generator/${type}`);

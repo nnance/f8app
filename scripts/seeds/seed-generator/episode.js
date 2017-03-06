@@ -13,9 +13,10 @@ export async function generate() {
     no: 99,
     title: casual.title,
     thumbnailImage: await preview(),
+    commentIds: [],
     viewCount: casual.integer(0, 3000),
     createdAt: casual.date,
-    data: {},
+    data: null,
   };
   const episodes = await sequential(
     clogs.map(clog => () =>
@@ -26,9 +27,10 @@ export async function generate() {
           no: idx + 1,
           title: casual.title,
           thumbnailImage: await preview(),
+          commentIds: [],
           viewCount: casual.integer(0, 3000),
           createdAt: casual.date,
-          data: {},
+          data: null,
         })),
       ).then((eps) => {
         clog.episodeIds = [];

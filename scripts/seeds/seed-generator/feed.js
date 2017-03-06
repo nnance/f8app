@@ -4,7 +4,7 @@ export function generate() {
   const clogs = loadSeed('clog');
   const feedClogs = clogs.map(clog => ({
     _id: casual.objectId,
-    authorId: clog.authorId._id,
+    authorId: clog.authorId,
     clogId: clog._id,
     createdAt: clog.createdAt,
   }));

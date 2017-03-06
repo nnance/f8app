@@ -17,6 +17,6 @@ export async function generate() {
     type: 'heroBanner',
     clogIds: genFixArray(clogIds, 10),
   };
-  const result = [...categoryRecommends, ...shelfRecommends, ...heroBanners];
+  const result = [...categoryRecommends, shelfRecommends, heroBanners];
   writeSeed('recommend', result);
 }
