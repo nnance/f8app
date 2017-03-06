@@ -82,7 +82,7 @@ class ExploreCategory extends React.Component {
 
   render() {
     return (
-      <Image source={require('../img/home-bg-2.png')} style={{ width: undefined, height: 450, resizeMode: 'stretch', backgroundColor: 'transparent' }}>
+      <Image source={require('../../../assets/shelf/home-bg-2.png')} style={{ width: undefined, height: 450, resizeMode: 'stretch', backgroundColor: 'transparent' }}>
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           <View style={{ flex: 1, width: 205 + 85 }}>
             {

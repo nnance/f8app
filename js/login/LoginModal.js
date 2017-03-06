@@ -87,7 +87,7 @@ class LoginModal extends React.Component {
       <View style={styles.container}>
         <Image
           style={styles.content}
-          source={require('./img/bg.png')}
+          source={require('../assets/login/bg.png')}
         >
           <Text style={styles.h1}>
             Log in with Facebook

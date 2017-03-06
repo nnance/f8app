@@ -16,7 +16,7 @@ export class ShowTagButton extends React.Component {
   render() {
     const { onPress } = this.props;
     return (<TouchableOpacity onPress={onPress}>
-      <Image source={require('../img/show-tag.png')} style={{ width: 20, height: 20, resizeMode: 'contain' }} />
+      <Image source={require('../../../assets/shelf-menu/show-tag.png')} style={{ width: 20, height: 20, resizeMode: 'contain' }} />
     </TouchableOpacity>);
   }
 }
@@ -25,7 +25,7 @@ export class HideTagButton extends React.Component {
   render() {
     const { onPress } = this.props;
     return (<TouchableOpacity onPress={onPress}>
-      <Image source={require('../img/hide-tag.png')} style={{ width: 20, height: 20, resizeMode: 'contain' }} />
+      <Image source={require('../../../assets/shelf-menu/hide-tag.png')} style={{ width: 20, height: 20, resizeMode: 'contain' }} />
     </TouchableOpacity>);
   }
 }

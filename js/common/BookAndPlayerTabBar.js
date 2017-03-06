@@ -11,11 +11,11 @@ import { BUTTOM_TAB_HEIGHT, colors } from './styles';
 import { toHumanNumber } from './utils';
 
 const menuIcon = {
-  menu: require('./img/icon/menu.png'),
-  like: require('./img/icon/like.png'),
-  read: require('./img/icon/read-button.png'),
-  subBookmark: require('./img/icon/sub-bookmark.png'),
-  share: require('./img/icon/share.png'),
+  menu: require('../assets/common/icon/menu.png'),
+  like: require('../assets/common/icon/like.png'),
+  read: require('../assets/common/icon/read-button.png'),
+  subBookmark: require('../assets/common/icon/sub-bookmark.png'),
+  share: require('../assets/common/icon/share.png'),
 };
 
 const styles = StyleSheet.create({

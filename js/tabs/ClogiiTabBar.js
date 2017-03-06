@@ -11,20 +11,20 @@ import { BUTTOM_TAB_HEIGHT } from '../common/styles';
 
 const icons = {
   Shelf: {
-    active: require('./img/icons/shelf-active.png'),
-    inactive: require('./img/icons/shelf-inactive.png'),
+    active: require('../assets/tab-icon/shelf-active.png'),
+    inactive: require('../assets/tab-icon/shelf-inactive.png'),
   },
   Feed: {
-    active: require('./img/icons/feed-active.png'),
-    inactive: require('./img/icons/feed-inactive.png'),
+    active: require('../assets/tab-icon/feed-active.png'),
+    inactive: require('../assets/tab-icon/feed-inactive.png'),
   },
   Notifications: {
-    active: require('./img/icons/notifications-active.png'),
-    inactive: require('./img/icons/notifications-inactive.png'),
+    active: require('../assets/tab-icon/notifications-active.png'),
+    inactive: require('../assets/tab-icon/notifications-inactive.png'),
   },
   Profile: {
-    active: require('./img/icons/profile-active.png'),
-    inactive: require('./img/icons/profile-inactive.png'),
+    active: require('../assets/tab-icon/profile-active.png'),
+    inactive: require('../assets/tab-icon/profile-inactive.png'),
   },
 };
 

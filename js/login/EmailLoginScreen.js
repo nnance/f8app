@@ -23,7 +23,7 @@ export default class EmailLoginScreen extends React.Component {
     return (
       <Image
         style={styles.container}
-        source={require('./img/email-bg.png')}
+        source={require('../assets/login/email-bg.png')}
       >
         <View style={styles.inputSession}>
           <Text style={styles.errorText}>

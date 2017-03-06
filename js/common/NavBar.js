@@ -82,7 +82,7 @@ export class NavBarWithButton extends React.Component {
 
   renderBackButton() {
     return (
-      <TouchableOpacity onPress={this.props.onBackPress}><Image style={commonStyles.navBarIcon} source={require('./img/icon/backButton.png')} /></TouchableOpacity>
+      <TouchableOpacity onPress={this.props.onBackPress}><Image style={commonStyles.navBarIcon} source={require('../assets/common/icon/backButton.png')} /></TouchableOpacity>
     );
   }
 
@@ -102,7 +102,7 @@ export class NavBarWithPinkButton extends React.Component {
 
   renderBackButton() {
     return (
-      <TouchableOpacity onPress={this.props.onBackPress}><Image style={commonStyles.navBarIcon} source={require('./img/icon/backButton-pink.png')} /></TouchableOpacity>
+      <TouchableOpacity onPress={this.props.onBackPress}><Image style={commonStyles.navBarIcon} source={require('../assets/common/icon/backButton-pink.png')} /></TouchableOpacity>
     );
   }
 

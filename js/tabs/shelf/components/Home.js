@@ -65,13 +65,13 @@ class Home extends React.Component {
       <View style={{ flex: 1, backgroundColor: 'rgb(81, 20, 64)' }}>
         <NavBar
           renderLeftMenu={() => (
-            <TouchableOpacity onPress={this.props.onOpenShelfMenu}><Image style={{ height: 20, resizeMode: 'contain' }} source={require('../img/menu.png')} /></TouchableOpacity>
+            <TouchableOpacity onPress={this.props.onOpenShelfMenu}><Image style={{ height: 20, resizeMode: 'contain' }} source={require('../../../assets/shelf/menu.png')} /></TouchableOpacity>
           )}
           renderRightMenu={() => (
-            <TouchableOpacity><Image style={{ height: 20, resizeMode: 'contain' }} source={require('../img/search.png')} /></TouchableOpacity>
+            <TouchableOpacity><Image style={{ height: 20, resizeMode: 'contain' }} source={require('../../../assets/shelf/search.png')} /></TouchableOpacity>
           )}
           renderTitle={() => (
-            <Image style={{ width: 80, height: 30, resizeMode: 'contain' }} source={require('../img/title.png')} />
+            <Image style={{ width: 80, height: 30, resizeMode: 'contain' }} source={require('../../../assets/shelf/title.png')} />
           )}
           titleStyle={{
             flex: 1,
@@ -79,7 +79,7 @@ class Home extends React.Component {
           }}
         />
         <FixBugScrollView>
-          <Image source={require('../img/home-bg-1.png')} style={{ width: undefined, height: 700, resizeMode: 'stretch', backgroundColor: 'transparent' }}>
+          <Image source={require('../../../assets/shelf/home-bg-1.png')} style={{ width: undefined, height: 700, resizeMode: 'stretch', backgroundColor: 'transparent' }}>
             <View style={{ flex: 2 }}>
               <HeroBanner goToBook={this.props.goToBook} clogs={this.props.heroBanners} />
             </View>
@@ -90,7 +90,7 @@ class Home extends React.Component {
               <RecommendedClog clog={this.props.recommendedClog} goToBook={this.props.goToBook} />
             </View>
           </Image>
-          <Image source={require('../img/home-bg-1.5.png')} style={{ resizeMode: 'stretch', backgroundColor: 'transparent', width: undefined, height: undefined, paddingTop: 20 }}>
+          <Image source={require('../../../assets/shelf/home-bg-1.5.png')} style={{ resizeMode: 'stretch', backgroundColor: 'transparent', width: undefined, height: undefined, paddingTop: 20 }}>
             {
               this.props.favoriteTags.map(tag => (
                 <View key={tag.id} style={{ paddingLeft: 10, paddingTop: 10 }}>

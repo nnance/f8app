@@ -51,7 +51,7 @@ const ClogRow = props => (
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
         <View style={styles.readContainer}>
           <Image
-            source={require('./img/icon/read.png')}
+            source={require('../assets/common/icon/read.png')}
             style={{ width: 15, height: 15, resizeMode: 'contain', borderRadius: 4 }}
           />
           <Text style={{ paddingLeft: 5, fontSize: 11, color: colors.textFadedGrey }}>
@@ -60,7 +60,7 @@ const ClogRow = props => (
         </View>
         <View style={styles.likeContainer}>
           <Image
-            source={require('./img/icon/heart.png')}
+            source={require('../assets/common/icon/heart.png')}
             style={{ width: 15, height: 15, resizeMode: 'contain', borderRadius: 4, marginLeft: 20 }}
           />
           <Text style={{ paddingLeft: 5, fontSize: 11, color: colors.textFadedGrey }}>
