@@ -133,29 +133,10 @@ exports[`BookmarkScreen render BookmarkScreen 1`] = `
         "top": 0,
       }
     }
-    data={
-      Array [
-        Object {
-          "bookmarkCount": 7,
-          "category": "N",
-          "index": 0,
-          "preview": 1,
-          "title": "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
-          "willDelete": false,
-        },
-        Object {
-          "bookmarkCount": 3,
-          "category": "M",
-          "index": 1,
-          "preview": 1,
-          "title": "Money Honey คุณชายหน้าตายกับยัยขี้งก",
-          "willDelete": false,
-        },
-      ]
-    }
+    data={Array []}
     dataSource={
       ListViewDataSource {
-        "items": 2,
+        "items": 0,
       }
     }
     initialListSize={1}
@@ -176,191 +157,7 @@ exports[`BookmarkScreen render BookmarkScreen 1`] = `
     renderSeparator={[Function]}
     scrollEventThrottle={50}
     scrollRenderAheadDistance={1000}
-    stickyHeaderIndices={Array []}>
-    <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
-      accessible={true}
-      hitSlop={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "opacity": 1,
-          "padding": 13,
-        }
-      }
-      testID={undefined}>
-      <View
-        style={
-          Object {
-            "height": 100,
-            "width": 100,
-          }
-        }>
-        <View
-          style={
-            Object {
-              "height": 100,
-              "width": 100,
-            }
-          }>
-          <View
-            style={
-              Object {
-                "backgroundColor": "rgba(0, 0, 0, 0)",
-                "borderRadius": 50,
-                "height": 100,
-                "left": -0,
-                "position": "absolute",
-                "top": -0,
-                "width": 100,
-              }
-            } />
-          <Image
-            category="N"
-            size={100}
-            source={1}
-            style={
-              Array [
-                Object {
-                  "borderRadius": 50,
-                  "height": 100,
-                  "width": 100,
-                },
-                Array [
-                  undefined,
-                  Object {
-                    "backgroundColor": "transparent",
-                  },
-                ],
-              ]
-            } />
-          <View
-            style={
-              Object {
-                "height": 100,
-                "left": 0,
-                "position": "absolute",
-                "top": 0,
-                "width": 100,
-              }
-            } />
-        </View>
-        <Image
-          source={1}
-          style={
-            Array [
-              Object {
-                "bottom": 3.125,
-                "height": 25,
-                "position": "absolute",
-                "right": 3.125,
-                "width": 25,
-              },
-              undefined,
-            ]
-          } />
-      </View>
-      <View
-        style={
-          Object {
-            "flex": 1,
-            "paddingLeft": 10,
-          }
-        }>
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-              "justifyContent": "space-between",
-              "marginTop": 5,
-            }
-          }>
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "fontSize": 16,
-                "fontWeight": "bold",
-              }
-            }>
-            Richy Rich! รวยมากนะ! รู้ยังคะทุกคน
-          </Text>
-        </View>
-        <View
-          style={
-            Object {
-              "flexDirection": "row",
-              "justifyContent": "space-between",
-              "paddingTop": 10,
-            }
-          }>
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "rgba(0, 0, 0, 0.5)",
-                "fontSize": 16,
-                "fontWeight": "bold",
-              }
-            }>
-            7
-             Bookmarks
-          </Text>
-        </View>
-      </View>
-      <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
-        accessible={true}
-        hitSlop={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "flex-end",
-            "opacity": 1,
-          }
-        }
-        testID={undefined}>
-        <Image
-          source={1}
-          style={
-            Object {
-              "height": 25,
-              "resizeMode": "contain",
-            }
-          } />
-      </View>
-    </View>
-    <View
-      style={
-        Object {
-          "backgroundColor": "#eeeeee",
-          "height": 1,
-        }
-      } />
-  </ScrollView>
+    stickyHeaderIndices={Array []} />
 </View>
 `;
 
@@ -1654,7 +1451,7 @@ exports[`MyClogScreen render MyClogScreen 1`] = `
           <Image
             category="M"
             size={100}
-            source={1}
+            source={undefined}
             style={
               Array [
                 Object {
@@ -1669,7 +1466,8 @@ exports[`MyClogScreen render MyClogScreen 1`] = `
                   },
                 ],
               ]
-            } />
+            }
+            subSource={1} />
           <View
             style={
               Object {
@@ -1948,7 +1746,7 @@ exports[`ProfileNavigator render 1`] = `
 <FixBugScrollViewNavigator
   initialRoute={
     Object {
-      "page": "profile",
+      "page": "home",
     }
   }
   renderScene={[Function]} />

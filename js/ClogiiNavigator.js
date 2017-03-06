@@ -131,3 +131,6 @@ class ClogiiNavigator extends React.Component {
 }
 
 export default withTracking(ClogiiNavigator);
+export {
+  ClogiiNavigator as Component,
+};

@@ -9,7 +9,6 @@ import ClogListView from '../containers/ClogListView';
 import TrendingListView from '../containers/TrendingListView';
 import EditorListView from '../containers/EditorListView';
 import FixBugScrollViewNavigator from '../../../common/FixBugScrollViewNavigator';
-import { withTracking } from '../../../common/navigateTracking';
 
 const NotFound = () => <Text>not found</Text>;
 
@@ -117,4 +116,4 @@ class ShelfNavigator extends React.Component {
   }
 }
 
-export default withTracking(ShelfNavigator);
+export default ShelfNavigator;

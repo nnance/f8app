@@ -31,7 +31,6 @@ if (process.env.NODE_ENV === 'test') {
   config = process.env;
 }
 
-console.log(Config);
 module.exports = {
   testMenuEnabled: true,
   serverURL: config.URL,

@@ -11,9 +11,12 @@
     "compile:server": "babel server --out-dir build-server",
     "dev": "npm run dev:db && npm run start:watch",
     "dev:db": ". ./scripts/dev-db",
-    "gen-mock": "babel-node ./scripts/gen-mock-data.js",
-    "clean-db": "babel-node ./scripts/clean-db.js",
-    "re-mock": "npm run clean-db && npm run gen-mock"
+    "gen-seed": "babel-node ./scripts/seeds/gen-seed.js",
+    "import-seed": "babel-node ./scripts/seeds/import.js",
+    "remove-seed": "babel-node ./scripts/seeds/remove.js",
+    "re-gen-seed": "npm run gen-seed && npm run remove-seed && npm run import-seed",
+    "seed-episode-binary": "babel-node ./scripts/seeds/seed-episode-binary.js",
+    "clean-db": "babel-node ./scripts/clean-db.js"
   },
   "dependencies": {
     "@exponent/react-native-read-more-text": "^1.0.0",
@@ -23,6 +26,7 @@
     "art": "~0.10.1",
     "babel-cli": "~6.6.5",
     "body-parser": "^1.15.2",
+    "caporal": "^0.3.0",
     "casual": "^1.5.10",
     "crc32": "~0.2.2",
     "dotenv": "^4.0.0",
@@ -49,6 +53,7 @@
     "parse": "^1.9.2",
     "parse-dashboard": "~1.0.22",
     "parse-server": "~2.3.1",
+    "promise-sequential": "^1.1.1",
     "query-string": "^4.3.1",
     "react": "^15.4.1",
     "react-apollo": "^0.8.1",

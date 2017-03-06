@@ -18,7 +18,7 @@ describe('ProfileNavigator', () => {
   });
 
   it('onMenuPress, should push into navigator', () => {
-    const dump = shallow(<ProfileNavigator {...mockData} />);
+    const dump = shallow(<ProfileNavigator {...mockData} navigate={jest.fn()} />);
     const menues = ['myfan', 'activity', 'myclog', 'bookmark', 'jellyShop'];
     menues.forEach((menu) => {
       const spy = jest.fn();
@@ -32,7 +32,7 @@ describe('ProfileNavigator', () => {
 
   it('onBack', () => {
     const spy = jest.fn();
-    const dump = shallow(<ProfileNavigator {...mockData} />);
+    const dump = shallow(<ProfileNavigator {...mockData} navigateBack={jest.fn()} />);
     dump.instance().navigator = {
       pop: spy,
     };
@@ -42,7 +42,7 @@ describe('ProfileNavigator', () => {
 
   it('pushPage', () => {
     const spy = jest.fn();
-    const dump = shallow(<ProfileNavigator {...mockData} />);
+    const dump = shallow(<ProfileNavigator {...mockData} navigate={jest.fn()} />);
     dump.instance().navigator = {
       push: spy,
     };

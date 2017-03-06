@@ -37,11 +37,11 @@ describe('Shelf.Home', () => {
   it('navigate to ClogListView onPress viewAllTrending', async () => {
     const result = await graphql(query);
     const props = mapQueryToProps({ data: result.data });
-    const goToClogListView = jest.fn();
-    const dump = shallow(<HomeComponent {...{ ...props, goToClogListView }} />);
+    const goToTrendingListView = jest.fn();
+    const dump = shallow(<HomeComponent {...{ ...props, goToTrendingListView }} />);
     const wrapper = shallow(dump.instance().renderTrendingButton());
     wrapper.simulate('press');
-    const calledArgs = goToClogListView.mock.calls[0][0];
-    expect(calledArgs.orderBy).toBe('TRENDING');
+    const calledArgs = goToTrendingListView.mock.calls[0][0];
+    expect(calledArgs.title).toBe('ยอดนิยม');
   });
 });

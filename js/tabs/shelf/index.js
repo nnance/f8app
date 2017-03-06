@@ -1,3 +1,3 @@
-import ShelfNavigator from './components/ShelfNavigator';
+import ShelfNavigator from './containers/ShelfNavigator';
 
 export default ShelfNavigator;

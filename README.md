@@ -36,7 +36,8 @@
 
   ```
   $ npm run clean-db
-  $ npm run gen-mock
+  $ npm run import-seed
+  $ npm run seed-episode-binary
   ```
 
   Make sure everything works by visiting:

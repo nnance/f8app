@@ -35,7 +35,7 @@ exports[`ProfileNavigator renderScene correct component 5`] = `
 
 exports[`ProfileNavigator renderScene correct component 6`] = `
 <View>
-  <Connect(BookmarkScreen)
+  <Apollo(Apollo(BookmarkScreen))
     onBackPress={[Function]} />
 </View>
 `;

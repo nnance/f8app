@@ -1,13 +1,16 @@
+/* eslint import/first: off */
+jest.mock('react-native-fs', () => null);
+
 import React from 'react';
 import { shallow } from 'enzyme';
 import toJSON from 'enzyme-to-json';
 
 import { View } from 'react-native';
 
-import ClogiiNavigator from '../ClogiiNavigator';
+import { Component as ClogiiNavigator } from '../ClogiiNavigator';
 
 function getWrapper(props = {}) {
-  return shallow(<ClogiiNavigator {...props} />);
+  return shallow(<ClogiiNavigator {...props} navigate={jest.fn()} navigateBack={jest.fn()} />);
 }
 
 describe('ClogiiNavigator', () => {
@@ -38,21 +41,21 @@ describe('ClogiiNavigator', () => {
     expect(spy).toBeCalled();
   });
 
-  it('onOpenURL will map event to fromURL', () => {
+  it('onOpenURL will map event to redirectTo', () => {
     const dump = getWrapper();
     const spy = jest.fn();
-    dump.instance().fromURL = spy;
+    dump.instance().redirectTo = spy;
     dump.instance().onOpenURL({ url: 'x' });
     expect(spy).toBeCalledWith('x');
   });
 
-  it('fromURL will navigate to player on `clogii://player?id=123`', () => {
+  it('redirectTo will navigate to player on `clogii://player?id=123`', () => {
     const dump = getWrapper();
     const spy = jest.fn();
     dump.instance().navigator = {
       push: spy,
     };
-    dump.instance().fromURL('clogii://player?id=123');
+    dump.instance().redirectTo('clogii://player?id=123');
     expect(spy).toBeCalledWith({ page: 'player', id: '123' });
   });
 

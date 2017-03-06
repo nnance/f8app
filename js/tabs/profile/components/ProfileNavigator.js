@@ -1,6 +1,5 @@
 import React from 'react';
 import FixBugScrollViewNavigator from '../../../common/FixBugScrollViewNavigator';
-import { withTracking } from '../../../common/navigateTracking';
 
 import FollowerScreen from '../containers/FollowerScreen';
 import FollowingScreen from '../containers/FollowingScreen';
@@ -130,4 +129,4 @@ class ProfileNavigator extends React.Component {
   }
 }
 
-export default withTracking(ProfileNavigator);
+export default ProfileNavigator;
