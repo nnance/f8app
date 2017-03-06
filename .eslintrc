@@ -47,9 +47,18 @@
     "ReactClass": false,
     "Class": false
   },
-  
+   "plugins": [
+        "flow-vars",
+        "flowtype"
+    ],
   "rules": {
+     "comma-dangle": ["error", {
+       "functions": "never",
+       "arrays": "always",
+        "objects": "always"
+     }],
     "global-require": "off",
+    "no-multi-assign": "error",
     "react/prop-types": "off",
     "react/no-unused-prop-types": "off",
     "react/jsx-filename-extension": "off",
@@ -57,10 +66,13 @@
     "import/no-extraneous-dependencies": "off", // react-native can use @providesModule
     "import/no-unresolved": "off",
     "import/extensions": "off",
+    "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 2 }],
     "class-methods-use-this": "off",
     "no-underscore-dangle": "off",
     "react/no-multi-comp": "off",
     "react/require-default-props": "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "flow-vars/define-flow-type": 1,
+    "flow-vars/use-flow-type": 1
   }
 }
