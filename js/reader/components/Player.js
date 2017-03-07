@@ -51,6 +51,8 @@ const styles = StyleSheet.create({
 });
 
 const MAX_HEIGHT_INDICATOR = 50;
+const toMaxHeightIndicatorDuration = 200;
+const hideIndicatorDuration = 300;
 
 class Player extends React.Component {
   constructor(...args) {
@@ -78,8 +80,8 @@ class Player extends React.Component {
     this._panResponder = PanResponder.create({
       onStartShouldSetPanResponder: () => this.state.endedScrollView,
       onStartShouldSetPanResponderCapture: () => this.state.endedScrollView,
-      onMoveShouldSetPanResponder: () => true,
-      onMoveShouldSetPanResponderCapture: () => true,
+      onMoveShouldSetPanResponder: () => this.state.endedScrollView,
+      onMoveShouldSetPanResponderCapture: () => this.state.endedScrollView,
       onPanResponderMove: (evt, gestureState) => {
         this.setState({
           dyPanResponder: gestureState.dy,
@@ -90,11 +92,15 @@ class Player extends React.Component {
       onPanResponderRelease: () => {
         if (this.nextEpisodeRatio() >= 1) {
           this.onNextEpisode();
+          Animated.timing(this.state.nextEpisodeRatioAnimated, {
+            toValue: 1,
+            duration: toMaxHeightIndicatorDuration,
+          }).start();
         }
         else {
           Animated.timing(this.state.nextEpisodeRatioAnimated, {
             toValue: 0,
-            duration: 300,
+            duration: hideIndicatorDuration,
           }).start();
           this.setState({
             dyPanResponder: 0,
@@ -135,11 +141,11 @@ class Player extends React.Component {
   }
 
   onNextEpisode() {
-    if (this.props.episode.nextEpisode) {
+    setTimeout(() => {
       this.props.refetch({
         id: this.props.episode.nextEpisode.id,
       });
-    }
+    }, toMaxHeightIndicatorDuration + 100)
   }
 
   onProgress(ratio) {
@@ -158,9 +164,6 @@ class Player extends React.Component {
   nextEpisodeRatio() {
     const diffDy = -this.state.dyPanResponder / 3;
     let ratio = diffDy / MAX_HEIGHT_INDICATOR;
-    if (ratio > 1) {
-      ratio = 1;
-    }
     if (ratio < 0) {
       ratio = 0;
     }
@@ -199,6 +202,10 @@ class Player extends React.Component {
   }
 
   render() {
+    if (this.props.loading) {
+      return null;
+    }
+
     return (
       <View style={{ flex: 1 }}>
         <NavBarWithPinkButton
@@ -239,7 +246,7 @@ class Player extends React.Component {
                   ]
                 }}
               >
-                <Progress.Pie progress={this.nextEpisodeRatio()} size={30} />
+                <Progress.Pie progress={this.nextEpisodeRatio() > 1 ? 1 : this.nextEpisodeRatio()} size={30} />
               </Animated.View>
                : null
           }
