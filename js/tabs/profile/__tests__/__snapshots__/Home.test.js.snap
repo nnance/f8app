@@ -7,7 +7,7 @@ exports[`Home render 1`] = `
   }>
   <Image
     customSource={undefined}
-    source={1}
+    source={null}
     style={
       Array [
         Object {

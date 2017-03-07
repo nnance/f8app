@@ -1651,7 +1651,7 @@ exports[`ProfileCover render customSource 1`] = `
 
 exports[`ProfileCover render default 1`] = `
 <Image
-  source={1}
+  source={null}
   style={
     Array [
       Object {
@@ -1664,7 +1664,7 @@ exports[`ProfileCover render default 1`] = `
 
 exports[`ProfileCover render user cover with children 1`] = `
 <Image
-  source={1}
+  source={null}
   style={
     Array [
       Object {
@@ -1693,7 +1693,7 @@ exports[`ProfileCover render user cover with children 1`] = `
 exports[`ProfileHeader render 1`] = `
 <Image
   customSource={undefined}
-  source={1}
+  source={null}
   style={
     Array [
       Object {
