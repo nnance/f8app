@@ -1,3 +1,5 @@
+import { getCategory } from '../../../server/cloud/graphql/models/schemas/Types';
+
 const categoryImgs = {
   default: require('../../assets/common/clog-category/icon/G.png'),
   D: require('../../assets/common/clog-category/icon/D.png'),
@@ -37,8 +39,5 @@ export function getCategoryLogo(category) {
 }
 
 export function getCategoryFullName(category) {
-  if (categoryFullName[category] === undefined) {
-    return categoryFullName.default;
-  }
-  return categoryFullName[category];
+  return getCategory(category).name;
 }
