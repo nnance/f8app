@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
 const Coin = props => (<TouchableOpacity style={styles.jellyCountBoxContainer}>
   <View style={styles.jellyCountBox}>
     <Image
-      source={require('../img/jelly-shop/coin.png')}
+      source={require('../../../assets/jelly-shop/coin.png')}
       style={styles.coinIcon}
     />
     <View style={{ paddingHorizontal: 5 }}>
@@ -57,11 +57,11 @@ const Coin = props => (<TouchableOpacity style={styles.jellyCountBoxContainer}>
 </TouchableOpacity>);
 
 const covers = {
-  s1: require('../img/jelly-shop/s1.png'),
-  s2: require('../img/jelly-shop/s2.png'),
-  s3: require('../img/jelly-shop/s3.png'),
-  b1: require('../img/jelly-shop/b1.png'),
-  b2: require('../img/jelly-shop/b2.png'),
+  s1: require('../../../assets/jelly-shop/s1.png'),
+  s2: require('../../../assets/jelly-shop/s2.png'),
+  s3: require('../../../assets/jelly-shop/s3.png'),
+  b1: require('../../../assets/jelly-shop/b1.png'),
+  b2: require('../../../assets/jelly-shop/b2.png'),
 };
 
 const JellySeller = props => (<Image

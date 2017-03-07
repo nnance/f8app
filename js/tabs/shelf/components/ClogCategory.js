@@ -134,7 +134,7 @@ class ClogBanner extends React.Component {
           }}
         >
           <Image
-            source={require('../img/mock-clog-banner.png')}
+            source={require('../../../assets/shelf/mock-clog-banner.png')}
             style={{
               flex: 1,
               resizeMode: 'cover',
@@ -274,7 +274,7 @@ class ClogCategory extends React.Component {
         >
           <LinearGradient style={{ height: 520 + HEIGHT }} colors={[clogTheme.color, 'rgb(164, 58, 124)']}>
             <Image
-              source={require('../img/star-bg.png')}
+              source={require('../../../assets/shelf/star-bg.png')}
               style={{
                 flex: 1,
                 width: undefined,
@@ -349,7 +349,7 @@ class ClogCategory extends React.Component {
         <NavBar
           onBackPress={this.props.onBackPress}
           renderRightMenu={() => (
-            <TouchableOpacity><Image style={{ height: 20, resizeMode: 'contain' }} source={require('../img/white-search.png')} /></TouchableOpacity>
+            <TouchableOpacity><Image style={{ height: 20, resizeMode: 'contain' }} source={require('../../../assets/common/white-search.png')} /></TouchableOpacity>
           )}
           renderTitle={() => (
             <Text

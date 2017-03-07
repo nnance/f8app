@@ -87,7 +87,7 @@ class IndexScreen extends React.Component {
     return (
       <Image
         style={styles.container}
-        source={require('./img/bg.png')}
+        source={require('../assets/login/bg.png')}
       >
         <View style={{ flex: 7, alignItems: 'center', justifyContent: 'center' }}>
           <View style={{ flex: 4 }} />
@@ -95,7 +95,7 @@ class IndexScreen extends React.Component {
             <View style={{ flex: 1 }}>
               <Image
                 style={{ flex: 1, resizeMode: 'contain', width: undefined, height: undefined }}
-                source={require('./img/header.png')}
+                source={require('../assets/login/header.png')}
               />
             </View>
           </View>

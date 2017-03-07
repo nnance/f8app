@@ -18,7 +18,7 @@ import styles from './styles';
 
 const CloseMenuButton = ({ onPress }) => (
   <TouchableOpacity onPress={onPress}>
-    <Image source={require('../img/close.png')} style={{ width: 15, height: 15, resizeMode: 'contain' }} />
+    <Image source={require('../../../assets/shelf-menu/close.png')} style={{ width: 15, height: 15, resizeMode: 'contain' }} />
   </TouchableOpacity>
 );
 
@@ -84,13 +84,13 @@ class ShelfMenu extends React.Component {
             />
           </Topic>
           <Topic title="เกี่ยวกับ" style={{ paddingVertical: 5 }}>
-            <FadedMenuItem onPress={this.props.onAboutClogiiPress} title="เกี่ยวกับ Clogii" source={require('../img/about.png')} />
-            <FadedMenuItem onPress={this.props.onPolicyPress} title="ข้อกำหนดในการใช้ Clogii" source={require('../img/policy.png')} />
+            <FadedMenuItem onPress={this.props.onAboutClogiiPress} title="เกี่ยวกับ Clogii" source={require('../../../assets/shelf-menu/about.png')} />
+            <FadedMenuItem onPress={this.props.onPolicyPress} title="ข้อกำหนดในการใช้ Clogii" source={require('../../../assets/shelf-menu/policy.png')} />
           </Topic>
           <Topic title="ติดตาม" style={{ paddingVertical: 5 }}>
-            <FadedMenuItem onPress={this.props.onFacebookPress} title="Facebook" source={require('../img/fb.png')} />
-            <FadedMenuItem onPress={this.props.onLinePress} title="Line" source={require('../img/line.png')} />
-            <FadedMenuItem onPress={this.props.onInstagramPress} title="Instagram" source={require('../img/ig.png')} />
+            <FadedMenuItem onPress={this.props.onFacebookPress} title="Facebook" source={require('../../../assets/shelf-menu/fb.png')} />
+            <FadedMenuItem onPress={this.props.onLinePress} title="Line" source={require('../../../assets/shelf-menu/line.png')} />
+            <FadedMenuItem onPress={this.props.onInstagramPress} title="Instagram" source={require('../../../assets/shelf-menu/ig.png')} />
           </Topic>
         </ScrollView>
       </View>

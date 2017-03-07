@@ -127,7 +127,7 @@ class LoginScreen extends React.Component {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <TouchableOpacity onPress={this.goBack}>
-          <Image style={styles.backButton} source={require('../common/img/icon/backButton.png')} />
+          <Image style={styles.backButton} source={require('../assets/common/white-back-button.png')} />
         </TouchableOpacity>
       </View>
     );
@@ -145,7 +145,7 @@ class LoginScreen extends React.Component {
         onPress={() => this.props.skipLogin()}
       >
         <Image
-          source={require('./img/x.png')}
+          source={require('../assets/login/x.png')}
         />
       </TouchableOpacity>
     );

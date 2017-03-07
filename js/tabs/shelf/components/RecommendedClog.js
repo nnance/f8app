@@ -28,7 +28,7 @@ class RecommendedClog extends React.Component {
     const clog = this.props.clog || {};
     return (
       <View style={{ flex: 1 }}>
-        <Image source={require('../img/top-clog-bg.png')} style={{ flex: 1, flexDirection: 'row', resizeMode: 'stretch', width: undefined, height: undefined }}>
+        <Image source={require('../../../assets/shelf/top-clog-bg.png')} style={{ flex: 1, flexDirection: 'row', resizeMode: 'stretch', width: undefined, height: undefined }}>
           <View style={{ width: 130, justifyContent: 'center', alignItems: 'center', paddingLeft: 10 }}>
             <CircleImageWithCategory
               source={mapSource(clog.thumbnailImage)}

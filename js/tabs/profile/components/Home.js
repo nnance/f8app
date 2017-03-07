@@ -75,32 +75,32 @@ const styles = StyleSheet.create({
 const menuList = [
   {
     name: 'bookmark',
-    icon: require('../img/icons/bookmark.png'),
+    icon: require('../../../assets/profile-icon/bookmark.png'),
     title: 'Bookmark',
   },
   {
     name: 'myclog',
-    icon: require('../img/icons/myclog.png'),
+    icon: require('../../../assets/profile-icon/myclog.png'),
     title: 'Clog ของฉัน',
   },
   {
     name: 'myfan',
-    icon: require('../img/icons/myfan.png'),
+    icon: require('../../../assets/profile-icon/myfan.png'),
     title: 'แฟนคลับของฉัน',
   },
   {
     name: 'jellyShop',
-    icon: require('../img/icons/candy-shop.png'),
+    icon: require('../../../assets/profile-icon/candy-shop.png'),
     title: 'Jelly Shop',
   },
   {
     name: 'activity',
-    icon: require('../img/icons/activity.png'),
+    icon: require('../../../assets/profile-icon/activity.png'),
     title: 'กิจกรรม',
   },
   {
     name: 'logout',
-    icon: require('../img/icons/logout.png'),
+    icon: require('../../../assets/profile-icon/logout.png'),
     title: 'Logout',
   },
 ];
@@ -134,7 +134,7 @@ const CandyCorner = props => (
     }}
   >
     <Image
-      source={require('../img/icons/candy.png')}
+      source={require('../../../assets/profile-icon/candy.png')}
       style={{
         width: 15,
         height: 15,
@@ -207,7 +207,7 @@ class Home extends React.Component {
                   width: 20,
                   backgroundColor: 'transparent',
                 }}
-                source={require('../img/icons/edit-profile.png')}
+                source={require('../../../assets/profile-icon/edit-profile.png')}
               />
             </TouchableOpacity>
           </View>

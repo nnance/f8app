@@ -16,8 +16,8 @@ import NavBar from './NavBar';
 import { styles as commonStyles } from '../common';
 import { colors } from '../../../common/styles';
 
-const likeIcon = require('../img/icons/heart.png');
-const readIcon = require('../img/icons/read.png');
+const likeIcon = require('../../../assets/profile-icon/heart.png');
+const readIcon = require('../../../assets/profile-icon/read.png');
 
 const styles = StyleSheet.create({
   rowContainer: {

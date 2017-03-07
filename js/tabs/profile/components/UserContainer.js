@@ -16,8 +16,8 @@ import { styles as commonStyles } from '../common';
 
 /* eslint react/no-multi-comp: off */
 
-const addIcon = require('../img/icons/add.png');
-const blockIcon = require('../img/icons/block.png');
+const addIcon = require('../../../assets/profile-icon/add.png');
+const blockIcon = require('../../../assets/profile-icon/block.png');
 
 const styles = StyleSheet.create({
   detail: {
@@ -117,9 +117,9 @@ const FollowerDetail = props => (<View style={styles.followerDetail}>
 </View>);
 
 const crownIconLevel = {
-  1: require('../img/icons/crown-1.png'),
-  2: require('../img/icons/crown-2.png'),
-  3: require('../img/icons/crown-3.png'),
+  1: require('../../../assets/profile-icon/crown-1.png'),
+  2: require('../../../assets/profile-icon/crown-2.png'),
+  3: require('../../../assets/profile-icon/crown-3.png'),
 };
 
 const CandyPointDetail = props => (<View style={styles.candyPointDetail}>

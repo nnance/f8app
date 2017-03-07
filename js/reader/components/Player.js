@@ -88,14 +88,14 @@ class Player extends React.Component {
         {
           !this.props.episodeBookmark ?
             <TouchableOpacity onPress={this.onBookmarkPress}>
-              <Image style={styles.navButton} source={require('../img/bookmark-button.png')} />
+              <Image style={styles.navButton} source={require('../../assets/reader/bookmark-button.png')} />
             </TouchableOpacity> :
             <TouchableOpacity onPress={this.onRemoveBookmarkPress}>
-              <Image style={styles.navButton} source={require('../img/bookmarked-button.png')} />
+              <Image style={styles.navButton} source={require('../../assets/reader/bookmarked-button.png')} />
             </TouchableOpacity>
         }
         <TouchableOpacity>
-          <Image style={styles.navButton} source={require('../img/follow-button.png')} />
+          <Image style={styles.navButton} source={require('../../assets/reader/follow-button.png')} />
         </TouchableOpacity>
       </View>
     );

@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
 });
 
 export const OKButton = () => (<Image
-  source={require('../img/icons/ok.png')}
+  source={require('../../../assets/profile-icon/ok.png')}
   style={{
     height: 25,
     width: 25,
