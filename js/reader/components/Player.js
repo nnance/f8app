@@ -9,10 +9,11 @@ import {
   PanResponder,
   ActivityIndicator,
   Dimensions,
+  Animated,
 } from 'react-native';
 
 import gql from 'graphql-tag';
-import PercentageCircle from 'react-native-percentage-circle';
+import * as Progress from 'react-native-progress';
 
 import { NavBarWithPinkButton } from '../../common/NavBar';
 import { colors } from '../../common/styles';
@@ -49,7 +50,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const MAX_HEIGHT_INDICATOR = 70;
+const MAX_HEIGHT_INDICATOR = 50;
 
 class Player extends React.Component {
   constructor(...args) {
@@ -58,7 +59,13 @@ class Player extends React.Component {
       loading: true,
       dyPanResponder: 0,
       endedScrollView: false,
+      nextEpisodeRatioAnimated: new Animated.Value(0.0),
+      nextEpisodeRatioAnimatedValue: 0.0,
     };
+
+    this.state.nextEpisodeRatioAnimated.addListener(({value}) => this.setState({
+      nextEpisodeRatioAnimatedValue: value,
+    }));
 
     this.onSharePress = this.onSharePress.bind(this);
     this.onProgress = this.onProgress.bind(this);
@@ -69,33 +76,47 @@ class Player extends React.Component {
     this.renderTitle = this.renderTitle.bind(this);
 
     this._panResponder = PanResponder.create({
-      onStartShouldSetPanResponder: () => true,
-      onStartShouldSetPanResponderCapture: () => true,
+      onStartShouldSetPanResponder: () => this.state.endedScrollView,
+      onStartShouldSetPanResponderCapture: () => this.state.endedScrollView,
       onMoveShouldSetPanResponder: () => true,
       onMoveShouldSetPanResponderCapture: () => true,
       onPanResponderMove: (evt, gestureState) => {
         this.setState({
           dyPanResponder: gestureState.dy,
         });
+
+        this.state.nextEpisodeRatioAnimated.setValue(this.nextEpisodeRatio());
       },
       onPanResponderRelease: () => {
         if (this.nextEpisodeRatio() >= 1) {
           this.onNextEpisode();
         }
-        this.setState({
-          dyPanResponder: 0,
-        });
+        else {
+          Animated.timing(this.state.nextEpisodeRatioAnimated, {
+            toValue: 0,
+            duration: 300,
+          }).start();
+          this.setState({
+            dyPanResponder: 0,
+          });
+        }
       },
     });
+  }
+  
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.loading === true && nextProps.loading === false) {
+      this.state.nextEpisodeRatioAnimated.setValue(0);
+      this.setState({
+        dyPanResponder: 0,
+      });
+    }
   }
 
   componentDidMount() {
     // MOCK PROGESS
     this.onProgress(1);
-  }
-
-  onNextEpisode() {
-    console.log('onNextEpisode');
   }
 
   onBookmarkPress() {
@@ -178,10 +199,6 @@ class Player extends React.Component {
   }
 
   render() {
-    if (this.props.loading) {
-      return null;
-    }
-
     return (
       <View style={{ flex: 1 }}>
         <NavBarWithPinkButton
@@ -207,21 +224,23 @@ class Player extends React.Component {
             onProgress={this.onProgress}
           />
           {
-            this.state.endedScrollView && this.nextEpisodeRatio() > 0 ?
-              <View
+           this.state.nextEpisodeRatioAnimatedValue > 0 ?
+              <Animated.View
                 style={{
                   position: 'absolute',
-                  bottom: (this.nextEpisodeRatio() * MAX_HEIGHT_INDICATOR) - 20,
+                  bottom: 5,
+                  opacity: this.state.nextEpisodeRatioAnimated.interpolate({
+                    inputRange: [0, 0.3, 1],
+                    outputRange: [0, 1, 1],
+                  }),
                   left: (screenWidth / 2) - 15,
+                  transform: [
+                    { translateY: Animated.multiply(this.state.nextEpisodeRatioAnimated, -MAX_HEIGHT_INDICATOR) },
+                  ]
                 }}
               >
-                <PercentageCircle
-                  radius={20}
-                  percent={Math.floor(this.nextEpisodeRatio() * 100)}
-                  color="#3498db"
-                >
-                </PercentageCircle>
-              </View>
+                <Progress.Pie progress={this.nextEpisodeRatio()} size={30} />
+              </Animated.View>
                : null
           }
         </View>
