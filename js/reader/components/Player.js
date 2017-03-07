@@ -78,10 +78,10 @@ class Player extends React.Component {
     this.renderTitle = this.renderTitle.bind(this);
 
     this._panResponder = PanResponder.create({
-      onStartShouldSetPanResponder: () => this.state.endedScrollView,
-      onStartShouldSetPanResponderCapture: () => this.state.endedScrollView,
-      onMoveShouldSetPanResponder: () => this.state.endedScrollView,
-      onMoveShouldSetPanResponderCapture: () => this.state.endedScrollView,
+      onStartShouldSetPanResponder: () => this.state.endedScrollView && this.props.episode.nextEpisode,
+      onStartShouldSetPanResponderCapture: () => this.state.endedScrollView && this.props.episode.nextEpisode,
+      onMoveShouldSetPanResponder: () => this.state.endedScrollView && this.props.episode.nextEpisode,
+      onMoveShouldSetPanResponderCapture: () => this.state.endedScrollView && this.props.episode.nextEpisode,
       onPanResponderMove: (evt, gestureState) => {
         this.setState({
           dyPanResponder: gestureState.dy,
@@ -113,6 +113,7 @@ class Player extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.loading === true && nextProps.loading === false) {
+      this.onProgress({timeline: 0});
       this.state.nextEpisodeRatioAnimated.setValue(0);
       this.setState({
         dyPanResponder: 0,
@@ -122,7 +123,7 @@ class Player extends React.Component {
 
   componentDidMount() {
     // MOCK PROGESS
-    this.onProgress(1);
+    // this.onProgress(0);
   }
 
   onBookmarkPress() {
@@ -148,7 +149,8 @@ class Player extends React.Component {
     }, toMaxHeightIndicatorDuration + 100)
   }
 
-  onProgress(ratio) {
+  onProgress({timeline}) {
+    const ratio = timeline;
     if (ratio >= 1 && !this.state.endedScrollView) {
       this.setState({
         endedScrollView: true,
@@ -205,6 +207,8 @@ class Player extends React.Component {
     if (this.props.loading) {
       return null;
     }
+
+    // source={{ uri: `${serverURL}/clog/${this.props.episode.id}` }}
 
     return (
       <View style={{ flex: 1 }}>
