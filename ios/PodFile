@@ -2,6 +2,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'Clogii' do
   pod 'React', :subspecs => [
+    'ART',
     'Core',
     'RCTActionSheet',
     'RCTImage',

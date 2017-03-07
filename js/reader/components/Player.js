@@ -6,9 +6,15 @@ import {
   TouchableOpacity,
   StyleSheet,
   Share,
+  PanResponder,
+  ActivityIndicator,
+  Dimensions,
+  Animated,
 } from 'react-native';
 
 import gql from 'graphql-tag';
+import * as Progress from 'react-native-progress';
+
 import { NavBarWithPinkButton } from '../../common/NavBar';
 import { colors } from '../../common/styles';
 import { toHumanNumber } from '../../common/utils';
@@ -22,6 +28,7 @@ import { serverURL } from '../../env';
 // note2: react-native-fs require manual link `react-native link react-native-fs`
 import ClogPlayer from '../../player/components/ClogPlayer';
 
+const screenWidth = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
   navButton: {
@@ -43,19 +50,80 @@ const styles = StyleSheet.create({
   },
 });
 
+const MAX_HEIGHT_INDICATOR = 50;
+const toMaxHeightIndicatorDuration = 200;
+const hideIndicatorDuration = 300;
+
 class Player extends React.Component {
   constructor(...args) {
     super(...args);
     this.state = {
       loading: true,
+      dyPanResponder: 0,
+      endedScrollView: false,
+      nextEpisodeRatioAnimated: new Animated.Value(0.0),
+      nextEpisodeRatioAnimatedValue: 0.0,
     };
 
+    this.state.nextEpisodeRatioAnimated.addListener(({value}) => this.setState({
+      nextEpisodeRatioAnimatedValue: value,
+    }));
+
     this.onSharePress = this.onSharePress.bind(this);
+    this.onProgress = this.onProgress.bind(this);
     this.onBookmarkPress = this.onBookmarkPress.bind(this);
     this.onNextEpisode = this.onNextEpisode.bind(this);
     this.onRemoveBookmarkPress = this.onRemoveBookmarkPress.bind(this);
     this.renderNavBarButton = this.renderNavBarButton.bind(this);
     this.renderTitle = this.renderTitle.bind(this);
+
+    this._panResponder = PanResponder.create({
+      onStartShouldSetPanResponder: () => this.state.endedScrollView && this.props.episode.nextEpisode,
+      onStartShouldSetPanResponderCapture: () => this.state.endedScrollView && this.props.episode.nextEpisode,
+      onMoveShouldSetPanResponder: () => this.state.endedScrollView && this.props.episode.nextEpisode,
+      onMoveShouldSetPanResponderCapture: () => this.state.endedScrollView && this.props.episode.nextEpisode,
+      onPanResponderMove: (evt, gestureState) => {
+        this.setState({
+          dyPanResponder: gestureState.dy,
+        });
+
+        this.state.nextEpisodeRatioAnimated.setValue(this.nextEpisodeRatio());
+      },
+      onPanResponderRelease: () => {
+        if (this.nextEpisodeRatio() >= 1) {
+          this.onNextEpisode();
+          Animated.timing(this.state.nextEpisodeRatioAnimated, {
+            toValue: 1,
+            duration: toMaxHeightIndicatorDuration,
+          }).start();
+        }
+        else {
+          Animated.timing(this.state.nextEpisodeRatioAnimated, {
+            toValue: 0,
+            duration: hideIndicatorDuration,
+          }).start();
+          this.setState({
+            dyPanResponder: 0,
+          });
+        }
+      },
+    });
+  }
+  
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.loading === true && nextProps.loading === false) {
+      this.onProgress({timeline: 0});
+      this.state.nextEpisodeRatioAnimated.setValue(0);
+      this.setState({
+        dyPanResponder: 0,
+      });
+    }
+  }
+
+  componentDidMount() {
+    // MOCK PROGESS
+    // this.onProgress(0);
   }
 
   onBookmarkPress() {
@@ -74,11 +142,34 @@ class Player extends React.Component {
   }
 
   onNextEpisode() {
-    if (this.props.episode.nextEpisode) {
+    setTimeout(() => {
       this.props.refetch({
         id: this.props.episode.nextEpisode.id,
       });
+    }, toMaxHeightIndicatorDuration + 100)
+  }
+
+  onProgress({timeline}) {
+    const ratio = timeline;
+    if (ratio >= 1 && !this.state.endedScrollView) {
+      this.setState({
+        endedScrollView: true,
+      });
     }
+    if (ratio < 1 && this.state.endedScrollView) {
+      this.setState({
+        endedScrollView: false,
+      });
+    }
+  }
+
+  nextEpisodeRatio() {
+    const diffDy = -this.state.dyPanResponder / 3;
+    let ratio = diffDy / MAX_HEIGHT_INDICATOR;
+    if (ratio < 0) {
+      ratio = 0;
+    }
+    return ratio;
   }
 
   renderNavBarButton() {
@@ -117,6 +208,8 @@ class Player extends React.Component {
       return null;
     }
 
+    // source={{ uri: `${serverURL}/clog/${this.props.episode.id}` }}
+
     return (
       <View style={{ flex: 1 }}>
         <NavBarWithPinkButton
@@ -132,14 +225,35 @@ class Player extends React.Component {
             paddingRight: 10,
           }}
         />
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1 }} {...this._panResponder.panHandlers}>
           <ModalSpinner visible={this.state.loading} />
           <ClogPlayer
             source={{ uri: `${serverURL}/clog/${this.props.episode.id}` }}
             style={{ flex: 1 }}
             onMessage={() => console.log('')}
             onLoad={() => this.setState({ loading: false })}
+            onProgress={this.onProgress}
           />
+          {
+           this.state.nextEpisodeRatioAnimatedValue > 0 ?
+              <Animated.View
+                style={{
+                  position: 'absolute',
+                  bottom: 5,
+                  opacity: this.state.nextEpisodeRatioAnimated.interpolate({
+                    inputRange: [0, 0.3, 1],
+                    outputRange: [0, 1, 1],
+                  }),
+                  left: (screenWidth / 2) - 15,
+                  transform: [
+                    { translateY: Animated.multiply(this.state.nextEpisodeRatioAnimated, -MAX_HEIGHT_INDICATOR) },
+                  ]
+                }}
+              >
+                <Progress.Pie progress={this.nextEpisodeRatio() > 1 ? 1 : this.nextEpisodeRatio()} size={30} />
+              </Animated.View>
+               : null
+          }
         </View>
         <BookAndPlayerTabBar
           onSharePress={this.onSharePress}

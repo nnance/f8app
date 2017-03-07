@@ -30,6 +30,8 @@ PODS:
   - react-native-fbsdk/Share (0.4.0):
     - FBSDKShareKit
     - React
+  - React/ART (0.38.1):
+    - React/Core
   - React/Core (0.38.1)
   - React/RCTActionSheet (0.38.1):
     - React/Core
@@ -54,6 +56,7 @@ DEPENDENCIES:
   - react-native-fbsdk/Core (from `../node_modules/react-native-fbsdk/iOS`)
   - react-native-fbsdk/Login (from `../node_modules/react-native-fbsdk/iOS`)
   - react-native-fbsdk/Share (from `../node_modules/react-native-fbsdk/iOS`)
+  - React/ART (from `../node_modules/react-native`)
   - React/Core (from `../node_modules/react-native`)
   - React/RCTActionSheet (from `../node_modules/react-native`)
   - React/RCTImage (from `../node_modules/react-native`)
@@ -81,6 +84,6 @@ SPEC CHECKSUMS:
   React: 2c6b27dcaea89b3d3398df8b598330fd18abbe46
   react-native-fbsdk: 36286e05caf242c82bf91c7dd8c1694fd5040212
 
-PODFILE CHECKSUM: 2d926c5aa4187e4429ada6470f0ae03737697bf1
+PODFILE CHECKSUM: d768d1fa2a1f4212ac58b500a93cfef892eebaf1
 
 COCOAPODS: 1.2.0.beta.3
