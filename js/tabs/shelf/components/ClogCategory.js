@@ -349,7 +349,7 @@ class ClogCategory extends React.Component {
         <NavBar
           onBackPress={this.props.onBackPress}
           renderRightMenu={() => (
-            <TouchableOpacity><Image style={{ height: 20, resizeMode: 'contain' }} source={require('../../../assets/white-search.png')} /></TouchableOpacity>
+            <TouchableOpacity><Image style={{ height: 20, resizeMode: 'contain' }} source={require('../../../assets/common/white-search.png')} /></TouchableOpacity>
           )}
           renderTitle={() => (
             <Text

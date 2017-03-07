@@ -254,7 +254,7 @@ class Book extends React.Component {
       <View style={{ flex: 1, backgroundColor: 'white' }}>
         <Image source={mapSource(clog.coverImage)} style={styles.cover}>
           <TouchableOpacity style={styles.backButtonContainer} onPress={this.props.onBackPress}>
-            <Image source={require('../../assets/common/icon/backButton.png')} style={commonStyles.navBarIcon} />
+            <Image source={require('../../assets/common/white-back-button.png')} style={commonStyles.navBarIcon} />
           </TouchableOpacity>
         </Image>
         <View

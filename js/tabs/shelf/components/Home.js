@@ -68,7 +68,7 @@ class Home extends React.Component {
             <TouchableOpacity onPress={this.props.onOpenShelfMenu}><Image style={{ height: 20, resizeMode: 'contain' }} source={require('../../../assets/shelf/menu.png')} /></TouchableOpacity>
           )}
           renderRightMenu={() => (
-            <TouchableOpacity><Image style={{ height: 20, resizeMode: 'contain' }} source={require('../../../assets/shelf/search.png')} /></TouchableOpacity>
+            <TouchableOpacity><Image style={{ height: 20, resizeMode: 'contain' }} source={require('../../../assets/common/pink-search.png')} /></TouchableOpacity>
           )}
           renderTitle={() => (
             <Image style={{ width: 80, height: 30, resizeMode: 'contain' }} source={require('../../../assets/shelf/title.png')} />

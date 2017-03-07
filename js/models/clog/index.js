@@ -1,17 +1,17 @@
 const categoryImgs = {
-  default: require('./img/category/icon/G.png'),
-  D: require('./img/category/icon/D.png'),
-  G: require('./img/category/icon/G.png'),
-  M: require('./img/category/icon/M.png'),
-  N: require('./img/category/icon/N.png'),
+  default: require('../../assets/common/clog-category/icon/G.png'),
+  D: require('../../assets/common/clog-category/icon/D.png'),
+  G: require('../../assets/common/clog-category/icon/G.png'),
+  M: require('../../assets/common/clog-category/icon/M.png'),
+  N: require('../../assets/common/clog-category/icon/N.png'),
 };
 
 const categoryLogo = {
-  default: require('./img/category/logo/diary.png'),
-  D: require('./img/category/logo/diary.png'),
-  G: require('./img/category/logo/gag.png'),
-  M: require('./img/category/logo/myth.png'),
-  N: require('./img/category/logo/novel.png'),
+  default: require('../../assets/common/clog-category/logo/diary.png'),
+  D: require('../../assets/common/clog-category/logo/diary.png'),
+  G: require('../../assets/common/clog-category/logo/gag.png'),
+  M: require('../../assets/common/clog-category/logo/myth.png'),
+  N: require('../../assets/common/clog-category/logo/novel.png'),
 };
 
 const categoryFullName = {

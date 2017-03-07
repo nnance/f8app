@@ -157,7 +157,7 @@ class EditorListView extends React.Component {
         containerStyle={styles.navBar}
         titleTextStyle={styles.titleText}
         renderRightMenu={() => (
-          <TouchableOpacity><Image style={{ height: 20, resizeMode: 'contain' }} source={require('../../../assets/white-search.png')} /></TouchableOpacity>
+          <TouchableOpacity><Image style={{ height: 20, resizeMode: 'contain' }} source={require('../../../assets/common/white-search.png')} /></TouchableOpacity>
         )}
       />
       <FixBugPureListView
