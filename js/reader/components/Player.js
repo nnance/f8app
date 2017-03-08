@@ -113,7 +113,7 @@ class Player extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.loading === true && nextProps.loading === false) {
-      this.onProgress({timeline: 0});
+      this.onProgress(0);
       this.state.nextEpisodeRatioAnimated.setValue(0);
       this.setState({
         dyPanResponder: 0,
@@ -149,8 +149,7 @@ class Player extends React.Component {
     }, toMaxHeightIndicatorDuration + 100)
   }
 
-  onProgress({timeline}) {
-    const ratio = timeline;
+  onProgress(ratio) {
     if (ratio >= 1 && !this.state.endedScrollView) {
       this.setState({
         endedScrollView: true,
