@@ -33,7 +33,7 @@ class ClogiiNavigator extends React.Component {
       console.error('initial url error: ', error);
     });
     Linking.addEventListener('url', this.onOpenURL);
-    this.goToPlayer("912142336485843652482056");
+    // this.goToPlayer("912142336485843652482056");
   }
 
   componentWillUnmount() {

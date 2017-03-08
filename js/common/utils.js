@@ -1,3 +1,5 @@
+import isUrl from 'is-url';
+
 export const toHumanNumber = (fNumber) => {
   let number = fNumber;
   let tail = '';
@@ -26,7 +28,7 @@ export const toHumanNumber = (fNumber) => {
 export const random = to => Math.floor(Math.random() * to);
 
 export function mapSource(source) {
-  if (typeof source === 'string') {
+  if (typeof source === 'string' && isUrl(source)) {
     return {
       uri: source,
     };
