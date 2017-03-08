@@ -294,7 +294,7 @@ Book.fragments = {
       author {
         name
       }
-      episodes {
+      episodes(sort: NO_DESC) {
         id
         no
         thumbnailImage

@@ -21,7 +21,7 @@ export const mapQueryToProps = ({ data }) => {
   return {
     clog: {
       ...(clog || {}),
-      episodes: loading || error ? [] : _.sortBy(clog.episodes, ep => -ep.no),
+      episodes: loading || error ? [] : clog.episodes,
     },
     loading,
   };
