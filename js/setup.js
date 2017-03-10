@@ -36,13 +36,13 @@ const apollo = require('./store/apollo');
 const configureStore = require('./store/configureStore');
 const env = require('./env');
 
-const { serverURL } = env;
+const { parse } = env;
 
 function setup(): React.Component {
   console.disableYellowBox = true;
   console.log(env);
   Parse.initialize(env.parse.appID, env.parse.javascriptKey);
-  Parse.serverURL = `${serverURL}/parse`;
+  Parse.serverURL = `${parse.url}`;
 
   FacebookSDK.init();
   Parse.FacebookUtils.init();

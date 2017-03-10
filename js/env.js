@@ -35,6 +35,7 @@ module.exports = {
   testMenuEnabled: true,
   serverURL: config.URL,
   parse: {
+    url: config.PARSE_URL,
     appID: config.APP_ID,
     javascriptKey: config.JAVASCRIPT_KEY,
   },
