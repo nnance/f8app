@@ -1,8 +1,10 @@
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
+import { createReducerOnReply } from 'graphql-comment/src/react-native';
 
 import { filterClogId, filterEpisodeId, withAddEpisodeBookmark, withRemoveBookmarks, updateMeBookmarksReduer } from '../../models/bookmark';
 import Player from '../components/Player';
+
 
 export const query = gql`
   query PlayerQuery($id: MongoID!){
@@ -41,7 +43,18 @@ export const mapPropsToOptions = ({ id }) => ({
   variables: {
     id,
   },
-  reducer: updateMeBookmarksReduer,
+  reducer: (previousResult, action) => {
+    const reducerReply = createReducerOnReply(id, (previousResult, reply) => {
+      return {
+        ...previousResult,
+        episode: {
+          ...previousResult.episode,
+          commentCount: previousResult.episode.commentCount + 1,
+        },
+      };
+    });
+    return reducerReply(updateMeBookmarksReduer(previousResult, action), action);
+  },
 });
 
 const withData = graphql(query, {

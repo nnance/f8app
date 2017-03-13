@@ -1,6 +1,7 @@
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 import _ from 'lodash';
+import { createReducerOnReply } from 'graphql-comment/src/react-native';
 
 import Book from '../components/Book';
 
@@ -31,6 +32,15 @@ export const mapPropsToOptions = ({ id }) => ({
   variables: {
     id,
   },
+  reducer: createReducerOnReply(id, (previousResult, reply) => {
+    return {
+      ...previousResult,
+      clog: {
+        ...previousResult.clog,
+        commentCount: previousResult.clog.commentCount + 1,
+      },
+    };
+  }),
 });
 
 export default graphql(query, {
