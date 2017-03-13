@@ -30,6 +30,7 @@ import ParseDashboard from 'parse-dashboard';
 import { graphqlExpress, graphiqlExpress } from 'graphql-server-express';
 import graphqlHTTP from 'express-graphql';
 import bodyParser from 'body-parser';
+import { models } from './cloud/graphql/models';
 
 import appLink from './app-link';
 import clogHandler from './clogHandler';
@@ -117,10 +118,16 @@ if (IS_DEVELOPMENT) {
   );
 }
 
+function getMe() {
+  return models.User.findOne().skip(0);
+}
+
 server.use('/graphql', bodyParser.json(), graphqlExpress(request => ({
   schema: getSchema(false),
   context: {
     request,
+    getMyRef: () => getMe().then(user => user._id.toString()),
+    getMe,
   },
 })));
 
@@ -135,6 +142,8 @@ server.use('/ofc-graphql', graphqlHTTP(request => ({
   graphiql: IS_DEVELOPMENT,
   context: {
     request,
+    getMyRef: () => getMe().then(user => user._id.toString()),
+    getMe,
   },
 })));
 
