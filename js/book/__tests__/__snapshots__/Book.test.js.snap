@@ -67,6 +67,16 @@ exports[`Book render 1`] = `
         Array [
           Object {
             "__typename": "Episode",
+            "createdAt": "1976-01-14T10:25:55.979Z",
+            "id": "58b95c905923032426ceb6ce",
+            "likeCount": 100,
+            "no": 99,
+            "thumbnailImage": "http://localhost:8080/static/preview/g4802.png",
+            "viewCount": 0,
+            Symbol(id): "Episode58b95c905923032426ceb6ce",
+          },
+          Object {
+            "__typename": "Episode",
             "createdAt": "2013-11-09T11:11:51.395Z",
             "id": "513552786421173261217113",
             "likeCount": 100,
@@ -189,7 +199,7 @@ exports[`Book render 1`] = `
       }
       dataSource={
         ListViewDataSource {
-          "items": 12,
+          "items": 13,
         }
       }
       initialListSize={1}
@@ -436,7 +446,7 @@ exports[`Book render 1`] = `
                 size={50}
                 source={
                   Object {
-                    "uri": "http://localhost:8080/static/preview/g3376.png",
+                    "uri": "http://localhost:8080/static/preview/g4802.png",
                   }
                 }
                 style={
@@ -504,7 +514,7 @@ exports[`Book render 1`] = `
                       "fontWeight": "bold",
                     }
                   }>
-                  12
+                  99
                 </Text>
               </View>
               <View
@@ -520,7 +530,7 @@ exports[`Book render 1`] = `
                       "paddingLeft": 5,
                     }
                   }>
-                  November 9
+                  January 14
                 </Text>
               </View>
             </View>
@@ -562,7 +572,7 @@ exports[`Book render 1`] = `
                     }
                   }>
                   ดู 
-                  580
+                  0
                    ครั้ง
                 </Text>
               </View>

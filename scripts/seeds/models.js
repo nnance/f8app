@@ -4,7 +4,7 @@ export const modelMapping = {
   author: models.Editor,
   clog: models.Clog,
   episode: models.Episode,
-  feed: models.FeedClog,
+  feed: models.Feed,
   tag: models.Tag,
   user: models.User,
   'clog-follower': models.ClogFollower,

@@ -12,6 +12,7 @@ exports[`ClogiiNavigator render 1`] = `
 exports[`ClogiiNavigator renderScene book 1`] = `
 <View>
   <Apollo(Book)
+    goToComment={[Function]}
     goToPlayer={[Function]}
     id={3}
     onBackPress={[Function]} />
@@ -30,6 +31,7 @@ exports[`ClogiiNavigator renderScene main-tab 1`] = `
 exports[`ClogiiNavigator renderScene player 1`] = `
 <View>
   <Apollo(Apollo(Apollo(Player)))
+    goToComment={[Function]}
     id={1}
     onBackPress={[Function]} />
 </View>
