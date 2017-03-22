@@ -37,7 +37,7 @@ export const updateMeBookmarksReduer = function (previousResult, action) {
       ...previousResult,
       me: {
         ...previousResult.me,
-        bookmarks: [...previousResult.me.bookmarks, addEpisodeBookmark.addedBookmark],
+        bookmarks: !previousResult.me.bookmarks.find(bookmark => bookmark.id === addEpisodeBookmark.addedBookmark.id) ? [addEpisodeBookmark.addedBookmark, ...previousResult.me.bookmarks] : previousResult.me.bookmarks,
       },
     };
   }

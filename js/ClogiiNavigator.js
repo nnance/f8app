@@ -3,6 +3,8 @@ import {
   Linking,
 } from 'react-native';
 import { parse } from 'query-string';
+import { createCommentContainer } from 'graphql-comment/src/react-native';
+import gql from 'graphql-tag';
 
 import FixBugScrollViewNavigator from './common/FixBugScrollViewNavigator';
 import { withTracking } from './common/navigateTracking';
@@ -10,7 +12,26 @@ import { withTracking } from './common/navigateTracking';
 import ClogiiTabView from './tabs/ClogiiTabView';
 import Reader from './reader';
 import Book from './book';
-import Comment from './comment';
+const Comment = createCommentContainer({
+  userOnCommentFragment: gql`
+    fragment UserOnComment on Comment {
+      author {
+        id
+        name
+        profilePicture
+      }
+    }
+  `,
+  getAuthorOnComment: comment => comment.author ? comment.author : {},
+  optimisticUserResponse: ({ ownProps }) => ({
+    author: {
+      __typename: 'User',
+      id: 'unknow',
+      name: 'unknow',
+      profilePicture: null,
+    },
+  }),
+});
 
 class ClogiiNavigator extends React.Component {
   constructor(...args) {
@@ -19,6 +40,7 @@ class ClogiiNavigator extends React.Component {
     this.redirectTo = this.redirectTo.bind(this);
     this.parseURL = this.parseURL.bind(this);
     this.goToPlayer = this.goToPlayer.bind(this);
+    this.goToComment = this.goToComment.bind(this);
     this.goToBook = this.goToBook.bind(this);
     this.goBack = this.goBack.bind(this);
     this.renderScene = this.renderScene.bind(this);
@@ -33,7 +55,7 @@ class ClogiiNavigator extends React.Component {
       console.error('initial url error: ', error);
     });
     Linking.addEventListener('url', this.onOpenURL);
-    // this.goToPlayer("912142336485843652482056");
+    // this.goToPlayer("312523187685666925511432");
   }
 
   componentWillUnmount() {
@@ -82,6 +104,11 @@ class ClogiiNavigator extends React.Component {
     this.props.navigate(`book?id=${id}`);
   }
 
+  goToComment(id) {
+    this.navigator.push({ page: 'comment', id });
+    this.props.navigate(`comment?id=${id}`);
+  }
+
   goBack() {
     this.navigator.pop();
     this.props.navigateBack();
@@ -96,12 +123,19 @@ class ClogiiNavigator extends React.Component {
       />);
     }
     if (route.page === 'player') {
-      return <Reader onBackPress={this.goBack} id={route.id} />;
+      return (
+        <Reader
+          onBackPress={this.goBack}
+          goToComment={this.goToComment}
+          id={route.id}
+        />
+      );
     }
     if (route.page === 'book') {
       return (<Book
         onBackPress={this.goBack}
         goToPlayer={this.goToPlayer}
+        goToComment={this.goToComment}
         id={route.id}
       />);
     }
@@ -109,7 +143,7 @@ class ClogiiNavigator extends React.Component {
       return (
         <Comment
           onBackPress={this.goBack}
-          id={route.id}
+          discussionRef={route.id}
         />
       );
     }

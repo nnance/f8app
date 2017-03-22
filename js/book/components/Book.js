@@ -228,6 +228,7 @@ class Book extends React.Component {
 
     this.renderEpisode = this.renderEpisode.bind(this);
     this.onSharePress = this.onSharePress.bind(this);
+    this.onCommentPress = this.onCommentPress.bind(this);
   }
 
   onSharePress() {
@@ -235,6 +236,12 @@ class Book extends React.Component {
       title: `${this.props.clog.title}`,
       message: 'http://139.59.253.62/mock-deep-link/book.html',
     });
+  }
+
+  onCommentPress() {
+    if (this.props.clog) {
+      this.props.goToComment(this.props.clog.id);
+    }
   }
 
   renderEpisode(data) {
@@ -274,6 +281,7 @@ class Book extends React.Component {
         </View>
         <BookAndPlayerTabBar
           onSharePress={this.onSharePress}
+          onCommentPress={this.onCommentPress}
           likeCount={clog.likeCount}
           commentCount={clog.commentCount}
         />

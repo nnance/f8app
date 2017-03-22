@@ -70,6 +70,7 @@ class Player extends React.Component {
     }));
 
     this.onSharePress = this.onSharePress.bind(this);
+    this.onCommentPress = this.onCommentPress.bind(this);
     this.onProgress = this.onProgress.bind(this);
     this.onBookmarkPress = this.onBookmarkPress.bind(this);
     this.onNextEpisode = this.onNextEpisode.bind(this);
@@ -160,6 +161,10 @@ class Player extends React.Component {
         endedScrollView: false,
       });
     }
+  }
+
+  onCommentPress() {
+    this.props.goToComment(this.props.episode.id);
   }
 
   nextEpisodeRatio() {
@@ -256,6 +261,7 @@ class Player extends React.Component {
         </View>
         <BookAndPlayerTabBar
           onSharePress={this.onSharePress}
+          onCommentPress={this.onCommentPress}
           likeCount={this.props.episode.likeCount}
           commentCount={this.props.episode.commentCount}
         />
