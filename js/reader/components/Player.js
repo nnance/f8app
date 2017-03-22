@@ -283,6 +283,7 @@ Player.fragments = {
       nextEpisode {
         id
       }
+      ...AddedBookmarkEpisode
     }
   `,
   bookmark: gql`

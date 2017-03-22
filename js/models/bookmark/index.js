@@ -7,6 +7,33 @@ export const filterClogId =
 export const filterEpisodeId =
   (bookmarks, episodeId) => bookmarks.filter(bookmark => bookmark.episodeId === episodeId);
 
+export const fragments = {
+  AddedBookmarkEpisode: gql`
+    fragment AddedBookmarkEpisode on Episode {
+      id
+      clogId
+      no
+      title
+      likeCount
+      commentCount
+      viewCount
+      nextEpisode {
+        id
+      }
+      id
+      no
+      title
+      thumbnailImage
+      clog {
+        id
+        title
+        category
+        thumbnailImage
+      }
+    }
+  `,
+};
+
 export const updateMeBookmarksReduer = function (previousResult, action) {
   if (action.type === 'APOLLO_MUTATION_RESULT' && action.operationName === 'removeBookmarks') {
     if (!previousResult.me || !action.result
@@ -86,9 +113,15 @@ export const withAddEpisodeBookmark = graphql(
           episodeId
           clog {
             id
+            title
+            category
+            thumbnailImage
           }
           episode {
             id
+            no
+            title
+            thumbnailImage
           }
         }
       }
@@ -113,10 +146,16 @@ export const withAddEpisodeBookmark = graphql(
               episode: {
                 __typename: 'Episode',
                 id: episode.id,
+                title: episode.title,
+                no: episode.no,
+                thumbnailImage: episode.thumbnailImage,
               },
               clog: {
                 __typename: 'Clog',
                 id: episode.clogId,
+                title: episode.clog.title,
+                category: episode.clog.category,
+                thumbnailImage: episode.clog.thumbnailImage,
               },
             },
           },

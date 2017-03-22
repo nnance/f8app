@@ -2,9 +2,8 @@ import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 import { createReducerOnReply, createReducerOnDelete } from 'graphql-comment/src/react-native';
 
-import { filterClogId, filterEpisodeId, withAddEpisodeBookmark, withRemoveBookmarks, updateMeBookmarksReduer } from '../../models/bookmark';
+import { filterClogId, filterEpisodeId, withAddEpisodeBookmark, withRemoveBookmarks, updateMeBookmarksReduer, fragments } from '../../models/bookmark';
 import Player from '../components/Player';
-
 
 export const query = gql`
   query PlayerQuery($id: MongoID!){
@@ -20,6 +19,7 @@ export const query = gql`
   }
   ${Player.fragments.episode}
   ${Player.fragments.bookmark}
+  ${fragments.AddedBookmarkEpisode}
 `;
 
 export const mapQueryToProps = ({ data }) => {
