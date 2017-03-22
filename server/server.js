@@ -52,7 +52,7 @@ const MOCK_SERVER = !!+process.env.MOCK_SERVER;
 mongoose.connect(process.env.DATABASE_URI);
 
 Parse.initialize(APP_ID);
-Parse.serverURL = `${SERVER_URL}/parse`;
+Parse.serverURL = process.env.PARSE_URL;
 Parse.masterKey = MASTER_KEY;
 Parse.Cloud.useMasterKey();
 
@@ -82,8 +82,8 @@ server.use(
     appId: APP_ID,
     masterKey: MASTER_KEY,
     fileKey: 'f33fc1a9-9ba9-4589-95ca-9976c0d52cd5',
-    serverURL: `${SERVER_URL}/parse`,
-    publicServerURL: `${SERVER_URL}/parse`,
+    serverURL: process.env.PARSE_URL,
+    publicServerURL: process.env.PARSE_URL,
     appName: APP_NAME,
     verifyUserEmails: true,
     emailAdapter: {
