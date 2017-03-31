@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Platform,
   Linking,
+  StatusBar,
 } from 'react-native';
 
 import ScrollableTabView from 'react-native-scrollable-tab-view';
@@ -24,6 +25,7 @@ class ClogiiTabView extends React.Component {
     this.state = {
       activeTab: 0,
       canScroll: true,
+      drawerOpen: false,
     };
 
     this.goToClogCategory = this.goToClogCategory.bind(this);
@@ -76,11 +78,11 @@ class ClogiiTabView extends React.Component {
   }
 
   openShelfMenu() {
-    this.shelfMenu.open();
+    this.setState({drawerOpen: true})
   }
 
   closeShelfMenu() {
-    this.shelfMenu.close();
+    this.setState({drawerOpen: false})
   }
 
   render() {
@@ -92,6 +94,7 @@ class ClogiiTabView extends React.Component {
           }
         }
         type="overlay"
+        open={this.state.drawerOpen}
         content={<ShelfMenu
           onClose={this.closeShelfMenu}
           onGagClogPress={() => this.goToClogCategory('G')}
@@ -155,6 +158,9 @@ class ClogiiTabView extends React.Component {
             setTabViewScrollable={can => this.setState({ canScroll: can })}
           />
         </ScrollableTabView>
+        <StatusBar 
+          barStyle={this.state.drawerOpen ? 'light-content' : 'dark-content'}
+        />
       </Drawer>
     );
   }
