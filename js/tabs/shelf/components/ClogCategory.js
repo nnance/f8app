@@ -272,7 +272,7 @@ class ClogCategory extends React.Component {
         <FixBugScrollView
           style={{ flex: 1, backgroundColor: 'transparent' }}
         >
-          <LinearGradient style={{ height: 520 + HEIGHT }} colors={[clogTheme.color, 'rgb(164, 58, 124)']}>
+          <LinearGradient style={{ height: 420 + HEIGHT }} colors={[clogTheme.color, 'rgb(164, 58, 124)']}>
             <Image
               source={require('../../../assets/shelf/star-bg.png')}
               style={{
@@ -291,7 +291,7 @@ class ClogCategory extends React.Component {
                       : []}
                     />
                   </View>
-                  <View style={{ flex: 1, alignItems: 'flex-end', justifyContent: 'center' }}>
+                  {/*<View style={{ flex: 1, alignItems: 'flex-end', justifyContent: 'center' }}>
                     <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
                       <View style={[{ backgroundColor: 'transparent', paddingHorizontal: 8 }]}>
                         <View style={{ flexDirection: 'row' }}>
@@ -305,20 +305,20 @@ class ClogCategory extends React.Component {
                         <BorderButton type="fadedWhite" caption="ติดตาม" />
                       </View>
                     </View>
-                  </View>
+                  </View>*/}
                 </View>
                 <View style={{ height: 150, width: undefined, padding: 5, justifyContent: 'center' }}>
                   <ClogLogo category={this.props.category} />
                 </View>
-                <View style={{ height: 150, padding: 10, justifyContent: 'center', alignItems: 'center' }}>
+                {/*<View style={{ height: 150, padding: 10, justifyContent: 'center', alignItems: 'center' }}>
                   <RecommendClogs
                     goToBook={this.props.goToBook}
                     category={this.props.category}
                     clogs={this.props.recommendedClogs}
                     onIndexChange={this.onRecommendClogChange}
                   />
-                </View>
-                <View style={{ padding: 5 }}>
+                </View>*/}
+                <View style={{ padding: 5 , height: 180}}>
                   <MetaClogListView
                     goToBook={this.props.goToBook} header="What's New" clogs={this.props.recentlyClogs}
                     renderButton={() => this.renderButtonViewAllClog(
@@ -330,14 +330,14 @@ class ClogCategory extends React.Component {
             </Image>
           </LinearGradient>
           <LinearGradient colors={['rgb(164, 58, 124)', 'rgb(220, 4, 87)']}>
-            <View style={{ height: 180, padding: 5 }}>
+            {/*<View style={{ height: 180, padding: 5 }}>
               <MetaClogListView
                 goToBook={this.props.goToBook} header="Top Chart" clogs={this.props.trendingClogs}
                 renderButton={() => this.renderButtonViewAllClog(
                   () => this.props.goToTrendingListView({ category: this.props.category, title: 'ยอดนิยม' }),
                 )}
               />
-            </View>
+            </View>*/}
             <View style={{ height: 180, padding: 5 }}>
               <MetaEditorList
                 editors={this.props.editors}
@@ -349,7 +349,11 @@ class ClogCategory extends React.Component {
         <NavBar
           onBackPress={this.props.onBackPress}
           renderRightMenu={() => (
-            <TouchableOpacity><Image style={{ height: 20, resizeMode: 'contain' }} source={require('../../../assets/common/white-search.png')} /></TouchableOpacity>
+            <TouchableOpacity>
+              <View style={{width: 40, height: 40 }}>
+                <Image style={{ height: 30, resizeMode: 'contain' }} source={require('../../../assets/common/white-search.png')} />
+              </View>
+            </TouchableOpacity>
           )}
           renderTitle={() => (
             <Text

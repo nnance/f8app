@@ -59,22 +59,27 @@ class ExploreCategory extends React.Component {
   }
 
   renderCategory(categoryDetail, idx) {
+    let disable = false;
+    if(categoryDetail.title !== 'Gag Clog') {
+      disable = true;
+    }
     return (
       <TouchableOpacity
-        onPress={() => this.props.onPress(categoryDetail.category)} key={idx} style={{
+        onPress={() => disable ? null : this.props.onPress(categoryDetail.category)} key={idx} style={{
           position: 'absolute',
           top: categoryDetail.pos.y,
           left: categoryDetail.pos.x,
           justifyContent: 'center',
-          alignItems: 'center',
+          alignItems: 'center'
         }}
       >
         <Image
           source={categoryDetail.img}
-          style={{ width: categoryDetail.size, height: categoryDetail.size }}
+          style={{ width: categoryDetail.size, height: categoryDetail.size,
+          opacity: disable ? 0.1 : 1 }}
         />
         <View style={{ padding: 5 }}>
-          <Text style={{ fontWeight: 'bold', color: 'white' }}>{categoryDetail.title}</Text>
+          <Text style={{ fontWeight: 'bold', color: disable ? '#AAA':'white' }}>{categoryDetail.title}</Text>
         </View>
       </TouchableOpacity>
     );
@@ -85,9 +90,7 @@ class ExploreCategory extends React.Component {
       <Image source={require('../../../assets/shelf/home-bg-2.png')} style={{ width: undefined, height: 450, resizeMode: 'stretch', backgroundColor: 'transparent' }}>
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           <View style={{ flex: 1, width: 205 + 85 }}>
-            {
-            categories.map(this.renderCategory)
-          }
+            { categories.map(this.renderCategory) }
           </View>
         </View>
       </Image>

@@ -5,6 +5,7 @@ import {
   Text,
   TouchableOpacity,
   StyleSheet,
+  StatusBar,
   Share,
   PanResponder,
   ActivityIndicator,
@@ -216,6 +217,9 @@ class Player extends React.Component {
 
     return (
       <View style={{ flex: 1 }}>
+        <StatusBar
+          hidden={false}
+        />
         <NavBarWithPinkButton
           onBackPress={this.props.onBackPress}
           renderRightMenu={this.renderNavBarButton}
@@ -231,13 +235,15 @@ class Player extends React.Component {
         />
         <View style={{ flex: 1 }} {...this._panResponder.panHandlers}>
           <ModalSpinner visible={this.state.loading} />
-          <ClogPlayer
-            source={{ uri: `${serverURL}/clog/${this.props.episode.id}` }}
-            style={{ flex: 1 }}
-            onMessage={() => console.log('')}
-            onLoad={() => this.setState({ loading: false })}
-            onProgress={this.onProgress}
-          />
+          <View style={{flex: 1, backgroundColor: 'white'}}>
+              <ClogPlayer
+                source={{ uri: `${serverURL}/clog/${this.props.episode.id}` }}
+                style={{ flex: 1 }}
+                onMessage={() => console.log('')}
+                onLoad={() => this.setState({ loading: false })}
+                onProgress={this.onProgress}
+            />
+          </View>
           {
            this.state.nextEpisodeRatioAnimatedValue > 0 ?
               <Animated.View
@@ -278,7 +284,6 @@ Player.fragments = {
       no
       title
       likeCount
-      commentCount
       viewCount
       nextEpisode {
         id
