@@ -87,55 +87,58 @@ const styles = StyleSheet.create({
 });
 
 const MetaEpisode = props => (
-  <View style={styles.metaEpisodeContainer}>
-    <View style={{ width: previewWidth }}>
-      <CircleImage
-        source={mapSource(props.thumbnailImage)}
-        size={50}
-      />
-    </View>
-    <View style={{ width: readLikeWidth }}>
-      <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
-        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-          <Text style={styles.textEpisodeNo}>ตอนที่ </Text>
-          <Text style={styles.textEpisodeNo}>{props.no}</Text>
+  <TouchableOpacity 
+            onPress={props.onReadPress ? bindFn(props.onReadPress, props.id) : null} >
+    <View style={styles.metaEpisodeContainer}>
+      <View style={{ width: previewWidth }}>
+        <CircleImage
+          source={mapSource(props.thumbnailImage)}
+          size={50}
+        />
+      </View>
+      <View style={{ width: readLikeWidth }}>
+        <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <Text style={styles.textEpisodeNo}>ตอนที่ </Text>
+            <Text style={styles.textEpisodeNo}>{props.no}</Text>
+          </View>
+          <View style={{}}>
+            <Text style={styles.textEpisodeUpdateAt}>{moment(props.createdAt).locale('en').format('MMMM D')}</Text>
+          </View>
         </View>
-        <View style={{}}>
-          <Text style={styles.textEpisodeUpdateAt}>{moment(props.createdAt).locale('en').format('MMMM D')}</Text>
+        <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
+          <View style={{ flex: 3, flexDirection: 'row', alignItems: 'center' }}>
+            <Image source={require('../../assets/common/icon/read.png')} style={{ width: 20, height: 20, resizeMode: 'contain', borderRadius: 4 }} />
+            <Text style={{ paddingLeft: 5, fontSize: 12, color: colors.textFadedGrey }}>
+              ดู {toHumanNumber(props.viewCount || 0)} ครั้ง
+          </Text>
+          </View>
+          <View style={{ flex: 4, flexDirection: 'row', alignItems: 'center' }}>
+            <Image source={require('../../assets/common/icon/heart.png')} style={{ width: 15, height: 15, resizeMode: 'contain', borderRadius: 4, marginLeft: 20 }} />
+            <Text style={{ paddingLeft: 5, fontSize: 12, color: colors.textFadedGrey }}>
+              {toHumanNumber(props.likeCount || 0)} Like
+          </Text>
+          </View>
         </View>
       </View>
-      <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
-        <View style={{ flex: 3, flexDirection: 'row', alignItems: 'center' }}>
-          <Image source={require('../../assets/common/icon/read.png')} style={{ width: 20, height: 20, resizeMode: 'contain', borderRadius: 4 }} />
-          <Text style={{ paddingLeft: 5, fontSize: 12, color: colors.textFadedGrey }}>
-            ดู {toHumanNumber(props.viewCount || 0)} ครั้ง
-          </Text>
-        </View>
-        <View style={{ flex: 4, flexDirection: 'row', alignItems: 'center' }}>
-          <Image source={require('../../assets/common/icon/heart.png')} style={{ width: 15, height: 15, resizeMode: 'contain', borderRadius: 4, marginLeft: 20 }} />
-          <Text style={{ paddingLeft: 5, fontSize: 12, color: colors.textFadedGrey }}>
-            {toHumanNumber(props.likeCount || 0)} Like
-          </Text>
-        </View>
-      </View>
-    </View>
-    <View style={{ flex: 1, alignItems: 'flex-end', paddingRight: (Dimensions.get('window').width - (previewWidth + readLikeWidth + rowButtonWidth)) / 10 }}>
-      {
-        !props.lock ?
-          <BorderButton
-            containerStyle={styles.metaEpisodeButton}
-            type="borderFadedBlack"
-            caption="อ่าน"
-            onPress={props.onReadPress ? bindFn(props.onReadPress, props.id) : null}
-          />
-          :
+      <View style={{ flex: 1, alignItems: 'flex-end', paddingRight: (Dimensions.get('window').width - (previewWidth + readLikeWidth + rowButtonWidth)) / 10 }}>
+        {
+          !props.lock ?
+            <BorderButton
+              containerStyle={styles.metaEpisodeButton}
+              type="borderFadedBlack"
+              caption="อ่าน"
+              onPress={props.onReadPress ? bindFn(props.onReadPress, props.id) : null}
+            />
+            :
             <BorderButton
               containerStyle={styles.metaEpisodeButton} textStyle={styles.unlockEpisodeText} type="lightGreen" caption="jelly"
               renderBeforeText={() => <LockImg />}
             />
-      }
+        }
+      </View>
     </View>
-  </View>
+  </TouchableOpacity>
 );
 
 const LockImg = () => (
