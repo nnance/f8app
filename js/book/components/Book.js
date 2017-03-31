@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Share,
   TouchableOpacity,
+  StatusBar,
   Dimensions,
 } from 'react-native';
 import moment from 'moment';
@@ -127,7 +128,7 @@ const MetaEpisode = props => (
             caption="อ่าน"
             onPress={props.onReadPress ? bindFn(props.onReadPress, props.id) : null}
           />
-        :
+          :
             <BorderButton
               containerStyle={styles.metaEpisodeButton} textStyle={styles.unlockEpisodeText} type="lightGreen" caption="jelly"
               renderBeforeText={() => <LockImg />}
@@ -200,7 +201,7 @@ const SubDetail = ({ title, author, synopsis, episodes, onReadPress }) => (
               onPress={
                 onReadPress ?
                   bindFn(onReadPress, episodes[episodes.length - 1].id)
-                : null
+                  : null
               }
               caption={`เริ่มอ่านตอนที่ ${episodes[episodes.length - 1].no}`}
               textStyle={{
@@ -259,9 +260,16 @@ class Book extends React.Component {
     const clog = this.props.clog;
     return (
       <View style={{ flex: 1, backgroundColor: 'white' }}>
+         <StatusBar
+          hidden={true}
+        />
         <Image source={mapSource(clog.coverImage)} style={styles.cover}>
-          <TouchableOpacity style={styles.backButtonContainer} onPress={this.props.onBackPress}>
-            <Image source={require('../../assets/common/white-back-button.png')} style={commonStyles.navBarIcon} />
+          <TouchableOpacity style={[styles.backButtonContainer]} onPress={this.props.onBackPress}>
+            <View style={{ height: 30, width: 40, flex: 0, marginTop: 0, justifyContent: 'center', alignItems: 'center' }}>
+              <Image source={require('../../assets/common/white-back-button.png')}
+                resizeMode='contain' 
+                style={[commonStyles.navBarIcon]} />
+            </View>
           </TouchableOpacity>
         </Image>
         <View
@@ -298,7 +306,7 @@ Book.fragments = {
       coverImage
       synopsis
       likeCount
-      commentCount
+      ## commentCount
       author {
         name
       }

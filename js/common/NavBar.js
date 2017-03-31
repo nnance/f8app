@@ -82,7 +82,12 @@ export class NavBarWithButton extends React.Component {
 
   renderBackButton() {
     return (
-      <TouchableOpacity onPress={this.props.onBackPress}><Image style={commonStyles.navBarIcon} source={require('../assets/common/white-back-button.png')} /></TouchableOpacity>
+      <TouchableOpacity onPress={this.props.onBackPress}>
+
+              <View style={{width: 40, height: 40, flex: 0, marginTop: 0, justifyContent: 'center', alignItems: 'center' }}>
+        <Image style={commonStyles.navBarIcon} source={require('../assets/common/white-back-button.png')} />
+        </View>
+        </TouchableOpacity>
     );
   }
 
