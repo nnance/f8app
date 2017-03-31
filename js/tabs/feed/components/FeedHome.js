@@ -54,13 +54,15 @@ class FeedHome extends React.Component {
 
 
     return (
-      <View style={{ flex: 1, backgroundColor: '#F0F0F0' }}>
+      <View style={{ padding:0, flex: 1, backgroundColor: '#F0F0F0' }}>
         <NavBar
           renderRightMenu={() => (
             <TouchableOpacity style={{ zIndex: 3 }}><Image style={{ height: 20, resizeMode: 'contain' }} source={require('../../../assets/common/pink-search.png')} /></TouchableOpacity>
             )}
           renderTitle={() => (
-            <Image style={{ width: 80, height: 30, resizeMode: 'contain' }} source={require('../../../assets/feed/title.png')} />
+            <View style={{height: 30, flex: 1, justifyContent: 'center', alignItems:'center'}}>
+              <Image style={{resizeMode: 'contain' }} source={require('../../../assets/feed/title.png')} />
+            </View>
             )}
           titleStyle={{
             flex: 1,
