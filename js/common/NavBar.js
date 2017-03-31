@@ -61,8 +61,8 @@ export default class NavBar extends React.Component {
         </View>
         <View style={[styles.titleMenu, this.props.titleStyle]}>
           {
-          this.props.renderTitle ? this.props.renderTitle() : this.renderTitle()
-        }
+            this.props.renderTitle ? this.props.renderTitle() : this.renderTitle()
+          }
         </View>
         <View style={[styles.rightMenu, this.props.rightMenuStyle]}>
           {
@@ -84,8 +84,8 @@ export class NavBarWithButton extends React.Component {
     return (
       <TouchableOpacity onPress={this.props.onBackPress}>
 
-              <View style={{width: 40, height: 40, flex: 0, marginTop: 0, justifyContent: 'center', alignItems: 'center' }}>
-        <Image style={commonStyles.navBarIcon} source={require('../assets/common/white-back-button.png')} />
+              <View style={{ width: 40, height: 40, flex: 0, marginTop: 0, justifyContent: 'center', alignItems: 'center' }}>
+          <Image style={commonStyles.navBarIcon} source={require('../assets/common/white-back-button.png')} />
         </View>
         </TouchableOpacity>
     );
@@ -107,7 +107,11 @@ export class NavBarWithPinkButton extends React.Component {
 
   renderBackButton() {
     return (
-      <TouchableOpacity onPress={this.props.onBackPress}><Image style={commonStyles.navBarIcon} source={require('../assets/common/pink-back-button.png')} /></TouchableOpacity>
+      <TouchableOpacity onPress={this.props.onBackPress}>
+        <View style={{ height: 30, width: 40, flex: 0, marginTop: 0, justifyContent: 'center', alignItems: 'center' }}>
+          <Image style={commonStyles.navBarIcon} source={require('../assets/common/pink-back-button.png')} />
+        </View>
+        </TouchableOpacity>
     );
   }
 

@@ -65,13 +65,19 @@ class Home extends React.Component {
       <View style={{ flex: 1, backgroundColor: 'rgb(81, 20, 64)' }}>
         <NavBar
           renderLeftMenu={() => (
-            <TouchableOpacity onPress={this.props.onOpenShelfMenu}><Image style={{ height: 20, resizeMode: 'contain' }} source={require('../../../assets/shelf/menu.png')} /></TouchableOpacity>
+            <TouchableOpacity onPress={this.props.onOpenShelfMenu}>
+              <View style={{ height: 40, flex: 1, justifyContent: 'center', alignItems: 'flex-start' }}>
+                <Image style={{ height: 15, resizeMode: 'contain' }} source={require('../../../assets/shelf/menu.png')} />
+              </View>
+              </TouchableOpacity>
           )}
           renderRightMenu={() => (
             <TouchableOpacity><Image style={{ height: 20, resizeMode: 'contain' }} source={require('../../../assets/common/pink-search.png')} /></TouchableOpacity>
           )}
           renderTitle={() => (
-            <Image style={{ width: 80, height: 30, resizeMode: 'contain' }} source={require('../../../assets/shelf/title.png')} />
+            <View style={{ height: 30, flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+              <Image style={{ height: 30, resizeMode: 'contain' }} source={require('../../../assets/shelf/title.png')} />
+            </View>
           )}
           titleStyle={{
             flex: 1,
@@ -79,7 +85,7 @@ class Home extends React.Component {
           }}
         />
         <FixBugScrollView>
-          <Image source={require('../../../assets/shelf/home-bg-1.png')} style={{ width: undefined, height: 700, resizeMode: 'stretch', backgroundColor: 'transparent' }}>
+          {/*<Image source={require('../../../assets/shelf/home-bg-1.png')} style={{ width: undefined, height: 700, resizeMode: 'stretch', backgroundColor: 'transparent' }}>
             <View style={{ flex: 2 }}>
               <HeroBanner goToBook={this.props.goToBook} clogs={this.props.heroBanners} />
             </View>
@@ -90,10 +96,11 @@ class Home extends React.Component {
               <RecommendedClog clog={this.props.recommendedClog} goToBook={this.props.goToBook} />
             </View>
           </Image>
+          */}
           <Image source={require('../../../assets/shelf/home-bg-1.5.png')} style={{ resizeMode: 'stretch', backgroundColor: 'transparent', width: undefined, height: undefined, paddingTop: 20 }}>
             {
               this.props.favoriteTags.map(tag => (
-                <View key={tag.id} style={{ paddingLeft: 10, paddingTop: 10 }}>
+                <View key={tag.id} style={{ paddingLeft: 0, paddingTop: 10 }}>
                   <MetaClogListView
                     goToBook={this.props.goToBook}
                     header={tag.name.toUpperCase()}
