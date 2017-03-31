@@ -77,7 +77,7 @@ export default class MetaClogListView extends React.Component {
     return (
       <View style={{ flex: 1 }}>
         <View style={{ height: 20, flexDirection: 'row' }}>
-          <Text style={{ color: 'white', fontWeight: 'bold', flex: 1 }} numberOfLines={1}>{this.props.header}</Text>
+          <Text style={{ marginLeft: 10, color: 'white', fontWeight: 'bold', flex: 1 }} numberOfLines={1}>{this.props.header}</Text>
           <View style={{ alignItems: 'flex-end', justifyContent: 'center', paddingRight: 10 }}>
             {
               this.props.renderButton ? this.props.renderButton() : null
