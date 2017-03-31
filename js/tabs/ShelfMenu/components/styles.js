@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   closeContainer: {
-    paddingLeft: 15,
+    paddingLeft: 0,
     paddingVertical: 10,
   },
   fadedWhiteText: {

@@ -18,8 +18,10 @@ import styles from './styles';
 
 const CloseMenuButton = ({ onPress }) => (
   <TouchableOpacity onPress={onPress}>
-    <Image source={require('../../../assets/shelf-menu/close.png')} style={{ width: 15, height: 15, resizeMode: 'contain' }} />
-  </TouchableOpacity>
+    <View style={{ width: 40, height: 40, flex: 0, paddingLeft: 10, justifyContent: 'center', alignItems: 'flex-start' }}>
+      <Image source={require('../../../assets/shelf-menu/close.png')} style={{ width: 18, height: 18, resizeMode: 'contain' }} />
+    </View>
+  </TouchableOpacity >
 );
 
 const Topic = ({ title, children, style }) => (
