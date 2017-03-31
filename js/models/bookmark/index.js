@@ -15,7 +15,7 @@ export const fragments = {
       no
       title
       likeCount
-      commentCount
+      ## commentCount
       viewCount
       nextEpisode {
         id

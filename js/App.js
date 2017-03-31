@@ -65,9 +65,9 @@ class App extends React.Component {
   }
 
   render() {
-    if (!this.props.isLoggedIn) {
-      return <LoginScreen />;
-    }
+    // if (!this.props.isLoggedIn) {
+    //   return <LoginScreen />;
+    // }
     return <ClogiiNavigator />;
   }
 }
