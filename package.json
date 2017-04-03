@@ -1,6 +1,6 @@
 {
   "name": "Clogii",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "babel-node ./server/server.js",
@@ -16,7 +16,8 @@
     "remove-seed": "babel-node ./scripts/seeds/remove.js",
     "re-gen-seed": "npm run gen-seed && npm run remove-seed && npm run import-seed",
     "seed-episode-binary": "babel-node ./scripts/seeds/seed-episode-binary.js",
-    "clean-db": "babel-node ./scripts/clean-db.js"
+    "clean-db": "babel-node ./scripts/clean-db.js",
+    "release": "standard-version"
   },
   "dependencies": {
     "@exponent/react-native-read-more-text": "^1.0.0",
@@ -105,7 +106,8 @@
     "react-addons-test-utils": "^15.4.1",
     "react-test-renderer": "^15.4.1",
     "redux-mock-store": "^1.2.1",
-    "remote-redux-devtools": "^0.5.7"
+    "remote-redux-devtools": "^0.5.7",
+    "standard-version": "^4.0.0"
   },
   "jest": {
     "haste": {
