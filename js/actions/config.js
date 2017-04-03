@@ -22,12 +22,10 @@
  * @flow
  */
 
-'use strict';
+import type { Action } from './types';
 
 const Parse = require('parse/react-native');
 const InteractionManager = require('InteractionManager');
-
-import type { Action } from './types';
 
 async function loadConfig(): Promise<Action> {
   const config = await Parse.Config.get();
@@ -38,4 +36,4 @@ async function loadConfig(): Promise<Action> {
   };
 }
 
-module.exports = {loadConfig};
+module.exports = { loadConfig };

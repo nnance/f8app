@@ -1,6 +1,6 @@
-'use strict';
 
-import gql from 'apollo-client/gql';
+
+import gql from 'graphql-tag';
 import apollo from '../store/apollo';
 
 import type { ThunkAction } from './types';
@@ -34,7 +34,7 @@ function loadViewer() : ThunkAction {
         }
       }
     `,
-    forceFetch: false
+    forceFetch: false,
   });
 
   const actions = ['LOADED_PAGES', 'LOADED_MAPS', 'LOADED_FAQS'];
@@ -42,5 +42,5 @@ function loadViewer() : ThunkAction {
 }
 
 module.exports = {
-  loadViewer
+  loadViewer,
 };

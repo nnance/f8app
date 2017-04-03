@@ -22,55 +22,16 @@
  * @flow
  */
 
-'use strict';
 
-var F8Colors = require('F8Colors');
-var React = require('React');
-var View = require('View');
-var { Text } = require('F8Text');
-var F8Touchable = require('F8Touchable');
-var Image = require('Image');
-var StyleSheet = require('StyleSheet');
+const F8Colors = require('F8Colors');
+const React = require('React');
+const View = require('View');
+const { Text } = require('F8Text');
+const F8Touchable = require('F8Touchable');
+const Image = require('Image');
+const StyleSheet = require('StyleSheet');
 
-
-class MenuItem extends React.Component {
-  props: {
-    icon: number;
-    selectedIcon: number;
-    selected: boolean;
-    title: string;
-    badge: ?string;
-    onPress: () => void;
-  };
-
-  render() {
-    var icon = this.props.selected ? this.props.selectedIcon : this.props.icon;
-    var selectedTitleStyle = this.props.selected && styles.selectedTitle;
-    var badge;
-    if (this.props.badge) {
-      badge = (
-        <View style={styles.badge}>
-          <Text style={styles.badgeText}>
-            {this.props.badge}
-          </Text>
-        </View>
-      );
-    }
-    return (
-      <F8Touchable onPress={this.props.onPress}>
-        <View style={styles.container}>
-          <Image style={styles.icon} source={icon} />
-          <Text style={[styles.title, selectedTitleStyle]}>
-            {this.props.title}
-          </Text>
-          {badge}
-        </View>
-      </F8Touchable>
-    );
-  }
-}
-
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     height: 50,
@@ -99,5 +60,42 @@ var styles = StyleSheet.create({
     color: 'white',
   },
 });
+
+class MenuItem extends React.Component {
+  props: {
+    icon: number;
+    selectedIcon: number;
+    selected: boolean;
+    title: string;
+    badge: ?string;
+    onPress: () => void;
+  };
+
+  render() {
+    const icon = this.props.selected ? this.props.selectedIcon : this.props.icon;
+    const selectedTitleStyle = this.props.selected && styles.selectedTitle;
+    let badge;
+    if (this.props.badge) {
+      badge = (
+        <View style={styles.badge}>
+          <Text style={styles.badgeText}>
+            {this.props.badge}
+          </Text>
+        </View>
+      );
+    }
+    return (
+      <F8Touchable onPress={this.props.onPress}>
+        <View style={styles.container}>
+          <Image style={styles.icon} source={icon} />
+          <Text style={[styles.title, selectedTitleStyle]}>
+            {this.props.title}
+          </Text>
+          {badge}
+        </View>
+      </F8Touchable>
+    );
+  }
+}
 
 module.exports = MenuItem;

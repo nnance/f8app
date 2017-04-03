@@ -22,7 +22,7 @@
  * @flow
  */
 
-'use strict';
+/* eslint no-use-before-define: off */
 
 type ParseObject = Object;
 
@@ -35,6 +35,13 @@ export type Action =
   | { type: 'LOADED_SURVEYS', list: Array<Object> }
   | { type: 'SUBMITTED_SURVEY_ANSWERS', id: string; }
   | { type: 'LOGGED_IN', source: ?string; data: { id: string; name: string; sharedSchedule: ?boolean; } }
+  | { type: 'LOGIN_ERROR', message: string }
+  | { type: 'CLEAR_LOGIN_ERROR' }
+  | { type: 'SIGNED_UP' }
+  | { type: 'FACEBOOK_LINKED', data: { id: string; name: string; } }
+  | { type: 'FACEBOOK_UNLINKED' }
+  | { type: 'REQED_FORGOT_PASSWORD' }
+  | { type: 'CLEAR_IS_REQED_FORGOT_PASSWORD' }
   | { type: 'RESTORED_SCHEDULE', list: Array<ParseObject> }
   | { type: 'SKIPPED_LOGIN' }
   | { type: 'LOGGED_OUT' }
@@ -51,9 +58,13 @@ export type Action =
   | { type: 'RECEIVED_PUSH_NOTIFICATION', notification: Object }
   | { type: 'SEEN_ALL_NOTIFICATIONS' }
   | { type: 'RESET_NUXES' }
+  | { type: 'CHANGED_PUBLIC_PROFILE', data: { name: string, birthDayDate: ?Date, sex: ?string } }
+  | { type: 'CHANGED_EMAIL', email: string }
+  | { type: 'CHANGED_PASSWORD', password: string }
+  | { type: 'CLEAR_SAVE_STATE' }
   ;
 
-export type Dispatch = (action: Action | ThunkAction | PromiseAction | Array<Action>) => any;
 export type GetState = () => Object;
 export type ThunkAction = (dispatch: Dispatch, getState: GetState) => any;
 export type PromiseAction = Promise<Action>;
+export type Dispatch = (action: Action | ThunkAction | PromiseAction | Array<Action>) => any;

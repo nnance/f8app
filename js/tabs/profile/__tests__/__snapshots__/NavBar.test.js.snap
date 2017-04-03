@@ -1,0 +1,120 @@
+exports[`<NavBar/> render backButton by default 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "white",
+        "flexDirection": "row",
+        "height": 60,
+        "justifyContent": "space-between",
+        "paddingTop": 15,
+        "width": 750,
+      },
+      Object {
+        "borderBottomWidth": 1,
+        "borderColor": "#eeeeee",
+      },
+    ]
+  }>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "flex-start",
+          "flex": 1,
+          "paddingLeft": 10,
+        },
+        undefined,
+      ]
+    }>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID={undefined}>
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 20,
+            "resizeMode": "contain",
+          }
+        } />
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flex": 4,
+        },
+        undefined,
+      ]
+    }>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "fontSize": 22,
+            "fontWeight": "bold",
+          },
+          Object {
+            "color": "rgb(249, 65, 92)",
+            "fontSize": 22,
+            "fontWeight": "bold",
+          },
+        ]
+      } />
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "flex-end",
+          "flex": 1,
+          "paddingRight": 10,
+        },
+        undefined,
+      ]
+    }>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID={undefined} />
+  </View>
+</View>
+`;

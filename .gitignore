@@ -22,7 +22,7 @@ DerivedData
 *.xcuserstate
 project.xcworkspace
 ios/Pods
-ios/F8v2.xcworkspace
+ios/Clogii.xcworkspace
 
 # Android/IJ
 #
@@ -31,12 +31,33 @@ ios/F8v2.xcworkspace
 local.properties
 *.iml
 
+# Next.js Build
+#
+.next
+
 # node.js
 #
 node_modules/
 npm-debug.log
 
+# Build
+build-server
+
+.env
+.vscode
+
+# test
+coverage/
+
 # F8
 #
 /release
 /logs
+
+# BUCK
+buck-out/
+\.buckd/
+android/app/libs
+android/keystores/debug.keystore
+db
+.dist

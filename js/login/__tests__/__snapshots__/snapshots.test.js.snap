@@ -1,0 +1,276 @@
+exports[`DashButton render 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hitSlop={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "flexDirection": "row",
+      "opacity": 1,
+      "padding": 10,
+    }
+  }
+  testID={undefined}>
+  <View
+    style={
+      Object {
+        "backgroundColor": "rgba(255, 255, 255, 0.5)",
+        "flex": 1,
+        "height": 1,
+        "marginHorizontal": 15,
+        "marginVertical": 12,
+      }
+    } />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "white",
+      }
+    }>
+    test
+  </Text>
+  <View
+    style={
+      Object {
+        "backgroundColor": "rgba(255, 255, 255, 0.5)",
+        "flex": 1,
+        "height": 1,
+        "marginHorizontal": 15,
+        "marginVertical": 12,
+      }
+    } />
+</View>
+`;
+
+exports[`DashButton render with container 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "flex-end",
+      },
+      undefined,
+    ]
+  }>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "flexDirection": "row",
+        "opacity": 1,
+        "padding": 10,
+      }
+    }
+    testID={undefined}>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(255, 255, 255, 0.5)",
+          "flex": 1,
+          "height": 1,
+          "marginHorizontal": 15,
+          "marginVertical": 12,
+        }
+      } />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "white",
+        }
+      }>
+      test container
+    </Text>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(255, 255, 255, 0.5)",
+          "flex": 1,
+          "height": 1,
+          "marginHorizontal": 15,
+          "marginVertical": 12,
+        }
+      } />
+  </View>
+</View>
+`;
+
+exports[`IndexScreen render 1`] = `
+<Image
+  source={1}
+  style={
+    Object {
+      "backgroundColor": "transparent",
+      "flex": 1,
+      "height": undefined,
+      "padding": 26,
+      "width": undefined,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 7,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "flex": 4,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 3,
+          "flexDirection": "row",
+          "justifyContent": "center",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "flex": 1,
+          }
+        }>
+        <Image
+          source={1}
+          style={
+            Object {
+              "flex": 1,
+              "height": undefined,
+              "resizeMode": "contain",
+              "width": undefined,
+            }
+          } />
+      </View>
+    </View>
+    <Text
+      style={
+        Object {
+          "color": "white",
+          "flex": 4,
+          "fontSize": 12,
+        }
+      }>
+      ที่ที่จักวาลของคุณ จะอยู่ง่าย... แค่ปลายนิ้ว
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 4,
+        "justifyContent": "center",
+      }
+    }>
+    <Connect(LoginButton)
+      source="First screen"
+      style={
+        Object {
+          "height": 40,
+          "margin": 10,
+          "width": 250,
+        }
+      } />
+    <ClogiiButton
+      caption="ลงชื่อเข้าใช้ผ่านอีเมล"
+      onPress={[Function]}
+      style={
+        Object {
+          "height": 40,
+          "margin": 10,
+          "width": 250,
+        }
+      }
+      type="bordered" />
+    <DashButtonWithContainer
+      caption="สร้างบัญชีใหม่"
+      onPress={[Function]} />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "flex-end",
+      }
+    }>
+    <Text
+      style={
+        Object {
+          "color": "rgba(255, 255, 255, 0.5)",
+          "fontSize": 10,
+        }
+      }>
+      By signing up you agree to our Terms & Privacy policy
+    </Text>
+  </View>
+</Image>
+`;
+
+exports[`SuccessScreen render 1`] = `
+<Image
+  source={1}
+  style={
+    Object {
+      "backgroundColor": "transparent",
+      "flex": 1,
+      "height": undefined,
+      "width": undefined,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "paddingTop": 133.4,
+      }
+    }>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      onPress={undefined}
+      style={
+        Object {
+          "color": "white",
+          "fontSize": 20,
+        }
+      }>
+      test
+      , go back to login
+    </Text>
+  </View>
+</Image>
+`;

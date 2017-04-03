@@ -1,0 +1,334 @@
+exports[`ClogMenuItem HideTagButton render 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hitSlop={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+  testID={undefined}>
+  <Image
+    source={1}
+    style={
+      Object {
+        "height": 20,
+        "resizeMode": "contain",
+        "width": 20,
+      }
+    } />
+</View>
+`;
+
+exports[`ClogMenuItem ShowTagButton render 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hitSlop={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+  testID={undefined}>
+  <Image
+    source={1}
+    style={
+      Object {
+        "height": 20,
+        "resizeMode": "contain",
+        "width": 20,
+      }
+    } />
+</View>
+`;
+
+exports[`ClogMenuItem render 1`] = `
+<View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "paddingLeft": 5,
+          "paddingVertical": 10,
+        },
+        Object {
+          "paddingBottom": 10,
+          "paddingTop": 10,
+        },
+      ]
+    }>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "row",
+          "opacity": 1,
+        }
+      }
+      testID={undefined}>
+      <View
+        style={
+          Object {
+            "height": 25,
+            "width": 25,
+          }
+        }>
+        <Image
+          source={undefined}
+          style={
+            Object {
+              "height": 25,
+              "resizeMode": "contain",
+              "width": 25,
+            }
+          } />
+      </View>
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "paddingLeft": 10,
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          numberOfLines={1}
+          style={
+            Object {
+              "color": "white",
+              "fontWeight": "bold",
+            }
+          } />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "justifyContent": "center",
+          "marginRight": 10,
+          "width": 50,
+        }
+      }>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID={undefined}>
+        <Image
+          source={1}
+          style={
+            Object {
+              "height": 20,
+              "resizeMode": "contain",
+              "width": 20,
+            }
+          } />
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.2)",
+        "flex": 1,
+        "height": 1,
+        "marginLeft": 40,
+        "marginVertical": 0,
+      }
+    } />
+</View>
+`;
+
+exports[`ClogMenuItem render with show/hide sub item 1`] = `
+<View>
+  <WhiteMenuItem
+    icon={
+      <Image
+        style={
+          Object {
+            "height": 25,
+            "resizeMode": "contain",
+            "width": 25,
+          }
+        } />
+    }
+    renderedButton={
+      <HideTagButton
+        onPress={[Function]} />
+    }
+    style={
+      Object {
+        "paddingBottom": 5,
+        "paddingTop": 10,
+      }
+    } />
+  <View
+    style={
+      Object {
+        "marginBottom": 10,
+        "paddingLeft": 40,
+      }
+    }>
+    <View>
+      <TouchableOpacity
+        activeOpacity={0.2}
+        onPress={[Function]}>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgba(255, 255, 255, 0.2)",
+              },
+              Object {
+                "paddingVertical": 5,
+              },
+            ]
+          }>
+          Chat Clog
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        activeOpacity={0.2}
+        onPress={[Function]}>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgba(255, 255, 255, 0.2)",
+              },
+              Object {
+                "paddingVertical": 5,
+              },
+            ]
+          }>
+          Video Clog
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        activeOpacity={0.2}
+        onPress={[Function]}>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgba(255, 255, 255, 0.2)",
+              },
+              Object {
+                "paddingVertical": 5,
+              },
+            ]
+          }>
+          Video Clog
+        </Text>
+      </TouchableOpacity>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.2)",
+        "flex": 1,
+        "height": 1,
+        "marginLeft": 40,
+        "marginVertical": 0,
+      }
+    } />
+</View>
+`;
+
+exports[`ClogMenuItem render with show/hide sub item 2`] = `
+<View>
+  <WhiteMenuItem
+    icon={
+      <Image
+        style={
+          Object {
+            "height": 25,
+            "resizeMode": "contain",
+            "width": 25,
+          }
+        } />
+    }
+    renderedButton={
+      <ShowTagButton
+        onPress={[Function]} />
+    }
+    style={
+      Object {
+        "paddingBottom": 10,
+        "paddingTop": 10,
+      }
+    } />
+  <View
+    style={
+      Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.2)",
+        "flex": 1,
+        "height": 1,
+        "marginLeft": 40,
+        "marginVertical": 0,
+      }
+    } />
+</View>
+`;

@@ -22,7 +22,6 @@
  * @flow
  */
 
-'use strict';
 
 const createApolloReducer = require('./createApolloReducer');
 
@@ -34,7 +33,7 @@ export type Page = {
 };
 
 function reducer(action: Object): Map[] {
-  return action.data.viewer.pages;
+  return action.data.viewer ? action.data.viewer.pages : null;
 }
 
 module.exports = createApolloReducer('LOADED_PAGES', reducer);

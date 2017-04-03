@@ -1,0 +1,245 @@
+exports[`ActivityScreen ActivityRow render like activity 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hitSlop={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+      "padding": 13,
+    }
+  }
+  testID={undefined}>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "alignSelf": "flex-start",
+          "flexDirection": "row",
+        }
+      }>
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 15,
+            "resizeMode": "contain",
+            "width": 15,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "rgba(0, 0, 0, 0.5)",
+            "fontSize": 13,
+            "marginLeft": 5,
+          }
+        }>
+        liked
+         funny clog
+      </Text>
+    </View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "alignSelf": "flex-end",
+          "color": "rgba(0, 0, 0, 0.3)",
+          "fontSize": 10,
+        }
+      }>
+      5 months ago
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "paddingVertical": 10,
+      }
+    }>
+    <Image
+      source={
+        Object {
+          "uri": "http://3.bp.blogspot.com/-zW6wqY_1Me0/VYvJMOV4mcI/AAAAAAAAD-4/mB_AxhFoJH4/s1600/178491main_sig07-009-516.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderRadius": 5,
+          "height": 150,
+        }
+      } />
+  </View>
+  <View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "fontSize": 14,
+          "fontWeight": "bold",
+        }
+      }>
+      แมค เดมอน ตะลุยอวกาศ
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      numberOfLines={1}
+      style={
+        Object {
+          "color": "rgba(0, 0, 0, 0.3)",
+          "fontSize": 10,
+        }
+      }>
+      The Martain กำกับโดย ริดลีย์ สก๊อต เนื้อหาเล่าถึง นักบินอวกาศที่ถูกทิ้งไว้บนดาวอังคาร
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`ActivityScreen ActivityRow render read activity 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hitSlop={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+      "padding": 13,
+    }
+  }
+  testID={undefined}>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "alignSelf": "flex-start",
+          "flexDirection": "row",
+        }
+      }>
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 15,
+            "resizeMode": "contain",
+            "width": 15,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "rgba(0, 0, 0, 0.5)",
+            "fontSize": 13,
+            "marginLeft": 5,
+          }
+        }>
+        read
+         funny clog
+      </Text>
+    </View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "alignSelf": "flex-end",
+          "color": "rgba(0, 0, 0, 0.3)",
+          "fontSize": 10,
+        }
+      }>
+      a year ago
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "paddingVertical": 10,
+      }
+    }>
+    <Image
+      source={
+        Object {
+          "uri": "http://www.fujisan.ne.jp/fit/th/images/ohishikouen430.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderRadius": 5,
+          "height": 150,
+        }
+      } />
+  </View>
+  <View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "fontSize": 14,
+          "fontWeight": "bold",
+        }
+      }>
+      แมค เดมอน ตะลุยอวกาศ
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      numberOfLines={1}
+      style={
+        Object {
+          "color": "rgba(0, 0, 0, 0.3)",
+          "fontSize": 10,
+        }
+      }>
+      The Martain กำกับโดย ริดลีย์ สก๊อต เนื้อหาเล่าถึง นักบินอวกาศที่ถูกทิ้งไว้บนดาวอังคาร
+    </Text>
+  </View>
+</View>
+`;

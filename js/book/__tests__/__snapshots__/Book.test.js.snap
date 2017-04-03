@@ -1,0 +1,866 @@
+exports[`Book render 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "flex": 1,
+    }
+  }>
+  <Image
+    source={
+      Object {
+        "uri": "http://localhost:8080/static/cover/mockCover.png",
+      }
+    }
+    style={
+      Object {
+        "height": 200,
+        "resizeMode": "cover",
+        "width": undefined,
+      }
+    }>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "left": 10,
+          "opacity": 1,
+          "top": 20,
+        }
+      }
+      testID={undefined}>
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 20,
+            "resizeMode": "contain",
+          }
+        } />
+    </View>
+  </Image>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }>
+    <ScrollView
+      contentInset={
+        Object {
+          "bottom": 0,
+          "top": 0,
+        }
+      }
+      data={
+        Array [
+          Object {
+            "__typename": "Episode",
+            "createdAt": "1976-01-14T10:25:55.979Z",
+            "id": "58b95c905923032426ceb6ce",
+            "likeCount": 100,
+            "no": 99,
+            "thumbnailImage": "http://localhost:8080/static/preview/g4802.png",
+            "viewCount": 0,
+            Symbol(id): "Episode58b95c905923032426ceb6ce",
+          },
+          Object {
+            "__typename": "Episode",
+            "createdAt": "2013-11-09T11:11:51.395Z",
+            "id": "513552786421173261217113",
+            "likeCount": 100,
+            "no": 12,
+            "thumbnailImage": "http://localhost:8080/static/preview/g3376.png",
+            "viewCount": 580,
+            Symbol(id): "Episode513552786421173261217113",
+          },
+          Object {
+            "__typename": "Episode",
+            "createdAt": "1975-02-25T04:08:39.149Z",
+            "id": "853908723426978170610475",
+            "likeCount": 100,
+            "no": 11,
+            "thumbnailImage": "http://localhost:8080/static/preview/g3658.png",
+            "viewCount": 2966,
+            Symbol(id): "Episode853908723426978170610475",
+          },
+          Object {
+            "__typename": "Episode",
+            "createdAt": "1979-03-17T10:42:04.839Z",
+            "id": "311180817266056011393522",
+            "likeCount": 100,
+            "no": 10,
+            "thumbnailImage": "http://localhost:8080/static/preview/g4722.png",
+            "viewCount": 485,
+            Symbol(id): "Episode311180817266056011393522",
+          },
+          Object {
+            "__typename": "Episode",
+            "createdAt": "1976-06-05T18:27:40.345Z",
+            "id": "598312315594530773267634",
+            "likeCount": 100,
+            "no": 9,
+            "thumbnailImage": "http://localhost:8080/static/preview/g4602.png",
+            "viewCount": 1285,
+            Symbol(id): "Episode598312315594530773267634",
+          },
+          Object {
+            "__typename": "Episode",
+            "createdAt": "1980-12-01T12:01:46.327Z",
+            "id": "417826412757280651204010",
+            "likeCount": 100,
+            "no": 8,
+            "thumbnailImage": "http://localhost:8080/static/preview/g3456.png",
+            "viewCount": 1616,
+            Symbol(id): "Episode417826412757280651204010",
+          },
+          Object {
+            "__typename": "Episode",
+            "createdAt": "1978-02-13T04:34:20.778Z",
+            "id": "278753076135508634876402",
+            "likeCount": 100,
+            "no": 7,
+            "thumbnailImage": "http://localhost:8080/static/preview/g4842.png",
+            "viewCount": 210,
+            Symbol(id): "Episode278753076135508634876402",
+          },
+          Object {
+            "__typename": "Episode",
+            "createdAt": "1987-11-22T16:11:03.992Z",
+            "id": "866673372387489064611791",
+            "likeCount": 100,
+            "no": 6,
+            "thumbnailImage": "http://localhost:8080/static/preview/g4802.png",
+            "viewCount": 1224,
+            Symbol(id): "Episode866673372387489064611791",
+          },
+          Object {
+            "__typename": "Episode",
+            "createdAt": "1975-12-14T07:12:27.600Z",
+            "id": "506157905885141873451683",
+            "likeCount": 100,
+            "no": 5,
+            "thumbnailImage": "http://localhost:8080/static/preview/g4642.png",
+            "viewCount": 2178,
+            Symbol(id): "Episode506157905885141873451683",
+          },
+          Object {
+            "__typename": "Episode",
+            "createdAt": "2006-01-22T11:47:21.124Z",
+            "id": "501682823450556195262154",
+            "likeCount": 100,
+            "no": 4,
+            "thumbnailImage": "http://localhost:8080/static/preview/g3658.png",
+            "viewCount": 150,
+            Symbol(id): "Episode501682823450556195262154",
+          },
+          Object {
+            "__typename": "Episode",
+            "createdAt": "1976-02-16T04:42:04.003Z",
+            "id": "633167840076967334721144",
+            "likeCount": 100,
+            "no": 3,
+            "thumbnailImage": "http://localhost:8080/static/preview/g3456.png",
+            "viewCount": 358,
+            Symbol(id): "Episode633167840076967334721144",
+          },
+          Object {
+            "__typename": "Episode",
+            "createdAt": "1979-04-22T22:41:47.864Z",
+            "id": "277697316588871702218615",
+            "likeCount": 100,
+            "no": 2,
+            "thumbnailImage": "http://localhost:8080/static/preview/g3618.png",
+            "viewCount": 1599,
+            Symbol(id): "Episode277697316588871702218615",
+          },
+          Object {
+            "__typename": "Episode",
+            "createdAt": "2014-03-29T02:04:10.793Z",
+            "id": "912142336485843652482056",
+            "likeCount": 100,
+            "no": 1,
+            "thumbnailImage": "http://localhost:8080/static/preview/g3618.png",
+            "viewCount": 421,
+            Symbol(id): "Episode912142336485843652482056",
+          },
+        ]
+      }
+      dataSource={
+        ListViewDataSource {
+          "items": 13,
+        }
+      }
+      initialListSize={1}
+      minContentHeight={0}
+      onContentSizeChange={[Function]}
+      onEndReachedThreshold={1000}
+      onKeyboardDidHide={undefined}
+      onKeyboardDidShow={undefined}
+      onKeyboardWillHide={undefined}
+      onKeyboardWillShow={undefined}
+      onLayout={[Function]}
+      onScroll={[Function]}
+      pageSize={1}
+      removeClippedSubviews={true}
+      renderEmptyList={null}
+      renderFooter={[Function]}
+      renderHeader={[Function]}
+      renderRow={[Function]}
+      renderSeparator={[Function]}
+      scrollEventThrottle={50}
+      scrollRenderAheadDistance={1000}
+      stickyHeaderIndices={Array []}
+      style={
+        Object {
+          "flex": 1,
+          "paddingHorizontal": 10,
+          "paddingVertical": 15,
+        }
+      }>
+      <View>
+        <View
+          style={
+            Object {
+              "width": undefined,
+            }
+          }>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "paddingVertical": 10,
+              }
+            }>
+            <View
+              style={
+                Object {
+                  "flex": 3,
+                }
+              }>
+              <View>
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "fontSize": 18,
+                    }
+                  }>
+                  Quisquam non alias
+                </Text>
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.3)",
+                      "fontSize": 12,
+                    }
+                  }>
+                  Mrs. Sigmund Lakin
+                </Text>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "paddingHorizontal": 5,
+                }
+              }>
+              <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "transparent",
+                    "borderColor": "rgb(141, 227, 188)",
+                    "borderRadius": 4,
+                    "borderWidth": 1,
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "paddingHorizontal": 15,
+                  }
+                }
+                testID={undefined}>
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 12,
+                      },
+                      Object {
+                        "color": "rgb(141, 227, 188)",
+                      },
+                      undefined,
+                    ]
+                  }>
+                  ติดตาม
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View>
+            <View
+              style={Object {}}>
+              <View>
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  numberOfLines={0}>
+                  Libero qui recusandae ut nulla. Ipsam nobis cupiditate quia dignissimos debitis. Doloremque sed libero repudiandae esse. Natus et qui itaque velit omnis. Porro delectus et ipsam explicabo eligendi occaecati officiis et. Eum dicta eum ipsa ad ipsum veritatis debitis libero. Deserunt quam tempore a. Provident velit eligendi nostrum ipsam qui. Dolor fugiat velit voluptatem aperiam placeat fuga maiores. Placeat ullam veniam ducimus temporibus modi odit architecto. Totam et aspernatur exercitationem ut quis. Magni cupiditate voluptatem dicta. Repudiandae non voluptates ut ullam quos qui illo. Sunt laborum ratione tenetur officia voluptatem cumque. Aut provident esse hic eligendi. Esse ut ab voluptas sed quae. Qui sint autem earum doloremque qui aut ut. Eos ducimus qui necessitatibus aut vel in. Dolorem et molestiae commodi ut sunt placeat. Est consequuntur aut est fuga est placeat.
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View>
+            <View
+              style={
+                Object {
+                  "paddingHorizontal": 40,
+                  "paddingVertical": 15,
+                }
+              }>
+              <View
+                accessibilityComponentType={undefined}
+                accessibilityLabel={undefined}
+                accessibilityTraits={undefined}
+                accessible={true}
+                hitSlop={undefined}
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "rgba(0, 0, 0, 0.8)",
+                    "borderRadius": 4,
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "paddingHorizontal": 15,
+                    "paddingVertical": 5,
+                  }
+                }
+                testID={undefined}>
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 12,
+                      },
+                      Object {
+                        "color": "white",
+                      },
+                      Object {
+                        "fontSize": 25,
+                      },
+                    ]
+                  }>
+                  เริ่มอ่านตอนที่ 1
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#eeeeee",
+              "height": 1,
+            }
+          } />
+      </View>
+      <View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "paddingLeft": 5,
+              "paddingVertical": 8,
+            }
+          }>
+          <View
+            style={
+              Object {
+                "width": 60,
+              }
+            }>
+            <View
+              style={
+                Object {
+                  "height": 50,
+                  "width": 50,
+                }
+              }>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "rgba(0, 0, 0, 0)",
+                    "borderRadius": 25,
+                    "height": 50,
+                    "left": -0,
+                    "position": "absolute",
+                    "top": -0,
+                    "width": 50,
+                  }
+                } />
+              <Image
+                size={50}
+                source={
+                  Object {
+                    "uri": "http://localhost:8080/static/preview/g4802.png",
+                  }
+                }
+                style={
+                  Array [
+                    Object {
+                      "borderRadius": 25,
+                      "height": 50,
+                      "width": 50,
+                    },
+                    undefined,
+                  ]
+                } />
+              <View
+                style={
+                  Object {
+                    "height": 50,
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 0,
+                    "width": 50,
+                  }
+                } />
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "width": 180,
+              }
+            }>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "row",
+                }
+              }>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                  }
+                }>
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "fontSize": 16,
+                      "fontWeight": "bold",
+                    }
+                  }>
+                  ตอนที่ 
+                </Text>
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "fontSize": 16,
+                      "fontWeight": "bold",
+                    }
+                  }>
+                  99
+                </Text>
+              </View>
+              <View
+                style={Object {}}>
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.3)",
+                      "fontSize": 10,
+                      "paddingLeft": 5,
+                    }
+                  }>
+                  January 14
+                </Text>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "row",
+                }
+              }>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flex": 3,
+                    "flexDirection": "row",
+                  }
+                }>
+                <Image
+                  source={1}
+                  style={
+                    Object {
+                      "borderRadius": 4,
+                      "height": 20,
+                      "resizeMode": "contain",
+                      "width": 20,
+                    }
+                  } />
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.3)",
+                      "fontSize": 12,
+                      "paddingLeft": 5,
+                    }
+                  }>
+                  ดู 
+                  0
+                   ครั้ง
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flex": 4,
+                    "flexDirection": "row",
+                  }
+                }>
+                <Image
+                  source={1}
+                  style={
+                    Object {
+                      "borderRadius": 4,
+                      "height": 15,
+                      "marginLeft": 20,
+                      "resizeMode": "contain",
+                      "width": 15,
+                    }
+                  } />
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.3)",
+                      "fontSize": 12,
+                      "paddingLeft": 5,
+                    }
+                  }>
+                  100
+                   Like
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "flex-end",
+                "flex": 1,
+                "paddingRight": 45.5,
+              }
+            }>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "rgba(0, 0, 0, 0.8)",
+                  "borderRadius": 4,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "opacity": 1,
+                  "paddingHorizontal": 15,
+                  "paddingVertical": 1,
+                  "width": 55,
+                }
+              }
+              testID={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 12,
+                    },
+                    Object {
+                      "color": "white",
+                    },
+                    undefined,
+                  ]
+                }>
+                อ่าน
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "#eeeeee",
+            "height": 1,
+          }
+        } />
+    </ScrollView>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 45,
+      }
+    }>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "opacity": 1,
+        }
+      }
+      testID={undefined}>
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 25,
+            "resizeMode": "contain",
+          }
+        } />
+    </View>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1.6,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "opacity": 1,
+        }
+      }
+      testID={undefined}>
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 25,
+            "resizeMode": "contain",
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "rgba(0, 0, 0, 0.3)",
+          }
+        }>
+        100
+      </Text>
+    </View>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1.6,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "opacity": 1,
+        }
+      }
+      testID={undefined}>
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 25,
+            "resizeMode": "contain",
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "rgba(0, 0, 0, 0.3)",
+          }
+        }>
+        0
+      </Text>
+    </View>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "opacity": 1,
+        }
+      }
+      testID={undefined}>
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 25,
+            "resizeMode": "contain",
+          }
+        } />
+    </View>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "opacity": 1,
+        }
+      }
+      testID={undefined}>
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 25,
+            "resizeMode": "contain",
+          }
+        } />
+    </View>
+  </View>
+</View>
+`;

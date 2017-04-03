@@ -20,39 +20,48 @@
  * DEALINGS IN THE SOFTWARE
  */
 
-'use strict';
+
 /* global Parse */
 
-var Survey = Parse.Object.extend('Survey');
-var SurveyResult = Parse.Object.extend('SurveyResult');
+const Survey = Parse.Object.extend('Survey');
+const SurveyResult = Parse.Object.extend('SurveyResult');
 
-Parse.Cloud.define('test_push', function(request, response) {
+function pickRandom(list) {
+  if (list.length === 0) {
+    throw new Error('Can not pick random item from empty list');
+  }
+  const index = Math.floor(Math.random() * list.length);
+  return list[index];
+}
+
+Parse.Cloud.define('test_push', (request, response) => {
   Parse.Cloud.useMasterKey();
 
-  var user = request.user;
+  const user = request.user;
   if (!user) {
-    return response.error({message: 'Not logged in'});
+    response.error({ message: 'Not logged in' });
+    return;
   }
 
-  var query = new Parse.Query(Parse.Installation);
+  const query = new Parse.Query(Parse.Installation);
   query.equalTo('user', user);
 
-  var userName = user.get('name').split(' ')[0];
-  var data;
+  const userName = user.get('name').split(' ')[0];
+  let data;
   if (request.params.url === 'link') {
     data = {
-      alert: 'Hey ' + userName + ', look at this great website',
-      url: 'https://www.fbf8.com/'
+      alert: `Hey ${userName}, look at this great website`,
+      url: 'https://www.fbf8.com/',
     };
   } else if (request.params.url === 'session') {
     data = {
-      alert: userName + ', "Designing at Facebook is about to begin"',
-      url: 'f8://designing-at-facebook'
+      alert: `${userName}, "Designing at Facebook is about to begin"`,
+      url: 'f8://designing-at-facebook',
     };
   } else {
     data = {
-      alert: 'Test notification for ' + userName,
-   };
+      alert: `Test notification for ${userName}`,
+    };
   }
 
   data.badge = 'Increment';
@@ -61,66 +70,66 @@ Parse.Cloud.define('test_push', function(request, response) {
     where: query,
     push_time: new Date(Date.now() + 3000),
     badge: 'Increment',
-    data: data,
+    data,
   }).then(
-    function() { response.success([]); },
-    function(error) { response.error(error); }
+    () => { response.success([]); },
+    (error) => { response.error(error); },
   );
 });
 
-Parse.Cloud.define('test_survey', function(request, response) {
+Parse.Cloud.define('test_survey', (request, response) => {
   Parse.Cloud.useMasterKey();
 
-  var user = request.user;
+  const user = request.user;
   if (!user) {
-    return response.error({message: 'Not logged in'});
+    response.error({ message: 'Not logged in' });
+    return;
   }
 
   new Parse.Query(Survey)
     .include('session')
     .find()
     .then(pickRandom)
-    .then(function(survey) {
-      var sessionTitle = survey.get('session').get('sessionTitle');
+    .then((survey) => {
+      const sessionTitle = survey.get('session').get('sessionTitle');
       return new SurveyResult().save({
-        user: user,
-        survey: survey,
-      }).then(function() {
-        return Parse.Push.send({
-          where: new Parse.Query(Parse.Installation).equalTo('user', user),
-          push_time: new Date(Date.now() + 3000),
-          data: {
-            badge: 'Increment',
-            alert: 'How did "' + sessionTitle + '" go?',
-            e: true, // ephemeral
-          }
-        });
-      });
-    }).then(
-      function() { response.success([]); },
-      function(error) { response.error(error); }
+        user,
+        survey,
+      })
+      .then(() => Parse.Push.send({
+        where: new Parse.Query(Parse.Installation).equalTo('user', user),
+        push_time: new Date(Date.now() + 3000),
+        data: {
+          badge: 'Increment',
+          alert: `How did "${sessionTitle}" go?`,
+          e: true, // ephemeral
+        },
+      }));
+    })
+    .then(
+      () => { response.success([]); },
+      (error) => { response.error(error); },
     );
 });
 
-function pickRandom(list) {
-  if (list.length === 0) {
-    throw new Error('Can not pick random item from empty list');
-  }
-  var index = Math.floor(Math.random() * list.length);
-  return list[index];
-}
-
-Parse.Cloud.define('test_attendance', function(request, response) {
+Parse.Cloud.define('test_attendance', (request, response) => {
   Parse.Cloud.useMasterKey();
-  var Agenda = Parse.Object.extend('Agenda');
-  new Parse.Query(Agenda).select(['id', 'sessionTitle']).find().then(function(agendas) {
-    return Parse.Promise.when(agendas.map(function(agenda) {
-      return new Parse.Query(Parse.User).equalTo('attendance', agenda).find(function(users) {
-        console.log('Users attending ' + agenda.get('sessionTitle') + ': ' + users.length);
-      });
-    }));
-  }).then(
-    function() { response.success([]); },
-    function(error) { response.error(error); }
+  const Agenda = Parse.Object.extend('Agenda');
+  (new Parse.Query(Agenda)).select(['id', 'sessionTitle'])
+  .find()
+  .then(
+    agendas => Parse.Promise.when(
+      agendas.map(
+        agenda => new Parse.Query(Parse.User).equalTo('attendance', agenda)
+        .find((users) => {
+          console.log(`Users attending ${agenda.get('sessionTitle')}: ${users.length}`);
+          return null;
+        }),
+      ),
+    ),
+  )
+  .then(
+    () => { response.success([]); },
+    (error) => { response.error(error); },
   );
 });

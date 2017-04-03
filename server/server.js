@@ -20,37 +20,59 @@
  * DEALINGS IN THE SOFTWARE
  */
 
+import 'dotenv/config';
+import mongoose from 'mongoose';
 import path from 'path';
 import express from 'express';
-import {apolloServer} from 'apollo-server';
-import {Schema} from './schema/schema';
 import Parse from 'parse/node';
-import {ParseServer} from 'parse-server';
+import { ParseServer } from 'parse-server';
 import ParseDashboard from 'parse-dashboard';
+import { graphqlExpress, graphiqlExpress } from 'graphql-server-express';
+import graphqlHTTP from 'express-graphql';
+import bodyParser from 'body-parser';
+import { models } from './cloud/graphql/models';
 
-const SERVER_PORT = process.env.PORT || 8080;
-const SERVER_HOST = process.env.HOST || 'localhost';
+import appLink from './app-link';
+import clogHandler from './clogHandler';
+
+const SERVER_PORT = process.env.SERVER_PORT || 8080;
+const SERVER_URL = process.env.URL;
+// const JAVASCRIPT_KEY = process.env.JAVASCRIPT_KEY || '';
+const APP_NAME = process.env.APP_NAME || 'clogii';
 const APP_ID = process.env.APP_ID || 'oss-f8-app-2016';
 const MASTER_KEY = process.env.MASTER_KEY || '70c6093dba5a7e55968a1c7ad3dd3e5a74ef5cac';
 const DATABASE_URI = process.env.DATABASE_URI || 'mongodb://localhost:27017/dev';
 const IS_DEVELOPMENT = process.env.NODE_ENV !== 'production';
 const DASHBOARD_AUTH = process.env.DASHBOARD_AUTH;
+const MAILGUN_FROM_ADDRESS = process.env.MAILGUN_FROM_ADDRESS || 'admin@localhost';
+const MAILGUN_DOMAIN = process.env.MAILGUN_DOMAIN || '';
+const MAILGUN_KEY = process.env.MAILGUN_KEY || '';
+const MOCK_SERVER = !!+process.env.MOCK_SERVER;
+
+mongoose.connect(process.env.DATABASE_URI);
 
 Parse.initialize(APP_ID);
-Parse.serverURL = `http://localhost:${SERVER_PORT}/parse`;
+Parse.serverURL = process.env.PARSE_URL;
 Parse.masterKey = MASTER_KEY;
 Parse.Cloud.useMasterKey();
 
-function getSchema() {
-  if (!IS_DEVELOPMENT) {
-    return Schema;
+function getSchema(rebuild) {
+  if (!rebuild) {
+    return MOCK_SERVER ? require('./cloud/graphql/mockSchema.js') : require('./cloud/graphql/schema.js');
   }
 
-  delete require.cache[require.resolve('./schema/schema.js')];
-  return require('./schema/schema.js').Schema;
+  if (MOCK_SERVER) {
+    delete require.cache[require.resolve('./cloud/graphql/mockSchema.js')];
+  } else {
+    delete require.cache[require.resolve('./cloud/graphql/schema.js')];
+  }
+  return MOCK_SERVER ? require('./cloud/graphql/mockSchema.js') : require('./cloud/graphql/schema.js');
 }
 
 const server = express();
+
+server.use('/static', express.static(path.join(__dirname, 'static')));
+server.use('/app-link', appLink);
 
 server.use(
   '/parse',
@@ -60,15 +82,26 @@ server.use(
     appId: APP_ID,
     masterKey: MASTER_KEY,
     fileKey: 'f33fc1a9-9ba9-4589-95ca-9976c0d52cd5',
-    serverURL: `http://${SERVER_HOST}:${SERVER_PORT}/parse`,
-  })
+    serverURL: process.env.PARSE_URL,
+    publicServerURL: process.env.PARSE_URL,
+    appName: APP_NAME,
+    verifyUserEmails: true,
+    emailAdapter: {
+      module: 'parse-server-simple-mailgun-adapter',
+      options: {
+        fromAddress: MAILGUN_FROM_ADDRESS,
+        domain: MAILGUN_DOMAIN,
+        apiKey: MAILGUN_KEY,
+      },
+    },
+  }),
 );
 
 if (IS_DEVELOPMENT) {
   let users;
   if (DASHBOARD_AUTH) {
-    var [user, pass] = DASHBOARD_AUTH.split(':');
-    users = [{user, pass}];
+    const [user, pass] = DASHBOARD_AUTH.split(':');
+    users = [{ user, pass }];
     console.log(users);
   }
   server.use(
@@ -85,18 +118,41 @@ if (IS_DEVELOPMENT) {
   );
 }
 
-server.use(
-  '/graphql',
-  apolloServer({
-    graphiql: IS_DEVELOPMENT,
-    pretty: IS_DEVELOPMENT,
-    schema: getSchema(),
-    rootValue: Math.random(), // TODO: Check credentials, assign user
-  })
-);
+function getMe() {
+  return models.User.findOne().skip(0);
+}
+
+server.use('/graphql', bodyParser.json(), graphqlExpress(request => ({
+  schema: getSchema(false),
+  context: {
+    request,
+    getMyRef: () => getMe().then(user => user._id.toString()),
+    getMe,
+  },
+})));
+
+if (IS_DEVELOPMENT) {
+  server.use('/graphiql', graphiqlExpress({
+    endpointURL: '/graphql',
+  }));
+}
+
+server.use('/ofc-graphql', graphqlHTTP(request => ({
+  schema: getSchema(false),
+  graphiql: IS_DEVELOPMENT,
+  context: {
+    request,
+    getMyRef: () => getMe().then(user => user._id.toString()),
+    getMe,
+  },
+})));
+
+server.use(clogHandler);
 
 server.use('/', (req, res) => res.redirect('/graphql'));
 
+getSchema();
+
 server.listen(SERVER_PORT, () => console.log(
-  `Server is now running in ${process.env.NODE_ENV || 'development'} mode on http://localhost:${SERVER_PORT}`
+  `Server is now running in ${process.env.NODE_ENV || 'development'} mode on http://localhost:${SERVER_PORT}`,
 ));

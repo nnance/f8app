@@ -21,25 +21,58 @@
  *
  * @flow
  */
-'use strict';
 
-var Image = require('Image');
-var React = require('React');
-var PixelRatio = require('PixelRatio');
+import { View } from 'react-native';
+
+const Image = require('Image');
+const React = require('React');
+const PixelRatio = require('PixelRatio');
 
 class ProfilePicture extends React.Component {
   props: {
-    userID: string;
+    user: any;
     size: number;
+    customSource: any;
   };
 
   render() {
-    const {userID, size} = this.props;
+    const { user, size } = this.props;
+    const userID = user ? user.id : null;
     const scaledSize = size * PixelRatio.get();
-    const uri = `http://graph.facebook.com/${userID}/picture?width=${scaledSize}&height=${scaledSize}`;
+    let uri;
+    if (userID) {
+      uri = `http://graph.facebook.com/${userID}/picture?width=${scaledSize}&height=${scaledSize}`;
+    }
+    if (user && user.profilePicture) {
+      uri = user.profilePicture;
+    }
+    if (this.props.customSource) {
+      return (
+        <Image
+          source={this.props.customSource}
+          style={{
+            width: size,
+            height: size,
+            borderRadius: size / 2,
+          }}
+        />
+      );
+    }
+    if (!uri) {
+      return (
+        <View
+          style={{
+            width: size,
+            height: size,
+            borderRadius: size / 2,
+            backgroundColor: 'black',
+          }}
+        />
+      );
+    }
     return (
       <Image
-        source={{uri}}
+        source={{ uri }}
         style={{
           width: size,
           height: size,

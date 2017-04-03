@@ -1,0 +1,81 @@
+exports[`ProfileNavigator renderScene correct component 1`] = `
+<View>
+  <Connect(FollowingScreen)
+    onBackPress={[Function]} />
+</View>
+`;
+
+exports[`ProfileNavigator renderScene correct component 2`] = `
+<View>
+  <Connect(FollowerScreen)
+    onBackPress={[Function]} />
+</View>
+`;
+
+exports[`ProfileNavigator renderScene correct component 3`] = `
+<View>
+  <Connect(MyFanScreen)
+    onBackPress={[Function]} />
+</View>
+`;
+
+exports[`ProfileNavigator renderScene correct component 4`] = `
+<View>
+  <Connect(ActivityScreen)
+    onBackPress={[Function]} />
+</View>
+`;
+
+exports[`ProfileNavigator renderScene correct component 5`] = `
+<View>
+  <Connect(MyClogScreen)
+    onBackPress={[Function]} />
+</View>
+`;
+
+exports[`ProfileNavigator renderScene correct component 6`] = `
+<View>
+  <Apollo(Apollo(BookmarkScreen))
+    onBackPress={[Function]} />
+</View>
+`;
+
+exports[`ProfileNavigator renderScene correct component 7`] = `
+<View>
+  <JellyShopScreen
+    onBackPress={[Function]} />
+</View>
+`;
+
+exports[`ProfileNavigator renderScene correct component 8`] = `
+<View>
+  <Connect(ProfileEditorScreen)
+    goToChangeEmail={[Function]}
+    goToChangePassword={[Function]}
+    onBackPress={[Function]} />
+</View>
+`;
+
+exports[`ProfileNavigator renderScene correct component 9`] = `
+<View>
+  <Connect(ChangeEmailScreen)
+    onBackPress={[Function]} />
+</View>
+`;
+
+exports[`ProfileNavigator renderScene correct component 10`] = `
+<View>
+  <Connect(ChangePasswordScreen)
+    onBackPress={[Function]} />
+</View>
+`;
+
+exports[`ProfileNavigator renderScene correct component 11`] = `
+<View>
+  <Connect(Home)
+    onEditProfile={[Function]}
+    onFollowerPress={[Function]}
+    onFollowingPress={[Function]}
+    onMenuPress={[Function]} />
+</View>
+`;

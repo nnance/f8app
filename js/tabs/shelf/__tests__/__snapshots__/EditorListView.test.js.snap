@@ -1,0 +1,1209 @@
+exports[`Shelf.EditorListView render 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgb(250, 250, 250)",
+      "flex": 1,
+    }
+  }>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "flexDirection": "row",
+          "height": 60,
+          "justifyContent": "space-between",
+          "paddingTop": 15,
+          "width": 750,
+        },
+        Object {
+          "backgroundColor": "rgb(0, 150, 253)",
+        },
+      ]
+    }>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "flex-start",
+            "flex": 1,
+            "paddingLeft": 10,
+          },
+          undefined,
+        ]
+      }>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID={undefined}>
+        <Image
+          source={1}
+          style={
+            Object {
+              "height": 20,
+              "resizeMode": "contain",
+            }
+          } />
+      </View>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 4,
+          },
+          undefined,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "fontSize": 22,
+              "fontWeight": "bold",
+            },
+            Object {
+              "color": "white",
+              "fontSize": 18,
+            },
+          ]
+        }>
+        Editor Diary Clog
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "paddingRight": 10,
+          },
+          undefined,
+        ]
+      }>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID={undefined}>
+        <Image
+          source={1}
+          style={
+            Object {
+              "height": 20,
+              "resizeMode": "contain",
+            }
+          } />
+      </View>
+    </View>
+  </View>
+  <ScrollView
+    contentInset={
+      Object {
+        "bottom": 0,
+        "top": 0,
+      }
+    }
+    data={
+      Array [
+        Object {
+          "__typename": "Editor",
+          "clogCount": 1,
+          "clogs": Array [
+            Object {
+              "__typename": "Clog",
+              "category": "D",
+              "id": "768868567364903816985329",
+              "thumbnailImage": "http://localhost:8080/static/preview/g4802.png",
+              "title": "Eos temporibus",
+              Symbol(id): "Clog768868567364903816985329",
+            },
+          ],
+          "followerCount": 19,
+          "id": "114833952994727166614309",
+          "isFollowing": false,
+          "name": "Miss Corine Reynolds",
+          "profilePicture": "http://localhost:8080/static/preview/g4602.png",
+          Symbol(id): "Editor114833952994727166614309",
+        },
+        Object {
+          "__typename": "Editor",
+          "clogCount": 1,
+          "clogs": Array [
+            Object {
+              "__typename": "Clog",
+              "category": "D",
+              "id": "670864680058534769084606",
+              "thumbnailImage": "http://localhost:8080/static/preview/g3658.png",
+              "title": "Ut sed",
+              Symbol(id): "Clog670864680058534769084606",
+            },
+          ],
+          "followerCount": 20,
+          "id": "137320647828577963583073",
+          "isFollowing": false,
+          "name": "Mr. Tiana Sawayn",
+          "profilePicture": "http://localhost:8080/static/preview/g3578.png",
+          Symbol(id): "Editor137320647828577963583073",
+        },
+        Object {
+          "__typename": "Editor",
+          "clogCount": 3,
+          "clogs": Array [
+            Object {
+              "__typename": "Clog",
+              "category": "D",
+              "id": "117326121711321712865588",
+              "thumbnailImage": "http://localhost:8080/static/preview/g4722.png",
+              "title": "Voluptatem quia et",
+              Symbol(id): "Clog117326121711321712865588",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "D",
+              "id": "296185152252356319186294",
+              "thumbnailImage": "http://localhost:8080/static/preview/g3376.png",
+              "title": "Mollitia eveniet harum",
+              Symbol(id): "Clog296185152252356319186294",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "G",
+              "id": "686461450133032288442585",
+              "thumbnailImage": "http://localhost:8080/static/preview/g3456.png",
+              "title": "Quis impedit",
+              Symbol(id): "Clog686461450133032288442585",
+            },
+          ],
+          "followerCount": 20,
+          "id": "280684342505487834590231",
+          "isFollowing": false,
+          "name": "Mrs. Jocelyn Ankunding",
+          "profilePicture": "http://localhost:8080/static/preview/g1878.png",
+          Symbol(id): "Editor280684342505487834590231",
+        },
+        Object {
+          "__typename": "Editor",
+          "clogCount": 3,
+          "clogs": Array [
+            Object {
+              "__typename": "Clog",
+              "category": "G",
+              "id": "045185902287606380894503",
+              "thumbnailImage": "http://localhost:8080/static/preview/g4762.png",
+              "title": "Molestiae sed molestias",
+              Symbol(id): "Clog045185902287606380894503",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "D",
+              "id": "542579577351922574872852",
+              "thumbnailImage": "http://localhost:8080/static/preview/g4802.png",
+              "title": "Vero repudiandae",
+              Symbol(id): "Clog542579577351922574872852",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "D",
+              "id": "902357242662521216832095",
+              "thumbnailImage": "http://localhost:8080/static/preview/g3658.png",
+              "title": "Aut neque voluptas",
+              Symbol(id): "Clog902357242662521216832095",
+            },
+          ],
+          "followerCount": 20,
+          "id": "446130173399124365072481",
+          "isFollowing": false,
+          "name": "Mrs. Joannie Pouros",
+          "profilePicture": "http://localhost:8080/static/preview/g4642.png",
+          Symbol(id): "Editor446130173399124365072481",
+        },
+        Object {
+          "__typename": "Editor",
+          "clogCount": 2,
+          "clogs": Array [
+            Object {
+              "__typename": "Clog",
+              "category": "G",
+              "id": "431558458968155748596723",
+              "thumbnailImage": "http://localhost:8080/static/preview/g4802.png",
+              "title": "Aut deleniti",
+              Symbol(id): "Clog431558458968155748596723",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "D",
+              "id": "728765828446365763263524",
+              "thumbnailImage": "http://localhost:8080/static/preview/g4842.png",
+              "title": "In eius laborum",
+              Symbol(id): "Clog728765828446365763263524",
+            },
+          ],
+          "followerCount": 20,
+          "id": "454131118081726605601139",
+          "isFollowing": false,
+          "name": "Ms. Concepcion Bins",
+          "profilePicture": "http://localhost:8080/static/preview/g3456.png",
+          Symbol(id): "Editor454131118081726605601139",
+        },
+        Object {
+          "__typename": "Editor",
+          "clogCount": 5,
+          "clogs": Array [
+            Object {
+              "__typename": "Clog",
+              "category": "M",
+              "id": "238748906461179143584327",
+              "thumbnailImage": "http://localhost:8080/static/preview/g1878.png",
+              "title": "Assumenda sunt corporis",
+              Symbol(id): "Clog238748906461179143584327",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "D",
+              "id": "628087879173595131358851",
+              "thumbnailImage": "http://localhost:8080/static/preview/g3658.png",
+              "title": "Excepturi quos nobis",
+              Symbol(id): "Clog628087879173595131358851",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "M",
+              "id": "173734808590336161268526",
+              "thumbnailImage": "http://localhost:8080/static/preview/g3336.png",
+              "title": "Et ratione placeat",
+              Symbol(id): "Clog173734808590336161268526",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "M",
+              "id": "528368131042308385012237",
+              "thumbnailImage": "http://localhost:8080/static/preview/g3456.png",
+              "title": "Unde sint",
+              Symbol(id): "Clog528368131042308385012237",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "D",
+              "id": "619393784693802389953703",
+              "thumbnailImage": "http://localhost:8080/static/preview/g4602.png",
+              "title": "Praesentium voluptatem non",
+              Symbol(id): "Clog619393784693802389953703",
+            },
+          ],
+          "followerCount": 20,
+          "id": "467522457653280227236724",
+          "isFollowing": false,
+          "name": "Miss Ferne Bashirian",
+          "profilePicture": "http://localhost:8080/static/preview/g3456.png",
+          Symbol(id): "Editor467522457653280227236724",
+        },
+        Object {
+          "__typename": "Editor",
+          "clogCount": 2,
+          "clogs": Array [
+            Object {
+              "__typename": "Clog",
+              "category": "D",
+              "id": "263707545661468848048268",
+              "thumbnailImage": "http://localhost:8080/static/preview/g3336.png",
+              "title": "Aliquam hic dicta",
+              Symbol(id): "Clog263707545661468848048268",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "D",
+              "id": "111784373673445989043647",
+              "thumbnailImage": "http://localhost:8080/static/preview/g4762.png",
+              "title": "Excepturi nihil ducimus",
+              Symbol(id): "Clog111784373673445989043647",
+            },
+          ],
+          "followerCount": 10,
+          "id": "469452633167840076967334",
+          "isFollowing": false,
+          "name": "Mrs. Antwon Kiehn",
+          "profilePicture": "http://localhost:8080/static/preview/g3658.png",
+          Symbol(id): "Editor469452633167840076967334",
+        },
+        Object {
+          "__typename": "Editor",
+          "clogCount": 5,
+          "clogs": Array [
+            Object {
+              "__typename": "Clog",
+              "category": "M",
+              "id": "654294662240327088876520",
+              "thumbnailImage": "http://localhost:8080/static/preview/g3658.png",
+              "title": "Ullam at",
+              Symbol(id): "Clog654294662240327088876520",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "G",
+              "id": "130566873140858740966674",
+              "thumbnailImage": "http://localhost:8080/static/preview/g4762.png",
+              "title": "Repudiandae dolores facilis",
+              Symbol(id): "Clog130566873140858740966674",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "M",
+              "id": "674782745571271686669945",
+              "thumbnailImage": "http://localhost:8080/static/preview/g3618.png",
+              "title": "Eos est",
+              Symbol(id): "Clog674782745571271686669945",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "D",
+              "id": "882316881648163247343367",
+              "thumbnailImage": "http://localhost:8080/static/preview/g1878.png",
+              "title": "Temporibus possimus rerum",
+              Symbol(id): "Clog882316881648163247343367",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "D",
+              "id": "818614083814265155934763",
+              "thumbnailImage": "http://localhost:8080/static/preview/g3336.png",
+              "title": "Maiores sequi ut",
+              Symbol(id): "Clog818614083814265155934763",
+            },
+          ],
+          "followerCount": 20,
+          "id": "584327875307613550863487",
+          "isFollowing": false,
+          "name": "Ms. Domingo Ward",
+          "profilePicture": "http://localhost:8080/static/preview/g4762.png",
+          Symbol(id): "Editor584327875307613550863487",
+        },
+        Object {
+          "__typename": "Editor",
+          "clogCount": 2,
+          "clogs": Array [
+            Object {
+              "__typename": "Clog",
+              "category": "G",
+              "id": "846938305418238744412383",
+              "thumbnailImage": "http://localhost:8080/static/preview/g4802.png",
+              "title": "Et quas",
+              Symbol(id): "Clog846938305418238744412383",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "D",
+              "id": "925617112168739625336378",
+              "thumbnailImage": "http://localhost:8080/static/preview/g3658.png",
+              "title": "Qui architecto",
+              Symbol(id): "Clog925617112168739625336378",
+            },
+          ],
+          "followerCount": 20,
+          "id": "586655134844681604113971",
+          "isFollowing": false,
+          "name": "Mrs. Hobart Ledner",
+          "profilePicture": "http://localhost:8080/static/preview/g3618.png",
+          Symbol(id): "Editor586655134844681604113971",
+        },
+        Object {
+          "__typename": "Editor",
+          "clogCount": 4,
+          "clogs": Array [
+            Object {
+              "__typename": "Clog",
+              "category": "D",
+              "id": "781826753399275537813840",
+              "thumbnailImage": "http://localhost:8080/static/preview/g1878.png",
+              "title": "Incidunt itaque voluptas",
+              Symbol(id): "Clog781826753399275537813840",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "G",
+              "id": "748745917530253941486087",
+              "thumbnailImage": "http://localhost:8080/static/preview/g3336.png",
+              "title": "Voluptatibus qui",
+              Symbol(id): "Clog748745917530253941486087",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "M",
+              "id": "171505163471325568541560",
+              "thumbnailImage": "http://localhost:8080/static/preview/g4642.png",
+              "title": "Voluptatem placeat et",
+              Symbol(id): "Clog171505163471325568541560",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "M",
+              "id": "274465385576846385347289",
+              "thumbnailImage": "http://localhost:8080/static/preview/g3578.png",
+              "title": "Aut ducimus",
+              Symbol(id): "Clog274465385576846385347289",
+            },
+          ],
+          "followerCount": 20,
+          "id": "607734727665426106738725",
+          "isFollowing": false,
+          "name": "Mr. Fletcher Gusikowski",
+          "profilePicture": "http://localhost:8080/static/preview/g4802.png",
+          Symbol(id): "Editor607734727665426106738725",
+        },
+        Object {
+          "__typename": "Editor",
+          "clogCount": 6,
+          "clogs": Array [
+            Object {
+              "__typename": "Clog",
+              "category": "D",
+              "id": "051186132808682246173344",
+              "thumbnailImage": "http://localhost:8080/static/preview/g3618.png",
+              "title": "Voluptatem nihil",
+              Symbol(id): "Clog051186132808682246173344",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "D",
+              "id": "678455476222228559229710",
+              "thumbnailImage": "http://localhost:8080/static/preview/g3578.png",
+              "title": "Molestias quibusdam veniam",
+              Symbol(id): "Clog678455476222228559229710",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "M",
+              "id": "895286754166156891164009",
+              "thumbnailImage": "http://localhost:8080/static/preview/g3618.png",
+              "title": "Qui voluptatem laudantium",
+              Symbol(id): "Clog895286754166156891164009",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "G",
+              "id": "917817724553668254778436",
+              "thumbnailImage": "http://localhost:8080/static/preview/g4802.png",
+              "title": "Aut ad",
+              Symbol(id): "Clog917817724553668254778436",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "N",
+              "id": "114281410365331412830854",
+              "thumbnailImage": "http://localhost:8080/static/preview/g3376.png",
+              "title": "In sed iure",
+              Symbol(id): "Clog114281410365331412830854",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "M",
+              "id": "816714120198031142073461",
+              "thumbnailImage": "http://localhost:8080/static/preview/g3578.png",
+              "title": "Animi praesentium",
+              Symbol(id): "Clog816714120198031142073461",
+            },
+          ],
+          "followerCount": 20,
+          "id": "668544744169114181587958",
+          "isFollowing": false,
+          "name": "Ms. Jaylen Bernhard",
+          "profilePicture": "http://localhost:8080/static/preview/g4642.png",
+          Symbol(id): "Editor668544744169114181587958",
+        },
+        Object {
+          "__typename": "Editor",
+          "clogCount": 5,
+          "clogs": Array [
+            Object {
+              "__typename": "Clog",
+              "category": "D",
+              "id": "472376295533066524273884",
+              "thumbnailImage": "http://localhost:8080/static/preview/g4602.png",
+              "title": "Sunt voluptate",
+              Symbol(id): "Clog472376295533066524273884",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "G",
+              "id": "419743162548783442162666",
+              "thumbnailImage": "http://localhost:8080/static/preview/g4722.png",
+              "title": "Et quos",
+              Symbol(id): "Clog419743162548783442162666",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "M",
+              "id": "517755785456265624551521",
+              "thumbnailImage": "http://localhost:8080/static/preview/g3578.png",
+              "title": "Unde architecto non",
+              Symbol(id): "Clog517755785456265624551521",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "N",
+              "id": "155184106158756623378868",
+              "thumbnailImage": "http://localhost:8080/static/preview/g4722.png",
+              "title": "Dolores repellendus",
+              Symbol(id): "Clog155184106158756623378868",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "N",
+              "id": "544493436859220864968378",
+              "thumbnailImage": "http://localhost:8080/static/preview/g3658.png",
+              "title": "Repellendus molestiae adipisci",
+              Symbol(id): "Clog544493436859220864968378",
+            },
+          ],
+          "followerCount": 20,
+          "id": "712853908723426978170610",
+          "isFollowing": false,
+          "name": "Miss Nora Macejkovic",
+          "profilePicture": "http://localhost:8080/static/preview/g3618.png",
+          Symbol(id): "Editor712853908723426978170610",
+        },
+        Object {
+          "__typename": "Editor",
+          "clogCount": 3,
+          "clogs": Array [
+            Object {
+              "__typename": "Clog",
+              "category": "D",
+              "id": "294843461637288576445016",
+              "thumbnailImage": "http://localhost:8080/static/preview/g4762.png",
+              "title": "Molestias ullam consectetur",
+              Symbol(id): "Clog294843461637288576445016",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "D",
+              "id": "623934811155253878242265",
+              "thumbnailImage": "http://localhost:8080/static/preview/g4642.png",
+              "title": "Enim veritatis est",
+              Symbol(id): "Clog623934811155253878242265",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "M",
+              "id": "438103401713677834887948",
+              "thumbnailImage": "http://localhost:8080/static/preview/g4802.png",
+              "title": "Reiciendis possimus",
+              Symbol(id): "Clog438103401713677834887948",
+            },
+          ],
+          "followerCount": 20,
+          "id": "743971712225221437021866",
+          "isFollowing": false,
+          "name": "Miss Cathrine Fay",
+          "profilePicture": "http://localhost:8080/static/preview/g4642.png",
+          Symbol(id): "Editor743971712225221437021866",
+        },
+        Object {
+          "__typename": "Editor",
+          "clogCount": 3,
+          "clogs": Array [
+            Object {
+              "__typename": "Clog",
+              "category": "D",
+              "id": "544834617154012609364377",
+              "thumbnailImage": "http://localhost:8080/static/preview/g4642.png",
+              "title": "Aut voluptatum non",
+              Symbol(id): "Clog544834617154012609364377",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "G",
+              "id": "287112671469377646562424",
+              "thumbnailImage": "http://localhost:8080/static/preview/g4802.png",
+              "title": "Quas ab",
+              Symbol(id): "Clog287112671469377646562424",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "G",
+              "id": "825420318248834102539712",
+              "thumbnailImage": "http://localhost:8080/static/preview/g3336.png",
+              "title": "Ipsa facilis ad",
+              Symbol(id): "Clog825420318248834102539712",
+            },
+          ],
+          "followerCount": 20,
+          "id": "787244132118836544512261",
+          "isFollowing": false,
+          "name": "Ms. Devyn Miller",
+          "profilePicture": "http://localhost:8080/static/preview/g3578.png",
+          Symbol(id): "Editor787244132118836544512261",
+        },
+        Object {
+          "__typename": "Editor",
+          "clogCount": 3,
+          "clogs": Array [
+            Object {
+              "__typename": "Clog",
+              "category": "D",
+              "id": "181761213507279158165888",
+              "thumbnailImage": "http://localhost:8080/static/preview/g3456.png",
+              "title": "A reprehenderit sequi",
+              Symbol(id): "Clog181761213507279158165888",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "G",
+              "id": "116257241488319970014207",
+              "thumbnailImage": "http://localhost:8080/static/preview/g4642.png",
+              "title": "Blanditiis laudantium",
+              Symbol(id): "Clog116257241488319970014207",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "M",
+              "id": "718244538541441205429955",
+              "thumbnailImage": "http://localhost:8080/static/preview/g3456.png",
+              "title": "Cumque reprehenderit non",
+              Symbol(id): "Clog718244538541441205429955",
+            },
+          ],
+          "followerCount": 20,
+          "id": "858386211423312851497224",
+          "isFollowing": false,
+          "name": "Mrs. Shana Mante",
+          "profilePicture": "http://localhost:8080/static/preview/g3658.png",
+          Symbol(id): "Editor858386211423312851497224",
+        },
+        Object {
+          "__typename": "Editor",
+          "clogCount": 2,
+          "clogs": Array [
+            Object {
+              "__typename": "Clog",
+              "category": "D",
+              "id": "586584023174808345493126",
+              "thumbnailImage": "http://localhost:8080/static/preview/g4722.png",
+              "title": "Et consequatur",
+              Symbol(id): "Clog586584023174808345493126",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "N",
+              "id": "175153558268872935215888",
+              "thumbnailImage": "http://localhost:8080/static/preview/g4762.png",
+              "title": "Perspiciatis et",
+              Symbol(id): "Clog175153558268872935215888",
+            },
+          ],
+          "followerCount": 20,
+          "id": "927683106767547605797323",
+          "isFollowing": false,
+          "name": "Mrs. Margarett Heaney",
+          "profilePicture": "http://localhost:8080/static/preview/g4722.png",
+          Symbol(id): "Editor927683106767547605797323",
+        },
+        Object {
+          "__typename": "Editor",
+          "clogCount": 2,
+          "clogs": Array [
+            Object {
+              "__typename": "Clog",
+              "category": "D",
+              "id": "251232388171168710645711",
+              "thumbnailImage": "http://localhost:8080/static/preview/g4762.png",
+              "title": "Aspernatur officiis laborum",
+              Symbol(id): "Clog251232388171168710645711",
+            },
+            Object {
+              "__typename": "Clog",
+              "category": "D",
+              "id": "560387914403456104155315",
+              "thumbnailImage": "http://localhost:8080/static/preview/g4842.png",
+              "title": "Quo et nam",
+              Symbol(id): "Clog560387914403456104155315",
+            },
+          ],
+          "followerCount": 20,
+          "id": "997304213518753383588280",
+          "isFollowing": false,
+          "name": "Dr. Hilma Lind",
+          "profilePicture": "http://localhost:8080/static/preview/g3578.png",
+          Symbol(id): "Editor997304213518753383588280",
+        },
+      ]
+    }
+    dataSource={
+      ListViewDataSource {
+        "items": 17,
+      }
+    }
+    initialListSize={1}
+    minContentHeight={0}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={1000}
+    onKeyboardDidHide={undefined}
+    onKeyboardDidShow={undefined}
+    onKeyboardWillHide={undefined}
+    onKeyboardWillShow={undefined}
+    onLayout={[Function]}
+    onScroll={[Function]}
+    pageSize={1}
+    removeClippedSubviews={true}
+    renderEmptyList={null}
+    renderFooter={[Function]}
+    renderRow={[Function]}
+    renderSeparator={[Function]}
+    scrollEventThrottle={50}
+    scrollRenderAheadDistance={1000}
+    stickyHeaderIndices={Array []}>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "row",
+          "paddingHorizontal": 10,
+          "paddingVertical": 10,
+        }
+      }>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID={undefined}>
+        <View
+          style={
+            Object {
+              "height": 100,
+              "width": 100,
+            }
+          }>
+          <View
+            style={
+              Object {
+                "backgroundColor": "rgba(255, 255, 255, 1)",
+                "borderRadius": 52.5,
+                "height": 105,
+                "left": -2.5,
+                "position": "absolute",
+                "top": -2.5,
+                "width": 105,
+              }
+            } />
+          <Image
+            shadowColor="rgba(255, 255, 255, 1)"
+            shadowRadius={5}
+            size={100}
+            source={
+              Object {
+                "uri": "http://localhost:8080/static/preview/g4602.png",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "borderRadius": 50,
+                  "height": 100,
+                  "width": 100,
+                },
+                undefined,
+              ]
+            } />
+          <View
+            style={
+              Object {
+                "height": 100,
+                "left": 0,
+                "position": "absolute",
+                "top": 0,
+                "width": 100,
+              }
+            } />
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "height": 130,
+            "paddingLeft": 20,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+              }
+            }>
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                numberOfLines={1}
+                style={
+                  Object {
+                    "fontSize": 16,
+                    "fontWeight": "bold",
+                  }
+                }>
+                Miss Corine Reynolds
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "width": 80,
+                }
+              } />
+          </View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            numberOfLines={1}
+            style={
+              Object {
+                "color": "rgba(0, 0, 0, 0.3)",
+                "fontSize": 12,
+                "fontWeight": "bold",
+              }
+            }>
+            1
+             Clogs
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            numberOfLines={1}
+            style={
+              Object {
+                "color": "rgba(0, 0, 0, 0.3)",
+                "fontSize": 12,
+                "fontWeight": "bold",
+              }
+            }>
+            19
+             คน กำลังติดตาม
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "height": 80,
+            }
+          }>
+          <ScrollView
+            contentInset={
+              Object {
+                "bottom": 0,
+                "top": 0,
+              }
+            }
+            data={
+              Array [
+                Object {
+                  "__typename": "Clog",
+                  "category": "D",
+                  "id": "768868567364903816985329",
+                  "thumbnailImage": "http://localhost:8080/static/preview/g4802.png",
+                  "title": "Eos temporibus",
+                  Symbol(id): "Clog768868567364903816985329",
+                },
+              ]
+            }
+            dataSource={
+              ListViewDataSource {
+                "items": 1,
+              }
+            }
+            horizontal={true}
+            initialListSize={1}
+            minContentHeight={0}
+            onContentSizeChange={[Function]}
+            onEndReachedThreshold={1000}
+            onKeyboardDidHide={undefined}
+            onKeyboardDidShow={undefined}
+            onKeyboardWillHide={undefined}
+            onKeyboardWillShow={undefined}
+            onLayout={[Function]}
+            onScroll={[Function]}
+            pageSize={1}
+            removeClippedSubviews={true}
+            renderEmptyList={null}
+            renderFooter={[Function]}
+            renderRow={[Function]}
+            renderSeparator={[Function]}
+            scrollEventThrottle={50}
+            scrollRenderAheadDistance={1000}
+            showsHorizontalScrollIndicator={false}
+            stickyHeaderIndices={Array []}
+            style={
+              Object {
+                "marginTop": 15,
+              }
+            }>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "flex": 1,
+                  "opacity": 1,
+                  "paddingHorizontal": 5,
+                  "width": 55,
+                }
+              }
+              testID={undefined}>
+              <View
+                style={
+                  Object {
+                    "height": 45,
+                  }
+                }>
+                <View
+                  style={
+                    Object {
+                      "height": 45,
+                      "width": 45,
+                    }
+                  }>
+                  <View
+                    style={
+                      Object {
+                        "height": 45,
+                        "width": 45,
+                      }
+                    }>
+                    <View
+                      style={
+                        Object {
+                          "backgroundColor": "rgba(255, 255, 255, 0.3)",
+                          "borderRadius": 25,
+                          "height": 50,
+                          "left": -2.5,
+                          "position": "absolute",
+                          "top": -2.5,
+                          "width": 50,
+                        }
+                      } />
+                    <Image
+                      category="D"
+                      shadowColor="rgba(255, 255, 255, 0.3)"
+                      shadowRadius={5}
+                      size={45}
+                      source={
+                        Object {
+                          "uri": "http://localhost:8080/static/preview/g4802.png",
+                        }
+                      }
+                      style={
+                        Array [
+                          Object {
+                            "borderRadius": 22.5,
+                            "height": 45,
+                            "width": 45,
+                          },
+                          Array [
+                            undefined,
+                            Object {
+                              "backgroundColor": "transparent",
+                            },
+                          ],
+                        ]
+                      }
+                      subSource={1} />
+                    <View
+                      style={
+                        Object {
+                          "height": 45,
+                          "left": 0,
+                          "position": "absolute",
+                          "top": 0,
+                          "width": 45,
+                        }
+                      } />
+                  </View>
+                  <Image
+                    source={1}
+                    style={
+                      Array [
+                        Object {
+                          "bottom": 1.40625,
+                          "height": 11.25,
+                          "position": "absolute",
+                          "right": 1.40625,
+                          "width": 11.25,
+                        },
+                        undefined,
+                      ]
+                    } />
+                </View>
+              </View>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "paddingTop": 5,
+                  }
+                }>
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  numberOfLines={1}
+                  style={
+                    Object {
+                      "color": "black",
+                      "fontSize": 12,
+                    }
+                  }>
+                  Eos temporibus
+                </Text>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "height": 1,
+                }
+              } />
+          </ScrollView>
+        </View>
+        <View
+          style={
+            Object {
+              "position": "absolute",
+              "right": 5,
+              "top": 5,
+            }
+          }>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "borderColor": "rgb(141, 227, 188)",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "flexDirection": "row",
+                "height": 25,
+                "justifyContent": "center",
+                "opacity": 1,
+                "paddingHorizontal": 0,
+                "width": 70,
+              }
+            }
+            testID={undefined}>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 12,
+                  },
+                  Object {
+                    "color": "rgb(141, 227, 188)",
+                  },
+                  undefined,
+                ]
+              }>
+              ติดตาม
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "height": 1,
+        }
+      } />
+  </ScrollView>
+</View>
+`;

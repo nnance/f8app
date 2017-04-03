@@ -23,10 +23,11 @@
  * @flow
  * @providesModule F8DrawerLayout
  */
-'use strict';
 
-var React = require('React');
-var DrawerLayoutAndroid = require('DrawerLayoutAndroid');
+/* eslint-disable */
+
+const React = require('React');
+const DrawerLayoutAndroid = require('DrawerLayoutAndroid');
 
 class F8DrawerLayout extends React.Component {
   _drawer: ?DrawerLayoutAndroid;
@@ -42,11 +43,11 @@ class F8DrawerLayout extends React.Component {
   }
 
   render() {
-    const {drawerPosition, ...props} = this.props;
-    const {Right, Left} = DrawerLayoutAndroid.positions;
+    const { drawerPosition, ...props } = this.props;
+    const { Right, Left } = DrawerLayoutAndroid.positions;
     return (
       <DrawerLayoutAndroid
-        ref={(drawer) => this._drawer = drawer}
+        ref={drawer => this._drawer = drawer}
         {...props}
         drawerPosition={drawerPosition === 'right' ? Right : Left}
         onDrawerOpen={this.onDrawerOpen}

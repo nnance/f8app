@@ -22,9 +22,8 @@
  * @flow
  */
 
-'use strict';
 
-var Platform = require('Platform');
+const Platform = require('Platform');
 
 if (Platform.OS === 'ios') {
   module.exports = require('./img/x-white.png');

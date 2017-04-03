@@ -22,9 +22,8 @@
  * @flow
  */
 
-'use strict';
 
-import type {Action} from '../actions/types';
+import type { Action } from '../actions/types';
 
 export type Question = {
   text: string;
@@ -46,7 +45,7 @@ function surveys(state: State = [], action: Action): State {
   }
   if (action.type === 'SUBMITTED_SURVEY_ANSWERS') {
     const submittedSurveyId = action.id;
-    return state.filter((survey) => survey.id !== submittedSurveyId);
+    return state.filter(survey => survey.id !== submittedSurveyId);
   }
   if (action.type === 'LOGGED_OUT') {
     return [];

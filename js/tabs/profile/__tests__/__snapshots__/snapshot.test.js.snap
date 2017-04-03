@@ -1,0 +1,2652 @@
+exports[`BookmarkScreen render BookmarkScreen 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgb(250, 250, 250)",
+      "flex": 1,
+    }
+  }>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "flexDirection": "row",
+          "height": 60,
+          "justifyContent": "space-between",
+          "paddingTop": 15,
+          "width": 750,
+        },
+        Object {
+          "borderBottomWidth": 1,
+          "borderColor": "#eeeeee",
+        },
+      ]
+    }>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "flex-start",
+            "flex": 1,
+            "paddingLeft": 10,
+          },
+          undefined,
+        ]
+      }>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID={undefined}>
+        <Image
+          source={1}
+          style={
+            Object {
+              "height": 20,
+              "resizeMode": "contain",
+            }
+          } />
+      </View>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 4,
+          },
+          undefined,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "fontSize": 22,
+              "fontWeight": "bold",
+            },
+            Object {
+              "color": "rgb(249, 65, 92)",
+              "fontSize": 22,
+              "fontWeight": "bold",
+            },
+          ]
+        }>
+        Bookmark
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "paddingRight": 10,
+          },
+          undefined,
+        ]
+      }>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID={undefined} />
+    </View>
+  </View>
+  <ScrollView
+    contentInset={
+      Object {
+        "bottom": 1354,
+        "top": 0,
+      }
+    }
+    data={Array []}
+    dataSource={
+      ListViewDataSource {
+        "items": 0,
+      }
+    }
+    initialListSize={1}
+    minContentHeight={1354}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={1000}
+    onKeyboardDidHide={undefined}
+    onKeyboardDidShow={undefined}
+    onKeyboardWillHide={undefined}
+    onKeyboardWillShow={undefined}
+    onLayout={[Function]}
+    onScroll={[Function]}
+    pageSize={1}
+    removeClippedSubviews={true}
+    renderEmptyList={null}
+    renderFooter={[Function]}
+    renderRow={[Function]}
+    renderSeparator={[Function]}
+    scrollEventThrottle={50}
+    scrollRenderAheadDistance={1000}
+    stickyHeaderIndices={Array []} />
+</View>
+`;
+
+exports[`JellyShopScreen render JellyShopScreen 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgb(250, 250, 250)",
+      "flex": 1,
+    }
+  }>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "flexDirection": "row",
+          "height": 60,
+          "justifyContent": "space-between",
+          "paddingTop": 15,
+          "width": 750,
+        },
+        Object {
+          "borderBottomWidth": 1,
+          "borderColor": "#eeeeee",
+        },
+      ]
+    }>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "flex-start",
+            "flex": 1,
+            "paddingLeft": 10,
+          },
+          undefined,
+        ]
+      }>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID={undefined}>
+        <Image
+          source={1}
+          style={
+            Object {
+              "height": 20,
+              "resizeMode": "contain",
+            }
+          } />
+      </View>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 4,
+          },
+          undefined,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "fontSize": 22,
+              "fontWeight": "bold",
+            },
+            Object {
+              "color": "rgb(249, 65, 92)",
+              "fontSize": 22,
+              "fontWeight": "bold",
+            },
+          ]
+        }>
+        Jelly Shop
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "paddingRight": 10,
+          },
+          undefined,
+        ]
+      }>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID={undefined}>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "borderColor": "rgb(134, 246, 226)",
+              "borderRadius": 5,
+              "borderWidth": 1.5,
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "minWidth": 65,
+                "paddingVertical": 3,
+              }
+            }>
+            <Image
+              source={1}
+              style={
+                Object {
+                  "height": 15,
+                  "marginLeft": 5,
+                  "resizeMode": "contain",
+                  "width": 15,
+                }
+              } />
+            <View
+              style={
+                Object {
+                  "paddingHorizontal": 5,
+                }
+              }>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "rgb(134, 246, 226)",
+                    "fontSize": 12,
+                    "fontWeight": "bold",
+                  }
+                }>
+                12.5k
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <ScrollView>
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+          "padding": 3,
+        }
+      }>
+      <Image
+        coin={30}
+        cover="s1"
+        jelly={10}
+        source={1}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+              "height": undefined,
+              "marginHorizontal": 3,
+              "resizeMode": "contain",
+              "width": undefined,
+            },
+            Object {
+              "height": 150,
+            },
+          ]
+        }>
+        <View
+          style={
+            Object {
+              "alignItems": "flex-end",
+              "flex": 1,
+              "flexDirection": "row",
+            }
+          }>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flex": 1,
+                "flexDirection": "column",
+                "justifyContent": "center",
+                "padding": 5,
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "fontWeight": "bold",
+                  "padding": 5,
+                }
+              }>
+              10
+               Jelly
+            </Text>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "borderColor": "rgb(134, 246, 226)",
+                  "borderRadius": 5,
+                  "borderWidth": 1.5,
+                  "opacity": 1,
+                }
+              }
+              testID={undefined}>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "minWidth": 65,
+                    "paddingVertical": 3,
+                  }
+                }>
+                <Image
+                  source={1}
+                  style={
+                    Object {
+                      "height": 15,
+                      "marginLeft": 5,
+                      "resizeMode": "contain",
+                      "width": 15,
+                    }
+                  } />
+                <View
+                  style={
+                    Object {
+                      "paddingHorizontal": 5,
+                    }
+                  }>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "color": "rgb(134, 246, 226)",
+                        "fontSize": 12,
+                        "fontWeight": "bold",
+                      }
+                    }>
+                    30
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </Image>
+      <Image
+        coin={99}
+        cover="s2"
+        jelly={40}
+        source={1}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+              "height": undefined,
+              "marginHorizontal": 3,
+              "resizeMode": "contain",
+              "width": undefined,
+            },
+            Object {
+              "height": 150,
+            },
+          ]
+        }>
+        <View
+          style={
+            Object {
+              "alignItems": "flex-end",
+              "flex": 1,
+              "flexDirection": "row",
+            }
+          }>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flex": 1,
+                "flexDirection": "column",
+                "justifyContent": "center",
+                "padding": 5,
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "fontWeight": "bold",
+                  "padding": 5,
+                }
+              }>
+              40
+               Jelly
+            </Text>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "borderColor": "rgb(134, 246, 226)",
+                  "borderRadius": 5,
+                  "borderWidth": 1.5,
+                  "opacity": 1,
+                }
+              }
+              testID={undefined}>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "minWidth": 65,
+                    "paddingVertical": 3,
+                  }
+                }>
+                <Image
+                  source={1}
+                  style={
+                    Object {
+                      "height": 15,
+                      "marginLeft": 5,
+                      "resizeMode": "contain",
+                      "width": 15,
+                    }
+                  } />
+                <View
+                  style={
+                    Object {
+                      "paddingHorizontal": 5,
+                    }
+                  }>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "color": "rgb(134, 246, 226)",
+                        "fontSize": 12,
+                        "fontWeight": "bold",
+                      }
+                    }>
+                    99
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </Image>
+      <Image
+        coin={150}
+        cover="s3"
+        jelly={60}
+        source={1}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+              "height": undefined,
+              "marginHorizontal": 3,
+              "resizeMode": "contain",
+              "width": undefined,
+            },
+            Object {
+              "height": 150,
+            },
+          ]
+        }>
+        <View
+          style={
+            Object {
+              "alignItems": "flex-end",
+              "flex": 1,
+              "flexDirection": "row",
+            }
+          }>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flex": 1,
+                "flexDirection": "column",
+                "justifyContent": "center",
+                "padding": 5,
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "fontWeight": "bold",
+                  "padding": 5,
+                }
+              }>
+              60
+               Jelly
+            </Text>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "borderColor": "rgb(134, 246, 226)",
+                  "borderRadius": 5,
+                  "borderWidth": 1.5,
+                  "opacity": 1,
+                }
+              }
+              testID={undefined}>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "minWidth": 65,
+                    "paddingVertical": 3,
+                  }
+                }>
+                <Image
+                  source={1}
+                  style={
+                    Object {
+                      "height": 15,
+                      "marginLeft": 5,
+                      "resizeMode": "contain",
+                      "width": 15,
+                    }
+                  } />
+                <View
+                  style={
+                    Object {
+                      "paddingHorizontal": 5,
+                    }
+                  }>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "color": "rgb(134, 246, 226)",
+                        "fontSize": 12,
+                        "fontWeight": "bold",
+                      }
+                    }>
+                    150
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </Image>
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+          "padding": 3,
+        }
+      }>
+      <Image
+        big={true}
+        coin={300}
+        cover="b1"
+        jelly={100}
+        source={1}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+              "height": undefined,
+              "marginHorizontal": 3,
+              "resizeMode": "contain",
+              "width": undefined,
+            },
+            Object {
+              "height": 140,
+            },
+          ]
+        }>
+        <View
+          style={
+            Object {
+              "alignItems": "flex-end",
+              "flex": 1,
+              "flexDirection": "row",
+            }
+          }>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flex": 1,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "padding": 5,
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "fontWeight": "bold",
+                  "padding": 5,
+                }
+              }>
+              100
+               Jelly
+            </Text>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "borderColor": "rgb(134, 246, 226)",
+                  "borderRadius": 5,
+                  "borderWidth": 1.5,
+                  "opacity": 1,
+                }
+              }
+              testID={undefined}>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "minWidth": 65,
+                    "paddingVertical": 3,
+                  }
+                }>
+                <Image
+                  source={1}
+                  style={
+                    Object {
+                      "height": 15,
+                      "marginLeft": 5,
+                      "resizeMode": "contain",
+                      "width": 15,
+                    }
+                  } />
+                <View
+                  style={
+                    Object {
+                      "paddingHorizontal": 5,
+                    }
+                  }>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "color": "rgb(134, 246, 226)",
+                        "fontSize": 12,
+                        "fontWeight": "bold",
+                      }
+                    }>
+                    300
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </Image>
+      <Image
+        big={true}
+        coin={500}
+        cover="b1"
+        jelly={300}
+        source={1}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+              "height": undefined,
+              "marginHorizontal": 3,
+              "resizeMode": "contain",
+              "width": undefined,
+            },
+            Object {
+              "height": 140,
+            },
+          ]
+        }>
+        <View
+          style={
+            Object {
+              "alignItems": "flex-end",
+              "flex": 1,
+              "flexDirection": "row",
+            }
+          }>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flex": 1,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "padding": 5,
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "fontWeight": "bold",
+                  "padding": 5,
+                }
+              }>
+              300
+               Jelly
+            </Text>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "borderColor": "rgb(134, 246, 226)",
+                  "borderRadius": 5,
+                  "borderWidth": 1.5,
+                  "opacity": 1,
+                }
+              }
+              testID={undefined}>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "minWidth": 65,
+                    "paddingVertical": 3,
+                  }
+                }>
+                <Image
+                  source={1}
+                  style={
+                    Object {
+                      "height": 15,
+                      "marginLeft": 5,
+                      "resizeMode": "contain",
+                      "width": 15,
+                    }
+                  } />
+                <View
+                  style={
+                    Object {
+                      "paddingHorizontal": 5,
+                    }
+                  }>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "color": "rgb(134, 246, 226)",
+                        "fontSize": 12,
+                        "fontWeight": "bold",
+                      }
+                    }>
+                    500
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </Image>
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+          "padding": 3,
+        }
+      }>
+      <Image
+        big={true}
+        coin={750}
+        cover="b2"
+        jelly={500}
+        source={1}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+              "height": undefined,
+              "marginHorizontal": 3,
+              "resizeMode": "contain",
+              "width": undefined,
+            },
+            Object {
+              "height": 140,
+            },
+          ]
+        }>
+        <View
+          style={
+            Object {
+              "alignItems": "flex-end",
+              "flex": 1,
+              "flexDirection": "row",
+            }
+          }>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flex": 1,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "padding": 5,
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "fontWeight": "bold",
+                  "padding": 5,
+                }
+              }>
+              500
+               Jelly
+            </Text>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "borderColor": "rgb(134, 246, 226)",
+                  "borderRadius": 5,
+                  "borderWidth": 1.5,
+                  "opacity": 1,
+                }
+              }
+              testID={undefined}>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "minWidth": 65,
+                    "paddingVertical": 3,
+                  }
+                }>
+                <Image
+                  source={1}
+                  style={
+                    Object {
+                      "height": 15,
+                      "marginLeft": 5,
+                      "resizeMode": "contain",
+                      "width": 15,
+                    }
+                  } />
+                <View
+                  style={
+                    Object {
+                      "paddingHorizontal": 5,
+                    }
+                  }>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "color": "rgb(134, 246, 226)",
+                        "fontSize": 12,
+                        "fontWeight": "bold",
+                      }
+                    }>
+                    750
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </Image>
+      <Image
+        big={true}
+        coin={1250}
+        cover="b2"
+        jelly={1000}
+        source={1}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+              "height": undefined,
+              "marginHorizontal": 3,
+              "resizeMode": "contain",
+              "width": undefined,
+            },
+            Object {
+              "height": 140,
+            },
+          ]
+        }>
+        <View
+          style={
+            Object {
+              "alignItems": "flex-end",
+              "flex": 1,
+              "flexDirection": "row",
+            }
+          }>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flex": 1,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "padding": 5,
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "fontWeight": "bold",
+                  "padding": 5,
+                }
+              }>
+              1,000
+               Jelly
+            </Text>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "borderColor": "rgb(134, 246, 226)",
+                  "borderRadius": 5,
+                  "borderWidth": 1.5,
+                  "opacity": 1,
+                }
+              }
+              testID={undefined}>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "minWidth": 65,
+                    "paddingVertical": 3,
+                  }
+                }>
+                <Image
+                  source={1}
+                  style={
+                    Object {
+                      "height": 15,
+                      "marginLeft": 5,
+                      "resizeMode": "contain",
+                      "width": 15,
+                    }
+                  } />
+                <View
+                  style={
+                    Object {
+                      "paddingHorizontal": 5,
+                    }
+                  }>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "color": "rgb(134, 246, 226)",
+                        "fontSize": 12,
+                        "fontWeight": "bold",
+                      }
+                    }>
+                    1,250
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </Image>
+    </View>
+  </ScrollView>
+</View>
+`;
+
+exports[`MyClogScreen render MyClogScreen 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgb(250, 250, 250)",
+      "flex": 1,
+    }
+  }>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "flexDirection": "row",
+          "height": 60,
+          "justifyContent": "space-between",
+          "paddingTop": 15,
+          "width": 750,
+        },
+        Object {
+          "borderBottomWidth": 1,
+          "borderColor": "#eeeeee",
+        },
+      ]
+    }>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "flex-start",
+            "flex": 1,
+            "paddingLeft": 10,
+          },
+          undefined,
+        ]
+      }>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID={undefined}>
+        <Image
+          source={1}
+          style={
+            Object {
+              "height": 20,
+              "resizeMode": "contain",
+            }
+          } />
+      </View>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 4,
+          },
+          undefined,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "fontSize": 22,
+              "fontWeight": "bold",
+            },
+            Object {
+              "color": "rgb(249, 65, 92)",
+              "fontSize": 22,
+              "fontWeight": "bold",
+            },
+          ]
+        }>
+        Clog ของฉัน
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "paddingRight": 10,
+          },
+          undefined,
+        ]
+      }>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID={undefined} />
+    </View>
+  </View>
+  <ScrollView
+    contentInset={
+      Object {
+        "bottom": 1354,
+        "top": 0,
+      }
+    }
+    data={
+      Array [
+        Object {
+          "author": Object {
+            "name": "David Beckham",
+          },
+          "category": "M",
+          "createdAt": 2015-06-23T17:00:00.000Z,
+          "likeCount": 1500,
+          "preview": 1,
+          "title": "Richy Rich! รวยมากนะ! รู้ยังคะทุกคน",
+          "viewCount": 12300,
+        },
+        Object {
+          "author": Object {
+            "name": "สุดสาครนอย ไทรโยค",
+          },
+          "category": "N",
+          "createdAt": 2016-11-07T17:00:00.000Z,
+          "likeCount": 55,
+          "preview": 1,
+          "title": "Money Honey คุณชายหน้าตายกับยัยขี้งก",
+          "viewCount": 100,
+        },
+      ]
+    }
+    dataSource={
+      ListViewDataSource {
+        "items": 2,
+      }
+    }
+    initialListSize={1}
+    minContentHeight={1354}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={1000}
+    onKeyboardDidHide={undefined}
+    onKeyboardDidShow={undefined}
+    onKeyboardWillHide={undefined}
+    onKeyboardWillShow={undefined}
+    onLayout={[Function]}
+    onScroll={[Function]}
+    pageSize={1}
+    removeClippedSubviews={true}
+    renderEmptyList={null}
+    renderFooter={[Function]}
+    renderRow={[Function]}
+    renderSeparator={[Function]}
+    scrollEventThrottle={50}
+    scrollRenderAheadDistance={1000}
+    stickyHeaderIndices={Array []}>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flexDirection": "row",
+          "opacity": 1,
+          "padding": 13,
+        }
+      }
+      testID={undefined}>
+      <View
+        style={
+          Object {
+            "height": 100,
+            "width": 100,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "height": 100,
+              "width": 100,
+            }
+          }>
+          <View
+            style={
+              Object {
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "borderRadius": 50,
+                "height": 100,
+                "left": -0,
+                "position": "absolute",
+                "top": -0,
+                "width": 100,
+              }
+            } />
+          <Image
+            category="M"
+            size={100}
+            source={undefined}
+            style={
+              Array [
+                Object {
+                  "borderRadius": 50,
+                  "height": 100,
+                  "width": 100,
+                },
+                Array [
+                  undefined,
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                ],
+              ]
+            }
+            subSource={1} />
+          <View
+            style={
+              Object {
+                "height": 100,
+                "left": 0,
+                "position": "absolute",
+                "top": 0,
+                "width": 100,
+              }
+            } />
+        </View>
+        <Image
+          source={1}
+          style={
+            Array [
+              Object {
+                "bottom": 3.125,
+                "height": 25,
+                "position": "absolute",
+                "right": 3.125,
+                "width": 25,
+              },
+              undefined,
+            ]
+          } />
+      </View>
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "paddingLeft": 20,
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "alignSelf": "flex-end",
+              "color": "rgba(0, 0, 0, 0.3)",
+              "fontSize": 12,
+            }
+          }>
+          June 24
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontWeight": "bold",
+              "marginTop": 7,
+            }
+          }>
+          Richy Rich! รวยมากนะ! รู้ยังคะทุกคน
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "rgba(0, 0, 0, 0.5)",
+              "fontSize": 12,
+              "marginTop": 5,
+            }
+          }>
+          David Beckham
+        </Text>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "width": 80,
+              }
+            }>
+            <Image
+              source={1}
+              style={
+                Object {
+                  "borderRadius": 4,
+                  "height": 15,
+                  "resizeMode": "contain",
+                  "width": 15,
+                }
+              } />
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "rgba(0, 0, 0, 0.3)",
+                  "fontSize": 11,
+                  "paddingLeft": 5,
+                }
+              }>
+              ดู 
+              12.3k
+               ครั้ง
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+              }
+            }>
+            <Image
+              source={1}
+              style={
+                Object {
+                  "borderRadius": 4,
+                  "height": 15,
+                  "marginLeft": 20,
+                  "resizeMode": "contain",
+                  "width": 15,
+                }
+              } />
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "rgba(0, 0, 0, 0.3)",
+                  "fontSize": 11,
+                  "paddingLeft": 5,
+                }
+              }>
+              1,500
+               Like
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "height": 1,
+        }
+      } />
+  </ScrollView>
+</View>
+`;
+
+exports[`ProfileCover render customSource 1`] = `
+<Image
+  customSource={
+    Object {
+      "uri": "custom",
+    }
+  }
+  source={
+    Object {
+      "uri": "custom",
+    }
+  }
+  style={
+    Array [
+      Object {
+        "resizeMode": "cover",
+      },
+      undefined,
+    ]
+  } />
+`;
+
+exports[`ProfileCover render default 1`] = `
+<Image
+  source={null}
+  style={
+    Array [
+      Object {
+        "resizeMode": "cover",
+      },
+      undefined,
+    ]
+  } />
+`;
+
+exports[`ProfileCover render user cover with children 1`] = `
+<Image
+  source={null}
+  style={
+    Array [
+      Object {
+        "resizeMode": "cover",
+      },
+      undefined,
+    ]
+  }
+  user={
+    Object {
+      "facebookLinked": false,
+      "id": 1,
+      "name": "test",
+      "sex": "M",
+    }
+  }>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail">
+    User Cover
+  </Text>
+</Image>
+`;
+
+exports[`ProfileHeader render 1`] = `
+<Image
+  customSource={undefined}
+  source={null}
+  style={
+    Array [
+      Object {
+        "resizeMode": "cover",
+      },
+      Object {
+        "alignItems": "center",
+        "height": undefined,
+        "justifyContent": "center",
+        "width": undefined,
+      },
+    ]
+  }
+  user={
+    Object {
+      "facebookLinked": false,
+      "id": 1,
+      "name": "test",
+      "sex": "M",
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": undefined,
+        "justifyContent": "center",
+        "paddingVertical": 10,
+        "width": undefined,
+      }
+    }>
+    <Image
+      source={
+        Object {
+          "uri": "http://graph.facebook.com/1/picture?width=200&height=200",
+        }
+      }
+      style={
+        Object {
+          "borderRadius": 50,
+          "height": 100,
+          "width": 100,
+        }
+      } />
+  </View>
+</Image>
+`;
+
+exports[`ProfileNavigator render 1`] = `
+<FixBugScrollViewNavigator
+  initialRoute={
+    Object {
+      "page": "home",
+    }
+  }
+  renderScene={[Function]} />
+`;
+
+exports[`UserContainer FollowerScreen render 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgb(250, 250, 250)",
+      "flex": 1,
+    }
+  }>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "flexDirection": "row",
+          "height": 60,
+          "justifyContent": "space-between",
+          "paddingTop": 15,
+          "width": 750,
+        },
+        Object {
+          "borderBottomWidth": 1,
+          "borderColor": "#eeeeee",
+        },
+      ]
+    }>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "flex-start",
+            "flex": 1,
+            "paddingLeft": 10,
+          },
+          undefined,
+        ]
+      }>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID={undefined}>
+        <Image
+          source={1}
+          style={
+            Object {
+              "height": 20,
+              "resizeMode": "contain",
+            }
+          } />
+      </View>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 4,
+          },
+          undefined,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "fontSize": 22,
+              "fontWeight": "bold",
+            },
+            Object {
+              "color": "rgb(249, 65, 92)",
+              "fontSize": 22,
+              "fontWeight": "bold",
+            },
+          ]
+        }>
+        ผู้ติดตาม
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "paddingRight": 10,
+          },
+          undefined,
+        ]
+      }>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID={undefined} />
+    </View>
+  </View>
+  <ScrollView
+    contentInset={
+      Object {
+        "bottom": 1354,
+        "top": 0,
+      }
+    }
+    data={
+      Array [
+        Object {
+          "following": true,
+          "name": "Art Nattapat",
+        },
+        Object {
+          "following": false,
+          "name": "Art Art Art",
+        },
+        Object {
+          "following": false,
+          "name": "Art Art Art",
+        },
+        Object {
+          "following": true,
+          "name": "Art Art Art",
+        },
+        Object {
+          "following": true,
+          "name": "Art Art Art",
+        },
+        Object {
+          "following": false,
+          "name": "Art Art Art",
+        },
+      ]
+    }
+    dataSource={
+      ListViewDataSource {
+        "items": 6,
+      }
+    }
+    initialListSize={1}
+    minContentHeight={1354}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={1000}
+    onKeyboardDidHide={undefined}
+    onKeyboardDidShow={undefined}
+    onKeyboardWillHide={undefined}
+    onKeyboardWillShow={undefined}
+    onLayout={[Function]}
+    onScroll={[Function]}
+    pageSize={1}
+    removeClippedSubviews={true}
+    renderEmptyList={null}
+    renderFooter={[Function]}
+    renderRow={[Function]}
+    renderSeparator={[Function]}
+    scrollEventThrottle={50}
+    scrollRenderAheadDistance={1000}
+    stickyHeaderIndices={Array []}>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(250, 250, 250)",
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "margin": 10,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "backgroundColor": "black",
+              "borderRadius": 20,
+              "height": 40,
+              "width": 40,
+            }
+          } />
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "padding": 10,
+          }
+        }>
+        1
+        . 
+        Art Nattapat
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingRight": 20,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }>
+          <Image
+            source={1}
+            style={
+              Object {
+                "height": 20,
+                "marginRight": 10,
+                "width": 20,
+              }
+            } />
+          <View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "rgba(0, 0, 0, 0.2)",
+                  "borderRadius": 4,
+                  "flexDirection": "row",
+                  "height": 25,
+                  "justifyContent": "center",
+                  "opacity": 1,
+                  "paddingHorizontal": 0,
+                  "width": 70,
+                }
+              }
+              testID={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "fontSize": 12,
+                    },
+                    Object {
+                      "color": "rgba(255, 255, 255, 0.6)",
+                    },
+                    undefined,
+                  ]
+                }>
+                เลิกติดตาม
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "height": 1,
+        }
+      } />
+  </ScrollView>
+</View>
+`;
+
+exports[`UserContainer FollowingScreen render 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgb(250, 250, 250)",
+      "flex": 1,
+    }
+  }>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "flexDirection": "row",
+          "height": 60,
+          "justifyContent": "space-between",
+          "paddingTop": 15,
+          "width": 750,
+        },
+        Object {
+          "borderBottomWidth": 1,
+          "borderColor": "#eeeeee",
+        },
+      ]
+    }>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "flex-start",
+            "flex": 1,
+            "paddingLeft": 10,
+          },
+          undefined,
+        ]
+      }>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID={undefined}>
+        <Image
+          source={1}
+          style={
+            Object {
+              "height": 20,
+              "resizeMode": "contain",
+            }
+          } />
+      </View>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 4,
+          },
+          undefined,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "fontSize": 22,
+              "fontWeight": "bold",
+            },
+            Object {
+              "color": "rgb(249, 65, 92)",
+              "fontSize": 22,
+              "fontWeight": "bold",
+            },
+          ]
+        }>
+        กำลังติดตาม
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "paddingRight": 10,
+          },
+          undefined,
+        ]
+      }>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID={undefined} />
+    </View>
+  </View>
+  <ScrollView
+    contentInset={
+      Object {
+        "bottom": 1354,
+        "top": 0,
+      }
+    }
+    data={
+      Array [
+        Object {
+          "name": "Art Nattapat",
+        },
+        Object {
+          "name": "Art Art Art",
+        },
+        Object {
+          "name": "Art Art Art",
+        },
+        Object {
+          "name": "Art Art Art",
+        },
+        Object {
+          "name": "Art Art Art",
+        },
+        Object {
+          "name": "Art Art Art",
+        },
+      ]
+    }
+    dataSource={
+      ListViewDataSource {
+        "items": 6,
+      }
+    }
+    initialListSize={1}
+    minContentHeight={1354}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={1000}
+    onKeyboardDidHide={undefined}
+    onKeyboardDidShow={undefined}
+    onKeyboardWillHide={undefined}
+    onKeyboardWillShow={undefined}
+    onLayout={[Function]}
+    onScroll={[Function]}
+    pageSize={1}
+    removeClippedSubviews={true}
+    renderEmptyList={null}
+    renderFooter={[Function]}
+    renderRow={[Function]}
+    renderSeparator={[Function]}
+    scrollEventThrottle={50}
+    scrollRenderAheadDistance={1000}
+    stickyHeaderIndices={Array []}>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(250, 250, 250)",
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "margin": 10,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "backgroundColor": "black",
+              "borderRadius": 20,
+              "height": 40,
+              "width": 40,
+            }
+          } />
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "padding": 10,
+          }
+        }>
+        1
+        . 
+        Art Nattapat
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingRight": 20,
+          }
+        }>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "rgba(0, 0, 0, 0.2)",
+              "borderRadius": 4,
+              "flexDirection": "row",
+              "height": 25,
+              "justifyContent": "center",
+              "opacity": 1,
+              "paddingHorizontal": 0,
+              "width": 70,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "fontSize": 12,
+                },
+                Object {
+                  "color": "rgba(255, 255, 255, 0.6)",
+                },
+                undefined,
+              ]
+            }>
+            เลิกติดตาม
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "height": 1,
+        }
+      } />
+  </ScrollView>
+</View>
+`;
+
+exports[`UserContainer MyFanScreen render 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgb(250, 250, 250)",
+      "flex": 1,
+    }
+  }>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "flexDirection": "row",
+          "height": 60,
+          "justifyContent": "space-between",
+          "paddingTop": 15,
+          "width": 750,
+        },
+        Object {
+          "borderBottomWidth": 1,
+          "borderColor": "#eeeeee",
+        },
+      ]
+    }>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "flex-start",
+            "flex": 1,
+            "paddingLeft": 10,
+          },
+          undefined,
+        ]
+      }>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID={undefined}>
+        <Image
+          source={1}
+          style={
+            Object {
+              "height": 20,
+              "resizeMode": "contain",
+            }
+          } />
+      </View>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 4,
+          },
+          undefined,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "fontSize": 22,
+              "fontWeight": "bold",
+            },
+            Object {
+              "color": "rgb(249, 65, 92)",
+              "fontSize": 22,
+              "fontWeight": "bold",
+            },
+          ]
+        }>
+        แฟนคลับของฉัน
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "paddingRight": 10,
+          },
+          undefined,
+        ]
+      }>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID={undefined} />
+    </View>
+  </View>
+  <ScrollView
+    contentInset={
+      Object {
+        "bottom": 1354,
+        "top": 0,
+      }
+    }
+    data={
+      Array [
+        Object {
+          "candys": 1250,
+          "name": "Art Nattapat",
+        },
+        Object {
+          "candys": 1250,
+          "name": "Art Art Art",
+        },
+        Object {
+          "candys": 1000,
+          "name": "Art Art Art",
+        },
+        Object {
+          "candys": 789,
+          "name": "Art Art Art",
+        },
+        Object {
+          "candys": 7013,
+          "name": "Art Art Art",
+        },
+        Object {
+          "candys": 0,
+          "name": "Art Art Art",
+        },
+      ]
+    }
+    dataSource={
+      ListViewDataSource {
+        "items": 6,
+      }
+    }
+    initialListSize={1}
+    minContentHeight={1354}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={1000}
+    onKeyboardDidHide={undefined}
+    onKeyboardDidShow={undefined}
+    onKeyboardWillHide={undefined}
+    onKeyboardWillShow={undefined}
+    onLayout={[Function]}
+    onScroll={[Function]}
+    pageSize={1}
+    removeClippedSubviews={true}
+    renderEmptyList={null}
+    renderFooter={[Function]}
+    renderRow={[Function]}
+    renderSeparator={[Function]}
+    scrollEventThrottle={50}
+    scrollRenderAheadDistance={1000}
+    stickyHeaderIndices={Array []}>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(250, 250, 250)",
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "margin": 10,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "backgroundColor": "black",
+              "borderRadius": 20,
+              "height": 40,
+              "width": 40,
+            }
+          } />
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "padding": 10,
+          }
+        }>
+        1
+        . 
+        Art Nattapat
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingRight": 20,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "center",
+            }
+          }>
+          <Image
+            source={1}
+            style={
+              Object {
+                "height": 20,
+                "marginRight": 20,
+                "resizeMode": "contain",
+                "width": 40,
+              }
+            } />
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                  },
+                  Object {
+                    "color": "rgb(141, 227, 188)",
+                  },
+                ]
+              }>
+              1,250
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "rgba(0, 0, 0, 0.3)",
+                  "fontSize": 10,
+                }
+              }>
+              Candys Point
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "height": 1,
+        }
+      } />
+  </ScrollView>
+</View>
+`;

@@ -22,34 +22,39 @@
  * @flow
  */
 
-'use strict';
 
-var F8App = require('F8App');
-var FacebookSDK = require('FacebookSDK');
-var Parse = require('parse/react-native');
-var React = require('React');
+import { ApolloProvider } from 'react-apollo';
+import moment from 'moment';
+import 'moment/locale/th';
 
-var { Provider } = require('react-redux');
+const App = require('App');
+const FacebookSDK = require('FacebookSDK');
+const Parse = require('parse/react-native');
+const React = require('React');
 
-var apollo = require('./store/apollo');
-var configureStore = require('./store/configureStore');
+const apollo = require('./store/apollo');
+const configureStore = require('./store/configureStore');
+const env = require('./env');
 
-var {serverURL} = require('./env');
+const { parse } = env;
 
 function setup(): React.Component {
   console.disableYellowBox = true;
-  Parse.initialize('oss-f8-app-2016');
-  Parse.serverURL = `${serverURL}/parse`;
+  console.log(env);
+  Parse.initialize(env.parse.appID, env.parse.javascriptKey);
+  Parse.serverURL = `${parse.url}`;
 
   FacebookSDK.init();
   Parse.FacebookUtils.init();
+
+  moment.locale('th');
 
   class Root extends React.Component {
     constructor() {
       super();
       this.state = {
         isLoading: true,
-        store: configureStore(() => this.setState({isLoading: false})),
+        store: configureStore(() => this.setState({ isLoading: false })),
         client: apollo,
       };
     }
@@ -58,9 +63,9 @@ function setup(): React.Component {
         return null;
       }
       return (
-        <Provider store={this.state.store} client={this.state.client}>
-          <F8App />
-        </Provider>
+        <ApolloProvider store={this.state.store} client={this.state.client}>
+          <App />
+        </ApolloProvider>
       );
     }
   }

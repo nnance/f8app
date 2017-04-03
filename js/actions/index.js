@@ -22,7 +22,6 @@
  * @flow
  */
 
-'use strict';
 
 const viewerActions = require('./viewer');
 const sessionActions = require('./session');
@@ -33,8 +32,10 @@ const filterActions = require('./filter');
 const notificationActions = require('./notifications');
 const configActions = require('./config');
 const surveyActions = require('./surveys');
-const testActions = require('./test');
+const testActions = require('./testActions');
 const installationActions = require('./installation');
+const changeProfile = require('./changeProfile');
+const navigate = require('./navigate');
 
 module.exports = {
   ...loginActions,
@@ -48,4 +49,6 @@ module.exports = {
   ...sessionActions,
   ...navigationActions,
   ...installationActions,
+  ...changeProfile,
+  ...navigate,
 };

@@ -1,55 +1,62 @@
 PODS:
-  - Bolts (1.7.0):
-    - Bolts/AppLinks (= 1.7.0)
-    - Bolts/Tasks (= 1.7.0)
-  - Bolts/AppLinks (1.7.0):
+  - Bolts (1.8.4):
+    - Bolts/AppLinks (= 1.8.4)
+    - Bolts/Tasks (= 1.8.4)
+  - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
-  - Bolts/Tasks (1.7.0)
-  - CodePush (1.7.3-beta):
+  - Bolts/Tasks (1.8.4)
+  - CodePush (1.16.1):
+    - CodePush/Core (= 1.16.1)
+    - CodePush/SSZipArchive (= 1.16.1)
     - React
-  - FBSDKCoreKit (4.12.0):
+  - CodePush/Core (1.16.1):
+    - React
+  - CodePush/SSZipArchive (1.16.1):
+    - React
+  - FBSDKCoreKit (4.17.0):
     - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.12.0):
+  - FBSDKLoginKit (4.17.0):
     - FBSDKCoreKit
-  - FBSDKShareKit (4.12.0):
+  - FBSDKShareKit (4.17.0):
     - FBSDKCoreKit
-  - React (0.23.1):
-    - React/Core (= 0.23.1)
-  - react-native-fbsdkcore (0.1.0-alpha.1):
+  - React (0.38.1):
+    - React/Core (= 0.38.1)
+  - react-native-fbsdk/Core (0.4.0):
     - FBSDKCoreKit
     - React
-  - react-native-fbsdklogin (0.1.0-alpha.1):
-    - FBSDKCoreKit
+  - react-native-fbsdk/Login (0.4.0):
     - FBSDKLoginKit
     - React
-  - react-native-fbsdkshare (0.1.0-alpha.1):
-    - FBSDKCoreKit
+  - react-native-fbsdk/Share (0.4.0):
     - FBSDKShareKit
     - React
-  - React/Core (0.23.1)
-  - React/RCTActionSheet (0.23.1):
+  - React/ART (0.38.1):
     - React/Core
-  - React/RCTImage (0.23.1):
+  - React/Core (0.38.1)
+  - React/RCTActionSheet (0.38.1):
+    - React/Core
+  - React/RCTImage (0.38.1):
     - React/Core
     - React/RCTNetwork
-  - React/RCTLinkingIOS (0.23.1):
+  - React/RCTLinkingIOS (0.38.1):
     - React/Core
-  - React/RCTNetwork (0.23.1):
+  - React/RCTNetwork (0.38.1):
     - React/Core
-  - React/RCTPushNotification (0.23.1):
+  - React/RCTPushNotification (0.38.1):
     - React/Core
-  - React/RCTText (0.23.1):
+  - React/RCTText (0.38.1):
     - React/Core
-  - React/RCTVibration (0.23.1):
+  - React/RCTVibration (0.38.1):
     - React/Core
-  - React/RCTWebSocket (0.23.1):
+  - React/RCTWebSocket (0.38.1):
     - React/Core
 
 DEPENDENCIES:
   - CodePush (from `../node_modules/react-native-code-push`)
-  - react-native-fbsdkcore (from `../node_modules/react-native-fbsdk/iOS/core`)
-  - react-native-fbsdklogin (from `../node_modules/react-native-fbsdk/iOS/login`)
-  - react-native-fbsdkshare (from `../node_modules/react-native-fbsdk/iOS/share`)
+  - react-native-fbsdk/Core (from `../node_modules/react-native-fbsdk/iOS`)
+  - react-native-fbsdk/Login (from `../node_modules/react-native-fbsdk/iOS`)
+  - react-native-fbsdk/Share (from `../node_modules/react-native-fbsdk/iOS`)
+  - React/ART (from `../node_modules/react-native`)
   - React/Core (from `../node_modules/react-native`)
   - React/RCTActionSheet (from `../node_modules/react-native`)
   - React/RCTImage (from `../node_modules/react-native`)
@@ -65,22 +72,18 @@ EXTERNAL SOURCES:
     :path: ../node_modules/react-native-code-push
   React:
     :path: ../node_modules/react-native
-  react-native-fbsdkcore:
-    :path: ../node_modules/react-native-fbsdk/iOS/core
-  react-native-fbsdklogin:
-    :path: ../node_modules/react-native-fbsdk/iOS/login
-  react-native-fbsdkshare:
-    :path: ../node_modules/react-native-fbsdk/iOS/share
+  react-native-fbsdk:
+    :path: ../node_modules/react-native-fbsdk/iOS
 
 SPEC CHECKSUMS:
-  Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
-  CodePush: b079624335d06b6b309e6b70167f398c709cfcc6
-  FBSDKCoreKit: 6e56d5a2a64a755ad4efb5dbeee8f82fb1b99775
-  FBSDKLoginKit: 03f68a8d48c2c8bb81d7eb8097973d483543e1f6
-  FBSDKShareKit: df1491f064cffc8ebcc3fc8b71be94cc190c728e
-  React: 0bc1e9a6369dc610ff0b29415ed0cab5229614f5
-  react-native-fbsdkcore: f406a8e13011fd39b9c1db5f6bc517b84cfe97d9
-  react-native-fbsdklogin: 7b371812b110ef24f3877ab52350df9e321faf6b
-  react-native-fbsdkshare: f61448537392187b4d43c2e6b40260e3a1e7c658
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  CodePush: 6ae67a7557bbe86a06c7221ecc52172e5f98c125
+  FBSDKCoreKit: 30a21d2d7b92984b3d80497113433c00824c35e9
+  FBSDKLoginKit: 42b7129ac0373ca99eaf4cbebf4d07bd42371f59
+  FBSDKShareKit: 9b573d03fbee36cbaf42d5bb1f2bc019e0d72347
+  React: 2c6b27dcaea89b3d3398df8b598330fd18abbe46
+  react-native-fbsdk: 36286e05caf242c82bf91c7dd8c1694fd5040212
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: d768d1fa2a1f4212ac58b500a93cfef892eebaf1
+
+COCOAPODS: 1.2.0

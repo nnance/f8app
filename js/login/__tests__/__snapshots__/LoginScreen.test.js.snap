@@ -1,0 +1,320 @@
+exports[`LoginScreen render 1`] = `
+<Navigator
+  configureScene={[Function]}
+  initialRoute={
+    Object {
+      "page": "index",
+    }
+  }
+  navigationBar={
+    <NavigatorNavigationBar
+      navigationStyles={
+        Object {
+          "General": Object {
+            "NavBarHeight": 44,
+            "StatusBarHeight": 20,
+            "TotalNavHeight": 64,
+          },
+          "Interpolators": Object {
+            "CenterToLeft": Object {
+              "LeftButton": [Function],
+              "RightButton": [Function],
+              "Title": [Function],
+            },
+            "RightToCenter": Object {
+              "LeftButton": [Function],
+              "RightButton": [Function],
+              "Title": [Function],
+            },
+            "RightToLeft": Object {
+              "LeftButton": [Function],
+              "RightButton": [Function],
+              "Title": [Function],
+            },
+          },
+          "Stages": Object {
+            "Center": Object {
+              "LeftButton": Object {
+                "backgroundColor": "transparent",
+                "height": 44,
+                "left": 0,
+                "opacity": 1,
+                "overflow": "hidden",
+                "position": "absolute",
+                "top": 20,
+              },
+              "RightButton": Object {
+                "alignItems": "flex-end",
+                "backgroundColor": "transparent",
+                "height": 44,
+                "opacity": 1,
+                "overflow": "hidden",
+                "position": "absolute",
+                "right": 0,
+                "top": 20,
+              },
+              "Title": Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "height": 44,
+                "left": 0,
+                "opacity": 1,
+                "position": "absolute",
+                "right": 0,
+                "top": 20,
+              },
+            },
+            "Left": Object {
+              "LeftButton": Object {
+                "backgroundColor": "transparent",
+                "height": 44,
+                "left": 0,
+                "opacity": 0,
+                "overflow": "hidden",
+                "position": "absolute",
+                "top": 20,
+              },
+              "RightButton": Object {
+                "alignItems": "flex-end",
+                "backgroundColor": "transparent",
+                "height": 44,
+                "opacity": 0,
+                "overflow": "hidden",
+                "position": "absolute",
+                "right": 0,
+                "top": 20,
+              },
+              "Title": Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "height": 44,
+                "left": -375,
+                "opacity": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 20,
+              },
+            },
+            "Right": Object {
+              "LeftButton": Object {
+                "backgroundColor": "transparent",
+                "height": 44,
+                "left": 0,
+                "opacity": 0,
+                "overflow": "hidden",
+                "position": "absolute",
+                "top": 20,
+              },
+              "RightButton": Object {
+                "alignItems": "flex-end",
+                "backgroundColor": "transparent",
+                "height": 44,
+                "opacity": 0,
+                "overflow": "hidden",
+                "position": "absolute",
+                "right": 0,
+                "top": 20,
+              },
+              "Title": Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "height": 44,
+                "left": 375,
+                "opacity": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 20,
+              },
+            },
+          },
+        }
+      }
+      routeMapper={
+        Object {
+          "LeftButton": [Function],
+          "RightButton": [Function],
+          "Title": [Function],
+        }
+      } />
+  }
+  renderScene={[Function]}
+  sceneStyle={
+    Object {
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+      "transform": Array [
+        Object {
+          "translateX": 0,
+        },
+        Object {
+          "translateY": 0,
+        },
+        Object {
+          "scaleX": 1,
+        },
+        Object {
+          "scaleY": 1,
+        },
+        Object {
+          "rotate": "0deg",
+        },
+        Object {
+          "skewX": "0deg",
+        },
+        Object {
+          "skewY": "0deg",
+        },
+      ],
+    }
+  } />
+`;
+
+exports[`LoginScreen renderLeftButton 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}>
+    <Image
+      source={1}
+      style={
+        Object {
+          "height": 20,
+          "paddingHorizontal": 15,
+          "resizeMode": "contain",
+          "width": 20,
+        }
+      } />
+  </View>
+</View>
+`;
+
+exports[`LoginScreen renderLeftButton 2`] = `<View />`;
+
+exports[`LoginScreen renderRightButton 1`] = `<View />`;
+
+exports[`LoginScreen renderRightButton 2`] = `
+<View>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel="Skip login"
+    accessibilityTraits="button"
+    accessible={true}
+    hitSlop={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+        "padding": 15,
+      }
+    }
+    testID={undefined}>
+    <Image
+      source={1} />
+  </View>
+</View>
+`;
+
+exports[`LoginScreen renderScene 1`] = `
+<View>
+  <Connect(IndexScreen)
+    pushPage={[Function]} />
+</View>
+`;
+
+exports[`LoginScreen renderScene 2`] = `
+<View>
+  <EmailLoginScreen
+    pushPage={[Function]} />
+</View>
+`;
+
+exports[`LoginScreen renderScene 3`] = `
+<View>
+  <SignUpScreen
+    goBack={[Function]}
+    logInWithFacebook={[Function]} />
+</View>
+`;
+
+exports[`LoginScreen renderScene 4`] = `
+<View>
+  <ForgotPasswordScreen
+    goBack={[Function]}
+    onReqed={[Function]} />
+</View>
+`;
+
+exports[`LoginScreen renderScene 5`] = `
+<View>
+  <Component
+    goToLogin={[Function]} />
+</View>
+`;
+
+exports[`LoginScreen renderScene 6`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail">
+    Page not found
+  </Text>
+</View>
+`;
+
+exports[`LoginScreen renderTitle 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "white",
+        "fontWeight": "bold",
+        "padding": 10,
+      }
+    }>
+    สร้างบัญชีใหม่
+  </Text>
+</View>
+`;

@@ -1,0 +1,162 @@
+exports[`DatePickerDialog android render 1`] = `null`;
+
+exports[`DatePickerDialog ios render 1`] = `
+<Modal
+  transparent={true}
+  visible={false}>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(0, 0, 0, 0.3)",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(255, 255, 255, 0.9)",
+          "borderColor": "rgba(0, 0, 0, 0.3)",
+          "borderRadius": 10,
+          "borderWidth": 0.2,
+          "width": 300,
+        }
+      }>
+      <View
+        style={undefined}>
+        <RCTDatePicker
+          date={1465664400000}
+          maximumDate={undefined}
+          minimumDate={undefined}
+          minuteInterval={undefined}
+          mode="date"
+          onChange={[Function]}
+          style={
+            Object {
+              "height": 216,
+            }
+          }
+          timeZoneOffsetInMinutes={undefined} />
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }>
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }>
+          <View
+            accessibilityComponentType="button"
+            accessibilityLabel={undefined}
+            accessibilityTraits={
+              Array [
+                "button",
+              ]
+            }
+            accessible={true}
+            hitSlop={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+            testID={undefined}>
+            <View
+              style={
+                Array [
+                  Object {},
+                ]
+              }>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "#0C42FD",
+                      "fontSize": 18,
+                      "padding": 8,
+                      "textAlign": "center",
+                    },
+                  ]
+                }>
+                ok
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }>
+          <View
+            accessibilityComponentType="button"
+            accessibilityLabel={undefined}
+            accessibilityTraits={
+              Array [
+                "button",
+              ]
+            }
+            accessible={true}
+            hitSlop={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+            testID={undefined}>
+            <View
+              style={
+                Array [
+                  Object {},
+                ]
+              }>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "#0C42FD",
+                      "fontSize": 18,
+                      "padding": 8,
+                      "textAlign": "center",
+                    },
+                  ]
+                }>
+                cancel
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</Modal>
+`;

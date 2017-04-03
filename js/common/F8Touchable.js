@@ -23,9 +23,9 @@
  * @flow
  */
 
-'use strict';
 
-import React, {
+import React from 'react';
+import {
   TouchableHighlight,
   TouchableNativeFeedback,
   Platform,

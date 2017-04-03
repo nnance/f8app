@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+_PS="$( docker ps -a | grep clogii-dev-db )"
+
+if [ -z "$_PS" ]; then
+  docker run -d -p 27017:27017 --name clogii-dev-db mongo
+else
+  docker start clogii-dev-db
+fi

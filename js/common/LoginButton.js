@@ -21,31 +21,37 @@
  *
  * @flow
  */
-'use strict';
 
-const React = require('react-native');
-const {StyleSheet} = React;
-const F8Button = require('F8Button');
+import ClogiiButton from 'ClogiiButton';
+
+const React = require('react');
+const { StyleSheet } = require('react-native');
+const { connect } = require('react-redux');
 
 const { logInWithFacebook } = require('../actions');
-const {connect} = require('react-redux');
+
+async function timeout(ms: number): Promise {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => reject(new Error('Timed out')), ms);
+  });
+}
+
+const styles = StyleSheet.create({
+  button: {
+    alignSelf: 'center',
+    width: 270,
+  },
+});
 
 class LoginButton extends React.Component {
-  props: {
-    style: any;
-    source?: string; // For Analytics
-    dispatch: (action: any) => Promise;
-    onLoggedIn: ?() => void;
-  };
-  state: {
-    isLoading: boolean;
-  };
-  _isMounted: boolean;
-
   constructor() {
     super();
     this.state = { isLoading: false };
   }
+
+  state: {
+    isLoading: boolean;
+  };
 
   componentDidMount() {
     this._isMounted = true;
@@ -55,30 +61,19 @@ class LoginButton extends React.Component {
     this._isMounted = false;
   }
 
-  render() {
-    if (this.state.isLoading) {
-      return (
-        <F8Button
-          style={[styles.button, this.props.style]}
-          caption="Please wait..."
-        />
-      );
-    }
+  props: {
+    style: any;
+    source?: string; // For Analytics
+    dispatch: (action: any) => Promise;
+    onLoggedIn: ?() => void;
+  };
 
-    return (
-      <F8Button
-        style={[styles.button, this.props.style]}
-        icon={require('../login/img/f-logo.png')}
-        caption="Log in with Facebook"
-        onPress={() => this.logIn()}
-      />
-    );
-  }
+  _isMounted: boolean;
 
   async logIn() {
-    const {dispatch, onLoggedIn} = this.props;
+    const { dispatch, onLoggedIn } = this.props;
 
-    this.setState({isLoading: true});
+    this.setState({ isLoading: true });
     try {
       await Promise.race([
         dispatch(logInWithFacebook(this.props.source)),
@@ -92,24 +87,38 @@ class LoginButton extends React.Component {
       }
       return;
     } finally {
-      this._isMounted && this.setState({isLoading: false});
+      if (this._isMounted) {
+        this.setState({ isLoading: false });
+      }
     }
 
-    onLoggedIn && onLoggedIn();
+    if (onLoggedIn) {
+      onLoggedIn();
+    }
+  }
+
+  render() {
+    if (this.state.isLoading) {
+      return (
+        <ClogiiButton
+          style={[styles.button, this.props.style]}
+          caption="Please wait..."
+        />
+      );
+    }
+
+    return (
+      <ClogiiButton
+        style={[styles.button, this.props.style]}
+        caption="ลงชื่อเข้าใช้ด้วย Facebook"
+        onPress={() => this.logIn()}
+      />
+    );
   }
 }
 
-async function timeout(ms: number): Promise {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => reject(new Error('Timed out')), ms);
-  });
-}
-
-var styles = StyleSheet.create({
-  button: {
-    alignSelf: 'center',
-    width: 270,
-  },
-});
+LoginButton.defaultProps = {
+  source: null,
+};
 
 module.exports = connect()(LoginButton);

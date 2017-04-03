@@ -22,11 +22,23 @@
  * @flow
  */
 
-'use strict';
+
+import Config from 'react-native-config';
+
+let config = Config;
+
+if (process.env.NODE_ENV === 'test') {
+  config = process.env;
+}
 
 module.exports = {
   testMenuEnabled: true,
-  serverURL: 'http://localhost:8080',
+  serverURL: config.URL,
+  parse: {
+    url: config.PARSE_URL,
+    appID: config.APP_ID,
+    javascriptKey: config.JAVASCRIPT_KEY,
+  },
   version: 323,
   fontFamily: undefined,
 };

@@ -22,10 +22,11 @@
  * @flow
  */
 
-'use strict';
+/* eslint no-underscore-dangle: off */
+/* eslint react/no-multi-comp: off */
 
-var React = require('React');
-var View = require('View');
+const React = require('React');
+const View = require('View');
 
 class Playground extends React.Component {
   constructor() {
@@ -35,16 +36,16 @@ class Playground extends React.Component {
       content.push(<Example key={name} render={render} />);
     };
     // var Module = require('F8PageControl');
-    var Module = require('F8Header');
+    const Module = require('F8Header');
     // var Module = require('./tabs/schedule/AddToScheduleButton');
     // var Module = require('./rating/Header');
     Module.__cards__(define);
-    this.state = {content};
+    this.state = { content };
   }
 
   render() {
     return (
-      <View style={{backgroundColor: '#336699', flex: 1,}}>
+      <View style={{ backgroundColor: '#336699', flex: 1 }}>
         {this.state.content}
       </View>
     );
@@ -58,13 +59,12 @@ class Example extends React.Component {
   }
 
   render() {
-    const content = this.props.render(this.state.inner, (inner) => this.setState({inner}));
+    const content = this.props.render(this.state.inner, inner => this.setState({ inner }));
     return (
       <View>
         {content}
       </View>
     );
-
   }
 }
 

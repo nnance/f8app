@@ -22,85 +22,18 @@
  * @flow
  * @providesModule F8SegmentedControl
  */
-'use strict';
 
-var React = require('React');
-var StyleSheet = require('F8StyleSheet');
-var { Text } = require('F8Text');
-var TouchableOpacity = require('TouchableOpacity');
-var View = require('View');
-var Platform = require('Platform');
 
-class F8SegmentedControl extends React.Component {
-  props: {
-    values: Array<string>;
-    selectionColor: ?string;
-    selectedIndex: number;
-    onChange: (newIndex: number) => void;
-    style: any;
-  };
-
-  render() {
-    var segments = this.props.values.map(
-      (value, index) => (
-        <Segment
-          key={value}
-          value={value}
-          isSelected={index === this.props.selectedIndex}
-          selectionColor={this.props.selectionColor || 'white'}
-          onPress={() => this.props.onChange(index)}
-        />
-      )
-    );
-    return (
-      <View style={[styles.container, this.props.style]}>
-        {segments}
-      </View>
-    );
-  }
-}
-
-class Segment extends React.Component {
-  props: {
-    value: string;
-    isSelected: boolean;
-    selectionColor: string;
-    onPress: () => void;
-  };
-
-  render() {
-    var selectedButtonStyle;
-    if (this.props.isSelected) {
-      selectedButtonStyle = { borderColor: this.props.selectionColor };
-    }
-    var deselectedLabelStyle;
-    if (!this.props.isSelected && Platform.OS === 'android') {
-      deselectedLabelStyle = styles.deselectedLabel;
-    }
-    var title = this.props.value && this.props.value.toUpperCase();
-
-    var accessibilityTraits = ['button'];
-    if (this.props.isSelected) {
-      accessibilityTraits.push('selected');
-    }
-
-    return (
-      <TouchableOpacity
-        accessibilityTraits={accessibilityTraits}
-        activeOpacity={0.8}
-        onPress={this.props.onPress}
-        style={[styles.button, selectedButtonStyle]}>
-        <Text style={[styles.label, deselectedLabelStyle]}>
-          {title}
-        </Text>
-      </TouchableOpacity>
-    );
-  }
-}
+const React = require('React');
+const StyleSheet = require('F8StyleSheet');
+const { Text } = require('F8Text');
+const TouchableOpacity = require('TouchableOpacity');
+const View = require('View');
+const Platform = require('Platform');
 
 const HEIGHT = 32;
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     backgroundColor: 'transparent',
@@ -140,5 +73,73 @@ var styles = StyleSheet.create({
     color: 'rgba(255, 255, 255, 0.7)',
   },
 });
+
+class F8SegmentedControl extends React.Component {
+  props: {
+    values: Array<string>;
+    selectionColor: ?string;
+    selectedIndex: number;
+    onChange: (newIndex: number) => void;
+    style: any;
+  };
+
+  render() {
+    const segments = this.props.values.map(
+      (value, index) => (
+        <Segment
+          key={value}
+          value={value}
+          isSelected={index === this.props.selectedIndex}
+          selectionColor={this.props.selectionColor || 'white'}
+          onPress={() => this.props.onChange(index)}
+        />
+      ),
+    );
+    return (
+      <View style={[styles.container, this.props.style]}>
+        {segments}
+      </View>
+    );
+  }
+}
+
+class Segment extends React.Component {
+  props: {
+    value: string;
+    isSelected: boolean;
+    selectionColor: string;
+    onPress: () => void;
+  };
+
+  render() {
+    let selectedButtonStyle;
+    if (this.props.isSelected) {
+      selectedButtonStyle = { borderColor: this.props.selectionColor };
+    }
+    let deselectedLabelStyle;
+    if (!this.props.isSelected && Platform.OS === 'android') {
+      deselectedLabelStyle = styles.deselectedLabel;
+    }
+    const title = this.props.value && this.props.value.toUpperCase();
+
+    const accessibilityTraits = ['button'];
+    if (this.props.isSelected) {
+      accessibilityTraits.push('selected');
+    }
+
+    return (
+      <TouchableOpacity
+        accessibilityTraits={accessibilityTraits}
+        activeOpacity={0.8}
+        onPress={this.props.onPress}
+        style={[styles.button, selectedButtonStyle]}
+      >
+        <Text style={[styles.label, deselectedLabelStyle]}>
+          {title}
+        </Text>
+      </TouchableOpacity>
+    );
+  }
+}
 
 module.exports = F8SegmentedControl;

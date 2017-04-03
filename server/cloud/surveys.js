@@ -20,130 +20,43 @@
  * DEALINGS IN THE SOFTWARE
  */
 
-'use strict';
+
 /* global Parse */
 
-var Agenda = Parse.Object.extend('Agenda');
-var Attendance = Parse.Object.extend('Attendance');
-var Survey = Parse.Object.extend('Survey');
-var SurveyResult = Parse.Object.extend('SurveyResult');
-
-Parse.Cloud.define('send_surveys', function(request, response) {
-  if (request.master) {
-    Parse.Cloud.useMasterKey();
-  } else {
-    return response.error('Need master key');
-  }
-
-  var sessionId = request.params.sessionId;
-  if (!sessionId) {
-    return response.error('Need sessionId');
-  }
-
-  console.log('Fetching attendees for ' + sessionId);
-  var agenda = new Agenda({id: sessionId});
-  var attendees = new Parse.Query(Attendance)
-    .equalTo('agenda', agenda)
-    .notEqualTo('sent', true)
-    .find();
-  var survey = new Parse.Query(Survey)
-    .equalTo('session', agenda)
-    .first();
-
-  Parse.Promise.when(attendees, survey, new Parse.Query(Agenda).get(sessionId))
-    .then(sendSurveys)
-    .then(
-      function(value) { response.success(value); },
-      function(error) { response.error(error); }
-    );
-});
-
-Parse.Cloud.define('surveys', function(request, response) {
-  Parse.Cloud.useMasterKey();
-
-  var user = request.user;
-  if (!user) {
-    return response.success([]);
-  }
-
-  new Parse.Query(SurveyResult)
-    .equalTo('user', user)
-    .equalTo('rawAnswers', null)
-    .include('survey')
-    .include('survey.session')
-    .find()
-    .then(toSurveys)
-    .then(
-      function(value) { response.success(value); },
-      function(error) { response.error(error); }
-    );
-});
-
-Parse.Cloud.define('submit_survey', function(request, response) {
-  Parse.Cloud.useMasterKey();
-
-  var user = request.user;
-  if (!user) {
-    return response.error({message: 'Not logged in'});
-  }
-
-  var params = request.params;
-  if (!params.id || !params.answers) {
-    return response.error({message: 'Need id and answers'});
-  }
-
-  new Parse.Query(SurveyResult)
-    .equalTo('user', user)
-    .equalTo('objectId', params.id)
-    .find()
-    .then(function(results) {
-      if (results.length === 0) {
-        throw new Error('No user/id combination found');
-      }
-      return results[0].save({
-        a1: params.answers[0],
-        a2: params.answers[1],
-        rawAnswers: JSON.stringify(params.answers)
-      });
-    }).then(
-      function(value) { response.success(value); },
-      function(error) { response.error(error); }
-    );
-});
+const Agenda = Parse.Object.extend('Agenda');
+const Attendance = Parse.Object.extend('Attendance');
+const Survey = Parse.Object.extend('Survey');
+const SurveyResult = Parse.Object.extend('SurveyResult');
 
 function sendSurveys(attendees, survey, session) {
   if (!survey) {
-    throw new Error('Survey not found for session ' + session.id);
+    throw new Error(`Survey not found for session ${session.id}`);
   }
 
-  console.log('Found ' + attendees.length + ' attendees');
-  return Parse.Promise.when(attendees.map(function(record) {
-    var user = record.get('user');
+  console.log(`Found ${attendees.length} attendees`);
+  return Parse.Promise.when(attendees.map((record) => {
+    const user = record.get('user');
     return new SurveyResult().save({
-      user: user,
-      survey: survey,
-    }).then(function() {
-      return Parse.Push.send({
-        where: new Parse.Query(Parse.Installation).equalTo('user', user),
-        data: {
-          badge: 'Increment',
-          alert: 'Please rate "' + session.get('sessionTitle') + '"',
-          e: true, // ephemeral
-        }
-      });
-    }).then(function() {
-      return record.save({sent: true});
-    });
-  })).then(function() {
+      user,
+      survey,
+    }).then(() => Parse.Push.send({
+      where: new Parse.Query(Parse.Installation).equalTo('user', user),
+      data: {
+        badge: 'Increment',
+        alert: `Please rate "${session.get('sessionTitle')}"`,
+        e: true, // ephemeral
+      },
+    })).then(() => record.save({ sent: true }));
+  })).then(function () {
     return arguments.length;
   });
 }
 
 function toSurveys(emptyResults) {
-  return emptyResults.map(function(emptyResult) {
-    var survey = emptyResult.get('survey');
+  return emptyResults.map((emptyResult) => {
+    const survey = emptyResult.get('survey');
 
-    var questions = [];
+    const questions = [];
     if (survey.get('q1')) {
       questions.push({
         text: survey.get('q1'),
@@ -163,7 +76,96 @@ function toSurveys(emptyResults) {
     return {
       id: emptyResult.id,
       sessionId: survey.get('session').id,
-      questions: questions,
+      questions,
     };
   });
 }
+
+Parse.Cloud.define('send_surveys', (request, response) => {
+  if (request.master) {
+    Parse.Cloud.useMasterKey();
+  } else {
+    response.error('Need master key');
+    return;
+  }
+
+  const sessionId = request.params.sessionId;
+  if (!sessionId) {
+    response.error('Need sessionId');
+    return;
+  }
+
+  console.log(`Fetching attendees for ${sessionId}`);
+  const agenda = new Agenda({ id: sessionId });
+  const attendees = new Parse.Query(Attendance)
+    .equalTo('agenda', agenda)
+    .notEqualTo('sent', true)
+    .find();
+  const survey = new Parse.Query(Survey)
+    .equalTo('session', agenda)
+    .first();
+
+  Parse.Promise.when(attendees, survey, new Parse.Query(Agenda).get(sessionId))
+    .then(sendSurveys)
+    .then(
+      (value) => { response.success(value); },
+      (error) => { response.error(error); },
+    );
+});
+
+Parse.Cloud.define('surveys', (request, response) => {
+  Parse.Cloud.useMasterKey();
+
+  const user = request.user;
+  if (!user) {
+    response.success([]);
+    return;
+  }
+
+  new Parse.Query(SurveyResult)
+    .equalTo('user', user)
+    .equalTo('rawAnswers', null)
+    .include('survey')
+    .include('survey.session')
+    .find()
+    .then(toSurveys)
+    .then(
+      (value) => { response.success(value); },
+      (error) => { response.error(error); },
+    );
+});
+
+Parse.Cloud.define('submit_survey', (request, response) => {
+  Parse.Cloud.useMasterKey();
+
+  const user = request.user;
+  if (!user) {
+    response.error({ message: 'Not logged in' });
+    return;
+  }
+
+  const params = request.params;
+  if (!params.id || !params.answers) {
+    response.error({ message: 'Need id and answers' });
+    return;
+  }
+
+  new Parse.Query(SurveyResult)
+    .equalTo('user', user)
+    .equalTo('objectId', params.id)
+    .find()
+    .then((results) => {
+      if (results.length === 0) {
+        throw new Error('No user/id combination found');
+      }
+      return results[0].save({
+        a1: params.answers[0],
+        a2: params.answers[1],
+        rawAnswers: JSON.stringify(params.answers),
+      });
+    })
+    .then(
+      (value) => { response.success(value); },
+      (error) => { response.error(error); },
+    );
+});
